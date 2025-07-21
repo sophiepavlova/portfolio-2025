@@ -7,26 +7,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css">
+	<link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
 <body>
   <header class="site-header">
-  <div class="container">
-    <a href="index.html" class="logo">Michelle Parker</a>
-    <nav class="site-nav">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="about.html">About</a></li>
-        <li>
-          <a href="https://docs.google.com/document/d/.../view" target="_blank" rel="noopener noreferrer">
-            Resume
-            <img src="./assets/icons/external-link.svg" alt="" class="icon" />
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+		<div class="container">
+			<a href="index.html" class="logo">Michelle Parker</a>
+			<nav class="site-nav">
+				<ul>
+					<li><a href="index.html" class="active">Home</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="about.html">About</a></li>
+					<li>
+						<a href="https://docs.google.com/document/d/.../view" target="_blank" rel="noopener noreferrer">
+							Resume
+							<img src="./assets/icons/external-link.svg" alt="" class="icon" />
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 </header>
 
 <section class="hero">
@@ -34,7 +35,7 @@
 
 		<div class="hero__content">
 			<p class="hero__greeting">Hi! I’m Michelle.</p>
-			<h1 class="hero__title">A Product Designer and an accessibility champion.</h1>
+			<h1 class="hero__title">A Product Designer<br />and an accessibility champion.</h1>
 			<p class="hero__description">
 				Designing thoughtful experiences across consumer, B2B, and SaaS products. I thrive in fast-paced environments and bring a human-centred perspective to complex systems.
 			</p>
@@ -61,39 +62,115 @@
 <section class="selected-work">
   <div class="container">
     <h2 class="selected-work__title">Selected Work</h2>
-    <!-- карточки пойдут тут -->
-		<div class="selected-work__cards">
+    <div class="selected-work__cards">
       <article class="work-card" aria-labelledby="work1-title" role="article">
-				<a href="case1.html" class="work-card__link" aria-label="Read more about Thrive Health case study"></a>
-				<div class="work-card-upper">
-					<div class="work-card__general-info">
-						<h3 id="work1-title" class="work-card__title">Thrive Health</h3>
-						<p class="work-card__subtitle">Streamlining pediatric ER triage with 92% accuracy</p>
-						<p class="work-card__description">
-							End-to-end design of a digital triage tool for a Canadian children’s hospital, aimed at reducing nurse burden and improving the ER experience for families.
-						</p>
-					</div>
+        <a href="case1.html" class="work-card__link" aria-label="Read more about Thrive Health case study"></a>
 
-					<div class="work-card__icon-wrapper" aria-hidden="true">
-						<img src="./assets/icons/ext_link2.svg" alt="" class="work-card__icon" />
-					</div>
-				</div>
+        <div class="work-card-upper">
+          <div class="work-card__general-info">
+            <h3 id="work1-title" class="work-card__title">Thrive Health</h3>
+            <p class="work-card__subtitle">Streamlining pediatric ER triage with 92% accuracy</p>
+            <p class="work-card__description">
+              End-to-end design of a digital triage tool for a Canadian children’s hospital, aimed at reducing nurse burden and improving the ER experience for families.
+            </p>
+          </div>
+          <div class="work-card__icon-wrapper" aria-hidden="true">
+            <img src="./assets/icons/ext_link2.svg" alt="" class="work-card__icon" />
+          </div>
+        </div>
 
+        <div class="work-card__image-wrapper">
+          <img src="./assets/images/Case1_sample.png" alt="Screenshot of the Thrive Health triage tool" class="work-card__image" />
+        </div>
+      </article>
 
+			<article class="work-card work-card--blue" aria-labelledby="work1-title" role="article">
+        <a href="case1.html" class="work-card__link" aria-label="Read more about Thrive Health case study"></a>
 
-				<div class="work-card__image-wrapper">
-					<img src="./assets/images/Case1_sample.png" alt="Screenshot of the Thrive Health triage tool" class="work-card__image" />
-				</div>
-			</article>
+        <div class="work-card-upper">
+          <div class="work-card__general-info">
+            <h3 id="work1-title" class="work-card__title work-card__title--blue">Thrive Health</h3>
+            <p class="work-card__subtitle">Redesigning a seniors' health app for clarity and engagement</p>
+            <p class="work-card__description">
+              Transformed a basic MVP into a full-featured wellness platform, creating a more intuitive, accessible experience tailored to older users.
+            </p>
+          </div>
+          <div class="work-card__icon-wrapper" aria-hidden="true">
+            <img src="./assets/icons/ext_link2.svg" alt="" class="work-card__icon" />
+          </div>
+        </div>
 
+        <div class="work-card__image-wrapper">
+          <img src="./assets/images/Case2_sample.jpg" alt="Screenshot of the Thrive Health triage tool" class="work-card__image" />
+        </div>
+      </article>
 
+			<article class="work-card work-card--yellow" aria-labelledby="work1-title" role="article">
+        <a href="case1.html" class="work-card__link" aria-label="Read more about Thrive Health case study"></a>
 
+        <div class="work-card-upper">
+          <div class="work-card__general-info">
+            <h3 id="work1-title" class="work-card__title work-card__title--yellow">Heritage4future</h3>
+            <p class="work-card__subtitle">Coming soon: Improving impact through storytelling</p>
+            <p class="work-card__description">
+              Redesigned a donation-based charity website to strengthen narrative, leading to a 31% rise in unique visitors and over $70,000 raised in the next campaign cycle.
+            </p>
+          </div>
+          <div class="work-card__icon-wrapper" aria-hidden="true">
+            <img src="./assets/icons/ext_link2.svg" alt="" class="work-card__icon" />
+          </div>
+        </div>
+
+        <div class="work-card__image-wrapper">
+          <img src="./assets/images/Case3_sample.jpg"
+					" alt="Screenshot of the Thrive Health triage tool" class="work-card__image" />
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
+<footer class="site-footer">
+  <div class="container site-footer__content">
 
+    <div class="site-footer__left">
+      <p class="site-footer__name">Michelle Parker</p>
+      <a href="mailto:hi@michelledesign.ca" class="site-footer__email">hi@michelledesign.ca</a>
+      <p class="site-footer__tagline">Let’s connect!</p>
+      <p class="site-footer__credit">Made with ❤️ and hojicha.</p>
+    </div>
 
+    <div class="site-footer__right">
+      <div class="site-footer__column">
+        <h4 class="site-footer__heading">Navigation</h4>
+        <ul class="site-footer__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__column">
+        <h4 class="site-footer__heading">Contact</h4>
+        <ul class="site-footer__list">
+          <li>
+						<a href="https://linkedin.com/..." target="_blank" rel="noopener">
+							LinkedIn
+							<img src="./assets/icons/external-link.svg" alt="" class="external-icon" aria-hidden="true" />
+						</a>
+					</li>
+          <li>
+						<a href="https://linkedin.com/..." target="_blank" rel="noopener">
+							Resume
+							<img src="./assets/icons/external-link.svg" alt="" class="external-icon" aria-hidden="true" />
+						</a>
+					</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</footer>
   <script src="./scripts/main.js"></script>
 </body>
 </html>

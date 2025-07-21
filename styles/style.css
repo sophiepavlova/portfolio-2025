@@ -1,58 +1,55 @@
 :root {
-  /* Base colors */
-  --color-background: #FAFAF9;
+  --color-background:  #ffffff;
   --color-text: #1F2937;
-  --color-accent: #E11D48; /* Example red, adjust to match design */
-
-  /* Neutrals from design */
+  --color-accent: #E11D48;
   --color-border: #D6D3D1;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
+  background-color: var(--color-background);
 }
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  padding-block: 20px; /* только вертикальные отступы */
-  border-bottom: 1px solid var(--color-border);
-  backdrop-filter: blur(4px);
-  background-color: var(--color-background); /* если нужно */
-}
-
 
 .container {
-	display: flex;
-	justify-content: space-between;
-  align-items: center;
   max-width: 1080px;
   width: 100%;
   margin: 0 auto;
-	outline: 1px dashed lightgreen;
-	padding-inline: 100px;
+  /* padding-inline: 100px; */
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 24px;
+  }
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   font-family: 'campaign-serif', serif;
   font-weight: 700;
-  font-style: normal; /* "Bold" in Figma = weight 700 + style normal */
   font-size: 24px;
   line-height: 110%;
-  letter-spacing: 0;
-  text-decoration: none;
   color: var(--color-accent);
-;
+  text-decoration: none;
 }
-
 
 .site-nav a {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-style: normal;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.1px;
@@ -65,112 +62,103 @@ body {
 .site-nav ul {
   display: flex;
   gap: 20px;
-
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
 .site-nav a.active {
   color: var(--color-accent);
 }
 
-/* Hero Section */
-.hero {
-  background-color: #fff;
-  padding-block: 30px 50px; /* только верх-низ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(4px);
+  background-color: var(--color-background);
 }
 
+/* Hero */
+.hero {
+  background-color: #fff;
+  padding-block: 30px 50px;
+}
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  /* gap: 20px; */
 }
-
-
 .hero__greeting {
   font-family: "campaign-serif", serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 140%;
-  margin: 0;
-	color: var(--color-accent);
+  color: var(--color-accent);
+	margin: 0 0 10px;
 }
-
 .hero__title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 60px;
   line-height: 66px;
-  letter-spacing:  0.005em;
+  letter-spacing: 0.005em;
   color: var(--color-text);
-  margin: 0;
+  margin: 0 0 20px;
 }
-
 .hero__description {
   font-family: 'Inter', sans-serif;
   font-size: 24px;
-  letter-spacing:  0.005em;
+  letter-spacing: 0.005em;
   color: var(--color-text);
-  margin: 0;
+  margin: 0 0 20px;
 }
-
 .hero__info {
   display: flex;
-  flex-direction: row;
   gap: 10px;
-	color: var(--color-text);
-
+  color: var(--color-text);
+	margin: 0 0 20px;
 }
-
 .hero__info-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing:  0.005em;
-  color: var(--color-text);
+  letter-spacing: 0.005em;
 }
-
 .hero__buttons {
   display: flex;
   gap: 20px;
 }
-
 .button {
-  font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.005em;
-  padding: 0px 24px;
+  padding: 0 24px;
   border-radius: 4px;
-  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 62px;
   text-align: center;
+  text-decoration: none;
 }
-
 .button--primary {
   background-color: var(--color-accent);
   color: #fff;
 }
-
 .button--secondary {
   background-color: #fff;
   color: var(--color-text);
   border: 1px solid var(--color-text);
 }
 
-/* ‼️ SELECTED WORK block */
-.selected-work .container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: flex-start; /* ✅ fix alignment */
+/* ‼️Selected Work */
+.selected-work {
+  padding-top: 0;
+	padding-bottom: 50px;
 }
 .selected-work__title {
   font-family: 'Inter', sans-serif;
@@ -179,8 +167,8 @@ body {
   line-height: 1;
   letter-spacing: 0.005em;
   color: var(--color-text);
-	text-align: left !important;
   margin-bottom: 30px;
+  text-align: left;
 }
 .selected-work__cards {
   display: flex;
@@ -190,44 +178,82 @@ body {
 
 .work-card {
   width: 100%;
-  box-sizing: border-box;
   background-color: #F3E8FF;
   border: 1px solid #E9D5FF;
   border-radius: 10px;
   padding: 20px 30px;
+	padding-bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
   position: relative;
 }
-
-
-.work-card__general-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	/* gap: 8px; */
+.work-card--blue {
+  background-color: #BFDBFE;
 }
-.work-card__general-info {
-	width: 674px;
+
+.work-card--yellow {
+  background-color: #FEF08A;
+}
+
+.work-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  text-decoration: none;
 }
 .work-card-upper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
-
+.work-card__general-info {
+  display: flex;
+  flex-direction: column;
+  width: 674px;
+}
 .work-card__icon {
-  width: 24px;
-  height: 24px;
+  width: 46px;
+  height: 46px;
 }
-
+.work-card__title {
+  font-family: "Campaign Serif", serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #9333EA;
+  margin: 0;
+	padding-bottom: 8px;
+}
+.work-card__title--blue{
+	color: #2563EB;
+}
+.work-card__title--yellow {
+	color: #A16207;
+}
+.work-card__subtitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+	padding-bottom: 8px;
+}
+.work-card__description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
 .work-card__image-wrapper {
-  margin-top: auto; /* pushes image to bottom */
-  width: fit-content;
-  align-self: flex-start;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
 }
-
 .work-card__image {
   max-width: 100%;
   height: auto;
@@ -236,44 +262,101 @@ body {
   display: block;
 }
 
-
-.work-card__link {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  text-decoration: none;
+/* ‼️FOOTER */
+.site-footer {
+  background-color: #fff;
+  padding-block: 20px 40px; /* верх 80, низ 40 */
+  border-top: 1px solid var(--color-border);
 }
 
-.work-card__title {
-  font-family: "Campaign Serif", serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.4;
+.site-footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.site-footer__right {
+  display: flex;
+  flex-direction: row;
+  gap: 70px; /* расстояние между Navigation и Contact */
+}
+
+.site-footer__name {
+  font-family: 'Campaign Serif', serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 110%;
   letter-spacing: 0;
-  text-transform: uppercase;
-  color: #9333EA;
-  margin: 0;
+  color: var(--color-accent);
+  margin-bottom: 10px;
 }
 
-.work-card__subtitle {
+.site-footer__email {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: #57534E;
+  margin-bottom: 10px;
+}
+
+.site-footer__tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  color: #57534E;
+  margin-bottom: 0; /* последний в этом блоке */
+}
+
+.site-footer__credit {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #A8A29E;
+  margin-top: 22px;
+}
+
+.site-footer__heading {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 1;
+  font-size: 16px;
+  line-height: 24px;
   letter-spacing: 0.005em;
   color: var(--color-text);
-  margin: 0;
+  margin-bottom: 10px;
 }
 
-.work-card__description {
+.site-footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__list a {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.005em;
-  color: var(--color-text);
-  margin: 0;
+  color: #57534E;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
+.site-footer__list li {
+  margin-bottom: 10px;
+}
 
+.external-icon {
+  width: 16px;
+  height: 16px;
+}
 
