@@ -4,12 +4,95 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css">
   <link rel="stylesheet" href="./styles/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Hello world 👋</h1>
-  </header>
+  <header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Michelle Parker</a>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="https://docs.google.com/document/d/.../view" target="_blank" rel="noopener noreferrer">
+            Resume
+            <img src="./assets/icons/external-link.svg" alt="" class="icon" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+	<div class="container">
+
+		<div class="hero__content">
+			<p class="hero__greeting">Hi! I’m Michelle.</p>
+			<h1 class="hero__title">A Product Designer and an accessibility champion.</h1>
+			<p class="hero__description">
+				Designing thoughtful experiences across consumer, B2B, and SaaS products. I thrive in fast-paced environments and bring a human-centred perspective to complex systems.
+			</p>
+	
+			<div class="hero__info">
+				<div class="hero__info-item">
+					<span class="hero__icon">💫</span>
+					<span class="hero__info-text">4 years of experience</span>
+				</div>
+				<div class="hero__info-item">
+					<span class="hero__icon">📍</span>
+					<span class="hero__info-text">Vancouver, BC</span>
+				</div>
+			</div>
+	
+			<div class="hero__buttons">
+				<a href="#selected-work" class="button button--primary">See my work</a>
+				<a href="about.html" class="button button--secondary">About me</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="selected-work">
+  <div class="container">
+    <h2 class="selected-work__title">Selected Work</h2>
+    <!-- карточки пойдут тут -->
+		<div class="selected-work__cards">
+      <article class="work-card" aria-labelledby="work1-title" role="article">
+				<a href="case1.html" class="work-card__link" aria-label="Read more about Thrive Health case study"></a>
+				<div class="work-card-upper">
+					<div class="work-card__general-info">
+						<h3 id="work1-title" class="work-card__title">Thrive Health</h3>
+						<p class="work-card__subtitle">Streamlining pediatric ER triage with 92% accuracy</p>
+						<p class="work-card__description">
+							End-to-end design of a digital triage tool for a Canadian children’s hospital, aimed at reducing nurse burden and improving the ER experience for families.
+						</p>
+					</div>
+
+					<div class="work-card__icon-wrapper" aria-hidden="true">
+						<img src="./assets/icons/ext_link2.svg" alt="" class="work-card__icon" />
+					</div>
+				</div>
+
+
+
+				<div class="work-card__image-wrapper">
+					<img src="./assets/images/Case1_sample.png" alt="Screenshot of the Thrive Health triage tool" class="work-card__image" />
+				</div>
+			</article>
+
+
+
+    </div>
+  </div>
+</section>
+
+
 
   <script src="./scripts/main.js"></script>
 </body>

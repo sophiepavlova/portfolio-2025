@@ -1,4 +1,279 @@
+:root {
+  /* Base colors */
+  --color-background: #FAFAF9;
+  --color-text: #1F2937;
+  --color-accent: #E11D48; /* Example red, adjust to match design */
+
+  /* Neutrals from design */
+  --color-border: #D6D3D1;
+}
+
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
 }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  padding-block: 20px; /* только вертикальные отступы */
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(4px);
+  background-color: var(--color-background); /* если нужно */
+}
+
+
+.container {
+	display: flex;
+	justify-content: space-between;
+  align-items: center;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+	outline: 1px dashed lightgreen;
+	padding-inline: 100px;
+}
+
+.logo {
+  font-family: 'campaign-serif', serif;
+  font-weight: 700;
+  font-style: normal; /* "Bold" in Figma = weight 700 + style normal */
+  font-size: 24px;
+  line-height: 110%;
+  letter-spacing: 0;
+  text-decoration: none;
+  color: var(--color-accent);
+;
+}
+
+
+.site-nav a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  color: var(--color-text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.site-nav ul {
+  display: flex;
+  gap: 20px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a.active {
+  color: var(--color-accent);
+}
+
+/* Hero Section */
+.hero {
+  background-color: #fff;
+  padding-block: 30px 50px; /* только верх-низ */
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+.hero__greeting {
+  font-family: "campaign-serif", serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 140%;
+  margin: 0;
+	color: var(--color-accent);
+}
+
+.hero__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 66px;
+  letter-spacing:  0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.hero__description {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  letter-spacing:  0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.hero__info {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+	color: var(--color-text);
+
+}
+
+.hero__info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing:  0.005em;
+  color: var(--color-text);
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  padding: 0px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 62px;
+  text-align: center;
+}
+
+.button--primary {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.button--secondary {
+  background-color: #fff;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+}
+
+/* ‼️ SELECTED WORK block */
+.selected-work .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start; /* ✅ fix alignment */
+}
+.selected-work__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+	text-align: left !important;
+  margin-bottom: 30px;
+}
+.selected-work__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.work-card {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #F3E8FF;
+  border: 1px solid #E9D5FF;
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+
+
+.work-card__general-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* gap: 8px; */
+}
+.work-card__general-info {
+	width: 674px;
+}
+.work-card-upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.work-card__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.work-card__image-wrapper {
+  margin-top: auto; /* pushes image to bottom */
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.work-card__image {
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: block;
+}
+
+
+.work-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  text-decoration: none;
+}
+
+.work-card__title {
+  font-family: "Campaign Serif", serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #9333EA;
+  margin: 0;
+}
+
+.work-card__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.work-card__description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+
+
