@@ -18,6 +18,18 @@ body {
   background-color: var(--color-background);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .container {
   max-width: 1080px;
   width: 100%;
@@ -235,7 +247,7 @@ body {
 .work-card__subtitle {
   font-weight: 700;
   font-size: 24px;
-  line-height: 1;
+  line-height: 120%;
   letter-spacing: 0.005em;
   color: var(--color-text);
   margin: 0;
@@ -359,4 +371,117 @@ body {
   width: 16px;
   height: 16px;
 }
+
+/* 🔺Page ABOUT */
+.about-hero {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
+.about-hero__content {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-start; */
+	align-items: center; /* вместо flex-start */
+  gap: 40px; /* отступ между колонками */
+}
+
+.about-hero__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+.about-hero__image-block {
+  flex: 0 0 390px; /* фиксированная ширина фото */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* между фото и подписью */
+}
+
+.about-hero__image {
+  width: 100%;
+  height: auto; /* сохраняет пропорции */
+  border-radius: 8px;
+  display: block;
+}
+
+.about-hero__caption {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  color: #57534E;
+}
+
+.about-hero__heading {
+  font-family: 'Campaign Serif', serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: var(--color-accent);
+  margin: 0;
+	padding-bottom: 20px;
+}
+
+.about-hero__intro {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+	padding-bottom: 20px;
+}
+
+/*‼️ CASE 1 */
+.case-hero {
+  padding-top: 40px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.case-hero__client {
+  font-family: 'Campaign Serif', serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.case-hero__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 120%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-image {
+   padding-top: 40px;
+  padding-bottom: 0;
+}
+
+.case-image__wrapper {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.case-image__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0; /* без двойного радиуса */
+}
+
 
