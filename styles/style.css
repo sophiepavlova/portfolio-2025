@@ -3,6 +3,9 @@
   --color-text: #1F2937;
   --color-accent: #E11D48;
   --color-border: #D6D3D1;
+	--color-stone-200: #E7E5E4;
+	--color-stone-200: #E7E5E4;
+  --color-blue-bg: #DBEAFE;
 }
 
 html {
@@ -484,4 +487,407 @@ body {
   border-radius: 0; /* без двойного радиуса */
 }
 
+.case-overview {
+  padding-top: 40px;
+  padding-bottom: 0;
+}
 
+.case-overview__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px; /* регулируется по макету между колонками */
+}
+
+.case-overview__description {
+  flex: 1;
+  max-width: 640px; /* можешь уточнить по макету */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* между h2, параграфами и note */
+}
+
+.case-overview__heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-overview__paragraph {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-overview__note {
+  background-color: #DBEAFE;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: #1E40AF;
+}
+
+.case-overview__meta {
+  flex: 0 0 300px; /* фикс ширина или max-width по макету */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* расстояние между фреймами */
+  margin: 0;
+  padding: 0;
+}
+
+.case-overview__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* между заголовком и значением */
+}
+
+.case-overview__meta-item dt {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+}
+
+.case-overview__meta-item dd {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-context {
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+
+.case-context__content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.case-context__heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  text-align: center;
+  color: var(--color-text);
+  margin: 0;
+}
+
+
+.case-context__items {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.case-context__item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
+.case-context__term {
+  /* flex: 0 0 auto; */
+  /* width: 200px;  */
+	flex: 0 0 200px; /* фикс ширина */
+  white-space: nowrap; /* ❗️ не переносить на новую строку */
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-context__desc {
+  flex: 0 0 760px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-context__desc p {
+  margin-bottom: 16px;
+}
+
+.case-context__list {
+  margin-top: 16px;
+  padding-left: 18px; /* отступ для буллетов */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-context__list li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+}
+
+/* 🔺 How might we section */
+
+.case-howmightwe {
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+
+.case-howmightwe__heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  text-align: center;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-howmightwe__block {
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+
+.case-howmightwe__image-wrapper {
+  border: 1px solid var(--color-stone-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.case-howmightwe__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0; /* внутри wrapper уже есть радиус */
+}
+
+/* туче sub-block */
+.case-howmightwe__row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+	justify-content: space-between;
+}
+
+.case-howmightwe__subheading {
+  flex: 0 0 200px;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-howmightwe__right {
+  flex: 0 0 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.case-howmightwe__subheading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+  flex: 0 0 200px; /* как и предыдущие левые колонки */
+  white-space: nowrap;
+}
+
+.case-howmightwe__textblock {
+  display: flex;
+  flex-direction: column;
+  /* gap: 16px; */
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+}
+.case-howmightwe__textblock ul {
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+	padding-bottom: 16px; /* отступ снизу для лучшего восприятия */
+}
+.case-howmightwe__textblock li {
+  list-style: disc;
+}
+
+.case-howmightwe__card {
+  /* margin-top: 20px; */
+	/* too much spacing */
+  width: 760px;
+  
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+	background-color: white;
+}
+
+.case-howmightwe__card-header {
+  display: flex;
+  align-items: center;
+	border: 1px solid var(--color-stone-200, #E7E5E4);
+	border-bottom: none;
+	background-color: #CCFBF1;
+  gap: 15px;
+  padding: 10px;
+  /* border-bottom: 1px solid var(--color-stone-200, #E7E5E4); */
+}
+
+.case-howmightwe__card-header img {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background-color: #99F6E4;
+  padding: 8px; /* опционально — если иконка меньше */
+}
+
+.case-howmightwe__card-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-howmightwe__card-list {
+  padding: 10px;
+	padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.case-howmightwe__card-list li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  list-style: disc;
+}
+.case-howmightwe__card-list li strong {
+  font-weight: 700;
+}
+
+/*  */
+.case-howmightwe__subheading {
+  flex: 0 0 200px;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-howmightwe__icon-wrapper {
+  width: 46px;
+  height: 46px;
+  background-color: var(--color-blue-bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.case-howmightwe__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.case-howmightwe__goals-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border: 1px solid var(--color-stone-200);
+  border-radius: 8px;
+  background-color: #fff;
+	margin-bottom: 20px;
+
+	 max-width: 760px;
+  width: 100%;
+
+}
+
+
+.case-howmightwe__goals-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-howmightwe__goals-text strong {
+  font-weight: 700;
+}
+
+.case-howmightwe__goals-list {
+  flex: 0 0 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-block-start: 0;
+margin-block-end: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-goals__list {
+	margin: 0;
+}
