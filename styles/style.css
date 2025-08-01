@@ -700,7 +700,7 @@ body {
 /* туче sub-block */
 .case-howmightwe__row {
   display: flex;
-  gap: 20px;
+  /* gap: 20px; */
   align-items: flex-start;
 	justify-content: space-between;
 }
@@ -721,7 +721,8 @@ body {
   flex: 0 0 760px;
   display: flex;
   flex-direction: column;
-  /* gap: 20px; */
+	 max-width: 760px;
+  width: 100%;
 }
 
 .case-howmightwe__right p + p {
@@ -891,13 +892,16 @@ body {
 }
 
 .case-howmightwe__goals-list {
-  flex: 0 0 760px;
+  /* flex: 0 0 760px; */
+	 width: 100%;
+  max-width: 760px; /* если нужно ограничить по горизонтали */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   margin-block-start: 0;
-margin-block-end: 0;
+	margin-block-end: 0;
   padding: 0;
+	padding-top: 20px;
   list-style: none;
 }
 
@@ -962,4 +966,72 @@ margin-block-end: 0;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+}
+/*  */
+/* Design highlights - reusable article container */
+.case-highlights__item{
+	margin-bottom: 40px;
+}
+.case-highlights__title {
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0.5%;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.case-highlights__visual-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.case-highlights__visual-image--wide {
+  width: 390px;
+}
+
+.case-highlights__visual-image--narrow {
+  width: 349px;
+}
+
+.case-highlights__visual-image--900 {
+  width: 900px;
+}
+
+
+.case-highlights__visual {
+  background-color: var(--color-blue-100, #DBEAFE);
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+	border-radius: 8px;
+	margin-bottom: 40px;
+}
+
+
+/*  */
+
+.case-highlights__title-no-top-margin {
+	margin-top: 0;
+}
+/* .case-howmightwe__right {
+  outline: 1px solid red;
+}
+
+.case-howmightwe__goals-item {
+  outline: 1px solid limegreen;
+} */
+.add-small-margin-bottom{
+	margin-bottom:20px !important;
+}
+.add-big-margin-bottom{
+	margin-bottom: 40px;
+}
+p.add-small-margin-bottom {
+  margin-bottom: 20px !important;
 }
