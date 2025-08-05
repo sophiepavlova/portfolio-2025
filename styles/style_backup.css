@@ -1,24 +1,26 @@
 :root {
-  --color-background: #fafaf9;
+	--color-background: #fafaf9;
   --color-text: #1F2937;
   --color-accent: #E11D48;
   --color-border: #D6D3D1;
-  --color-stone-200: #E7E5E4;
+	--color-stone-200: #E7E5E4;
+	--color-stone-200: #E7E5E4;
   --color-blue-bg: #DBEAFE;
 }
 
-/* --- Общие сбросы и контейнер --- */
 html {
   box-sizing: border-box;
 }
 *, *::before, *::after {
   box-sizing: inherit;
 }
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: var(--color-background);
 }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -30,24 +32,27 @@ body {
   white-space: nowrap;
   border: 0;
 }
+
 .container {
   max-width: 1080px;
   width: 100%;
   margin: 0 auto;
+  /* padding-inline: 100px; */
   box-sizing: border-box;
 }
+
 @media (max-width: 768px) {
   .container {
     padding-inline: 24px;
   }
 }
 
-/* --- Header --- */
 .site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   font-family: 'campaign-serif', serif;
   font-weight: 700;
@@ -56,6 +61,7 @@ body {
   color: var(--color-accent);
   text-decoration: none;
 }
+
 .site-nav a {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -78,6 +84,7 @@ body {
 .site-nav a.active {
   color: var(--color-accent);
 }
+
 .site-header {
   position: sticky;
   top: 0;
@@ -88,7 +95,7 @@ body {
   background-color: var(--color-background);
 }
 
-/* --- Hero --- */
+/* Hero */
 .hero {
   background-color: #fff;
   padding-block: 30px 50px;
@@ -96,6 +103,7 @@ body {
 .hero__content {
   display: flex;
   flex-direction: column;
+  /* gap: 20px; */
 }
 .hero__greeting {
   font-family: "campaign-serif", serif;
@@ -103,7 +111,7 @@ body {
   font-size: 36px;
   line-height: 140%;
   color: var(--color-accent);
-  margin: 0 0 10px;
+	margin: 0 0 10px;
 }
 .hero__title {
   font-family: 'Inter', sans-serif;
@@ -125,7 +133,7 @@ body {
   display: flex;
   gap: 10px;
   color: var(--color-text);
-  margin: 0 0 20px;
+	margin: 0 0 20px;
 }
 .hero__info-item {
   display: flex;
@@ -162,10 +170,10 @@ body {
   border: 1px solid var(--color-text);
 }
 
-/* --- Selected Work --- */
+/* ‼️Selected Work */
 .selected-work {
   padding-top: 0;
-  padding-bottom: 50px;
+	padding-bottom: 50px;
 }
 .selected-work__title {
   font-family: 'Inter', sans-serif;
@@ -182,13 +190,14 @@ body {
   flex-direction: column;
   gap: 30px;
 }
+
 .work-card {
   width: 100%;
   background-color: #F3E8FF;
   border: 1px solid #E9D5FF;
   border-radius: 10px;
   padding: 20px 30px;
-  padding-bottom: 0;
+	padding-bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -197,9 +206,11 @@ body {
 .work-card--blue {
   background-color: #BFDBFE;
 }
+
 .work-card--yellow {
   background-color: #FEF08A;
 }
+
 .work-card__link {
   position: absolute;
   inset: 0;
@@ -228,13 +239,13 @@ body {
   text-transform: uppercase;
   color: #9333EA;
   margin: 0;
-  padding-bottom: 8px;
+	padding-bottom: 8px;
 }
-.work-card__title--blue {
-  color: #2563EB;
+.work-card__title--blue{
+	color: #2563EB;
 }
 .work-card__title--yellow {
-  color: #A16207;
+	color: #A16207;
 }
 .work-card__subtitle {
   font-weight: 700;
@@ -243,7 +254,7 @@ body {
   letter-spacing: 0.005em;
   color: var(--color-text);
   margin: 0;
-  padding-bottom: 8px;
+	padding-bottom: 8px;
 }
 .work-card__description {
   font-weight: 400;
@@ -266,12 +277,13 @@ body {
   display: block;
 }
 
-/* --- Footer --- */
+/* ‼️FOOTER */
 .site-footer {
   background-color: #fff;
-  padding-block: 20px 40px;
+  padding-block: 20px 40px; /* верх 80, низ 40 */
   border-top: 1px solid var(--color-border);
 }
+
 .site-footer__content {
   display: flex;
   justify-content: space-between;
@@ -279,35 +291,43 @@ body {
   flex-wrap: wrap;
   gap: 40px;
 }
+
 .site-footer__right {
   display: flex;
   flex-direction: row;
-  gap: 70px;
+  gap: 70px; /* расстояние между Navigation и Contact */
 }
+
 .site-footer__name {
   font-family: 'Campaign Serif', serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 110%;
+  letter-spacing: 0;
   color: var(--color-accent);
   margin-bottom: 10px;
 }
+
 .site-footer__email {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
+  letter-spacing: 0.005em;
   color: #57534E;
   margin-bottom: 10px;
 }
+
 .site-footer__tagline {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+  letter-spacing: 0.005em;
   color: #57534E;
-  margin-bottom: 0;
+  margin-bottom: 0; /* последний в этом блоке */
 }
+
 .site-footer__credit {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -316,99 +336,120 @@ body {
   color: #A8A29E;
   margin-top: 22px;
 }
+
 .site-footer__heading {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
+  letter-spacing: 0.005em;
   color: var(--color-text);
   margin-bottom: 10px;
 }
+
 .site-footer__list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .site-footer__list a {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  letter-spacing: 0.005em;
   color: #57534E;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
+
 .site-footer__list li {
   margin-bottom: 10px;
 }
+
 .external-icon {
   width: 16px;
   height: 16px;
 }
 
-/* --- About Page --- */
+/* 🔺Page ABOUT */
 .about-hero {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+
 .about-hero__content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+  /* align-items: flex-start; */
+	align-items: center; /* вместо flex-start */
+  gap: 40px; /* отступ между колонками */
 }
+
 .about-hero__item {
   display: flex;
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 20px;
 }
+
+
 .about-hero__image-block {
-  flex: 0 0 390px;
+  flex: 0 0 390px; /* фиксированная ширина фото */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20px; /* между фото и подписью */
 }
+
 .about-hero__image {
   width: 100%;
-  height: auto;
+  height: auto; /* сохраняет пропорции */
   border-radius: 8px;
   display: block;
 }
+
 .about-hero__caption {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+  letter-spacing: 0.005em;
   color: #57534E;
 }
+
 .about-hero__heading {
   font-family: 'Campaign Serif', serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 140%;
+  letter-spacing: 0;
   color: var(--color-accent);
   margin: 0;
-  padding-bottom: 20px;
+	padding-bottom: 20px;
 }
+
 .about-hero__intro {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 120%;
+  letter-spacing: 0.005em;
   color: var(--color-text);
   margin: 0;
-  padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
-/* --- Case Hero --- */
+/*‼️ CASE 1 */
 .case-hero {
   padding-top: 40px;
   padding-bottom: 0;
   text-align: center;
 }
+
 .case-hero__client {
   font-family: 'Campaign Serif', serif;
   font-weight: 700;
@@ -417,6 +458,7 @@ body {
   color: var(--color-accent);
   margin-bottom: 10px;
 }
+
 .case-hero__title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -427,38 +469,43 @@ body {
   margin: 0;
 }
 
-/* --- Case Overview & Context --- */
 .case-image {
-  padding-top: 40px;
+   padding-top: 40px;
   padding-bottom: 0;
 }
+
 .case-image__wrapper {
   border: 1px solid var(--color-border);
   border-radius: 8px;
   overflow: hidden;
 }
+
 .case-image__image {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 0;
+  border-radius: 0; /* без двойного радиуса */
 }
+
 .case-overview {
   padding-top: 40px;
   padding-bottom: 0;
 }
+
 .case-overview__content {
   display: flex;
   justify-content: space-between;
-  gap: 60px;
+  gap: 60px; /* регулируется по макету между колонками */
 }
+
 .case-overview__description {
   flex: 1;
-  max-width: 640px;
+  max-width: 640px; /* можешь уточнить по макету */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20px; /* между h2, параграфами и note */
 }
+
 .case-overview__heading {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -468,6 +515,7 @@ body {
   color: var(--color-text);
   margin: 0;
 }
+
 .case-overview__paragraph {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -477,6 +525,7 @@ body {
   color: var(--color-text);
   margin: 0;
 }
+
 .case-overview__note {
   background-color: #DBEAFE;
   border-radius: 10px;
@@ -488,19 +537,22 @@ body {
   letter-spacing: 0.005em;
   color: #1E40AF;
 }
+
 .case-overview__meta {
-  flex: 0 0 300px;
+  flex: 0 0 300px; /* фикс ширина или max-width по макету */
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px; /* расстояние между фреймами */
   margin: 0;
   padding: 0;
 }
+
 .case-overview__meta-item {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 5px; /* между заголовком и значением */
 }
+
 .case-overview__meta-item dt {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -509,6 +561,7 @@ body {
   letter-spacing: 0.005em;
   color: var(--color-text);
 }
+
 .case-overview__meta-item dd {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -518,16 +571,18 @@ body {
   color: var(--color-text);
   margin: 0;
 }
-/* --- Case Context --- */
+
 .case-context {
   padding-top: 40px;
   padding-bottom: 0;
 }
+
 .case-context__content {
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
+
 .case-context__heading {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -536,24 +591,31 @@ body {
   letter-spacing: 0.005em;
   text-align: center;
   color: var(--color-text);
-  margin: 0 0 40px 0;
+  margin: 0;
 }
+
+
 .case-context__items {
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   gap: 40px;
   width: 100%;
-  margin-top: 40px;
 }
+
 .case-context__item {
   display: flex;
   gap: 20px;
   align-items: flex-start;
   justify-content: space-between;
 }
+
+
 .case-context__term {
-  flex: 0 0 200px;
-  white-space: nowrap;
+  /* flex: 0 0 auto; */
+  /* width: 200px;  */
+	flex: 0 0 200px; /* фикс ширина */
+  white-space: nowrap; /* ❗️ не переносить на новую строку */
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 24px;
@@ -562,8 +624,9 @@ body {
   color: var(--color-text);
   margin: 0;
 }
+
 .case-context__desc {
-  flex: 1;
+  flex: 0 0 760px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -572,16 +635,19 @@ body {
   color: var(--color-text);
   margin: 0;
 }
+
 .case-context__desc p {
   margin-bottom: 16px;
 }
+
 .case-context__list {
   margin-top: 16px;
-  padding-left: 18px;
+  padding-left: 18px; /* отступ для буллетов */
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .case-context__list li {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -591,10 +657,13 @@ body {
   color: var(--color-text);
 }
 
-/* --- How Might We --- */
+/* 🔺 How might we section */
+
 .case-howmightwe {
   padding-top: 40px;
+  padding-bottom: 0;
 }
+
 .case-howmightwe__heading {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -603,14 +672,14 @@ body {
   letter-spacing: 0.005em;
   text-align: center;
   color: var(--color-text);
-  margin: 0 0 40px 0;
+  margin: 0;
 }
+
 .case-howmightwe__block {
-  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 0;
 }
-.case-howmightwe__block:last-child {
-  margin-bottom: 0;
-}
+
 .case-howmightwe__image-wrapper {
   width: 100%;
   max-width: 1080px;
@@ -618,144 +687,165 @@ body {
   border: 1px solid var(--color-stone-200);
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 40px;
 }
+
+
 .case-howmightwe__image {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 0;
+  border-radius: 0; /* внутри wrapper уже есть радиус */
 }
 
-/* --- Архитектурные паттерны: Two column layout --- */
-.twocol {
+/* туче sub-block */
+.case-howmightwe__row {
   display: flex;
+  /* gap: 20px; */
   align-items: flex-start;
-  justify-content: space-between;
-  width: 100%;
+	justify-content: space-between;
 }
-.twocol--wide {
-  gap: 20px;
-}
-.twocol__heading {
+
+.case-howmightwe__subheading {
   flex: 0 0 200px;
   white-space: nowrap;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
   color: var(--color-text);
   margin: 0;
 }
-.twocol__main {
+
+.case-howmightwe__right {
   flex: 0 0 760px;
   display: flex;
   flex-direction: column;
-  max-width: 760px;
+	 max-width: 760px;
   width: 100%;
 }
-.twocol__main p + p {
+
+.case-howmightwe__right p + p {
   margin-top: 20px;
 }
-.twocol__main p + ul {
+
+.case-howmightwe__right p + ul {
   margin-top: 0;
 }
-.twocol__textblock {
+
+.case-howmightwe__subheading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+  flex: 0 0 200px; /* как и предыдущие левые колонки */
+  white-space: nowrap;
+}
+
+.case-howmightwe__textblock {
   display: flex;
   flex-direction: column;
+  /* gap: 16px; */
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  letter-spacing: 0.005em;
   color: var(--color-text);
 }
-.twocol__textblock ul {
+.case-howmightwe__textblock ul {
   padding-left: 20px;
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding-bottom: 16px;
+	padding-bottom: 16px; /* отступ снизу для лучшего восприятия */
 }
-.twocol__textblock li {
+.case-howmightwe__textblock li {
   list-style: disc;
 }
 
-/* --- Highlights --- */
-.case-highlights {
-  padding-top: 40px;
-}
-.case-highlights__title {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 100%;
-  letter-spacing: 0.005em;
-  text-align: center;
-  color: var(--color-text);
-  margin: 0 0 40px 0;
-}
-.case-highlights__list {
+.case-howmightwe__card {
+  margin-top: 20px;
+  width: 760px;
+  
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: none;
   display: flex;
   flex-direction: column;
-}
-.case-highlights__item {
-  margin-bottom: 40px;
-}
-.case-highlights__item:last-child {
-  margin-bottom: 0;
-}
-.case-highlights__visual {
-  background-color: var(--color-blue-100, #DBEAFE);
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  border-radius: 8px;
-  margin-bottom: 40px;
-}
-.case-highlights__visual-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-.case-highlights__visual-image--wide {
-  width: 390px;
-}
-.case-highlights__visual-image--narrow {
-  width: 349px;
-}
-.case-highlights__visual-image--900,
-.case-highlights__visual-image--large {
-  width: 900px;
+	background-color: white;
 }
 
-/* --- Goals-list, Icon-card, Insight-card и их паттерны (универсальные) --- */
-.goals-list {
-  width: 100%;
-  max-width: 760px;
+.case-howmightwe__card-header {
+  display: flex;
+  align-items: center;
+	border: 1px solid var(--color-stone-200, #E7E5E4);
+	border-bottom: none;
+	background-color: #CCFBF1;
+  gap: 15px;
+  padding: 10px;
+	  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  /* border-bottom: 1px solid var(--color-stone-200, #E7E5E4); */
+}
+
+.case-howmightwe__card-header img {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background-color: #99F6E4;
+  padding: 8px; /* опционально — если иконка меньше */
+}
+
+.case-howmightwe__card-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-howmightwe__card-list {
+  padding: 10px;
+	padding-left: 30px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding: 0;
-  padding-top: 20px;
-  list-style: none;
+  margin: 0;
 }
-.goals-list__item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 10px;
-  border: 1px solid var(--color-stone-200);
-  border-radius: 8px;
-  background-color: #fff;
-  margin-bottom: 20px;
-  max-width: 760px;
-  width: 100%;
+
+.case-howmightwe__card-list li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  list-style: disc;
 }
-.icon-box {
+.case-howmightwe__card-list li strong {
+  font-weight: 700;
+}
+
+/*  */
+.case-howmightwe__subheading {
+  flex: 0 0 200px;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.case-howmightwe__icon-wrapper {
   width: 46px;
   height: 46px;
   background-color: var(--color-blue-bg);
@@ -765,80 +855,75 @@ body {
   justify-content: center;
   flex-shrink: 0;
 }
-.icon-box__icon {
+
+.case-howmightwe__icon {
   width: 24px;
   height: 24px;
 }
-.goals-list__text {
+
+.case-howmightwe__goals-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border: 1px solid var(--color-stone-200);
+  border-radius: 8px;
+  background-color: #fff;
+	margin-bottom: 20px;
+
+	 max-width: 760px;
+  width: 100%;
+
+}
+
+
+.case-howmightwe__goals-text {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  letter-spacing: 0.005em;
   color: var(--color-text);
   margin: 0;
 }
-.goals-list__text strong {
+
+.case-howmightwe__goals-text strong {
   font-weight: 700;
 }
-.icon-card {
-  margin-top: 20px;
-  width: 760px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-}
-.icon-card__header {
-  display: flex;
-  align-items: center;
-  border: 1px solid var(--color-stone-200);
-  border-bottom: none;
-  background-color: #CCFBF1;
-  gap: 15px;
-  padding: 10px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-.icon-card__header img {
-  width: 46px;
-  height: 46px;
-  border-radius: 8px;
-  background-color: #99F6E4;
-  padding: 8px;
-}
-.icon-card__title {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--color-text);
-  margin: 0;
-}
-.icon-card__list {
-  padding: 10px;
-  padding-left: 30px;
+
+.case-howmightwe__goals-list {
+  /* flex: 0 0 760px; */
+	 width: 100%;
+  max-width: 760px; /* если нужно ограничить по горизонтали */
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 0;
+  margin-block-start: 0;
+	margin-block-end: 0;
+  padding: 0;
+	padding-top: 20px;
+  list-style: none;
 }
-.icon-card__list li {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  list-style: disc;
+
+.case-goals__list {
+	margin: 0;
+	padding-inline-start:0;
 }
-.icon-card__list li strong {
-  font-weight: 700;
+.case-howmightwe__row--wide {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.insight-card {
-  border-radius: 8px;
+
+.case-insight {
+    border-radius: 8px;
   overflow: hidden;
   background-color: white;
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
-.insight-card__header {
+
+.case-insight__header {
   border-top: 1px solid var(--color-stone-200);
   border-left: 1px solid var(--color-stone-200);
   border-right: 1px solid var(--color-stone-200);
@@ -850,13 +935,31 @@ body {
   gap: 15px;
   padding: 10px;
 }
-.insight-card__title {
+
+.case-insight__icon-wrapper {
+  width: 46px;
+  height: 46px;
+  background-color: #99F6E4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-insight__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.case-insight__title {
   font-size: 18px;
   font-weight: 700;
   font-family: Inter, sans-serif;
   line-height: 100%;
+  letter-spacing: 0.5%;
 }
-.insight-card__list {
+
+.case-insight__list {
   list-style: disc;
   padding: 10px 20px;
   margin: 0;
@@ -864,61 +967,71 @@ body {
   font-size: 16px;
   line-height: 24px;
 }
-
-/* --- Вспомогательные классы и адаптив --- */
-.add-small-margin-bottom {
-  margin-bottom: 20px !important;
+/*  */
+/* Design highlights - reusable article container */
+.case-highlights__item{
+	margin-bottom: 40px;
 }
-.add-big-margin-bottom {
+.case-highlights__title {
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0.5%;
+  text-align: center;
+  margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.case-highlights__visual-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.case-highlights__visual-image--wide {
+  width: 390px;
+}
+
+.case-highlights__visual-image--narrow {
+  width: 349px;
+}
+
+.case-highlights__visual-image--900 {
+  width: 900px;
+}
+
+
+.case-highlights__visual {
+  background-color: var(--color-blue-100, #DBEAFE);
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+	border-radius: 8px;
+	margin-bottom: 40px;
+}
+
+
+/*  */
+
+.case-highlights__title-no-top-margin {
+	margin-top: 0;
+}
+/* .case-howmightwe__right {
+  outline: 1px solid red;
+}
+
+.case-howmightwe__goals-item {
+  outline: 1px solid limegreen;
+} */
+.add-small-margin-bottom{
+	margin-bottom:20px !important;
+}
+.add-big-margin-bottom{
+	margin-bottom: 40px;
 }
 p.add-small-margin-bottom {
   margin-bottom: 20px !important;
-}
-
-/* --- Адаптив для двухколоночников и highlights --- */
-@media (max-width: 900px) {
-  .case-highlights__visual {
-    flex-direction: column;
-    gap: 24px;
-  }
-  .twocol {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .twocol__heading,
-  .twocol__main {
-    flex: unset;
-    max-width: 100%;
-    width: 100%;
-  }
-  .case-overview__content {
-    flex-direction: column;
-    gap: 32px;
-  }
-  .case-overview__meta {
-    max-width: 100%;
-    flex: unset;
-  }
-}
-
-@media (max-width: 600px) {
-  .case-highlights__visual-image--wide,
-  .case-highlights__visual-image--narrow,
-  .case-highlights__visual-image--900,
-  .case-highlights__visual-image--large {
-    width: 100% !important;
-    max-width: 100%;
-    height: auto;
-  }
-  .case-hero__title {
-    font-size: 36px;
-    line-height: 110%;
-  }
-  .case-context__term,
-  .twocol__heading {
-    font-size: 20px;
-    flex: unset;
-    white-space: normal;
-  }
 }
