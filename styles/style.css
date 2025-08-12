@@ -5,6 +5,7 @@
   --color-border: #D6D3D1;
   --color-stone-200: #E7E5E4;
   --color-blue-bg: #DBEAFE;
+  --Components-Static-Icons-Soft-Yellow-Bg-Color: #FEF9C3;
 }
 
 /* --- Общие сбросы и контейнер --- */
@@ -865,9 +866,459 @@ body {
   line-height: 24px;
 }
 
+/* Case2 */
+
+
+.case-howmightwe__visual-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* border-radius: 12px; */
+  background: #fff;
+}
+.inline-notice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px 18px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #1F2937;
+  border: 1px solid var(--color-stone-200);
+}
+.inline-notice__icon-bg {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background: #FEE2E2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.inline-notice__icon img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+.inline-notice strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+.case-howmightwe__visual {
+  background: var(--color-blue-bg, #DBEAFE);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 44px 0;
+  margin-bottom: 32px;
+}
+
+/* For “card-size” images (like 'Hello Jenny!') */
+.case-howmightwe__visual-image--card {
+  max-width: 360px;
+  border-radius: 10px;
+}
+
+.case-howmightwe__visual-image--wide {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.feedback-quotes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 32px 0 0 0;
+}
+.feedback-quote {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 16px;
+  color: #1F2937;
+  border: 1px solid var(--Colors-Stone-200, #E7E5E4);
+}
+
+.feedback-quote__icon-bg {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background: var(--Components-Static-Icons-Soft-Yellow-Bg-Color, #FEF9C3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feedback-quote__icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.feedback-quote__text {
+  font-size: 16px;
+  color: #1F2937;
+  line-height: 1.4;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/*  */
+
+.design-northstars {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.design-northstar-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 16px;
+  color: #1F2937;
+  border: 1px solid var(--Colors-Stone-200, #E7E5E4);
+}
+
+.design-northstar-card__icon-bg {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background: var(--Components-Static-Icons-Soft-Blue-Bg-Color, #DBEAFE);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.design-northstar-card__icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.design-northstar-card__text {
+  font-size: 16px;
+  color: #1F2937;
+  line-height: 1.4;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.design-northstar-card__text strong {
+  font-weight: 700;
+  color: #1E293B;
+}
+
+.case-highlights__visual-col--left {
+  width: 390px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.case-highlights__visual-col--right {
+  width: 350px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* ========== Design highlights (base, shared by all cases) ========== */
+.case-highlights {
+  padding-top: 40px;
+}
+.case-highlights__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  text-align: center;
+  color: var(--color-text);
+  margin: 0 0 40px 0;
+}
+.case-highlights__list {
+  display: flex;
+  flex-direction: column;
+}
+.case-highlights__item {
+  margin-bottom: 40px;
+}
+.case-highlights__item:last-child {
+  margin-bottom: 0;
+}
+.case-highlights__visual {
+  background-color: var(--color-blue-100, #DBEAFE);
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+.case-highlights__visual-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.case-highlights__visual-image--wide { /* generic 390px image */
+  width: 390px;
+}
+.case-highlights__visual-image--narrow { /* generic 349px image */
+  width: 349px;
+}
+.case-highlights__visual-image--900,
+.case-highlights__visual-image--large {
+  width: 900px;
+}
+
+/* ========== Case2-specific additions (scoped by unique child classes) ========== */
+/* First block layout: left image 390px, right cards column 350px */
+.case-highlights__visual .case-highlights__visual-col--left {
+  width: 390px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.case-highlights__visual .case-highlights__visual-col--right {
+  width: 350px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.case-highlights__card-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Feature widget card (second card in the right column) */
+.case-highlights__card-list .case-widget-card--feature {
+  border: 1px solid #93C5FD; /* soft blue */
+  border-radius: 10px;
+  background: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  line-height: 24px;
+  color: var(--color-text, #1F2937);
+  font-family: 'Inter', sans-serif;
+}
+.case-widget-card--no-padding{
+  padding: 0;
+}
+
+/* Header: icon, title/subtitle, arrow */
+.case-highlights__card-list .case-widget-card__feature-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.case-highlights__card-list .case-widget-card__icon-bg--feature {
+  background: var(--color-blue-bg, #DBEAFE);
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.case-highlights__card-list .case-widget-card__feature-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+.case-highlights__card-list .case-widget-card__feature-subtitle {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #475569; /* slate-600 */
+}
+.case-highlights__card-list .case-widget-card__feature-arrow {
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+
+/* Main: image + vertical description (column) */
+.case-highlights__card-list .case-widget-card__feature-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.case-highlights__card-list .case-widget-card__feature-img {
+  width: 90px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.case-highlights__card-list .case-widget-card__feature-desc {
+  display: flex;
+  flex-direction: column; /* column per your spec */
+  gap: 6px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.case-highlights__card-list .case-widget-card__feature-desc strong {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #111827;
+}
+.case-highlights__card-list .case-widget-card__feature-btn {
+  align-self: flex-start;
+  margin-top: 4px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: #1D4ED8; /* blue-700 */
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 34px;
+  cursor: default; /* purely presentational */
+}
+
+/* ========== Utility width modifiers for other case2 blocks (opt-in via HTML) ========== */
+/* Block 2: single centered image 830px */
+.case-highlights__visual-image--w830 { width: 830px; }
+/* Block 3: single image 390px */
+.case-highlights__visual-image--w390 { width: 390px; }
+/* Block 4: right column (cards stack) target width 358px – wrap that column with this class */
+.case-highlights__visual-col--right-358 { width: 358px; }
+/* Block 5: two images 390px each — reuse --w390 or --wide as needed */
+
+
+/* База для маленьких карточек в правой колонке */
+/* Base card */
+.case-widget-card {
+  display: flex;
+  gap: 14px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text, #1F2937);
+  line-height: 24px; /* matches your spec */
+  margin-bottom: 20px; /* space under card */
+}
+
+.case-widget-card--no-padding{
+  padding: 0;
+}
+/* Notice variant */
+.case-widget-card--notice {
+  align-items: flex-start; /* icon top-aligned */
+  border: 1px solid var(--Colors-Blue-400, #60A5FA); /* blue border */
+}
+
+/* Icon container */
+.case-widget-card__icon-bg {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: var(--color-blue-bg)
+}
+
+/* Icon itself */
+.case-widget-card__icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Content text */
+.case-widget-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.case-widget-card__content strong {
+  font-weight: 700;
+}
+
+/* Highlight2 */
+
+/* Second highlight specific */
+.case-highlights__item--overlay .case-highlights__visual {
+  position: relative;
+  background-color: var(--color-blue-100, #DBEAFE);
+  padding: 20px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.case-highlights__visual--centered .case-highlights__visual-image--bg {
+  width: 830px;
+  height: auto;
+  display: block;
+}
+
+.case-widget-card--overlay {
+  position: absolute;
+  right: 40px; /* adjust to match screenshot position */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 390px;
+}
+
+/* Ensure card appears above image */
+.case-widget-card--overlay {
+  z-index: 1;
+}
+
+/* Position overlay card for 2nd highlight */
+.case-highlights__item--overlay .case-highlights__visual {
+  position: relative; /* Make this the positioning context */
+}
+
+.case-highlights__item--overlay .case-widget-card--notice {
+  position: absolute;
+  right: 125px;
+  top: 131px;
+}
+
+.case-widget-card-390 {
+  width: 390px;
+}
+
 /* --- Вспомогательные классы и адаптив --- */
 .add-small-margin-bottom {
   margin-bottom: 20px !important;
+}
+.add-small-margin-top {
+  margin-top: 20px !important;
 }
 .add-big-margin-bottom {
   margin-bottom: 40px;
@@ -875,6 +1326,37 @@ body {
 p.add-small-margin-bottom {
   margin-bottom: 20px !important;
 }
+
+
+
+/* Responsive tweak for stacked layout */
+@media (max-width: 900px) {
+  .case-highlights__visual {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .case-highlights__visual-image--wide,
+  .case-highlights__visual-image--narrow,
+  .case-highlights__visual-image--900,
+  .case-highlights__visual-image--large,
+  .case-highlights__visual-image--w830,
+  .case-highlights__visual-image--w390 {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .feedback-quotes {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+
 
 /* --- Адаптив для двухколоночников и highlights --- */
 @media (max-width: 900px) {
