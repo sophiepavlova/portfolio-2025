@@ -2,10 +2,14 @@
   --color-background: #fafaf9;
   --color-text: #1F2937;
   --color-accent: #E11D48;
+  --color-accent-on-hover:#BE123C;
+;
+
   --color-border: #D6D3D1;
   --color-stone-200: #E7E5E4;
   --color-blue-bg: #DBEAFE;
   --Components-Static-Icons-Soft-Yellow-Bg-Color: #FEF9C3;
+  scrollbar-gutter: stable;
 }
 
 /* --- Общие сбросы и контейнер --- */
@@ -32,10 +36,24 @@ body {
   border: 0;
 }
 .container {
-  max-width: 1080px;
-  width: 100%;
+  width: 1080px;        /* content width stays fixed */
+  max-width: calc(100% - 200px); /* allow shrink with side margins */
   margin: 0 auto;
-  box-sizing: border-box;
+  box-sizing: content-box; /* exclude padding from width */
+  padding-inline: 0;   /* no extra padding at large sizes */
+}
+
+:where(h2) {
+  line-height: 120%;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 24px; /* smaller padding on smaller screens */
+    box-sizing: border-box; /* include padding when responsive */
+  }
 }
 @media (max-width: 768px) {
   .container {
@@ -76,9 +94,18 @@ body {
   margin: 0;
   padding: 0;
 }
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; 
+}
+
 .site-nav a.active {
   color: var(--color-accent);
 }
+
+
+
 .site-header {
   position: sticky;
   top: 0;
@@ -87,11 +114,17 @@ body {
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(4px);
   background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; 
 }
+.site-nav a {
+  border-bottom: 2px solid transparent; /* reserve space always */
+}
+
+
 
 /* --- Hero --- */
 .hero {
-  background-color: #fff;
   padding-block: 30px 50px;
 }
 .hero__content {
@@ -157,12 +190,19 @@ body {
   background-color: var(--color-accent);
   color: #fff;
 }
+.button--primary:hover{
+  background-color: var(--color-accent-on-hover);
+}
 .button--secondary {
   background-color: #fff;
   color: var(--color-text);
   border: 1px solid var(--color-text);
 }
+.button--secondary:hover {
+  border: 1px solid #6B7280;
+  color: #6B7280;
 
+}
 /* --- Selected Work --- */
 .selected-work {
   padding-top: 0;
@@ -269,7 +309,6 @@ body {
 
 /* --- Footer --- */
 .site-footer {
-  background-color: #fff;
   padding-block: 20px 40px;
   border-top: 1px solid var(--color-border);
 }
@@ -305,7 +344,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 30px;
   color: #57534E;
   margin-bottom: 0;
 }
@@ -357,7 +396,8 @@ body {
 .about-hero__content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
+  align-items: flex-start; /* align both columns to the top */
   gap: 40px;
 }
 .about-hero__item {
@@ -371,6 +411,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-top: 40px;
 }
 .about-hero__image {
   width: 100%;
@@ -386,7 +427,7 @@ body {
   color: #57534E;
 }
 .about-hero__heading {
-  font-family: 'Campaign Serif', serif;
+  font-family: 'campaign-serif', serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 140%;
@@ -403,6 +444,49 @@ body {
   margin: 0;
   padding-bottom: 20px;
 }
+
+.about-email{
+text-decoration: underline;
+color: #2563EB;
+}
+
+.hover-preview {
+  position: relative;
+  display: inline;                 /* let it behave like normal text */
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+}
+
+.hover-preview__text {
+  position: relative;
+  display: inline;                 /* keeps wrapping ability */
+  white-space: normal;              /* ensure wrapping allowed */
+}
+
+.hover-preview__img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 204px;
+  max-width: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+  top: 1.5em; /* default position below */
+}
+
+/* Show image when text or image hovered */
+.hover-preview:hover .hover-preview__img,
+.hover-preview__img:hover {
+  opacity: 1;
+}
+
+
+
 
 /* --- Case Hero --- */
 .case-hero {
@@ -485,7 +569,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 100%;
+  line-height: 24px;
   letter-spacing: 0.005em;
   color: #1E40AF;
 }
@@ -533,7 +617,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 36px;
-  line-height: 100%;
+  line-height: 120%;
   letter-spacing: 0.005em;
   text-align: center;
   color: var(--color-text);
@@ -573,15 +657,22 @@ body {
   color: var(--color-text);
   margin: 0;
 }
+.case-context__desc {
+  flex: 0 0 760px;   /* no grow, no shrink, fixed basis */
+  max-width: 100%;   /* still allow shrinking on small screens */
+}
+
 .case-context__desc p {
   margin-bottom: 16px;
 }
+
 .case-context__list {
   margin-top: 16px;
   padding-left: 18px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  /* gap: 8px; */
+  padding-left: 1.5em;
 }
 .case-context__list li {
   font-family: 'Inter', sans-serif;
@@ -592,15 +683,24 @@ body {
   color: var(--color-text);
 }
 
+ul:not([style*="list-style-type: none"]) {
+  padding-left: 1.5em; /* extra space for bullet lists */
+}
+
+ul:not(.no-bullets):not([class*="no-bullet"]) {
+  padding-left: 1.5em;
+}
+
 /* --- How Might We --- */
 .case-howmightwe {
   padding-top: 40px;
 }
+
 .case-howmightwe__heading {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 36px;
-  line-height: 100%;
+  line-height: 120%;
   letter-spacing: 0.005em;
   text-align: center;
   color: var(--color-text);
@@ -653,10 +753,11 @@ body {
   flex-direction: column;
   max-width: 760px;
   width: 100%;
+  gap: 20px;
 }
-.twocol__main p + p {
+/* .twocol__main p + p {
   margin-top: 20px;
-}
+} */
 .twocol__main p + ul {
   margin-top: 0;
 }
@@ -674,7 +775,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  /* gap: 4px; */
   padding-bottom: 16px;
 }
 .twocol__textblock li {
@@ -689,7 +790,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 36px;
-  line-height: 100%;
+  line-height: 120%;
   letter-spacing: 0.005em;
   text-align: center;
   color: var(--color-text);
@@ -732,15 +833,15 @@ body {
 }
 
 /* --- Goals-list, Icon-card, Insight-card и их паттерны (универсальные) --- */
-.goals-list {
+/* .goals-list {
   width: 100%;
   max-width: 760px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
   margin-block-start: 0;
   margin-block-end: 0;
-  padding: 0;
+  padding: 0 !important;
   padding-top: 20px;
   list-style: none;
 }
@@ -756,6 +857,10 @@ body {
   max-width: 760px;
   width: 100%;
 }
+.goals-list__item-no-right-padding{
+  padding-right: 0;
+  padding-left: 0;
+}
 .icon-box {
   width: 46px;
   height: 46px;
@@ -770,6 +875,86 @@ body {
   width: 24px;
   height: 24px;
 }
+
+.icon-box-margin-left{
+  margin-left: 10px;
+} */
+
+/* .icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background-color: #99F6E4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box__icon {
+  width: 24px;
+  height: 24px;
+} */
+/* Goals list — final, safe across case1/case2 */
+ul:not(.goals-list) li {
+  padding-left: 1.5em;
+}
+
+
+.goals-list {
+  padding-left: 0 !important;  /* reset the bullet indent */
+  margin-left: 0;              /* in case browser default margin is adding space */
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;                /* replaces li margin-bottom */
+  margin: 0;
+  padding: 0;               /* no extra width from UL */
+  list-style: none;         /* we use icons, not bullets */
+}
+
+.goals-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;                /* space between icon and text */
+  padding: 10px;
+  border: 1px solid var(--color-stone-200);
+  border-radius: 8px;
+  background-color: #fff;
+  box-sizing: border-box;   /* ← critical so padding+border don't push width */
+  max-width: 100%;          /* stay inside container */
+}
+
+/* 46px square behind the 24px icon */
+.icon-box {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  background-color: var(--color-blue-bg);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.icon-box__icon { width: 24px; height: 24px; }
+
+/* Let the text column wrap and actually shrink */
+.goals-list__item > span:last-child,
+.goals-list__text {
+  flex: 1 1 auto;
+  min-width: 0;             /* ← crucial for flex overflow fixes */
+  overflow-wrap: anywhere;
+}
+
+/* If the list lives inside a flex column, let it shrink too */
+.twocol__main { min-width: 0; }
+
+/* 😩 */
+.icon-box-green{
+background-color: #99F6E4;
+}
+
 .goals-list__text {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -777,6 +962,7 @@ body {
   line-height: 24px;
   color: var(--color-text);
   margin: 0;
+  max-width: 679px;
 }
 .goals-list__text strong {
   font-weight: 700;
@@ -784,17 +970,19 @@ body {
 .icon-card {
   margin-top: 20px;
   width: 760px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-radius: 8px;
+  /* border-top-right-radius: 8px;
+  border-top-right-radius: 8px; */
   background-color: white;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--color-stone-200);
 }
 .icon-card__header {
   display: flex;
   align-items: center;
-  border: 1px solid var(--color-stone-200);
-  border-bottom: none;
+  border-bottom: 1px solid var(--color-stone-200);
+  /* border-bottom: none; */
   background-color: #CCFBF1;
   gap: 15px;
   padding: 10px;
@@ -802,11 +990,11 @@ body {
   border-top-right-radius: 8px;
 }
 .icon-card__header img {
-  width: 46px;
-  height: 46px;
+  /* width: 46px;
+  height: 46px; */
   border-radius: 8px;
-  background-color: #99F6E4;
-  padding: 8px;
+  /* background-color: #99F6E4; */
+  /* padding: 8px; */
 }
 .icon-card__title {
   font-family: 'Inter', sans-serif;
@@ -821,7 +1009,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 0;
+  margin: 10px;
 }
 .icon-card__list li {
   font-family: 'Inter', sans-serif;
@@ -837,14 +1025,11 @@ body {
   border-radius: 8px;
   overflow: hidden;
   background-color: white;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  border: 1px solid var(--color-stone-200);
 }
 .insight-card__header {
-  border-top: 1px solid var(--color-stone-200);
-  border-left: 1px solid var(--color-stone-200);
-  border-right: 1px solid var(--color-stone-200);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-bottom: 1px solid var(--color-stone-200);
   background-color: var(--color-green-soft-bg, #CCFBF1);
   display: flex;
   align-items: center;
@@ -929,6 +1114,8 @@ body {
   max-width: 100%;
 }
 
+.case-howmightwe__block-margin-bottom-less{
+margin-bottom: 24px;
 
 .feedback-quotes {
   display: grid;
@@ -1045,7 +1232,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 36px;
-  line-height: 100%;
+  line-height: 120%;
   letter-spacing: 0.005em;
   text-align: center;
   color: var(--color-text);
@@ -1320,13 +1507,18 @@ body {
 .add-small-margin-top {
   margin-top: 20px !important;
 }
+.add-big-margin-top {
+  margin-top: 40px !important;
+}
 .add-big-margin-bottom {
   margin-bottom: 40px;
 }
 p.add-small-margin-bottom {
   margin-bottom: 20px !important;
 }
-
+.insight-card:first-child {
+  margin-top: 20px; /* fallback for last element in parent */
+}
 
 
 /* Responsive tweak for stacked layout */
@@ -1335,6 +1527,39 @@ p.add-small-margin-bottom {
     flex-direction: column;
     gap: 24px;
   }
+
+  .about-hero__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-hero__image-block {
+    margin-bottom: 24px; /* space between portrait and text */
+  }
+
+  .about-hero__image-block img {
+    width: 500px;
+    max-width: 100%; /* in case screen is even smaller */
+    height: auto;
+  }
+  .about-hero__image-block {
+  
+  padding-top: 0px;
+}
+
+  .about-hero__caption{
+    max-width: 500px;
+    text-align: left; /* keep text normal */
+  }
+  .about-hero__text-block {
+    max-width: 600px;
+    width: 100%;
+    text-align: left; /* keep text normal */
+  }
+}
+.no-margin-bottom{
+  margin-bottom: 0;
 }
 @media (max-width: 600px) {
   .case-highlights__visual-image--wide,

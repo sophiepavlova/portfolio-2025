@@ -17,7 +17,7 @@
 			<nav class="site-nav">
 				<ul>
 					<li><a href="index.html" class="active">Home</a></li>
-					<li><a href="#work">Work</a></li>
+					<li><a href="#selected-work">Work</a></li>
 					<li><a href="about.html">About</a></li>
 					<li>
 						<a href="https://docs.google.com/document/d/.../view" target="_blank" rel="noopener noreferrer">
@@ -59,11 +59,11 @@
 	</div>
 </section>
 
-<section class="selected-work">
+<section id="selected-work" class="selected-work">
   <div class="container">
     <h2 class="selected-work__title">Selected Work</h2>
     <div class="selected-work__cards">
-      <article class="work-card" aria-labelledby="work1-title" role="article">
+      <article class="work-card " aria-labelledby="work1-title" role="article">
         <a href="case1.html" class="work-card__link" aria-label="Read more about Thrive Health case study"></a>
 
         <div class="work-card-upper">
@@ -71,7 +71,7 @@
             <h3 id="work1-title" class="work-card__title">Thrive Health</h3>
             <p class="work-card__subtitle">Streamlining pediatric ER triage with 92% accuracy</p>
             <p class="work-card__description">
-              End-to-end design of a digital triage tool for a Canadian children’s hospital, aimed at reducing nurse burden and improving the ER experience for families.
+              End-to-end design of a digital triage tool for a Canadian children’s hospital, aimed at&nbsp;reducing nurse burden and improving the ER experience for families.
             </p>
           </div>
           <div class="work-card__icon-wrapper" aria-hidden="true">
@@ -84,13 +84,13 @@
         </div>
       </article>
 
-			<article class="work-card work-card--blue" aria-labelledby="work1-title" role="article">
+			<article class="work-card work-card--blue" aria-labelledby="work2-title" role="article">
         <a href="case2.html" class="work-card__link" aria-label="Read more about Thrive Health case study"></a>
 
         <div class="work-card-upper">
           <div class="work-card__general-info">
-            <h3 id="work1-title" class="work-card__title work-card__title--blue">Thrive Health</h3>
-            <p class="work-card__subtitle">Redesigning a seniors' health app for clarity and engagement</p>
+            <h3 id="work2-title" class="work-card__title work-card__title--blue">Thrive Health</h3>
+            <p class="work-card__subtitle">Redesigning a seniors' health app for clarity and engagement</p>
             <p class="work-card__description">
               Transformed a basic MVP into a full-featured wellness platform, creating a more intuitive, accessible experience tailored to older users.
             </p>
@@ -105,12 +105,12 @@
         </div>
       </article>
 
-			<article class="work-card work-card--yellow" aria-labelledby="work1-title" role="article">
+			<article class="work-card work-card--yellow" aria-labelledby="work3-title" role="article">
         <a href="" class="work-card__link" aria-label="Read more about Thrive Health case study"></a>
 
         <div class="work-card-upper">
           <div class="work-card__general-info">
-            <h3 id="work1-title" class="work-card__title work-card__title--yellow">Heritage4future</h3>
+            <h3 id="work3-title" class="work-card__title work-card__title--yellow">Heritage4future</h3>
             <p class="work-card__subtitle">Coming soon: Improving impact through storytelling</p>
             <p class="work-card__description">
               Redesigned a donation-based charity website to strengthen narrative, leading to a 31% rise in unique visitors and over $70,000 raised in the next campaign cycle.
@@ -123,7 +123,7 @@
 
         <div class="work-card__image-wrapper">
           <img src="./assets/images/Case3_sample.jpg"
-					" alt="Screenshot of the Thrive Health triage tool" class="work-card__image" />
+					alt="Screenshot of the Thrive Health triage tool" class="work-card__image" />
         </div>
       </article>
     </div>
@@ -171,6 +171,6 @@
 
   </div>
 </footer>
-  <script src="./scripts/main.js"></script>
+  <script src="./scripts/main.js" defer></script>
 </body>
 </html>
