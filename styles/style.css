@@ -833,72 +833,15 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 }
 
 /* --- Goals-list, Icon-card, Insight-card и их паттерны (универсальные) --- */
-/* .goals-list {
-  width: 100%;
-  max-width: 760px;
-  display: flex;
-  flex-direction: column;
 
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding: 0 !important;
-  padding-top: 20px;
-  list-style: none;
-}
-.goals-list__item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 10px;
-  border: 1px solid var(--color-stone-200);
-  border-radius: 8px;
-  background-color: #fff;
-  margin-bottom: 20px;
-  max-width: 760px;
-  width: 100%;
-}
-.goals-list__item-no-right-padding{
-  padding-right: 0;
-  padding-left: 0;
-}
-.icon-box {
-  width: 46px;
-  height: 46px;
-  background-color: var(--color-blue-bg);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.icon-box__icon {
-  width: 24px;
-  height: 24px;
-}
-
-.icon-box-margin-left{
-  margin-left: 10px;
-} */
-
-/* .icon-box {
-  width: 46px;
-  height: 46px;
-  border-radius: 8px;
-  background-color: #99F6E4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon-box__icon {
-  width: 24px;
-  height: 24px;
-} */
 /* Goals list — final, safe across case1/case2 */
-ul:not(.goals-list) li {
+/* ul:not(.goals-list) li {
+  padding-left: 1.5em;
+} */
+/* Bullet lists — add a bit more space before bullets */
+ul:not(.goals-list):not(.quote-list):not(.principles-list) {
   padding-left: 1.5em;
 }
-
 
 .goals-list {
   padding-left: 0 !important;  /* reset the bullet indent */
@@ -1116,6 +1059,7 @@ background-color: #99F6E4;
 
 .case-howmightwe__block-margin-bottom-less{
 margin-bottom: 24px;
+}
 
 .feedback-quotes {
   display: grid;
