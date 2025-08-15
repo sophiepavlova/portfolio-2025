@@ -628,7 +628,7 @@ color: #2563EB;
   flex-direction: column;
   gap: 40px;
   width: 100%;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 .case-context__item {
   display: flex;
@@ -858,7 +858,8 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
 
 .goals-list__item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  /* align-items: flex-start; */
   gap: 12px;                /* space between icon and text */
   padding: 10px;
   border: 1px solid var(--color-stone-200);
@@ -911,7 +912,7 @@ background-color: #99F6E4;
   font-weight: 700;
 }
 .icon-card {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   width: 760px;
   border-radius: 8px;
   /* border-top-right-radius: 8px;
@@ -989,9 +990,14 @@ background-color: #99F6E4;
   list-style: disc;
   padding: 10px 20px;
   margin: 0;
+  padding-left: 30px !important;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
 }
 
 /* Case2 */
@@ -1043,7 +1049,7 @@ background-color: #99F6E4;
   justify-content: center;
   align-items: center;
   padding: 44px 0;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
 }
 
 /* For “card-size” images (like 'Hello Jenny!') */
@@ -1065,7 +1071,8 @@ margin-bottom: 24px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
-  margin: 32px 0 0 0;
+  margin: 0;
+  /* margin: 32px 0 0 0; */
 }
 .feedback-quote {
   display: flex;
@@ -1110,7 +1117,7 @@ margin-bottom: 24px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  margin-top: 24px;
+  /* margin-top: 24px; */
 }
 
 .design-northstar-card {
@@ -1122,6 +1129,7 @@ margin-bottom: 24px;
   font-size: 16px;
   color: #1F2937;
   border: 1px solid var(--Colors-Stone-200, #E7E5E4);
+  background-color: white;
 }
 
 .design-northstar-card__icon-bg {
@@ -1455,7 +1463,7 @@ margin-bottom: 24px;
   margin-top: 40px !important;
 }
 .add-big-margin-bottom {
-  margin-bottom: 40px;
+  margin-bottom: 40px !important;
 }
 p.add-small-margin-bottom {
   margin-bottom: 20px !important;
