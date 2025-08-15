@@ -12,7 +12,18 @@
   scrollbar-gutter: stable;
 }
 
-/* --- Общие сбросы и контейнер --- */
+/* Base text color across the site */
+html, body {
+  color: var(--color-text);
+  background-color: var(--color-bg); /* optional */
+}
+
+/* Ensure all headings inherit the base unless explicitly changed */
+h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption {
+  color: inherit;
+}
+
+
 html {
   box-sizing: border-box;
 }
@@ -23,6 +34,16 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: var(--color-background);
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+}
+
+.text-accent { 
+  color: var(--color-accent);
+}
+
+h3 {
+  line-height: 1.2; /* or 1, depending on how tight you want it */
 }
 .visually-hidden {
   position: absolute;
@@ -518,7 +539,7 @@ color: #2563EB;
   padding-bottom: 0;
 }
 .case-image__wrapper {
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   border-radius: 8px;
   overflow: hidden;
 }
@@ -806,6 +827,10 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 .case-highlights__item:last-child {
   margin-bottom: 0;
 }
+
+.corners-rounded {
+  border-radius: 8px;
+}
 .case-highlights__visual {
   background-color: var(--color-blue-100, #DBEAFE);
   padding: 20px 0;
@@ -1084,6 +1109,7 @@ margin-bottom: 24px;
   font-size: 16px;
   color: #1F2937;
   border: 1px solid var(--Colors-Stone-200, #E7E5E4);
+  /* font-weight: 700; */
 }
 
 .feedback-quote__icon-bg {
@@ -1108,7 +1134,7 @@ margin-bottom: 24px;
   color: #1F2937;
   line-height: 1.4;
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 /*  */
