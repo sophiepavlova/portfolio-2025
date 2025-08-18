@@ -26,8 +26,46 @@
           </li>
         </ul>
       </nav>
+
+      <!-- Hamburger button (shown at max-width: 768px) -->
+      <button class="menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <!-- Hamburger SVG -->
+        <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z" stroke="#1F2937"/>
+          <path d="M16.3335 23H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.3335 18H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.3335 28H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      
     </div>
   </header>
+  
+  <!-- Mobile menu panel -->
+  <aside id="mobile-menu" class="mobile-menu" tabindex="-1" aria-hidden="true">
+    <button class="menu-close" aria-label="Close menu">
+      <!-- Close SVG -->
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z" stroke="#1F2937"/>
+        <path d="M28 18L18 28" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18 18L28 28" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <nav class="mobile-menu__nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#selected-work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="https://docs.google.com/document/d/.../view" target="_blank" rel="noopener noreferrer">
+            Resume
+            <img src="./assets/icons/external-link.svg" alt="" class="icon" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
 
   <!-- Main Case Content -->
   <main>
@@ -42,7 +80,7 @@
       </div>
     </section>
 
-    <!-- Картинка -->
+    <!-- Image block -->
     <section class="case-image" aria-labelledby="case-image1-title">
       <div class="container">
         <h2 id="case-image1-title" class="visually-hidden">Interface overview: triage workflow screen</h2>
@@ -59,7 +97,7 @@
     <!-- Overview -->
     <section class="case-overview" aria-labelledby="case-overview-title">
       <div class="container case-overview__content">
-        <!-- Левая колонка -->
+        <!-- Left column -->
         <div class="case-overview__description">
           <h2 id="case-overview-title" class="case-overview__heading">Project overview</h2>
           <p class="case-overview__paragraph">
@@ -75,7 +113,7 @@
             <strong>Note:</strong> some details of the project have been modified to comply with the NDA.
           </aside>
         </div>
-        <!-- Правая колонка -->
+        <!-- Right column -->
         <dl class="case-overview__meta">
           <div class="case-overview__meta-item">
             <dt>Role</dt>
@@ -135,14 +173,14 @@
       </div>
     </section>
 
-    <!-- How Might We (универсальные паттерны) -->
+    <!-- How Might We (reusable patterns) -->
     <section class="case-howmightwe" aria-labelledby="case-howmightwe-title">
       <div class="container">
         <h2 id="case-howmightwe-title" class="case-howmightwe__heading">
           How might we... help young patients and their caregivers navigate the ER experience?
         </h2>
 
-        <!-- Картинка (может остаться уникальным блоком) -->
+        <!-- Image (unique block) -->
         <section class="case-howmightwe__block" aria-labelledby="case-howmightwe-1-title">
           <h3 id="case-howmightwe-1-title" class="visually-hidden">
             Visual example: helping patients navigate the ER
@@ -156,7 +194,7 @@
           </figure>
         </section>
 
-        <!-- Две колонки: Research and approach (архитектурный паттерн) -->
+        <!-- Two columns: Research and approach (layout pattern) -->
         <section class="case-howmightwe__block" aria-labelledby="case-howmightwe-2-title">
           <div class="twocol twocol--wide">
             <h3 id="case-howmightwe-2-title" class="twocol__heading">
@@ -253,7 +291,7 @@
           </div>
         </section>
 
-        <!-- Картинка (flow) -->
+        <!-- Flow diagram-->
         <section class="case-howmightwe__block" aria-labelledby="case-howmightwe-4-title">
           <h3 id="case-howmightwe-4-title" class="visually-hidden">
             System-level flow for the triage intake process
@@ -267,7 +305,7 @@
           </figure>
         </section>
 
-        <!-- Две колонки: User flows & mapping -->
+        <!-- Two columns: User flows & mapping -->
         <section class="case-howmightwe__block case-howmightwe__block-margin-bottom-less" aria-labelledby="case-howmightwe-5-title">
           <div class="twocol twocol--wide">
             <h3 id="case-howmightwe-5-title" class="twocol__heading">
@@ -292,7 +330,7 @@
           </div>
         </section>
 
-        <!-- Картинка (user flow) -->
+        <!-- User flow diagram -->
         <section class="case-howmightwe__block" aria-labelledby="case-howmightwe-6-title">
           <h3 id="case-howmightwe-6-title" class="visually-hidden">
             Annotated user flow diagram for the triage experience
@@ -306,7 +344,7 @@
           </figure>
         </section>
 
-        <!-- Две колонки: Prototyping and testing -->
+        <!-- Two columns: Prototyping and testing -->
         <section class="case-howmightwe__block" aria-labelledby="case-howmightwe-7-title">
           <div class="twocol twocol--wide">
             <h3 id="case-howmightwe-7-title" class="twocol__heading">
@@ -377,7 +415,7 @@
       </div>
     </section>
 
-    <!-- Highlights (оставим как есть, можно переосмыслить позже) -->
+    <!-- Highlights -->
     <section class="case-highlights" aria-labelledby="case-highlights-title">
   <div class="container">
     <h2 id="case-highlights-title" class="case-highlights__title">
@@ -386,7 +424,7 @@
 
     <div class="case-highlights__list">
 
-      <!-- Первый подблок -->
+      <!-- First sub-block -->
       <article class="case-highlights__item">
         <div class="case-highlights__visual">
           <img 
@@ -413,7 +451,7 @@
         </div>
       </article>
 
-      <!-- Второй подблок -->
+      <!-- Second sub-block -->
       <article class="case-highlights__item">
         <div class="case-highlights__visual">
           <img 
@@ -443,7 +481,7 @@
         </div>
       </article>
 
-      <!-- Третий подблок -->
+      <!-- Third sub-block -->
       <article class="case-highlights__item">
         <div class="case-highlights__visual">
           <img 
@@ -470,7 +508,7 @@
         </div>
       </article>
 
-      <!-- Четвертый подблок -->
+      <!-- Fourth sub-block -->
       <article class="case-highlights__item">
         <div class="case-highlights__visual">
           <img 
@@ -500,7 +538,7 @@
         </div>
       </article>
 
-      <!-- Пятый подблок -->
+      <!-- Fifth sub-block -->
       <article class="case-highlights__item">
         <div class="case-highlights__visual">
           <img 
@@ -527,7 +565,7 @@
 </section>
 
 
-    <!-- Collaboration and what's next (универсальный паттерн двух колонок) -->
+    <!-- Collaboration and what's next (reusable two-column pattern) -->
     <section class="case-howmightwe">
       <h2 class="case-highlights__title case-highlights__title-no-top-margin">Collaboration and what’s next</h2>
 

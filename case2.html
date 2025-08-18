@@ -26,8 +26,43 @@
           </li>
         </ul>
       </nav>
+      <!-- Hamburger button (shown at max-width: 768px) -->
+      <button class="menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+        <!-- Hamburger SVG -->
+        <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z" stroke="#1F2937"/>
+          <path d="M16.3335 23H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.3335 18H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.3335 28H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </div>
   </header>
+  
+  <!-- Mobile menu panel -->
+  <aside id="mobile-menu" class="mobile-menu" tabindex="-1" aria-hidden="true">
+    <button class="menu-close" aria-label="Close menu">
+      <!-- Close SVG -->
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z" stroke="#1F2937"/>
+        <path d="M28 18L18 28" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18 18L28 28" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <nav class="mobile-menu__nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#selected-work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="https://docs.google.com/document/d/.../view" target="_blank" rel="noopener noreferrer">
+            Resume
+            <img src="./assets/icons/external-link.svg" alt="" class="icon" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
 
   <!-- Main Case Content -->
   <main>
@@ -41,7 +76,7 @@
       </div>
     </section>
 
-    <!-- Картинка -->
+    <!-- Image -->
     <section class="case-image" aria-labelledby="case-image1-title">
       <div class="container">
         <h2 id="case-image1-title" class="visually-hidden">Hero mockup for project</h2>
@@ -58,7 +93,7 @@
     <!-- Overview -->
     <section class="case-overview" aria-labelledby="case-overview-title">
       <div class="container case-overview__content">
-        <!-- Левая колонка -->
+        <!-- Left column -->
         <div class="case-overview__description">
           <h2 id="case-overview-title" class="case-overview__heading">Project overview</h2>
           <p class="case-overview__paragraph">
@@ -71,7 +106,7 @@
             <strong>Note:</strong> some details of the project have been modified to comply with the NDA.
           </aside>
         </div>
-        <!-- Правая колонка -->
+        <!-- Right column -->
         <dl class="case-overview__meta">
           <div class="case-overview__meta-item">
             <dt>Role</dt>
@@ -136,7 +171,7 @@
           How might we… create an intuitive and engaging experience that helps older users confidently navigate, return to, and engage with their recommended content?
         </h2>
     
-        <!-- Первый двухколоночный блок -->
+        <!-- First two-colunm block -->
         <div class="case-howmightwe__block">
           <div class="twocol twocol--wide">
             <h3 class="twocol__heading">Digging deeper into the</br>problem space</h3>
@@ -146,7 +181,7 @@
                 This app helps older adults manage their health by collecting assessment data, building a health profile, and recommending wellness programs and educational resources. It also generates reports and health trends based on the assessments they take. Over time, however, the product accumulated significant UX debt:
               </p>
         
-              <!-- Главная картинка: Connected Living -->
+              <!-- Main image: Connected Living -->
               <img 
                 src="./assets/images/case2_2.png" 
                 alt="App screenshot: Connected Living library for older adults"
@@ -166,7 +201,7 @@
               </div>
               
         
-              <!-- Вторая картинка: "Hello Jenny!" -->
+              <!-- Second picture: "Hello Jenny!" -->
               <div class="case-howmightwe__visual ">
                 <img 
                   src="./assets/images/case2_Jenny.png"
@@ -188,7 +223,7 @@
                 </span>
               </div>
         
-              <!-- Третья картинка: Social health -->
+              <!-- Third picture: Social health -->
               <img 
                 src="./assets/images/case2_socialHealth.png" 
                 alt="App screenshot: Social Health"
@@ -246,7 +281,7 @@
         </div>
         
     
-       <!-- Второй двухколоночный блок -->
+       <!-- Second two-column block -->
       <div class="case-howmightwe__block">
         <div class="twocol twocol--wide">
           <h3 class="twocol__heading">Design North Stars</h3>
@@ -300,7 +335,7 @@
         </div>
       </div>
 
-        <!-- Третий двухколоночный блок -->
+        <!-- Third two-column block -->
         <div class="case-howmightwe__block">
           <div class="twocol twocol--wide">
             <h3 class="twocol__heading">Prototyping and testing</h3>
@@ -354,7 +389,7 @@
           Design highlights
         </h2>
         <div class="case-highlights__list">
-          <!-- Первый highlight -->
+          <!-- First highlight -->
           <article class="case-highlights__item">
 
             <div class="case-highlights__visual">
@@ -365,7 +400,7 @@
                   class="case-highlights__visual-image case-highlights__visual-image--wide corners-rounded" />
               </div>
               <div class="case-highlights__visual-col case-highlights__visual-col--right">
-                <!-- Тут карточки -->
+                <!-- Cards -->
                  <div class="case-highlights__card-list">
 
                   <!-- 1. Light notice card -->
@@ -483,7 +518,7 @@
                   class="case-highlights__visual-image case-highlights__visual-image--wide" />
               </div>
               <div class="case-highlights__visual-col case-highlights__visual-col--right">
-                <!-- Тут карточки -->
+                <!-- cards -->
                  <div class="case-highlights__card-list">
 
                   <!-- 1. Light notice card -->
@@ -564,8 +599,6 @@
             </div>
           </article>
         </div>
-
-          <!-- ...и так далее, всего пять блоков -->
         </div>
       </div>
     </section>

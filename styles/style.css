@@ -749,7 +749,7 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
   border-radius: 0;
 }
 
-/* --- Архитектурные паттерны: Two column layout --- */
+/* --- Architechture patterns: Two column layout --- */
 .twocol {
   display: flex;
   align-items: flex-start;
@@ -1380,7 +1380,7 @@ margin-bottom: 24px;
 /* Block 5: two images 390px each — reuse --w390 or --wide as needed */
 
 
-/* База для маленьких карточек в правой колонке */
+/* Base for small cards in the right colunm */
 /* Base card */
 .case-widget-card {
   display: flex;
@@ -1478,7 +1478,7 @@ margin-bottom: 24px;
   width: 390px;
 }
 
-/* --- Вспомогательные классы и адаптив --- */
+/* --- Class helpers and adaptives --- */
 .add-small-margin-bottom {
   margin-bottom: 20px !important;
 }
@@ -1561,7 +1561,7 @@ p.add-small-margin-bottom {
 
 
 
-/* --- Адаптив для двухколоночников и highlights --- */
+/* --- Adaptive for two columns and highlights --- */
 @media (max-width: 900px) {
   .case-highlights__visual {
     flex-direction: column;
@@ -1605,5 +1605,250 @@ p.add-small-margin-bottom {
     font-size: 20px;
     flex: unset;
     white-space: normal;
+  }
+}
+
+/* --- Mobile Menu --- */
+.mobile-menu__nav {
+  box-sizing: border-box;
+}
+.menu-toggle {
+  display: none; /* shown only at mobile/tablet */
+  /* position: absolute; */
+  /* top: 20px;         
+  right: 24px;      */
+  width: 46px;
+  height: 46px;
+  background: none;
+  border: none;
+  z-index: 2001;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  background: none;
+  border: none;
+  z-index: 2010;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Panel covers the full screen */
+.mobile-menu {
+  display: none;           /* shown only when open */
+  position: fixed;
+  top: 0; right: 0; left: 0; bottom: 0;
+  width: 100vw;
+  max-width: 100vw;
+  left:0;
+  right:0;
+  height: 100vh;
+  background: var(--color-background, #fafaf9);
+  z-index: 2000;
+  animation: mobile-menu-slide-in 300ms ease-out forwards;
+  box-shadow: none;
+  overflow-y: auto;
+}
+
+@keyframes mobile-menu-slide-in {
+  from { transform: translateX(100%); opacity: 0.7; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+.mobile-menu[aria-hidden="true"] {
+  display: none;
+}
+
+.mobile-menu[aria-hidden="false"] {
+  display: block;
+}
+
+.mobile-menu__nav {
+  width: 390px;
+  max-width: 100vw;
+  height: 264px;
+  margin-top: 80px;    /* pushes below the close button */
+  margin-left: 0;
+  padding: 20px 20px 40px 20px;
+  border-top: 1px solid var(--color-border, #D6D3D1);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.mobile-menu__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+
+.mobile-menu__nav a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  color: var(--color-text, #1F2937);
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 4px 0;
+  border-radius: 4px;
+}
+
+.mobile-menu__nav a.active,
+.mobile-menu__nav a[aria-current="page"] {
+  color: var(--color-accent, #E11D48);
+}
+
+.mobile-menu__nav a:active {
+  color: var(--color-accent-on-hover, #BE123C);
+}
+
+/* Hide desktop nav, show hamburger at mobile sizes */
+@media (max-width: 768px) {
+  .site-nav {
+    display: none !important;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Only show menu panel at mobile/tablet */
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none !important;
+  }
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 769px) {
+  .mobile-menu__nav {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+}
+
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+
+/* html, body {
+  overflow-x: hidden !important;
+} */
+
+@media (max-width: 1080px) {
+  .case-highlights__visual-image,
+  .case-highlights__visual-image--wide,
+  .case-highlights__visual-image--narrow,
+  .case-highlights__visual-image--900,
+  .case-highlights__visual-image--large,
+  .case-highlights__visual-image--w830,
+  .case-highlights__visual-image--w390 {
+    max-width: 100vw !important;
+    width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box;
+    display: block;
+  }
+}
+
+@media (max-width: 1080px) {
+  .case-highlights__visual,
+  .twocol,
+  .case-howmightwe__block {
+    max-width: 100vw !important;
+    overflow-x: auto;
+    flex-wrap: wrap;
+  }
+}
+
+.case-highlights__visual-image--900,
+.case-highlights__visual-image--large,
+.case-highlights__visual-image--w830,
+.case-highlights__visual-image--w390 {
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+
+@media (max-width: 1080px) {
+  .case-context__content,
+  .case-overview__content,
+  .twocol {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+  }
+
+  .case-overview__description,
+  .case-overview__meta,
+  .case-context__desc,
+  .case-context__item,
+  .twocol__heading,
+  .twocol__main {
+    flex: unset !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Stack each item vertically */
+  .case-context__item {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 24px; /* Add some space between items */
+  }
+  .case-context__items {
+    gap:0!important;
+  }
+  .case-context__heading {
+    margin-bottom:0;
+  }
+  /* Make sure terms and descriptions are full width, not columns */
+  .case-context__term,
+  .case-context__desc {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 8px 0 !important; /* Space after heading */
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Extra: keep a nice gap after the heading */
+  .case-context__term {
+    margin-bottom: 20px !important;
+    font-size: 20px !important;
+    line-height: 120% !important;
+  }
+  .case-context__desc {
+    margin-bottom: 0 !important;
+  }
+  .case-context__list {
+    margin-top: 8px !important;
   }
 }
