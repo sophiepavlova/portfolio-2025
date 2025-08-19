@@ -1852,3 +1852,17 @@ p.add-small-margin-bottom {
     margin-top: 8px !important;
   }
 }
+/* The size of the icons stays 46px on mobile */
+.work-card__icon {
+  width: 46px !important;
+  height: 46px !important;
+  min-width: 46px !important;
+  min-height: 46px !important;
+  max-width: 46px !important;
+  max-height: 46px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px;
+  /* Optional: keep some margin if you want finger room */
+}
