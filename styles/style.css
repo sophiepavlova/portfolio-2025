@@ -246,6 +246,7 @@ h3 {
 }
 .work-card {
   width: 100%;
+   max-width: 100%;
   background-color: #F3E8FF;
   border: 1px solid #E9D5FF;
   border-radius: 10px;
@@ -255,6 +256,7 @@ h3 {
   flex-direction: column;
   gap: 32px;
   position: relative;
+  margin: 0 auto;
 }
 .work-card--blue {
   background-color: #BFDBFE;
@@ -270,8 +272,9 @@ h3 {
 }
 .work-card-upper {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }
 .work-card__general-info {
   display: flex;
@@ -291,6 +294,8 @@ h3 {
   color: #9333EA;
   margin: 0;
   padding-bottom: 8px;
+  flex: 1 1 auto;        /* Title takes remaining space */
+  min-width: 0;  
 }
 .work-card__title--blue {
   color: #2563EB;
@@ -327,6 +332,41 @@ h3 {
   border-top-right-radius: 8px;
   display: block;
 }
+
+.work-card__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* This pushes icon to far right */
+  gap: 8px;
+  width: 100%;
+}
+
+
+.work-card__icon-wrapper {
+  flex-shrink: 0; /* Don't shrink the icon */
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-card__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.work-card__text-block {
+  max-width: 674px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .work-card__text-block {
+    max-width: 100% !important;
+  }
+}
+
 
 /* --- Footer --- */
 .site-footer {
@@ -1865,4 +1905,13 @@ p.add-small-margin-bottom {
   justify-content: center !important;
   border-radius: 8px;
   /* Optional: keep some margin if you want finger room */
+}
+
+.work-card,
+.selected-work__cards > * {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
