@@ -1777,28 +1777,28 @@ p.add-small-margin-bottom {
 }
 
 /* Hide desktop nav, show hamburger at mobile sizes */
+/* MOBILE & TABLET (≤768px): show hamburger, hide desktop nav */
 @media (max-width: 768px) {
   .site-nav {
     display: none !important;
   }
-  .menu-toggle {
+  .menu-toggle,
+  .menu-close {
     display: block;
-    right: 0 !important;
-  margin-right: 8px !important;
+    position: absolute;
+    right: 24px;
+    /* top: 20px; */
+    z-index: 2001;
+    margin: 0 !important;
   }
-}
-
-/* Only show menu panel at mobile/tablet */
-@media (min-width: 769px) {
+  .site-header,
+  .site-header .container {
+    min-height: 46px;       
+    position: relative;
+  }
   .mobile-menu {
-    display: none !important;
+    display: block;
   }
-  .menu-toggle {
-    display: none !important;
-  }
-}
-
-@media (max-width: 769px) {
   .mobile-menu__nav {
     width: 100%;
     max-width: 100%;
@@ -1806,15 +1806,59 @@ p.add-small-margin-bottom {
     padding-right: 20px;
     box-sizing: border-box;
   }
+  .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 2002; /* Must be above .mobile-menu and content */
+  background: #fff; /* or your header background color */
+}
+.menu-close {
+    display: block !important;
+    position: absolute;      /* NOT fixed: it should be relative to the menu panel */
+    right: 24px;
+    top: 20px;
+    z-index: 3010;           /* Higher than .mobile-menu */
+    width: 46px;
+    height: 46px;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .mobile-menu {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3000;
+    background: #fff;        /* Or your menu bg */
+    display: block;
+  }
+}
+
+/* DESKTOP (≥769px): hide mobile menu, show desktop nav */
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none !important;
+  }
+  .menu-toggle {
+    display: none !important;
+  }
+  /* If .menu-close ever appears on desktop, hide it too: */
+  .menu-close {
+    display: none !important;
+  }
+  .site-nav {
+    display: flex !important; /* or block, whatever you use for desktop */
+  }
 }
 
 
-.site-header .container {
+/* .site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-}
+} */
 
 
 /* html, body {
