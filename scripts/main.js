@@ -181,19 +181,97 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Close when clicking a link
+// mobileLinks?.forEach(link => {
+//   link.addEventListener('click', closeMenu);
+// });
+
 mobileLinks?.forEach(link => {
-  link.addEventListener('click', closeMenu);
+  link.addEventListener('click', function(e) {
+    const href = link.getAttribute('href');
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    // 1. External or other-page links: let browser handle, do NOT close menu
+    if (href.startsWith('http') ||
+      (href.endsWith('.html') && !href.startsWith('#') && !currentPage.startsWith(href.replace(/#.*$/, '')))) {
+      return;
+    }
+
+    // 2. Same-page anchor (e.g., #selected-work)
+    if (href.startsWith('#')) {
+      closeMenu();
+      // Optionally scroll to anchor if needed
+      return;
+    }
+
+    // 3. Link is index.html#anchor and you are ALREADY on index.html
+    // (e.g. on Home, click "Work" which is href="index.html#selected-work")
+    if (
+      href.startsWith('index.html#') &&
+      currentPage === 'index.html'
+    ) {
+      e.preventDefault();
+      closeMenu();
+      // Scroll to anchor (browser will do this by default, but you can force it if needed)
+      const anchor = href.split('#')[1];
+      if (anchor) {
+        document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });
+      }
+      return;
+    }
+
+    // 4. For any other page+anchor, let browser navigate
+    // (this covers the "from About, go to Work" scenario)
+    // Overlay stays until browser navigates away
+  });
 });
 
-// Sync active link (optional, you can use your existing logic if you prefer)
-function setActiveMobileMenuLink() {
+
+
+function setActiveMenuLinks() {
+  const allLinks = document.querySelectorAll('.site-nav a, .mobile-menu__nav a');
   const path = location.pathname.split('/').pop() || 'index.html';
-  mobileLinks.forEach(link => {
+  const hash = location.hash;
+
+  allLinks.forEach(link => {
+    // Remove old states
     link.classList.remove('active');
     link.removeAttribute('aria-current');
+    // Home (index.html), only highlight if NOT a hash to section
     if (
-      link.getAttribute('href') === path ||
-      (link.getAttribute('href').startsWith('#') && location.hash === link.getAttribute('href'))
+      link.getAttribute('href') === "index.html" &&
+      path === "index.html" &&
+      (!hash || hash === "#")
+    ) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
+    // WORK: Highlight for selected-work anchor OR on case pages
+    else if (
+      // On home + #selected-work (desktop OR mobile menu)
+      (
+        (link.getAttribute('href') === "#selected-work" ||
+         link.getAttribute('href') === "index.html#selected-work") &&
+        (
+          (path === "index.html" && hash === "#selected-work") ||
+          /^case\d+\.html$/.test(path)
+        )
+      )
+    ) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
+    // About page
+    else if (
+      link.getAttribute('href') === "about.html" &&
+      path === "about.html"
+    ) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
+    // Resume link (optional: highlight on external resume if wanted)
+    else if (
+      link.getAttribute('href') === "https://docs.google.com/document/d/.../view" &&
+      location.href.includes("docs.google.com")
     ) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
@@ -201,6 +279,8 @@ function setActiveMobileMenuLink() {
   });
 }
 
-setActiveMobileMenuLink();
-window.addEventListener('hashchange', setActiveMobileMenuLink);
-window.addEventListener('popstate', setActiveMobileMenuLink);
+// Run this on load and hashchange/popstate
+setActiveMenuLinks();
+window.addEventListener('hashchange', setActiveMenuLinks);
+window.addEventListener('popstate', setActiveMenuLinks);
+
