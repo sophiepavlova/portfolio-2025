@@ -1810,7 +1810,6 @@ p.add-small-margin-bottom {
   position: sticky;
   top: 0;
   z-index: 2002; /* Must be above .mobile-menu and content */
-  background: #fff; /* or your header background color */
 }
 .menu-close {
     display: block !important;
@@ -1830,7 +1829,6 @@ p.add-small-margin-bottom {
     width: 100vw;
     height: 100vh;
     z-index: 3000;
-    background: #fff;        /* Or your menu bg */
     display: block;
   }
 }
