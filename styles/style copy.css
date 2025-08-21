@@ -73,6 +73,20 @@ h3 {
   line-height: 120%;
 }
 
+@media (max-width: 1280px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 24px; /* smaller padding on smaller screens */
+    box-sizing: border-box; /* include padding when responsive */
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 24px;
+  }
+}
+
 /* --- Header --- */
 .site-header .container {
   display: flex;
@@ -350,6 +364,12 @@ h3 {
 .work-card__text-block {
   max-width: 674px;
   width: 100%;
+}
+
+@media (max-width: 900px) {
+  .work-card__text-block {
+    max-width: 100% !important;
+  }
 }
 
 
@@ -1524,6 +1544,127 @@ p.add-small-margin-bottom {
 }
 
 
+/* Responsive tweak for stacked layout */
+@media (max-width: 900px) {
+  .case-highlights__visual {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about-hero__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-hero__image-block {
+    margin-bottom: 24px; /* space between portrait and text */
+  }
+
+  .about-hero__image-block img {
+    width: 500px;
+    max-width: 100%; /* in case screen is even smaller */
+    height: auto;
+  }
+  .about-hero__image-block {
+  
+  padding-top: 0px;
+}
+
+  .about-hero__caption{
+    max-width: 500px;
+    text-align: left; /* keep text normal */
+  }
+  .about-hero__text-block {
+    max-width: 600px;
+    width: 100%;
+    text-align: left; /* keep text normal */
+  }
+
+  .case-highlights__visual .case-highlights__visual-col--right{
+    width:390px;
+  }
+}
+.no-margin-bottom{
+  margin-bottom: 0;
+}
+@media (max-width: 600px) {
+  .case-highlights__visual-image--wide,
+  .case-highlights__visual-image--narrow,
+  .case-highlights__visual-image--900,
+  .case-highlights__visual-image--large,
+  .case-highlights__visual-image--w830,
+  .case-highlights__visual-image--w390 {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .feedback-quotes {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+
+
+/* --- Adaptive for two columns and highlights --- */
+@media (max-width: 900px) {
+  .case-highlights__visual {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .twocol {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .twocol__heading,
+  .twocol__main {
+    flex: unset;
+    max-width: 100%;
+    width: 100%;
+  }
+  .case-overview__content {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .case-overview__meta {
+    max-width: 100%;
+    flex: unset;
+  }
+  .case-highlights__visual-image--narrow  {
+    width:390px !important;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .hero__title {
+    font-size: 50px;
+    line-height: 56px;;
+  }
+  .case-highlights__visual-image--wide,
+  .case-highlights__visual-image--narrow,
+  .case-highlights__visual-image--900,
+  .case-highlights__visual-image--large {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+  }
+  .case-hero__title {
+    font-size: 36px;
+    line-height: 110%;
+  }
+  .case-context__term,
+  .twocol__heading {
+    font-size: 20px;
+    flex: unset;
+    white-space: normal;
+  }
+  
+}
 
 /* --- Mobile Menu --- */
 .mobile-menu__nav {
@@ -1648,215 +1789,6 @@ p.add-small-margin-bottom {
   color: var(--color-accent-on-hover, #BE123C);
 }
 
-
-
-.case-highlights__visual-image--900,
-.case-highlights__visual-image--large,
-.case-highlights__visual-image--w830,
-.case-highlights__visual-image--w390 {
-  max-width: 100vw !important;
-  width: 100% !important;
-}
-
-
-
-.case-highlights__visual-image--large{
-  max-width: 900px !important;
-}
-/* The size of the icons stays 46px on mobile */
-.work-card__icon {
-  width: 46px !important;
-  height: 46px !important;
-  min-width: 46px !important;
-  min-height: 46px !important;
-  max-width: 46px !important;
-  max-height: 46px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 8px;
-  /* Optional: keep some margin if you want finger room */
-}
-
-.work-card,
-.selected-work__cards > * {
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* Make the li and a fill the menu width */
-.mobile-menu__nav ul,
-.mobile-menu__nav li {
-  width: 100%;
-}
-
-.menu__link--resume {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.menu__link--resume .icon {
-  display: inline-block !important;  /* Override global img rule */
-  width: 1.2em;      /* or 24px, or whatever matches your Figma */
-  height: 1.2em;
-  flex-shrink: 0;
-  vertical-align: middle;
-}
-
-
-nav .menu__link--resume .icon,
-.menu__link.menu__link--resume .icon {
-  display: inline-block !important;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  vertical-align: middle;
-}
-
-@media (max-width: 1280px) {
-  .container {
-    width: 100%;
-    max-width: 100%;
-    padding-inline: 24px; /* smaller padding on smaller screens */
-    box-sizing: border-box; /* include padding when responsive */
-  }
-}
-@media (max-width: 768px) {
-  .container {
-    padding-inline: 24px;
-  }
-}
-
-@media (max-width: 900px) {
-  .work-card__text-block {
-    max-width: 100% !important;
-  }
-}
-/* Responsive tweak for stacked layout */
-@media (max-width: 900px) {
-  .case-highlights__visual {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .about-hero__content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-hero__image-block {
-    margin-bottom: 24px; /* space between portrait and text */
-  }
-
-  .about-hero__image-block img {
-    width: 500px;
-    max-width: 100%; /* in case screen is even smaller */
-    height: auto;
-  }
-  .about-hero__image-block {
-  
-  padding-top: 0px;
-}
-
-  .about-hero__caption{
-    max-width: 500px;
-    text-align: left; /* keep text normal */
-  }
-  .about-hero__text-block {
-    max-width: 600px;
-    width: 100%;
-    text-align: left; /* keep text normal */
-  }
-
-  .case-highlights__visual .case-highlights__visual-col--right{
-    width:390px;
-  }
-}
-.no-margin-bottom{
-  margin-bottom: 0;
-}
-@media (max-width: 600px) {
-  .case-highlights__visual-image--wide,
-  .case-highlights__visual-image--narrow,
-  .case-highlights__visual-image--900,
-  .case-highlights__visual-image--large,
-  .case-highlights__visual-image--w830,
-  .case-highlights__visual-image--w390 {
-    width: 100% !important;
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-@media (max-width: 600px) {
-  .feedback-quotes {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-}
-
-
-
-/* --- Adaptive for two columns and highlights --- */
-@media (max-width: 900px) {
-  .case-highlights__visual {
-    flex-direction: column;
-    gap: 24px;
-  }
-  .twocol {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .twocol__heading,
-  .twocol__main {
-    flex: unset;
-    max-width: 100%;
-    width: 100%;
-  }
-  .case-overview__content {
-    flex-direction: column;
-    gap: 32px;
-  }
-  .case-overview__meta {
-    max-width: 100%;
-    flex: unset;
-  }
-  .case-highlights__visual-image--narrow  {
-    width:390px !important;
-  }
-
-}
-
-@media (max-width: 600px) {
-  .hero__title {
-    font-size: 50px;
-    line-height: 56px;;
-  }
-  .case-highlights__visual-image--wide,
-  .case-highlights__visual-image--narrow,
-  .case-highlights__visual-image--900,
-  .case-highlights__visual-image--large {
-    width: 100% !important;
-    max-width: 100%;
-    height: auto;
-  }
-  .case-hero__title {
-    font-size: 36px;
-    line-height: 110%;
-  }
-  .case-context__term,
-  .twocol__heading {
-    font-size: 20px;
-    flex: unset;
-    white-space: normal;
-  }
-  
-}
 /* Hide desktop nav, show hamburger at mobile sizes */
 /* MOBILE & TABLET (≤768px): show hamburger, hide desktop nav */
 @media (max-width: 768px) {
@@ -1969,6 +1901,15 @@ nav .menu__link--resume .icon,
     flex-wrap: wrap;
   }
 }
+
+.case-highlights__visual-image--900,
+.case-highlights__visual-image--large,
+.case-highlights__visual-image--w830,
+.case-highlights__visual-image--w390 {
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+
 @media (max-width: 1080px) {
   .case-context__content,
   .case-overview__content,
@@ -2176,4 +2117,61 @@ nav .menu__link--resume .icon,
 .case-highlights__visual-image--large {
     max-width: 300px !important;
   }
+}
+
+.case-highlights__visual-image--large{
+  max-width: 900px !important;
+}
+/* The size of the icons stays 46px on mobile */
+.work-card__icon {
+  width: 46px !important;
+  height: 46px !important;
+  min-width: 46px !important;
+  min-height: 46px !important;
+  max-width: 46px !important;
+  max-height: 46px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px;
+  /* Optional: keep some margin if you want finger room */
+}
+
+.work-card,
+.selected-work__cards > * {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Make the li and a fill the menu width */
+.mobile-menu__nav ul,
+.mobile-menu__nav li {
+  width: 100%;
+}
+
+.menu__link--resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu__link--resume .icon {
+  display: inline-block !important;  /* Override global img rule */
+  width: 1.2em;      /* or 24px, or whatever matches your Figma */
+  height: 1.2em;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+
+nav .menu__link--resume .icon,
+.menu__link.menu__link--resume .icon {
+  display: inline-block !important;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
