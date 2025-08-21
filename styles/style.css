@@ -2013,11 +2013,7 @@ p.add-small-margin-bottom {
     width:350px !important;
   } */
 }
- @media (max-width: 600px) {
-    .case-highlights__visual-image--wide, .case-highlights__visual-image--narrow {
-      max-width:390px !important;
-    }
-}
+
 @media (max-width: 500px) {
   .case-highlights__visual-image--wide, 
   .case-highlights__visual-image--narrow, 
@@ -2026,6 +2022,7 @@ p.add-small-margin-bottom {
   .case-highlights__visual .case-highlights__visual-col--right  {
     width:350px !important;
   }
+  
 }
 @media (max-width: 430px) {
   .case-highlights__visual-image--wide, 
@@ -2037,10 +2034,26 @@ p.add-small-margin-bottom {
     width:310px !important;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 970px) {
 .case-highlights__visual-image--large {
     max-width: 700px !important;
   }
+}
+
+@media (max-width: 780px) {
+.case-highlights__visual-image--large {
+    max-width: 500px !important;
+  }
+}
+
+ @media (max-width: 600px) {
+    .case-highlights__visual-image--wide, .case-highlights__visual-image--narrow {
+      max-width:390px !important;
+    }
+  .case-highlights__visual-image--large {
+    max-width: 400px !important;
+  }
+}
 @media (max-width: 390px) {
   .hero__title {
     font-size: 30px;
@@ -2101,7 +2114,13 @@ p.add-small-margin-bottom {
 /* .twocol__main {
   gap:0 !important;
 } */
+.case-highlights__visual-image--large {
+    max-width: 300px !important;
+  }
+}
 
+.case-highlights__visual-image--large{
+  max-width: 900px !important;
 }
 /* The size of the icons stays 46px on mobile */
 .work-card__icon {
