@@ -917,7 +917,7 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
   padding-left: 0 !important;  /* reset the bullet indent */
   margin-left: 0;              /* in case browser default margin is adding space */
   width: 100%;
-  max-width: 760px;
+  /* max-width: 760px; */
   display: flex;
   flex-direction: column;
   gap: 10px;                /* replaces li margin-bottom */
@@ -983,7 +983,7 @@ background-color: #99F6E4;
 }
 .icon-card {
   /* margin-top: 20px; */
-  max-width: 760px;
+  /* max-width: 760px; */
   border-radius: 8px;
   /* border-top-right-radius: 8px;
   border-top-right-radius: 8px; */
@@ -1580,6 +1580,10 @@ p.add-small-margin-bottom {
     width: 100%;
     text-align: left; /* keep text normal */
   }
+
+  .case-highlights__visual .case-highlights__visual-col--right{
+    width:390px;
+  }
 }
 .no-margin-bottom{
   margin-bottom: 0;
@@ -1630,6 +1634,9 @@ p.add-small-margin-bottom {
     max-width: 100%;
     flex: unset;
   }
+  .case-highlights__visual-image--narrow  {
+    width:390px !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1655,6 +1662,7 @@ p.add-small-margin-bottom {
     flex: unset;
     white-space: normal;
   }
+  
 }
 
 /* --- Mobile Menu --- */
@@ -1876,7 +1884,7 @@ p.add-small-margin-bottom {
   .case-highlights__visual-image--w830,
   .case-highlights__visual-image--w390 {
     max-width: 100vw !important;
-    width: 100% !important;
+    /* width: 100% !important; */
     height: auto !important;
     box-sizing: border-box;
     display: block;
@@ -1977,6 +1985,54 @@ p.add-small-margin-bottom {
     left: 0 !important;
     right: 0 !important;
     box-sizing: border-box !important;
+  }
+  .about-hero__info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .about-hero__item {
+    display: inline-flex !important;   /* Instead of block */
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #F5F5F5;  /* Or your brand color */
+    font-size: 16px;
+    font-weight: 500;
+    /* Remove width: 100% or flex: 1 for these at mobile! */
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* .case-highlights__visual-image case-highlights__visual-image--wide {
+    width:350px !important;
+  } */
+}
+ @media (max-width: 600px) {
+    .case-highlights__visual-image--wide, .case-highlights__visual-image--narrow {
+      max-width:390px !important;
+    }
+@media (max-width: 500px) {
+  .case-highlights__visual-image--wide, 
+  .case-highlights__visual-image--narrow, 
+  .case-highlights__visual-image--900, 
+  .case-highlights__visual-image--large,
+  .case-highlights__visual .case-highlights__visual-col--right  {
+    width:350px !important;
+  }
+}
+@media (max-width: 430px) {
+  .case-highlights__visual-image--wide, 
+  .case-highlights__visual-image--narrow, 
+  .case-highlights__visual-image--900, 
+  .case-highlights__visual-image--large,
+  .case-highlights__visual .case-highlights__visual-col--right,
+  .case-howmightwe__visual-image--card  {
+    width:310px !important;
   }
 }
 
