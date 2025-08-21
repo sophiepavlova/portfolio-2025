@@ -1637,6 +1637,7 @@ p.add-small-margin-bottom {
   .case-highlights__visual-image--narrow  {
     width:390px !important;
   }
+
 }
 
 @media (max-width: 600px) {
@@ -2016,6 +2017,7 @@ p.add-small-margin-bottom {
     .case-highlights__visual-image--wide, .case-highlights__visual-image--narrow {
       max-width:390px !important;
     }
+}
 @media (max-width: 500px) {
   .case-highlights__visual-image--wide, 
   .case-highlights__visual-image--narrow, 
@@ -2035,7 +2037,10 @@ p.add-small-margin-bottom {
     width:310px !important;
   }
 }
-
+@media (max-width: 900px) {
+.case-highlights__visual-image--large {
+    max-width: 700px !important;
+  }
 @media (max-width: 390px) {
   .hero__title {
     font-size: 30px;
