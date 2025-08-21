@@ -81,24 +81,29 @@ document.querySelectorAll('a.work-card__link').forEach(cardLink => {
 // Scroll spy for Home & Work
 // -----------------------------
 const selectedWorkSection = document.querySelector('#selected-work');
+
 if (selectedWorkSection && workLink && homeLink && fileNoParams === 'index.html') {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActive(workLink);
-        } else {
-          setActive(homeLink);
-        }
-      });
-    },
-    {
-      root: null,
-      threshold: 0.3 // 30% visible = active
+  function updateActiveMenuOnScroll() {
+    const rect = selectedWorkSection.getBoundingClientRect();
+    const header = document.querySelector('.site-header');
+    const headerHeight = header ? header.offsetHeight : 0;
+
+    // Only highlight "Work" when the section top is at or above header, and bottom is below header
+    if (rect.top - headerHeight <= 0 && rect.bottom - headerHeight > 0) {
+      setActive(workLink);
+    } else {
+      setActive(homeLink);
     }
-  );
-  observer.observe(selectedWorkSection);
+  }
+
+  window.addEventListener('scroll', updateActiveMenuOnScroll, { passive: true });
+  window.addEventListener('resize', updateActiveMenuOnScroll);
+  document.addEventListener('DOMContentLoaded', updateActiveMenuOnScroll);
+
+  // Call once at start to ensure correct highlight on reload
+  updateActiveMenuOnScroll();
 }
+
 
 function setActive(link) {
   navLinks.forEach(a => {
