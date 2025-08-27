@@ -289,3 +289,65 @@ setActiveMenuLinks();
 window.addEventListener('hashchange', setActiveMenuLinks);
 window.addEventListener('popstate', setActiveMenuLinks);
 
+// --------- Sticky Sidenav ScrollSpy & Hide-on-19px Logic ----------
+(function() {
+  const sideNav = document.getElementById('case-sidenav');
+  if (!sideNav) return;
+  const navLinks = sideNav.querySelectorAll('a');
+  const anchorIds = Array.from(navLinks).map(link => link.getAttribute('href').replace('#',''));
+  const sections = anchorIds.map(id => document.getElementById(id));
+
+  function updateActiveLink() {
+    const scrollY = window.scrollY;
+    let lastActive = navLinks[0];
+    for (let i = 0; i < sections.length; i++) {
+      const el = sections[i];
+      if (el && el.getBoundingClientRect().top + window.scrollY - 120 <= scrollY) {
+        lastActive = navLinks[i];
+      }
+    }
+    navLinks.forEach(link => link.classList.remove('active'));
+    if (lastActive) lastActive.classList.add('active');
+  }
+
+  function updateSideNavVisibility() {
+    if (!sideNav) return;
+    const rect = sideNav.getBoundingClientRect();
+    sideNav.style.display = (rect.left < 19) ? 'none' : '';
+  }
+
+  window.addEventListener('scroll', updateActiveLink);
+  window.addEventListener('scroll', updateSideNavVisibility);
+  window.addEventListener('resize', updateSideNavVisibility);
+  document.addEventListener('DOMContentLoaded', () => {
+    updateActiveLink();
+    updateSideNavVisibility();
+  });
+
+  // Optional: Smooth scroll on anchor click
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const id = this.getAttribute('href').replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        window.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
+// --------- Back to Top Button ----------
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 350) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}

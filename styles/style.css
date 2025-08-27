@@ -1720,6 +1720,67 @@ nav .menu__link--resume .icon,
   vertical-align: middle;
 }
 
+/* The side menu */
+.case-sidenav {
+  position: sticky;
+  top: 100px;
+  left: 0;
+  align-self: flex-start;
+  width: 200px;
+  margin-right: 60px;
+  z-index: 10;
+  background: none;
+  display: block;
+}
+.case-sidenav nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.case-sidenav nav a {
+  display: block;
+  padding: 10px 0 10px 16px;
+  color: #6B7280;
+  font-weight: 500;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  border-radius: 0 4px 4px 0;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  font-size: 18px;
+}
+.case-sidenav nav a.active {
+  color: var(--color-accent, #E11D48);
+  border-left: 3px solid var(--color-accent, #E11D48);
+  background: #f8fafc;
+  font-weight: 700;
+}
+@media (max-width: 1080px) {
+  .case-sidenav { display: none; }
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  background: var(--color-accent, #E11D48);
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  transition: opacity 0.2s;
+}
+.back-to-top svg { width: 28px; height: 28px; }
+.back-to-top.show { display: flex; opacity: 1; }
+
+
 /*🦊 MEDIA  */
 
 @media (max-width: 1280px) {
