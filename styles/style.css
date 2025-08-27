@@ -1720,11 +1720,22 @@ nav .menu__link--resume .icon,
   vertical-align: middle;
 }
 
-/* The side menu */
+/* === Layout for Case Study with Desktop Side Nav === */
+.case-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  gap: 0;
+}
+
+/* Side nav styling */
 .case-sidenav {
+  flex: 0 0 200px;
   position: sticky;
   top: 100px;
-  left: 0;
   align-self: flex-start;
   width: 200px;
   margin-right: 60px;
@@ -1754,8 +1765,17 @@ nav .menu__link--resume .icon,
   background: #f8fafc;
   font-weight: 700;
 }
+
+/* Responsive: hide side nav & collapse layout on tablet/mobile */
 @media (max-width: 1080px) {
-  .case-sidenav { display: none; }
+  .case-layout { flex-direction: column; }
+  .case-sidenav { display: none !important; }
+}
+
+/* Main column in the layout */
+.case-layout main {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 /* Back to top button */
@@ -1779,6 +1799,8 @@ nav .menu__link--resume .icon,
 }
 .back-to-top svg { width: 28px; height: 28px; }
 .back-to-top.show { display: flex; opacity: 1; }
+
+
 
 
 /*🦊 MEDIA  */
