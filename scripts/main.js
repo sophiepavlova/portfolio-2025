@@ -338,10 +338,66 @@ window.addEventListener('popstate', setActiveMenuLinks);
 })();
 
 // Responsive Jump Menu: Smooth scroll + offset fix
+// (function() {
+//   const jumpMenu = document.querySelector('.jump-menu');
+//   if (!jumpMenu) return;
+//   const links = jumpMenu.querySelectorAll('.jump-menu__link');
+//   links.forEach(link => {
+//     link.addEventListener('click', function(e) {
+//       const href = this.getAttribute('href');
+//       if (href && href.startsWith('#')) {
+//         const id = href.replace('#', '');
+//         const el = document.getElementById(id);
+//         if (el) {
+//           e.preventDefault();
+//           // Offset by header height (adjust if you change header height)
+//           const header = document.querySelector('.site-header');
+//           const offset = header ? header.offsetHeight + 0 : 80;
+//           const y = el.getBoundingClientRect().top + window.scrollY - offset;
+//           window.scrollTo({ top: y, behavior: 'smooth' });
+//         }
+//       }
+//     });
+//   });
+// })();
 (function() {
   const jumpMenu = document.querySelector('.jump-menu');
   if (!jumpMenu) return;
   const links = jumpMenu.querySelectorAll('.jump-menu__link');
+  const anchorIds = Array.from(links).map(link => link.getAttribute('href').replace('#',''));
+  const sections = anchorIds.map(id => document.getElementById(id));
+  // Get the offset (header height + margin)
+  function getHeaderOffset() {
+    const header = document.querySelector('.site-header');
+    return header ? header.offsetHeight + 0 : 80;
+  }
+
+  function updateJumpMenuActive() {
+    const scrollY = window.scrollY + getHeaderOffset() + 5; // +5 for tolerance
+    let found = false;
+
+    // Check from last to first (so the current section is found)
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const el = sections[i];
+      if (el && el.offsetTop <= scrollY) {
+        links.forEach(l => l.classList.remove('active'));
+        links[i].classList.add('active');
+        found = true;
+        break;
+      }
+    }
+    // If above the first section, clear all highlights!
+    if (!found) {
+      links.forEach(l => l.classList.remove('active'));
+    }
+  }
+
+  // Listen for scroll and resize
+  window.addEventListener('scroll', updateJumpMenuActive, { passive: true });
+  window.addEventListener('resize', updateJumpMenuActive);
+  document.addEventListener('DOMContentLoaded', updateJumpMenuActive);
+
+  // Smooth scroll + update highlights after scroll
   links.forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -350,17 +406,24 @@ window.addEventListener('popstate', setActiveMenuLinks);
         const el = document.getElementById(id);
         if (el) {
           e.preventDefault();
-          // Offset by header height (adjust if you change header height)
-          const header = document.querySelector('.site-header');
-          const offset = header ? header.offsetHeight + 0 : 80;
-          const y = el.getBoundingClientRect().top + window.scrollY - offset;
+          const y = el.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
           window.scrollTo({ top: y, behavior: 'smooth' });
+          setTimeout(updateJumpMenuActive, 700);
+          link.blur();
         }
       }
     });
   });
 })();
 
+// Fix for sticky :hover on touch devices
+document.addEventListener('touchend', function() {
+  try {
+    // Remove hover by forcing a redraw
+    document.body.style.cursor = 'pointer';
+    setTimeout(() => { document.body.style.cursor = ''; }, 1);
+  } catch(e) {}
+}, { passive: true });
 
 // --------- Back to Top Button ----------
 const backToTop = document.getElementById('backToTop');

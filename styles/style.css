@@ -1855,14 +1855,19 @@ nav .menu__link--resume .icon,
   background: #f3f4f6;
   color: #e11d48;
 }
-.jump-menu__link:hover .jump-menu__label,
-.jump-menu__link:focus .jump-menu__label {
+/* .jump-menu__link:hover .jump-menu__label,
+.jump-menu__link.active .jump-menu__label {
   color: #e11d48;
+} */
+.jump-menu__link:focus-visible {
+  outline: 2px solid #e11d48;
+  background: #f3f4f6;
 }
-.jump-menu__link:hover .jump-menu__arrow,
+
+/* .jump-menu__link:hover .jump-menu__arrow,
 .jump-menu__link:focus .jump-menu__arrow {
   color: #e11d48;
-}
+} */
 .jump-menu__link:hover .jump-menu__icon-bg,
 .jump-menu__link:focus .jump-menu__icon-bg {
   background: #e0e7ff;
