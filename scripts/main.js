@@ -306,7 +306,10 @@ window.addEventListener('popstate', setActiveMenuLinks);
         lastActive = navLinks[i];
       }
     }
-    navLinks.forEach(link => link.classList.remove('active'));
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      link.blur();
+    });
     if (lastActive) lastActive.classList.add('active');
   }
 

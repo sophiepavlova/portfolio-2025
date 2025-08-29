@@ -1738,23 +1738,61 @@ nav .menu__link--resume .icon,
   padding: 0;
   margin: 0;
 }
+.case-sidenav nav a,
+.case-sidenav nav a:active,
+.case-sidenav nav a:focus,
+.case-sidenav nav a.active {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.case-sidenav nav a:focus {
+  outline: 2px solid var(--color-accent, #E11D48);
+  outline-offset: 2px;
+  /* Or, to remove for mouse users (but keep for accessibility): */
+}
+.case-sidenav nav a:focus:not(:focus-visible) {
+  outline: none;
+  background:none
+}
 .case-sidenav nav a {
   display: block;
   padding: 10px 0 10px 16px;
   color: #6B7280;
   font-weight: 500;
   text-decoration: none;
+  border: none !important;
   border-left: 3px solid transparent;
   border-radius: 0 4px 4px 0;
   transition: color 0.2s, border-color 0.2s, background 0.2s;
   font-size: 18px;
+  background: none;
 }
+
 .case-sidenav nav a.active {
-  color: var(--color-accent, #E11D48);
-  border-left: 3px solid var(--color-accent, #E11D48);
+  border: none !important;
+  border-left: 3px solid var(--color-accent, #E11D48) !important;
+  border-radius: 0 4px 4px 0 !important;
   background: #f8fafc;
+  color: var(--color-accent, #E11D48);
   font-weight: 700;
 }
+
+.case-sidenav nav a:hover:not(.active),
+.case-sidenav nav a:focus:not(.active) {
+  /* background: #f3f4f6; */
+  color: var(--color-accent, #E11D48);
+  border-left: 3px solid transparent; /* no border on hover/focus for non-active */
+  font-weight: 700;
+}
+
+/* Optionally, visible focus ring for accessibility */
+.case-sidenav nav a:focus {
+  outline: 2px solid var(--color-accent, #E11D48);
+  outline-offset: 2px;
+}
+
+
 
 /* Back to top button */
 .back-to-top {
