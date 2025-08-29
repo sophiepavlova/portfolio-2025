@@ -2130,6 +2130,11 @@ nav .menu__link--resume .icon,
 }
 
 @media (max-width: 768px) {
+  .site-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* Optional: If you want, you can also set height: 66px; */
+  }
   .case-highlights__visual--centered .case-highlights__visual-image--bg {
     max-width: 500px !important;
   }

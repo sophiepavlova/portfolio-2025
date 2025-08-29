@@ -337,6 +337,31 @@ window.addEventListener('popstate', setActiveMenuLinks);
   });
 })();
 
+// Responsive Jump Menu: Smooth scroll + offset fix
+(function() {
+  const jumpMenu = document.querySelector('.jump-menu');
+  if (!jumpMenu) return;
+  const links = jumpMenu.querySelectorAll('.jump-menu__link');
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const id = href.replace('#', '');
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          // Offset by header height (adjust if you change header height)
+          const header = document.querySelector('.site-header');
+          const offset = header ? header.offsetHeight + 0 : 80;
+          const y = el.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+})();
+
+
 // --------- Back to Top Button ----------
 const backToTop = document.getElementById('backToTop');
 if (backToTop) {
