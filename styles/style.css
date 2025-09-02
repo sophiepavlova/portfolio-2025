@@ -1877,6 +1877,7 @@ nav .menu__link--resume .icon,
 .jump-menu__label {
   flex: 1 1 auto;
   min-width: 0;
+  text-align: left;
 }
 .jump-menu__arrow-bg {
   width: 38px;
@@ -1888,6 +1889,7 @@ nav .menu__link--resume .icon,
   flex-shrink: 0;
   background: transparent;
   transition: background 0.12s;
+  margin-left: auto;
 }
 
 .jump-menu__link:hover,
