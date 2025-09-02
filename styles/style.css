@@ -312,7 +312,9 @@ h3 {
   margin: 0;
 }
 .work-card__image-wrapper {
+  max-width: 524px;
   margin-top: auto;
+  margin:auto;
   display: flex;
   justify-content: center;
 }
