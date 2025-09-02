@@ -1891,7 +1891,8 @@ nav .menu__link--resume .icon,
 .jump-menu__link:hover,
 .jump-menu__link:focus {
   background: #f3f4f6;
-  color: #e11d48;
+  color: var(--Colors-Rose-700, #BE123C);
+;
 }
 /* .jump-menu__link:hover .jump-menu__label,
 .jump-menu__link.active .jump-menu__label {
