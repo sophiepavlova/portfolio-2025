@@ -118,9 +118,13 @@ function setActive(link) {
 const portraitEl = document.getElementById('portrait');
 if (portraitEl) {
   const looks = [
-    './assets/images/look1.jpg',
-    './assets/images/look2.jpg',
-    './assets/images/look3.jpg'
+    './assets/images/about1.jpeg',
+    './assets/images/about2.jpeg',
+    './assets/images/about3.jpeg',
+    './assets/images/about4.jpeg',
+    './assets/images/about5.jpeg',
+    './assets/images/about6.jpeg',
+    './assets/images/about7.jpeg',
   ];
   let lastIndex = -1;
   portraitEl.addEventListener('click', () => {

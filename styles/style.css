@@ -289,7 +289,8 @@ h3 {
   min-width: 0;  
 }
 .work-card__title--blue {
-  color: 1D4ED8;
+  color: var(--Colors-Blue-700, #1D4ED8);
+
 }
 .work-card__title--yellow {
   color: #A16207;
@@ -1270,6 +1271,7 @@ margin-bottom: 24px;
 }
 .case-highlights__visual-image--wide { /* generic 390px image */
   width: 390px;
+  border-radius: 8px;
 }
 .case-highlights__visual-image--narrow { /* generic 349px image */
   width: 349px;
@@ -1915,6 +1917,10 @@ nav .menu__link--resume .icon,
 .jump-menu__link:focus .jump-menu__icon-bg {
   background: #e0e7ff;
   /* You can change color if needed */
+}
+
+.case-highlights__visual-col--right-390 {
+  width: 390px !important;
 }
 
 @media (max-width: 1080px) { 
