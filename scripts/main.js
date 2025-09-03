@@ -115,27 +115,57 @@ function setActive(link) {
 }
 
 // --- About page portrait click handler ---
+// const portraitEl = document.getElementById('portrait');
+// if (portraitEl) {
+//   const looks = [
+//     './assets/images/about1.jpeg',
+//     './assets/images/about2.jpeg',
+//     './assets/images/about3.jpeg',
+//     './assets/images/about5.jpeg',
+//     './assets/images/about6.jpeg',
+//     './assets/images/about7.jpeg',
+//   ];
+//   let lastIndex = -1;
+//   portraitEl.addEventListener('click', () => {
+//     let nextIndex;
+//     do {
+//       nextIndex = Math.floor(Math.random() * looks.length);
+//     } while (nextIndex === lastIndex);
+//     portraitEl.src = looks[nextIndex];
+//     lastIndex = nextIndex;
+//   });
+// }
+
 const portraitEl = document.getElementById('portrait');
 if (portraitEl) {
+  const originalSrc = './assets/images/portrait.jpg'; // original portrait
   const looks = [
     './assets/images/about1.jpeg',
     './assets/images/about2.jpeg',
     './assets/images/about3.jpeg',
-    './assets/images/about4.jpeg',
     './assets/images/about5.jpeg',
     './assets/images/about6.jpeg',
     './assets/images/about7.jpeg',
   ];
   let lastIndex = -1;
+  let resetTimeout;
+
   portraitEl.addEventListener('click', () => {
     let nextIndex;
     do {
       nextIndex = Math.floor(Math.random() * looks.length);
     } while (nextIndex === lastIndex);
-    portraitEl.src = looks[nextIndex];
     lastIndex = nextIndex;
+    portraitEl.src = looks[nextIndex];
+
+    // Clear previous timer and set restore
+    if (resetTimeout) clearTimeout(resetTimeout);
+    resetTimeout = setTimeout(() => {
+      portraitEl.src = originalSrc;
+    }, 3000); // 3 seconds
   });
 }
+
 
 // --- About page small pictures location ---
 document.querySelectorAll('.hover-preview').forEach(preview => {

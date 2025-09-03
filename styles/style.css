@@ -1923,6 +1923,14 @@ nav .menu__link--resume .icon,
   width: 390px !important;
 }
 
+.site-footer__list a:hover,
+.site-footer__list a:focus {
+  color: var(--color-accent);
+  text-decoration: none;
+  outline: none;
+}
+
+
 @media (max-width: 1080px) { 
   .jump-menu {
     display: block;
