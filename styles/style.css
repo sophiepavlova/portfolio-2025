@@ -206,7 +206,6 @@ h3 {
   background-color: var(--color-accent-on-hover);
 }
 .button--secondary {
-  background-color: #fff;
   color: var(--color-text);
   border: 1px solid var(--color-text);
 }
@@ -395,7 +394,7 @@ h3 {
   font-size: 14px;
   line-height: 30px;
   color: #57534E;
-  margin-bottom: 0;
+  margin-bottom: 8px;
 }
 .site-footer__credit {
   font-family: 'Inter', sans-serif;
@@ -1929,7 +1928,14 @@ nav .menu__link--resume .icon,
   text-decoration: none;
   outline: none;
 }
+.site-footer__list {
+  padding-left: 0 !important;
+  margin-left: 0; /* (optional, for some browsers) */
+}
 
+#portrait {
+  cursor: pointer;
+}
 
 @media (max-width: 1080px) { 
   .jump-menu {
@@ -2393,6 +2399,16 @@ nav .menu__link--resume .icon,
   .case-highlights__visual-image--large {
     max-width: 400px !important;
   }  
+
+  .site-footer__list li {
+    margin-bottom: 5px;
+}
+.site-footer__content {
+    gap: 20px;
+}
+.site-footer__credit {
+    margin-top: 0px;
+}
 }
 
 @media (max-width: 500px) {
