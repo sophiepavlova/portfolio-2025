@@ -250,10 +250,12 @@ h3 {
   margin: 0 auto;
 }
 .work-card--blue {
-  background-color: #BFDBFE;
+  background-color: var(--Colors-Blue-100, #DBEAFE);
+;
 }
 .work-card--yellow {
-  background-color: #FEF08A;
+  background-color: var(--Colors-Yellow-100, #FEF9C3);
+
 }
 .work-card__link {
   position: absolute;
@@ -1946,6 +1948,50 @@ nav .menu__link--resume .icon,
 .twocol--wide-mg40 {
   margin-bottom: 40px;
 }
+
+/* 1. Base card transition */
+.work-card {
+  transition: 
+    background 0.3s cubic-bezier(.4,0,.2,1),
+    border-color 0.3s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+/* 2. Title transition (company name/title) */
+.work-card__title {
+  transition: color 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+/* 3. Card 1 (default) hover */
+.work-card:hover {
+  background: #E9D5FF;
+  border-color: #D8B4FE;
+}
+
+.work-card:hover .work-card__title {
+  color: #7E22CE;
+}
+
+/* 4. Card 2 (blue) hover */
+.work-card--blue:hover {
+  background: #BFDBFE;
+  border-color: #93C5FD;
+}
+
+.work-card--blue:hover .work-card__title {
+  color: #1D4ED8;
+}
+
+/* 5. Card 3 (yellow) hover */
+.work-card--yellow:hover {
+  background: #FEF08A;
+  border-color: #FDE047;
+}
+
+.work-card--yellow:hover .work-card__title {
+  color: #854D0E;
+}
+
 
 
 @media (max-width: 1080px) { 
