@@ -235,6 +235,7 @@ h3 {
   gap: 30px;
 }
 .work-card {
+  position: relative;
   width: 100%;
    max-width: 100%;
   background-color: #F3E8FF;
@@ -275,6 +276,17 @@ h3 {
   width: 46px;
   height: 46px;
 }
+.work-card__icon-abs {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
 .work-card__title {
   font-family: "Campaign Serif", serif;
   font-weight: 400;
@@ -283,7 +295,7 @@ h3 {
   text-transform: uppercase;
   color: #9333EA;
   margin: 0;
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
   flex: 1 1 auto;        /* Title takes remaining space */
   min-width: 0;  
 }
@@ -849,7 +861,8 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
   flex-direction: column;
 }
 .case-highlights__item {
-  margin-bottom: 40px;
+  margin-bottom: 0px;
+  /* margin-bottom: 40px; */
 }
 .case-highlights__item:last-child {
   margin-bottom: 0;
@@ -1248,7 +1261,8 @@ margin-bottom: 24px;
   flex-direction: column;
 }
 .case-highlights__item {
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  margin-bottom: 0px;
 }
 .case-highlights__item:last-child {
   margin-bottom: 0;
@@ -1937,6 +1951,10 @@ nav .menu__link--resume .icon,
   cursor: pointer;
 }
 
+.twocol--wide-mg40 {
+  margin-bottom: 40px;
+}
+
 @media (max-width: 1080px) { 
   .jump-menu {
     display: block;
@@ -2171,7 +2189,9 @@ nav .menu__link--resume .icon,
   .case-context__desc-last {
     margin-bottom: 24px;
   }
- 
+  .work-card__subtitle {
+    max-width: 500px;
+  }
 }
 
 @media (max-width: 780px) {
@@ -2261,8 +2281,17 @@ nav .menu__link--resume .icon,
     z-index: 3000;
     display: block;
   }
+  
+  .work-card__subtitle{
+    font-size: 18px;
+  }
 }
 
+@media (max-width: 630px) {
+  .work-card__subtitle {
+    max-width: 440px;
+  }
+}
 
 @media (max-width: 600px) {
   .case-highlights__visual--centered .case-highlights__visual-image--bg {
@@ -2409,8 +2438,16 @@ nav .menu__link--resume .icon,
 .site-footer__credit {
     margin-top: 0px;
 }
+.work-card__subtitle {
+  max-width: 410px;
+}
 }
 
+@media (max-width: 550px) {
+  .work-card__subtitle {
+    max-width: 350px;
+  }
+}
 @media (max-width: 500px) {
   .case-highlights__visual--centered .case-highlights__visual-image--bg,
   .case-widget-card.case-widget-card-390  {
@@ -2426,8 +2463,15 @@ nav .menu__link--resume .icon,
   .case-highlights__visual .case-highlights__visual-col--right  {
     width:350px !important;
   }  
+  .work-card__subtitle {
+    max-width: 310px;
+  }
 }
-
+@media (max-width: 460px) {
+  .work-card__subtitle {
+    max-width: 250px;
+  }
+}
 @media (max-width: 430px) {
   .case-highlights__visual--centered .case-highlights__visual-image--bg,
   .case-widget-card.case-widget-card-390  {
