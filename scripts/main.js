@@ -1,21 +1,28 @@
 console.log("Hello from JS 👾");
 
 // -----------------------------
-// Nav highlighting setup
+// Nav highlighting setup for pretty URLs
 // -----------------------------
-const currentFile = location.pathname.split('/').pop() || 'index.html';
+
+// Get current path and section
+const pathParts = location.pathname.split('/').filter(Boolean); // removes empty strings
+const currentPage = pathParts[0] || 'home'; // e.g. 'about', 'case1', 'home'
 const currentHash = location.hash.toLowerCase();
-const fileNoParams = currentFile.split('?')[0].split('#')[0].toLowerCase();
 
 const navLinks = [...document.querySelectorAll('.site-nav a[href]')];
-const homeLink = navLinks.find(link => link.getAttribute('href').toLowerCase() === 'index.html');
-const workLink = navLinks.find(link => {
-  const href = link.getAttribute('href').toLowerCase();
-  return ['#selected-work', 'index.html#selected-work', './index.html#selected-work'].includes(href);
-});
 
-const isCasePage = fileNoParams.startsWith('case');
-const isWorkSection = fileNoParams === 'index.html' && currentHash === '#selected-work';
+// Accept any reasonable home href
+const homeHrefs = ['index.html', './index.html', '/index.html', '../index.html', '/'];
+const homeLink = navLinks.find(link =>
+  homeHrefs.includes(link.getAttribute('href'))
+);
+const workLink = navLinks.find(link =>
+  link.getAttribute('href') === '#selected-work'
+);
+
+// Helper: is this a case study page?
+const isCasePage = currentPage.startsWith('case');
+const isWorkSection = (currentPage === 'home' && currentHash === '#selected-work');
 
 // Clear all active states initially
 navLinks.forEach(link => {
@@ -23,20 +30,50 @@ navLinks.forEach(link => {
   link.removeAttribute('aria-current');
 });
 
-// Initial active link logic
+// Set active state for nav
 if (isCasePage || isWorkSection) {
   if (workLink) setActive(workLink);
 } else {
   navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (
-      href === currentFile ||
-      href === `${currentFile}${currentHash}` ||
-      (href.startsWith('#') && currentHash === href.toLowerCase())
-    ) {
-      setActive(link);
-    }
-  });
+  const href = link.getAttribute('href');
+  // Home: root or any index.html variant
+  if (
+    homeHrefs.includes(href) &&
+    (
+      location.pathname === '/' ||
+      location.pathname === '/index.html'
+    ) &&
+    (!currentHash || currentHash === "#")
+  ) {
+    setActive(link);
+  }
+  // Work: #selected-work on Home, or any case page
+  else if (
+    (href === "#selected-work") &&
+    (
+      (location.pathname === '/' && currentHash === "#selected-work") ||
+      (location.pathname === '/index.html' && currentHash === "#selected-work") ||
+      currentPage.startsWith('case')
+    )
+  ) {
+    setActive(link);
+  }
+  // About page
+  else if (
+    (href === "/about/" || href === "../about/" || href === "about/") &&
+    (location.pathname.startsWith('/about/'))
+  ) {
+    setActive(link);
+  }
+  // Highlight resume if external doc
+  else if (
+    href && href.startsWith("https://docs.google.com") &&
+    location.href.includes("docs.google.com")
+  ) {
+    setActive(link);
+  }
+});
+
 }
 
 // Shared smooth scroll to work section
@@ -51,10 +88,12 @@ function scrollToWorkSection() {
 // Work link click handler
 if (workLink) {
   workLink.addEventListener('click', (e) => {
-    if (fileNoParams !== 'index.html') {
+    if (currentPage !== 'home') {
+      // Go to home, then scroll
       e.preventDefault();
-      window.location.href = './index.html#selected-work';
+      window.location.href = '/#selected-work';
     } else {
+      // On home, just scroll
       e.preventDefault();
       scrollToWorkSection();
     }
@@ -81,14 +120,11 @@ document.querySelectorAll('a.work-card__link').forEach(cardLink => {
 // Scroll spy for Home & Work
 // -----------------------------
 const selectedWorkSection = document.querySelector('#selected-work');
-
-if (selectedWorkSection && workLink && homeLink && fileNoParams === 'index.html') {
+if (selectedWorkSection && workLink && homeLink && currentPage === 'home') {
   function updateActiveMenuOnScroll() {
     const rect = selectedWorkSection.getBoundingClientRect();
     const header = document.querySelector('.site-header');
     const headerHeight = header ? header.offsetHeight : 0;
-
-    // Only highlight "Work" when the section top is at or above header, and bottom is below header
     if (rect.top - headerHeight <= 0 && rect.bottom - headerHeight > 0) {
       setActive(workLink);
     } else {
@@ -99,12 +135,10 @@ if (selectedWorkSection && workLink && homeLink && fileNoParams === 'index.html'
   window.addEventListener('scroll', updateActiveMenuOnScroll, { passive: true });
   window.addEventListener('resize', updateActiveMenuOnScroll);
   document.addEventListener('DOMContentLoaded', updateActiveMenuOnScroll);
-
-  // Call once at start to ensure correct highlight on reload
   updateActiveMenuOnScroll();
 }
 
-
+// Set active nav helper
 function setActive(link) {
   navLinks.forEach(a => {
     a.classList.remove('active');
@@ -115,37 +149,17 @@ function setActive(link) {
 }
 
 // --- About page portrait click handler ---
-// const portraitEl = document.getElementById('portrait');
-// if (portraitEl) {
-//   const looks = [
-//     './assets/images/about1.jpeg',
-//     './assets/images/about2.jpeg',
-//     './assets/images/about3.jpeg',
-//     './assets/images/about5.jpeg',
-//     './assets/images/about6.jpeg',
-//     './assets/images/about7.jpeg',
-//   ];
-//   let lastIndex = -1;
-//   portraitEl.addEventListener('click', () => {
-//     let nextIndex;
-//     do {
-//       nextIndex = Math.floor(Math.random() * looks.length);
-//     } while (nextIndex === lastIndex);
-//     portraitEl.src = looks[nextIndex];
-//     lastIndex = nextIndex;
-//   });
-// }
 
 const portraitEl = document.getElementById('portrait');
 if (portraitEl) {
-  const originalSrc = './assets/images/portrait.jpg'; // original portrait
+  const originalSrc = '../assets/images/portrait.jpg'; // original portrait
   const looks = [
-    './assets/images/about1.jpeg',
-    './assets/images/about2.jpeg',
-    './assets/images/about3.jpeg',
-    './assets/images/about5.jpeg',
-    './assets/images/about6.jpeg',
-    './assets/images/about7.jpeg',
+    '../assets/images/about1.jpeg',
+    '../assets/images/about2.jpeg',
+    '../assets/images/about3.jpeg',
+    '../assets/images/about5.jpeg',
+    '../assets/images/about6.jpeg',
+    '../assets/images/about7.jpeg',
   ];
   let lastIndex = -1;
   let resetTimeout;
@@ -166,7 +180,6 @@ if (portraitEl) {
   });
 }
 
-
 // --- About page small pictures location ---
 document.querySelectorAll('.hover-preview').forEach(preview => {
   const img = preview.querySelector('.hover-preview__img');
@@ -186,7 +199,9 @@ document.querySelectorAll('.hover-preview').forEach(preview => {
   });
 });
 
+// -----------------------------
 // Mobile menu logic
+// -----------------------------
 const menuToggle = document.querySelector('.menu-toggle');
 const menuPanel = document.getElementById('mobile-menu');
 const menuClose = menuPanel?.querySelector('.menu-close');
@@ -219,81 +234,50 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Close when clicking a link
-// mobileLinks?.forEach(link => {
-//   link.addEventListener('click', closeMenu);
-// });
-
+// Close when clicking a link in mobile menu
 mobileLinks?.forEach(link => {
   link.addEventListener('click', function(e) {
     const href = link.getAttribute('href');
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    // External link or new page? Let browser handle, do not close menu.
+    if (href.startsWith('http') || href.startsWith('/')) return;
 
-    // 1. External or other-page links: let browser handle, do NOT close menu
-    if (href.startsWith('http') ||
-      (href.endsWith('.html') && !href.startsWith('#') && !currentPage.startsWith(href.replace(/#.*$/, '')))) {
-      return;
-    }
-
-    // 2. Same-page anchor (e.g., #selected-work)
+    // Anchor link on this page
     if (href.startsWith('#')) {
       closeMenu();
-      // Optionally scroll to anchor if needed
+      const anchor = href.slice(1);
+      document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });
       return;
     }
-
-    // 3. Link is index.html#anchor and you are ALREADY on index.html
-    // (e.g. on Home, click "Work" which is href="index.html#selected-work")
-    if (
-      href.startsWith('index.html#') &&
-      currentPage === 'index.html'
-    ) {
-      e.preventDefault();
-      closeMenu();
-      // Scroll to anchor (browser will do this by default, but you can force it if needed)
-      const anchor = href.split('#')[1];
-      if (anchor) {
-        document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });
-      }
-      return;
-    }
-
-    // 4. For any other page+anchor, let browser navigate
-    // (this covers the "from About, go to Work" scenario)
-    // Overlay stays until browser navigates away
   });
 });
 
-
-
+// -----------------------------
+// Set active links in both navs (desktop + mobile)
+// -----------------------------
 function setActiveMenuLinks() {
   const allLinks = document.querySelectorAll('.site-nav a, .mobile-menu__nav a');
-  const path = location.pathname.split('/').pop() || 'index.html';
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const currentPage = pathParts[0] || 'home';
   const hash = location.hash;
 
   allLinks.forEach(link => {
-    // Remove old states
     link.classList.remove('active');
     link.removeAttribute('aria-current');
-    // Home (index.html), only highlight if NOT a hash to section
+    // Home (root /), only highlight if NOT a hash to section
     if (
-      link.getAttribute('href') === "index.html" &&
-      path === "index.html" &&
+      link.getAttribute('href') === "/" &&
+      currentPage === "home" &&
       (!hash || hash === "#")
     ) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }
-    // WORK: Highlight for selected-work anchor OR on case pages
+    // Work (selected-work anchor) or on any case page
     else if (
-      // On home + #selected-work (desktop OR mobile menu)
+      link.getAttribute('href') === "#selected-work" &&
       (
-        (link.getAttribute('href') === "#selected-work" ||
-         link.getAttribute('href') === "index.html#selected-work") &&
-        (
-          (path === "index.html" && hash === "#selected-work") ||
-          /^case\d+\.html$/.test(path)
-        )
+        (currentPage === "home" && hash === "#selected-work") ||
+        currentPage.startsWith('case')
       )
     ) {
       link.classList.add('active');
@@ -301,15 +285,15 @@ function setActiveMenuLinks() {
     }
     // About page
     else if (
-      link.getAttribute('href') === "about.html" &&
-      path === "about.html"
+      link.getAttribute('href') === "/about/" &&
+      currentPage === "about"
     ) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }
-    // Resume link (optional: highlight on external resume if wanted)
+    // Resume (if you want to highlight when on resume page)
     else if (
-      link.getAttribute('href') === "https://docs.google.com/document/d/.../view" &&
+      link.getAttribute('href') && link.getAttribute('href').startsWith("https://docs.google.com") &&
       location.href.includes("docs.google.com")
     ) {
       link.classList.add('active');
@@ -318,7 +302,7 @@ function setActiveMenuLinks() {
   });
 }
 
-// Run this on load and hashchange/popstate
+// Run this on load and on navigation events
 setActiveMenuLinks();
 window.addEventListener('hashchange', setActiveMenuLinks);
 window.addEventListener('popstate', setActiveMenuLinks);
@@ -375,45 +359,20 @@ window.addEventListener('popstate', setActiveMenuLinks);
 })();
 
 // Responsive Jump Menu: Smooth scroll + offset fix
-// (function() {
-//   const jumpMenu = document.querySelector('.jump-menu');
-//   if (!jumpMenu) return;
-//   const links = jumpMenu.querySelectorAll('.jump-menu__link');
-//   links.forEach(link => {
-//     link.addEventListener('click', function(e) {
-//       const href = this.getAttribute('href');
-//       if (href && href.startsWith('#')) {
-//         const id = href.replace('#', '');
-//         const el = document.getElementById(id);
-//         if (el) {
-//           e.preventDefault();
-//           // Offset by header height (adjust if you change header height)
-//           const header = document.querySelector('.site-header');
-//           const offset = header ? header.offsetHeight + 0 : 80;
-//           const y = el.getBoundingClientRect().top + window.scrollY - offset;
-//           window.scrollTo({ top: y, behavior: 'smooth' });
-//         }
-//       }
-//     });
-//   });
-// })();
 (function() {
   const jumpMenu = document.querySelector('.jump-menu');
   if (!jumpMenu) return;
   const links = jumpMenu.querySelectorAll('.jump-menu__link');
   const anchorIds = Array.from(links).map(link => link.getAttribute('href').replace('#',''));
   const sections = anchorIds.map(id => document.getElementById(id));
-  // Get the offset (header height + margin)
   function getHeaderOffset() {
     const header = document.querySelector('.site-header');
     return header ? header.offsetHeight + 0 : 80;
   }
 
   function updateJumpMenuActive() {
-    const scrollY = window.scrollY + getHeaderOffset() + 5; // +5 for tolerance
+    const scrollY = window.scrollY + getHeaderOffset() + 5;
     let found = false;
-
-    // Check from last to first (so the current section is found)
     for (let i = sections.length - 1; i >= 0; i--) {
       const el = sections[i];
       if (el && el.offsetTop <= scrollY) {
@@ -423,18 +382,15 @@ window.addEventListener('popstate', setActiveMenuLinks);
         break;
       }
     }
-    // If above the first section, clear all highlights!
     if (!found) {
       links.forEach(l => l.classList.remove('active'));
     }
   }
 
-  // Listen for scroll and resize
   window.addEventListener('scroll', updateJumpMenuActive, { passive: true });
   window.addEventListener('resize', updateJumpMenuActive);
   document.addEventListener('DOMContentLoaded', updateJumpMenuActive);
 
-  // Smooth scroll + update highlights after scroll
   links.forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -456,7 +412,6 @@ window.addEventListener('popstate', setActiveMenuLinks);
 // Fix for sticky :hover on touch devices
 document.addEventListener('touchend', function() {
   try {
-    // Remove hover by forcing a redraw
     document.body.style.cursor = 'pointer';
     setTimeout(() => { document.body.style.cursor = ''; }, 1);
   } catch(e) {}
