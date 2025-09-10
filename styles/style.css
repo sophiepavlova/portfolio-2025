@@ -2600,8 +2600,3 @@ a:focus:not(:focus-visible) {
     max-width: 200px;
   }
 }
-.site-nav a:focus:not(:focus-visible),
-.mobile-menu__nav a:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}

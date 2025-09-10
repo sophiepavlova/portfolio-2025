@@ -212,9 +212,9 @@ function openMenu() {
   menuToggle.setAttribute('aria-expanded', 'true');
   document.body.style.overflow = 'hidden'; // Prevent scroll behind
   // Focus first link
-  setTimeout(() => {
-    mobileLinks[0]?.focus();
-  }, 100);
+  // setTimeout(() => {
+  //   mobileLinks[0]?.focus();
+  // }, 100);
 }
 
 function closeMenu() {
