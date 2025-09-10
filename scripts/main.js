@@ -238,10 +238,26 @@ document.addEventListener('keydown', (e) => {
 mobileLinks?.forEach(link => {
   link.addEventListener('click', function(e) {
     const href = link.getAttribute('href');
-    // External link or new page? Let browser handle, do not close menu.
-    if (href.startsWith('http') || href.startsWith('/')) return;
+    const isHome = location.pathname === "/" || location.pathname === "/index.html";
 
-    // Anchor link on this page
+    // External link: let browser handle, do NOT close menu.
+    if (href.startsWith('http')) return;
+
+    // Internal page link (starts with "/")—let browser handle.
+    if (href.startsWith('/') && !href.startsWith('/#')) return;
+
+    // "Work" link in mobile menu: on home page, close menu and scroll
+    if ((href === "#selected-work" || href === "/#selected-work") && isHome) {
+      e.preventDefault();
+      closeMenu();
+      setTimeout(() => {
+        const section = document.querySelector('#selected-work');
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return;
+    }
+
+    // Other anchor links: close menu and scroll
     if (href.startsWith('#')) {
       closeMenu();
       const anchor = href.slice(1);
@@ -250,6 +266,7 @@ mobileLinks?.forEach(link => {
     }
   });
 });
+
 
 // -----------------------------
 // Set active links in both navs (desktop + mobile)
