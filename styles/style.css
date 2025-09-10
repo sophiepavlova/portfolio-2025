@@ -1992,6 +1992,10 @@ nav .menu__link--resume .icon,
   color: #854D0E;
 }
 
+a:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
 
 
 @media (max-width: 1080px) { 
