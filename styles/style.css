@@ -1997,6 +1997,11 @@ a:focus:not(:focus-visible) {
   box-shadow: none;
 }
 
+.case-widget-card_no-background {
+  background: #F5F2EF;
+  margin-bottom: 0px;
+
+}
 
 @media (max-width: 1080px) { 
   .jump-menu {
