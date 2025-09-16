@@ -8,6 +8,7 @@
   --color-border: #D6D3D1;
   --color-stone-200: #E7E5E4;
   --color-blue-bg: #DBEAFE;
+  --color-blue-200: oklch(88.2% 0.059 254.128);
   --Components-Static-Icons-Soft-Yellow-Bg-Color: #FEF9C3;
   scrollbar-gutter: stable;
 }
@@ -873,7 +874,7 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 .corners-rounded {
   border-radius: 8px;
 }
-.case-highlights__visual {
+/* .case-highlights__visual {
   background-color: var(--color-blue-100, #DBEAFE);
   padding: 20px 0;
   display: flex;
@@ -882,7 +883,7 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
   gap: 50px;
   border-radius: 8px;
   margin-bottom: 40px;
-}
+} */
 .case-highlights__visual-image {
   max-width: 100%;
   height: auto;
@@ -1270,7 +1271,7 @@ margin-bottom: 24px;
   margin-bottom: 0;
 }
 .case-highlights__visual {
-  background-color: var(--color-blue-100, #DBEAFE);
+  background-color: var(--color-blue-200);
   padding: 20px 0;
   display: flex;
   justify-content: center;
