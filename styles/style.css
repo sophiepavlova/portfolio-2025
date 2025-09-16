@@ -2509,9 +2509,12 @@ a:focus:not(:focus-visible) {
     max-width: 310px;
   }
 }
-@media (max-width: 460px) {
+@media (max-width: 470px) {
   .work-card__subtitle {
     max-width: 250px;
+  }
+  #work1-title {
+    max-width: 300px;
   }
 }
 @media (max-width: 430px) {
@@ -2603,6 +2606,9 @@ a:focus:not(:focus-visible) {
 }
 @media (max-width: 376px) {
   .work-card__subtitle {
+    max-width: 200px;
+  }
+  #work1-title {
     max-width: 200px;
   }
 }
