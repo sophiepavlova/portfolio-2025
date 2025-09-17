@@ -154,12 +154,12 @@ const portraitEl = document.getElementById('portrait');
 if (portraitEl) {
   const originalSrc = '../assets/images/portrait.jpg'; // original portrait
   const looks = [
-    '../assets/images/about1.jpeg',
-    '../assets/images/about2.jpeg',
-    '../assets/images/about3.jpeg',
-    '../assets/images/about5.jpeg',
-    '../assets/images/about6.jpeg',
-    '../assets/images/about7.jpeg',
+    '../assets/images/about1.jpg',
+    '../assets/images/about2.jpg',
+    '../assets/images/about3.jpg',
+    '../assets/images/about5.jpg',
+    '../assets/images/about6.jpg',
+    '../assets/images/about7.jpg',
   ];
   let lastIndex = -1;
   let resetTimeout;

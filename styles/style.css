@@ -2369,6 +2369,9 @@ a:focus:not(:focus-visible) {
     font-size: 50px;
     line-height: 56px;;
   }
+  .hero__description {
+    font-size: 16px;
+  }
   .case-highlights__visual-image--wide,
   .case-highlights__visual-image--narrow,
   .case-highlights__visual-image--900,
