@@ -1111,7 +1111,7 @@ background-color: #99F6E4;
 }
 
 .case-howmightwe__visual {
-  background: var(--color-blue-bg, #DBEAFE);
+  background-color: var(--color-blue-200);
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -1482,7 +1482,7 @@ margin-bottom: 24px;
 /* Second highlight specific */
 .case-highlights__item--overlay .case-highlights__visual {
   position: relative;
-  background-color: var(--color-blue-100, #DBEAFE);
+  background-color: var(--color-blue-200);
   padding: 20px 0;
   border-radius: 8px;
   display: flex;
