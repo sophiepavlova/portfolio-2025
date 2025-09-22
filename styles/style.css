@@ -213,7 +213,6 @@ h3 {
 .button--secondary:hover {
   border: 1px solid #6B7280;
   color: #6B7280;
-
 }
 /* --- Selected Work --- */
 .selected-work {
@@ -2001,8 +2000,69 @@ a:focus:not(:focus-visible) {
 .case-widget-card_no-background {
   background: #F5F2EF;
   margin-bottom: 0px;
-
 }
+
+.case-nav {
+  margin: 0px auto;
+  margin-bottom: 40px;
+}
+
+.case-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  /* remove width/max-width here – let the global .container handle it */
+  padding-inline: 0; /* keep consistent with default */
+}
+
+/* One button → align right */
+.case-nav .container:has(.case-nav__btn:only-child) {
+  justify-content: flex-end;
+}
+
+
+
+/* If only one button inside → push it to the right */
+.case-nav:has(.case-nav__btn:only-child) {
+  justify-content: flex-end;
+}
+
+.case-nav__btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0.005em;
+  text-align: center;
+  padding: 20px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  /* background: var(--color-text, #1F2937);  */
+  color: var(--color-text, #1F2937);
+  transition: background 0.2s;
+  border: 1px solid var(--color-text)
+}
+
+.case-nav__btn:hover {
+  border: 1px solid #6B7280;
+  color: #6B7280;
+}
+.case-nav__btn--hidden {
+  display: none;
+}
+
+.case-nav__btn--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+.case-nav__btn--hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
 
 @media (max-width: 1080px) { 
   .jump-menu {
@@ -2032,6 +2092,10 @@ a:focus:not(:focus-visible) {
 @media (max-width: 1280px) {
   .case-sidenav {
     left: 0;
+  }
+   .case-nav .container {
+    padding-inline: 24px; /* match site content spacing */
+    box-sizing: border-box;
   }
 }
 
@@ -2140,6 +2204,9 @@ a:focus:not(:focus-visible) {
 }
 
 @media (max-width: 900px) {
+  .case-nav {
+  margin-bottom: 20px;
+}
   .case-highlights__visual--centered .case-highlights__visual-image--bg {
     max-width: 600px !important;
   }
