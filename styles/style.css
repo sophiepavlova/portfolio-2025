@@ -2194,6 +2194,24 @@ a:focus:not(:focus-visible) {
     width: 100% !important;
     box-sizing: border-box !important;
   }
+
+  .case-context__item {
+    display: block !important;   /* stack term + desc */
+  }
+
+  .case-context__term,
+  .case-context__desc {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: unset !important;
+    box-sizing: border-box !important;
+  }
+  .case-context__term{
+    margin-bottom: 20px;
+  }
+  .case-context__content-no-gap {
+    gap: 0px !important;
+  }
 }
 
 @media (max-width: 970px) {
@@ -2552,6 +2570,9 @@ a:focus:not(:focus-visible) {
 }
 .work-card__subtitle {
   max-width: 410px;
+}
+#case-context-title {
+  margin-bottom:20px;
 }
 }
 
