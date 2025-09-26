@@ -24,6 +24,20 @@ h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption {
   color: inherit;
 }
 
+/* Sticky footer layout */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 
 html {
   box-sizing: border-box;
