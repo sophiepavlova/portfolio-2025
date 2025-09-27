@@ -204,7 +204,7 @@
               <div class="case-context__item">
                 <dt class="case-context__term add-small-margin-bottom">Problem</dt>
                 <dd class="case-context__desc">
-                  <p><strong>While the redesign had not launched at the time I exited the company, early indicators were promising:Healthcare providers struggled with manual, repetitive tasks and a lack of actionable patient insight.</strong></p>
+                  <p><strong>Healthcare providers struggled with manual, repetitive tasks and a lack of actionable patient insight.</strong></p>
                   <!-- Key problems -->
                   <div class="insight-card add-small-margin-top reveal">
                     <div class="insight-card__header">
@@ -225,20 +225,342 @@
                       <li>High-risk patients could be overlooked due to scattered and incomplete data</li>
                     </ul>
                   </div>
+                  <p class="add-small-margin-top">The core design challenge: How do we help providers act on real-time patient data?</p>
                 </dd> 
               </div>
               
               <div class="case-context__item reveal">
-                <dt class="case-context__term add-small-margin-bottom">Learnings</dt>
+                <dt class="case-context__term add-small-margin-bottom">Solution</dt>
                 <dd class="case-context__desc case-context__desc-last">
-                  <p class="reveal"><strong>Designing for older adults requires more than just larger text and higher contrast</strong></br>Through this project, I gained a deeper appreciation for how essential simplicity is in shaping the user experience. Especially for seniors who may feel uncertain using digital tools and hesitant to press a button. Watching users navigate the original product emphasized how important it is for the design to meet the users where they are at.</p>
-                  <p class="reveal"><strong>"Good enough" infrastructure can block great UX</strong></br>Some of our biggest design challenges weren’t visual: they stemmed from inherited systems that made it hard to prioritize or notify users effectively. UX is so much more than just drawing some screens. In this case, it was also about advocating for front- and back-end improvements.</p>
-                  <p class="add-big-margin-bottom reveal"><strong>Working scrappily doesn’t mean working sloppily</strong><br>With limited time and budget, we got creative with how we did research and testing, from community center visits to AI-assisted brainstorming. I learned how to extract learnings even when conditions weren’t ideal. Some of our most meaningful user insights came from the least “formal” research moments.</br></p>
+                  <p class="reveal">My team and I designed an adaptable digital platform that helps healthcare providers save time, reduce errors, and deliver better patient care. We transformed manual workflows into automated programs, visual dashboards, and clear alerts which allow clinicians to spot patient risks and trends at a glance.</p>
+                  <p class="add-big-margin-bottom reveal">Our flexible designs ensure that Everwell can easily support new clinical specialties and future care programs as the organization grows.</br></p>
                 </dd>
               </div>
+
+              <div class="case-context__item reveal">
+              <dt class="case-context__term">Key contributions</dt>
+              <dd class="case-context__desc">
+                <p>During this project, I:</p>
+                <ul class="case-context__list">
+                  <li><strong>Designed the Trends feature</strong>, translated complex patient data into intuitive charts and visual summaries which made health trends easy for clinicians to spot and act on.</li>
+                  <li><strong>Led data visualization strategy</strong>, during which I developed line and radar charts, smart tooltips, and visual summary cards for actionable insights.</li>
+                  <li><strong>Advocated for user-centered design</strong>, conducting interviews and usability testing with clinicians, MOAs, admin staff, and patients to keep real-world workflows and experiences at the center of every decision.</li>
+                  <li><strong>Streamlined onboarding for new programs</strong>, by developing design patterns that enabled quick adaptation for new clinics and care areas.</li>
+                  <li><strong>Drove cross-functional collaboration</strong> by working closely with design, product, engineering, and clinical teams to validate features and ensure that the project stayed on track.</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="case-context__item reveal">
+              <dt class="case-context__term">Key impact</dt>
+              <dd class="case-context__desc">
+                <p class="reveal">With the new PROM workflows and visualization, clinicians could spot high-risk patients and overdue forms in a glance while patients received clear and approachable tasks.</p>
+                <p class="reveal">This shift directly boosted engagement, achieving<strong> a 98% patient completion rate (up from 20% with paper forms) and helping providers identify trends 60% faster.</strong></p>
+              </dd>
+            </div>
+
             </dl>
           </div>
         </section>
+
+        <!-- How Might We -->
+      <a id="nav-solution"></a>
+      <section class="case-howmightwe" aria-labelledby="case-howmightwe-title">
+        <div class="container">
+          <h2 id="case-howmightwe-title" class="case-howmightwe__heading reveal">
+            How might we help providers easily monitor patient progress and identify at-risk individuals?
+          </h2>
+      
+        <!-- First two-colunm block -->
+
+        <div class="case-howmightwe__block">
+          <div class="twocol twocol--wide">
+            <h3 class="twocol__heading reveal">Research & discovery</h3>
+            <div class="twocol__main">
+              <p class="reveal">
+                I interviewed 15 clinicians, MOAs, and admin staff to map out workflow pain points. Through those interviews, I uncovered several critical workflow challenges:
+              </p>
+              <div class="design-northstars">
+                <div class="design-northstar-card reveal">
+                  <span class="design-northstar-card__icon-bg">
+                    <img src="../assets/icons/search-check.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
+                  </span>
+                  <span class="design-northstar-card__text">
+                    Providers needed to <strong>spot at-risk patients</strong> as soon as possible, but there was no way to currently get insight into a patient’s status at a glance
+                  </span>
+                </div>
+                <div class="design-northstar-card reveal">
+                  <span class="design-northstar-card__icon-bg">
+                    <img src="../assets/icons/bar-chart-3.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
+                  </span>
+                  <span class="design-northstar-card__text">
+                    <strong>Visual summaries were overwhelmingly preferred</strong> (5:1 preference) over other types of data display, such as tables of numbers
+                  </span>
+                </div>
+                <div class="design-northstar-card reveal">
+                  <span class="design-northstar-card__icon-bg">
+                    <img src="../assets/icons/file-search.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
+                  </span>
+                  <span class="design-northstar-card__text">
+                    At the time, providers needed to <strong>manually sift through each patient’s PROM scores</strong> to identify any areas of concern.
+                  </span>
+                </div>
+                <div class="design-northstar-card reveal">
+                  <span class="design-northstar-card__icon-bg">
+                    <img src="../assets/icons/zap.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
+                  </span>
+                  <span class="design-northstar-card__text">
+                    <strong>Providers are extremely busy</strong>. In their day, every second counts.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Second two-colunm block -->
+
+        <div class="case-howmightwe__block">
+          <div class="twocol twocol--wide">
+            <h3 class="twocol__heading reveal">Design North Stars</h3>
+            <div class="twocol__main">
+              <p class="reveal">
+                The user research revealed critical pain points that guided our design principles throughout the project:
+              </p>
+              <div class="design-northstars">
+                <div class="design-northstar-card reveal">
+                  <span class="design-northstar-card__icon-bg">
+                    <img src="../assets/icons/activity.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
+                  </span>
+                  <span class="design-northstar-card__text">
+                    <strong>Speed above all:</strong> every interface decision prioritized immediate comprehension and rapid decision-making
+                  </span>
+                </div>
+                <div class="design-northstar-card reveal">
+                  <span class="design-northstar-card__icon-bg">
+                    <img src="../assets/icons/layout-dashboard.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
+                  </span>
+                  <span class="design-northstar-card__text">
+                    <strong>Visual-first information architecture:</strong> we committed to transforming raw data into intuitive visual patterns that clinicians could scan and understand instantly
+                  </span>
+                </div>
+                <div class="design-northstar-card reveal">
+                  <span class="design-northstar-card__icon-bg">
+                    <img src="../assets/icons/radar.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
+                  </span>
+                  <span class="design-northstar-card__text">
+                    <strong>Eliminate manual data search:</strong> the system needed to surface critical insights proactively rather than require providers to look for problems buried in data tables
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Third two-colunm block -->
+
+        <div class="case-howmightwe__block">
+          <div class="twocol twocol--wide">
+            <h3 class="twocol__heading reveal">Iterative design</h3>
+            <div class="twocol__main">
+              <p class="reveal">
+                We also prioritized a culture of continuous improvement. By running bi-weekly design reviews and feedback loops, we ensured our solutions were grounded in real provider needs and could quickly adapt as we learned.
+              </p>
+              <div class="design-northstars">
+                <div class="design-northstar-card reveal">
+                  <span class="design-northstar-card__icon-bg">
+                    <img src="../assets/icons/test-tube-2.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
+                  </span>
+                  <span class="design-northstar-card__text">
+                    <strong>Thoughtful prototyping and testing</strong> - needed to balance testing with how much of providers’ time we were allowed to take
+                  </span>
+                </div>
+                <div class="design-northstar-card reveal">
+                  <span class="design-northstar-card__icon-bg">
+                    <img src="../assets/icons/refresh-cw.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
+                  </span>
+                  <span class="design-northstar-card__text">
+                    <strong>Bi-weekly design reviews and feedback loops</strong> with the broader product team.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </section>
+
+       <!-- Design Highlights -->
+      <a id="nav-design"></a>
+      <section class="case-highlights case-highlights--case2" aria-labelledby="case-highlights-title">
+        <div class="container">
+          <h2 id="case-highlights-title" class="case-highlights__title reveal">
+            Design highlights
+          </h2>
+          <div class="case-highlights__list">
+            <!-- First highlight -->
+            
+            <article class="case-highlights__item">
+                <div class="case-highlights__visual reveal visible">
+                  <img
+                    src="../assets/images/3_2.png"
+                    alt="an image of the notification card"
+                    class="case-highlights__visual-image case-highlights__visual-image--900 case-highlights__visual-image--large reveal visible" />
+              </div>
+            </article>
+            <div class="twocol twocol--wide reveal">
+              <h3 class="twocol__heading">Home page</h3>
+              <div class="twocol__main">
+                <p>
+                  The Home page serves as the clinic’s command center, giving clinicians an at-a-glance view of what needs their attention most. The design prioritizes safety, efficiency, and clarity:
+                </p>
+                <ul class="case-context__list">
+                  <li><strong>Patient alerts</strong> surface high-risk patients first, helping clinicians triage quickly</li>
+                  <li><strong>Upcoming appointments</strong> show today’s and tomorrow’s visits, with PROM status so providers know whether the patient is prepared</li>
+                  <li><strong>Pending actions</strong> centralize overdue tasks and weekly to-dos, keeping clinical and administrative staff aligned</li>
+                  <li><strong>Clinic-wide trends</strong> provide a lightweight snapshot of population health, alert distribution, and PROM engagement, with a link to deeper analytics</li>
+                </ul>
+                <p>
+                  This page balances urgent tasks (alerts, overdue actions) with contextual insights (trends, completion rates), ensuring clinicians can act on urgent tasks and declining patients immediately while also staying aware of broader patterns.
+                </p>
+              </div>
+            </div>
+            <!-- Second highlight -->
+            
+
+            <!-- Third Highlight -->
+            <article class="case-highlights__item">
+
+              <div class="case-highlights__visual reveal">
+                <div class="case-highlights__visual-col case-highlights__visual-col--left">
+                  <img
+                    src="../assets/images/Notifications_3.png"
+                    alt="an image of the notification card"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
+                </div>
+              
+              </div>
+            </article>
+            <div class="twocol twocol--wide reveal">
+              <h3 class="twocol__heading">Notifications</h3>
+              <div class="twocol__main">
+                <p class="add-big-margin-bottom ">
+                  Recommendations were buried in the completed tasks list, making them easy to miss. I advocated for a persistent, lightweight notification system that’s easier to revisit and scalable for alerts, program updates, and reminders.
+                </p>
+              </div>
+            </div>
+
+            <!-- Fourth Highlight -->
+            <article class="case-highlights__item">
+
+              <div class="case-highlights__visual reveal">
+                <div class="case-highlights__visual-col case-highlights__visual-col--left">
+                  <img
+                    src="../assets/images/Why_Friendships_Matter_4_1.png"
+                    alt="Image of Why friendship matters for our health"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide" />
+                </div>
+                <div class="case-highlights__visual-col case-highlights__visual-col--right reveal">
+                  <!-- cards -->
+                  <div class="case-highlights__card-list">
+
+                    <!-- 1. Light notice card -->
+                    <div class="case-widget-card case-widget-card--notice reveal">
+                      <span class="case-widget-card__icon-bg">
+                        <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24" />
+                      </span>
+                      <div class="case-widget-card__content">
+                        <strong>AI accessibility features</strong>
+                        <div>
+                          Considering many seniors have age-related vision changes, I advocated for the addition of an</br>AI-powered voiceover feature for written content.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                    <!-- 2. Feature widget card -->
+                    <!-- <div class="case-widget-card "> -->
+                      <img class="case-widget-card case-widget-card--no-padding" src="../assets/images/Why_Friendships_Matter_Audio_4_2.png" alt="Image showing a mp3 player" class="case-widget-card__feature-img" />
+                    <!-- </div> -->
+
+                
+                    <!-- 3. Another light notice card -->
+                    <div class="case-widget-card case-widget-card--notice">
+                      <span class="case-widget-card__icon-bg">
+                        <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24" />
+                      </span>
+                      <div class="case-widget-card__content">
+                        <strong>Resource feedback</strong>
+                        <div>
+                          To assess the resources’ usefulness, we introduced an optional post-resource survey.
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <!-- 4. Accent "reports" card -->
+                    <img class="case-widget-card case-widget-card--no-padding" src="../assets/images/Did_you_find_this_useful_4_3.png" alt="image showing the short survey" class="case-widget-card__feature-img" />
+                </div>
+              </div>
+            </article>
+            
+              <div class="twocol twocol--wide reveal">
+                    <h3 class="twocol__heading">Individual resource</br>pages</h3>
+                    <div class="twocol__main">
+            
+                      <p class="add-big-margin-bottom ">
+                      We redesigned content pages with large visuals, time estimates, and accessibility in mind, adding auto-generated captions for videos and planning a voice-over support for articles.
+                      </p>
+                    </div>
+              </div>
+
+                <!-- Fith Highlight -->
+            <article class="case-highlights__item">
+
+              <div class="case-highlights__visual reveal">
+                <div class="case-highlights__visual-col case-highlights__visual-col--left">
+                  <img
+                    src="../assets/images/Who_Joins_5_1.png"
+                    alt="Image for connected living, and who is jopining it"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
+                </div>
+                <div class="case-highlights__visual-col case-highlights__visual-col--right case-highlights__visual-col--right-390">
+                  <img
+                    src="../assets/images/Profiles_5_2.png"
+                    alt="Image for connected living, and who is jopining it"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
+                  
+                </div>
+              </div>
+
+              
+              <div class="twocol twocol--wide reveal">
+                <h3 class="twocol__heading">Multi-profile support</h3>
+                <div class="twocol__main">
+                  <p class="add-big-margin-bottom">
+                    Some users were caregivers supporting loved ones. I designed the multi-profile system to allow quick profile switching, program enrollment per profile, and ownership transfer if a patient takes over their own care.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 🦊new card -->
+             <article class="case-highlights__item">
+
+              <div class="case-highlights__visual reveal">
+                <div class="case-highlights__visual-col case-highlights__visual-col--left">
+                  <img
+                    src="../assets/images/ios.png"
+                    alt="an image of the ios on the phone"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
+                </div>
+              </div>
+            </article>
+            <div class="twocol twocol--wide reveal">
+              <h3 class="twocol__heading">iOS application</h3>
+              <div class="twocol__main">
+                <p>
+                  I also closely worked with an iOS developer to translate the webapp to an iOS application. I audited features, mapped flows to native patterns (such as bottom tab bar and gestures), built mobile-optimized components, and provided Figma annotations. 
+                </p>
+              </div>
+            </div>
+            <!-- 🦊End new card -->
+          </div>
+      </section>
   </main>
 <!-- Footer -->
   <footer class="site-footer">
