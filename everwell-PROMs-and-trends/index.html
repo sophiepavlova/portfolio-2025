@@ -80,8 +80,9 @@
         <ul>
           <li><a href="#nav-overview">Overview</a></li>
           <li><a href="#nav-solution">Solution</a></li>
-          <li><a href="#nav-design">Design</a></li>
+          <li><a href="#nav-design">Designs</a></li>
           <li><a href="#nav-impact">Impact</a></li>
+          <li><a href="#nav-learnings">Learnings</a></li>
         </ul>
       </nav>
     </aside>
@@ -146,7 +147,7 @@
           <h2 id="case-image1-title" class="visually-hidden">Hero mockup for project</h2>
           <figure class="case-image__wrapper">
             <img 
-              src="../assets/images/3_1.png"
+              src="../assets/images/Trends_Top_Of_Page.gif"
               alt="Project hero screen, desktop and mobile"
               class="case-image__image reveal"
             />
@@ -156,8 +157,8 @@
 
       <!-- Overview -->
       <a id="nav-overview"></a>
-      <section class="case-overview reveal" aria-labelledby="case-overview-title">
-        <div class="container case-overview__content">
+      <section class="case-overview" aria-labelledby="case-overview-title">
+        <div class="container case-overview__content reveal">
           <!-- Left column -->
           <div class="case-overview__description reveal">
             <h2 id="case-overview-title" class="case-overview__heading">Project overview</h2>
@@ -233,7 +234,7 @@
                 <dt class="case-context__term add-small-margin-bottom">Solution</dt>
                 <dd class="case-context__desc case-context__desc-last">
                   <p class="reveal">My team and I designed an adaptable digital platform that helps healthcare providers save time, reduce errors, and deliver better patient care. We transformed manual workflows into automated programs, visual dashboards, and clear alerts which allow clinicians to spot patient risks and trends at a glance.</p>
-                  <p class="add-big-margin-bottom reveal">Our flexible designs ensure that Everwell can easily support new clinical specialties and future care programs as the organization grows.</br></p>
+                  <p class=" reveal">Our flexible designs ensure that Everwell can easily support new clinical specialties and future care programs as the organization grows.</br></p>
                 </dd>
               </div>
 
@@ -263,8 +264,8 @@
         </section>
 
         <!-- How Might We -->
-      <a id="nav-solution"></a>
-      <section class="case-howmightwe" aria-labelledby="case-howmightwe-title">
+        <section class="case-howmightwe" aria-labelledby="case-howmightwe-title">
+        <a id="nav-solution"></a>
         <div class="container">
           <h2 id="case-howmightwe-title" class="case-howmightwe__heading reveal">
             How might we help providers easily monitor patient progress and identify at-risk individuals?
@@ -396,7 +397,7 @@
           <div class="case-highlights__list">
             <!-- First highlight -->
             
-            <article class="case-highlights__item">
+            <article class="case-highlights__item reveal">
                 <div class="case-highlights__visual reveal visible">
                   <img
                     src="../assets/images/3_2.png"
@@ -416,59 +417,54 @@
                   <li><strong>Pending actions</strong> centralize overdue tasks and weekly to-dos, keeping clinical and administrative staff aligned</li>
                   <li><strong>Clinic-wide trends</strong> provide a lightweight snapshot of population health, alert distribution, and PROM engagement, with a link to deeper analytics</li>
                 </ul>
-                <p>
+                <p class="reveal">
                   This page balances urgent tasks (alerts, overdue actions) with contextual insights (trends, completion rates), ensuring clinicians can act on urgent tasks and declining patients immediately while also staying aware of broader patterns.
                 </p>
+                <!-- class="add-big-margin-bottom" -->
               </div>
             </div>
             <!-- Second highlight -->
 
-           <article class="case-highlights__item">
-            <div class="case-highlights__visual-rows reveal">
-              <!-- Big image -->
-              <img
-                src="../assets/images/3_3.png"
-                alt="Screenshot of the main feature"
-                class="case-highlights__visual-image case-highlights__visual-image--large reveal"
-              />
+            <article class="case-highlights__item">
+              <div class="case-highlights__visual-rows reveal">
+                <!-- Big image -->
+                <img
+                  src="../assets/images/3_3.png"
+                  alt="Screenshot of the main feature"
+                  class="case-highlights__visual-image case-highlights__visual-image--large reveal"
+                />
 
-              <!-- Two cards row -->
-              <div class="case-highlights__cards-row">
-                <div class="case-widget-card case-widget-card--no-padding case-widget-card-row case-widget-card-small reveal">
-                  <img src="../assets/images/3_3-1.png" alt="Digital Buddies program preview">
-                </div>
-                <div class="case-widget-card case-widget-card-hor case-widget-card--notice reveal">
-                  <span class="case-widget-card__icon-bg">
-                    <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24">
-                  </span>
-                  <div class="case-widget-card__content">
-                    <strong>Quick filters</strong>
-                    <p>Clinicians can use quick filters to quickly narrow the patient list. Clicking a tag applies the filter, and clicking again resets it.</p>
-                    <p><br>This lightweight interaction reduces cognitive load and makes it faster to focus on the right patients without digging through advanced filters.</p>
+                <!-- Two cards row -->
+                <div class="case-highlights__cards-row">
+                  <div class="case-widget-card case-widget-card--no-padding case-widget-card-row case-widget-card-small reveal">
+                    <img src="../assets/images/3_3-1.png" alt="Digital Buddies program preview">
                   </div>
+                  <div class="case-widget-card case-widget-card-hor case-widget-card--notice reveal">
+                    <span class="case-widget-card__icon-bg">
+                      <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24">
+                    </span>
+                    <div class="case-widget-card__content">
+                      <strong>Quick filters</strong>
+                      <p>Clinicians can use quick filters to quickly narrow the patient list. Clicking a tag applies the filter, and clicking again resets it.</p>
+                      <p><br>This lightweight interaction reduces cognitive load and makes it faster to focus on the right patients without digging through advanced filters.</p>
+                    </div>
+                  </div>
+
                 </div>
-
               </div>
-            </div>
-          </article>
-
-
-
+            </article>
 
             <div class="twocol twocol--wide reveal">
-              <h3 class="twocol__heading">Home page</h3>
+              <h3 class="twocol__heading">Patients dashboard</h3>
               <div class="twocol__main">
                 <p>
-                  The Home page serves as the clinic’s command center, giving clinicians an at-a-glance view of what needs their attention most. The design prioritizes safety, efficiency, and clarity:
+                  The Patients dashboard is the central hub for managing individual records. 
                 </p>
-                <ul class="case-context__list">
-                  <li><strong>Patient alerts</strong> surface high-risk patients first, helping clinicians triage quickly</li>
-                  <li><strong>Upcoming appointments</strong> show today’s and tomorrow’s visits, with PROM status so providers know whether the patient is prepared</li>
-                  <li><strong>Pending actions</strong> centralize overdue tasks and weekly to-dos, keeping clinical and administrative staff aligned</li>
-                  <li><strong>Clinic-wide trends</strong> provide a lightweight snapshot of population health, alert distribution, and PROM engagement, with a link to deeper analytics</li>
-                </ul>
                 <p>
-                  This page balances urgent tasks (alerts, overdue actions) with contextual insights (trends, completion rates), ensuring clinicians can act on urgent tasks and declining patients immediately while also staying aware of broader patterns.
+                  Clinicians can quickly filter, search, and scan patient details including alerts, PROM status, and upcoming appointments. Clear status chips highlight who needs attention, while quick filters and action menus streamline daily workflows. 
+                </p>
+                <p>
+                  This page shifts focus from clinic-wide insights to hands-on patient management. 
                 </p>
               </div>
             </div>
@@ -476,141 +472,228 @@
 
             <!-- Third Highlight -->
             <article class="case-highlights__item">
+              <div class="case-highlights__visual-rows reveal">
+                <!-- Big image -->
+                <img
+                  src="../assets/images/Patient_profile.gif"
+                  alt="Screenshot of the main feature"
+                  class="case-highlights__visual-image case-highlights__visual-image--large reveal"
+                />
 
-              <div class="case-highlights__visual reveal">
-                <div class="case-highlights__visual-col case-highlights__visual-col--left">
-                  <img
-                    src="../assets/images/Notifications_3.png"
-                    alt="an image of the notification card"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
+                <!-- Two cards row -->
+                <div class="case-highlights__cards-row">
+                  <div class="case-widget-card case-widget-card--no-padding case-widget-card-row case-widget-card-small-2 reveal">
+                    <img  src="../assets/images/3_4-1.png" alt="Digital Buddies program preview">
+                  </div>
+                  <div class="case-widget-card case-widget-card-hor case-widget-card--notice reveal">
+                    <span class="case-widget-card__icon-bg">
+                      <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24">
+                    </span>
+                    <div class="case-widget-card__content">
+                      <strong>Clinical insights</strong>
+                      <p>To avoid overwhelming clinicians with too much text, I designed the insights panel as an accordion. Most sections stay collapsed by default. However, high-risk alerts automatically open so critical information is never hidden.</p>
+                      
+                    </div>
+                  </div>
+
                 </div>
-              
               </div>
             </article>
             <div class="twocol twocol--wide reveal">
-              <h3 class="twocol__heading">Notifications</h3>
+              <h3 class="twocol__heading">Patient profile</h3>
               <div class="twocol__main">
-                <p class="add-big-margin-bottom ">
-                  Recommendations were buried in the completed tasks list, making them easy to miss. I advocated for a persistent, lightweight notification system that’s easier to revisit and scalable for alerts, program updates, and reminders.
+                <p>The Patient profile centralizes everything a clinician needs to review for one patient.</p>
+                <p>Trends charts visualize PROM changes over time, while clinical insights flag significant shifts and suggest follow-up actions. An activity log captures survey completions and reminders, and key demographic and program details provide context. </p>
+                <p class="add-big-margin-bottom">
+                  This page turns raw scores into actionable insights, helping clinicians make more informed decisions faster.
                 </p>
               </div>
             </div>
 
             <!-- Fourth Highlight -->
-            <article class="case-highlights__item">
+            
 
-              <div class="case-highlights__visual reveal">
-                <div class="case-highlights__visual-col case-highlights__visual-col--left">
+              <article class="case-highlights__item reveal">
+                <div class="case-highlights__visual reveal visible">
                   <img
-                    src="../assets/images/Why_Friendships_Matter_4_1.png"
-                    alt="Image of Why friendship matters for our health"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide" />
+                    src="../assets/images/Patient_trends.gif"
+                    alt="an image of the notification card"
+                    class="case-highlights__visual-image case-highlights__visual-image--900 case-highlights__visual-image--large reveal visible" />
                 </div>
-                <div class="case-highlights__visual-col case-highlights__visual-col--right reveal">
-                  <!-- cards -->
-                  <div class="case-highlights__card-list">
-
-                    <!-- 1. Light notice card -->
-                    <div class="case-widget-card case-widget-card--notice reveal">
-                      <span class="case-widget-card__icon-bg">
-                        <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24" />
-                      </span>
-                      <div class="case-widget-card__content">
-                        <strong>AI accessibility features</strong>
-                        <div>
-                          Considering many seniors have age-related vision changes, I advocated for the addition of an</br>AI-powered voiceover feature for written content.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                    <!-- 2. Feature widget card -->
-                    <!-- <div class="case-widget-card "> -->
-                      <img class="case-widget-card case-widget-card--no-padding" src="../assets/images/Why_Friendships_Matter_Audio_4_2.png" alt="Image showing a mp3 player" class="case-widget-card__feature-img" />
-                    <!-- </div> -->
-
-                
-                    <!-- 3. Another light notice card -->
-                    <div class="case-widget-card case-widget-card--notice">
-                      <span class="case-widget-card__icon-bg">
-                        <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24" />
-                      </span>
-                      <div class="case-widget-card__content">
-                        <strong>Resource feedback</strong>
-                        <div>
-                          To assess the resources’ usefulness, we introduced an optional post-resource survey.
-                        </div>
-                      </div>
-                    </div>
-                  
-                    <!-- 4. Accent "reports" card -->
-                    <img class="case-widget-card case-widget-card--no-padding" src="../assets/images/Did_you_find_this_useful_4_3.png" alt="image showing the short survey" class="case-widget-card__feature-img" />
-                </div>
-              </div>
-            </article>
+              </article>
             
               <div class="twocol twocol--wide reveal">
-                    <h3 class="twocol__heading">Individual resource</br>pages</h3>
+                    <h3 class="twocol__heading">Patient trends</h3>
                     <div class="twocol__main">
-            
-                      <p class="add-big-margin-bottom ">
-                      We redesigned content pages with large visuals, time estimates, and accessibility in mind, adding auto-generated captions for videos and planning a voice-over support for articles.
-                      </p>
+                      <p>The patient trends view helps clinicians track PROM scores over time and spot meaningful changes.</p>
+                      <p>Clinicians can select which PROMs to compare, switch between chart types (line, area, radar), and toggle alert zones for context. A summary below the chart highlights the latest scores, changes since the last period, and whether each domain is improving or declining.</p>
+                      <p class="add-big-margin-bottom">A breakdown of subdomains provides further detail, helping clinicians quickly identify where interventions are needed.</p>
                     </div>
               </div>
 
                 <!-- Fith Highlight -->
-            <article class="case-highlights__item">
-
-              <div class="case-highlights__visual reveal">
-                <div class="case-highlights__visual-col case-highlights__visual-col--left">
+            <article class="case-highlights__item reveal">
+                <div class="case-highlights__visual reveal visible">
                   <img
-                    src="../assets/images/Who_Joins_5_1.png"
-                    alt="Image for connected living, and who is jopining it"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
+                    src="../assets/images/3_6.png"
+                    alt="an image of the notification card"
+                    class="case-highlights__visual-image case-highlights__visual-image--900 case-highlights__visual-image--large reveal visible" />
                 </div>
-                <div class="case-highlights__visual-col case-highlights__visual-col--right case-highlights__visual-col--right-390">
-                  <img
-                    src="../assets/images/Profiles_5_2.png"
-                    alt="Image for connected living, and who is jopining it"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
-                  
-                </div>
-              </div>
-
-              
+              </article>
+            
               <div class="twocol twocol--wide reveal">
-                <h3 class="twocol__heading">Multi-profile support</h3>
-                <div class="twocol__main">
-                  <p class="add-big-margin-bottom">
-                    Some users were caregivers supporting loved ones. I designed the multi-profile system to allow quick profile switching, program enrollment per profile, and ownership transfer if a patient takes over their own care.
-                  </p>
-                </div>
+                    <h3 class="twocol__heading">Forms and PROMs</h3>
+                    <div class="twocol__main">
+                      <p>This page gives clinicians a clear overview of all PROMs assigned to a patient.</p>
+                      <p>Each row displays the form name, latest score, status, alerts, due date, and available actions. Color-coded chips make it easy to scan which forms are up to date, pending, overdue, or high risk. Clinicians can quickly act by sending reminders, escalating, or reviewing completed forms. </p>
+                      <p class="add-big-margin-bottom">This design ensures no critical assessments are missed and keeps patient monitoring organized and actionable.</p>
+                    </div>
               </div>
-            </article>
             <!-- 🦊new card -->
              <article class="case-highlights__item">
 
               <div class="case-highlights__visual reveal">
                 <div class="case-highlights__visual-col case-highlights__visual-col--left">
                   <img
-                    src="../assets/images/ios.png"
-                    alt="an image of the ios on the phone"
+                    src="../assets/images/3_7.png"
+                    alt="Image for connected living, and who is jopining it"
                     class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
+                </div>
+                <div class="case-highlights__visual-col case-highlights__visual-col--right case-highlights__visual-col--right-390">
+                  <img
+                    src="../assets/images/3_8.png"
+                    alt="Image for connected living, and who is jopining it"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
+                  
+                </div>
+              </div>
+
+              
+              <div class="twocol twocol--wide reveal">
+                <h3 class="twocol__heading">Patient experience</h3>
+                <div class="twocol__main">
+                  <p class="reveal">While providers see structured dashboards full of alerts, scores, and clinical insights, patients interact with a simpler, friendlier experience. The program is presented with a warm, approachable name (Living Well with Thalassemia) and tasks are framed as easy check-ins rather than medical monitoring.</p>
+                  <p class="reveal">Patients receive clear, bite-sized actions like completing a survey, reading a short article, or tracking symptoms. The language avoids jargon, the design uses supportive visuals, and estimated time to complete reduces survey fatigue. </p>
+                  <p class="reveal">
+                    This contrast ensures that while clinicians get the rigorous data they need, patients feel guided, supported, and in control of their own care journey.
+                  </p>
                 </div>
               </div>
             </article>
-            <div class="twocol twocol--wide reveal">
-              <h3 class="twocol__heading">iOS application</h3>
-              <div class="twocol__main">
-                <p>
-                  I also closely worked with an iOS developer to translate the webapp to an iOS application. I audited features, mapped flows to native patterns (such as bottom tab bar and gestures), built mobile-optimized components, and provided Figma annotations. 
-                </p>
-              </div>
-            </div>
-            <!-- 🦊End new card -->
-          </div>
       </section>
+      <a id="nav-impact"></a>
+      <!-- 🦊 -->
+        <section class="case-context" aria-labelledby="case-context-title">
+          <div class="container case-context__content case-context__content-no-gap">
+            <h2 id="case-context-title" class="case-context__heading reveal">
+              Project impact
+            </h2>
+            <dl class="case-context__items">
+              <div class="case-context__item reveal">
+                <dt class="case-context__term add-small-margin-bottom">Better for patients</dt>
+                <dd class="case-context__desc">
+                  <p>The redesign reframed technical PROMs into approachable, supportive check-ins. Instead of “SF-36 Questionnaire,” patients now see tasks like “Health & Daily Life Survey” within programs such as Living Well with Thalassemia. Clear language, estimated completion times, and educational readings helped reduce anxiety and improved participation, <strong>leading to a 98% completion rate (up from 20% with paper forms)</strong>. Plus, <strong>72% of patients reported feeling more motivated to track their health</strong> after using the digital monitoring tool.</p>
+                </dd>
+              </div>
+              <div class="case-context__item reveal">
+                <dt class="case-context__term add-small-margin-bottom">Better for clinicians</dt>
+                <dd class="case-context__desc">
+                  <p>Clinicians gained real-time visibility into alerts, overdue tasks, and score trends without having to dig through PDFs or spreadsheets. Visualized dashboards <strong>cut the time to identify concerning trends by 60%</strong>, freeing up more time for patient care and follow-up.</p>
+                </dd> 
+              </div>
+              
+              <div class="case-context__item reveal">
+                <dt class="case-context__term add-small-margin-bottom">Better for the business</dt>
+                <dd class="case-context__desc case-context__desc-last">
+                  <p>Beyond patient and provider outcomes, the modular design allowed the platform to<strong> scale quickly across new clinics and specialties</strong>. This flexibility saved significant development time and costs, while supporjting Everwell’s expansion into new markets.</p>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+      <a id="nav-learnings"></a>
+        <section class="case-context" aria-labelledby="case-context-title">
+          <div class="container case-context__content case-context__content-no-gap">
+            <h2 id="case-context-title" class="case-context__heading reveal">
+              Learnings
+            </h2>
+            <dl class="case-context__items reveal">
+              <!-- <div class="case-context__item">
+                <dt class="case-context__term add-small-margin-bottom">If continued…</dt>
+                <dd class="case-context__desc">
+                  <p>Improvements we were planning:</p>
+                  <ul class="case-context__list">
+                    <li>In-app onboarding walkthroughs for new users</li>
+                    <li>More refined personalization based on user activity, including a personalized activity plan and goal-setting</li>
+                    <li>Enhanced voice interaction features for accessibility for users who may struggle to type</li>
+                  </ul>
+                  
+                  <div class="insight-card add-small-margin-top reveal">
+                    <div class="insight-card__header">
+                      <div class="icon-box icon-box-green">
+                        <img
+                          src="../assets/icons/sparkles.svg"
+                          alt=""
+                          class="icon-box__icon"
+                          width="24"
+                          height="24"
+                        />
+                      </div>
+                      <h4 class="insight-card__title">Leveraging AI</h4>
+                    </div>
+                    <ul class="insight-card__list">
+                      <li>The original app included light AI features, like AI-generated summaries for resources, but there's room to push it further.</li>
+                      <li>If continued, I’d explore:
+                        <ul>
+                          <li>A opt-in assistant to share recommendations, track progress, and encourage the user. The assistant could also answer the users’ health questions, phrasing the answers in an understanding, non-judgemental, and reassuring tone</li>
+                          <li>Summaries to help caregivers easily stay informed as to their loved ones’ progress</li>
+                          <li>AI-powered mood check-ins that would suggest users exercises to complete based on what they share</li>
+                          <li>Smart routine builders based on the content the user consumes and the activities they complete</li>
+                        </ul>
+                      </li>
+                      <li>These features would act as add-ons, designed with opt-ins and transparency while keeping the older audience in mind.</li>
+                    </ul>
+                  </div>
+                </dd> 
+              </div> -->
+              
+              <div class="case-context__item reveal">
+                <dt class="case-context__term add-small-margin-bottom">Key learnings &<br>reflection</dt>
+                <dd class="case-context__desc case-context__desc-last">
+                  <p class="reveal"><strong>What worked well:</strong></p>
+                  <ul class="case-context__list add-small-margin-bottom reveal">
+                    <li>Designing with future needs in mind helped us avoid costly redesigns</li>
+                    <li>Frequent user testing surfaced pain points before they became blockers</li>
+                    <li>Collaboration across clinical, design, and engineering teams kept the product practical and safe</li>
+                  </ul >
+
+                  <p class="reveal"><strong>What I'd do differently:</strong></p>
+                  <ul class="case-context__list add-small-margin-bottom reveal">
+                    <li>Invest in stronger accessibility standards from the outset</li>
+                    <li>Add smarter notification filtering to reduce alert fatigue</li>
+                    <li>Bring patient feedback into the process even earlier</li>
+                  </ul>
+
+                  <p class="add-small-margin-bottom reveal"><strong>Most proud of:</strong></p>
+                  <p class="add-big-margin-bottom reveal">Transforming raw healthcare data into actionable insights for clinicians and patients, and building a platform that can keep evolving to meet new clinical needs.</p>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+        <!-- 🦊prev/next buttons -->
+         <nav class="case-nav reveal">
+          <div class="container">
+            <a href="/horizon-children-hospital/" class="case-nav__btn case-nav__btn--prev">
+              ← Previous case
+            </a>
+            <!-- keep Next hidden until case3 exists -->
+            <a href="#" class="case-nav__btn case-nav__btn--next case-nav__btn--hidden" aria-hidden="true">
+              Next case →
+            </a>
+          </div>
+        </nav>
+        <!-- 🦊end of prev/next buttons -->
   </main>
 <!-- Footer -->
   <footer class="site-footer">
