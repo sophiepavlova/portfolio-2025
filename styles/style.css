@@ -1,11 +1,13 @@
 :root {
-  --color-background: #fafaf9;
+  --color-background: white;
   --color-text: #1F2937;
   --color-accent: #BE123C;
   --color-accent-on-hover:#9F1239;
-;
+  --color-homepage:#180CC1;
 
   --color-border: #D6D3D1;
+  --color-stone-50:  #FAFAF9;
+
   --color-stone-200: #E7E5E4;
   --color-blue-bg: #DBEAFE;
   --color-blue-200: oklch(88.2% 0.059 254.128);
