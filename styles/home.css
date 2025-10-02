@@ -139,9 +139,10 @@
 /*🦊 The new card */
 /* Wrapper */
 .case-card {
-  width: 1080px;
-  max-width: 100%;
+  width: 100%;           /* fill available width */
+  max-width: 1080px;     /* but never exceed 1080px */
   margin: 0 auto 40px;
+  box-sizing: border-box;
 }
 
 .case-card__inner {
@@ -245,14 +246,17 @@
 }
 
 /* Right side (visual) */
+
 .case-card__visual {
   flex: 1;
-  background: #dbeafe; /* blue background */
+  background: #dbeafe;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 25.5px; /* per spec */
+  padding: 25.5px;
+  min-width: 0;   /* 👈 ensures flex child can shrink */
 }
+
 
 .case-card__visual-2 {
 	background: #D3B6D5;
@@ -283,21 +287,31 @@
 .case-card__phones {
   display: flex;
   gap: 15px;
-  align-items: flex-start; /* let them sit at their own heights */
-  position: relative;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  min-width: 0; /* prevents flex overflow */
 }
 
 /* Phone frame */
 .case-card__phone {
-  width: 224px;
-  height: auto;         
-  border-radius: 10px;
-  display: block;
-	object-fit: contain; 
+ 	width: 224px;       /* design size */
+  height: auto;
+  /* border-radius: 10px; */
+  object-fit: contain;
+  flex-shrink: 1;     /* 👈 allow them to shrink */
+  max-width: 100%;    /* never overflow */
   
   opacity: 0;
   transition: transform 1000ms ease-out, opacity 1000ms ease-out;
 }
+
+.case-card__image {
+  max-width: 100%;
+  border-radius: 10px;
+  height: auto;
+}
+
 
 /* Initial states */
 .case-card__phone--up {
@@ -318,10 +332,10 @@
 }
 
 /* End Cards home case2 animation */
-.case-card__visual img {
+/* .case-card__visual img {
   max-width: 100%;
   border-radius: 10px;
-}
+} */
 
 /*🦊 end new card */
 
@@ -420,7 +434,69 @@
     max-width: 100%;
     padding-inline: 20px;
   }
+
+	.case-card__phone {
+    width: auto;         /* let them be flexible */
+    max-width: 184px;    /* don’t exceed design size */
+    flex: 1 1 0;         /* shrink evenly */
+  }
 }
+@media (max-width: 900px) {
+  .case-card__inner {
+    flex-direction: column; /* text above, visual below */
+    gap: 20px;
+  }
+
+  .case-card__visual {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden; /* 👈 crop overflow */
+  }
+
+  .case-card__phones {
+    display: flex;
+    flex-direction: row;   /* side by side */
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .case-card__phone {
+    /* width: calc((100% - 8px) / 2); */
+    width: 224px;
+		
+    height: auto;
+    /* border-radius: 10px; */
+    object-fit: contain;
+    opacity: 0;
+    transition: transform 1000ms ease-out, opacity 1000ms ease-out;
+  }
+
+  /* Left phone: shifted down to bottom */
+  .reveal.visible .case-card__phone--up {
+    transform: translateY(14px); /* leak below, clipped at bottom */
+    opacity: 1;
+  }
+
+  /* Right phone: shifted up to top */
+  .reveal.visible .case-card__phone--down {
+    transform: translateY(-14px); /* leak above, clipped at top */
+    opacity: 1;
+  }
+
+  /* Initial animation (slide from sides) */
+  .case-card__phone--up {
+    transform: translateX(-120%);
+  }
+  .case-card__phone--down {
+    transform: translateX(120%);
+  }
+}
+
+
+
+
 
 /* Mobile (≤600px) */
 @media (max-width: 600px) {
@@ -469,6 +545,31 @@
   .home .container--wide {
     padding-inline: 16px;
   }
+	.case-card__inner {
+    flex-direction: column;   /* text on top, visual below */
+    gap: 20px;
+  }
+
+  .case-card__visual {
+    width: 100%;
+    padding: 10px;  /* side padding */
+    box-sizing: border-box;
+  }
+
+  .case-card__phones {
+    display: flex;
+    flex-direction: row;   /* phones side by side */
+    justify-content: center;
+    gap: 8px;              /* space between phones */
+    width: 100%;
+  }
+
+  .case-card__phone {
+    width: calc((100% - 8px) / 2); /* dynamic width */
+    height: auto;
+    object-fit: contain;
+  }
+	
 }
 
 /* Small phones (≤380px) */
