@@ -409,10 +409,46 @@
   padding-inline: 0;
 }
 
+.case-card__visual--gradient {
+  display: flex;                 /* center logo */
+  justify-content: center;
+  align-items: center;
+
+  width: 520px;                  /* match your Figma */
+  height: 520px;
+  border-radius: 10px;
+  padding: 20px 10px;            /* match the design specs */
+  background: linear-gradient(
+    180deg,
+    #CBE0FF 0%,   /* top blue */
+    #FFBADE 100%  /* bottom pink */
+  );
+}
+
+.case-card__image-logo {
+	max-width: 400px;
+}
+.case-card__company-pink {
+	color:  #180CC1;
+}
+.case-card__button-nonactive {
+	color: var(--Colors-Gray-500, #6B7280) !important;
+	border: 1px solid var(--Colors-Gray-500, #6B7280) !important;
+}
+
 /* ==============================
    Responsive Overrides
    ============================== */
 
+	 /* @media (max-width: 1096px) {
+			.case-stat {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			font-size: 16px;
+			align-items: flex-start;
+			}
+	 } */
 /* Tablet and below (≤1080px) */
 @media (max-width: 1080px) {
   .home .hero {
@@ -449,13 +485,23 @@
     flex-direction: column; /* text above, visual below */
     gap: 20px;
   }
-
   .case-card__visual {
-    width: 100%;
+		width: 100%;
+		max-height: 347px !important;
     padding: 10px;
     box-sizing: border-box;
     overflow: hidden; /* 👈 crop overflow */
   }
+	/* 🐧 */
+	/* .case-card__visual--gradient {
+		height: 347px !important;
+		flex:0;
+	} */
+	.case-card__image-sq {
+		max-width: 320px;
+		padding-left:10px;
+		padding-right:10px;
+	}
 
   .case-card__phones {
     display: flex;
