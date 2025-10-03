@@ -452,14 +452,30 @@ if (backToTop) {
 // -----------------------------
 // Scroll reveal animations
 // -----------------------------
+// document.addEventListener("DOMContentLoaded", () => {
+//   const reveals = document.querySelectorAll(".reveal");
+
+//   const observer = new IntersectionObserver((entries, obs) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         entry.target.classList.add("visible");
+//         obs.unobserve(entry.target); // animate only once
+//       }
+//     });
+//   }, { threshold: 0.1 });
+
+//   reveals.forEach(el => observer.observe(el));
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
   const reveals = document.querySelectorAll(".reveal");
 
-  const observer = new IntersectionObserver((entries, obs) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        obs.unobserve(entry.target); // animate only once
+        entry.target.classList.add("visible");   // show + animate
+      } else {
+        entry.target.classList.remove("visible"); // reset when out of view
       }
     });
   }, { threshold: 0.1 });
@@ -468,23 +484,38 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const revealElements = document.querySelectorAll('.reveal');
+  const phoneContainers = document.querySelectorAll(".case-card__phones");
+  const standaloneImages = document.querySelectorAll(".image-animate");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // animate only once
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // For phone containers: animate all children
+        if (entry.target.classList.contains("case-card__phones")) {
+          entry.target.querySelectorAll(".phone-animate").forEach(img => {
+            img.classList.add("animate-in");
+          });
         }
-      });
-    },
-    {
-      threshold: 0.2, // fire when 20% of the element is visible
-    }
-  );
 
-  revealElements.forEach((el) => {
-    observer.observe(el);
-  });
+        // For standalone images
+        if (entry.target.classList.contains("image-animate")) {
+          entry.target.classList.add("animate-in");
+        }
+      } else {
+        // Reset on scroll out
+        if (entry.target.classList.contains("case-card__phones")) {
+          entry.target.querySelectorAll(".phone-animate").forEach(img => {
+            img.classList.remove("animate-in");
+          });
+        }
+        if (entry.target.classList.contains("image-animate")) {
+          entry.target.classList.remove("animate-in");
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  phoneContainers.forEach(el => observer.observe(el));
+  standaloneImages.forEach(el => observer.observe(el));
 });
+

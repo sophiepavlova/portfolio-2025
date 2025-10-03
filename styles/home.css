@@ -276,11 +276,11 @@
 }
 
 /* Final state when revealed */
-.reveal.visible .case-card__image {
-  opacity: 1;
-  transform: scale(1);      /* full size */
-}
 
+.case-card__image.animate-in {
+  opacity: 1;
+  transform: scale(1); /* grow to full size */
+}
 
 /* Case1: end animation */
 
@@ -315,21 +315,24 @@
 
 /* Initial states */
 .case-card__phone--up {
-  transform: translateY(120%);  /* from below */
+  transform: translateY(120%);
+	opacity: 0; 
 }
 .case-card__phone--down {
-  transform: translateY(-120%); /* from above */
+  transform: translateY(-120%); 
+	opacity: 0;
 }
 
 /* Final states (slid into view, but offset vertically) */
-.reveal.visible .case-card__phone--up {
-  transform: translateY(30px);  /* stop a bit lower */
+.case-card__phone--up.animate-in {
+  transform: translateY(30px);  /* stop near bottom */
   opacity: 1;
 }
-.reveal.visible .case-card__phone--down {
-  transform: translateY(-30px); /* stop a bit higher */
+.case-card__phone--down.animate-in {
+  transform: translateY(-30px); /* stop near top */
   opacity: 1;
 }
+
 
 /* End Cards home case2 animation */
 /* .case-card__visual img {
@@ -465,22 +468,19 @@
   .case-card__phone {
     /* width: calc((100% - 8px) / 2); */
     width: 224px;
-		
-    height: auto;
-    /* border-radius: 10px; */
     object-fit: contain;
     opacity: 0;
     transition: transform 1000ms ease-out, opacity 1000ms ease-out;
   }
 
   /* Left phone: shifted down to bottom */
-  .reveal.visible .case-card__phone--up {
+  .case-card__phone--up.animate-in  {
     transform: translateY(14px); /* leak below, clipped at bottom */
     opacity: 1;
   }
 
   /* Right phone: shifted up to top */
-  .reveal.visible .case-card__phone--down {
+  .case-card__phone--down.animate-in  {
     transform: translateY(-14px); /* leak above, clipped at top */
     opacity: 1;
   }
@@ -568,6 +568,16 @@
     width: calc((100% - 8px) / 2); /* dynamic width */
     height: auto;
     object-fit: contain;
+  }
+	 /* Initial: slide from sides */
+  .case-card__phone--up   { transform: translateX(-120%); }
+  .case-card__phone--down { transform: translateX(120%); }
+
+  /* Final: stacked, no vertical offset needed */
+  .case-card__phone--up.animate-in,
+  .case-card__phone--down.animate-in {
+    transform: translateX(0);
+    opacity: 1;
   }
 	
 }
