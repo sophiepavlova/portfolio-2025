@@ -76,38 +76,7 @@ if (isCasePage || isWorkSection) {
 
 }
 
-// Shared smooth scroll to work section
-function scrollToWorkSection() {
-  const section = document.querySelector('#selected-work');
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-    if (workLink) setActive(workLink);
-  }
-}
 
-// Work link click handler
-if (workLink) {
-  workLink.addEventListener('click', (e) => {
-    if (currentPage !== 'home') {
-      // Go to home, then scroll
-      e.preventDefault();
-      window.location.href = '/#selected-work';
-    } else {
-      // On home, just scroll
-      e.preventDefault();
-      scrollToWorkSection();
-    }
-  });
-}
-
-// "See my work" button click handler (uses same smooth scroll)
-const seeMyWorkBtn = document.querySelector('a.button--primary[href="#selected-work"]');
-if (seeMyWorkBtn) {
-  seeMyWorkBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    scrollToWorkSection();
-  });
-}
 
 // Case card click handler
 document.querySelectorAll('a.work-card__link').forEach(cardLink => {
@@ -376,55 +345,55 @@ window.addEventListener('popstate', setActiveMenuLinks);
 })();
 
 // Responsive Jump Menu: Smooth scroll + offset fix
-(function() {
-  const jumpMenu = document.querySelector('.jump-menu');
-  if (!jumpMenu) return;
-  const links = jumpMenu.querySelectorAll('.jump-menu__link');
-  const anchorIds = Array.from(links).map(link => link.getAttribute('href').replace('#',''));
-  const sections = anchorIds.map(id => document.getElementById(id));
-  function getHeaderOffset() {
-    const header = document.querySelector('.site-header');
-    return header ? header.offsetHeight + 0 : 80;
-  }
+// (function() {
+//   const jumpMenu = document.querySelector('.jump-menu');
+//   if (!jumpMenu) return;
+//   const links = jumpMenu.querySelectorAll('.jump-menu__link');
+//   const anchorIds = Array.from(links).map(link => link.getAttribute('href').replace('#',''));
+//   const sections = anchorIds.map(id => document.getElementById(id));
+//   function getHeaderOffset() {
+//     const header = document.querySelector('.site-header');
+//     return header ? header.offsetHeight + 0 : 80;
+//   }
 
-  function updateJumpMenuActive() {
-    const scrollY = window.scrollY + getHeaderOffset() + 5;
-    let found = false;
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const el = sections[i];
-      if (el && el.offsetTop <= scrollY) {
-        links.forEach(l => l.classList.remove('active'));
-        links[i].classList.add('active');
-        found = true;
-        break;
-      }
-    }
-    if (!found) {
-      links.forEach(l => l.classList.remove('active'));
-    }
-  }
+//   function updateJumpMenuActive() {
+//     const scrollY = window.scrollY + getHeaderOffset() + 5;
+//     let found = false;
+//     for (let i = sections.length - 1; i >= 0; i--) {
+//       const el = sections[i];
+//       if (el && el.offsetTop <= scrollY) {
+//         links.forEach(l => l.classList.remove('active'));
+//         links[i].classList.add('active');
+//         found = true;
+//         break;
+//       }
+//     }
+//     if (!found) {
+//       links.forEach(l => l.classList.remove('active'));
+//     }
+//   }
 
-  window.addEventListener('scroll', updateJumpMenuActive, { passive: true });
-  window.addEventListener('resize', updateJumpMenuActive);
-  document.addEventListener('DOMContentLoaded', updateJumpMenuActive);
+//   window.addEventListener('scroll', updateJumpMenuActive, { passive: true });
+//   window.addEventListener('resize', updateJumpMenuActive);
+//   document.addEventListener('DOMContentLoaded', updateJumpMenuActive);
 
-  links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        const id = href.replace('#', '');
-        const el = document.getElementById(id);
-        if (el) {
-          e.preventDefault();
-          const y = el.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
-          window.scrollTo({ top: y, behavior: 'smooth' });
-          setTimeout(updateJumpMenuActive, 700);
-          link.blur();
-        }
-      }
-    });
-  });
-})();
+//   links.forEach(link => {
+//     link.addEventListener('click', function(e) {
+//       const href = this.getAttribute('href');
+//       if (href && href.startsWith('#')) {
+//         const id = href.replace('#', '');
+//         const el = document.getElementById(id);
+//         if (el) {
+//           e.preventDefault();
+//           const y = el.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
+//           window.scrollTo({ top: y, behavior: 'smooth' });
+//           setTimeout(updateJumpMenuActive, 700);
+//           link.blur();
+//         }
+//       }
+//     });
+//   });
+// })();
 
 // Fix for sticky :hover on touch devices
 document.addEventListener('touchend', function() {
@@ -519,3 +488,97 @@ document.addEventListener("DOMContentLoaded", () => {
   standaloneImages.forEach(el => observer.observe(el));
 });
 
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.case-card').forEach(el => observer.observe(el));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const seeWorkBtn = document.querySelector(".hero__button");
+  const selectedWork = document.querySelector(".selected-work");
+  const header = document.querySelector(".site-header");
+
+  const startGlide = () => {
+    body.classList.add("scrolled");
+    // Align the viewport so Selected Work starts nicely under the header
+    // const offset = (header?.offsetHeight || 0) + 50;
+    const y = selectedWork.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  // Start glide as soon as the user actually scrolls (no dead zone)
+  let armed = true;
+  window.addEventListener("scroll", () => {
+    if (armed && window.scrollY > 2) {
+      startGlide();
+      armed = false;
+    }
+  });
+
+  // Button triggers the same glide
+  seeWorkBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    startGlide();
+  });
+});
+
+// if (location.pathname === '/' || location.pathname === '/index.html') {
+//   window.addEventListener('scroll', () => {
+//     // As soon as the user moves even a little, start the glide
+//     document.body.classList.toggle('scrolled', window.scrollY > 1);
+//   }, { passive: true });
+
+//   // safety: if the mobile menu ever left body locked, unlock it
+//   document.body.style.overflow = '';
+// }
+
+// 🐹 Glide on the home screeen
+(function homeGlide() {
+  const onHome =
+    location.pathname === '/' ||
+    location.pathname.endsWith('/index.html');
+
+  if (!onHome) return;
+
+  const header = document.querySelector('.site-header');
+  const selectedWork = document.querySelector('#selected-work');
+  const hero = document.querySelector('.hero');
+  if (!selectedWork || !hero) return;
+
+  const getHeaderH = () => (header ? header.offsetHeight : 0);
+
+  function glideToSelectedWork() {
+    document.body.classList.add('scrolled');
+    const y = selectedWork.getBoundingClientRect().top + window.scrollY - getHeaderH();
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  window.__glideToSelectedWork = glideToSelectedWork;
+
+  const anchors = document.querySelectorAll('a[href="#selected-work"], a[href="/#selected-work"]');
+  anchors.forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      glideToSelectedWork();
+    });
+  });
+
+  let armed = true;
+  window.addEventListener('scroll', () => {
+    if (armed && window.scrollY > 2) {
+      armed = false;
+      glideToSelectedWork();
+    }
+  }, { passive: true });
+
+  window.addEventListener('scroll', () => {
+    hero.style.position = (window.scrollY > window.innerHeight) ? 'relative' : 'fixed';
+  }, { passive: true });
+})();
+
+// 🐹 End of Glide on the home screeen

@@ -25,7 +25,40 @@
   padding-block: 40px 60px;
   text-align: left;
 	background-color: var(--color-homepage);
+   height: 100dvh;
+  height: 100vh; /* fallback for older browsers */
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--color-homepage); /* or transparent initially */
+}
+.home .selected-work {
+  position: relative;
+  z-index: 1;
+  background-color: var(--color-background);
+  padding-top: 50px;
+  padding-bottom: 80px;
+  transform: translateY(100dvh);
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+body.scrolled .home .selected-work {
+  transform: translateY(0);
+}
+
+
 .hero-columns {
 	display: flex;
 	justify-content: space-between;
