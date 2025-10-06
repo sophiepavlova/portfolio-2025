@@ -79,11 +79,24 @@ if (isCasePage || isWorkSection) {
 // Shared smooth scroll to work section
 function scrollToWorkSection() {
   const section = document.querySelector('#selected-work');
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-    if (workLink) setActive(workLink);
-  }
+  if (!section) return;
+
+  // trigger the glide animation
+  document.body.classList.add('scrolled');
+
+  // calculate header height
+  const header = document.querySelector('.site-header');
+  const headerHeight = header ? header.offsetHeight : 0;
+
+  // scroll so the section sits directly below the header (no blue gap)
+  const y = section.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+  window.scrollTo({ top: y, behavior: 'smooth' });
+
+  if (workLink) setActive(workLink);
 }
+
+
 
 // Work link click handler
 if (workLink) {
@@ -108,6 +121,22 @@ if (seeMyWorkBtn) {
     scrollToWorkSection();
   });
 }
+
+document.addEventListener("scroll", () => {
+  const hero = document.querySelector(".hero");
+  const selectedWork = document.querySelector(".selected-work");
+
+  if (!hero || !selectedWork) return;
+
+  // When user scrolls past hero height, stop fixing the hero
+  if (window.scrollY > window.innerHeight) {
+    hero.style.position = "relative";
+  } else {
+    hero.style.position = "fixed";
+  }
+});
+
+
 
 // Case card click handler
 document.querySelectorAll('a.work-card__link').forEach(cardLink => {
@@ -519,3 +548,72 @@ document.addEventListener("DOMContentLoaded", () => {
   standaloneImages.forEach(el => observer.observe(el));
 });
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const seeWorkBtn = document.querySelector(".hero__button");
+  const selectedWork = document.querySelector(".selected-work");
+
+  if (seeWorkBtn && selectedWork) {
+    seeWorkBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const header = document.querySelector(".site-header");
+      const offset = header ? header.offsetHeight + 50 : 50; // keep 50px visual gap
+      const targetY =
+        selectedWork.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: targetY,
+        behavior: "smooth",
+      });
+    });
+  }
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.case-card').forEach(el => observer.observe(el));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const seeWorkBtn = document.querySelector(".hero__button");
+  const selectedWork = document.querySelector(".selected-work");
+  const header = document.querySelector(".site-header");
+
+  const startGlide = () => {
+    body.classList.add("scrolled");
+    // Align the viewport so Selected Work starts nicely under the header
+    const offset = (header?.offsetHeight || 0) + 50;
+    const y = selectedWork.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  // Start glide as soon as the user actually scrolls (no dead zone)
+  let armed = true;
+  window.addEventListener("scroll", () => {
+    if (armed && window.scrollY > 2) {
+      startGlide();
+      armed = false;
+    }
+  });
+
+  // Button triggers the same glide
+  seeWorkBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    startGlide();
+  });
+});
+
+if (location.pathname === '/' || location.pathname === '/index.html') {
+  window.addEventListener('scroll', () => {
+    // As soon as the user moves even a little, start the glide
+    document.body.classList.toggle('scrolled', window.scrollY > 1);
+  }, { passive: true });
+
+  // safety: if the mobile menu ever left body locked, unlock it
+  document.body.style.overflow = '';
+}

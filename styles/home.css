@@ -1,12 +1,23 @@
 /* ==============================
    Homepage Overrides (home.css)
    ============================== */
-
+body, html {
+  margin: 0;
+  overflow-x: hidden;
+	min-height: 100vh;   /* let the page grow */
+  height: auto;        /* do NOT clamp to 100% */
+}
 .home main {
   padding-top: 0;
 }
 .home .site-header {
 	background-color: var(--color-homepage);
+	top: 0;
+  width: 100%;
+	position: fixed;
+  top: 0;
+  z-index: 9999; /* ⬆ higher than any fixed hero or section */
+  isolation: isolate; /* start a new stacking context */
 }
 
 .home .logo {
@@ -21,11 +32,63 @@
 ;
 }
 /* --- Hero section --- */
-.home .hero {
-  padding-block: 40px 60px;
-  text-align: left;
-	background-color: var(--color-homepage);
+
+.hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-homepage);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0; /* below header */
 }
+
+/* 🐣 Button animation */
+
+/* 1️⃣ Floating motion for wrapper instead of button itself */
+.hero__button-wrapper {
+  display: flex;                      /* allows centering */
+  justify-content: center;            /* centers horizontally */
+  animation: floatButton 2.5s ease-in-out infinite;
+  will-change: transform;
+  width: 100%;         
+}
+
+/* 2️⃣ The actual button — can lift and rotate things inside */
+.hero__button {
+  transition: transform 0.3s ease;
+}
+
+/* Lift slightly on hover */
+.hero__button:hover {
+  transform: translateY(-6px);
+}
+
+/* 3️⃣ Floating keyframes */
+@keyframes floatButton {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+/* 4️⃣ Arrow rotation on hover */
+.hero__button .button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s ease;
+}
+
+.hero__button:hover .button__icon {
+  transform: rotate(360deg);
+}
+
+.hero__button-wrapper-case {
+	margin-top:50px !important;
+}
+
 .hero-columns {
 	display: flex;
 	justify-content: space-between;
@@ -124,25 +187,17 @@
 }
 
 /* --- Selected Work --- */
-.home .selected-work {
-  margin-top: 60px;
-  padding-bottom: 80px;
-}
 
-.home .selected-work__title {
-	font-family: "campaign-serif", sans-serif;
-  font-size: 36px;
-  font-weight: 400;
-  margin-bottom: 40px;
-  text-align: left;
-}
 /*🦊 The new card */
-/* Wrapper */
-.case-card {
-  width: 100%;           /* fill available width */
-  max-width: 1080px;     /* but never exceed 1080px */
-  margin: 0 auto 40px;
-  box-sizing: border-box;
+
+/* Selected Work — cards list (no inner scroll) */
+.selected-work__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: visible;      /* was overflow-y: auto; */
+  height: auto;           /* was calc(100vh - 100px) */
+  scroll-snap-type: none; /* was y mandatory */
 }
 
 .case-card__inner {
@@ -257,10 +312,8 @@
   min-width: 0;   /* 👈 ensures flex child can shrink */
 }
 
-
 .case-card__visual-2 {
 	background: #D3B6D5;
-
 }
 /* Case1 animation */
 .case-card__image {
@@ -312,7 +365,6 @@
   height: auto;
 }
 
-
 /* Initial states */
 .case-card__phone--up {
   transform: translateY(120%);
@@ -332,13 +384,6 @@
   transform: translateY(-30px); /* stop near top */
   opacity: 1;
 }
-
-
-/* End Cards home case2 animation */
-/* .case-card__visual img {
-  max-width: 100%;
-  border-radius: 10px;
-} */
 
 /*🦊 end new card */
 
@@ -437,18 +482,57 @@
 }
 
 /* ==============================
+   Header / Hero / Glide
+   ============================== */
+
+/* Header stays above everything */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+/* ==============================
+   Selected Work (single wrapper)
+   ============================== */
+
+/* When the glide completes */
+/* Start just below the blue hero but not a full viewport away */
+.home .selected-work {
+  position: relative;
+  z-index: 1;
+  background: var(--color-background);
+  padding-top: 50px;
+  padding-bottom: 80px;
+  transform: translateY(calc(100vh - 1px));
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+}
+body.scrolled .home .selected-work {
+  transform: translateY(0);
+}
+
+/* Title — regular (NOT fixed, NOT sticky) */
+.home .selected-work__title {
+  font-family: "campaign-serif", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: left;
+  margin: 0 0 40px 0;
+}
+
+/* ==============================
+   Case cards (clean base)
+   ============================== */
+
+.case-card {
+  height: auto; /* or remove fixed height */
+  min-height: unset;
+}
+
+/* ==============================
    Responsive Overrides
    ============================== */
 
-	 /* @media (max-width: 1096px) {
-			.case-stat {
-			display: flex;
-			flex-direction: column;
-			gap: 12px;
-			font-size: 16px;
-			align-items: flex-start;
-			}
-	 } */
 /* Tablet and below (≤1080px) */
 @media (max-width: 1080px) {
   .home .hero {
@@ -493,10 +577,7 @@
     overflow: hidden; /* 👈 crop overflow */
   }
 	/* 🐧 */
-	/* .case-card__visual--gradient {
-		height: 347px !important;
-		flex:0;
-	} */
+	
 	.case-card__image-sq {
 		max-width: 320px;
 		padding-left:10px;
@@ -539,10 +620,6 @@
     transform: translateX(120%);
   }
 }
-
-
-
-
 
 /* Mobile (≤600px) */
 @media (max-width: 600px) {
@@ -624,8 +701,7 @@
   .case-card__phone--down.animate-in {
     transform: translateX(0);
     opacity: 1;
-  }
-	
+  }	
 }
 
 /* Small phones (≤380px) */
@@ -672,3 +748,4 @@
   margin-left: 8px;
   flex-shrink: 0;
 }
+
