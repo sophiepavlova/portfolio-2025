@@ -426,6 +426,9 @@ body.scrolled .home .selected-work {
  {
   color: white;
 }
+.home .site-footer__email {
+  text-decoration: underline;
+}
 
 /* ==============================
    Homepage Container Utilities
