@@ -570,15 +570,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let armed = true;
   window.addEventListener('scroll', () => {
-    if (armed && window.scrollY > 2) {
-      armed = false;
-      glideToSelectedWork();
-    }
-  }, { passive: true });
+  if (
+    armed &&
+    window.scrollY > 2 &&
+    window.scrollY < window.innerHeight * 0.5 // only if they're near the top
+  ) {
+    armed = false;
+    glideToSelectedWork();
+  }
+}, { passive: true });
 
-  window.addEventListener('scroll', () => {
-    hero.style.position = (window.scrollY > window.innerHeight) ? 'relative' : 'fixed';
-  }, { passive: true });
+  // window.addEventListener('scroll', () => {
+  //   hero.style.position = (window.scrollY > window.innerHeight) ? 'relative' : 'fixed';
+  // }, { passive: true });
 })();
 
 // 🐹 End of Glide on the home screeen
