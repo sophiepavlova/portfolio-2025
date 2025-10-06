@@ -405,55 +405,55 @@ window.addEventListener('popstate', setActiveMenuLinks);
 })();
 
 // Responsive Jump Menu: Smooth scroll + offset fix
-(function() {
-  const jumpMenu = document.querySelector('.jump-menu');
-  if (!jumpMenu) return;
-  const links = jumpMenu.querySelectorAll('.jump-menu__link');
-  const anchorIds = Array.from(links).map(link => link.getAttribute('href').replace('#',''));
-  const sections = anchorIds.map(id => document.getElementById(id));
-  function getHeaderOffset() {
-    const header = document.querySelector('.site-header');
-    return header ? header.offsetHeight + 0 : 80;
-  }
+// (function() {
+//   const jumpMenu = document.querySelector('.jump-menu');
+//   if (!jumpMenu) return;
+//   const links = jumpMenu.querySelectorAll('.jump-menu__link');
+//   const anchorIds = Array.from(links).map(link => link.getAttribute('href').replace('#',''));
+//   const sections = anchorIds.map(id => document.getElementById(id));
+//   function getHeaderOffset() {
+//     const header = document.querySelector('.site-header');
+//     return header ? header.offsetHeight + 0 : 80;
+//   }
 
-  function updateJumpMenuActive() {
-    const scrollY = window.scrollY + getHeaderOffset() + 5;
-    let found = false;
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const el = sections[i];
-      if (el && el.offsetTop <= scrollY) {
-        links.forEach(l => l.classList.remove('active'));
-        links[i].classList.add('active');
-        found = true;
-        break;
-      }
-    }
-    if (!found) {
-      links.forEach(l => l.classList.remove('active'));
-    }
-  }
+//   function updateJumpMenuActive() {
+//     const scrollY = window.scrollY + getHeaderOffset() + 5;
+//     let found = false;
+//     for (let i = sections.length - 1; i >= 0; i--) {
+//       const el = sections[i];
+//       if (el && el.offsetTop <= scrollY) {
+//         links.forEach(l => l.classList.remove('active'));
+//         links[i].classList.add('active');
+//         found = true;
+//         break;
+//       }
+//     }
+//     if (!found) {
+//       links.forEach(l => l.classList.remove('active'));
+//     }
+//   }
 
-  window.addEventListener('scroll', updateJumpMenuActive, { passive: true });
-  window.addEventListener('resize', updateJumpMenuActive);
-  document.addEventListener('DOMContentLoaded', updateJumpMenuActive);
+//   window.addEventListener('scroll', updateJumpMenuActive, { passive: true });
+//   window.addEventListener('resize', updateJumpMenuActive);
+//   document.addEventListener('DOMContentLoaded', updateJumpMenuActive);
 
-  links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        const id = href.replace('#', '');
-        const el = document.getElementById(id);
-        if (el) {
-          e.preventDefault();
-          const y = el.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
-          window.scrollTo({ top: y, behavior: 'smooth' });
-          setTimeout(updateJumpMenuActive, 700);
-          link.blur();
-        }
-      }
-    });
-  });
-})();
+//   links.forEach(link => {
+//     link.addEventListener('click', function(e) {
+//       const href = this.getAttribute('href');
+//       if (href && href.startsWith('#')) {
+//         const id = href.replace('#', '');
+//         const el = document.getElementById(id);
+//         if (el) {
+//           e.preventDefault();
+//           const y = el.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
+//           window.scrollTo({ top: y, behavior: 'smooth' });
+//           setTimeout(updateJumpMenuActive, 700);
+//           link.blur();
+//         }
+//       }
+//     });
+//   });
+// })();
 
 // Fix for sticky :hover on touch devices
 document.addEventListener('touchend', function() {
@@ -550,25 +550,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const seeWorkBtn = document.querySelector(".hero__button");
-  const selectedWork = document.querySelector(".selected-work");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const seeWorkBtn = document.querySelector(".hero__button");
+//   const selectedWork = document.querySelector(".selected-work");
 
-  if (seeWorkBtn && selectedWork) {
-    seeWorkBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const header = document.querySelector(".site-header");
-      const offset = header ? header.offsetHeight + 50 : 50; // keep 50px visual gap
-      const targetY =
-        selectedWork.getBoundingClientRect().top + window.scrollY - offset;
+//   if (seeWorkBtn && selectedWork) {
+//     seeWorkBtn.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       const header = document.querySelector(".site-header");
+//       const offset = header ? header.offsetHeight + 50 : 50; // keep 50px visual gap
+//       const targetY =
+//         selectedWork.getBoundingClientRect().top + window.scrollY - offset;
 
-      window.scrollTo({
-        top: targetY,
-        behavior: "smooth",
-      });
-    });
-  }
-});
+//       window.scrollTo({
+//         top: targetY,
+//         behavior: "smooth",
+//       });
+//     });
+//   }
+// });
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -587,7 +587,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const startGlide = () => {
     body.classList.add("scrolled");
     // Align the viewport so Selected Work starts nicely under the header
-    const offset = (header?.offsetHeight || 0) + 50;
+    // const offset = (header?.offsetHeight || 0) + 50;
     const y = selectedWork.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
@@ -608,12 +608,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-if (location.pathname === '/' || location.pathname === '/index.html') {
-  window.addEventListener('scroll', () => {
-    // As soon as the user moves even a little, start the glide
-    document.body.classList.toggle('scrolled', window.scrollY > 1);
-  }, { passive: true });
+// if (location.pathname === '/' || location.pathname === '/index.html') {
+//   window.addEventListener('scroll', () => {
+//     // As soon as the user moves even a little, start the glide
+//     document.body.classList.toggle('scrolled', window.scrollY > 1);
+//   }, { passive: true });
 
-  // safety: if the mobile menu ever left body locked, unlock it
-  document.body.style.overflow = '';
-}
+//   // safety: if the mobile menu ever left body locked, unlock it
+//   document.body.style.overflow = '';
+// }
