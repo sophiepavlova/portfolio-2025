@@ -21,6 +21,10 @@
 ;
 }
 /* --- Hero section --- */
+.hero-spacer {
+  height: 100vh; /* equal to .hero section */
+}
+
 .home .hero {
   padding-block: 40px 60px;
   text-align: left;
@@ -411,7 +415,16 @@ body.scrolled .home .selected-work {
 
 /* --- Footer --- */
 .home .site-footer {
-  margin-top: 80px;
+      padding-block: 20px 40px;
+}
+.home .site-footer__name,
+.home .site-footer__email,
+.home .site-footer__tagline,
+.home .site-footer__credit,
+.home .site-footer__heading,
+.home .site-footer__list li a
+ {
+  color: white;
 }
 
 /* ==============================

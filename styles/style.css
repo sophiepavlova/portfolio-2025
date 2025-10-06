@@ -12,7 +12,7 @@
   --color-blue-bg: #DBEAFE;
   --color-blue-200: oklch(88.2% 0.059 254.128);
   --Components-Static-Icons-Soft-Yellow-Bg-Color: #FEF9C3;
-  scrollbar-gutter: stable;
+  --scrollbar-gutter: stable;
 }
 
 /* Base text color across the site */
