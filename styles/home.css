@@ -220,6 +220,17 @@ body.scrolled .home .selected-work {
   text-align: left;
 }
 /*🦊 The new card */
+/* ✨ Card hover interaction */
+.case-card__link {
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-card__link:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
 /* Wrapper */
 .case-card {
   width: 100%;           /* fill available width */
@@ -319,6 +330,22 @@ body.scrolled .home .selected-work {
 
 .case-card__button {
   animation: buttonFloat 2s ease-in-out infinite;
+}
+.case-card__button-nonactive {
+  color: var(--Colors-Gray-500, #6B7280);
+  border: 1px solid var(--Colors-Gray-500, #6B7280);
+  background-color: transparent;
+  cursor: default;           /* no pointer */
+  pointer-events: none;      /* ignore clicks */
+  animation: none !important; /* stop wobble */
+  transition: none !important;
+}
+
+/* Keep it visually stable even on hover */
+.case-card__button-nonactive:hover {
+  color: var(--Colors-Gray-500, #6B7280);
+  border-color: var(--Colors-Gray-500, #6B7280);
+  background-color: transparent;
 }
 
 /* 🐧 End of Wobble thecase buttons*/

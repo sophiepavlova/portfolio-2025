@@ -421,36 +421,21 @@ if (backToTop) {
 // -----------------------------
 // Scroll reveal animations
 // -----------------------------
-// document.addEventListener("DOMContentLoaded", () => {
-//   const reveals = document.querySelectorAll(".reveal");
-
-//   const observer = new IntersectionObserver((entries, obs) => {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
-//         entry.target.classList.add("visible");
-//         obs.unobserve(entry.target); // animate only once
-//       }
-//     });
-//   }, { threshold: 0.1 });
-
-//   reveals.forEach(el => observer.observe(el));
-// });
-
 document.addEventListener("DOMContentLoaded", () => {
   const reveals = document.querySelectorAll(".reveal");
 
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");   // show + animate
-      } else {
-        entry.target.classList.remove("visible"); // reset when out of view
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target); // animate only once
       }
     });
   }, { threshold: 0.1 });
 
   reveals.forEach(el => observer.observe(el));
 });
+
 
 // 📚Animation of the images inside the cards in cases on the Home page
 document.addEventListener("DOMContentLoaded", () => {
