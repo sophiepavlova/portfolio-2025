@@ -137,6 +137,7 @@ body.scrolled .home .selected-work {
 
 .home .hero__info-text {
 	color: white;
+  font-family: 'Inter', sans-serif;
 }
 
 .home .hero__info-item {
@@ -186,7 +187,6 @@ body.scrolled .home .selected-work {
   border: 1px solid var(--color-text);
   color: var(--color-text);
 }
-
 
 .home .selected-work__title {
 	font-family: "campaign-serif", sans-serif;
@@ -265,8 +265,39 @@ body.scrolled .home .selected-work {
 .case-card__button {
   align-self: flex-start;
 	padding: 14px 16px !important;
-  margin-bottom: 14px;
+  margin-top: 14px;
+  height: auto;
 }
+/* 📚  case buttons*/
+/* Base non-active secondary button */
+.case-card__button {
+  color: var(--Colors-Gray-500, #6B7280);
+  border: 1px solid var(--Colors-Gray-500, #6B7280);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect – mimic secondary button behavior */
+.case-card__button:hover {
+ border: 1px solid #6B7280;
+    color: #6B7280;
+}
+
+/* 📚  End case buttons*/
+
+/* 🐧  Wobble the case buttons*/
+/* ✨ Gentle idle wobble animation for case card buttons */
+@keyframes buttonFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.case-card__button {
+  animation: buttonFloat 2s ease-in-out infinite;
+}
+
+/* 🐧 End of Wobble thecase buttons*/
 
 /* Stats block */
 .case-card__stats {
