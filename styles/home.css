@@ -636,12 +636,20 @@ body.scrolled .home .selected-work {
   }
 
 	.case-card__phone {
-    width: auto;         /* let them be flexible */
-    /* max-width: 184px;     */
+    width: auto;
     max-width: 224px;    
-    flex: 1 1 0;         /* shrink evenly */
+    flex: 1 1 0;
   }
+
+  /* 🐞 with overflowing cards */
+/* .case-card__phone {
+    width: calc((100% - 8px) / 2);
+    height: auto;
+    object-fit: contain;
+  } */
+  /* 🐞End of the bug with overflowing cards */
 }
+
 @media (max-width: 900px) {
   .hero-left {
     max-width: 370px;
@@ -658,7 +666,8 @@ body.scrolled .home .selected-work {
   }
   .case-card__visual {
 		width: 100%;
-		max-height: 347px !important;
+		max-height: 443px !important;
+		/* max-height: 347px !important; */
     padding: 10px;
     box-sizing: border-box;
     overflow: hidden; /* 👈 crop overflow */
@@ -668,47 +677,51 @@ body.scrolled .home .selected-work {
 		min-height: 347px !important;
 		flex:0;
 	}
+  /* 🐞 with cards sliding from left and right down */
 	.case-card__image-sq {
-		max-width: 320px;
-		padding-left:10px;
-		padding-right:10px;
-	}
+  max-width: 320px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
-  .case-card__phones {
-    display: flex;
-    flex-direction: row;   /* side by side */
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-  }
+/* Container that holds both phones */
+.case-card__phones {
+  display: flex;
+  flex-direction: row;   /* side by side */
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
 
-  .case-card__phone {
-    /* width: calc((100% - 8px) / 2); */
-    width: 224px;
-    object-fit: contain;
-    opacity: 0;
-    transition: transform 1000ms ease-out, opacity 1000ms ease-out;
-  }
+/* Shared phone base */
+.case-card__phone {
+  width: 224px;
+  object-fit: contain;
+  opacity: 0;
+  transition: transform 1000ms ease-out, opacity 1000ms ease-out;
+}
 
-  /* Left phone: shifted down to bottom */
-  .case-card__phone--up.animate-in  {
-    transform: translateY(14px); /* leak below, clipped at bottom */
-    opacity: 1;
-  }
+/* ✅ Initial animation state — start hidden vertically */
+.case-card__phone--up {
+  transform: translateY(120%); /* below view */
+}
 
-  /* Right phone: shifted up to top */
-  .case-card__phone--down.animate-in  {
-    transform: translateY(-14px); /* leak above, clipped at top */
-    opacity: 1;
-  }
+.case-card__phone--down {
+  transform: translateY(-120%); /* above view */
+}
 
-  /* Initial animation (slide from sides) */
-  .case-card__phone--up {
-    transform: translateX(-120%);
-  }
-  .case-card__phone--down {
-    transform: translateX(120%);
-  }
+/* ✅ Final animated positions — small offset to stay cropped */
+.case-card__phone--up.animate-in {
+  transform: translateY(14px);  /* leak below, clipped at bottom */
+  opacity: 1;
+}
+
+.case-card__phone--down.animate-in {
+  transform: translateY(-14px); /* leak above, clipped at top */
+  opacity: 1;
+}
+
+  /* 🐞 with cards sliding from left and right down */
 }
 
 @media (max-width: 774px) {
@@ -802,35 +815,13 @@ body.scrolled .home .selected-work {
     gap: 20px;
   }
 
-  .case-card__visual {
-    width: 100%;
-    padding: 10px;  /* side padding */
-    box-sizing: border-box;
-  }
-
-  .case-card__phones {
-    display: flex;
-    flex-direction: row;   /* phones side by side */
-    justify-content: center;
-    gap: 8px;              /* space between phones */
-    width: 100%;
-  }
-
+  /* 🐞Fixing the centered images */
   .case-card__phone {
     width: calc((100% - 8px) / 2); /* dynamic width */
     height: auto;
     object-fit: contain;
   }
-	 /* Initial: slide from sides */
-  .case-card__phone--up   { transform: translateX(-120%); }
-  .case-card__phone--down { transform: translateX(120%); }
-
-  /* Final: stacked, no vertical offset needed */
-  .case-card__phone--up.animate-in,
-  .case-card__phone--down.animate-in {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  /* 🐞End Fixing the centered images */
 	
   /* fixing hero button leftover seen in the footer */
   .home .hero[data-hidden="true"] {
