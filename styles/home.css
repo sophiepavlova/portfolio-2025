@@ -65,17 +65,23 @@ body {
   z-index: 1000;
   background-color: var(--color-homepage); /* or transparent initially */
 }
+/* --- Selected Work --- */
 .home .selected-work {
   position: relative;
   z-index: 1;
   background-color: var(--color-background);
   padding-top: 50px;
-  padding-bottom: 80px;
+  /* padding-bottom: 80px; */
   transform: translateY(100dvh);
   /* will-change: transform; */
   transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
   overflow-x: hidden;
+  margin-top: 60px;
+  padding-bottom: 0px !important;
 }
+/* .home .selected-work {
+} */
+
 
 body.scrolled .home .selected-work {
   transform: translateY(0);
@@ -86,6 +92,7 @@ body.scrolled .home .selected-work {
 	display: flex;
 	justify-content: space-between;
 	gap: 20px;
+  align-items: center;
 }
 
 .home .hero__greeting {
@@ -125,6 +132,7 @@ body.scrolled .home .selected-work {
   flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .home .hero__info-text {
@@ -157,7 +165,6 @@ body.scrolled .home .selected-work {
   white-space: nowrap;   /* keep text + icon together */
 	padding:0;
 	border-radius: 8px;
-  margin-top: 46px;
 }
 /* Inline icon for buttons */
 .home .button__icon {
@@ -180,11 +187,6 @@ body.scrolled .home .selected-work {
   color: var(--color-text);
 }
 
-/* --- Selected Work --- */
-.home .selected-work {
-  margin-top: 60px;
-  padding-bottom: 80px;
-}
 
 .home .selected-work__title {
 	font-family: "campaign-serif", sans-serif;
@@ -263,6 +265,7 @@ body.scrolled .home .selected-work {
 .case-card__button {
   align-self: flex-start;
 	padding: 14px 16px !important;
+  margin-bottom: 14px;
 }
 
 /* Stats block */
@@ -522,6 +525,7 @@ body.scrolled .home .selected-work {
   animation: floatButton 2.5s ease-in-out infinite;
   will-change: transform;
   width: 100%;
+      margin-top: 100px;
 }
 .hero__button {
   transition: transform 0.3s ease;
@@ -547,6 +551,9 @@ body.scrolled .home .selected-work {
    Responsive Overrides
    ============================== */
 
+    /* flex-direction: column;
+   }
+
 	 /* @media (max-width: 1096px) {
 			.case-stat {
 			display: flex;
@@ -556,8 +563,55 @@ body.scrolled .home .selected-work {
 			align-items: flex-start;
 			}
 	 } */
+@media (max-width: 1280px) {
+  .hero-columns {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .hero__content {
+    max-width: 1080px;
+  }
+  .hero-columns {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+  .home .hero__greeting {
+    font-size: 32px;
+  }
+  .hero-left {
+    max-width: 610px;
+  }
+  .work-card__icon {
+    max-width: 32px !important;
+    max-height: 32px !important;
+  }
+  .home .hero__title {
+    font-size: 60px;
+  }
+  .home .hero__description {
+    font-size: 20px;
+    /* ;
+  max-width: 0; */
+  /* overflow: hidden; */
+  }
+
+}
 /* Tablet and below (≤1080px) */
 @media (max-width: 1080px) {
+   .hero-columns {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+    .hero-left {
+        max-width: 490px;
+    }
+    .case-card__stats {
+      flex-direction: column;
+    }
   .home .hero {
     padding-block: 30px 50px;
   }
@@ -588,6 +642,15 @@ body.scrolled .home .selected-work {
   }
 }
 @media (max-width: 900px) {
+  .hero-left {
+    max-width: 370px;
+  }
+  .home .hero__greeting {
+    font-size: 27px;
+  }
+  .case-card__stats {
+        flex-direction: row;
+    }
   .case-card__inner {
     flex-direction: column; /* text above, visual below */
     gap: 20px;
@@ -647,9 +710,30 @@ body.scrolled .home .selected-work {
   }
 }
 
+@media (max-width: 774px) {
+  .home .hero__greeting {
+    font-size: 24px;
+  }
+  .hero-left {
+    max-width: 370px;
+  }
+  .home .hero__title {
+    font-size: 38px;
+    line-height: 44px;
+  }
+  .home .hero__description {
+    font-size: 18px;
+  }
+  .home .hero__info {
+    gap: 10px;
+  }
+}
 
 /* Mobile (≤600px) */
 @media (max-width: 600px) {
+    .case-card__stats {
+      flex-direction: column;
+    }
   .home .hero {
     text-align: left;
     padding-block: 20px 40px;
@@ -675,7 +759,7 @@ body.scrolled .home .selected-work {
 
   .home .selected-work {
     margin-top: 40px;
-    padding-bottom: 60px;
+    /* padding-bottom: 60px; */
   }
 
   .home .selected-work__title {
