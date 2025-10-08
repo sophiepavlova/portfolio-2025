@@ -452,34 +452,25 @@ document.addEventListener("DOMContentLoaded", () => {
   reveals.forEach(el => observer.observe(el));
 });
 
+// 📚Animation of the images inside the cards in cases on the Home page
 document.addEventListener("DOMContentLoaded", () => {
   const phoneContainers = document.querySelectorAll(".case-card__phones");
   const standaloneImages = document.querySelectorAll(".image-animate");
 
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // For phone containers: animate all children
+        // Animate when first visible
         if (entry.target.classList.contains("case-card__phones")) {
           entry.target.querySelectorAll(".phone-animate").forEach(img => {
             img.classList.add("animate-in");
           });
         }
-
-        // For standalone images
         if (entry.target.classList.contains("image-animate")) {
           entry.target.classList.add("animate-in");
         }
-      } else {
-        // Reset on scroll out
-        if (entry.target.classList.contains("case-card__phones")) {
-          entry.target.querySelectorAll(".phone-animate").forEach(img => {
-            img.classList.remove("animate-in");
-          });
-        }
-        if (entry.target.classList.contains("image-animate")) {
-          entry.target.classList.remove("animate-in");
-        }
+        // Stop observing once animated (no reset when scrolling up)
+        obs.unobserve(entry.target);
       }
     });
   }, { threshold: 0.3 });
@@ -487,6 +478,16 @@ document.addEventListener("DOMContentLoaded", () => {
   phoneContainers.forEach(el => observer.observe(el));
   standaloneImages.forEach(el => observer.observe(el));
 });
+
+
+
+
+
+
+
+
+
+
 
 
 const observer = new IntersectionObserver(entries => {
@@ -506,7 +507,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const startGlide = () => {
     body.classList.add("scrolled");
     // Align the viewport so Selected Work starts nicely under the header
-    // const offset = (header?.offsetHeight || 0) + 50;
+    const offset = (header?.offsetHeight || 0) + 50;
     const y = selectedWork.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
@@ -586,3 +587,19 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 // 🐹 End of Glide on the home screeen
+
+// Optional: tune breakpoint if needed
+// 📚 Hide .hero only after scrolling down
+const hero = document.querySelector('.home .hero');
+
+if (hero) {
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth < 600) {
+      const isPastHero = window.scrollY > window.innerHeight * 0.5;
+      hero.dataset.hidden = isPastHero ? 'true' : 'false';
+    } else {
+      hero.dataset.hidden = 'false';
+    }
+  });
+}
+// 📚END:  Hide .hero only after scrolling down

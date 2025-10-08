@@ -1,10 +1,19 @@
 /* ==============================
    Homepage Overrides (home.css)
    ============================== */
-
-.home main {
-  padding-top: 0;
+html, body {
+  overflow-x: hidden;
+   max-width: 100vw;
+   scrollbar-gutter: stable;
 }
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
+
+
 .home .site-header {
 	background-color: var(--color-homepage);
 }
@@ -23,22 +32,29 @@
 /* --- Hero section --- */
 .hero-spacer {
   height: 100vh; /* equal to .hero section */
+  width: 100vw; /* ✅ Ensure full width to prevent side leaks */
+  background: transparent; /* just in case */
 }
 
 .home .hero {
   padding-block: 40px 60px;
   text-align: left;
 	background-color: var(--color-homepage);
-   height: 100dvh;
+  height: 100dvh;
   height: 100vh; /* fallback for older browsers */
     position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+
+   box-sizing: border-box;
+  overflow-x: clip;
+  max-width: 100vw;
+  
 }
 
 .site-header {
@@ -56,8 +72,11 @@
   padding-top: 50px;
   padding-bottom: 80px;
   transform: translateY(100dvh);
+  /* will-change: transform; */
   transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow-x: hidden;
 }
+
 body.scrolled .home .selected-work {
   transform: translateY(0);
 }
@@ -416,6 +435,7 @@ body.scrolled .home .selected-work {
 /* --- Footer --- */
 .home .site-footer {
       padding-block: 20px 40px;
+      background: var(--color-homepage);
 }
 .home .site-footer__name,
 .home .site-footer__email,
@@ -429,6 +449,7 @@ body.scrolled .home .selected-work {
 .home .site-footer__email {
   text-decoration: underline;
 }
+
 
 /* ==============================
    Homepage Container Utilities
@@ -708,7 +729,21 @@ body.scrolled .home .selected-work {
     opacity: 1;
   }
 	
+  /* fixing hero button leftover seen in the footer */
+  .home .hero[data-hidden="true"] {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  .home .hero[data-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
 }
+
 
 /* Small phones (≤380px) */
 @media (max-width: 380px) {
