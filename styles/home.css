@@ -103,11 +103,35 @@ body.scrolled .home .selected-work {
 	font-weight: 300;
 	color: white;
 }
-.hero__content_greeting-full{
+/* Replaced the next code for dynamic change in the size of the greeting */
+/* .hero__content_greeting-full{
 	display: flex;
 	gap: 10px;
 	align-items: center;
+} */
+/* 🐧Flower size */
+.hero__content_greeting-full {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(20px, 2vw + 1rem, 36px); /* scales text & flower together */
 }
+
+.hero__flower {
+  width: 2em; /* proportional to text */
+  height: auto;
+  flex-shrink: 0;
+  transition: width 0.3s ease;
+  transform-origin: center center;
+  animation: heroFlowerSpin 20s linear infinite; /* smooth endless rotation */
+}
+
+@keyframes heroFlowerSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 🐧End of Flower size */
 
 .home .hero__title {
   font-family: "campaign-serif", sans-serif;
@@ -632,6 +656,9 @@ body.scrolled .home .selected-work {
 }
 /* Tablet and below (≤1080px) */
 @media (max-width: 1080px) {
+  .hero__flower {
+    width: 1em;
+  }
    .hero-columns {
   max-width: fit-content;
   margin-left: auto;
