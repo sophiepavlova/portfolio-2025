@@ -635,22 +635,19 @@ body.scrolled .home .selected-work {
     padding-inline: 20px;
   }
 
+  
 	.case-card__phone {
     width: auto;
     max-width: 224px;    
     flex: 1 1 0;
   }
-
   /* 🐞 with overflowing cards */
-/* .case-card__phone {
-    width: calc((100% - 8px) / 2);
-    height: auto;
-    object-fit: contain;
-  } */
+
   /* 🐞End of the bug with overflowing cards */
 }
 
-@media (max-width: 900px) {
+
+@media (max-width: 1050px) {
   .hero-left {
     max-width: 370px;
   }
