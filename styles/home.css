@@ -157,6 +157,7 @@ body.scrolled .home .selected-work {
   white-space: nowrap;   /* keep text + icon together */
 	padding:0;
 	border-radius: 8px;
+  margin-top: 46px;
 }
 /* Inline icon for buttons */
 .home .button__icon {
@@ -483,11 +484,12 @@ body.scrolled .home .selected-work {
   display: flex;                 /* center logo */
   justify-content: center;
   align-items: center;
-
-  width: 520px;                  /* match your Figma */
+  /* width: 520px; */
+  /* width: 520px; */
   height: 520px;
+  /* padding-left: 60px;
+  padding-right: 60px; */
   border-radius: 10px;
-  padding: 20px 10px;            /* match the design specs */
   background: linear-gradient(
     180deg,
     #CBE0FF 0%,   /* top blue */
@@ -497,7 +499,9 @@ body.scrolled .home .selected-work {
 
 .case-card__image-logo {
 	max-width: 400px;
+  padding-left: 0 !important;
 }
+
 .case-card__company-pink {
 	color:  #180CC1;
 }
@@ -596,10 +600,10 @@ body.scrolled .home .selected-work {
     overflow: hidden; /* 👈 crop overflow */
   }
 	/* 🐧 */
-	/* .case-card__visual--gradient {
-		height: 347px !important;
+	.case-card__visual--gradient {
+		min-height: 347px !important;
 		flex:0;
-	} */
+	}
 	.case-card__image-sq {
 		max-width: 320px;
 		padding-left:10px;
@@ -642,9 +646,6 @@ body.scrolled .home .selected-work {
     transform: translateX(120%);
   }
 }
-
-
-
 
 
 /* Mobile (≤600px) */
@@ -744,6 +745,17 @@ body.scrolled .home .selected-work {
   }
 }
 
+@media (max-width: 468px) {
+ .case-card__image-logo {
+  padding: 50px 10px;
+  max-width: 80vw;
+ }
+	/* 🐧 */
+	.case-card__visual--gradient {
+		height: auto !important;
+		flex:0;
+	}
+}
 
 /* Small phones (≤380px) */
 @media (max-width: 380px) {
