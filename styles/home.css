@@ -509,7 +509,7 @@ body.scrolled .home .selected-work {
   text-decoration: underline;
 }
 
-
+  
 /* ==============================
    Homepage Container Utilities
    ============================== */
@@ -670,6 +670,7 @@ body.scrolled .home .selected-work {
     .case-card__stats {
       flex-direction: column;
     }
+  
   .home .hero {
     padding-block: 30px 50px;
   }
