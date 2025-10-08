@@ -637,7 +637,8 @@ body.scrolled .home .selected-work {
 
 	.case-card__phone {
     width: auto;         /* let them be flexible */
-    max-width: 184px;    /* don’t exceed design size */
+    /* max-width: 184px;     */
+    max-width: 224px;    
     flex: 1 1 0;         /* shrink evenly */
   }
 }
@@ -728,9 +729,26 @@ body.scrolled .home .selected-work {
     gap: 10px;
   }
 }
-
+@media (max-width: 700px) {
+  .hero-columns {
+    flex-direction: column;
+    align-items: flex-start; /* keeps text left-aligned */
+    gap: 24px; /* add a bit more breathing room vertically */
+  }
+  .hero-left,
+  .home .hero__description {
+    max-width: 570px;
+  }
+}
 /* Mobile (≤600px) */
 @media (max-width: 600px) {
+  .hero-left,
+  .home .hero__description {
+    max-width: 470px;
+  }
+  .hero__button-wrapper{
+    margin-top: 20px;
+  }
     .case-card__stats {
       flex-direction: column;
     }
