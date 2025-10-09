@@ -492,7 +492,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const startGlide = () => {
     body.classList.add("scrolled");
     // Align the viewport so Selected Work starts nicely under the header
-    const offset = (header?.offsetHeight || 0) + 50;
+    const offset = header?.offsetHeight || 0;
     const y = selectedWork.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
