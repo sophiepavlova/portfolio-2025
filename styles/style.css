@@ -1902,8 +1902,16 @@ nav .menu__link--resume .icon,
   outline: 2px solid var(--color-accent, #E11D48);
   outline-offset: 2px;
 }
-
-
+/* Nav animation */
+/* .site-nav a {
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.3s ease;
+} */
+.site-nav a:hover {
+  transform: scale(1.05);
+  color: var(--color-accent);
+}
+/*End  Nav animation */
 
 /* Back to top button */
 .back-to-top {

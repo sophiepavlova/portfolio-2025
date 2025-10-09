@@ -34,6 +34,9 @@ body {
   color: var(--Colors-Rose-300, #FDA4AF);
 }
 
+.home .site-nav a:hover {
+  color: var(--Colors-Rose-300, #FDA4AF);
+}
 /* ================================
    Hero section (sticky version)
    ================================ */
@@ -230,6 +233,12 @@ body.scrolled .home .selected-work {
   box-shadow: -10px 12px 0px var(--color-homepage);
   /* box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); */
 }
+/* Different color of the shadow of the card */
+.case-card__link-other-color:hover {
+  box-shadow: -10px 12px 0px var(--color-accent);
+}
+/* End: Different color of the shadow of the card */
+
 .case-card__link {
   display: block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -256,7 +265,7 @@ body.scrolled .home .selected-work {
 .case-card__link:hover::after {
   opacity: 1; /* show blue shadow */
 }
-
+/* ✨ End of Card hover interaction */
 
 /* Wrapper */
 .case-card {
