@@ -1884,7 +1884,7 @@ nav .menu__link--resume .icon,
   border: none !important;
   border-left: 3px solid var(--color-accent, #E11D48) !important;
   border-radius: 0 4px 4px 0 !important;
-  background: #f8fafc;
+  /* background: #f8fafc; */
   color: var(--color-accent, #E11D48);
   font-weight: 700;
 }
