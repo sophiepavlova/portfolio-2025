@@ -624,6 +624,12 @@ color: #2563EB;
   border-radius: 8px;
   overflow: hidden;
 }
+.case-image__wrapper-top {
+  border: 1px solid var(--Colors-Stone-200, #E7E5E4)
+}
+.case-highlights__visual-image-corners {
+  border-radius: 8px;
+}
 .case-image__image {
   display: block;
   width: 100%;
