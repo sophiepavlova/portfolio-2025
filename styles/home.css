@@ -1,91 +1,99 @@
 /* ==============================
    Homepage Overrides (home.css)
    ============================== */
+
+:root {
+  /* keeps layout width consistent across pages */
+  scrollbar-gutter: stable;
+}
+
 html, body {
-  overflow-x: hidden;
-   max-width: 100vw;
-   scrollbar-gutter: stable;
+  overflow-x: clip;      /* stricter than hidden, prevents side leaks */
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
-  overflow-x: hidden;
-  max-width: 100vw;
   position: relative;
 }
 
-
+/* --- Header & navigation colors for home --- */
 .home .site-header {
-	background-color: var(--color-homepage);
+  background-color: var(--color-homepage);
 }
 
 .home .logo {
-	color: white;
+  color: white;
 }
 
 .home .site-nav a {
-	color: white;
+  color: white;
 }
+
 .home .site-nav a.active {
-	color: var(--Colors-Rose-300, #FDA4AF);
-;
+  color: var(--Colors-Rose-300, #FDA4AF);
 }
-/* --- Hero section --- */
+
+/* ================================
+   Hero section (sticky version)
+   ================================ */
+
+/* Old spacer removed to avoid large white gap */
 .hero-spacer {
-  height: 100vh; /* equal to .hero section */
-  width: 100vw; /* ✅ Ensure full width to prevent side leaks */
-  background: transparent; /* just in case */
+  display: none;
 }
 
 .home .hero {
+  position: sticky;
+  top: 0;
+  height: 100svh;               /* correct viewport height including browser UI */
+  width: 100%;
+  background-color: var(--color-homepage);
   padding-block: 40px 60px;
   text-align: left;
-	background-color: var(--color-homepage);
-  height: 100dvh;
-  height: 100vh; /* fallback for older browsers */
-    position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-   box-sizing: border-box;
-  overflow-x: clip;
-  max-width: 100vw;
-  
+  box-sizing: border-box;
+  z-index: 0;
+
+  backface-visibility: hidden;
+  transform: translateZ(0);     /* smooth GPU compositing */
 }
 
+/* Fixed header stays above sticky hero */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: var(--color-homepage); /* or transparent initially */
+  background-color: var(--color-homepage);
 }
-/* --- Selected Work --- */
+
+/* ================================
+   Selected Work section
+   ================================ */
+
 .home .selected-work {
   position: relative;
   z-index: 1;
   background-color: var(--color-background);
-  padding-top: 50px;
-  /* padding-bottom: 80px; */
-  transform: translateY(100dvh);
-  /* will-change: transform; */
-  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-  overflow-x: hidden;
-  margin-top: 60px;
-  padding-bottom: 0px !important;
-}
-/* .home .selected-work {
-} */
+  padding-top: 50px;            /* spacing below hero/header */
+  padding-bottom: 80px;
+  box-sizing: border-box;
+  overflow-x: clip;
 
+  /* ensure no legacy motion or transforms remain */
+  transform: none !important;
+}
 
 body.scrolled .home .selected-work {
-  transform: translateY(0);
+  transform: none !important;
 }
+
 
 
 .hero-columns {

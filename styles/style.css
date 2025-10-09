@@ -15,13 +15,17 @@
   --scrollbar-gutter: stable;
 }
 
-/* Base text color across the site */
+/* ==============================
+   Global Layout & Defaults
+   ============================== */
+
+/* Base colors */
 html, body {
   color: var(--color-text);
-  background-color: var(--color-bg); /* optional */
+  background-color: var(--color-bg);
 }
 
-/* Ensure all headings inherit the base unless explicitly changed */
+/* Inherit text color */
 h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption {
   color: inherit;
 }
@@ -29,22 +33,44 @@ h1, h2, h3, h4, h5, h6, p, li, dt, dd, figcaption {
 /* Sticky footer layout */
 html, body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100%;
   height: auto;
-  overflow-x: hidden;
+
+  /* Hide horizontal leaks and stabilize width */
+  overflow-x: clip;
+
+  /* Reserve scrollbar space but keep it invisible */
+  scrollbar-gutter: stable;
 }
 
+/* --- hide the scrollbar visually, but keep its layout space --- */
+html {
+  overflow-y: scroll; /* ensures same width across pages */
+}
+
+body::-webkit-scrollbar {
+  width: 0;           /* hides scrollbar on WebKit (Chrome, Safari) */
+  background: transparent;
+}
+
+body {
+  -ms-overflow-style: none;     /* hides scrollbar in IE/Edge legacy */
+  scrollbar-width: none;        /* hides scrollbar in Firefox */
+}
+
+/* Layout basics */
 main {
   flex: 1;
 }
 
-
+/* Box sizing */
 html {
   box-sizing: border-box;
 }
 *, *::before, *::after {
   box-sizing: inherit;
 }
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
