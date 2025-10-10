@@ -1720,7 +1720,7 @@ p.add-small-margin-bottom {
   margin-top: 66px;    /* pushes below the close button */
   margin-left: 0;
   padding: 20px 20px 40px 20px;
-  border-top: 1px solid var(--color-border, #D6D3D1);
+  /* border-top: 1px solid var(--color-border, #D6D3D1); */
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
