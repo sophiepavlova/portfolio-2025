@@ -202,7 +202,7 @@ body.scrolled .home .selected-work {
   line-height: 1.4;
   margin-bottom: 30px;
 	color: white;
-	max-width: 340px;
+	max-width: 312px; /*instead of 340 */
 }
 
 .home .hero__info {

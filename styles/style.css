@@ -1783,6 +1783,27 @@ p.add-small-margin-bottom {
   color: var(--color-accent); /* red */
 }
 
+/* 🐣Make every mobile menu row consistent */
+.mobile-menu__nav li { margin: 0; }                  /* kill any default margins */
+.mobile-menu__nav ul { row-gap: 20px; }              /* control the spacing between rows */
+
+.mobile-menu__nav a {
+  display: flex;                                      /* all rows are flex now */
+  align-items: center;
+  gap: 12px;                                          /* same text–icon gap everywhere */
+  line-height: 1;                                     /* identical row height */
+  padding: 4px 0;                                     /* you already use this – keep! */
+}
+
+/* Normalize icon size/behavior inside mobile menu */
+.mobile-menu__nav .icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  display: inline-block;
+}
+/*🐣End: Make every mobile menu row consistent */
+
 .case-highlights__visual-image--900,
 .case-highlights__visual-image--large,
 .case-highlights__visual-image--w830,
