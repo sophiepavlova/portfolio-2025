@@ -37,6 +37,54 @@ body {
 .home .site-nav a:hover {
   color: var(--Colors-Rose-300, #FDA4AF);
 }
+.site-nav .icon{
+  width: 16px !important;
+  height: 16px !important;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Home footer: white by default, pink on hover/focus */
+.home .site-footer__list a {
+  color: white;
+  transition: color 0.25s ease;
+}
+
+.home .site-footer__list a:hover,
+.home .site-footer__list a:focus {
+  color: var(--Colors-Rose-300, #FDA4AF);
+}
+
+/* =========================
+   Mobile menu — homepage only
+   ========================= */
+.home .mobile-menu {
+  background-color: var(--color-homepage); /* same blue as hero */
+}
+
+.home .mobile-menu__nav a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.home .mobile-menu__nav a:hover,
+.home .mobile-menu__nav a:focus {
+  color: var(--Colors-Rose-300, #FDA4AF); /* pink hover */
+}
+
+.home .mobile-menu__nav a.active,
+.home .mobile-menu__nav a[aria-current="page"] {
+  color: var(--Colors-Rose-300, #FDA4AF); /* pink active */
+}
+/* =========================
+   Mobile menu close button — homepage only
+   ========================= */
+.home .menu-close svg path {
+  stroke: white !important;
+}
+/* Homepage hover: pink */
+.home .site-nav a.menu__link--resume:hover {
+  color: var(--Colors-Rose-300, #FDA4AF);
+}
 /* ================================
    Hero section (sticky version)
    ================================ */
@@ -687,10 +735,10 @@ body.scrolled .home .selected-work {
   margin-left: auto;
   margin-right: auto;
 }
-
-  .hero__content {
+/* 🐞 did not center like this */
+  /* .hero__content {
     max-width: 1080px;
-  }
+  } */
   .hero-columns {
     display: flex;
     justify-content: flex-start;

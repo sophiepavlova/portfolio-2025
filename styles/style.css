@@ -164,7 +164,7 @@ h3 {
   top: 0;
   z-index: 2000;
   padding-block: 20px;
-  border-bottom: 1px solid var(--color-border);
+  /* border-bottom: 1px solid var(--color-border); */
   backdrop-filter: blur(4px);
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
@@ -1759,7 +1759,29 @@ p.add-small-margin-bottom {
   color: var(--color-accent-on-hover, #BE123C);
 }
 
+.site-nav .icon,
+.site-footer__list .icon {
+  width: 16px !important;
+  height: 16px !important;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* =========================
+   Mobile menu — global hover (non-home pages)
+   ========================= */
+.mobile-menu__nav a:hover,
+.mobile-menu__nav a:focus {
+  color: var(--color-accent, #E11D48); 
+}
+/* === Resume icon hover (default: red accent) === */
+.site-nav a.menu__link--resume .icon {
+  transition: filter 0.3s ease;
+}
 
+/*🐧 Default hover: red accent */
+.site-nav a.menu__link--resume:hover {
+  color: var(--color-accent); /* red */
+}
 
 .case-highlights__visual-image--900,
 .case-highlights__visual-image--large,
