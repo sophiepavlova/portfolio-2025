@@ -588,3 +588,147 @@ if (hero) {
   });
 }
 // 📚END:  Hide .hero only after scrolling down
+// 🦉About page, the last element of the cards, the automaticall changing of the photos in the 8-th element
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".about-photo-slider");
+  const slides = Array.from(document.querySelectorAll(".about-photo-slider__img"));
+
+  const interval = 5000;       // ms per photo
+  const duration = 800;        // ms slide animation
+  const wheelThreshold = 80;   // wheel deltaY to trigger once
+  const swipeThreshold = 50;   // px for manual swipe
+  let current = 0;
+  let timer = null;
+  let isAnimating = false;
+  let wheelAccum = 0;
+  let touchStartY = 0;
+
+  // --- helpers
+  function setImmediateState(index, state) {
+    const s = slides[index];
+    s.style.transition = "none";
+    if (state === "below") { 
+      s.style.transform = "translateY(100%)"; 
+      s.style.opacity = "1"; 
+      s.classList.remove("is-active"); 
+      s.style.zIndex = 1; 
+    }
+    if (state === "active") { 
+      s.style.transform = "translateY(0)"; 
+      s.style.opacity = "1"; 
+      s.classList.add("is-active"); 
+      s.style.zIndex = 2; 
+    }
+    if (state === "above") { 
+      s.style.transform = "translateY(-100%)"; 
+      s.style.opacity = "0"; 
+      s.classList.remove("is-active"); 
+      s.style.zIndex = 1; 
+    }
+    s.offsetHeight; // force reflow
+  }
+
+  // --- animations
+  function animatePair(fromIdx, toIdx, direction = "up") {
+    const from = slides[fromIdx];
+    const to = slides[toIdx];
+
+    // prepare target slide
+    setImmediateState(toIdx, direction === "up" ? "below" : "above");
+
+    // enable transitions
+    from.style.transition = to.style.transition =
+      `transform ${duration}ms ease, opacity ${duration}ms ease`;
+
+    requestAnimationFrame(() => {
+      if (direction === "up") {
+        from.style.transform = "translateY(-100%)";
+      } else {
+        from.style.transform = "translateY(100%)";
+      }
+      from.style.opacity = "0";
+      from.style.zIndex = 3;
+
+      to.style.transform = "translateY(0)";
+      to.style.opacity = "1";
+      to.style.zIndex = 2;
+      to.classList.add("is-active");
+    });
+
+    // cleanup
+    setTimeout(() => {
+      setImmediateState(fromIdx, "below");
+      slides.forEach((s, i) => { if (i !== toIdx) s.classList.remove("is-active"); });
+      isAnimating = false;
+    }, duration);
+  }
+
+  // --- forward / backward logic
+  function showNext() {
+    if (isAnimating) return;
+    isAnimating = true;
+    const next = (current + 1) % slides.length;
+    animatePair(current, next, "up");
+    current = next;
+    resetAuto();
+  }
+
+  function showPrev() {
+    if (isAnimating) return;
+    isAnimating = true;
+    const prev = (current - 1 + slides.length) % slides.length;
+    animatePair(current, prev, "down");
+    current = prev;
+    resetAuto();
+  }
+
+  // --- autoplay controls
+  function startAuto() {
+    stopAuto();
+    timer = setInterval(showNext, interval);
+  }
+  function stopAuto() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+  function resetAuto() {
+    stopAuto();
+    startAuto();
+  }
+
+  // --- initialization
+  slides.forEach((_, i) => setImmediateState(i, i === 0 ? "active" : "below"));
+  startAuto();
+
+  // --- manual swipe (touch)
+  // On mobile: detect short flicks only (no scroll blocking)
+  slider.addEventListener("touchstart", (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  slider.addEventListener("touchend", (e) => {
+    const diff = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(diff) > swipeThreshold && Math.abs(diff) < 200 && !isAnimating) {
+      if (diff > 0) showNext(); // swipe up
+      else showPrev();          // swipe down
+    }
+  }, { passive: true });
+
+  // --- manual wheel (desktop)
+  slider.addEventListener("wheel", (e) => {
+    // only block page scroll on desktop
+    if (window.innerWidth > 900) e.preventDefault();
+
+    if (isAnimating) return;
+    wheelAccum += e.deltaY;
+    if (wheelAccum > wheelThreshold) {
+      wheelAccum = 0;
+      showNext();   // scroll down → next
+    } else if (wheelAccum < -wheelThreshold) {
+      wheelAccum = 0;
+      showPrev();   // scroll up → previous
+    }
+  }, { passive: false });
+});
+
+// 🦉🦉END: About page, the last element of the cards, the automaticall changing of the photos in the 8-th element

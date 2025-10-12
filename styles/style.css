@@ -635,7 +635,7 @@ h3 {
 
 /* emoji or text icon */
 .about-card__icon:not(:has(img)) {
-  font-size: clamp(48px, 7vw, 80px); /* proportional font size */
+  font-size: clamp(60px, 8.75vw, 100px); /* proportional font size */
   line-height: 1;
 }
 
@@ -729,6 +729,59 @@ color: var(--Colors-Blue-600, #2563EB);
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+/* The last row in about cards */
+/* layout structure */
+.about-row__grid--split {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  max-width: 1080px;      /* 530 + 20 + 530 */
+  margin: 0 auto;
+}
+
+/* both columns equal size */
+.about-col--left,
+.about-col--right {
+  flex: 0 0 530px; 
+  height: 525px;
+  box-sizing: border-box;
+}
+
+.about-photo-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.about-photo-slider__img {
+  position: absolute;
+  inset: 0;                 /* top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;                /* no gaps */
+  opacity: 0;
+  transform: translateY(100%);
+  transition: none;         /* JS will set transitions only during anim */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-photo-slider__img.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 2;               /* on top while visible */
+}
+
+
+.about-photo-slider__img.prev {
+  transform: translateY(-100%);
+}
+
+
 
 /* ====================================
    END: ABOUT PAGE — 2025 REDESIGN
