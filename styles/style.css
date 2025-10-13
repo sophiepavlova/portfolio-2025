@@ -581,12 +581,13 @@ h3 {
 /* container that holds 2 cards per row */
 .about-cards-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch; /* ✅ makes all cards in the row equal height */
   gap: 20px;
   max-width: 1080px;
   margin: 0 auto;
-  flex-wrap: wrap; /* safety for small screens */
+  margin-bottom: 20px;
 }
 
 /* base card */
@@ -594,7 +595,7 @@ h3 {
   flex: 1 1 calc((100% - 20px) / 2); /* two cards, minus gap */
   max-width: 530px;                  /* don’t grow beyond desktop design */
   min-width: 320px;                  /* stop shrinking too far */
-  min-height:290px;
+  /* min-height:290px; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -604,8 +605,27 @@ h3 {
   border-radius: 8px;
   box-sizing: border-box;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px;  */
+  margin-bottom: 0px; 
 }
+/* === normal cards === */
+/* Each main card (including the split one) */
+.about-cards-row > .about-card {
+  flex: 1 1 calc((100% - 20px) / 2);
+  max-width: 530px;
+  min-width: 0; /* ✅ allows shrinking */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.about-card__content {
+  flex: 1; /* ✅ fills remaining space inside card to equalize heights */
+  display: flex;
+  flex-direction: column;
+}
+
 
 /* icon */
 .about-card__icon {
@@ -692,24 +712,64 @@ font-size: 16px;
 line-height: 24px;
 letter-spacing: 0.5%;
 }
+/* === split (Say hi! + LinkedIn) === */
+/* The split card behaves the same as other cards */
 .about-card--split {
-  flex-direction: row;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: row  !important;
+  align-items: stretch;
   gap: 20px;
-  padding:0;
-  min-height: 266px;
-}
-.about-card--mini {
-  max-width: 255px !important;
-  max-height: 266px !important;
+  flex: 1 1 calc((100% - 20px) / 2);
+  max-width: 530px;
+  height: auto;
+  min-width: 0; /* ✅ prevents outer squeezing */
   box-sizing: border-box;
+  padding:0;
+  background-color: transparent !important;
+}
+/* The mini cards inside — must be flexible too */
+.about-card--split .about-card--mini {
+  flex: 1 1 0; /* ✅ equal halves that shrink together */
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width:255px;
-  min-height:266px;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
+  min-width: 0; /* ✅ allows text & content to shrink */
+  box-sizing: border-box;
+  height: 100%;
 }
+
+/* LinkedIn image fills its half */
+.about-card--split .about-card--linkedin img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.about-card--split .about-card--linkedin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #0077B5; */
+  background: var(--Colors-Blue-400, #60A5FA);
+
+  border-radius: 8px;
+  overflow: hidden;
+  /* flex: 1 1 50%; */
+  padding: 0;
+}
+
+/* make the white “in” mark scale proportionally */
+.about-card--split .about-card--linkedin .linkedin-logo {
+  width: 50%;
+  height: auto;
+  max-width: 180px;   /* optional cap */
+  object-fit: contain;
+}
+
+
 .about-card__link{
   font-family: Inter;
 font-weight: 700;
@@ -2415,7 +2475,31 @@ a:focus:not(:focus-visible) {
   opacity: 1;
   transform: translateY(0);
 }
+/* Maintain proportional shrink */
+@media (max-width: 1080px) {
+  .about-cards-row {
+    max-width: calc(100% - 40px);
+  }
+  .about-card {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
 
+@media (max-width: 728px) {
+  .about-card--split {
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-cards-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .about-card {
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 1080px) { 
   .jump-menu {
