@@ -2485,12 +2485,21 @@ a:focus:not(:focus-visible) {
   }
 }
 
-@media (max-width: 728px) {
+@media (max-width: 768px) {
   .about-card--split {
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
+  }
+  .about-cards-row > .about-card {
+    align-items: stretch;
+  }
+  .about-card--split .about-card--linkedin .linkedin-logo {
+    width: 40%;
+  }
+  .about-card__icon {
+    margin-bottom: 0px;
   }
 }
-
+/* 
 @media (max-width: 768px) {
   .about-cards-row {
     flex-direction: column;
@@ -2499,7 +2508,7 @@ a:focus:not(:focus-visible) {
   .about-card {
     max-width: 100%;
   }
-}
+} */
 
 @media (max-width: 1080px) { 
   .jump-menu {
