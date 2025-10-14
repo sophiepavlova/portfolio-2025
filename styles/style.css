@@ -2524,6 +2524,12 @@ a:focus:not(:focus-visible) {
   }
 }
 
+@media (max-width: 1080px) { 
+  .jump-menu {
+    display: block;
+  }
+}
+
 @media (max-width: 768px) {
   .about-card--split {
     flex-direction: column !important;
@@ -2535,7 +2541,7 @@ a:focus:not(:focus-visible) {
     align-items: stretch;
   }
   .about-card--split .about-card--linkedin .linkedin-logo {
-    width: 28%;
+    width: 40%;
   }
   .about-card__icon,
   .about-card__title  {
@@ -2545,22 +2551,9 @@ a:focus:not(:focus-visible) {
     padding:0 !important;
   }
 }
-/* 
-@media (max-width: 768px) {
-  .about-cards-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .about-card {
-    max-width: 100%;
-  }
-} */
 
-@media (max-width: 1080px) { 
-  .jump-menu {
-    display: block;
-  }
-}
+
+
 
 @media (max-width: 600px) {
   .jump-menu__card {
@@ -2961,6 +2954,29 @@ a:focus:not(:focus-visible) {
     font-size: 18px;
   }
 }
+/* Tablet: keep both columns proportional and preserve the gap */
+@media (max-width: 768px) and (min-width: 601px) {
+  .about-row--final .about-col--left,
+  .about-row--final .about-col--right {
+    flex: 1 1 0;
+    width: 0;          /* equal flex distribution */
+    min-width: 0;      /* allow real shrinking */
+    max-width: none;
+  }
+
+  /* Critical: let the left column cards shrink below 320px */
+  .about-row--final .about-col--left .about-card {
+    min-width: 0;      /* overrides the global 320px */
+  }
+
+  /* Belt-and-suspenders: prevent text blocks from setting a min-content width */
+  .about-row--final .about-card__title,
+  .about-row--final .about-card__text,
+  .about-row--final .about-card__list {
+    min-width: 0;
+  }
+}
+
 
 @media (max-width: 630px) {
   .work-card__subtitle {
@@ -3128,6 +3144,51 @@ a:focus:not(:focus-visible) {
   margin-bottom:20px;
 }
 }
+/* 🦊New About */
+/* ===== About: stack to single column on small screens ===== */
+@media (max-width: 600px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  /* All two-up rows (1–6) become one card per row */
+  .about-cards-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    max-width: 100%;
+  }
+  .about-cards-row > .about-card {
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: none;
+    min-width: 0;          /* override the global 320px floor */
+  }
+
+  /* Final split row: stack columns */
+  .about-row__grid--split {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .about-col--left,
+  .about-col--right {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+  /* Inner cards on the left column must also be allowed to shrink */
+  .about-col--left .about-card {
+    min-width: 0;
+  }
+
+  /* Split (Say hi! + LinkedIn) already flips to column at ≤768, keep it */
+  .about-card--split { flex-direction: column !important; }
+
+  /* Slider: keep proportion on mobile */
+  .about-photo-slider { aspect-ratio: 530/525; height: auto; }
+}
+
 
 @media (max-width: 550px) {
   .work-card__subtitle {
