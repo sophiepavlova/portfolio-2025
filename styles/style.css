@@ -798,20 +798,39 @@ color: var(--Colors-Blue-600, #2563EB);
   gap: 20px;
   max-width: 1080px;      /* 530 + 20 + 530 */
   margin: 0 auto;
+  display:flex;
+  width:100%
 }
 
 /* both columns equal size */
-.about-col--left,
+/* .about-col--left,
 .about-col--right {
   flex: 0 0 530px; 
   height: 552px;
   box-sizing: border-box;
+} */
+ /* columns behave like other cards */
+.about-col--left,
+.about-col--right {
+  flex: 1 1 calc((100% - 20px) / 2);
+  max-width: 530px;
+  min-width: 0; /* allows shrinking */
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
 }
 
 .about-col--left {
   display: flex;
   flex-direction: column !important;
   gap: 20px;
+}
+
+/* inner cards match the others */
+.about-col--left .about-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .currently__link {
@@ -2507,16 +2526,23 @@ a:focus:not(:focus-visible) {
 
 @media (max-width: 768px) {
   .about-card--split {
-    flex-direction: column-reverse !important;
+    flex-direction: column !important;
+  }
+  .about-card__icon-letter{
+    font-size: 70px !important;
   }
   .about-cards-row > .about-card {
     align-items: stretch;
   }
   .about-card--split .about-card--linkedin .linkedin-logo {
-    width: 40%;
+    width: 28%;
   }
-  .about-card__icon {
+  .about-card__icon,
+  .about-card__title  {
     margin-bottom: 0px;
+  }
+  .about-card--mini-1 {
+    padding:0 !important;
   }
 }
 /* 
