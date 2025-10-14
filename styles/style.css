@@ -804,8 +804,28 @@ color: var(--Colors-Blue-600, #2563EB);
 .about-col--left,
 .about-col--right {
   flex: 0 0 530px; 
-  height: 525px;
+  height: 552px;
   box-sizing: border-box;
+}
+
+.about-col--left {
+  display: flex;
+  flex-direction: column !important;
+  gap: 20px;
+}
+
+.currently__link {
+  color: var(--Colors-Blue-600, #2563EB);
+  text-decoration: underline;
+}
+
+.about-card__list {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.about-row--final {
+  padding-bottom: 40px;
 }
 
 .about-photo-slider {
