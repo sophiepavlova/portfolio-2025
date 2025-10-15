@@ -7,8 +7,9 @@
   scrollbar-gutter: stable;
 }
 
-html, body {
-  overflow-x: clip;      /* stricter than hidden, prevents side leaks */
+html,
+body {
+  overflow-x: clip; /* stricter than hidden, prevents side leaks */
   width: 100%;
   max-width: 100%;
 }
@@ -31,13 +32,13 @@ body {
 }
 
 .home .site-nav a.active {
-  color: var(--Colors-Rose-300, #FDA4AF);
+  color: var(--Colors-Rose-300, #fda4af);
 }
 
 .home .site-nav a:hover {
-  color: var(--Colors-Rose-300, #FDA4AF);
+  color: var(--Colors-Rose-300, #fda4af);
 }
-.site-nav .icon{
+.site-nav .icon {
   width: 16px !important;
   height: 16px !important;
   display: inline-block;
@@ -51,7 +52,7 @@ body {
 
 .home .site-footer__list a:hover,
 .home .site-footer__list a:focus {
-  color: var(--Colors-Rose-300, #FDA4AF);
+  color: var(--Colors-Rose-300, #fda4af);
 }
 
 /* =========================
@@ -68,12 +69,12 @@ body {
 
 .home .mobile-menu__nav a:hover,
 .home .mobile-menu__nav a:focus {
-  color: var(--Colors-Rose-300, #FDA4AF); /* pink hover */
+  color: var(--Colors-Rose-300, #fda4af); /* pink hover */
 }
 
 .home .mobile-menu__nav a.active,
 .home .mobile-menu__nav a[aria-current="page"] {
-  color: var(--Colors-Rose-300, #FDA4AF); /* pink active */
+  color: var(--Colors-Rose-300, #fda4af); /* pink active */
 }
 /* =========================
    Mobile menu close button — homepage only
@@ -83,7 +84,7 @@ body {
 }
 /* Homepage hover: pink */
 .home .site-nav a.menu__link--resume:hover {
-  color: var(--Colors-Rose-300, #FDA4AF);
+  color: var(--Colors-Rose-300, #fda4af);
 }
 /* ================================
    Hero section (sticky version)
@@ -97,7 +98,7 @@ body {
 .home .hero {
   position: sticky;
   top: 0;
-  height: 100svh;               /* correct viewport height including browser UI */
+  height: 100svh; /* correct viewport height including browser UI */
   width: 100%;
   background-color: var(--color-homepage);
   padding-block: 40px 60px;
@@ -111,7 +112,7 @@ body {
   z-index: 0;
 
   backface-visibility: hidden;
-  transform: translateZ(0);     /* smooth GPU compositing */
+  transform: translateZ(0); /* smooth GPU compositing */
 }
 
 /* Fixed header stays above sticky hero */
@@ -132,7 +133,7 @@ body {
   position: relative;
   z-index: 1;
   background-color: var(--color-background);
-  padding-top: 50px;            /* spacing below hero/header */
+  padding-top: 50px; /* spacing below hero/header */
   padding-bottom: 80px;
   box-sizing: border-box;
   overflow-x: clip;
@@ -145,12 +146,10 @@ body.scrolled .home .selected-work {
   transform: none !important;
 }
 
-
-
 .hero-columns {
-	display: flex;
-	justify-content: space-between;
-	gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
   align-items: center;
 }
 
@@ -159,8 +158,8 @@ body.scrolled .home .selected-work {
   font-size: 36px; /* Figma value */
   line-height: 140%;
   margin-bottom: 10px;
-	font-weight: 300;
-	color: white;
+  font-weight: 300;
+  color: white;
 }
 
 /* 🐧Flower size */
@@ -181,8 +180,12 @@ body.scrolled .home .selected-work {
 }
 
 @keyframes heroFlowerSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* 🐧End of Flower size */
@@ -192,7 +195,7 @@ body.scrolled .home .selected-work {
   font-size: 70px; /* Figma value */
   font-weight: 500;
   line-height: 100%;
-	letter-spacing: 0.5%;
+  letter-spacing: 0.5%;
   color: white;
   margin-bottom: 20px;
 }
@@ -201,8 +204,8 @@ body.scrolled .home .selected-work {
   font-size: 24px; /* Figma value */
   line-height: 1.4;
   margin-bottom: 30px;
-	color: white;
-	max-width: 312px; /*instead of 340 */
+  color: white;
+  max-width: 312px; /*instead of 340 */
 }
 
 .home .hero__info {
@@ -214,8 +217,8 @@ body.scrolled .home .selected-work {
 }
 
 .home .hero__info-text {
-	color: white;
-  font-family: 'Inter', sans-serif;
+  color: white;
+  font-family: "Inter", sans-serif;
 }
 
 .home .hero__info-item {
@@ -234,16 +237,16 @@ body.scrolled .home .selected-work {
 }
 .home .button--primary {
   background-color: transparent;
-	border: 1px solid white;
+  border: 1px solid white;
   color: #fff;
-	width: 152px;
-	height: 46px;
-	margin: 0 auto;
+  width: 152px;
+  height: 46px;
+  margin: 0 auto;
 }
 .home .button {
-  white-space: nowrap;   /* keep text + icon together */
-	padding:0;
-	border-radius: 8px;
+  white-space: nowrap; /* keep text + icon together */
+  padding: 0;
+  border-radius: 8px;
 }
 /* Inline icon for buttons */
 .home .button__icon {
@@ -267,8 +270,8 @@ body.scrolled .home .selected-work {
 }
 
 .home .selected-work__title {
-	font-family: "campaign-serif", sans-serif;
-  font-size: 36px;
+  font-family: "campaign-serif", sans-serif;
+  font-size: 42px;
   font-weight: 400;
   margin-bottom: 40px;
   text-align: left;
@@ -317,8 +320,8 @@ body.scrolled .home .selected-work {
 
 /* Wrapper */
 .case-card {
-  width: 100%;           /* fill available width */
-  max-width: 1080px;     /* but never exceed 1080px */
+  width: 100%; /* fill available width */
+  max-width: 1080px; /* but never exceed 1080px */
   margin: 0 auto 40px;
   box-sizing: border-box;
 }
@@ -329,8 +332,7 @@ body.scrolled .home .selected-work {
   align-items: stretch;
   border-radius: 10px;
   overflow: hidden;
-  background: var(--color-stone-50, #FAFAF9);
-
+  background: var(--color-stone-50, #fafaf9);
 }
 
 /* Left side */
@@ -353,45 +355,44 @@ body.scrolled .home .selected-work {
 .case-card__company {
   font-family: "campaign-serif", serif;
   font-size: 16px;
-	font-weight: 400;
-	line-height: 140%;
-	letter-spacing: 2%;
-  color: var(--Colors-Blue-700, #1D4ED8);
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 2%;
+  color: var(--Colors-Blue-700, #1d4ed8);
   margin: 0;
   text-transform: uppercase;
 }
 .case-card__company-2 {
-	color: var(--Colors-Fuchsia-700, #A21CAF);
-
+  color: var(--Colors-Fuchsia-700, #a21caf);
 }
 
 .case-card__title {
   font-size: 24px;
   font-weight: 700;
-	letter-spacing: 0.5%;
+  letter-spacing: 0.5%;
   margin: 0;
 }
 
 .case-card__description {
   font-size: 16px;
-	font-weight: 400;
+  font-weight: 400;
   line-height: 1.5;
-	letter-spacing: 0.5%;
+  letter-spacing: 0.5%;
   margin: 0;
 }
 
 /* Button */
 .case-card__button {
   align-self: flex-start;
-	padding: 14px 16px !important;
+  padding: 14px 16px !important;
   margin-top: 14px;
   height: auto;
 }
 /* 📚  case buttons*/
 /* Base non-active secondary button */
 .case-card__button {
-  color: var(--Colors-Gray-500, #6B7280);
-  border: 1px solid var(--Colors-Gray-500, #6B7280);
+  color: var(--Colors-Gray-500, #6b7280);
+  border: 1px solid var(--Colors-Gray-500, #6b7280);
   background-color: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -399,8 +400,8 @@ body.scrolled .home .selected-work {
 
 /* Hover effect – mimic secondary button behavior */
 .case-card__button:hover {
- border: 1px solid #6B7280;
-    color: #6B7280;
+  border: 1px solid #6b7280;
+  color: #6b7280;
 }
 
 /* 📚  End case buttons*/
@@ -408,27 +409,32 @@ body.scrolled .home .selected-work {
 /* 🐧  Wobble the case buttons*/
 /* ✨ Gentle idle wobble animation for case card buttons */
 @keyframes buttonFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
 .case-card__button {
   animation: buttonFloat 2s ease-in-out infinite;
 }
 .case-card__button-nonactive {
-  color: var(--Colors-Gray-500, #6B7280);
-  border: 1px solid var(--Colors-Gray-500, #6B7280);
+  color: var(--Colors-Gray-500, #6b7280);
+  border: 1px solid var(--Colors-Gray-500, #6b7280);
   background-color: transparent;
-  cursor: default;           /* no pointer */
-  pointer-events: none;      /* ignore clicks */
+  cursor: default; /* no pointer */
+  pointer-events: none; /* ignore clicks */
   animation: none !important; /* stop wobble */
   transition: none !important;
 }
 
 /* Keep it visually stable even on hover */
 .case-card__button-nonactive:hover {
-  color: var(--Colors-Gray-500, #6B7280);
-  border-color: var(--Colors-Gray-500, #6B7280);
+  color: var(--Colors-Gray-500, #6b7280);
+  border-color: var(--Colors-Gray-500, #6b7280);
   background-color: transparent;
 }
 
@@ -462,12 +468,12 @@ body.scrolled .home .selected-work {
   height: 24px;
 }
 
-.case-stat__text-bold{
-	font-weight: 700;
-	font-size: 20px;
-	letter-spacing: 0.5%;
+.case-stat__text-bold {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5%;
 }
-.case-stat__text{
+.case-stat__text {
   letter-spacing: 0.5%;
 }
 
@@ -480,13 +486,11 @@ body.scrolled .home .selected-work {
   align-items: center;
   justify-content: center;
   padding: 25.5px;
-  min-width: 0;   /* 👈 ensures flex child can shrink */
+  min-width: 0; /* 👈 ensures flex child can shrink */
 }
 
-
 .case-card__visual-2 {
-	background: #D3B6D5;
-
+  background: #d3b6d5;
 }
 /* Case1 animation */
 .case-card__image {
@@ -496,7 +500,7 @@ body.scrolled .home .selected-work {
 
   /* Initial state */
   opacity: 0;
-  transform: scale(0.01);   /* tiny dot */
+  transform: scale(0.01); /* tiny dot */
   transform-origin: center center;
   transition: transform 1000ms ease-out, opacity 1000ms ease-out;
 }
@@ -521,13 +525,13 @@ body.scrolled .home .selected-work {
 
 /* Phone frame */
 .case-card__phone {
- 	width: 224px;       /* design size */
+  width: 224px; /* design size */
   height: auto;
   /* border-radius: 10px; */
   object-fit: contain;
-  flex-shrink: 1;     /* 👈 allow them to shrink */
-  max-width: 100%;    /* never overflow */
-  
+  flex-shrink: 1; /* 👈 allow them to shrink */
+  max-width: 100%; /* never overflow */
+
   opacity: 0;
   transition: transform 1000ms ease-out, opacity 1000ms ease-out;
 }
@@ -538,27 +542,25 @@ body.scrolled .home .selected-work {
   height: auto;
 }
 
-
 /* Initial states */
 .case-card__phone--up {
   transform: translateY(120%);
-	opacity: 0; 
+  opacity: 0;
 }
 .case-card__phone--down {
-  transform: translateY(-120%); 
-	opacity: 0;
+  transform: translateY(-120%);
+  opacity: 0;
 }
 
 /* Final states (slid into view, but offset vertically) */
 .case-card__phone--up.animate-in {
-  transform: translateY(30px);  /* stop near bottom */
+  transform: translateY(30px); /* stop near bottom */
   opacity: 1;
 }
 .case-card__phone--down.animate-in {
   transform: translateY(-30px); /* stop near top */
   opacity: 1;
 }
-
 
 /* End Cards home case2 animation */
 /* .case-card__visual img {
@@ -599,28 +601,26 @@ body.scrolled .home .selected-work {
 /* Hover refinements */
 .home .work-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* --- Footer --- */
 .home .site-footer {
-      padding-block: 20px 40px;
-      background: var(--color-homepage);
+  padding-block: 20px 40px;
+  background: var(--color-homepage);
 }
 .home .site-footer__name,
 .home .site-footer__email,
 .home .site-footer__tagline,
 .home .site-footer__credit,
 .home .site-footer__heading,
-.home .site-footer__list li a
- {
+.home .site-footer__list li a {
   color: white;
 }
 .home .site-footer__email {
   text-decoration: underline;
 }
 
-  
 /* ==============================
    Homepage Container Utilities
    ============================== */
@@ -629,14 +629,14 @@ body.scrolled .home .selected-work {
 
 /* Narrow container – for text-heavy blocks */
 .home .container--narrow {
-  max-width: 760px;   /* match your Figma text column */
+  max-width: 760px; /* match your Figma text column */
   margin: 0 auto;
   padding-inline: 24px; /* keep some breathing room */
 }
 
 /* Wide container – for visual-heavy blocks */
 .home .container--wide {
-  max-width: 1280px;  /* wider for hero images or work cards */
+  max-width: 1280px; /* wider for hero images or work cards */
   margin: 0 auto;
   padding-inline: 24px;
 }
@@ -650,7 +650,7 @@ body.scrolled .home .selected-work {
 }
 
 .case-card__visual--gradient {
-  display: flex;                 /* center logo */
+  display: flex; /* center logo */
   justify-content: center;
   align-items: center;
   /* width: 520px; */
@@ -661,28 +661,33 @@ body.scrolled .home .selected-work {
   border-radius: 10px;
   background: linear-gradient(
     180deg,
-    #CBE0FF 0%,   /* top blue */
-    #FFBADE 100%  /* bottom pink */
+    #cbe0ff 0%,
+    /* top blue */ #ffbade 100% /* bottom pink */
   );
 }
 
 .case-card__image-logo {
-	max-width: 400px;
+  max-width: 400px;
   padding-left: 0 !important;
 }
 
 .case-card__company-pink {
-	color:  #180CC1;
+  color: #180cc1;
 }
 .case-card__button-nonactive {
-	color: var(--Colors-Gray-500, #6B7280) !important;
-	border: 1px solid var(--Colors-Gray-500, #6B7280) !important;
+  color: var(--Colors-Gray-500, #6b7280) !important;
+  border: 1px solid var(--Colors-Gray-500, #6b7280) !important;
 }
 
 /* The hero section button animation */
 @keyframes floatButton {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 .hero__button-wrapper {
@@ -691,7 +696,7 @@ body.scrolled .home .selected-work {
   animation: floatButton 2.5s ease-in-out infinite;
   will-change: transform;
   width: 100%;
-      margin-top: 100px;
+  margin-top: 100px;
 }
 .hero__button {
   transition: transform 0.3s ease;
@@ -711,13 +716,11 @@ body.scrolled .home .selected-work {
   transform: rotate(360deg);
 }
 
-
-
 /* ==============================
    Responsive Overrides
    ============================== */
 
-    /* flex-direction: column;
+/* flex-direction: column;
    }
 
 	 /* @media (max-width: 1096px) {
@@ -731,11 +734,11 @@ body.scrolled .home .selected-work {
 	 } */
 @media (max-width: 1280px) {
   .hero-columns {
-  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* 🐞 did not center like this */
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* 🐞 did not center like this */
   /* .hero__content {
     max-width: 1080px;
   } */
@@ -743,7 +746,7 @@ body.scrolled .home .selected-work {
     display: flex;
     justify-content: flex-start;
     gap: 20px;
-}
+  }
   .home .hero__greeting {
     font-size: 32px;
   }
@@ -761,27 +764,29 @@ body.scrolled .home .selected-work {
     font-size: 20px;
     /* ;
   max-width: 0; */
-  /* overflow: hidden; */
+    /* overflow: hidden; */
   }
-
 }
 /* Tablet and below (≤1080px) */
 @media (max-width: 1080px) {
+  .home .selected-work__title {
+    font-size: 36px;
+  }
   .hero__flower {
     width: 1em;
   }
-   .hero-columns {
-  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-    .hero-left {
-        max-width: 490px;
-    }
-    .case-card__stats {
-      flex-direction: column;
-    }
-  
+  .hero-columns {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-left {
+    max-width: 490px;
+  }
+  .case-card__stats {
+    flex-direction: column;
+  }
+
   .home .hero {
     padding-block: 30px 50px;
   }
@@ -795,9 +800,9 @@ body.scrolled .home .selected-work {
     font-size: 20px;
   }
 
-  .home .selected-work__title {
+  /* .home .selected-work__title {
     font-size: 28px;
-  }
+  } */
 
   .home .container--narrow,
   .home .container--wide {
@@ -805,17 +810,15 @@ body.scrolled .home .selected-work {
     padding-inline: 20px;
   }
 
-  
-	.case-card__phone {
+  .case-card__phone {
     width: auto;
-    max-width: 224px;    
+    max-width: 224px;
     flex: 1 1 0;
   }
   /* 🐞 with overflowing cards */
 
   /* 🐞End of the bug with overflowing cards */
 }
-
 
 @media (max-width: 1050px) {
   .hero-left {
@@ -825,73 +828,76 @@ body.scrolled .home .selected-work {
     font-size: 27px;
   }
   .case-card__stats {
-        flex-direction: row;
-    }
+    flex-direction: row;
+  }
   .case-card__inner {
     flex-direction: column; /* text above, visual below */
     gap: 20px;
   }
   .case-card__visual {
-		width: 100%;
-		max-height: 443px !important;
-		/* max-height: 347px !important; */
+    width: 100%;
+    max-height: 443px !important;
+    /* max-height: 347px !important; */
     padding: 10px;
     box-sizing: border-box;
     overflow: hidden; /* 👈 crop overflow */
   }
-	/* 🐧 */
-	.case-card__visual--gradient {
-		min-height: 347px !important;
-		flex:0;
-	}
+  /* 🐧 */
+  .case-card__visual--gradient {
+    min-height: 347px !important;
+    flex: 0;
+  }
   /* 🐞 with cards sliding from left and right down */
-	.case-card__image-sq {
-  max-width: 320px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
+  .case-card__image-sq {
+    max-width: 320px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
-/* Container that holds both phones */
-.case-card__phones {
-  display: flex;
-  flex-direction: row;   /* side by side */
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-}
+  /* Container that holds both phones */
+  .case-card__phones {
+    display: flex;
+    flex-direction: row; /* side by side */
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
 
-/* Shared phone base */
-.case-card__phone {
-  width: 224px;
-  object-fit: contain;
-  opacity: 0;
-  transition: transform 1000ms ease-out, opacity 1000ms ease-out;
-}
+  /* Shared phone base */
+  .case-card__phone {
+    width: 224px;
+    object-fit: contain;
+    opacity: 0;
+    transition: transform 1000ms ease-out, opacity 1000ms ease-out;
+  }
 
-/* ✅ Initial animation state — start hidden vertically */
-.case-card__phone--up {
-  transform: translateY(120%); /* below view */
-}
+  /* ✅ Initial animation state — start hidden vertically */
+  .case-card__phone--up {
+    transform: translateY(120%); /* below view */
+  }
 
-.case-card__phone--down {
-  transform: translateY(-120%); /* above view */
-}
+  .case-card__phone--down {
+    transform: translateY(-120%); /* above view */
+  }
 
-/* ✅ Final animated positions — small offset to stay cropped */
-.case-card__phone--up.animate-in {
-  transform: translateY(14px);  /* leak below, clipped at bottom */
-  opacity: 1;
-}
+  /* ✅ Final animated positions — small offset to stay cropped */
+  .case-card__phone--up.animate-in {
+    transform: translateY(14px); /* leak below, clipped at bottom */
+    opacity: 1;
+  }
 
-.case-card__phone--down.animate-in {
-  transform: translateY(-14px); /* leak above, clipped at top */
-  opacity: 1;
-}
+  .case-card__phone--down.animate-in {
+    transform: translateY(-14px); /* leak above, clipped at top */
+    opacity: 1;
+  }
 
   /* 🐞 with cards sliding from left and right down */
 }
 
 @media (max-width: 774px) {
+  .home .selected-work__title {
+    font-size: 30px;
+  }
   .home .hero__greeting {
     font-size: 24px;
   }
@@ -926,12 +932,12 @@ body.scrolled .home .selected-work {
   .home .hero__description {
     max-width: 470px;
   }
-  .hero__button-wrapper{
+  .hero__button-wrapper {
     margin-top: 20px;
   }
-    .case-card__stats {
-      flex-direction: column;
-    }
+  .case-card__stats {
+    flex-direction: column;
+  }
   .home .hero {
     text-align: left;
     padding-block: 20px 40px;
@@ -960,10 +966,10 @@ body.scrolled .home .selected-work {
     /* padding-bottom: 60px; */
   }
 
-  .home .selected-work__title {
+  /* .home .selected-work__title {
     font-size: 24px;
     margin-bottom: 24px;
-  }
+  } */
 
   .home .work-card {
     padding: 20px;
@@ -973,12 +979,12 @@ body.scrolled .home .selected-work {
     font-size: 20px;
   }
 
-	.home .container--narrow,
+  .home .container--narrow,
   .home .container--wide {
     padding-inline: 16px;
   }
-	.case-card__inner {
-    flex-direction: column;   /* text on top, visual below */
+  .case-card__inner {
+    flex-direction: column; /* text on top, visual below */
     gap: 20px;
   }
 
@@ -989,7 +995,7 @@ body.scrolled .home .selected-work {
     object-fit: contain;
   }
   /* 🐞End Fixing the centered images */
-	
+
   /* fixing hero button leftover seen in the footer */
   .home .hero[data-hidden="true"] {
     opacity: 0;
@@ -1006,15 +1012,15 @@ body.scrolled .home .selected-work {
 }
 
 @media (max-width: 468px) {
- .case-card__image-logo {
-  padding: 50px 10px;
-  max-width: 80vw;
- }
-	/* 🐧 */
-	.case-card__visual--gradient {
-		height: auto !important;
-		flex:0;
-	}
+  .case-card__image-logo {
+    padding: 50px 10px;
+    max-width: 80vw;
+  }
+  /* 🐧 */
+  .case-card__visual--gradient {
+    height: auto !important;
+    flex: 0;
+  }
 }
 
 /* Small phones (≤380px) */
@@ -1028,8 +1034,8 @@ body.scrolled .home .selected-work {
   }
 
   .home .hero__title {
-    font-size: 28px;
-    line-height: 36px;
+    /* font-size: 28px; */
+    line-height: 41px;
   }
 
   .home .hero__description {
