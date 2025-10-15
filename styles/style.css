@@ -841,15 +841,24 @@ h3 {
   color: var(--Colors-Blue-600, #2563eb);
 }
 /* subtle hover lift (optional, looks modern) */
-/* .about-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-} */
+
 /* Lift only normal cards, not the split one */
 .about-card:hover:not(.about-card--split) {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+/*🍊 Floating flower */
+.floating-flower {
+  position: absolute;
+  width: 120px; /* bigger! */
+  height: auto;
+  pointer-events: none;
+  z-index: 9999; /* ensures it’s above everything */
+  transform-origin: center;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+/*🍊 END:Floating flower */
 /* The last row in about cards */
 /* layout structure */
 .about-row__grid--split {

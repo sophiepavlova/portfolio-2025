@@ -804,3 +804,80 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // 😎End Cursor label
+//🍊 --- Floating flower click effect (About page only) ---
+document.addEventListener("DOMContentLoaded", () => {
+  const aboutPage = document.querySelector(".about-page");
+  if (!aboutPage) return;
+
+  // 🌸 Array of available flower images
+  const flowerImages = [
+    "../assets/shapes/flower_red.svg",
+    "../assets/shapes/flower_blue.svg",
+    // add more later e.g. "../assets/shapes/flower_yellow.svg"
+  ];
+
+  document.querySelectorAll(".about-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const randomFlower =
+        flowerImages[Math.floor(Math.random() * flowerImages.length)];
+      const flower = document.createElement("img");
+      flower.src = randomFlower;
+      flower.classList.add("floating-flower");
+
+      const rect = card.getBoundingClientRect();
+      const startX = rect.left + rect.width / 2;
+      const startY = rect.bottom + window.scrollY + 20; // below card
+
+      flower.style.left = `${startX}px`;
+      flower.style.top = `${startY}px`;
+      document.body.appendChild(flower);
+
+      // 🌿 Randomized curved + breezy motion
+      const arcHeight = 100 + Math.random() * 200;
+      const distanceX =
+        (Math.random() > 0.5 ? 1 : -1) * (300 + Math.random() * 200);
+      const distanceY = -400 - Math.random() * 200;
+      const rotation =
+        (Math.random() > 0.5 ? 1 : -1) * (180 + Math.random() * 180);
+      const sway = 30 + Math.random() * 40; // horizontal sway amplitude
+
+      const animation = flower.animate(
+        [
+          {
+            transform: "translate(-50%, 40px) scale(0.4) rotate(0deg)",
+            opacity: 0,
+          },
+          {
+            transform: `translate(calc(-50% + ${
+              distanceX * 0.25
+            }px), ${-arcHeight}px) scale(1) rotate(${rotation / 2}deg)`,
+            opacity: 1,
+            offset: 0.25,
+          },
+          {
+            transform: `translate(calc(-50% + ${distanceX * 0.5}px), ${
+              distanceY * 0.4
+            }px) scale(1.3) rotate(${
+              rotation * 0.75
+            }deg) translateX(${sway}px)`,
+            opacity: 1,
+            offset: 0.6,
+          },
+          {
+            transform: `translate(calc(-50% + ${distanceX}px), ${distanceY}px) scale(1.6) rotate(${rotation}deg) translateX(-${sway}px)`,
+            opacity: 0,
+          },
+        ],
+        {
+          duration: 4500,
+          easing: "cubic-bezier(0.3, 0.6, 0.4, 1)",
+          fill: "forwards",
+        }
+      );
+
+      animation.onfinish = () => flower.remove();
+    });
+  });
+});
+
+//🍊 END--- Floating flower click effect (About page only) ---
