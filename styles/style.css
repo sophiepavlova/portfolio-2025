@@ -502,6 +502,7 @@ h3 {
 .about-hero {
   padding-block: 40px 40px; /* top / bottom */
   text-align: center;
+  position: relative;
 }
 .about-hero__text-block{
   max-width:748px;
@@ -555,25 +556,22 @@ h3 {
 
 .about-hero__flower {
   position: absolute;
-  width: 200px;        /* red flower’s approximate size */
+  aspect-ratio: 1 / 1;
   height: auto;
-  z-index: 1;
   pointer-events: none;
 }
 
-/* red — bottom-left, overlapping portrait */
 .about-hero__flower--left {
   z-index: 3;
-  bottom: 120px;        /* move upward onto the image */
-  left: -100px;        /* slightly outside container */
-  width: 200px;        /* from your second photo (≈200×200) */
+  width: 200px;
+  left: -100px;
+  bottom: 120px;
 }
 
-/* blue — top-right, overlapping portrait */
 .about-hero__flower--right {
-  top: 40px;           /* about 39px in your first photo */
-  right: -90px;        /* slightly outside container */
-  width: 250px;        /* matches the ~250×250 box */
+  width: 250px;
+  right: -90px;
+  top: 40px;
 }
 
 /* ==============================
@@ -2866,11 +2864,28 @@ a:focus:not(:focus-visible) {
     margin-bottom: 24px; /* space between portrait and text */
   }
 
-  .about-hero__image-block img {
+  
+  .about-hero__image-block img:not(.about-hero__flower) {
     width: 500px;
-    max-width: 100%; /* in case screen is even smaller */
+    max-width: 100%;
     height: auto;
   }
+
+   /* When the rest of the UI starts shrinking, scale flowers proportionally */
+
+  .about-hero__flower--left {
+    --size: 200px;
+    width: var(--size);
+    left:   calc(var(--size) * -0.50); /* -100/200 */
+    bottom: calc(var(--size) *  0.60); /* 120/200 */
+  }
+  .about-hero__flower--right {
+    --size: 200px;
+    width: var(--size);
+    right: calc(var(--size) * -0.36);  /* -90/250 */
+    top:   calc(var(--size) *  0.16);  /* 40/250 */
+  }
+
   .about-hero__image-block {
    padding-top: 0px;
   }
@@ -3116,6 +3131,9 @@ a:focus:not(:focus-visible) {
 }
 
 @media (max-width: 600px) {
+  .about-hero {
+    padding-bottom: 20px;
+  }
   .about-row__grid--split {
     /* padding-inline: 0 !important; */
     max-width: none;
