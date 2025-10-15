@@ -17,7 +17,41 @@ body {
 body {
   position: relative;
 }
+/* 😎Cursor label */
+.cursor-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: var(--color-homepage);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+}
 
+.cursor-label--visible {
+  opacity: 1;
+}
+
+.cursor-label--inactive {
+  background: var(--color-homepage); /* lighter blue or a different tone */
+}
+.case-card:has(.case-card__link--nonactive):hover .case-card__inner {
+  opacity: 0.6;
+  filter: grayscale(20%);
+  cursor: default;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* 😎END: Cursor label */
 /* --- Header & navigation colors for home --- */
 .home .site-header {
   background-color: var(--color-homepage);
