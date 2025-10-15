@@ -828,7 +828,6 @@ h3 {
 }
 
 .about-card__link {
-  font-family: Inter;
   font-weight: 700;
   font-style: Bold;
   font-size: 16px;
@@ -842,7 +841,12 @@ h3 {
   color: var(--Colors-Blue-600, #2563eb);
 }
 /* subtle hover lift (optional, looks modern) */
-.about-card:hover {
+/* .about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+} */
+/* Lift only normal cards, not the split one */
+.about-card:hover:not(.about-card--split) {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

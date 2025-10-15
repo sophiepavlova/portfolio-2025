@@ -618,7 +618,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   if (slides.length === 0) return; // 🧊 Extra guard
 
-  const interval = 5000; // ms per photo
+  const interval = 3000; // ms per photo
   const duration = 800; // ms slide animation
   const wheelThreshold = 80; // wheel deltaY to trigger once
   const swipeThreshold = 50; // px for manual swipe
