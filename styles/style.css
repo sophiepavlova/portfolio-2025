@@ -924,7 +924,11 @@ color: var(--Colors-Blue-600, #2563EB);
   transform: translateY(-100%);
 }
 
-
+.about-card__icon-invert{
+  display: inline-block;
+  transform: scaleX(-1);      /* flip horizontally */
+  transform-origin: center;   /* keep it centered while flipping */
+}
 
 /* ====================================
    END: ABOUT PAGE — 2025 REDESIGN
@@ -2664,6 +2668,26 @@ a:focus:not(:focus-visible) {
     margin-top: 20px;
     margin-bottom: 10px;
 }
+
+.about-card__icon {
+    width: 100px !important;
+    height: 100px !important;
+    flex: 0 0 100px !important;
+    margin-bottom: 20px;              /* add space if it got removed earlier */
+  }
+
+  /* Emoji/text icons (no <img>) */
+  .about-card__icon:not(:has(img)) {
+    font-size: 100px !important;
+    line-height: 1;                    /* avoid extra vertical gap */
+  }
+
+  /* Image icons */
+  .about-card__icon img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
 }
 .jump-menu { display: none; }
