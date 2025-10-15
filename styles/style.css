@@ -13,6 +13,9 @@
   --color-blue-200: oklch(88.2% 0.059 254.128);
   --Components-Static-Icons-Soft-Yellow-Bg-Color: #FEF9C3;
   --scrollbar-gutter: stable;
+  :root {
+  --fx-shape: url("../assets/shapes/CS_Triangle_5.svg");
+}
 }
 
 /* ==============================
@@ -559,6 +562,13 @@ h3 {
   aspect-ratio: 1 / 1;
   height: auto;
   pointer-events: none;
+  animation: aboutFlowerSpin 20s linear infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+@keyframes aboutFlowerSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .about-hero__flower--left {
@@ -572,6 +582,7 @@ h3 {
   width: 250px;
   right: -90px;
   top: 40px;
+  animation-direction: reverse;
 }
 
 /* ==============================
@@ -2560,6 +2571,11 @@ a:focus:not(:focus-visible) {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* 😜Animation on hover In About page */
+
+
+/* 😜END: Animation on hover In About page */
 /* Maintain proportional shrink */
 @media (max-width: 1080px) {
   .about-cards-row {
