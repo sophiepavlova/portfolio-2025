@@ -964,9 +964,50 @@ h3 {
   transform: scaleX(-1); /* flip horizontally */
   transform-origin: center; /* keep it centered while flipping */
 }
-/* 🌽About cards flowers cover on hover */
+/* 🌽About cards highlighting */
+/* Default color for all cards (override per card/row if you want) */
+:root {
+  --hi-color: #e8f2ff;
+} /* soft red */
 
-/* 🌽END:About cards flowers cover on hover */
+/* Title highlight wrapper */
+.about-card .about-card__title .hi {
+  display: inline;
+  position: relative;
+  padding: 0.1em 0.22em; /* breathing room */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  /* solid color as a 1-color gradient so we can animate size */
+  background-image: linear-gradient(0deg, var(--hi-color), var(--hi-color));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition: background-size 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Hover on ANY card (keyboard too) */
+.about-card:hover .about-card__title .hi,
+.about-card:focus-within .about-card__title .hi {
+  background-size: 100% 100%;
+}
+
+/* Optional: alternate colors by row/card */
+.about-cards-row:nth-of-type(even) {
+  --hi-color: #e8f2ff;
+} /* blue */
+.about-cards-row:nth-of-type(odd) {
+  --hi-color: #ffebe9;
+} /* red */
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-card .about-card__title .hi {
+    transition: none;
+  }
+}
+
+/* 🌽END:About cards highlighting */
 
 /* ====================================
    END: ABOUT PAGE — 2025 REDESIGN
