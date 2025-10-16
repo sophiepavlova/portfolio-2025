@@ -573,10 +573,16 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener(
     "scroll",
     () => {
+      // Don't auto-glide if user is already at #selected-work
+      const alreadyAtWork =
+        location.hash === "#selected-work" ||
+        selectedWork.getBoundingClientRect().top <= getHeaderH();
+
       if (
         armed &&
         window.scrollY > 2 &&
-        window.scrollY < window.innerHeight * 0.5 // only if they're near the top
+        window.scrollY < window.innerHeight * 0.5 &&
+        !alreadyAtWork
       ) {
         armed = false;
         glideToSelectedWork();
