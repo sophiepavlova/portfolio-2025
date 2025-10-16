@@ -501,16 +501,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectedWork = document.querySelector(".selected-work");
   const header = document.querySelector(".site-header");
 
+  // Only run this script if .selected-work exists (i.e. on the home page)
+  if (!selectedWork) return;
+
   const startGlide = () => {
     body.classList.add("scrolled");
-    // Align the viewport so Selected Work starts nicely under the header
     const offset = header?.offsetHeight || 0;
     const y =
       selectedWork.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
-  // Start glide as soon as the user actually scrolls (no dead zone)
   let armed = true;
   window.addEventListener("scroll", () => {
     if (armed && window.scrollY > 2) {
@@ -519,7 +520,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Button triggers the same glide
   seeWorkBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     startGlide();
