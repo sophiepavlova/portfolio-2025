@@ -1009,6 +1009,38 @@ h3 {
 
 /* 🌽END:About cards highlighting */
 
+/* 🍒 Case study scroll highlights */
+/* 🌷 Case study scroll highlights (pink only) */
+.hi--reveal {
+  display: inline;
+  position: relative;
+  padding: 0.1em 0.22em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  --hi-color: #ffebe9; /* 🌸 soft warm pink */
+  background-image: linear-gradient(0deg, var(--hi-color), var(--hi-color));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition: background-size 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* When visible on scroll */
+.hi--reveal.visible {
+  background-size: 100% 100%;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hi--reveal {
+    transition: none;
+    background-size: 100% 100%;
+  }
+}
+
+/* End:🍒 Case study scroll highlights */
+
 /* ====================================
    END: ABOUT PAGE — 2025 REDESIGN
    ==================================== */

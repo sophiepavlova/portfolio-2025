@@ -437,7 +437,7 @@ if (backToTop) {
 // Scroll reveal animations
 // -----------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  const reveals = document.querySelectorAll(".reveal");
+  const reveals = document.querySelectorAll(".reveal, .hi--reveal"); // 👈 include highlights
 
   const observer = new IntersectionObserver(
     (entries, obs) => {
