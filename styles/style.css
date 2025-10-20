@@ -97,6 +97,20 @@ body {
 h3 {
   line-height: 1.2;
 }
+/* =========================
+   Case pages typography
+   ========================= */
+.case h2 {
+  font-family: "Campaign Serif", sans-serif;
+  font-weight: 400;
+  font-size: clamp(32px, 2.2vw + 1.5rem, 56px);
+  line-height: 120%;
+  letter-spacing: 0.005em;
+  text-align: left;
+  color: var(--color-text);
+  margin: 0 0 40px 0;
+}
+
 /* ====================================
 2. GLOBAL UTILITIES & HELPERS
 ==================================== */
@@ -2121,7 +2135,58 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
   line-height: 34px;
   cursor: default; /* purely presentational */
 }
+/* 😜 design highlights blue-white rythm */
+/* =========================================
+   Design highlights: full-bleed BG only behind images
+   ========================================= */
 
+.case-highlights__item {
+  position: relative;
+  z-index: 0;
+  padding-block: 60px 40px; /* чуть больше воздуха сверху, мягче снизу */
+}
+
+/* голубой фон на всю ширину окна */
+.case-highlights__item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+  /* более плавный и длинный градиент */
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-blue-bg, #dbeafe) 0%,
+    var(--color-blue-bg, #dbeafe) 55%,
+    rgba(255, 255, 255, 0.85) 80%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+/* внутренний голубой фон у карточки убираем */
+.case-highlights__visual {
+  background: transparent !important;
+}
+
+/* если внутри есть картинка, чтобы она не прилипала к краям */
+.case-highlights__visual img,
+.case-highlights__visual picture {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* расстояние между картинкой и текстовым блоком */
+.case-highlights__item + .twocol {
+  margin-top: 30px;
+  padding-bottom: 60px; /* создаёт белое “дыхание” перед следующей голубой */
+}
+
+/* 😜END: design highlights incases blue */
 /* ========== Utility width modifiers for other case2 blocks (opt-in via HTML) ========== */
 /* Block 2: single centered image 830px */
 .case-highlights__visual-image--w830 {
@@ -2679,59 +2744,6 @@ a:focus:not(:focus-visible) {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* 😜 design highlights blue-white rythm */
-/* =========================================
-   Design highlights: full-bleed BG only behind images
-   ========================================= */
-
-.case-highlights__item {
-  position: relative;
-  z-index: 0;
-  padding-block: 60px 40px; /* чуть больше воздуха сверху, мягче снизу */
-}
-
-/* голубой фон на всю ширину окна */
-.case-highlights__item::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-
-  /* более плавный и длинный градиент */
-  background-image: linear-gradient(
-    to bottom,
-    var(--color-blue-bg, #dbeafe) 0%,
-    var(--color-blue-bg, #dbeafe) 55%,
-    rgba(255, 255, 255, 0.85) 80%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
-
-/* внутренний голубой фон у карточки убираем */
-.case-highlights__visual {
-  background: transparent !important;
-}
-
-/* если внутри есть картинка, чтобы она не прилипала к краям */
-.case-highlights__visual img,
-.case-highlights__visual picture {
-  border-radius: 8px;
-  max-width: 100%;
-  height: auto;
-}
-
-/* расстояние между картинкой и текстовым блоком */
-.case-highlights__item + .twocol {
-  margin-top: 30px;
-  padding-bottom: 60px; /* создаёт белое “дыхание” перед следующей голубой */
-}
-
-/* 😜END: design highlights incases blue */
 
 /* Maintain proportional shrink */
 @media (max-width: 1080px) {
