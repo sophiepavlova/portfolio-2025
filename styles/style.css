@@ -2237,7 +2237,7 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 2rem;
-  background-color: var(--color-blue-200);
+  /* background-color: var(--color-blue-200); */
   padding: 20px 0;
   padding-bottom: 0;
   justify-content: center;
@@ -2680,9 +2680,59 @@ a:focus:not(:focus-visible) {
   transform: translateY(0);
 }
 
-/* 😜Animation on hover In About page */
+/* 😜 design highlights blue-white rythm */
+/* =========================================
+   Design highlights: full-bleed BG only behind images
+   ========================================= */
 
-/* 😜END: Animation on hover In About page */
+.case-highlights__item {
+  position: relative;
+  z-index: 0;
+  padding-block: 60px 40px; /* чуть больше воздуха сверху, мягче снизу */
+}
+
+/* голубой фон на всю ширину окна */
+.case-highlights__item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+  /* более плавный и длинный градиент */
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-blue-bg, #dbeafe) 0%,
+    var(--color-blue-bg, #dbeafe) 55%,
+    rgba(255, 255, 255, 0.85) 80%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+/* внутренний голубой фон у карточки убираем */
+.case-highlights__visual {
+  background: transparent !important;
+}
+
+/* если внутри есть картинка, чтобы она не прилипала к краям */
+.case-highlights__visual img,
+.case-highlights__visual picture {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* расстояние между картинкой и текстовым блоком */
+.case-highlights__item + .twocol {
+  margin-top: 30px;
+  padding-bottom: 60px; /* создаёт белое “дыхание” перед следующей голубой */
+}
+
+/* 😜END: design highlights incases blue */
+
 /* Maintain proportional shrink */
 @media (max-width: 1080px) {
   .about-cards-row {
