@@ -101,7 +101,7 @@ h3 {
    Case pages typography
    ========================= */
 .case h2 {
-  font-family: "Campaign Serif", sans-serif;
+  font-family: "campaign-serif", serif !important;
   font-weight: 400;
   font-size: clamp(32px, 2.2vw + 1.5rem, 56px);
   line-height: 120%;
@@ -1385,6 +1385,9 @@ h3 {
   padding-top: 40px;
   padding-bottom: 0;
 }
+.case-context-no-top-padding {
+  padding-top: 0;
+}
 .case-context__content {
   display: flex;
   flex-direction: column;
@@ -1460,6 +1463,10 @@ h3 {
   letter-spacing: 0.005em;
   color: var(--color-text);
 }
+.case-context__list {
+  margin-block-start: 0;
+  margin-block-end: 0 !important;
+}
 
 ul:not([style*="list-style-type: none"]) {
   padding-left: 1.5em; /* extra space for bullet lists */
@@ -1473,7 +1480,9 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 .case-howmightwe {
   padding-top: 40px;
 }
-
+.case-howmightwe-no-top-padding {
+  padding-top: 0;
+}
 .case-howmightwe__heading {
   font-family: "Inter", sans-serif;
   font-weight: 700;
@@ -1992,6 +2001,7 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
 .case-highlights__visual {
   background-color: var(--color-blue-200);
   padding: 20px 0;
+  padding-bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2143,7 +2153,7 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
 .case-highlights__item {
   position: relative;
   z-index: 0;
-  padding-block: 60px 40px; /* чуть больше воздуха сверху, мягче снизу */
+  padding-block: 40px 40px; /* чуть больше воздуха сверху, мягче снизу */
 }
 
 /* голубой фон на всю ширину окна */
@@ -2182,10 +2192,28 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
 
 /* расстояние между картинкой и текстовым блоком */
 .case-highlights__item + .twocol {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   padding-bottom: 60px; /* создаёт белое “дыхание” перед следующей голубой */
 }
-
+.no-padding-bottom {
+  padding-bottom: 0px !important;
+}
+.case-highlights__item + .twocol-var {
+  padding-bottom: 40px !important;
+}
+.case-highlights__visual-var {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.case-highlights__item--overlay .case-highlights__visual {
+  padding-bottom: 0 !important;
+}
+.twocol--wide-pd-no {
+  padding-bottom: 40px !important;
+}
+.add-small-pagging-top {
+  padding-top: 20px;
+}
 /* 😜END: design highlights incases blue */
 /* ========== Utility width modifiers for other case2 blocks (opt-in via HTML) ========== */
 /* Block 2: single centered image 830px */
@@ -2255,6 +2283,12 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
 }
 
 /* Highlight2 */
+.case-highlights__item-no-top-padding {
+  padding-top: 0;
+}
+.case-highlights__item-no-bottom-padding {
+  padding-bottom: 0 !important;
+}
 
 /* Second highlight specific */
 .case-highlights__item--overlay .case-highlights__visual {
@@ -2301,7 +2335,7 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   /* background-color: var(--color-blue-200); */
   padding: 20px 0;
   padding-bottom: 0;
@@ -2309,6 +2343,9 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
   align-items: center;
   border-radius: 8px;
   margin-bottom: 40px;
+}
+.case-highlights__cards-row-second {
+  margin-top: 2rem;
 }
 
 .case-highlights__cards-row {
@@ -2334,11 +2371,13 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
 }
 .case-widget-card-small {
   max-width: 258px !important;
-  max-height: 105px;
+  /* max-height: 105px; */
+  height: auto;
 }
 .case-widget-card-small-2 {
-  max-height: 311.8269348144531px;
+  /* max-height: 311.8269348144531px; */
   max-width: 258px !important;
+  height: auto;
 }
 
 .case-widget-card-390 {
@@ -2438,7 +2477,7 @@ p.add-small-margin-bottom {
 .case-sidenav nav a {
   display: block;
   padding: 10px 0 10px 16px;
-  color: #6b7280;
+  color: #57534d;
   font-weight: 500;
   text-decoration: none;
   border: none !important;
@@ -2679,6 +2718,7 @@ a:focus:not(:focus-visible) {
 .case-nav {
   margin: 0px auto;
   margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .case-nav .container {
@@ -2982,6 +3022,9 @@ a:focus:not(:focus-visible) {
     align-items: stretch !important;
     gap: 20px !important;
   }
+  .case-context__content {
+    gap: 0 !important;
+  }
 
   .case-overview__description,
   .case-overview__meta,
@@ -3088,10 +3131,10 @@ a:focus:not(:focus-visible) {
     width: 390px;
   }
 
-  .case-howmightwe,
+  /* .case-howmightwe,
   .case-context {
     padding-top: 20px;
-  }
+  } */
 
   .case-howmightwe__heading,
   .case-context__heading,
@@ -3132,9 +3175,9 @@ a:focus:not(:focus-visible) {
   .case-highlights__visual-image--narrow {
     width: 390px !important;
   }
-  .case-context__desc-last {
+  /* .case-context__desc-last {
     margin-bottom: 24px;
-  }
+  } */
   .work-card__subtitle {
     max-width: 500px;
   }
@@ -3327,8 +3370,12 @@ a:focus:not(:focus-visible) {
   .case-highlights__title {
     margin-top: 20px;
   }
+
   .case-highlights {
     padding-top: 0px;
+  }
+  #case-highlights-title {
+    margin-top: 40px !important;
   }
   .case-highlights__visual-image--wide,
   .case-highlights__visual-image--narrow,
@@ -3637,11 +3684,15 @@ a:focus:not(:focus-visible) {
   .case-highlights {
     padding-top: 20px;
   }
-  .case-highlights__title,
-  .case-highlights__visual {
+  .case-highlights__title {
     margin-bottom: 20px;
   }
-
+  /* .case-highlights__visual {
+    margin-bottom: 40px;
+  } */
+  .case-widget-card-no-margin {
+    margin-bottom: 0 !important;
+  }
   .case-highlights__title {
     font-size: 24px;
     /* padding-top:20px; */
@@ -3664,6 +3715,14 @@ a:focus:not(:focus-visible) {
   .case-widget-card-small-2 {
     max-width: 258px !important;
   }
+  #case-highlights-title {
+    margin-top: 20px !important;
+  }
+  .twocol.add-small-pagging-top {
+    padding-top: 0;
+  }
+      .case-highlights__item--overlay .case-highlights__visual {
+        padding: 0 !important;
 }
 @media (max-width: 376px) {
   .work-card__subtitle {
