@@ -3721,8 +3721,9 @@ a:focus:not(:focus-visible) {
   .twocol.add-small-pagging-top {
     padding-top: 0;
   }
-      .case-highlights__item--overlay .case-highlights__visual {
-        padding: 0 !important;
+  .case-highlights__item--overlay .case-highlights__visual {
+    padding: 0 !important;
+  }
 }
 @media (max-width: 376px) {
   .work-card__subtitle {
