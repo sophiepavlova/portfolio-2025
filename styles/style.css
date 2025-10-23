@@ -17,6 +17,10 @@
   --color-blue-200: oklch(88.2% 0.059 254.128);
   --color-yellow-soft: #fef9c3; /* renamed for consistency */
 
+  --color-top-card-bg: #d8edc3;
+  --color-top-card-icon-bg: #a7d680;
+  --color-top-card-icon-bg-path: #115e59;
+
   /* ⚙️ Layout / system tokens */
   --scrollbar-gutter: stable;
   --fx-shape: url("../assets/shapes/CS_Triangle_5.svg");
@@ -1695,7 +1699,7 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
 
 /* 😩 */
 .icon-box-green {
-  background-color: #99f6e4;
+  background-color: var(--color-top-card-icon-bg);
 }
 
 .goals-list__text {
@@ -1726,7 +1730,7 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
   align-items: center;
   border-bottom: 1px solid var(--color-stone-200);
   /* border-bottom: none; */
-  background-color: #ccfbf1;
+  background-color: var(--color-top-card-bg);
   gap: 15px;
   padding: 10px;
   border-top-left-radius: 8px;
@@ -1738,6 +1742,11 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
   border-radius: 8px;
   /* background-color: #99F6E4; */
   /* padding: 8px; */
+}
+.icon-box-green {
+  color: var(
+    --color-top-card-icon-bg-path
+  ); /* sets stroke color for child SVG */
 }
 .icon-card__title {
   font-family: "Inter", sans-serif;
@@ -1773,7 +1782,7 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
 }
 .insight-card__header {
   border-bottom: 1px solid var(--color-stone-200);
-  background-color: var(--color-green-soft-bg, #ccfbf1);
+  background-color: var(--color-top-card-bg, #ccfbf1);
   display: flex;
   align-items: center;
   gap: 15px;
