@@ -434,8 +434,11 @@ body.scrolled .home .selected-work {
 
 /* Hover effect – mimic secondary button behavior */
 .case-card__button:hover {
-  border: 1px solid #6b7280;
-  color: #6b7280;
+  border: 1px solid var(--color-homepage);
+  color: var(--color-homepage);
+  /* background-color: #180cc1;s; */
+  /* border: 1px solid #6b7280;
+  color: #6b7280; */
 }
 
 /* 📚  End case buttons*/

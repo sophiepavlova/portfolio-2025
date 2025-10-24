@@ -431,8 +431,9 @@ h3 {
   margin-bottom: 10px;
 }
 .site-footer__email {
+  text-decoration: underline;
   font-family: "Inter", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
   line-height: 100%;
   color: #57534e;
@@ -939,6 +940,11 @@ h3 {
   line-height: 1.1;
   letter-spacing: 0.005em;
   padding-bottom: 20px;
+}
+.img-bdr-btm {
+  /* border-bottom: 1px solid beige; */
+  border-bottom: 1px solid var(--Colors-Stone-200, #e7e5e4);
+  border-radius: 8px;
 }
 @media (max-width: 880px) {
   .about-card--split {
@@ -1850,7 +1856,8 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
 }
 
 .case-howmightwe__visual {
-  background-color: var(--color-blue-200);
+  /* background-color: var(--color-blue-200); */
+  background-color: var(--color-blue-bg);
   border-radius: 8px;
   display: flex;
   justify-content: center;

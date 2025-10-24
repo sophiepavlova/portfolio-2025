@@ -1,71 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Study - ER Triage</title>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRPWYEE236"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study - ER Triage</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RRPWYEE236"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-RRPWYEE236');
-  </script>
+      gtag("config", "G-RRPWYEE236");
+    </script>
 
-  <link rel="icon" type="image/svg+xml" href="../favicon2.svg">
-  <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css" />
-  <link rel="stylesheet" href="../styles/reset.css" />
-  <link rel="stylesheet" href="../styles/style.css" />
-</head>
-<body class="case">
-  <!-- Header -->
-  <header class="site-header reveal">
-    <div class="container">
-      <a href="/" class="logo">Michelle Pavlova</a>
-      <nav class="site-nav">
+    <link rel="icon" type="image/svg+xml" href="../favicon2.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body class="case">
+    <!-- Header -->
+    <header class="site-header reveal">
+      <div class="container">
+        <a href="/" class="logo">Michelle Pavlova</a>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="../#selected-work">Work</a></li>
+            <li><a href="/about/">About</a></li>
+          </ul>
+        </nav>
+
+        <!-- Hamburger button (shown at max-width: 768px) -->
+        <button
+          class="menu-toggle"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <!-- Hamburger SVG -->
+          <svg
+            width="46"
+            height="46"
+            viewBox="0 0 46 46"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z"
+              stroke="#1F2937"
+            />
+            <path
+              d="M16.3335 23H29.6668"
+              stroke="#1F2937"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16.3335 18H29.6668"
+              stroke="#1F2937"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16.3335 28H29.6668"
+              stroke="#1F2937"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile menu panel -->
+    <aside
+      id="mobile-menu"
+      class="mobile-menu"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <button class="menu-close" aria-label="Close menu">
+        <!-- Close SVG -->
+        <svg
+          width="46"
+          height="46"
+          viewBox="0 0 46 46"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z"
+            stroke="#1F2937"
+          />
+          <path
+            d="M28 18L18 28"
+            stroke="#1F2937"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M18 18L28 28"
+            stroke="#1F2937"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <nav class="mobile-menu__nav">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="../#selected-work">Work</a></li>
+          <li><a href="/#selected-work">Work</a></li>
           <li><a href="/about/">About</a></li>
         </ul>
       </nav>
-
-      <!-- Hamburger button (shown at max-width: 768px) -->
-      <button class="menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-        <!-- Hamburger SVG -->
-        <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z" stroke="#1F2937"/>
-          <path d="M16.3335 23H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16.3335 18H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16.3335 28H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-
-      
-    </div>
-  </header>
-  
-  <!-- Mobile menu panel -->
-  <aside id="mobile-menu" class="mobile-menu" tabindex="-1" aria-hidden="true">
-    <button class="menu-close" aria-label="Close menu">
-      <!-- Close SVG -->
-      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z" stroke="#1F2937"/>
-        <path d="M28 18L18 28" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M18 18L28 28" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-    <nav class="mobile-menu__nav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/#selected-work">Work</a></li>
-        <li><a href="/about/">About</a></li>
-      </ul>
-    </nav>
-  </aside>
-
+    </aside>
 
     <aside class="case-sidenav reveal" id="case-sidenav">
       <nav>
@@ -95,53 +150,114 @@
               <ul class="jump-menu__list">
                 <li>
                   <a href="#nav-overview" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"><img src="../assets/icons/Static Icon.svg" alt="" width="38" height="38" /></span>
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/Static Icon.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                    /></span>
                     <span class="jump-menu__label">Overview</span>
-                    <span class="jump-menu__arrow-bg"><img src="../assets/icons/arrow-right.svg" alt="" width="16" height="16" /></span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                    /></span>
                   </a>
                 </li>
                 <li>
                   <a href="#nav-solution" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"><img src="../assets/icons/solution.svg" alt="" width="38" height="38" /></span>
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/solution.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                    /></span>
                     <span class="jump-menu__label">Solution</span>
-                    <span class="jump-menu__arrow-bg"><img src="../assets/icons/arrow-right.svg" alt="" width="16" height="16" /></span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                    /></span>
                   </a>
                 </li>
                 <li>
                   <a href="#nav-design" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"><img src="../assets/icons/designs.svg" alt="" width="38" height="38" /></span>
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/designs.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                    /></span>
                     <span class="jump-menu__label">Designs</span>
-                    <span class="jump-menu__arrow-bg"><img src="../assets/icons/arrow-right.svg" alt="" width="16" height="16" /></span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                    /></span>
                   </a>
                 </li>
                 <li>
                   <a href="#nav-impact" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"><img src="../assets/icons/outcomes.svg" alt="" width="38" height="38" /></span>
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/outcomes.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                    /></span>
                     <span class="jump-menu__label">Impact</span>
-                    <span class="jump-menu__arrow-bg"><img src="../assets/icons/arrow-right.svg" alt="" width="16" height="16" /></span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                    /></span>
                   </a>
                 </li>
                 <li>
                   <a href="#nav-learnings" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"><img src="../assets/icons/apple.svg" alt="" width="38" height="38" /></span>
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/apple.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                    /></span>
                     <span class="jump-menu__label">Learnings</span>
-                    <span class="jump-menu__arrow-bg"><img src="../assets/icons/arrow-right.svg" alt="" width="16" height="16" /></span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                    /></span>
                   </a>
                 </li>
               </ul>
             </div>
           </nav>
-
         </div>
       </section>
 
       <!-- Image block -->
       <section class="case-image reveal" aria-labelledby="case-image1-title">
         <div class="container">
-          <h2 id="case-image1-title" class="visually-hidden">Interface overview: triage workflow screen</h2>
+          <h2 id="case-image1-title" class="visually-hidden">
+            Interface overview: triage workflow screen
+          </h2>
           <figure class="case-image__wrapper">
-            <img 
-              src="../assets/images/Home-1.png" 
+            <img
+              src="../assets/images/Home-1.png"
               alt="Interface overview of a pediatric ER triage screen with multiple symptom inputs and system decision"
               class="case-image__image"
             />
@@ -154,19 +270,27 @@
       <section class="case-overview" aria-labelledby="case-overview-title">
         <div class="container case-overview__content">
           <!-- Left column -->
-          <div class="case-overview__description  reveal">
-            <h3 id="case-overview-title" class="case-overview__heading">Project overview</h2>
+          <div class="case-overview__description reveal">
+            <h3 id="case-overview-title" class="case-overview__heading">
+              Project overview
+            </h3>
             <p class="case-overview__paragraph">
-              This case study covers the end-to-end design of a digital triage tool built for a Canadian children’s hospital.
+              This case study covers the end-to-end design of a digital triage
+              tool built for a Canadian children’s hospital.
             </p>
             <p class="case-overview__paragraph">
-              The goal of the project was to streamline patient intake, reduce nurse burden, and improve the experience for families visiting the ER.
+              The goal of the project was to streamline patient intake, reduce
+              nurse burden, and improve the experience for families visiting the
+              ER.
             </p>
             <p class="case-overview__paragraph">
-              I owned the end-to-end UX from early research through high-fidelity design, collaborating with clinicians and the PM on the project.
+              I owned the end-to-end UX from early research through
+              high-fidelity design, collaborating with clinicians and the PM on
+              the project.
             </p>
             <aside class="case-overview__note" role="note">
-              <strong>Note:</strong> some details of the project have been modified to comply with the NDA.
+              <strong>Note:</strong> some details of the project have been
+              modified to comply with the NDA.
             </aside>
           </div>
           <!-- Right column -->
@@ -192,7 +316,7 @@
       </section>
 
       <!-- Context -->
-      <section class="case-context  reveal" aria-labelledby="case-context-title">
+      <section class="case-context reveal" aria-labelledby="case-context-title">
         <div class="container case-context__content">
           <h2 id="case-context-title" class="case-context__heading">
             A Canadian hospital approached us for a triage tool
@@ -201,37 +325,68 @@
             <div class="case-context__item reveal">
               <dt class="case-context__term">Problem</dt>
               <dd class="case-context__desc">
-                Canada’s healthcare system struggles with long ER wait times, often due to overworked staff. Triage nurses are stretched thin.
-                <strong>Introducing a digital intake tool could help prioritize patients more efficiently and allow nurses to focus on care.</strong>
+                Canada’s healthcare system struggles with long ER wait times,
+                often due to overworked staff. Triage nurses are stretched thin.
+                <strong
+                  >Introducing a digital intake tool could help prioritize
+                  patients more efficiently and allow nurses to focus on
+                  care.</strong
+                >
               </dd>
             </div>
             <div class="case-context__item reveal">
               <dt class="case-context__term">Solution</dt>
               <dd class="case-context__desc">
-                We built a mobile- and tablet-first web tool that patients can access via a QR code upon arrival to the ER. It allows caregivers to complete a quick, guided assessment, receive clear instructions on where to go next and provides a natural language summary of the patient’s symptom for nurses to review.
+                We built a mobile- and tablet-first web tool that patients can
+                access via a QR code upon arrival to the ER. It allows
+                caregivers to complete a quick, guided assessment, receive clear
+                instructions on where to go next and provides a natural language
+                summary of the patient’s symptom for nurses to review.
               </dd>
             </div>
             <div class="case-context__item reveal">
               <dt class="case-context__term">Key contributions</dt>
               <dd class="case-context__desc">
-                <p>This was my first end-to-end design project as the sole designer. A big step after previously working under senior guidance!</p>
+                <p>
+                  This was my first end-to-end design project as the sole
+                  designer. A big step after previously working under senior
+                  guidance!
+                </p>
                 <p>I led the design from strategy to handoff, including:</p>
                 <ul class="case-context__list">
-                  <li>Mapping the full triage journey with clinicians and admin staff</li>
+                  <li>
+                    Mapping the full triage journey with clinicians and admin
+                    staff
+                  </li>
                   <li>Conducting competitor and paper research</li>
-                  <li>Co-designing patient-facing flows for mobile and tablets with the clinical team</li>
-                  <li>Designing high-contrast, WCAG-compliant UI to support quick scanning in high-stress settings</li>
-                  <li>Collaborating closely with a PM and devs to ensure feasibility within clinical constraints</li>
+                  <li>
+                    Co-designing patient-facing flows for mobile and tablets
+                    with the clinical team
+                  </li>
+                  <li>
+                    Designing high-contrast, WCAG-compliant UI to support quick
+                    scanning in high-stress settings
+                  </li>
+                  <li>
+                    Collaborating closely with a PM and devs to ensure
+                    feasibility within clinical constraints
+                  </li>
                 </ul>
               </dd>
             </div>
             <div class="case-context__item reveal">
               <dt class="case-context__term">Key impact</dt>
               <dd class="case-context__desc">
-                This digital ER triage tool helped improve intake accuracy by 92%, reduced manual screening load for nurses, and made the hospital’s emergency check-in process faster and easier for families.</br></br> Since it’s been designed to scale, it’s now being explored for use in multiple locations.
+                This digital ER triage tool helped improve intake accuracy by
+                92%, reduced manual screening load for nurses, and made the
+                hospital’s emergency check-in process faster and easier for
+                families.
+                <p class="add-small-margin-top">
+                  Since it’s been designed to scale, it’s now being explored for
+                  use in multiple locations.
+                </p>
               </dd>
             </div>
-
           </dl>
         </div>
       </section>
@@ -240,18 +395,25 @@
       <a id="nav-solution"></a>
       <section class="case-howmightwe" aria-labelledby="case-howmightwe-title">
         <div class="container">
-          <h2 id="case-howmightwe-title" class="case-howmightwe__heading  reveal">
-            How might we... help young patients and their caregivers navigate the ER experience?
+          <h2
+            id="case-howmightwe-title"
+            class="case-howmightwe__heading reveal"
+          >
+            How might we... help young patients and their caregivers navigate
+            the ER experience?
           </h2>
 
           <!-- Image (unique block) -->
-          <section class="case-howmightwe__block  reveal" aria-labelledby="case-howmightwe-1-title">
+          <section
+            class="case-howmightwe__block reveal"
+            aria-labelledby="case-howmightwe-1-title"
+          >
             <h3 id="case-howmightwe-1-title" class="visually-hidden">
               Visual example: helping patients navigate the ER
             </h3>
             <figure class="case-howmightwe__image-wrapper">
-              <img 
-                src="../assets/images/1_How_might_we1.png" 
+              <img
+                src="../assets/images/1_How_might_we1.png"
                 alt="Illustration showing how the triage tool helps patients navigate the ER"
                 class="case-howmightwe__image reveal"
               />
@@ -259,65 +421,78 @@
           </section>
 
           <!-- Two columns: Research and approach (layout pattern) -->
-          <section class="case-howmightwe__block reveal" aria-labelledby="case-howmightwe-2-title">
+          <section
+            class="case-howmightwe__block reveal"
+            aria-labelledby="case-howmightwe-2-title"
+          >
             <div class="twocol twocol--wide">
               <h3 id="case-howmightwe-2-title" class="twocol__heading">
                 Research and approach
               </h3>
               <div class="twocol__main">
                 <div class="twocol__textblock">
-                  <p >
-                    This project was handed off to me from a fellow designer who worked on its earliest phase. I deepened the research she started by reviewing:
+                  <p>
+                    This project was handed off to me from a fellow designer who
+                    worked on its earliest phase. I deepened the research she
+                    started by reviewing:
                   </p>
                   <ul>
-                    <li>Academic papers on digital triage systems (e.g. NHS eTriage, Johns Hopkins)</li>
+                    <li>
+                      Academic papers on digital triage systems (e.g. NHS
+                      eTriage, Johns Hopkins)
+                    </li>
                     <li>Best practices from existing tools</li>
-                    <li>Guidelines for designing for high-stress environments</li>
+                    <li>
+                      Guidelines for designing for high-stress environments
+                    </li>
                   </ul>
                   <p>
-                    I also casually spoke with the parents I know about their experiences when taking children to the ER. (Ideally, I would’ve interviewed them in a more official manner, but due to the budget and timeline constraints of the project, I had to forgo the initial interview stage.)
+                    I also casually spoke with the parents I know about their
+                    experiences when taking children to the ER. (Ideally, I
+                    would’ve interviewed them in a more official manner, but due
+                    to the budget and timeline constraints of the project, I had
+                    to forgo the initial interview stage.)
                   </p>
                 </div>
                 <div class="icon-card reveal">
                   <div class="icon-card__header">
                     <span class="icon-box icon-box-green">
                       <svg
-  class="icon-box__icon"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-hidden="true"
->
-  <!-- outer circle -->
-  <path
-    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-  <!-- question curve -->
-  <path
-    d="M9.08984 9.00008C9.32495 8.33175 9.789 7.76819 10.3998 7.40921C11.0106 7.05024 11.7287 6.91902 12.427 7.03879C13.1253 7.15857 13.7587 7.52161 14.2149 8.06361C14.6712 8.60561 14.9209 9.2916 14.9198 10.0001C14.9198 12.0001 11.9198 13.0001 11.9198 13.0001"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-  <!-- dot -->
-  <path
-    d="M12 17H12.01"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-</svg>
-
+                        class="icon-box__icon"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <!-- outer circle -->
+                        <path
+                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <!-- question curve -->
+                        <path
+                          d="M9.08984 9.00008C9.32495 8.33175 9.789 7.76819 10.3998 7.40921C11.0106 7.05024 11.7287 6.91902 12.427 7.03879C13.1253 7.15857 13.7587 7.52161 14.2149 8.06361C14.6712 8.60561 14.9209 9.2916 14.9198 10.0001C14.9198 12.0001 11.9198 13.0001 11.9198 13.0001"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <!-- dot -->
+                        <path
+                          d="M12 17H12.01"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </span>
                     <!-- <span class="icon-box">
                       <img src="./assets/icons/circle-question-mark.svg" alt="" class="icon-box__icon">
@@ -326,10 +501,27 @@
                   </div>
 
                   <ul class="icon-card__list">
-                    <li>What makes <strong>existing digital triage solutions effective</strong> (or not)?</li>
-                    <li>How can we <strong>reduce confusion and friction</strong> for users who are in <strong>pain or stressed out</strong>?</li>
-                    <li><strong>Medical jargon can be complex</strong> – what can we do to help users better understand the questions they’re being asked?</li>
-                    <li>How can we accommodate parents or guardians arriving at the ER with <strong>multiple sick children</strong>?</li>
+                    <li>
+                      What makes
+                      <strong
+                        >existing digital triage solutions effective</strong
+                      >
+                      (or not)?
+                    </li>
+                    <li>
+                      How can we
+                      <strong>reduce confusion and friction</strong> for users
+                      who are in <strong>pain or stressed out</strong>?
+                    </li>
+                    <li>
+                      <strong>Medical jargon can be complex</strong> – what can
+                      we do to help users better understand the questions
+                      they’re being asked?
+                    </li>
+                    <li>
+                      How can we accommodate parents or guardians arriving at
+                      the ER with <strong>multiple sick children</strong>?
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -337,54 +529,130 @@
           </section>
 
           <!-- Goals for the app block -->
-          <section class="case-howmightwe__block  reveal" aria-labelledby="case-howmightwe-3-title">
+          <section
+            class="case-howmightwe__block reveal"
+            aria-labelledby="case-howmightwe-3-title"
+          >
             <div class="twocol twocol--wide">
               <h3 id="case-howmightwe-3-title" class="twocol__heading">
                 Goals for the app
               </h3>
               <div class="twocol__main">
                 <ul class="goals-list">
-                  <li class=" goals-list__item goals-list__item-no-right-padding reveal">
+                  <li
+                    class="goals-list__item goals-list__item-no-right-padding reveal"
+                  >
                     <span class="icon-box icon-box-margin-left">
-                      <img src="../assets/icons/accessibility.svg" alt="" class="icon-box__icon" aria-hidden="true" />
+                      <img
+                        src="../assets/icons/accessibility.svg"
+                        alt=""
+                        class="icon-box__icon"
+                        aria-hidden="true"
+                      />
                     </span>
-                    <span class="goals-list__text"><strong>Accessible</strong> for users with disabilities</span>
+                    <span class="goals-list__text"
+                      ><strong>Accessible</strong> for users with
+                      disabilities</span
+                    >
                   </li>
-                  <li class="goals-list__item goals-list__item-no-right-padding reveal">
+                  <li
+                    class="goals-list__item goals-list__item-no-right-padding reveal"
+                  >
                     <span class="icon-box icon-box-margin-left">
-                      <img src="../assets/icons/languages.svg" alt="" class="icon-box__icon" aria-hidden="true" />
+                      <img
+                        src="../assets/icons/languages.svg"
+                        alt=""
+                        class="icon-box__icon"
+                        aria-hidden="true"
+                      />
                     </span>
-                    <span class="goals-list__text"><strong>Bilingual (English/French)</strong> to support Canadian French-speaking population</span>
+                    <span class="goals-list__text"
+                      ><strong>Bilingual (English/French)</strong> to support
+                      Canadian French-speaking population</span
+                    >
                   </li>
-                  <li class="goals-list__item goals-list__item-no-right-padding reveal">
+                  <li
+                    class="goals-list__item goals-list__item-no-right-padding reveal"
+                  >
                     <span class="icon-box icon-box-margin-left">
-                      <img src="../assets/icons/smile.svg" alt="" class="icon-box__icon" aria-hidden="true" />
+                      <img
+                        src="../assets/icons/smile.svg"
+                        alt=""
+                        class="icon-box__icon"
+                        aria-hidden="true"
+                      />
                     </span>
-                    <span class="goals-list__text"><strong>Friendly and reassuring</strong> but not childish or immature</span>
+                    <span class="goals-list__text"
+                      ><strong>Friendly and reassuring</strong> but not childish
+                      or immature</span
+                    >
                   </li>
-                  <li class="goals-list__item goals-list__item-no-right-padding reveal">
+                  <li
+                    class="goals-list__item goals-list__item-no-right-padding reveal"
+                  >
                     <span class="icon-box icon-box-margin-left">
-                      <img src="../assets/icons/milestone.svg" alt="" class="icon-box__icon" aria-hidden="true" />
+                      <img
+                        src="../assets/icons/milestone.svg"
+                        alt=""
+                        class="icon-box__icon"
+                        aria-hidden="true"
+                      />
                     </span>
-                    <span class="goals-list__text"><strong>Simple and intuitive</strong> to provide straightforward guidance for users who may be stressed out or in pain</span>
+                    <span class="goals-list__text"
+                      ><strong>Simple and intuitive</strong> to provide
+                      straightforward guidance for users who may be stressed out
+                      or in pain</span
+                    >
                   </li>
-                  <li class="goals-list__item goals-list__item-no-right-padding reveal">
+                  <li
+                    class="goals-list__item goals-list__item-no-right-padding reveal"
+                  >
                     <span class="icon-box icon-box-margin-left">
-                      <img src="../assets/icons/log-in.svg" alt="" class="icon-box__icon" aria-hidden="true" />
+                      <img
+                        src="../assets/icons/log-in.svg"
+                        alt=""
+                        class="icon-box__icon"
+                        aria-hidden="true"
+                      />
                     </span>
-                    <span class="goals-list__text">Designed for use <strong>without login or account creation</strong></span>
+                    <span class="goals-list__text"
+                      >Designed for use
+                      <strong>without login or account creation</strong></span
+                    >
                   </li>
-                  <li class="goals-list__item goals-list__item-no-right-padding reveal">
+                  <li
+                    class="goals-list__item goals-list__item-no-right-padding reveal"
+                  >
                     <span class="icon-box icon-box-margin-left">
-                      <img src="../assets/icons/file-edit.svg" alt="" class="icon-box__icon" aria-hidden="true" />
+                      <img
+                        src="../assets/icons/file-edit.svg"
+                        alt=""
+                        class="icon-box__icon"
+                        aria-hidden="true"
+                      />
                     </span>
-                    <span class="goals-list__text">Must allow users to <strong>revise previous answers easily</strong> (in case of mistakes or if the patient’s symptoms change)</span>
+                    <span class="goals-list__text"
+                      >Must allow users to
+                      <strong>revise previous answers easily</strong> (in case
+                      of mistakes or if the patient’s symptoms change)</span
+                    >
                   </li>
-                  <li class="goals-list__item goals-list__item-no-right-padding no-margin-bottom reveal">
+                  <li
+                    class="goals-list__item goals-list__item-no-right-padding no-margin-bottom reveal"
+                  >
                     <span class="icon-box icon-box-margin-left">
-                      <img src="../assets/icons/tablet-smartphone.svg" alt="" class="icon-box__icon" aria-hidden="true" />
+                      <img
+                        src="../assets/icons/tablet-smartphone.svg"
+                        alt=""
+                        class="icon-box__icon"
+                        aria-hidden="true"
+                      />
                     </span>
-                    <span class="goals-list__text"><strong>Mobile-first:</strong> due to the hospital setting, users were most likely to access the tool via a phone or a tablet</span>
+                    <span class="goals-list__text"
+                      ><strong>Mobile-first:</strong> due to the hospital
+                      setting, users were most likely to access the tool via a
+                      phone or a tablet</span
+                    >
                   </li>
                 </ul>
               </div>
@@ -392,13 +660,16 @@
           </section>
 
           <!-- Flow diagram-->
-          <section class="case-howmightwe__block reveal" aria-labelledby="case-howmightwe-4-title">
+          <section
+            class="case-howmightwe__block reveal"
+            aria-labelledby="case-howmightwe-4-title"
+          >
             <h3 id="case-howmightwe-4-title" class="visually-hidden">
               System-level flow for the triage intake process
             </h3>
             <figure class="case-howmightwe__image-wrapper">
-              <img 
-                src="../assets/images/scheme.png" 
+              <img
+                src="../assets/images/scheme.png"
                 alt="User flow for a pediatric ER screener, showing steps from intro to triage questions, emergency alerts, and confirmation, with notes on accessibility and clarity."
                 class="case-howmightwe__image reveal"
               />
@@ -406,23 +677,32 @@
           </section>
 
           <!-- Two columns: User flows & mapping -->
-          <section class="case-howmightwe__block case-howmightwe__block-margin-bottom-less reveal" aria-labelledby="case-howmightwe-5-title">
+          <section
+            class="case-howmightwe__block case-howmightwe__block-margin-bottom-less reveal"
+            aria-labelledby="case-howmightwe-5-title"
+          >
             <div class="twocol twocol--wide">
               <h3 id="case-howmightwe-5-title" class="twocol__heading">
-                User flows &amp; feature<br>mapping
+                User flows &amp; feature<br />mapping
               </h3>
               <div class="twocol__main">
                 <p>
-                  Working with the PM and referencing clinician-created triage logic, I mapped user flows, information architecture, and feature mapping.
+                  Working with the PM and referencing clinician-created triage
+                  logic, I mapped user flows, information architecture, and
+                  feature mapping.
                 </p>
                 <p>
-                  Based on this exercise, we have scoped the MVP features down to:
+                  Based on this exercise, we have scoped the MVP features down
+                  to:
                 </p>
                 <ul>
                   <li>QR code initial screener access</li>
                   <li>Language selection</li>
                   <li>Screener (intro &amp; questions)</li>
-                  <li>A summary card with triage direction and AI-generated patient summary</li>
+                  <li>
+                    A summary card with triage direction and AI-generated
+                    patient summary
+                  </li>
                   <li>Wait time visibility</li>
                   <li>Ability to update symptoms and add multiple children</li>
                 </ul>
@@ -431,37 +711,55 @@
           </section>
 
           <!-- User flow diagram -->
-          <section class="case-howmightwe__block reveal" aria-labelledby="case-howmightwe-6-title">
+          <section
+            class="case-howmightwe__block reveal"
+            aria-labelledby="case-howmightwe-6-title"
+          >
             <h3 id="case-howmightwe-6-title" class="visually-hidden">
               Annotated user flow diagram for the triage experience
             </h3>
             <figure class="case-howmightwe__image-wrapper">
-              <img 
-                src="../assets/images/user_flow.png" 
-                alt="User flow diagram showing key triage steps from landing screen to intake summary with decision paths" 
+              <img
+                src="../assets/images/user_flow.png"
+                alt="User flow diagram showing key triage steps from landing screen to intake summary with decision paths"
                 class="case-howmightwe__image reveal"
               />
             </figure>
           </section>
 
           <!-- Two columns: Prototyping and testing -->
-          <section class="case-howmightwe__block reveal" aria-labelledby="case-howmightwe-7-title">
+          <section
+            class="case-howmightwe__block reveal"
+            aria-labelledby="case-howmightwe-7-title"
+          >
             <div class="twocol twocol--wide">
               <h3 id="case-howmightwe-7-title" class="twocol__heading">
                 Prototyping and testing
               </h3>
               <div class="twocol__main">
                 <p>
-                  I started with hand-drawn sketches and explored general layouts using our existing design system. Partway through, I learned that this was an experimental project — we were required to use Material UI (MUI) instead, as the team was evaluating more robust alternatives to our current system.
+                  I started with hand-drawn sketches and explored general
+                  layouts using our existing design system. Partway through, I
+                  learned that this was an experimental project — we were
+                  required to use Material UI (MUI) instead, as the team was
+                  evaluating more robust alternatives to our current system.
                 </p>
                 <p>
-                  After familiarizing myself with MUI, I transitioned to high-fidelity Figma mocks, which we then used for usability testing with children and caregivers. While I usually prefer to test earlier in the design process, this project called for high-fidelity visuals to ensure the design resonated with child testers.
+                  After familiarizing myself with MUI, I transitioned to
+                  high-fidelity Figma mocks, which we then used for usability
+                  testing with children and caregivers. While I usually prefer
+                  to test earlier in the design process, this project called for
+                  high-fidelity visuals to ensure the design resonated with
+                  child testers.
                 </p>
                 <p>
-                  An external partner from the hospital team also ran a focus group with some patients from the hospital and shared their learnings with us.
+                  An external partner from the hospital team also ran a focus
+                  group with some patients from the hospital and shared their
+                  learnings with us.
                 </p>
                 <p>
-                  Overall, the tool was deemed useful and easy to use. However, there was some room for improvement as well...
+                  Overall, the tool was deemed useful and easy to use. However,
+                  there was some room for improvement as well...
                 </p>
 
                 <!-- Findings from children -->
@@ -469,33 +767,37 @@
                   <div class="insight-card__header">
                     <div class="icon-box icon-box-green">
                       <svg
-  class="icon-box__icon"
-  width="24"
-  height="25"
-  viewBox="0 0 24 25"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-hidden="true"
->
-  <path
-    d="M10 16.75C10.5 17.05 11.2 17.25 12 17.25C12.8 17.25 13.5 17.05 14 16.75
+                        class="icon-box__icon"
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M10 16.75C10.5 17.05 11.2 17.25 12 17.25C12.8 17.25 13.5 17.05 14 16.75
        M15 12.75H15.01
        M19.38 7.563C20.0811 8.5824 20.5645 9.7354 20.8 10.95C21.1381 11.1138 21.4233 11.3695 21.6229 11.6878C21.8224 12.0062 21.9282 12.3743 21.9282 12.75C21.9282 13.1257 21.8224 13.4938 21.6229 13.8122C21.4233 14.1305 21.1381 14.3862 20.8 14.55C20.3683 16.5635 19.2592 18.368 17.6577 19.6625C16.0562 20.957 14.0592 21.6632 12 21.6632C9.94076 21.6632 7.94379 20.957 6.34231 19.6625C4.74083 18.368 3.63171 16.5635 3.2 14.55C2.86186 14.3862 2.57668 14.1305 2.37714 13.8122C2.17761 13.4938 2.07178 13.1257 2.07178 12.75C2.07178 12.3743 2.17761 12.0062 2.37714 11.6878C2.57668 11.3695 2.86186 11.1138 3.2 10.95C3.61426 8.9205 4.71589 7.09602 6.31902 5.78437C7.92216 4.47271 9.92866 3.75418 12 3.75C14 3.75 15.5 4.85 15.5 6.25C15.5 7.65 14.6 8.75 13.5 8.75C12.7 8.75 12 8.35 12 7.75
        M9 12.75H9.01"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-</svg>
-
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </div>
                     <h4 class="insight-card__title">Findings from children</h4>
                   </div>
                   <ul class="insight-card__list">
                     <li>The assessment felt unengaging and boring</li>
-                    <li>Visuals and interactions needed to be more playful and dynamic</li>
-                    <li>Some of the language was too complex or hard to understand</li>
+                    <li>
+                      Visuals and interactions needed to be more playful and
+                      dynamic
+                    </li>
+                    <li>
+                      Some of the language was too complex or hard to understand
+                    </li>
                   </ul>
                 </div>
 
@@ -504,43 +806,56 @@
                   <div class="insight-card__header">
                     <div class="icon-box icon-box-green">
                       <svg
-  class="icon-box__icon"
-  width="24"
-  height="25"
-  viewBox="0 0 24 25"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-hidden="true"
->
-  <path
-    d="M19 21.75V19.75C19 18.6891 18.5786 17.6717 17.8284 16.9216C17.0783 16.1714 16.0609 15.75 15 15.75H9C7.93913 15.75 6.92172 16.1714 6.17157 16.9216C5.42143 17.6717 5 18.6891 5 19.75V21.75"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-  <path
-    d="M12 11.75C14.2091 11.75 16 9.95914 16 7.75C16 5.54086 14.2091 3.75 12 3.75C9.79086 3.75 8 5.54086 8 7.75C8 9.95914 9.79086 11.75 12 11.75Z"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-</svg>
-
+                        class="icon-box__icon"
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M19 21.75V19.75C19 18.6891 18.5786 17.6717 17.8284 16.9216C17.0783 16.1714 16.0609 15.75 15 15.75H9C7.93913 15.75 6.92172 16.1714 6.17157 16.9216C5.42143 17.6717 5 18.6891 5 19.75V21.75"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 11.75C14.2091 11.75 16 9.95914 16 7.75C16 5.54086 14.2091 3.75 12 3.75C9.79086 3.75 8 5.54086 8 7.75C8 9.95914 9.79086 11.75 12 11.75Z"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </div>
                     <h4 class="insight-card__title">Findings from parents</h4>
                   </div>
                   <ul class="insight-card__list">
-                    <li>The next steps after completing the screener were unclear, as the design prioritized the patient summary over follow-up instructions</li>
-                    <li>It was confusing how to add a second patient, and unclear whether doing so would overwrite the first patient’s results</li>
-                    <li>The swipe gesture to switch between patient cards lacked clear visual affordance</li>
+                    <li>
+                      The next steps after completing the screener were unclear,
+                      as the design prioritized the patient summary over
+                      follow-up instructions
+                    </li>
+                    <li>
+                      It was confusing how to add a second patient, and unclear
+                      whether doing so would overwrite the first patient’s
+                      results
+                    </li>
+                    <li>
+                      The swipe gesture to switch between patient cards lacked
+                      clear visual affordance
+                    </li>
                   </ul>
                 </div>
 
                 <p class="reveal">
-                  Based on these findings, I’ve updated the designs to address user frustrations. (I wish I had the time to run another batch of tests – but the turnaround time was tight! I tested internally to the best of my ability.)
+                  Based on these findings, I’ve updated the designs to address
+                  user frustrations. (I wish I had the time to run another batch
+                  of tests – but the turnaround time was tight! I tested
+                  internally to the best of my ability.)
                 </p>
               </div>
             </div>
@@ -557,142 +872,193 @@
           </h2>
 
           <div class="case-highlights__list add-big-margin-bottom">
-
             <!-- First sub-block -->
-            <article class="case-highlights__item  reveal">
+            <article class="case-highlights__item reveal">
               <div class="case-highlights__visual">
-                <img 
-                  src="../assets/images/Home - mobile.png" 
-                  alt="Homepage welcome screen with nurse and child illustration" 
+                <img
+                  src="../assets/images/Home - mobile.png"
+                  alt="Homepage welcome screen with nurse and child illustration"
                   class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
                 />
-                <img 
-                  src="../assets/images/Wait times modal.png" 
-                  alt="Wait time modal with bear illustration explaining expectations" 
+                <img
+                  src="../assets/images/Wait times modal.png"
+                  alt="Wait time modal with bear illustration explaining expectations"
                   class="case-highlights__visual-image case-highlights__visual-image--narrow reveal"
                 />
               </div>
-              <div class="twocol twocol--wide twocol twocol--wide-mg40  reveal add-small-pagging-top">
+              <div
+                class="twocol twocol--wide twocol twocol--wide-mg40 reveal add-small-pagging-top"
+              >
                 <h3 class="twocol__heading">Homepage</h3>
                 <div class="twocol__main">
                   <p>
-                    I worked on a cozy yet clean visual language to create a calming atmosphere that helps put users at ease in a high-stress, long-wait ER environment.
+                    I worked on a cozy yet clean visual language to create a
+                    calming atmosphere that helps put users at ease in a
+                    high-stress, long-wait ER environment.
                   </p>
                   <p>
-                    I also wrote inclusive copy that speaks clearly to both patients and caregivers. Additionally, I designed a modal to clearly communicate expectations for the wait times widget.
+                    I also wrote inclusive copy that speaks clearly to both
+                    patients and caregivers. Additionally, I designed a modal to
+                    clearly communicate expectations for the wait times widget.
                   </p>
                 </div>
               </div>
             </article>
 
             <!-- Second sub-block -->
-            <article class="case-highlights__item  reveal">
+            <article class="case-highlights__item reveal">
               <div class="case-highlights__visual">
-                <img 
-                  src="../assets/images/Intro screen.png" 
-                  alt="Intro screen explaining the purpose of the screener with illustrated parent and child" 
-                  class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
+                <img
+                  src="../assets/images/Intro screen.png"
+                  alt="Intro screen explaining the purpose of the screener with illustrated parent and child"
+                  class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
                 />
-                <img 
-                  src="../assets/images/Exit modal.png" 
-                  alt="Exit confirmation modal asking the user to confirm before leaving the screener" 
+                <img
+                  src="../assets/images/Exit modal.png"
+                  alt="Exit confirmation modal asking the user to confirm before leaving the screener"
                   class="case-highlights__visual-image case-highlights__visual-image--narrow reveal"
                 />
               </div>
-              <div class="twocol twocol--wide twocol--wide-mg40 reveal add-small-pagging-top">
+              <div
+                class="twocol twocol--wide twocol--wide-mg40 reveal add-small-pagging-top"
+              >
                 <h3 class="twocol__heading">Intro screen</h3>
                 <div class="twocol__main">
                   <p>
-                    I added an extra image to keep things visually interesting and help users stay engaged. I made sure to clearly explain the order of operations so users always know what’s coming next.
+                    I added an extra image to keep things visually interesting
+                    and help users stay engaged. I made sure to clearly explain
+                    the order of operations so users always know what’s coming
+                    next.
                   </p>
                   <p>
-                    To avoid any accidental exits, I added a confirmation step that’s surfaced if the user tries to close the tab or navigate away.
+                    To avoid any accidental exits, I added a confirmation step
+                    that’s surfaced if the user tries to close the tab or
+                    navigate away.
                   </p>
                   <p>
-                    Finally, I included info on what to expect once the screener is done, so users feel confident and prepared as they start the assessment.
+                    Finally, I included info on what to expect once the screener
+                    is done, so users feel confident and prepared as they start
+                    the assessment.
                   </p>
                 </div>
               </div>
             </article>
 
             <!-- Third sub-block -->
-            <article class="case-highlights__item  reveal">
+            <article class="case-highlights__item reveal">
               <div class="case-highlights__visual">
-                <img 
-                  src="../assets/images/QNR - How old are you.png" 
-                  alt="Screen showing patient age selection with a helper note explaining to fill the form as if you are the patient" 
-                  class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
+                <img
+                  src="../assets/images/QNR - How old are you.png"
+                  alt="Screen showing patient age selection with a helper note explaining to fill the form as if you are the patient"
+                  class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
                 />
-                <img 
-                  src="../assets/images/QNR - Is this for an injury.png" 
-                  alt="Screen with injury-related question showing Yes and No radio buttons" 
-                  class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
+                <img
+                  src="../assets/images/QNR - Is this for an injury.png"
+                  alt="Screen with injury-related question showing Yes and No radio buttons"
+                  class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
                 />
               </div>
-              <div class="twocol twocol--wide twocol--wide-mg40 add-small-pagging-top">
+              <div
+                class="twocol twocol--wide twocol--wide-mg40 add-small-pagging-top"
+              >
                 <h3 class="twocol__heading reveal">How old are you?</h3>
                 <div class="twocol__main">
                   <p>
-                    During usability testing, the questions addressed to the user, like “How old are you?”, caused confusion for caregivers: they assumed it referred to their own age, not the child’s.
+                    During usability testing, the questions addressed to the
+                    user, like “How old are you?”, caused confusion for
+                    caregivers: they assumed it referred to their own age, not
+                    the child’s.
                   </p>
                   <p>
-                    Due to technical constraints, we couldn’t split the flow into separate paths for caregivers and children. To resolve this, I added helper text to clarify whose age is being asked, reducing ambiguity without adding friction to the flow.
+                    Due to technical constraints, we couldn’t split the flow
+                    into separate paths for caregivers and children. To resolve
+                    this, I added helper text to clarify whose age is being
+                    asked, reducing ambiguity without adding friction to the
+                    flow.
                   </p>
                 </div>
               </div>
             </article>
 
             <!-- Fourth sub-block -->
-            <article class="case-highlights__item  reveal">
-              
-             <!-- 🦊Creating a version for children hospital -->
-             <div class="case-highlights__item case-highlights__item-no-top-padding case-highlights__item-no-bottom-padding">
-
-              <div class="case-highlights__visual">
-                <div class="case-highlights__visual-col case-highlights__visual-col--left">
-                  <img
-                    src="../assets/images/Results - 1 card.png"
-                    alt="Results screen showing a summary card with instructions, patient status, and a button to update symptoms or add new patient"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
-                </div>
-                <div class="case-highlights__visual-col case-highlights__visual-col--right">
-                  <!-- cards -->
-                  <div class="case-highlights__card-list">
-
-                    <!-- 1. Light notice card -->
-                    <div class="case-widget-card case-widget-card--notice">
-                      <span class="case-widget-card__icon-bg">
-                        <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24" />
-                      </span>
-                      <div class="case-widget-card__content">
-                        <strong>What if the patient’s symptoms change while the user waits? What if there are multiple children with one caregiver? </strong>
-                        <div>
-                          The popover allows the user to update the initial patient’s symptoms if they change or add another patient
+            <article class="case-highlights__item reveal">
+              <!-- 🦊Creating a version for children hospital -->
+              <div
+                class="case-highlights__item case-highlights__item-no-top-padding case-highlights__item-no-bottom-padding"
+              >
+                <div class="case-highlights__visual">
+                  <div
+                    class="case-highlights__visual-col case-highlights__visual-col--left"
+                  >
+                    <img
+                      src="../assets/images/Results - 1 card.png"
+                      alt="Results screen showing a summary card with instructions, patient status, and a button to update symptoms or add new patient"
+                      class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                    />
+                  </div>
+                  <div
+                    class="case-highlights__visual-col case-highlights__visual-col--right"
+                  >
+                    <!-- cards -->
+                    <div class="case-highlights__card-list">
+                      <!-- 1. Light notice card -->
+                      <div class="case-widget-card case-widget-card--notice">
+                        <span class="case-widget-card__icon-bg">
+                          <img
+                            src="../assets/icons/lightbulb.svg"
+                            alt=""
+                            class="case-widget-card__icon"
+                            width="24"
+                            height="24"
+                          />
+                        </span>
+                        <div class="case-widget-card__content">
+                          <strong
+                            >What if the patient’s symptoms change while the
+                            user waits? What if there are multiple children with
+                            one caregiver?
+                          </strong>
+                          <div>
+                            The popover allows the user to update the initial
+                            patient’s symptoms if they change or add another
+                            patient
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                
+
                     <!-- 2. Feature widget card -->
                     <!-- <div class="case-widget-card case-widget-card_no-background"> -->
-                      <img class="case-widget-card case-widget-card--no-padding case-widget-card_no-background reveal" src="../assets/images/Select patient dropdown.png" alt="Image of a card showing the process of selecting patients" class="case-widget-card__feature-img" />
+                    <img
+                      class="case-widget-card case-widget-card--no-padding case-widget-card_no-background case-widget-card__feature-img img-bdr-btm reveal"
+                      src="../assets/images/Select patient dropdown.png"
+                      alt="Image of a card showing the process of selecting patients"
+                    />
+                    <!-- class="case-widget-card__feature-img img-bdr-btm" -->
                     <!-- </div> -->
-
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- 👍 End creating a version forchildren hospital -->
-              <div class="twocol twocol--wide add-small-pagging-top twocol--wide-mg40 reveal case-highlights__item-no-bottom-padding">
+              <!-- 👍 End creating a version forchildren hospital -->
+              <div
+                class="twocol twocol--wide add-small-pagging-top twocol--wide-mg40 reveal case-highlights__item-no-bottom-padding"
+              >
                 <h3 class="twocol__heading">Getting results</h3>
                 <div class="twocol__main">
                   <p>
-                    I designed the results page to clearly communicate the result and next steps. The summary card includes an icon that reflects the result, a primary instruction, a timestamp, and a natural-language summary of the assessment answers.
+                    I designed the results page to clearly communicate the
+                    result and next steps. The summary card includes an icon
+                    that reflects the result, a primary instruction, a
+                    timestamp, and a natural-language summary of the assessment
+                    answers.
                   </p>
                   <p>
-                    To allow re-engagement, I added a “Complete the screener again” section.
+                    To allow re-engagement, I added a “Complete the screener
+                    again” section.
                   </p>
                   <p>
-                    Finally, a wait times widget, mirroring the one on the home page, helps set wait expectations and adds cohesion.
+                    Finally, a wait times widget, mirroring the one on the home
+                    page, helps set wait expectations and adds cohesion.
                   </p>
                 </div>
               </div>
@@ -701,9 +1067,9 @@
             <!-- Fifth sub-block -->
             <article class="case-highlights__item reveal no-padding-bottom">
               <div class="case-highlights__visual">
-                <img 
-                  src="../assets/images/Results - 3 card.png" 
-                  alt="Scrollable results page showing multiple summary cards for different patients with age and navigation indicators" 
+                <img
+                  src="../assets/images/Results - 3 card.png"
+                  alt="Scrollable results page showing multiple summary cards for different patients with age and navigation indicators"
                   class="case-highlights__visual-image case-highlights__visual-image--900 case-highlights__visual-image--large reveal"
                 />
               </div>
@@ -711,32 +1077,46 @@
                 <h3 class="twocol__heading">Multiple patients</h3>
                 <div class="twocol__main">
                   <p>
-                    I designed this page to display result cards for multiple patients in an easy-to-scan format. Each card shows the patient’s age and the order in which their forms were completed, making it easier to keep track of who’s who.
+                    I designed this page to display result cards for multiple
+                    patients in an easy-to-scan format. Each card shows the
+                    patient’s age and the order in which their forms were
+                    completed, making it easier to keep track of who’s who.
                   </p>
                   <p>
-                    To indicate that more results are available, we used a combination of pagination and a visual scrolling affordance: part of the next card is visible at the screen’s edge, encouraging users to swipe or scroll.
+                    To indicate that more results are available, we used a
+                    combination of pagination and a visual scrolling affordance:
+                    part of the next card is visible at the screen’s edge,
+                    encouraging users to swipe or scroll.
                   </p>
                 </div>
               </div>
             </article>
-
           </div>
         </div>
       </section>
 
-
       <!-- Collaboration and what's next (reusable two-column pattern) -->
       <a id="nav-impact"></a>
       <!-- 🦊 -->
-       <section class="container case-howmightwe case-howmightwe-no-top-padding reveal">
-        <h2 class="case-highlights__title case-highlights__title-no-top-margin">Project impact</h2>
+      <section
+        class="container case-howmightwe case-howmightwe-no-top-padding reveal"
+      >
+        <h2 class="case-highlights__title case-highlights__title-no-top-margin">
+          Project impact
+        </h2>
 
         <!-- Development collaboration -->
-        <div class=" reveal">
+        <div class="reveal">
           <div class="twocol add-big-margin-bottom">
             <h3 class="twocol__heading">Accuracy & adoption</h3>
             <div class="twocol__main">
-              <p>The new triage flow improved initial screening accuracy by 92%, helping nurses prioritize cases more confidently. Families were able to provide clearer contextual data, and ER staff reported that the tool “felt natural” to introduce in fast-paced settings.</p>
+              <p>
+                The new triage flow improved initial screening accuracy by 92%,
+                helping nurses prioritize cases more confidently. Families were
+                able to provide clearer contextual data, and ER staff reported
+                that the tool “felt natural” to introduce in fast-paced
+                settings.
+              </p>
             </div>
           </div>
         </div>
@@ -744,57 +1124,112 @@
           <div class="twocol add-big-margin-bottom">
             <h3 class="twocol__heading">Efficiency gains</h3>
             <div class="twocol__main">
-              <p>By shifting early intake online, the hospital reduced the time nurses spent manually triaging lower-acuity cases. This freed up critical time for higher-priority interventions without adding friction for caregivers.</p>
+              <p>
+                By shifting early intake online, the hospital reduced the time
+                nurses spent manually triaging lower-acuity cases. This freed up
+                critical time for higher-priority interventions without adding
+                friction for caregivers.
+              </p>
             </div>
           </div>
         </div>
         <div class="reveal add-big-margin-bottom">
           <div class="twocol">
-            <h3 class="twocol__heading ">Design for scale and</br>inclusivity</h3>
+            <h3 class="twocol__heading">
+              Design for scale and<br />inclusivity
+            </h3>
             <div class="twocol__main">
-              <p>Accessibility and scalability were baked in from day one: the design supported both desktop and mobile use, worked for users with different abilities, and was translated into French during rollout to support bilingual regions. This allowed the product to be easily scaleable to different hospitals.</p>
+              <p>
+                Accessibility and scalability were baked in from day one: the
+                design supported both desktop and mobile use, worked for users
+                with different abilities, and was translated into French during
+                rollout to support bilingual regions. This allowed the product
+                to be easily scaleable to different hospitals.
+              </p>
             </div>
           </div>
         </div>
-       
-        
-      
       </section>
       <!-- 🦊end -->
-       <a id="nav-learnings"></a>
-      <section class="container case-howmightwe case-howmightwe-no-top-padding reveal">
-        <h2 class="case-highlights__title case-highlights__title-no-top-margin">Collaboration and what’s next</h2>
+      <a id="nav-learnings"></a>
+      <section
+        class="container case-howmightwe case-howmightwe-no-top-padding reveal"
+      >
+        <h2 class="case-highlights__title case-highlights__title-no-top-margin">
+          Collaboration and what’s next
+        </h2>
 
         <!-- Development collaboration -->
         <div class="reveal">
           <div class="twocol">
-            <h3 class="twocol__heading">Development<br>collaboration</h3>
+            <h3 class="twocol__heading">Development<br />collaboration</h3>
             <div class="twocol__main">
               <p>To help aid the development process, I:</p>
               <ul class="goals-list">
                 <li class="goals-list__item reveal">
                   <span class="icon-box" aria-hidden="true">
-                    <img src="../assets/icons/pen-tool.svg" alt="" class="icon-box__icon" width="24" height="24" />
+                    <img
+                      src="../assets/icons/pen-tool.svg"
+                      alt=""
+                      class="icon-box__icon"
+                      width="24"
+                      height="24"
+                    />
                   </span>
-                  <span><strong>Wrote detailed annotations in Figma</strong></span>
+                  <span
+                    ><strong>Wrote detailed annotations in Figma</strong></span
+                  >
                 </li>
                 <li class="goals-list__item reveal">
                   <span class="icon-box" aria-hidden="true">
-                    <img src="../assets/icons/list.svg" alt="" class="icon-box__icon" width="24" height="24" />
+                    <img
+                      src="../assets/icons/list.svg"
+                      alt=""
+                      class="icon-box__icon"
+                      width="24"
+                      height="24"
+                    />
                   </span>
-                  <span><strong>Co-created acceptance criteria with the PM on the project</strong></span>
+                  <span
+                    ><strong
+                      >Co-created acceptance criteria with the PM on the
+                      project</strong
+                    ></span
+                  >
                 </li>
                 <li class="goals-list__item reveal">
                   <span class="icon-box" aria-hidden="true">
-                    <img src="../assets/icons/thumbs-up.svg" alt="" class="icon-box__icon" width="24" height="24" />
+                    <img
+                      src="../assets/icons/thumbs-up.svg"
+                      alt=""
+                      class="icon-box__icon"
+                      width="24"
+                      height="24"
+                    />
                   </span>
-                  <span><strong>Maintained open lines with the dev team for feedback and clarification</strong></span>
+                  <span
+                    ><strong
+                      >Maintained open lines with the dev team for feedback and
+                      clarification</strong
+                    ></span
+                  >
                 </li>
                 <li class="goals-list__item add-big-margin-bottom reveal">
                   <span class="icon-box" aria-hidden="true">
-                    <img src="../assets/icons/accessibility.svg" alt="" class="icon-box__icon" width="24" height="24" />
+                    <img
+                      src="../assets/icons/accessibility.svg"
+                      alt=""
+                      class="icon-box__icon"
+                      width="24"
+                      height="24"
+                    />
                   </span>
-                  <span><strong>Partnered with another designer for accessibility testing</strong></span>
+                  <span
+                    ><strong
+                      >Partnered with another designer for accessibility
+                      testing</strong
+                    ></span
+                  >
                 </li>
               </ul>
             </div>
@@ -805,58 +1240,92 @@
           <div class="twocol twocol--wide">
             <h3 class="twocol__heading">If continued…</h3>
             <div class="twocol__main">
-              <p class="add-small-margin-bottom">Future improvements I envisioned:</p>
+              <p class="add-small-margin-bottom">
+                Future improvements I envisioned:
+              </p>
               <ul>
                 <li>Tooltips for complex medical terms</li>
                 <li>Separate flows for caregivers vs. older children</li>
                 <li>Visual enhancements and emotional cues</li>
                 <li>Options for disclosing sensory or neurodiverse needs</li>
               </ul>
-              <p>This project solidified my confidence in independently leading complex, high-impact design work.</p>
+              <p>
+                This project solidified my confidence in independently leading
+                complex, high-impact design work.
+              </p>
 
               <!-- Leveraging AI -->
-                <div class="insight-card add-small-margin-bottom reveal">
-                  <div class="insight-card__header">
-                    <div class="icon-box icon-box-green">
-                      <svg
-  class="icon-box__icon"
-  width="24"
-  height="25"
-  viewBox="0 0 24 25"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-hidden="true"
->
-  <path
-    d="M12 3.70312L10.088 9.51612C9.99015 9.81363 9.82379 10.084 9.60234 10.3055C9.38088 10.5269 9.11051 10.6933 8.813 10.7911L3 12.7031L8.813 14.6151C9.11051 14.713 9.38088 14.8793 9.60234 15.1008C9.82379 15.3222 9.99015 15.5926 10.088 15.8901L12 21.7031L13.912 15.8901C14.0099 15.5926 14.1762 15.3222 14.3977 15.1008C14.6191 14.8793 14.8895 14.713 15.187 14.6151L21 12.7031L15.187 10.7911C14.8895 10.6933 14.6191 10.5269 14.3977 10.3055C14.1762 10.084 14.0099 9.81363 13.912 9.51612L12 3.70312Z
+              <div class="insight-card add-small-margin-bottom reveal">
+                <div class="insight-card__header">
+                  <div class="icon-box icon-box-green">
+                    <svg
+                      class="icon-box__icon"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 3.70312L10.088 9.51612C9.99015 9.81363 9.82379 10.084 9.60234 10.3055C9.38088 10.5269 9.11051 10.6933 8.813 10.7911L3 12.7031L8.813 14.6151C9.11051 14.713 9.38088 14.8793 9.60234 15.1008C9.82379 15.3222 9.99015 15.5926 10.088 15.8901L12 21.7031L13.912 15.8901C14.0099 15.5926 14.1762 15.3222 14.3977 15.1008C14.6191 14.8793 14.8895 14.713 15.187 14.6151L21 12.7031L15.187 10.7911C14.8895 10.6933 14.6191 10.5269 14.3977 10.3055C14.1762 10.084 14.0099 9.81363 13.912 9.51612L12 3.70312Z
        M5 3.70312V7.70312
        M19 17.7031V21.7031
        M3 5.70312H7
        M17 19.7031H21"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-</svg>
-
-                    </div>
-                    <h4 class="insight-card__title">Leveraging AI</h4>
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                   </div>
-                  <ul class="insight-card__list">
-                    <li>This project was created before user-facing AI became widely adopted. While it includes a natural language summary output, it doesn’t require users to interact with AI directly.</li>
-                    <li>If I were approaching this project today, <strong>I’d advocate for adding an AI-powered chat</strong> (resources permitting) that lets users communicate with an AI triage nurse. This could capture more nuance about the patient's condition and allow users to describe the situation in their own words.</li>
-                    <li>This AI nurse chat would be <strong>optional</strong> in addition to the existing screener. Here’s why:
-                      <ul>
-                        <li>Some users may feel uncomfortable sharing personal medical information with AI</li>
-                        <li>Other users may struggle to verbalize symptoms clearly and multiple-choice questions can provide guidance</li>
-                        <li>AI is still evolving and may produce errors or unpredictable outputs</li>
-                        <li>In high-stakes environments like healthcare, redundancy is essential</li>
-                        <li>Structured and conversational multiple input options support more inclusive design for different communication needs</li>
-                      </ul>
-                    </li>
-                  </ul>
+                  <h4 class="insight-card__title">Leveraging AI</h4>
                 </div>
+                <ul class="insight-card__list">
+                  <li>
+                    This project was created before user-facing AI became widely
+                    adopted. While it includes a natural language summary
+                    output, it doesn’t require users to interact with AI
+                    directly.
+                  </li>
+                  <li>
+                    If I were approaching this project today,
+                    <strong>I’d advocate for adding an AI-powered chat</strong>
+                    (resources permitting) that lets users communicate with an
+                    AI triage nurse. This could capture more nuance about the
+                    patient's condition and allow users to describe the
+                    situation in their own words.
+                  </li>
+                  <li>
+                    This AI nurse chat would be <strong>optional</strong> in
+                    addition to the existing screener. Here’s why:
+                    <ul>
+                      <li>
+                        Some users may feel uncomfortable sharing personal
+                        medical information with AI
+                      </li>
+                      <li>
+                        Other users may struggle to verbalize symptoms clearly
+                        and multiple-choice questions can provide guidance
+                      </li>
+                      <li>
+                        AI is still evolving and may produce errors or
+                        unpredictable outputs
+                      </li>
+                      <li>
+                        In high-stakes environments like healthcare, redundancy
+                        is essential
+                      </li>
+                      <li>
+                        Structured and conversational multiple input options
+                        support more inclusive design for different
+                        communication needs
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -866,81 +1335,131 @@
             <h3 class="twocol__heading">Learnings</h3>
             <div class="twocol__main">
               <p>
-                During the test phase at the hospital, patients completed the digital assessment after being triaged by nurses. <strong>92% of the screener’s results matched nurse assessments.</strong> This showed that the tool was accurate and had a lot of potential!
+                During the test phase at the hospital, patients completed the
+                digital assessment after being triaged by nurses.
+                <strong
+                  >92% of the screener’s results matched nurse
+                  assessments.</strong
+                >
+                This showed that the tool was accurate and had a lot of
+                potential!
               </p>
               <p>
-                This was a milestone project for me. I learned how to lead a complex design independently, closely collaborate cross-functionally, and think critically about accessibility, emotion, and simplicity when the users are under pressure while engaging with the tool.
+                This was a milestone project for me. I learned how to lead a
+                complex design independently, closely collaborate
+                cross-functionally, and think critically about accessibility,
+                emotion, and simplicity when the users are under pressure while
+                engaging with the tool.
               </p>
               <p class="add-big-margin-bottom">
-                A metaphor from our VP of Product stuck with me: when building an MVP, don’t start with a car door or bumper: start with a skateboard. That mindset helped me guide our scope and prioritize value and quick wins.
+                A metaphor from our VP of Product stuck with me: when building
+                an MVP, don’t start with a car door or bumper: start with a
+                skateboard. That mindset helped me guide our scope and
+                prioritize value and quick wins.
               </p>
             </div>
           </div>
         </div>
-      
       </section>
 
-          <!-- 🦊prev/next buttons -->
-         <nav class="case-nav reveal">
-          <div class="container">
-            <a href="/everwell-PROMs-and-trends/" class="case-nav__btn case-nav__btn--prev">
-              ← Previous case
-            </a>
-            <!-- keep Next hidden until case3 exists -->
-            <a href="/everwell-senior-solution/" class="case-nav__btn case-nav__btn--next" aria-hidden="true">
-              Next case →
-            </a>
-          </div>
-        </nav>
-        <!-- 🦊end of prev/next buttons -->
+      <!-- 🦊prev/next buttons -->
+      <nav class="case-nav reveal">
+        <div class="container">
+          <a
+            href="/everwell-PROMs-and-trends/"
+            class="case-nav__btn case-nav__btn--prev"
+          >
+            ← Previous case
+          </a>
+          <!-- keep Next hidden until case3 exists -->
+          <a
+            href="/everwell-senior-solution/"
+            class="case-nav__btn case-nav__btn--next"
+            aria-hidden="true"
+          >
+            Next case →
+          </a>
+        </div>
+      </nav>
+      <!-- 🦊end of prev/next buttons -->
     </main>
-  
 
-  <!-- Footer -->
-  <footer class="site-footer  reveal">
-    <div class="container site-footer__content">
-      <div class="site-footer__left">
-        <p class="site-footer__name">Michelle Pavlova</p>
-        <a href="mailto:hi@michelledesign.ca" class="site-footer__email">hi@michelledesign.ca</a>
-        <p class="site-footer__tagline">Let’s connect!</p>
-        <p class="site-footer__credit">Made with ❤️ and hojicha.</p>
-      </div>
-      <div class="site-footer__right">
-        <div class="site-footer__column">
-          <h4 class="site-footer__heading">Navigation</h4>
-          <ul class="site-footer__list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/#selected-work" class="active">Work</a></li>
-            <li><a href="/about/">About</a></li>
-          </ul>
+    <!-- Footer -->
+    <footer class="site-footer reveal">
+      <div class="container site-footer__content">
+        <div class="site-footer__left">
+          <p class="site-footer__name">Michelle Pavlova</p>
+          <a href="mailto:hi@michelledesign.ca" class="site-footer__email"
+            >hi@michelledesign.ca</a
+          >
+          <p class="site-footer__tagline">Let’s connect!</p>
+          <p class="site-footer__credit">Made with ❤️ and hojicha.</p>
         </div>
-        <div class="site-footer__column">
-          <h4 class="site-footer__heading">Contact</h4>
-          <ul class="site-footer__list">
-            <li>
-              <a href="https://www.linkedin.com/in/michellepavlova/" target="_blank" rel="noopener noreferrer"
-                class="menu__link menu__link--resume">
-                LinkedIn
-                <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                    aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10.6667 1.3335H14.6667V5.3335"
-                        stroke="currentColor" stroke-width="1.5"
-                        stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.33333 8.66683L14.6667 1.3335M14.6667 8.66683V14.6668H1.33333V1.3335H7.33333"
-                        stroke="currentColor" stroke-width="1.5"
-                        stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </li>
-          </ul>
+        <div class="site-footer__right">
+          <div class="site-footer__column">
+            <h4 class="site-footer__heading">Navigation</h4>
+            <ul class="site-footer__list">
+              <li><a href="/">Home</a></li>
+              <li><a href="/#selected-work" class="active">Work</a></li>
+              <li><a href="/about/">About</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__column">
+            <h4 class="site-footer__heading">Contact</h4>
+            <ul class="site-footer__list">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/michellepavlova/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="menu__link menu__link--resume"
+                >
+                  LinkedIn
+                  <svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                    focusable="false"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.6667 1.3335H14.6667V5.3335"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M7.33333 8.66683L14.6667 1.3335M14.6667 8.66683V14.6668H1.33333V1.3335H7.33333"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" width="28" height="28"><path d="M12 19V5M5 12l7-7 7 7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
+    </footer>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" width="28" height="28">
+        <path
+          d="M12 19V5M5 12l7-7 7 7"
+          stroke="white"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
 
-  <script src="../scripts/main.js" defer></script>
-</body>
+    <script src="../scripts/main.js" defer></script>
+  </body>
 </html>
