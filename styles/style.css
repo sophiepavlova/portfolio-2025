@@ -3447,6 +3447,9 @@ a:focus:not(:focus-visible) {
   .case-context__items {
     gap: 0 !important;
   }
+  .case-context__item-no-mg {
+    margin-bottom: 0;
+  }
   .case-context__heading {
     margin-bottom: 0;
   }
