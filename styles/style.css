@@ -780,7 +780,9 @@ h3 {
   line-height: 1.1;
   letter-spacing: 0.005em;
   padding-bottom: 20px;
+  cursor: default;
 }
+
 .about-fashion-highlight {
   color: var(--color-homepage);
   cursor: pointer;
@@ -3209,6 +3211,7 @@ a:focus:not(:focus-visible) {
     max-width: 500px;
     text-align: left; /* keep text normal */
   }
+
   .about-hero__text-block {
     max-width: 600px;
     width: 100%;

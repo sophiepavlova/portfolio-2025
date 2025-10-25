@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
   <title>Michelle Pavlova's Portfolio</title>
   
@@ -46,7 +47,7 @@
       <!-- Hamburger button (shown at max-width: 768px) -->
       <button class="menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
         <!-- Hamburger SVG -->
-       <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <svg aria-hidden="true" focusable="false" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z" stroke="white"/>
         <path d="M16.3335 23H29.6668" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M16.3335 18H29.6668" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
@@ -63,7 +64,7 @@
   <aside id="mobile-menu" class="mobile-menu" tabindex="-1" aria-hidden="true">
     <button class="menu-close" aria-label="Close menu">
       <!-- Close SVG -->
-      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <path d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z" stroke="#1F2937"/>
         <path d="M28 18L18 28" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M18 18L28 28" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
@@ -209,7 +210,7 @@
                 <div class="case-card__stats">
                   <div class="case-stat">
                     <div class="case-stat__icon">
-                      <img src="./assets/icons/clock-4.svg" alt="" />
+                      <img src="./assets/icons/clock-4.svg" alt="" aria-hidden="true" />
                     </div>
                     <div class="case-stat__text">
                       <p class="case-stat__text-bold">85%</p>
@@ -218,7 +219,7 @@
                   </div>
                   <div class="case-stat">
                     <div class="case-stat__icon">
-                      <img src="./assets/icons/smile.svg" alt="" />
+                      <img src="./assets/icons/smile.svg" alt="" aria-hidden="true" />
                     </div>
                     <div class="case-stat__text">
                       <p class="case-stat__text-bold">2× higher</p>
@@ -235,8 +236,8 @@
               <!-- Right side -->
               <div class="case-card__visual case-card__visual-2 ">
                 <div class="case-card__phones">
-                  <img src="./assets/images/home2_1.png" alt="" class="case-card__phone case-card__phone--up phone-animate" />
-                  <img src="./assets/images/home2_2.png" alt="" class="case-card__phone case-card__phone--down phone-animate" />
+                  <img src="./assets/images/home2_1.png" alt="Mobile screens of the Horizon Children’s Hospital triage app" class="case-card__phone case-card__phone--up phone-animate" />
+                  <img src="./assets/images/home2_2.png" alt="Horizon Children’s Hospital triage app interface showing intake workflow" class="case-card__phone case-card__phone--down phone-animate" />
                 </div>
               </div>
 
@@ -269,7 +270,7 @@
                 <div class="case-card__stats">
                   <div class="case-stat">
                     <div class="case-stat__icon">
-                      <img src="./assets/icons/check-circle.svg" alt="" />
+                      <img src="./assets/icons/check-circle.svg" alt="" aria-hidden="true"  />
                     </div>
                     <div class="case-stat__text">
                       <p class="case-stat__text-bold">+ 30%</p>
@@ -278,7 +279,7 @@
                   </div>
                   <div class="case-stat">
                     <div class="case-stat__icon">
-                      <img src="./assets/icons/star_blue.svg" alt="" />
+                      <img src="./assets/icons/star_blue.svg" alt="" aria-hidden="true"  />
                     </div>
                     <div class="case-stat__text">
                       <p class="case-stat__text-bold">86% of users</p>
