@@ -2830,6 +2830,38 @@ a:focus:not(:focus-visible) {
   pointer-events: none;
 }
 
+/* .cursor-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1;
+} */
+#cursor-label {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px; /* ← these will now take effect */
+  background-color: var(--color-homepage);
+  color: white;
+  border-radius: 9999px;
+  font-size: 16px;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+#cursor-label svg,
+#cursor-label .cursor-icon {
+  flex-shrink: 0;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+}
+
 /* === Scroll reveal animation === */
 .reveal {
   opacity: 0;

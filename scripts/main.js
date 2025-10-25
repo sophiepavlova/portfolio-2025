@@ -124,7 +124,6 @@ function setActive(link) {
 
 const portraitEl = document.getElementById("portrait");
 const fashionHighlight = document.querySelector(".about-fashion-highlight");
-// const arrowEl = document.querySelector(".about-hero__arrow");
 
 if (portraitEl) {
   const originalSrc = "../assets/images/portrait.jpg"; // original portrait
@@ -139,21 +138,6 @@ if (portraitEl) {
   let lastIndex = -1;
   let resetTimeout;
 
-  //   portraitEl.addEventListener("click", () => {
-  //     let nextIndex;
-  //     do {
-  //       nextIndex = Math.floor(Math.random() * looks.length);
-  //     } while (nextIndex === lastIndex);
-  //     lastIndex = nextIndex;
-  //     portraitEl.src = looks[nextIndex];
-
-  //     // Clear previous timer and set restore
-  //     if (resetTimeout) clearTimeout(resetTimeout);
-  //     resetTimeout = setTimeout(() => {
-  //       portraitEl.src = originalSrc;
-  //     }, 3000); // 3 seconds
-  //   });
-  // }
   const changeLook = () => {
     let nextIndex;
     do {
@@ -171,7 +155,6 @@ if (portraitEl) {
   // Trigger on both photo and span clicks
   portraitEl.addEventListener("click", changeLook);
   fashionHighlight?.addEventListener("click", changeLook);
-  // arrowEl?.addEventListener("click", changeLook);
 }
 
 // --- About page small pictures location ---
@@ -812,10 +795,15 @@ document.addEventListener("DOMContentLoaded", () => {
   cards.forEach((card) => {
     const link = card.querySelector(".case-card__link");
     const isInactive = link?.classList.contains("case-card__link--nonactive");
-    const text = isInactive ? "✨ Coming soon :)" : "📖 Read case study";
+    const text = isInactive
+      ? `<span class="cursor-icon">✨</span> Coming soon :)`
+      : `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.33333 2H5.33333C6.04058 2 6.71885 2.28095 7.21895 2.78105C7.71905 3.28115 8 3.95942 8 4.66667V14C8 13.4696 7.78929 12.9609 7.41421 12.5858C7.03914 12.2107 6.53043 12 6 12H1.33333V2Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14.6667 2H10.6667C9.95942 2 9.28115 2.28095 8.78105 2.78105C8.28095 3.28115 8 3.95942 8 4.66667V14C8 13.4696 8.21071 12.9609 8.58579 12.5858C8.96086 12.2107 9.46957 12 10 12H14.6667V2Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg> Read case study`;
 
     card.addEventListener("mouseenter", () => {
-      label.textContent = text;
+      label.innerHTML = text;
       label.classList.add("cursor-label--visible");
       label.classList.toggle("cursor-label--inactive", isInactive);
     });
