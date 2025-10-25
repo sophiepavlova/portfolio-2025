@@ -123,6 +123,9 @@ function setActive(link) {
 // --- About page portrait click handler ---
 
 const portraitEl = document.getElementById("portrait");
+const fashionHighlight = document.querySelector(".about-fashion-highlight");
+// const arrowEl = document.querySelector(".about-hero__arrow");
+
 if (portraitEl) {
   const originalSrc = "../assets/images/portrait.jpg"; // original portrait
   const looks = [
@@ -136,7 +139,22 @@ if (portraitEl) {
   let lastIndex = -1;
   let resetTimeout;
 
-  portraitEl.addEventListener("click", () => {
+  //   portraitEl.addEventListener("click", () => {
+  //     let nextIndex;
+  //     do {
+  //       nextIndex = Math.floor(Math.random() * looks.length);
+  //     } while (nextIndex === lastIndex);
+  //     lastIndex = nextIndex;
+  //     portraitEl.src = looks[nextIndex];
+
+  //     // Clear previous timer and set restore
+  //     if (resetTimeout) clearTimeout(resetTimeout);
+  //     resetTimeout = setTimeout(() => {
+  //       portraitEl.src = originalSrc;
+  //     }, 3000); // 3 seconds
+  //   });
+  // }
+  const changeLook = () => {
     let nextIndex;
     do {
       nextIndex = Math.floor(Math.random() * looks.length);
@@ -144,12 +162,16 @@ if (portraitEl) {
     lastIndex = nextIndex;
     portraitEl.src = looks[nextIndex];
 
-    // Clear previous timer and set restore
     if (resetTimeout) clearTimeout(resetTimeout);
     resetTimeout = setTimeout(() => {
       portraitEl.src = originalSrc;
-    }, 3000); // 3 seconds
-  });
+    }, 3000);
+  };
+
+  // Trigger on both photo and span clicks
+  portraitEl.addEventListener("click", changeLook);
+  fashionHighlight?.addEventListener("click", changeLook);
+  // arrowEl?.addEventListener("click", changeLook);
 }
 
 // --- About page small pictures location ---
