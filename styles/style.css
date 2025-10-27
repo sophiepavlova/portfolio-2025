@@ -19,7 +19,7 @@
 
   --color-top-card-bg: #d8edc3;
   --color-top-card-icon-bg: #a7d680;
-  --color-top-card-icon-bg-path: #115e59;
+  --color-top-card-icon-bg-path: #345222;
 
   /* ⚙️ Layout / system tokens */
   --scrollbar-gutter: stable;
@@ -3022,7 +3022,17 @@ a:focus:not(:focus-visible) {
   opacity: 1;
   transform: translateY(0);
 }
-
+/* .section-flash {
+  animation: flashHighlight 0.8s ease;
+}
+@keyframes flashHighlight {
+  from {
+    background-color: rgba(255, 235, 233, 0.4);
+  }
+  to {
+    background-color: transparent;
+  }
+} */
 /* Maintain proportional shrink */
 @media (max-width: 1080px) {
   .about-cards-row {
