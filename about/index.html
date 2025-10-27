@@ -59,6 +59,7 @@
             viewBox="0 0 46 46"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
           >
             <path
               d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z"
@@ -102,6 +103,7 @@
           viewBox="0 0 46 46"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           <path
             d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z"
@@ -150,11 +152,13 @@
               src="../assets/icons/flower_red.svg"
               alt=""
               class="about-hero__flower about-hero__flower--left"
+              aria-hidden="true"
             />
             <img
               src="../assets/icons/flower_blue.svg"
               alt=""
               class="about-hero__flower about-hero__flower--right"
+              aria-hidden="true"
             />
 
             <!-- Portrait -->
@@ -166,8 +170,9 @@
             />
 
             <p class="about-hero__caption">
-              Fashion is one of my favourite hobbies – click on my photo to see
-              a random look I’ve styled!
+              Fashion is one of my favourite hobbies –
+              <span class="about-fashion-highlight">click on my photo</span> to
+              see a random look I’ve styled!
             </p>
           </div>
         </div>
@@ -182,6 +187,7 @@
                 src="../assets/icons/about_icon_card1.svg"
                 alt=""
                 class="about-card__icon"
+                aria-hidden="true"
               />
               <h3 class="about-card__title">
                 <span class="hi"
@@ -197,7 +203,7 @@
             </article>
             <!-- 1 -->
             <article class="about-card">
-              <div class="about-card__icon">💫</div>
+              <div class="about-card__icon" aria-hidden="true">💫</div>
               <h3 class="about-card__title about-card__title-non-bold">
                 <span class="hi">Some of my favourite things are:</span>
               </h3>
@@ -212,7 +218,7 @@
           <div class="about-cards-row">
             <!-- 3 -->
             <article class="about-card">
-              <div class="about-card__icon">👧</div>
+              <div class="about-card__icon" aria-hidden="true">👧</div>
               <h3 class="about-card__title">
                 <span class="hi"
                   >My design journey started when I was a little girl who wanted
@@ -232,6 +238,7 @@
                 src="../assets/icons/wheel.svg"
                 alt=""
                 class="about-card__icon"
+                aria-hidden="true"
               />
               <h3 class="about-card__title">
                 <span class="hi"
@@ -252,6 +259,7 @@
                   src="../assets/images/about_card_4_cat.png"
                   alt="Photo of Michelle's cat Aloy"
                   class="about-card__decor"
+                  aria-hidden="true"
                 />
               </div>
             </article>
@@ -278,7 +286,7 @@
             </div>
             <!-- 6 -->
             <article class="about-card">
-              <div class="about-card__icon">✨</div>
+              <div class="about-card__icon" aria-hidden="true">✨</div>
               <h3 class="about-card__title">
                 <span class="hi"
                   >I use AI in my work as a creative partner</span
@@ -306,6 +314,7 @@
                     class="about-card__icon"
                     width="100"
                     height="100"
+                    aria-hidden="true"
                   />
                   <h3 class="about-card__title">
                     <span class="hi">Currently...</span>
@@ -328,6 +337,7 @@
                         viewBox="0 0 16 16"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
                       >
                         <path
                           d="M10.6667 1.3335H14.6667V5.3335"
@@ -363,6 +373,7 @@
                         viewBox="0 0 16 16"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
                       >
                         <path
                           d="M10.6667 1.3335H14.6667V5.3335"
@@ -395,6 +406,7 @@
                         viewBox="0 0 16 16"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
                       >
                         <path
                           d="M10.6667 1.3335H14.6667V5.3335"
@@ -440,27 +452,27 @@
                 <div class="about-photo-slider">
                   <img
                     src="../assets/images/about_walking.jpg"
-                    alt=""
+                    alt="Michelle walking outside on a sunny day"
                     class="about-photo-slider__img active"
                   />
                   <img
                     src="../assets/images/about_matcha.png"
-                    alt=""
+                    alt="A cup of matcha latte on a table"
                     class="about-photo-slider__img"
                   />
                   <img
                     src="../assets/images/about_thrifthing.png"
-                    alt=""
+                    alt="Michelle browsing clothes while thrifting"
                     class="about-photo-slider__img"
                   />
                   <img
                     src="../assets/images/about_videoGames.png"
-                    alt=""
+                    alt="Playing video games on a console"
                     class="about-photo-slider__img"
                   />
                   <img
                     src="../assets/images/about_cat.png"
-                    alt=""
+                    alt="Michelle’s British Shorthair cat"
                     class="about-photo-slider__img"
                   />
                 </div>
@@ -517,7 +529,13 @@
       </div>
     </footer>
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
-      <svg viewBox="0 0 24 24" width="28" height="28">
+      <svg
+        viewBox="0 0 24 24"
+        width="28"
+        height="28"
+        aria-hidden="true"
+        focusable="false"
+      >
         <path
           d="M12 19V5M5 12l7-7 7 7"
           stroke="white"

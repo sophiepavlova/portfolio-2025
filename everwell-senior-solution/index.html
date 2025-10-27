@@ -1,69 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Study - Senior's App</title>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRPWYEE236"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study - Senior's App</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RRPWYEE236"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-RRPWYEE236');
-  </script>
+      gtag("config", "G-RRPWYEE236");
+    </script>
 
-  <link rel="icon" type="image/svg+xml" href="../favicon2.svg">
-  <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css" />
-  <link rel="stylesheet" href="../styles/reset.css" />
-  <link rel="stylesheet" href="../styles/style.css" />
-</head>
-<body class="case">
-  <!-- Header -->
-  <header class="site-header reveal">
-    <div class="container">
-      <a href="/" class="logo">Michelle Pavlova</a>
-      <nav class="site-nav">
+    <link rel="icon" type="image/svg+xml" href="../favicon2.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body class="case">
+    <!-- Header -->
+    <header class="site-header reveal">
+      <div class="container">
+        <a href="/" class="logo">Michelle Pavlova</a>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="../#selected-work" class="active">Work</a></li>
+            <li><a href="/about/">About</a></li>
+          </ul>
+        </nav>
+        <!-- Hamburger button (shown at max-width: 768px) -->
+        <button
+          class="menu-toggle"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <!-- Hamburger SVG -->
+          <svg
+            width="46"
+            height="46"
+            viewBox="0 0 46 46"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z"
+              stroke="#1F2937"
+            />
+            <path
+              d="M16.3335 23H29.6668"
+              stroke="#1F2937"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16.3335 18H29.6668"
+              stroke="#1F2937"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16.3335 28H29.6668"
+              stroke="#1F2937"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile menu panel -->
+    <aside
+      id="mobile-menu"
+      class="mobile-menu"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <button class="menu-close" aria-label="Close menu">
+        <!-- Close SVG -->
+        <svg
+          width="46"
+          height="46"
+          viewBox="0 0 46 46"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z"
+            stroke="#1F2937"
+          />
+          <path
+            d="M28 18L18 28"
+            stroke="#1F2937"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M18 18L28 28"
+            stroke="#1F2937"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <nav class="mobile-menu__nav">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="../#selected-work" class="active">Work</a></li>
+          <li><a href="../#selected-work">Work</a></li>
           <li><a href="/about/">About</a></li>
         </ul>
       </nav>
-      <!-- Hamburger button (shown at max-width: 768px) -->
-      <button class="menu-toggle" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-        <!-- Hamburger SVG -->
-        <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z" stroke="#1F2937"/>
-          <path d="M16.3335 23H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16.3335 18H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16.3335 28H29.6668" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </div>
-  </header>
-  
-  <!-- Mobile menu panel -->
-  <aside id="mobile-menu" class="mobile-menu" tabindex="-1" aria-hidden="true">
-    <button class="menu-close" aria-label="Close menu">
-      <!-- Close SVG -->
-      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z" stroke="#1F2937"/>
-        <path d="M28 18L18 28" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M18 18L28 28" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-    <nav class="mobile-menu__nav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="../#selected-work">Work</a></li>
-        <li><a href="/about/">About</a></li>
-      </ul>
-    </nav>
-  </aside>
+    </aside>
 
-  
     <aside class="case-sidenav reveal" id="case-sidenav">
       <nav>
         <ul>
@@ -75,7 +134,6 @@
         </ul>
       </nav>
     </aside>
-
 
     <!-- Main Case Content -->
     <main>
@@ -92,54 +150,125 @@
               <ul class="jump-menu__list">
                 <li>
                   <a href="#nav-overview" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"><img src="../assets/icons/Static Icon.svg" alt="" width="38" height="38" /></span>
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/Static Icon.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                        aria-hidden="true"
+                    /></span>
                     <span class="jump-menu__label">Overview</span>
-                    <span class="jump-menu__arrow-bg"><img src="../assets/icons/arrow-right.svg" alt="" width="16" height="16" /></span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    /></span>
                   </a>
                 </li>
                 <li>
                   <a href="#nav-solution" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"><img src="../assets/icons/solution.svg" alt="" width="38" height="38" /></span>
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/solution.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                        aria-hidden="true"
+                    /></span>
                     <span class="jump-menu__label">Solution</span>
-                    <span class="jump-menu__arrow-bg"><img src="../assets/icons/arrow-right.svg" alt="" width="16" height="16" /></span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    /></span>
                   </a>
                 </li>
                 <li>
                   <a href="#nav-design" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"><img src="../assets/icons/designs.svg" alt="" width="38" height="38" /></span>
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/designs.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                        aria-hidden="true"
+                    /></span>
                     <span class="jump-menu__label">Designs</span>
-                    <span class="jump-menu__arrow-bg"><img src="../assets/icons/arrow-right.svg" alt="" width="16" height="16" /></span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    /></span>
                   </a>
                 </li>
-                 <li>
+                <li>
                   <a href="#nav-impact" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"><img src="../assets/icons/outcomes.svg" alt="" width="38" height="38" /></span>
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/outcomes.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                        aria-hidden="true"
+                    /></span>
                     <span class="jump-menu__label">Impact</span>
-                    <span class="jump-menu__arrow-bg"><img src="../assets/icons/arrow-right.svg" alt="" width="16" height="16" /></span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    /></span>
                   </a>
                 </li>
                 <li>
                   <a href="#nav-learnings" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"><img src="../assets/icons/apple.svg" alt="" width="38" height="38" /></span>
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/apple.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                        aria-hidden="true"
+                    /></span>
                     <span class="jump-menu__label">Learnings</span>
-                    <span class="jump-menu__arrow-bg"><img src="../assets/icons/arrow-right.svg" alt="" width="16" height="16" /></span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    /></span>
                   </a>
                 </li>
               </ul>
             </div>
           </nav>
-
         </div>
       </section>
 
       <!-- Image -->
       <section class="case-image reveal" aria-labelledby="case-image1-title">
         <div class="container">
-          <h2 id="case-image1-title" class="visually-hidden">Hero mockup for project</h2>
+          <h2 id="case-image1-title" class="visually-hidden">
+            Hero mockup for project
+          </h2>
           <figure class="case-image__wrapper">
-            <img 
+            <img
               src="../assets/images/case2_image1.jpg"
-              alt="Project hero screen, desktop and mobile"
+              alt="Everwell app screen showing the Connected Living program for seniors, with wellness activities and self-assessments designed to support independent living."
               class="case-image__image reveal"
             />
           </figure>
@@ -148,19 +277,28 @@
 
       <!-- Overview -->
       <a id="nav-overview"></a>
-      <section class="case-overview reveal" aria-labelledby="case-overview-title">
+      <section
+        class="case-overview reveal"
+        aria-labelledby="case-overview-title"
+      >
         <div class="container case-overview__content">
           <!-- Left column -->
           <div class="case-overview__description reveal">
-            <h3 id="case-overview-title" class="case-overview__heading">Project overview</h3>
+            <h3 id="case-overview-title" class="case-overview__heading">
+              Project overview
+            </h3>
             <p class="case-overview__paragraph">
-              My team helped a seniors’ wellness application evolve from a proof-of-concept MVP into a more full-fledged platform. 
+              My team helped a seniors’ wellness application evolve from a
+              proof-of-concept MVP into a more full-fledged platform.
             </p>
             <p class="case-overview__paragraph">
-              I played a key role in this major redesign, helping transform a functional but boring app into an intuitive, accessible, and motivating experience for older users. 
+              I played a key role in this major redesign, helping transform a
+              functional but boring app into an intuitive, accessible, and
+              motivating experience for older users.
             </p>
             <aside class="case-overview__note" role="note">
-              <strong>Note:</strong> some details of the project have been modified to comply with the NDA.
+              <strong>Note:</strong> some details of the project have been
+              modified to comply with the NDA.
             </aside>
           </div>
           <!-- Right column -->
@@ -171,7 +309,10 @@
             </div>
             <div class="case-overview__meta-item">
               <dt>Team</dt>
-              <dd>Senior Product Designer, Product Designer, Product Manager, Developer team</dd>
+              <dd>
+                Senior Product Designer, Product Designer, Product Manager,
+                Developer team
+              </dd>
             </div>
             <div class="case-overview__meta-item">
               <dt>Timeframe</dt>
@@ -195,13 +336,21 @@
             <div class="case-context__item reveal">
               <dt class="case-context__term">Problem</dt>
               <dd class="case-context__desc">
-                The app supported seniors’ health through assessments and recommendations but had accumulated UX debt. Key screens like the homepage and resource library were cluttered, text-heavy, and confusing. Recommendations were hard to find, and users struggled to re-engage with helpful content.
+                The app supported seniors’ health through assessments and
+                recommendations but had accumulated UX debt. Key screens like
+                the homepage and resource library were cluttered, text-heavy,
+                and confusing. Recommendations were hard to find, and users
+                struggled to re-engage with helpful content.
               </dd>
             </div>
             <div class="case-context__item reveal">
               <dt class="case-context__term">Solution</dt>
               <dd class="case-context__desc">
-                We redesigned the core experience to improve clarity, engagement, and accessibility. Updates included a widget-based homepage, a visual-heavy resource library with filters, persistent notifications for recommendations, and better caregiver support through multi-profile functionality.
+                We redesigned the core experience to improve clarity,
+                engagement, and accessibility. Updates included a widget-based
+                homepage, a visual-heavy resource library with filters,
+                persistent notifications for recommendations, and better
+                caregiver support through multi-profile functionality.
               </dd>
             </div>
             <div class="case-context__item reveal">
@@ -209,21 +358,43 @@
               <dd class="case-context__desc">
                 <p>During this project, I:</p>
                 <ul class="case-context__list">
-                  <li>Led the redesign of the Resource Library and multi-profile navigation across web and mobile</li>
-                  <li>Collaborated closely with fellow designers to align on patterns, share feedback, and ensure consistency across the platform; facilitated regular design critiques and working sessions to align with peers and strengthen design decisions across teams</li>
-                  <li>Conducted analog research and competitor audits to inform IA and content strategy</li>
-                  <li>Delivered high-fidelity, accessible designs leveraging reusable, documented components </li>
-                  <li>Collaborated closely with devs to ensure feasible, scalable implementation</li>
+                  <li>
+                    Led the redesign of the Resource Library and multi-profile
+                    navigation across web and mobile
+                  </li>
+                  <li>
+                    Collaborated closely with fellow designers to align on
+                    patterns, share feedback, and ensure consistency across the
+                    platform; facilitated regular design critiques and working
+                    sessions to align with peers and strengthen design decisions
+                    across teams
+                  </li>
+                  <li>
+                    Conducted analog research and competitor audits to inform IA
+                    and content strategy
+                  </li>
+                  <li>
+                    Delivered high-fidelity, accessible designs leveraging
+                    reusable, documented components
+                  </li>
+                  <li>
+                    Collaborated closely with devs to ensure feasible, scalable
+                    implementation
+                  </li>
                 </ul>
               </dd>
             </div>
             <div class="case-context__item reveal">
               <dt class="case-context__term">Key impact</dt>
               <dd class="case-context__desc">
-                This redesign simplified navigation, clarified content access, and streamlined onboarding, which helped seniors engage more confidently with their recommended health programs and resources. <br><br>The new experience supports caregivers and multiple user types, making the app feel more intuitive even for users that were less familiar with technology.
+                This redesign simplified navigation, clarified content access,
+                and streamlined onboarding, which helped seniors engage more
+                confidently with their recommended health programs and
+                resources. <br /><br />The new experience supports caregivers
+                and multiple user types, making the app feel more intuitive even
+                for users that were less familiar with technology.
               </dd>
             </div>
-
           </dl>
         </div>
       </section>
@@ -232,173 +403,290 @@
       <a id="nav-solution"></a>
       <section class="case-howmightwe" aria-labelledby="case-howmightwe-title">
         <div class="container">
-          <h2 id="case-howmightwe-title" class="case-howmightwe__heading reveal">
-            How might we… help older users confidently navigate to and engage with recommended content?
+          <h2
+            id="case-howmightwe-title"
+            class="case-howmightwe__heading reveal"
+          >
+            How might we… help older users confidently navigate to and engage
+            with recommended content?
           </h2>
-      
+
           <!-- First two-colunm block -->
           <div class="case-howmightwe__block reveal">
             <div class="twocol twocol--wide reveal">
-              <h3 class="twocol__heading">Digging deeper into the<br>problem space</h3>
+              <h3 class="twocol__heading">
+                Digging deeper into the<br />problem space
+              </h3>
               <div class="twocol__main">
-          
                 <p>
-                  This app helps older adults manage their health by collecting assessment data, building a health profile, and recommending wellness programs and educational resources. It also generates reports and health trends based on the assessments they take. Over time, however, the product accumulated significant UX debt:
+                  This app helps older adults manage their health by collecting
+                  assessment data, building a health profile, and recommending
+                  wellness programs and educational resources. It also generates
+                  reports and health trends based on the assessments they take.
+                  Over time, however, the product accumulated significant UX
+                  debt:
                 </p>
-          
+
                 <!-- Main image: Connected Living -->
-                <img 
-                  src="../assets/images/case2_2.png" 
+                <img
+                  src="../assets/images/case2_2.png"
                   alt="App screenshot: Connected Living library for older adults"
                   class="case-howmightwe__visual-image case-howmightwe__visual-image--wide reveal"
                 />
-          
+
                 <!-- Inline notice 1 -->
                 <div class="inline-notice reveal">
                   <span class="inline-notice__icon-bg">
                     <span class="inline-notice__icon">
-                      <img src="../assets/icons/book-marked.svg" alt="" width="24" height="24" />
+                      <img
+                        src="../assets/icons/book-marked.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
                     </span>
                   </span>
                   <span>
-                    <strong>Resource library</strong> page was never iterated on from its initial state: a plain, text-heavy list that looked and felt overwhelming
+                    <strong>Resource library</strong> page was never iterated on
+                    from its initial state: a plain, text-heavy list that looked
+                    and felt overwhelming
                   </span>
                 </div>
-                
-          
+
                 <!-- Second picture: "Hello Jenny!" -->
                 <div class="case-howmightwe__visual reveal">
-                  <img 
+                  <img
                     src="../assets/images/case2_Jenny.png"
                     alt="App screenshot: homepage with task list"
                     class="case-howmightwe__visual-image case-howmightwe__visual-image--card img-bdr-btm reveal"
                   />
                 </div>
-                
-          
+
                 <!-- Inline notice 2 -->
                 <div class="inline-notice inline-notice--danger reveal">
-                  <span class="inline-notice__icon-bg" >
+                  <span class="inline-notice__icon-bg">
                     <span class="inline-notice__icon">
-                      <img src="../assets/icons/home.svg" alt="" width="24" height="24" />
+                      <img
+                        src="../assets/icons/home.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
                     </span>
                   </span>
                   <span>
-                    <strong>The homepage</strong> lacked visual interest, and new items were added without cohesive planning or design thinking.
+                    <strong>The homepage</strong> lacked visual interest, and
+                    new items were added without cohesive planning or design
+                    thinking.
                   </span>
                 </div>
-          
+
                 <!-- Third picture: Social health -->
-                <img 
-                  src="../assets/images/case2_socialHealth.png" 
-                  alt="App screenshot: Social Health"
+                <img
+                  src="../assets/images/case2_socialHealth.png"
+                  alt="App screenshot:Social Health as a part of the user's library "
                   class="case-howmightwe__visual-image reveal"
                 />
-          
+
                 <!-- Inline notice 3 -->
                 <div class="inline-notice reveal">
                   <span class="inline-notice__icon-bg">
                     <span class="inline-notice__icon">
-                      <img src="../assets/icons/star.svg" alt="" width="24" height="24" />
+                      <img
+                        src="../assets/icons/star.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
                     </span>
                   </span>
                   <span>
-                    <strong>Recommendations</strong> were non-engaging and hard to find, and they were one of the key value prepositions of the app!
+                    <strong>Recommendations</strong> were non-engaging and hard
+                    to find, and they were one of the key value prepositions of
+                    the app!
                   </span>
                 </div>
-          
+
                 <!-- Quotes grid -->
-                <p class="reveal">User, client, and stakeholder feedback confirmed what we had suspected:</p>
+                <p class="reveal">
+                  User, client, and stakeholder feedback confirmed what we had
+                  suspected:
+                </p>
                 <div class="feedback-quotes reveal">
                   <div class="feedback-quote reveal">
                     <span class="feedback-quote__icon-bg">
-                      <img src="../assets/icons/quote.svg" alt="" class="feedback-quote__icon" width="24" height="24" />
+                      <img
+                        src="../assets/icons/quote.svg"
+                        alt=""
+                        class="feedback-quote__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
                     </span>
                     <span class="feedback-quote__text">
-                      “There’s too much going on here. I don’t know where to start.”
+                      “There’s too much going on here. I don’t know where to
+                      start.”
                     </span>
                   </div>
                   <div class="feedback-quote reveal">
                     <span class="feedback-quote__icon-bg">
-                      <img src="../assets/icons/quote.svg" alt="" class="feedback-quote__icon" width="24" height="24" />
+                      <img
+                        src="../assets/icons/quote.svg"
+                        alt=""
+                        class="feedback-quote__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
                     </span>
-                    <span class="feedback-quote__text">“The homepage feels <em>blah</em> and not fun. Can we take it up a notch?”</span>
+                    <span class="feedback-quote__text"
+                      >“The homepage feels <em>blah</em> and not fun. Can we
+                      take it up a notch?”</span
+                    >
                   </div>
                   <div class="feedback-quote reveal">
                     <span class="feedback-quote__icon-bg">
-                      <img src="../assets/icons/quote.svg" alt="" class="feedback-quote__icon" width="24" height="24" />
+                      <img
+                        src="../assets/icons/quote.svg"
+                        alt=""
+                        class="feedback-quote__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
                     </span>
-                    <span class="feedback-quote__text">“I wish I could go back to that one video, but I forgot what it was and there are so many folders here!”</span>
+                    <span class="feedback-quote__text"
+                      >“I wish I could go back to that one video, but I forgot
+                      what it was and there are so many folders here!”</span
+                    >
                   </div>
                   <div class="feedback-quote reveal">
                     <span class="feedback-quote__icon-bg">
-                      <img src="../assets/icons/quote.svg" alt="" class="feedback-quote__icon" width="24" height="24" />
+                      <img
+                        src="../assets/icons/quote.svg"
+                        alt=""
+                        class="feedback-quote__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
                     </span>
-                    <span class="feedback-quote__text">“It’s hard to find any reports once I’ve completed my questionnaire.”</span>
+                    <span class="feedback-quote__text"
+                      >“It’s hard to find any reports once I’ve completed my
+                      questionnaire.”</span
+                    >
                   </div>
                 </div>
-          
+
                 <p class="reveal">
-                  Users were unimpressed with the product and overlooked key features, like the very recommendations meant to support their health goals.
+                  Users were unimpressed with the product and overlooked key
+                  features, like the very recommendations meant to support their
+                  health goals.
                 </p>
               </div>
             </div>
           </div>
-          
-      
-        <!-- Second two-column block -->
-        <div class="case-howmightwe__block">
-          <div class="twocol twocol--wide">
-            <h3 class="twocol__heading reveal">Design North Stars</h3>
-            <div class="twocol__main">
-              <p class="reveal">
-                I collaborated with two other designers on a major redesign for both web and iOS platforms. Our redesign was guided by principles of:
-              </p>
-              <div class="design-northstars">
-                <div class="design-northstar-card reveal">
-                  <span class="design-northstar-card__icon-bg">
-                    <img src="../assets/icons/sun.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
-                  </span>
-                  <span class="design-northstar-card__text">
-                    <strong>Clarity:</strong> simplifying navigation and making key actions easy to recognize
-                  </span>
-                </div>
-                <div class="design-northstar-card reveal">
-                  <span class="design-northstar-card__icon-bg">
-                    <img src="../assets/icons/list-ordered.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
-                  </span>
-                  <span class="design-northstar-card__text">
-                    <strong>Relevance:</strong> surfacing content that’s timely, relevant, personalized, and clearly contextualized
-                  </span>
-                </div>
-                <div class="design-northstar-card reveal">
-                  <span class="design-northstar-card__icon-bg">
-                    <img src="../assets/icons/accessibility.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
-                  </span>
-                  <span class="design-northstar-card__text">
-                    <strong>Accessibility:</strong> optimizing for eyesight and motor limitations that come with older age, and cognitive load
-                  </span>
-                </div>
-                <div class="design-northstar-card reveal">
-                  <span class="design-northstar-card__icon-bg">
-                    <img src="../assets/icons/refresh-cw.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
-                  </span>
-                  <span class="design-northstar-card__text">
-                    <strong>“Replayability”:</strong> helping users easily return to past recommendations and resources
-                  </span>
-                </div>
-                <div class="design-northstar-card reveal">
-                  <span class="design-northstar-card__icon-bg">
-                    <img src="../assets/icons/users.svg" alt="" class="design-northstar-card__icon" width="24" height="24" />
-                  </span>
-                  <span class="design-northstar-card__text">
-                    <strong>Caregiver support:</strong> accommodating users managing someone else’s health
-                  </span>
+
+          <!-- Second two-column block -->
+          <div class="case-howmightwe__block">
+            <div class="twocol twocol--wide">
+              <h3 class="twocol__heading reveal">Design North Stars</h3>
+              <div class="twocol__main">
+                <p class="reveal">
+                  I collaborated with two other designers on a major redesign
+                  for both web and iOS platforms. Our redesign was guided by
+                  principles of:
+                </p>
+                <div class="design-northstars">
+                  <div class="design-northstar-card reveal">
+                    <span class="design-northstar-card__icon-bg">
+                      <img
+                        src="../assets/icons/sun.svg"
+                        alt=""
+                        class="design-northstar-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <span class="design-northstar-card__text">
+                      <strong>Clarity:</strong> simplifying navigation and
+                      making key actions easy to recognize
+                    </span>
+                  </div>
+                  <div class="design-northstar-card reveal">
+                    <span class="design-northstar-card__icon-bg">
+                      <img
+                        src="../assets/icons/list-ordered.svg"
+                        alt=""
+                        class="design-northstar-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <span class="design-northstar-card__text">
+                      <strong>Relevance:</strong> surfacing content that’s
+                      timely, relevant, personalized, and clearly contextualized
+                    </span>
+                  </div>
+                  <div class="design-northstar-card reveal">
+                    <span class="design-northstar-card__icon-bg">
+                      <img
+                        src="../assets/icons/accessibility.svg"
+                        alt=""
+                        class="design-northstar-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <span class="design-northstar-card__text">
+                      <strong>Accessibility:</strong> optimizing for eyesight
+                      and motor limitations that come with older age, and
+                      cognitive load
+                    </span>
+                  </div>
+                  <div class="design-northstar-card reveal">
+                    <span class="design-northstar-card__icon-bg">
+                      <img
+                        src="../assets/icons/refresh-cw.svg"
+                        alt=""
+                        class="design-northstar-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <span class="design-northstar-card__text">
+                      <strong>“Replayability”:</strong> helping users easily
+                      return to past recommendations and resources
+                    </span>
+                  </div>
+                  <div class="design-northstar-card reveal">
+                    <span class="design-northstar-card__icon-bg">
+                      <img
+                        src="../assets/icons/users.svg"
+                        alt=""
+                        class="design-northstar-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <span class="design-northstar-card__text">
+                      <strong>Caregiver support:</strong> accommodating users
+                      managing someone else’s health
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
           <!-- Third two-column block -->
           <div class="case-howmightwe__block reveal">
@@ -406,76 +694,112 @@
               <h3 class="twocol__heading">Prototyping and testing</h3>
               <div class="twocol__main">
                 <p>
-                  Due to timeline and budgetary constraints, we had to be scrappy while conducting research.
+                  Due to timeline and budgetary constraints, we had to be
+                  scrappy while conducting research.
                 </p>
                 <div class="icon-card reveal">
                   <div class="icon-card__header">
                     <div class="icon-box icon-box-green">
                       <svg
-  class="icon-box__icon"
-  width="24"
-  height="25"
-  viewBox="0 0 24 25"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-hidden="true"
->
-  <path
-    d="M12 20.7031H21
-       M16.5 4.20335C16.8978 3.80553 17.4374 3.58203 18 3.58203C18.2786 3.58203 18.5544 3.6369 18.8118 3.74351C19.0692 3.85011 19.303 4.00637 19.5 4.20335C19.697 4.40033 19.8532 4.63419 19.9598 4.89156C20.0665 5.14893 20.1213 5.42478 20.1213 5.70335C20.1213 5.98193 20.0665 6.25778 19.9598 6.51515C19.8532 6.77252 19.697 7.00637 19.5 7.20335L7 19.7034L3 20.7034L4 16.7034L16.5 4.20335Z
-       M15 5.70312L18 8.70312"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-</svg>
-
+                        class="icon-box__icon"
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 20.7031H21
+                            M16.5 4.20335C16.8978 3.80553 17.4374 3.58203 18 3.58203C18.2786 3.58203 18.5544 3.6369 18.8118 3.74351C19.0692 3.85011 19.303 4.00637 19.5 4.20335C19.697 4.40033 19.8532 4.63419 19.9598 4.89156C20.0665 5.14893 20.1213 5.42478 20.1213 5.70335C20.1213 5.98193 20.0665 6.25778 19.9598 6.51515C19.8532 6.77252 19.697 7.00637 19.5 7.20335L7 19.7034L3 20.7034L4 16.7034L16.5 4.20335Z
+                            M15 5.70312L18 8.70312"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </div>
                     <h4 class="icon-card__title">Research approach</h4>
                   </div>
                   <ul class="icon-card__list">
-                    <li><strong>Usability feedback:</strong> reviewed Hotjar heatmaps, support tickets, and past usability tests.</li>
-                    <li><strong>Analog research:</strong> visited community spaces to observe how seniors interact with physical health and wellness materials, spoke informally with older adults.</li>
-                    <li><strong>Peer insight:</strong> gathered feedback from colleagues with older parents and a PM who volunteers at a seniors’ home.</li>
-                    <li><strong>Competitive analysis:</strong> studied apps like Netflix, Libby, and Spotify for content discovery and categorization strategies and UI patterns.</li>
-                    <li><strong>Design inspiration:</strong> referenced award-winning interfaces and accessibility best practices as well as existing successful accessible government websites like gov.uk.</li>
+                    <li>
+                      <strong>Usability feedback:</strong> reviewed Hotjar
+                      heatmaps, support tickets, and past usability tests.
+                    </li>
+                    <li>
+                      <strong>Analog research:</strong> visited community spaces
+                      to observe how seniors interact with physical health and
+                      wellness materials, spoke informally with older adults.
+                    </li>
+                    <li>
+                      <strong>Peer insight:</strong> gathered feedback from
+                      colleagues with older parents and a PM who volunteers at a
+                      seniors’ home.
+                    </li>
+                    <li>
+                      <strong>Competitive analysis:</strong> studied apps like
+                      Netflix, Libby, and Spotify for content discovery and
+                      categorization strategies and UI patterns.
+                    </li>
+                    <li>
+                      <strong>Design inspiration:</strong> referenced
+                      award-winning interfaces and accessibility best practices
+                      as well as existing successful accessible government
+                      websites like gov.uk.
+                    </li>
                   </ul>
                 </div>
-                <p class="reveal">We also held collaborative brainstorming sessions, where each designer brought ideas and references for UI improvement. We referenced our research for reminders about practical UX patterns and emotional engagement strategies tailored to older adults.</p>
+                <p class="reveal">
+                  We also held collaborative brainstorming sessions, where each
+                  designer brought ideas and references for UI improvement. We
+                  referenced our research for reminders about practical UX
+                  patterns and emotional engagement strategies tailored to older
+                  adults.
+                </p>
                 <div class="icon-card reveal">
                   <div class="icon-card__header">
                     <div class="icon-box icon-box-green">
-                             <svg
-  class="icon-box__icon"
-  width="24"
-  height="25"
-  viewBox="0 0 24 25"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-hidden="true"
->
-  <path
-    d="M12 3.70312L10.088 9.51612C9.99015 9.81363 9.82379 10.084 9.60234 10.3055C9.38088 10.5269 9.11051 10.6933 8.813 10.7911L3 12.7031L8.813 14.6151C9.11051 14.713 9.38088 14.8793 9.60234 15.1008C9.82379 15.3222 9.99015 15.5926 10.088 15.8901L12 21.7031L13.912 15.8901C14.0099 15.5926 14.1762 15.3222 14.3977 15.1008C14.6191 14.8793 14.8895 14.713 15.187 14.6151L21 12.7031L15.187 10.7911C14.8895 10.6933 14.6191 10.5269 14.3977 10.3055C14.1762 10.084 14.0099 9.81363 13.912 9.51612L12 3.70312Z
-       M5 3.70312V7.70312
-       M19 17.7031V21.7031
-       M3 5.70312H7
-       M17 19.7031H21"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-</svg>
+                      <svg
+                        class="icon-box__icon"
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3.70312L10.088 9.51612C9.99015 9.81363 9.82379 10.084 9.60234 10.3055C9.38088 10.5269 9.11051 10.6933 8.813 10.7911L3 12.7031L8.813 14.6151C9.11051 14.713 9.38088 14.8793 9.60234 15.1008C9.82379 15.3222 9.99015 15.5926 10.088 15.8901L12 21.7031L13.912 15.8901C14.0099 15.5926 14.1762 15.3222 14.3977 15.1008C14.6191 14.8793 14.8895 14.713 15.187 14.6151L21 12.7031L15.187 10.7911C14.8895 10.6933 14.6191 10.5269 14.3977 10.3055C14.1762 10.084 14.0099 9.81363 13.912 9.51612L12 3.70312Z
+                            M5 3.70312V7.70312
+                            M19 17.7031V21.7031
+                            M3 5.70312H7
+                            M17 19.7031H21"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </div>
                     <h4 class="icon-card__title">AI in our workflow</h4>
                   </div>
                   <ul class="icon-card__list">
                     <li>
-                      While I started my design career pre-AI, I now see it as a helpful co-pilot as long as it’s used sparingly and at the right moments. We used tools like Gemini to analyze feedback and user interviews, <strong>ChatGPT</strong> to simulate seniors for brainstorming sessions and to refine microcopy, and Figma Make for advanced prototyping.
+                      While I started my design career pre-AI, I now see it as a
+                      helpful co-pilot as long as it’s used sparingly and at the
+                      right moments. We used tools like Gemini to analyze
+                      feedback and user interviews, <strong>ChatGPT</strong> to
+                      simulate seniors for brainstorming sessions and to refine
+                      microcopy, and Figma Make for advanced prototyping.
                     </li>
                     <li>
-                      <strong>Every AI-generated output was reviewed by a human, and real user input always came first.</strong> AI supported our process, but it never replaced a human touch.
+                      <strong
+                        >Every AI-generated output was reviewed by a human, and
+                        real user input always came first.</strong
+                      >
+                      AI supported our process, but it never replaced a human
+                      touch.
                     </li>
                   </ul>
                 </div>
@@ -484,11 +808,13 @@
           </div>
         </div>
       </section>
-      
 
       <!-- Highlights -->
       <a id="nav-design"></a>
-      <section class="case-highlights case-highlights--case2" aria-labelledby="case-highlights-title">
+      <section
+        class="case-highlights case-highlights--case2"
+        aria-labelledby="case-highlights-title"
+      >
         <div class="container">
           <h2 id="case-highlights-title" class="case-highlights__title reveal">
             Design highlights
@@ -496,410 +822,671 @@
           <div class="case-highlights__list">
             <!-- First highlight -->
             <article class="case-highlights__item reveal">
-
               <div class="case-highlights__visual">
-                <div class="case-highlights__visual-col case-highlights__visual-col--left">
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--left"
+                >
                   <img
                     src="../assets/images/hello_Jenny.gif"
                     alt="GIF of redesigned homepage widget layout"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm corners-rounded" />
+                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm corners-rounded"
+                  />
                 </div>
-                <div class="case-highlights__visual-col case-highlights__visual-col--right">
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--right"
+                >
                   <!-- Cards -->
                   <div class="case-highlights__card-list">
-
                     <!-- 1. Light notice card -->
                     <div class="case-widget-card case-widget-card--notice">
                       <span class="case-widget-card__icon-bg">
-                        <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24" />
+                        <img
+                          src="../assets/icons/lightbulb.svg"
+                          alt=""
+                          class="case-widget-card__icon"
+                          width="24"
+                          height="24"
+                          aria-hidden="true"
+                        />
                       </span>
                       <div class="case-widget-card__content">
                         <strong>Small copy change, big impact</strong>
                         <div>
-                          Changing the heading from 'Recommended programs' to</br>'Start something new' significantly increased clicks.
+                          Changing the heading from 'Recommended programs' to<br />'Start
+                          something new' significantly increased clicks.
                         </div>
                       </div>
                     </div>
                   </div>
-                
-                    <!-- 2. Feature widget card -->
-                    <!-- <div class="case-widget-card "> -->
-                      <img class="case-widget-card case-widget-card--no-padding" src="../assets/images/Start_Something_New_1_1.png" alt="Digital Buddies program preview" class="case-widget-card__feature-img" />
-                    <!-- </div> -->
 
-                
-                    <!-- 3. Another light notice card -->
-                    <div class="case-widget-card case-widget-card--notice">
-                      <span class="case-widget-card__icon-bg">
-                        <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24" />
-                      </span>
-                      <div class="case-widget-card__content">
-                        <strong>Surfaced reports</strong>
-                        <div>
-                          Originally, reports and trends were located within the library, which users found confusing. Relocating them to a dedicated widget significantly improved discoverability.
-                        </div>
+                  <!-- 2. Feature widget card -->
+                  <!-- <div class="case-widget-card "> -->
+                  <img
+                    class="case-widget-card case-widget-card--no-padding"
+                    src="../assets/images/Start_Something_New_1_1.png"
+                    alt="Digital Buddies program preview"
+                    class="case-widget-card__feature-img"
+                  />
+                  <!-- </div> -->
+
+                  <!-- 3. Another light notice card -->
+                  <div class="case-widget-card case-widget-card--notice">
+                    <span class="case-widget-card__icon-bg">
+                      <img
+                        src="../assets/icons/lightbulb.svg"
+                        alt=""
+                        class="case-widget-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <div class="case-widget-card__content">
+                      <strong>Surfaced reports</strong>
+                      <div>
+                        Originally, reports and trends were located within the
+                        library, which users found confusing. Relocating them to
+                        a dedicated widget significantly improved
+                        discoverability.
                       </div>
                     </div>
-                  
-                    <!-- 4. Accent "reports" card -->
-                    <img class="case-widget-card case-widget-card--no-padding  case-widget-card-no-margin reveal" src="../assets/images/reports&trends.png" alt="Digital Buddies program preview" class="case-widget-card__feature-img" />
-                 
+                  </div>
+
+                  <!-- 4. Accent "reports" card -->
+                  <img
+                    class="case-widget-card case-widget-card--no-padding case-widget-card-no-margin reveal"
+                    src="../assets/images/reports&trends.png"
+                    alt="Reports and trends card"
+                    class="case-widget-card__feature-img"
+                  />
                 </div>
               </div>
 
-              
               <div class="twocol twocol--wide reveal">
                 <h3 class="twocol__heading">Homepage widgets</h3>
                 <div class="twocol__main">
-                  <p class="add-big-margin-bottom ">
-                    The old homepage felt like a cluttered kanban board with no clear structure. We replaced it with a widget-based layout: scrollable blocks on mobile, a bento-style grid on desktop. Early widgets looked like oversized buttons with no context, so I redesigned them to include visuals and concise text that set clear expectations and encouraged engagement.
+                  <p class="add-big-margin-bottom">
+                    The old homepage felt like a cluttered kanban board with no
+                    clear structure. We replaced it with a widget-based layout:
+                    scrollable blocks on mobile, a bento-style grid on desktop.
+                    Early widgets looked like oversized buttons with no context,
+                    so I redesigned them to include visuals and concise text
+                    that set clear expectations and encouraged engagement.
                   </p>
                 </div>
               </div>
             </article>
             <!-- Second highlight -->
-            <article class="case-highlights__item  case-highlights__item--overlay">
-              <div class="case-highlights__visual  case-highlights__visual-var case-highlights__visual--centered reveal">
-                <img 
+            <article
+              class="case-highlights__item case-highlights__item--overlay"
+            >
+              <div
+                class="case-highlights__visual case-highlights__visual-var case-highlights__visual--centered reveal"
+              >
+                <img
                   src="../assets/images/Library_2.png"
-                  alt="Background image with space for History and bookmarks card"
-                  class="case-highlights__visual-image case-highlights__visual-image--bg reveal" 
+                  alt="Everwell resource library screen showing articles and activities for seniors on topics like friendship, mindfulness, and fitness, grouped under categories such as social health and staying fit."
+                  class="case-highlights__visual-image case-highlights__visual-image--bg reveal"
                 />
                 <!-- Overlay card -->
-                    <div class="case-widget-card case-widget-card--notice case-widget-card-390 reveal">
-                      <span class="case-widget-card__icon-bg">
-                        <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24" />
-                        </span>
-                      <div class="case-widget-card__content">
-                        <strong>History and bookmarks</strong>
-                          <div>
-                          Users expressed a need to revisit previously viewed and particularly helpful resources. Introducing history and bookmark features addressed this feedback.
-                        </div>
-                      </div>
+                <div
+                  class="case-widget-card case-widget-card--notice case-widget-card-390 reveal"
+                >
+                  <span class="case-widget-card__icon-bg">
+                    <img
+                      src="../assets/icons/lightbulb.svg"
+                      alt=""
+                      class="case-widget-card__icon"
+                      width="24"
+                      height="24"
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <div class="case-widget-card__content">
+                    <strong>History and bookmarks</strong>
+                    <div>
+                      Users expressed a need to revisit previously viewed and
+                      particularly helpful resources. Introducing history and
+                      bookmark features addressed this feedback.
+                    </div>
                   </div>
+                </div>
+              </div>
             </article>
             <div class="twocol twocol-var twocol--wide reveal">
               <h3 class="twocol__heading">Resource library</h3>
               <div class="twocol__main">
-                <p>The old resource library was a flat, overwhelming list with generic icons and no structure. I co-led a redesign that introduced visual cards, category and program-based grouping, and a prominent “Recommended” section. </p>
-                <p class="add-big-margin-bottom ">
-                  We added filters, search, and history to help users find what they need, plus a “Read Later” feature after testing and ruling out more complex collection systems.
+                <p>
+                  The old resource library was a flat, overwhelming list with
+                  generic icons and no structure. I co-led a redesign that
+                  introduced visual cards, category and program-based grouping,
+                  and a prominent “Recommended” section.
+                </p>
+                <p class="add-big-margin-bottom">
+                  We added filters, search, and history to help users find what
+                  they need, plus a “Read Later” feature after testing and
+                  ruling out more complex collection systems.
                 </p>
               </div>
             </div>
 
-            <!-- </article> -->
-
             <!-- Third Highlight -->
-            <article class="case-highlights__item ">
-
-              <div class="case-highlights__visual case-highlights__visual-var  reveal">
-                <div class="case-highlights__visual-col case-highlights__visual-col--left">
+            <article class="case-highlights__item">
+              <div
+                class="case-highlights__visual case-highlights__visual-var reveal"
+              >
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--left"
+                >
                   <img
                     src="../assets/images/Notifications_3.png"
-                    alt="an image of the notification card"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal img-bdr-btm" />
+                    alt="Screen of the notification card"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal img-bdr-btm"
+                  />
                 </div>
-              
               </div>
             </article>
-            <div class="twocol add-small-pagging-top twocol--wide-pd-no twocol--wide reveal">
+            <div
+              class="twocol add-small-pagging-top twocol--wide-pd-no twocol--wide reveal"
+            >
               <h3 class="twocol__heading">Notifications</h3>
               <div class="twocol__main">
-                <p class="add-big-margin-bottom ">
-                  Recommendations were buried in the completed tasks list, making them easy to miss. I advocated for a persistent, lightweight notification system that’s easier to revisit and scalable for alerts, program updates, and reminders.
+                <p class="add-big-margin-bottom">
+                  Recommendations were buried in the completed tasks list,
+                  making them easy to miss. I advocated for a persistent,
+                  lightweight notification system that’s easier to revisit and
+                  scalable for alerts, program updates, and reminders.
                 </p>
               </div>
             </div>
 
             <!-- Fourth Highlight -->
             <article class="case-highlights__item">
-
-              <div class="case-highlights__visual case-highlights__visual-var  reveal">
-                <div class="case-highlights__visual-col case-highlights__visual-col--left">
+              <div
+                class="case-highlights__visual case-highlights__visual-var reveal"
+              >
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--left"
+                >
                   <img
                     src="../assets/images/Why_Friendships_Matter_4_1.png"
-                    alt="Image of Why friendship matters for our health"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm" />
+                    alt="Screen of an individual resoures page as part of the user's library"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm"
+                  />
                 </div>
-                <div class="case-highlights__visual-col case-highlights__visual-col--right reveal">
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--right reveal"
+                >
                   <!-- cards -->
                   <div class="case-highlights__card-list">
-
                     <!-- 1. Light notice card -->
-                    <div class="case-widget-card case-widget-card--notice reveal">
+                    <div
+                      class="case-widget-card case-widget-card--notice reveal"
+                    >
                       <span class="case-widget-card__icon-bg">
-                        <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24" />
+                        <img
+                          src="../assets/icons/lightbulb.svg"
+                          alt=""
+                          class="case-widget-card__icon"
+                          width="24"
+                          height="24"
+                          aria-hidden="true"
+                        />
                       </span>
                       <div class="case-widget-card__content">
                         <strong>AI accessibility features</strong>
                         <div>
-                          Considering many seniors have age-related vision changes, I advocated for the addition of an</br>AI-powered voiceover feature for written content.
+                          Considering many seniors have age-related vision
+                          changes, I advocated for the addition of an<br />AI-powered
+                          voiceover feature for written content.
                         </div>
                       </div>
                     </div>
                   </div>
-                
-                    <!-- 2. Feature widget card -->
-                    <!-- <div class="case-widget-card "> -->
-                      <img class="case-widget-card case-widget-card--no-padding" src="../assets/images/Why_Friendships_Matter_Audio_4_2.png" alt="Image showing a mp3 player" class="case-widget-card__feature-img" />
-                    <!-- </div> -->
 
-                
-                    <!-- 3. Another light notice card -->
-                    <div class="case-widget-card case-widget-card--notice">
-                      <span class="case-widget-card__icon-bg">
-                        <img src="../assets/icons/lightbulb.svg" alt="" class="case-widget-card__icon" width="24" height="24" />
-                      </span>
-                      <div class="case-widget-card__content">
-                        <strong>Resource feedback</strong>
-                        <div>
-                          To assess the resources’ usefulness, we introduced an optional post-resource survey.
-                        </div>
+                  <!-- 2. Feature widget card -->
+                  <!-- <div class="case-widget-card "> -->
+                  <img
+                    class="case-widget-card case-widget-card--no-padding"
+                    src="../assets/images/Why_Friendships_Matter_Audio_4_2.png"
+                    alt="Screen: mp3 player with library materials"
+                    class="case-widget-card__feature-img"
+                  />
+                  <!-- </div> -->
+
+                  <!-- 3. Another light notice card -->
+                  <div class="case-widget-card case-widget-card--notice">
+                    <span class="case-widget-card__icon-bg">
+                      <img
+                        src="../assets/icons/lightbulb.svg"
+                        alt=""
+                        class="case-widget-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <div class="case-widget-card__content">
+                      <strong>Resource feedback</strong>
+                      <div>
+                        To assess the resources’ usefulness, we introduced an
+                        optional post-resource survey.
                       </div>
                     </div>
-                  
-                    <!-- 4. Accent "reports" card -->
-                    <img class="case-widget-card case-widget-card-no-margin case-widget-card--no-padding" src="../assets/images/Did_you_find_this_useful_4_3.png" alt="image showing the short survey" class="case-widget-card__feature-img" />
+                  </div>
+
+                  <!-- 4. Accent "reports" card -->
+                  <img
+                    class="case-widget-card case-widget-card-no-margin case-widget-card--no-padding"
+                    src="../assets/images/Did_you_find_this_useful_4_3.png"
+                    alt="Screen: short survey"
+                    class="case-widget-card__feature-img"
+                  />
                 </div>
               </div>
             </article>
-            
-              <div class="twocol twocol--wide-pd-no twocol--wide reveal">
-                    <h3 class="twocol__heading">Individual resource</br>pages</h3>
-                    <div class="twocol__main">
-            
-                      <p class="add-big-margin-bottom ">
-                      We redesigned content pages with large visuals, time estimates, and accessibility in mind, adding auto-generated captions for videos and planning a voice-over support for articles.
-                      </p>
-                    </div>
+
+            <div class="twocol twocol--wide-pd-no twocol--wide reveal">
+              <h3 class="twocol__heading">Individual resource<br />pages</h3>
+              <div class="twocol__main">
+                <p class="add-big-margin-bottom">
+                  We redesigned content pages with large visuals, time
+                  estimates, and accessibility in mind, adding auto-generated
+                  captions for videos and planning a voice-over support for
+                  articles.
+                </p>
               </div>
+            </div>
 
-                <!-- Fith Highlight -->
+            <!-- Fith Highlight -->
             <article class="case-highlights__item">
-
               <div class="case-highlights__visual reveal">
-                <div class="case-highlights__visual-col case-highlights__visual-col--left">
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--left"
+                >
                   <img
                     src="../assets/images/Who_Joins_5_1.png"
-                    alt="Image for connected living, and who is jopining it"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal" />
+                    alt="Everwell app screen showing profile selection for Connected Living, where a user can choose an existing profile or create a new one to continue."
+                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                  />
                 </div>
-                <div class="case-highlights__visual-col case-highlights__visual-col--right case-highlights__visual-col--right-390">
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--right case-highlights__visual-col--right-390"
+                >
                   <img
                     src="../assets/images/Profiles_5_2.png"
-                    alt="Image for connected living, and who is joining it"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal" />
-                  
+                    alt="Everwell app settings screen showing user profile details and options like managing account, notifications, privacy, and support."
+                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                  />
                 </div>
               </div>
 
-              
               <div class="twocol twocol--wide reveal add-small-pagging-top">
                 <h3 class="twocol__heading">Multi-profile support</h3>
                 <div class="twocol__main">
                   <p class="add-big-margin-bottom">
-                    Some users were caregivers supporting loved ones. I designed the multi-profile system to allow quick profile switching, program enrollment per profile, and ownership transfer if a patient takes over their own care.
+                    Some users were caregivers supporting loved ones. I designed
+                    the multi-profile system to allow quick profile switching,
+                    program enrollment per profile, and ownership transfer if a
+                    patient takes over their own care.
                   </p>
                 </div>
               </div>
             </article>
             <!-- 🦊new card -->
-             <article class="case-highlights__item">
-
-              <div class="case-highlights__visual case-highlights__visual-var  reveal">
-                <div class="case-highlights__visual-col case-highlights__visual-var  case-highlights__visual-col--left">
+            <article class="case-highlights__item">
+              <div
+                class="case-highlights__visual case-highlights__visual-var reveal"
+              >
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-var case-highlights__visual-col--left"
+                >
                   <img
                     src="../assets/images/ios.png"
-                    alt="an image of the ios on the phone"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal" />
+                    alt="Everwell iOS app home screen showing personalized health tasks, resources, and navigation tabs for Home, Programs, and Library."
+                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
+                  />
                 </div>
               </div>
             </article>
-            <div class="twocol no-padding-bottom add-small-pagging-top twocol--wide reveal">
+            <div
+              class="twocol no-padding-bottom add-small-pagging-top twocol--wide reveal"
+            >
               <h3 class="twocol__heading">iOS application</h3>
               <div class="twocol__main">
                 <p>
-                  I also closely worked with an iOS developer to translate the webapp to an iOS application. I audited features, mapped flows to native patterns (such as bottom tab bar and gestures), built mobile-optimized components, and provided Figma annotations. 
+                  I also closely worked with an iOS developer to translate the
+                  webapp to an iOS application. I audited features, mapped flows
+                  to native patterns (such as bottom tab bar and gestures),
+                  built mobile-optimized components, and provided Figma
+                  annotations.
                 </p>
               </div>
             </div>
             <!-- 🦊End new card -->
           </div>
+        </div>
       </section>
-      
 
       <!-- What does it all come down to?-->
       <a id="nav-impact"></a>
       <!-- 🦊 -->
-        <section class="case-context" aria-labelledby="case-context-title">
-          <div class="container case-context__content case-context__content-no-gap">
-            <h2 id="case-context-title" class="case-context__heading reveal">
-              Project impact
-            </h2>
-            <dl class="case-context__items">
-              <div class="case-context__item reveal">
-                <dt class="case-context__term add-small-margin-bottom">Increased user<br> confidence </dt>
-                <dd class="case-context__desc">
-                  <p>Through simpler hierarchy, consistent labeling, and friendlier language, the redesign helped seniors understand where they were in the app and why certain content was relevant to them.</p>
-                  <ul class="case-context__list">
-                    <li>In internal tests, task completion rates rose from <strong>60% to 90%</strong></li>
-                    <li>Users reported a reduction in cognitive load, saying the layout <strong>“made more sense”</strong> and was more visually appealing and <strong>“fun”</strong> and “it used to be <strong>sterile, like a hospital, but not anymore”</strong></li>
-                    <li><strong>Design patterns</strong> and <strong>design system updates</strong> from this project were to be reused in the future iterations of the platform as we scaled up</li>
-                    <li><strong>6/7 users</strong> expressed a preference for the new designs</li>
-                  </ul>
-                </dd>
-              </div>
-              <div class="case-context__item reveal">
-                <dt class="case-context__term add-small-margin-bottom">Designed for caregivers</dt>
-                <dd class="case-context__desc">
-                  <p>Some users were caregivers supporting loved ones. I designed the multi-profile system to allow quick profile switching, program enrollment per profile, and ownership transfer if a patient takes over their own care. This brought the app closer to how care is actually delivered in many households.</p>
-                </dd> 
-              </div>
-              
-              <div class="case-context__item reveal">
-                <dt class="case-context__term add-small-margin-bottom">Modular scalable design</dt>
-                <dd class="case-context__desc case-context__desc-last">
-                  <p>The system now supports multiple programs and content types without needing bespoke components. This sets the foundation for future updates and personalization which makes it easier to scale the app across programs or demographics.</p>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </section>
+      <section class="case-context" aria-labelledby="case-context-title">
+        <div
+          class="container case-context__content case-context__content-no-gap"
+        >
+          <h2 id="case-context-title" class="case-context__heading reveal">
+            Project impact
+          </h2>
+          <dl class="case-context__items">
+            <div class="case-context__item reveal">
+              <dt class="case-context__term add-small-margin-bottom">
+                Increased user<br />
+                confidence
+              </dt>
+              <dd class="case-context__desc">
+                <p>
+                  Through simpler hierarchy, consistent labeling, and friendlier
+                  language, the redesign helped seniors understand where they
+                  were in the app and why certain content was relevant to them.
+                </p>
+                <ul class="case-context__list">
+                  <li>
+                    In internal tests, task completion rates rose from
+                    <strong>60% to 90%</strong>
+                  </li>
+                  <li>
+                    Users reported a reduction in cognitive load, saying the
+                    layout <strong>“made more sense”</strong> and was more
+                    visually appealing and <strong>“fun”</strong> and “it used
+                    to be
+                    <strong>sterile, like a hospital, but not anymore”</strong>
+                  </li>
+                  <li>
+                    <strong>Design patterns</strong> and
+                    <strong>design system updates</strong> from this project
+                    were to be reused in the future iterations of the platform
+                    as we scaled up
+                  </li>
+                  <li>
+                    <strong>6/7 users</strong> expressed a preference for the
+                    new designs
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div class="case-context__item reveal">
+              <dt class="case-context__term add-small-margin-bottom">
+                Designed for caregivers
+              </dt>
+              <dd class="case-context__desc">
+                <p>
+                  Some users were caregivers supporting loved ones. I designed
+                  the multi-profile system to allow quick profile switching,
+                  program enrollment per profile, and ownership transfer if a
+                  patient takes over their own care. This brought the app closer
+                  to how care is actually delivered in many households.
+                </p>
+              </dd>
+            </div>
+
+            <div class="case-context__item reveal">
+              <dt class="case-context__term add-small-margin-bottom">
+                Modular scalable design
+              </dt>
+              <dd class="case-context__desc case-context__desc-last">
+                <p>
+                  The system now supports multiple programs and content types
+                  without needing bespoke components. This sets the foundation
+                  for future updates and personalization which makes it easier
+                  to scale the app across programs or demographics.
+                </p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
       <!-- 🦊end -->
-       <a id="nav-learnings"></a>
-        <section class="case-context" aria-labelledby="case-context-title">
-          <div class="container case-context__content case-context__content-no-gap">
-            <h2 id="case-context-title" class="case-context__heading reveal">
-              What does it all come down to?
-            </h2>
-            <dl class="case-context__items reveal">
-              <div class="case-context__item">
-                <dt class="case-context__term add-small-margin-bottom">If continued…</dt>
-                <dd class="case-context__desc">
-                  <p>While the redesign had not launched at the time I exited the company, early indicators were promising:</p>
-                  <ul class="case-context__list">
-                    <li>In-app onboarding walkthroughs for new users</li>
-                    <li>More refined personalization based on user activity, including a personalized activity plan and goal-setting</li>
-                    <li>Enhanced voice interaction features for accessibility for users who may struggle to type</li>
-                  </ul>
-                  <!-- Leveraging AI -->
-                  <div class="insight-card add-small-margin-top reveal">
-                    <div class="insight-card__header">
-                      <div class="icon-box icon-box-green">
+      <a id="nav-learnings"></a>
+      <section class="case-context" aria-labelledby="case-context-title">
+        <div
+          class="container case-context__content case-context__content-no-gap"
+        >
+          <h2 id="case-context-title" class="case-context__heading reveal">
+            What does it all come down to?
+          </h2>
+          <dl class="case-context__items reveal">
+            <div class="case-context__item">
+              <dt class="case-context__term add-small-margin-bottom">
+                If continued…
+              </dt>
+              <dd class="case-context__desc">
+                <p>
+                  While the redesign had not launched at the time I exited the
+                  company, early indicators were promising:
+                </p>
+                <ul class="case-context__list">
+                  <li>In-app onboarding walkthroughs for new users</li>
+                  <li>
+                    More refined personalization based on user activity,
+                    including a personalized activity plan and goal-setting
+                  </li>
+                  <li>
+                    Enhanced voice interaction features for accessibility for
+                    users who may struggle to type
+                  </li>
+                </ul>
+                <!-- Leveraging AI -->
+                <div class="insight-card add-small-margin-top reveal">
+                  <div class="insight-card__header">
+                    <div class="icon-box icon-box-green">
                       <svg
-  class="icon-box__icon"
-  width="24"
-  height="25"
-  viewBox="0 0 24 25"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-hidden="true"
->
-  <path
-    d="M12 3.70312L10.088 9.51612C9.99015 9.81363 9.82379 10.084 9.60234 10.3055C9.38088 10.5269 9.11051 10.6933 8.813 10.7911L3 12.7031L8.813 14.6151C9.11051 14.713 9.38088 14.8793 9.60234 15.1008C9.82379 15.3222 9.99015 15.5926 10.088 15.8901L12 21.7031L13.912 15.8901C14.0099 15.5926 14.1762 15.3222 14.3977 15.1008C14.6191 14.8793 14.8895 14.713 15.187 14.6151L21 12.7031L15.187 10.7911C14.8895 10.6933 14.6191 10.5269 14.3977 10.3055C14.1762 10.084 14.0099 9.81363 13.912 9.51612L12 3.70312Z
-       M5 3.70312V7.70312
-       M19 17.7031V21.7031
-       M3 5.70312H7
-       M17 19.7031H21"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
-</svg>
-
-                      </div>
-                      <h4 class="insight-card__title">Leveraging AI</h4>
+                        class="icon-box__icon"
+                        width="24"
+                        height="25"
+                        viewBox="0 0 24 25"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 3.70312L10.088 9.51612C9.99015 9.81363 9.82379 10.084 9.60234 10.3055C9.38088 10.5269 9.11051 10.6933 8.813 10.7911L3 12.7031L8.813 14.6151C9.11051 14.713 9.38088 14.8793 9.60234 15.1008C9.82379 15.3222 9.99015 15.5926 10.088 15.8901L12 21.7031L13.912 15.8901C14.0099 15.5926 14.1762 15.3222 14.3977 15.1008C14.6191 14.8793 14.8895 14.713 15.187 14.6151L21 12.7031L15.187 10.7911C14.8895 10.6933 14.6191 10.5269 14.3977 10.3055C14.1762 10.084 14.0099 9.81363 13.912 9.51612L12 3.70312Z
+                            M5 3.70312V7.70312
+                            M19 17.7031V21.7031
+                            M3 5.70312H7
+                            M17 19.7031H21"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </div>
-                    <ul class="insight-card__list">
-                      <li>The original app included light AI features, like AI-generated summaries for resources, but there's room to push it further.</li>
-                      <li>If continued, I’d explore:
-                        <ul>
-                          <li>A opt-in assistant to share recommendations, track progress, and encourage the user. The assistant could also answer the users’ health questions, phrasing the answers in an understanding, non-judgemental, and reassuring tone</li>
-                          <li>Summaries to help caregivers easily stay informed as to their loved ones’ progress</li>
-                          <li>AI-powered mood check-ins that would suggest users exercises to complete based on what they share</li>
-                          <li>Smart routine builders based on the content the user consumes and the activities they complete</li>
-                        </ul>
-                      </li>
-                      <li>These features would act as add-ons, designed with opt-ins and transparency while keeping the older audience in mind.</li>
-                    </ul>
+                    <h4 class="insight-card__title">Leveraging AI</h4>
                   </div>
-                </dd> 
-              </div>
-              
-              <div class="case-context__item reveal">
-                <dt class="case-context__term add-small-margin-bottom">Learnings</dt>
-                <dd class="case-context__desc case-context__desc-last">
-                  <p class="add-small-margin-bottom reveal"><strong>Designing for older adults requires more than just larger text and higher contrast</strong></br>Through this project, I gained a deeper appreciation for how essential simplicity is in shaping the user experience. Especially for seniors who may feel uncertain using digital tools and hesitant to press a button. Watching users navigate the original product emphasized how important it is for the design to meet the users where they are at.</p>
-                  <p class="add-small-margin-bottom reveal"><strong>"Good enough" infrastructure can block great UX</strong></br>Some of our biggest design challenges weren’t visual: they stemmed from inherited systems that made it hard to prioritize or notify users effectively. UX is so much more than just drawing some screens. In this case, it was also about advocating for front- and back-end improvements.</p>
-                  <p class="add-big-margin-bottom reveal"><strong>Working scrappily doesn’t mean working sloppily</strong><br>With limited time and budget, we got creative with how we did research and testing, from community center visits to AI-assisted brainstorming. I learned how to extract learnings even when conditions weren’t ideal. Some of our most meaningful user insights came from the least “formal” research moments.</br></p>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <!-- 🦊prev/next buttons -->
-         <nav class="case-nav reveal">
-          <div class="container">
-            <a href="/horizon-children-hospital/" class="case-nav__btn case-nav__btn--prev">
-              ← Previous case
-            </a>
-            <!-- keep Next hidden until case3 exists -->
-            <a href="#" class="case-nav__btn case-nav__btn--next case-nav__btn--hidden" aria-hidden="true">
-              Next case →
-            </a>
-          </div>
-        </nav>
-        <!-- 🦊end of prev/next buttons -->
+                  <ul class="insight-card__list">
+                    <li>
+                      The original app included light AI features, like
+                      AI-generated summaries for resources, but there's room to
+                      push it further.
+                    </li>
+                    <li>
+                      If continued, I’d explore:
+                      <ul>
+                        <li>
+                          A opt-in assistant to share recommendations, track
+                          progress, and encourage the user. The assistant could
+                          also answer the users’ health questions, phrasing the
+                          answers in an understanding, non-judgemental, and
+                          reassuring tone
+                        </li>
+                        <li>
+                          Summaries to help caregivers easily stay informed as
+                          to their loved ones’ progress
+                        </li>
+                        <li>
+                          AI-powered mood check-ins that would suggest users
+                          exercises to complete based on what they share
+                        </li>
+                        <li>
+                          Smart routine builders based on the content the user
+                          consumes and the activities they complete
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      These features would act as add-ons, designed with opt-ins
+                      and transparency while keeping the older audience in mind.
+                    </li>
+                  </ul>
+                </div>
+              </dd>
+            </div>
+
+            <div class="case-context__item reveal">
+              <dt class="case-context__term add-small-margin-bottom">
+                Learnings
+              </dt>
+              <dd class="case-context__desc case-context__desc-last">
+                <p class="add-small-margin-bottom reveal">
+                  <strong
+                    >Designing for older adults requires more than just larger
+                    text and higher contrast</strong
+                  ><br />Through this project, I gained a deeper appreciation
+                  for how essential simplicity is in shaping the user
+                  experience. Especially for seniors who may feel uncertain
+                  using digital tools and hesitant to press a button. Watching
+                  users navigate the original product emphasized how important
+                  it is for the design to meet the users where they are at.
+                </p>
+                <p class="add-small-margin-bottom reveal">
+                  <strong
+                    >"Good enough" infrastructure can block great UX</strong
+                  ><br />Some of our biggest design challenges weren’t visual:
+                  they stemmed from inherited systems that made it hard to
+                  prioritize or notify users effectively. UX is so much more
+                  than just drawing some screens. In this case, it was also
+                  about advocating for front- and back-end improvements.
+                </p>
+                <p class="add-big-margin-bottom reveal">
+                  <strong
+                    >Working scrappily doesn’t mean working sloppily</strong
+                  ><br />With limited time and budget, we got creative with how
+                  we did research and testing, from community center visits to
+                  AI-assisted brainstorming. I learned how to extract learnings
+                  even when conditions weren’t ideal. Some of our most
+                  meaningful user insights came from the least “formal” research
+                  moments.<br />
+                </p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+      <!-- 🦊prev/next buttons -->
+      <nav class="case-nav reveal">
+        <div class="container">
+          <a
+            href="/horizon-children-hospital/"
+            class="case-nav__btn case-nav__btn--prev"
+          >
+            ← Previous case
+          </a>
+          <!-- keep Next hidden until case3 exists -->
+          <a
+            href="#"
+            class="case-nav__btn case-nav__btn--next case-nav__btn--hidden"
+            aria-hidden="true"
+          >
+            Next case →
+          </a>
+        </div>
+      </nav>
+      <!-- 🦊end of prev/next buttons -->
     </main>
-  
 
-  <!-- Footer -->
-  <footer class="site-footer reveal">
-    <div class="container site-footer__content">
-      <div class="site-footer__left">
-        <p class="site-footer__name">Michelle Pavlova</p>
-        <a href="mailto:hi@michelledesign.ca" class="site-footer__email">hi@michelledesign.ca</a>
-        <p class="site-footer__tagline">Let’s connect!</p>
-        <p class="site-footer__credit">Made with ❤️ and hojicha.</p>
-      </div>
-      <div class="site-footer__right">
-        <div class="site-footer__column">
-          <h4 class="site-footer__heading">Navigation</h4>
-          <ul class="site-footer__list">
-            <li><a href="/">Home</a></li>
-            <li><a href="../#selected-work">Work</a></li>
-            <li><a href="/about/">About</a></li>
-          </ul>
+    <!-- Footer -->
+    <footer class="site-footer reveal">
+      <div class="container site-footer__content">
+        <div class="site-footer__left">
+          <p class="site-footer__name">Michelle Pavlova</p>
+          <a href="mailto:hi@michelledesign.ca" class="site-footer__email"
+            >hi@michelledesign.ca</a
+          >
+          <p class="site-footer__tagline">Let’s connect!</p>
+          <p class="site-footer__credit">Made with ❤️ and hojicha.</p>
         </div>
-        <div class="site-footer__column">
-          <h4 class="site-footer__heading">Contact</h4>
-          <ul class="site-footer__list">
-            <li>
-              <a href="https://www.linkedin.com/in/michellepavlova/" target="_blank" rel="noopener noreferrer"
-                class="menu__link menu__link--resume">
-                LinkedIn
-                <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                    aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10.6667 1.3335H14.6667V5.3335"
-                        stroke="currentColor" stroke-width="1.5"
-                        stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.33333 8.66683L14.6667 1.3335M14.6667 8.66683V14.6668H1.33333V1.3335H7.33333"
-                        stroke="currentColor" stroke-width="1.5"
-                        stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </li>
-          </ul>
+        <div class="site-footer__right">
+          <div class="site-footer__column">
+            <h4 class="site-footer__heading">Navigation</h4>
+            <ul class="site-footer__list">
+              <li><a href="/">Home</a></li>
+              <li><a href="../#selected-work">Work</a></li>
+              <li><a href="/about/">About</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__column">
+            <h4 class="site-footer__heading">Contact</h4>
+            <ul class="site-footer__list">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/michellepavlova/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="menu__link menu__link--resume"
+                >
+                  LinkedIn
+                  <svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                    focusable="false"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.6667 1.3335H14.6667V5.3335"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M7.33333 8.66683L14.6667 1.3335M14.6667 8.66683V14.6668H1.33333V1.3335H7.33333"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" width="28" height="28"><path d="M12 19V5M5 12l7-7 7 7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
+    </footer>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <svg
+        viewBox="0 0 24 24"
+        width="28"
+        height="28"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          d="M12 19V5M5 12l7-7 7 7"
+          stroke="white"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
 
-  <script src="../scripts/main.js" defer></script>
-</body>
+    <script src="../scripts/main.js" defer></script>
+  </body>
 </html>
