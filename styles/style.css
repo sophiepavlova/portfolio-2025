@@ -2609,94 +2609,182 @@ p.add-small-margin-bottom {
 
 /* Styling the Jump Menu (Responsive Card) */
 
+/* 🐣Try new styling for the jump menu */
+
+/* ==========================
+   🪶 Jump Menu — Modern DRY version
+   ========================== */
+
 .jump-menu {
-  margin: 32px auto 0 auto;
+  margin: 32px auto 0;
   max-width: 350px;
-  display: none; /* hidden by default for desktop */
+  display: none;
 }
+
+/* Card container */
 .jump-menu__card {
-  background: var(--Colors-Stone-100, #f5f5f4);
-  /* background: white; */
-  border-radius: 8px;
-  border: 1px solid var(--Colors-Stone-200, #e7e5e4);
-  padding: 20px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  /* background-color: var(--color-homepage); */
+  backdrop-filter: blur(10px);
+  /* border: 1px solid var(--color-stone-200, #e7e5e4); */
+  border-radius: 12px;
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); */
+  /* padding: 20px 24px; */
+  padding: 20px 44px;
 }
+
+/* Optional soft gradient overlay */
+.jump-menu__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  /* background: linear-gradient(90deg, #cbe0ff, #ffbade); */
+  background: linear-gradient(90deg, #b3d0ff, #ff9fc2);
+  /* background: linear-gradient(90deg, #93c5fd, #fb7185); */
+  /* background: linear-gradient(90deg, #60a5fa, #f43f5e); */
+
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* 🪶 Jump Menu — persistent blue border glow */
+.jump-menu__card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px 44px;
+  box-shadow: 0 0 0 1px var(--Colors-Stone-200, #e7e5e4);
+  z-index: 0; /* anchor for ::before */
+}
+
+/* Decorative gradient border (always visible) */
+.jump-menu__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px; /* border thickness */
+  background: linear-gradient(135deg, #93c5fd, #c7d2fe 40%, #f9a8d4);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.8; /* tweak intensity */
+}
+
+/* Title */
 .jump-menu__title {
   display: block;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 24px;
   color: #1f2937;
+  /* color: white; */
   margin-bottom: 14px;
 }
+
+/* List base */
 .jump-menu__list {
   list-style: none;
-  padding: 0;
+  padding: 0 !important;
   margin: 0;
 }
+
+/* Link row */
 .jump-menu__link {
   display: flex;
   align-items: center;
-  padding: 0 0 0 0;
+  justify-content: flex-start;
+  gap: 14px;
   min-height: 54px;
-  border-radius: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
   text-decoration: none;
-  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
   font-weight: 500;
-  color: #1f2937;
-  transition: background 0.15s, color 0.15s;
-  gap: 18px;
-  position: relative;
+  color: var(--color-text, #1f2937);
+  /* color: white; */
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
 }
+
+/* Hover / focus states */
+.jump-menu__link:hover,
+.jump-menu__link:focus {
+  /* background-color: var(--color-stone-100, #f5f5f4); */
+  color: var(--Colors-Rose-700, #be123c);
+  transform: translateX(4px);
+}
+
+.jump-menu__link:focus-visible {
+  outline: 2px solid var(--Colors-Rose-700, #be123c);
+  outline-offset: 2px;
+}
+
+/* Icon wrapper */
 .jump-menu__icon-bg {
   width: 38px;
   height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: #e0e7ff; */
   background: #e0e7ff;
   border-radius: 10px;
   flex-shrink: 0;
-}
-.jump-menu__arrow {
-  margin-left: auto;
-  color: #a3a3a3;
-  font-size: 26px;
-  transition: color 0.12s;
-}
-.jump-menu__label {
-  flex: 1 1 auto;
-  min-width: 0;
-  text-align: left;
-}
-.jump-menu__arrow-bg {
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  flex-shrink: 0;
-  background: transparent;
-  transition: background 0.12s;
-  margin-left: auto;
+  transition: background-color 0.2s ease;
 }
 
-.jump-menu__link:hover,
-.jump-menu__link:focus {
-  background: #f3f4f6;
-  color: var(--Colors-Rose-700, #be123c);
-}
-.jump-menu__link:focus-visible {
-  outline: 2px solid #e11d48;
-  background: #f3f4f6;
-}
-
+/* Keep icon background stable — do NOT tint on hover */
 .jump-menu__link:hover .jump-menu__icon-bg,
 .jump-menu__link:focus .jump-menu__icon-bg {
   background: #e0e7ff;
-  /* You can change color if needed */
 }
+
+/* Icon itself */
+.jump-menu__icon-bg img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  opacity: 0.9;
+}
+
+/* Label text */
+.jump-menu__label {
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+/* Arrow icon */
+.jump-menu__arrow {
+  margin-left: auto;
+  color: #a3a3a3;
+  font-size: 22px;
+  transition: color 0.2s ease;
+}
+.jump-menu__link:hover .jump-menu__arrow,
+.jump-menu__link:focus .jump-menu__arrow {
+  color: var(--Colors-Rose-700, #be123c);
+}
+
+/* Optional entrance animation */
+.jump-menu__link.visible {
+  animation: fadeSlideIn 0.4s ease forwards;
+}
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🐣END: Try new styling for the jump menu */
 
 .case-highlights__visual-col--right-390 {
   width: 390px !important;
@@ -2932,7 +3020,7 @@ a:focus:not(:focus-visible) {
 
 @media (max-width: 600px) {
   .jump-menu__card {
-    padding: 18px 6px 8px 6px;
+    /* padding: 18px 6px 8px 6px; */
     border-radius: 12px;
   }
   .jump-menu__link {
