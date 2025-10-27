@@ -2964,7 +2964,17 @@ a:focus:not(:focus-visible) {
   opacity: 1;
   transform: translateY(0);
 }
-
+/* .section-flash {
+  animation: flashHighlight 0.8s ease;
+}
+@keyframes flashHighlight {
+  from {
+    background-color: rgba(255, 235, 233, 0.4);
+  }
+  to {
+    background-color: transparent;
+  }
+} */
 /* Maintain proportional shrink */
 @media (max-width: 1080px) {
   .about-cards-row {

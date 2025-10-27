@@ -358,57 +358,6 @@ window.addEventListener("popstate", setActiveMenuLinks);
   });
 })();
 
-// Responsive Jump Menu: Smooth scroll + offset fix
-// (function() {
-//   const jumpMenu = document.querySelector('.jump-menu');
-//   if (!jumpMenu) return;
-//   const links = jumpMenu.querySelectorAll('.jump-menu__link');
-//   const anchorIds = Array.from(links).map(link => link.getAttribute('href').replace('#',''));
-//   const sections = anchorIds.map(id => document.getElementById(id));
-//   function getHeaderOffset() {
-//     const header = document.querySelector('.site-header');
-//     return header ? header.offsetHeight + 0 : 80;
-//   }
-
-//   function updateJumpMenuActive() {
-//     const scrollY = window.scrollY + getHeaderOffset() + 5;
-//     let found = false;
-//     for (let i = sections.length - 1; i >= 0; i--) {
-//       const el = sections[i];
-//       if (el && el.offsetTop <= scrollY) {
-//         links.forEach(l => l.classList.remove('active'));
-//         links[i].classList.add('active');
-//         found = true;
-//         break;
-//       }
-//     }
-//     if (!found) {
-//       links.forEach(l => l.classList.remove('active'));
-//     }
-//   }
-
-//   window.addEventListener('scroll', updateJumpMenuActive, { passive: true });
-//   window.addEventListener('resize', updateJumpMenuActive);
-//   document.addEventListener('DOMContentLoaded', updateJumpMenuActive);
-
-//   links.forEach(link => {
-//     link.addEventListener('click', function(e) {
-//       const href = this.getAttribute('href');
-//       if (href && href.startsWith('#')) {
-//         const id = href.replace('#', '');
-//         const el = document.getElementById(id);
-//         if (el) {
-//           e.preventDefault();
-//           const y = el.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
-//           window.scrollTo({ top: y, behavior: 'smooth' });
-//           setTimeout(updateJumpMenuActive, 700);
-//           link.blur();
-//         }
-//       }
-//     });
-//   });
-// })();
-
 // Fix for sticky :hover on touch devices
 document.addEventListener(
   "touchend",
@@ -900,3 +849,30 @@ document.addEventListener("DOMContentLoaded", () => {
 // 🥦The unerline on hover in About page (measure lines → draw bars)
 
 // 🥦End:The unerline on hover in About page
+
+// 🩰 Smooth scrolling for the Jump Menu (mobile/tablet)
+document.addEventListener("DOMContentLoaded", () => {
+  const jumpMenu = document.querySelector(".jump-menu");
+  if (!jumpMenu) return;
+
+  const header = document.querySelector(".site-header");
+  const headerOffset = header ? header.offsetHeight + 8 : 80;
+  const links = jumpMenu.querySelectorAll(".jump-menu__link[href^='#']");
+
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const id = link.getAttribute("href").slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      e.preventDefault();
+      const targetY =
+        target.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({ top: targetY, behavior: "smooth" });
+
+      // Optional: briefly highlight the target section
+      target.classList.add("section-flash");
+      setTimeout(() => target.classList.remove("section-flash"), 800);
+    });
+  });
+});
