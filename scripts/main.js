@@ -876,3 +876,64 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// 🩰END: Smooth scrolling for the Jump Menu (mobile/tablet)
+
+//🍒 Aurora gradient in Leveraging AI
+// 🌌 Aurora background animation for Leveraging AI
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("#leveraging-ai .insight-card__header");
+  if (!header) return;
+
+  const blobs = header.querySelectorAll(".aurora-blob");
+  if (!blobs.length) return;
+
+  const state = Array.from(blobs).map((el, i) => ({
+    el,
+    angle: Math.random() * Math.PI * 2,
+    // speed: 0.0004 + i * 0.0002,
+    speed: 0.0005 + i * 0.00025,
+    radiusX: 80 + i * 30,
+    radiusY: 60 + i * 40,
+    scale: 1 + i * 0.2,
+    offsetX: 0,
+    offsetY: 0,
+  }));
+
+  function setBase() {
+    const rect = header.getBoundingClientRect();
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    state.forEach((s) => {
+      s.offsetX = cx;
+      s.offsetY = cy;
+    });
+  }
+
+  setBase();
+  window.addEventListener("resize", setBase);
+
+  function animate() {
+    const rect = header.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    state.forEach((s) => {
+      s.angle += s.speed * 16;
+
+      // движемся вокруг центра шапки
+      const x = centerX + Math.cos(s.angle) * s.radiusX * 0.4;
+      const y = centerY + Math.sin(s.angle * 1.2) * s.radiusY * 0.3;
+
+      // применяем трансформацию
+      s.el.style.transform = `translate(${x - s.el.offsetWidth / 2}px, ${
+        y - s.el.offsetHeight / 2
+      }px) scale(${s.scale})`;
+    });
+
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+});
+
+//🍒END: Aurora gradient in Leveraging AI
+console.log("Aurora script loaded");
