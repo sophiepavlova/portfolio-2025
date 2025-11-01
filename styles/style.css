@@ -2036,6 +2036,10 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
   align-items: center;
 }
 /* ========== Design highlights (base, shared by all cases) ========== */
+.highlight-decor {
+  margin-bottom: -12px !important;
+  color: var(--color-blue-bg) !important;
+}
 .case-highlights {
   padding-top: 40px;
 }
@@ -3110,6 +3114,7 @@ a:focus:not(:focus-visible) {
   display: none;
 }
 
+/*🦊 MEDIA  */
 @media (max-width: 1558px) {
   .case-sidenav {
     display: none !important;
@@ -3127,11 +3132,9 @@ a:focus:not(:focus-visible) {
     padding-inline: 24px; /* match site content spacing */
     box-sizing: border-box;
   }
-}
-
-/*🦊 MEDIA  */
-
-@media (max-width: 1280px) {
+  .highlight-decor {
+    margin-bottom: -11px !important;
+  }
   .container {
     width: 100%;
     max-width: 100%;
@@ -3141,6 +3144,9 @@ a:focus:not(:focus-visible) {
 }
 
 @media (max-width: 1080px) {
+  .highlight-decor {
+    margin-bottom: -10px !important;
+  }
   .about-row__grid--split {
     padding-inline: 0 !important;
     max-width: calc(100% - 40px);
@@ -3260,6 +3266,9 @@ a:focus:not(:focus-visible) {
 }
 
 @media (max-width: 900px) {
+  .highlight-decor {
+    margin-bottom: -9px !important;
+  }
   .case-nav {
     margin-bottom: 20px;
   }
@@ -3377,6 +3386,9 @@ a:focus:not(:focus-visible) {
 }
 
 @media (max-width: 780px) {
+  .highlight-decor {
+    margin-bottom: -8px !important;
+  }
   .case-highlights__visual-image--large {
     max-width: 500px !important;
   }
@@ -3777,6 +3789,9 @@ a:focus:not(:focus-visible) {
   }
 }
 @media (max-width: 500px) {
+  .highlight-decor {
+    margin-bottom: -7px !important;
+  }
   .case-highlights__visual--centered .case-highlights__visual-image--bg,
   .case-widget-card.case-widget-card-390 {
     max-width: 350px !important;
