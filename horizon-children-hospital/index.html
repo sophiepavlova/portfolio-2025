@@ -128,8 +128,9 @@
       <nav>
         <ul>
           <li><a href="#nav-overview">Overview</a></li>
-          <li><a href="#nav-solution">Solution</a></li>
           <li><a href="#nav-design">Designs</a></li>
+          <li><a href="#nav-problem">Problem</a></li>
+          <li><a href="#nav-solution">Solution</a></li>
           <li><a href="#nav-impact">Impact</a></li>
           <li><a href="#nav-learnings">Learnings</a></li>
         </ul>
@@ -143,8 +144,7 @@
         <div class="container case-hero__content">
           <p class="case-hero__client">Horizon Children's Hospital</p>
           <h1 class="case-hero__title reveal" id="case-hero-title">
-            Streamlining pediatric ER triage with<br />
-            92% accuracy
+            Streamlining pediatric ER triage with 92% accuracy
           </h1>
           <nav class="jump-menu reveal" aria-label="Section navigation">
             <div class="jump-menu__card">
@@ -161,6 +161,27 @@
                         aria-hidden="true"
                     /></span>
                     <span class="jump-menu__label">Overview</span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    /></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#nav-problem" class="jump-menu__link">
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/solution.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                        aria-hidden="true"
+                    /></span>
+                    <span class="jump-menu__label">Problem</span>
                     <span class="jump-menu__arrow-bg"
                       ><img
                         src="../assets/icons/arrow-right.svg"
@@ -279,13 +300,16 @@
 
       <!-- Overview -->
       <a id="nav-overview"></a>
-      <section class="case-overview" aria-labelledby="case-overview-title">
-        <div class="container case-overview__content">
+      <section
+        class="container case-overview"
+        aria-labelledby="case-overview-title"
+      >
+        <h2 id="case-overview-title" class="case-overview__heading">
+          Project overview
+        </h2>
+        <div class="case-overview__content">
           <!-- Left column -->
           <div class="case-overview__description reveal">
-            <h3 id="case-overview-title" class="case-overview__heading">
-              Project overview
-            </h3>
             <p class="case-overview__paragraph">
               This case study covers the end-to-end design of a digital triage
               tool built for a Canadian children’s hospital.
@@ -327,8 +351,264 @@
         </div>
       </section>
 
+      <!-- Highlights -->
+      <a id="nav-design"></a>
+      <section class="case-highlights" aria-labelledby="case-highlights-title">
+        <div class="container">
+          <h2 id="case-highlights-title" class="case-highlights__title reveal">
+            Design highlights
+          </h2>
+          <!-- 🍭A new part -->
+          <div class="twocol twocol--wide twocol--intro add-big-margin-bottom">
+            <h3 class="twocol__heading twocol__heading-special reveal">
+              Starting with the fun part: the designs
+            </h3>
+            <div class="twocol__main">
+              <p class="reveal">
+                Once you’ve seen the designs, scroll down to learn about all the
+                behind-the-scenes details (or
+                <a href="#nav-problem" class="inline-link">click here</a> to go
+                straight to it)!
+              </p>
+            </div>
+          </div>
+          <!-- 🍭END: A new part -->
+          <h2 class="highlight-decor">Homepage</h2>
+          <div class="case-highlights__list add-big-margin-bottom">
+            <!-- First sub-block -->
+            <article class="case-highlights__item reveal">
+              <div class="case-highlights__visual">
+                <img
+                  src="../assets/images/Home - mobile.png"
+                  alt="Homepage welcome screen with nurse and child illustration"
+                  class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
+                />
+                <img
+                  src="../assets/images/Wait times modal.png"
+                  alt="Wait time modal with bear illustration explaining expectations"
+                  class="case-highlights__visual-image case-highlights__visual-image--narrow reveal"
+                />
+              </div>
+              <div
+                class="twocol twocol--wide twocol twocol--wide-mg40 reveal add-small-pagging-top"
+              >
+                <h3 class="twocol__heading">Homepage</h3>
+                <div class="twocol__main">
+                  <p>
+                    I worked on a cozy yet clean visual language to create a
+                    calming atmosphere that helps put users at ease in a
+                    high-stress, long-wait ER environment.
+                  </p>
+                  <p>
+                    I also wrote inclusive copy that speaks clearly to both
+                    patients and caregivers. Additionally, I designed a modal to
+                    clearly communicate expectations for the wait times widget.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Second sub-block -->
+            <h2 class="highlight-decor">Intro screen</h2>
+            <article class="case-highlights__item reveal">
+              <div class="case-highlights__visual">
+                <img
+                  src="../assets/images/Intro screen.png"
+                  alt="Intro screen explaining the purpose of the screener with illustrated parent and child"
+                  class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                />
+                <img
+                  src="../assets/images/Exit modal.png"
+                  alt="Exit confirmation modal asking the user to confirm before leaving the screener"
+                  class="case-highlights__visual-image case-highlights__visual-image--narrow reveal"
+                />
+              </div>
+              <div
+                class="twocol twocol--wide twocol--wide-mg40 reveal add-small-pagging-top"
+              >
+                <h3 class="twocol__heading">Intro screen</h3>
+                <div class="twocol__main">
+                  <p>
+                    I added an extra image to keep things visually interesting
+                    and help users stay engaged. I made sure to clearly explain
+                    the order of operations so users always know what’s coming
+                    next.
+                  </p>
+                  <p>
+                    To avoid any accidental exits, I added a confirmation step
+                    that’s surfaced if the user tries to close the tab or
+                    navigate away.
+                  </p>
+                  <p>
+                    Finally, I included info on what to expect once the screener
+                    is done, so users feel confident and prepared as they start
+                    the assessment.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Third sub-block -->
+            <h2 class="highlight-decor">How old are you?</h2>
+            <article class="case-highlights__item reveal">
+              <div class="case-highlights__visual">
+                <img
+                  src="../assets/images/QNR - How old are you.png"
+                  alt="Screen showing patient age selection with a helper note explaining to fill the form as if you are the patient"
+                  class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                />
+                <img
+                  src="../assets/images/QNR - Is this for an injury.png"
+                  alt="Screen with injury-related question showing Yes and No radio buttons"
+                  class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                />
+              </div>
+              <div
+                class="twocol twocol--wide twocol--wide-mg40 add-small-pagging-top"
+              >
+                <h3 class="twocol__heading reveal">How old are you?</h3>
+                <div class="twocol__main">
+                  <p>
+                    During usability testing, the questions addressed to the
+                    user, like “How old are you?”, caused confusion for
+                    caregivers: they assumed it referred to their own age, not
+                    the child’s.
+                  </p>
+                  <p>
+                    Due to technical constraints, we couldn’t split the flow
+                    into separate paths for caregivers and children. To resolve
+                    this, I added helper text to clarify whose age is being
+                    asked, reducing ambiguity without adding friction to the
+                    flow.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Fourth sub-block -->
+            <h2 class="highlight-decor">Getting results</h2>
+            <article class="case-highlights__item reveal">
+              <!-- 🦊Creating a version for children hospital -->
+              <div
+                class="case-highlights__item case-highlights__item-no-top-padding case-highlights__item-no-bottom-padding"
+              >
+                <div class="case-highlights__visual">
+                  <div
+                    class="case-highlights__visual-col case-highlights__visual-col--left"
+                  >
+                    <img
+                      src="../assets/images/Results - 1 card.png"
+                      alt="Results screen showing a summary card with instructions, patient status, and a button to update symptoms or add new patient"
+                      class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                    />
+                  </div>
+                  <div
+                    class="case-highlights__visual-col case-highlights__visual-col--right"
+                  >
+                    <!-- cards -->
+                    <div class="case-highlights__card-list">
+                      <!-- 1. Light notice card -->
+                      <div class="case-widget-card case-widget-card--notice">
+                        <span class="case-widget-card__icon-bg">
+                          <img
+                            src="../assets/icons/lightbulb.svg"
+                            alt=""
+                            class="case-widget-card__icon"
+                            width="24"
+                            height="24"
+                          />
+                        </span>
+                        <div class="case-widget-card__content">
+                          <strong
+                            >What if the patient’s symptoms change while the
+                            user waits? What if there are multiple children with
+                            one caregiver?
+                          </strong>
+                          <div>
+                            The popover allows the user to update the initial
+                            patient’s symptoms if they change or add another
+                            patient
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 2. Feature widget card -->
+                    <!-- <div class="case-widget-card case-widget-card_no-background"> -->
+                    <img
+                      class="case-widget-card case-widget-card--no-padding case-widget-card_no-background case-widget-card__feature-img img-bdr-btm reveal"
+                      src="../assets/images/Select patient dropdown.png"
+                      alt="Image of a card showing the process of selecting patients"
+                    />
+                    <!-- class="case-widget-card__feature-img img-bdr-btm" -->
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </div>
+              <!-- 👍 End creating a version forchildren hospital -->
+              <div
+                class="twocol twocol--wide add-small-pagging-top twocol--wide-mg40 reveal case-highlights__item-no-bottom-padding"
+              >
+                <h3 class="twocol__heading">Getting results</h3>
+                <div class="twocol__main">
+                  <p>
+                    I designed the results page to clearly communicate the
+                    result and next steps. The summary card includes an icon
+                    that reflects the result, a primary instruction, a
+                    timestamp, and a natural-language summary of the assessment
+                    answers.
+                  </p>
+                  <p>
+                    To allow re-engagement, I added a “Complete the screener
+                    again” section.
+                  </p>
+                  <p>
+                    Finally, a wait times widget, mirroring the one on the home
+                    page, helps set wait expectations and adds cohesion.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Fifth sub-block -->
+            <h2 class="highlight-decor">Multiple patients</h2>
+            <article class="case-highlights__item reveal no-padding-bottom">
+              <div class="case-highlights__visual">
+                <img
+                  src="../assets/images/Results - 3 card.png"
+                  alt="Scrollable results page showing multiple summary cards for different patients with age and navigation indicators"
+                  class="case-highlights__visual-image case-highlights__visual-image--900 case-highlights__visual-image--large reveal"
+                />
+              </div>
+              <div class="twocol twocol--wide reveal add-small-pagging-top">
+                <h3 class="twocol__heading">Multiple patients</h3>
+                <div class="twocol__main">
+                  <p>
+                    I designed this page to display result cards for multiple
+                    patients in an easy-to-scan format. Each card shows the
+                    patient’s age and the order in which their forms were
+                    completed, making it easier to keep track of who’s who.
+                  </p>
+                  <p>
+                    To indicate that more results are available, we used a
+                    combination of pagination and a visual scrolling affordance:
+                    part of the next card is visible at the screen’s edge,
+                    encouraging users to swipe or scroll.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <!-- Context -->
-      <section class="case-context reveal" aria-labelledby="case-context-title">
+      <section
+        id="nav-problem"
+        class="case-context reveal"
+        aria-labelledby="case-context-title"
+      >
+        <!-- <a id="nav-problem"></a> -->
         <div class="container case-context__content">
           <h2 id="case-context-title" class="case-context__heading">
             A Canadian hospital approached us for a triage tool
@@ -872,238 +1152,6 @@
               </div>
             </div>
           </section>
-        </div>
-      </section>
-
-      <!-- Highlights -->
-      <a id="nav-design"></a>
-      <section class="case-highlights" aria-labelledby="case-highlights-title">
-        <div class="container">
-          <h2 id="case-highlights-title" class="case-highlights__title reveal">
-            Design highlights
-          </h2>
-
-          <div class="case-highlights__list add-big-margin-bottom">
-            <!-- First sub-block -->
-            <article class="case-highlights__item reveal">
-              <div class="case-highlights__visual">
-                <img
-                  src="../assets/images/Home - mobile.png"
-                  alt="Homepage welcome screen with nurse and child illustration"
-                  class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
-                />
-                <img
-                  src="../assets/images/Wait times modal.png"
-                  alt="Wait time modal with bear illustration explaining expectations"
-                  class="case-highlights__visual-image case-highlights__visual-image--narrow reveal"
-                />
-              </div>
-              <div
-                class="twocol twocol--wide twocol twocol--wide-mg40 reveal add-small-pagging-top"
-              >
-                <h3 class="twocol__heading">Homepage</h3>
-                <div class="twocol__main">
-                  <p>
-                    I worked on a cozy yet clean visual language to create a
-                    calming atmosphere that helps put users at ease in a
-                    high-stress, long-wait ER environment.
-                  </p>
-                  <p>
-                    I also wrote inclusive copy that speaks clearly to both
-                    patients and caregivers. Additionally, I designed a modal to
-                    clearly communicate expectations for the wait times widget.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Second sub-block -->
-            <article class="case-highlights__item reveal">
-              <div class="case-highlights__visual">
-                <img
-                  src="../assets/images/Intro screen.png"
-                  alt="Intro screen explaining the purpose of the screener with illustrated parent and child"
-                  class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
-                />
-                <img
-                  src="../assets/images/Exit modal.png"
-                  alt="Exit confirmation modal asking the user to confirm before leaving the screener"
-                  class="case-highlights__visual-image case-highlights__visual-image--narrow reveal"
-                />
-              </div>
-              <div
-                class="twocol twocol--wide twocol--wide-mg40 reveal add-small-pagging-top"
-              >
-                <h3 class="twocol__heading">Intro screen</h3>
-                <div class="twocol__main">
-                  <p>
-                    I added an extra image to keep things visually interesting
-                    and help users stay engaged. I made sure to clearly explain
-                    the order of operations so users always know what’s coming
-                    next.
-                  </p>
-                  <p>
-                    To avoid any accidental exits, I added a confirmation step
-                    that’s surfaced if the user tries to close the tab or
-                    navigate away.
-                  </p>
-                  <p>
-                    Finally, I included info on what to expect once the screener
-                    is done, so users feel confident and prepared as they start
-                    the assessment.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Third sub-block -->
-            <article class="case-highlights__item reveal">
-              <div class="case-highlights__visual">
-                <img
-                  src="../assets/images/QNR - How old are you.png"
-                  alt="Screen showing patient age selection with a helper note explaining to fill the form as if you are the patient"
-                  class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
-                />
-                <img
-                  src="../assets/images/QNR - Is this for an injury.png"
-                  alt="Screen with injury-related question showing Yes and No radio buttons"
-                  class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
-                />
-              </div>
-              <div
-                class="twocol twocol--wide twocol--wide-mg40 add-small-pagging-top"
-              >
-                <h3 class="twocol__heading reveal">How old are you?</h3>
-                <div class="twocol__main">
-                  <p>
-                    During usability testing, the questions addressed to the
-                    user, like “How old are you?”, caused confusion for
-                    caregivers: they assumed it referred to their own age, not
-                    the child’s.
-                  </p>
-                  <p>
-                    Due to technical constraints, we couldn’t split the flow
-                    into separate paths for caregivers and children. To resolve
-                    this, I added helper text to clarify whose age is being
-                    asked, reducing ambiguity without adding friction to the
-                    flow.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Fourth sub-block -->
-            <article class="case-highlights__item reveal">
-              <!-- 🦊Creating a version for children hospital -->
-              <div
-                class="case-highlights__item case-highlights__item-no-top-padding case-highlights__item-no-bottom-padding"
-              >
-                <div class="case-highlights__visual">
-                  <div
-                    class="case-highlights__visual-col case-highlights__visual-col--left"
-                  >
-                    <img
-                      src="../assets/images/Results - 1 card.png"
-                      alt="Results screen showing a summary card with instructions, patient status, and a button to update symptoms or add new patient"
-                      class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
-                    />
-                  </div>
-                  <div
-                    class="case-highlights__visual-col case-highlights__visual-col--right"
-                  >
-                    <!-- cards -->
-                    <div class="case-highlights__card-list">
-                      <!-- 1. Light notice card -->
-                      <div class="case-widget-card case-widget-card--notice">
-                        <span class="case-widget-card__icon-bg">
-                          <img
-                            src="../assets/icons/lightbulb.svg"
-                            alt=""
-                            class="case-widget-card__icon"
-                            width="24"
-                            height="24"
-                          />
-                        </span>
-                        <div class="case-widget-card__content">
-                          <strong
-                            >What if the patient’s symptoms change while the
-                            user waits? What if there are multiple children with
-                            one caregiver?
-                          </strong>
-                          <div>
-                            The popover allows the user to update the initial
-                            patient’s symptoms if they change or add another
-                            patient
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 2. Feature widget card -->
-                    <!-- <div class="case-widget-card case-widget-card_no-background"> -->
-                    <img
-                      class="case-widget-card case-widget-card--no-padding case-widget-card_no-background case-widget-card__feature-img img-bdr-btm reveal"
-                      src="../assets/images/Select patient dropdown.png"
-                      alt="Image of a card showing the process of selecting patients"
-                    />
-                    <!-- class="case-widget-card__feature-img img-bdr-btm" -->
-                    <!-- </div> -->
-                  </div>
-                </div>
-              </div>
-              <!-- 👍 End creating a version forchildren hospital -->
-              <div
-                class="twocol twocol--wide add-small-pagging-top twocol--wide-mg40 reveal case-highlights__item-no-bottom-padding"
-              >
-                <h3 class="twocol__heading">Getting results</h3>
-                <div class="twocol__main">
-                  <p>
-                    I designed the results page to clearly communicate the
-                    result and next steps. The summary card includes an icon
-                    that reflects the result, a primary instruction, a
-                    timestamp, and a natural-language summary of the assessment
-                    answers.
-                  </p>
-                  <p>
-                    To allow re-engagement, I added a “Complete the screener
-                    again” section.
-                  </p>
-                  <p>
-                    Finally, a wait times widget, mirroring the one on the home
-                    page, helps set wait expectations and adds cohesion.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Fifth sub-block -->
-            <article class="case-highlights__item reveal no-padding-bottom">
-              <div class="case-highlights__visual">
-                <img
-                  src="../assets/images/Results - 3 card.png"
-                  alt="Scrollable results page showing multiple summary cards for different patients with age and navigation indicators"
-                  class="case-highlights__visual-image case-highlights__visual-image--900 case-highlights__visual-image--large reveal"
-                />
-              </div>
-              <div class="twocol twocol--wide reveal add-small-pagging-top">
-                <h3 class="twocol__heading">Multiple patients</h3>
-                <div class="twocol__main">
-                  <p>
-                    I designed this page to display result cards for multiple
-                    patients in an easy-to-scan format. Each card shows the
-                    patient’s age and the order in which their forms were
-                    completed, making it easier to keep track of who’s who.
-                  </p>
-                  <p>
-                    To indicate that more results are available, we used a
-                    combination of pagination and a visual scrolling affordance:
-                    part of the next card is visible at the screen’s edge,
-                    encouraging users to swipe or scroll.
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
         </div>
       </section>
 

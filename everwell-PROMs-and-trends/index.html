@@ -126,8 +126,9 @@
       <nav>
         <ul>
           <li><a href="#nav-overview">Overview</a></li>
-          <li><a href="#nav-solution">Solution</a></li>
           <li><a href="#nav-design">Designs</a></li>
+          <li><a href="#nav-problem">Problem</a></li>
+          <li><a href="#nav-solution">Solution</a></li>
           <li><a href="#nav-impact">Impact</a></li>
           <li><a href="#nav-learnings">Learnings</a></li>
         </ul>
@@ -168,27 +169,6 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#nav-solution" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"
-                      ><img
-                        src="../assets/icons/solution.svg"
-                        alt=""
-                        width="38"
-                        height="38"
-                        aria-hidden="true"
-                    /></span>
-                    <span class="jump-menu__label">Solution</span>
-                    <span class="jump-menu__arrow-bg"
-                      ><img
-                        src="../assets/icons/arrow-right.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                    /></span>
-                  </a>
-                </li>
-                <li>
                   <a href="#nav-design" class="jump-menu__link">
                     <span class="jump-menu__icon-bg"
                       ><img
@@ -209,6 +189,49 @@
                     /></span>
                   </a>
                 </li>
+                <li>
+                  <a href="#nav-problem" class="jump-menu__link">
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/solution.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                        aria-hidden="true"
+                    /></span>
+                    <span class="jump-menu__label">Problem</span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    /></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#nav-solution" class="jump-menu__link">
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/solution.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                        aria-hidden="true"
+                    /></span>
+                    <span class="jump-menu__label">Solution</span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    /></span>
+                  </a>
+                </li>
+
                 <li>
                   <a href="#nav-impact" class="jump-menu__link">
                     <span class="jump-menu__icon-bg"
@@ -275,13 +298,16 @@
 
       <!-- Overview -->
       <a id="nav-overview"></a>
-      <section class="case-overview" aria-labelledby="case-overview-title">
-        <div class="container case-overview__content reveal">
+      <section
+        class="container case-overview"
+        aria-labelledby="case-overview-title"
+      >
+        <h2 id="case-overview-title" class="case-overview__heading">
+          Project overview
+        </h2>
+        <div class="case-overview__content reveal">
           <!-- Left column -->
           <div class="case-overview__description reveal">
-            <h3 id="case-overview-title" class="case-overview__heading">
-              Project overview
-            </h3>
             <p class="case-overview__paragraph">
               Everwell developed a digital platform to automate patient-reported
               data collection and help providers track health trends over time.
@@ -323,7 +349,350 @@
         </div>
       </section>
 
+      <!-- Design Highlights -->
+      <a id="nav-design"></a>
+      <section
+        class="case-highlights case-highlights--case2"
+        aria-labelledby="case-highlights-title"
+      >
+        <div class="container">
+          <h2 id="case-highlights-title" class="case-highlights__title reveal">
+            Design highlights
+          </h2>
+          <!-- 🍭A new part -->
+          <div class="twocol twocol--wide twocol--intro add-big-margin-bottom">
+            <h3 class="twocol__heading twocol__heading-special reveal">
+              Starting with the fun part: the designs
+            </h3>
+            <div class="twocol__main">
+              <p class="reveal">
+                Once you’ve seen the designs, scroll down to learn about all the
+                behind-the-scenes details (or
+                <a href="#nav-problem" class="inline-link">click here</a> to go
+                straight to it)!
+              </p>
+            </div>
+          </div>
+
+          <!-- 🍭END: A new part -->
+          <div class="case-highlights__list">
+            <!-- First highlight -->
+            <h2 class="highlight-decor">Home page</h2>
+            <article class="case-highlights__item reveal">
+              <div class="case-highlights__visual reveal visible">
+                <img
+                  src="../assets/images/3_2.png"
+                  alt="Everwell provider dashboard home screen showing clinic overview with patient alerts, upcoming appointments, and summary statistics"
+                  class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--900 case-highlights__visual-image--large img-bdr-btm reveal visible"
+                />
+              </div>
+              <div
+                class="add-big-margin-bottom twocol add-small-pagging-top twocol--wide reveal"
+              >
+                <h3 class="twocol__heading">Home page</h3>
+                <div class="twocol__main">
+                  <p>
+                    The Home page serves as the clinic’s command center, giving
+                    clinicians an at-a-glance view of what needs their attention
+                    most. The design prioritizes safety, efficiency, and
+                    clarity:
+                  </p>
+                  <ul class="case-context__list">
+                    <li>
+                      <strong>Patient alerts</strong> surface high-risk patients
+                      first, helping clinicians triage quickly
+                    </li>
+                    <li>
+                      <strong>Upcoming appointments</strong> show today’s and
+                      tomorrow’s visits, with PROM status so providers know
+                      whether the patient is prepared
+                    </li>
+                    <li>
+                      <strong>Pending actions</strong> centralize overdue tasks
+                      and weekly to-dos, keeping clinical and administrative
+                      staff aligned
+                    </li>
+                    <li>
+                      <strong>Clinic-wide trends</strong> provide a lightweight
+                      snapshot of population health, alert distribution, and
+                      PROM engagement, with a link to deeper analytics
+                    </li>
+                  </ul>
+                  <p class="reveal">
+                    This page balances urgent tasks (alerts, overdue actions)
+                    with contextual insights (trends, completion rates),
+                    ensuring clinicians can act on urgent tasks and declining
+                    patients immediately while also staying aware of broader
+                    patterns.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- </div> -->
+
+            <!-- Second highlight -->
+            <h2 class="highlight-decor">Patients dashboard</h2>
+            <article class="case-highlights__item">
+              <div class="case-highlights__visual-rows reveal">
+                <!-- Big image -->
+                <img
+                  src="../assets/images/3_3.png"
+                  alt="Everwell provider Patients dashboard displaying patient list with alerts, PROM status, and quick filters for total patients, overdue forms, and pending invites"
+                  class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--large img-bdr-btm reveal"
+                />
+
+                <!-- Two cards row -->
+                <div
+                  class="case-highlights__cards-row case-highlights__cards-row-second"
+                >
+                  <div
+                    class="case-widget-card case-widget-card--no-padding case-widget-card-row case-widget-card-small reveal"
+                  >
+                    <img
+                      src="../assets/images/3_3-1.png"
+                      alt="Alert card showing 12 patient records that need attention"
+                    />
+                  </div>
+                  <div
+                    class="case-widget-card case-widget-card-hor case-widget-card--notice reveal"
+                  >
+                    <span class="case-widget-card__icon-bg">
+                      <img
+                        src="../assets/icons/lightbulb.svg"
+                        alt=""
+                        class="case-widget-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <div class="case-widget-card__content">
+                      <strong>Quick filters</strong>
+                      <p>
+                        Clinicians can use quick filters to quickly narrow the
+                        patient list. Clicking a tag applies the filter, and
+                        clicking again resets it.
+                      </p>
+                      <p>
+                        <br />This lightweight interaction reduces cognitive
+                        load and makes it faster to focus on the right patients
+                        without digging through advanced filters.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="add-big-margin-bottom twocol twocol--wide reveal">
+                <h3 class="twocol__heading">Patients dashboard</h3>
+                <div class="twocol__main">
+                  <p>
+                    The Patients dashboard is the central hub for managing
+                    individual records.
+                  </p>
+                  <p>
+                    Clinicians can quickly filter, search, and scan patient
+                    details including alerts, PROM status, and upcoming
+                    appointments. Clear status chips highlight who needs
+                    attention, while quick filters and action menus streamline
+                    daily workflows.
+                  </p>
+                  <p>
+                    This page shifts focus from clinic-wide insights to hands-on
+                    patient management.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Third Highlight -->
+            <h2 class="highlight-decor">Patient profile</h2>
+            <article class="case-highlights__item">
+              <div class="case-highlights__visual-rows reveal">
+                <!-- Big image -->
+                <img
+                  src="../assets/images/Patient_profile.gif"
+                  alt="Everwell patient profile for Hannah Johnson showing physical and mental health trend lines over six months, clinical insights, and general information"
+                  class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--large img-bdr-btm reveal"
+                />
+
+                <!-- Two cards row -->
+                <div
+                  class="case-highlights__cards-row case-highlights__cards-row-second"
+                >
+                  <div
+                    class="case-widget-card case-widget-card--no-padding case-widget-card-row case-widget-card-small-2 img-bdr-btm reveal"
+                  >
+                    <img
+                      src="../assets/images/3_4-1.png"
+                      alt="Example of a clinical insights panel in the Everwell app showing summarized health metrics and compliance information."
+                    />
+                  </div>
+                  <div
+                    class="case-widget-card case-widget-card-hor case-widget-card--notice reveal"
+                  >
+                    <span class="case-widget-card__icon-bg">
+                      <img
+                        src="../assets/icons/lightbulb.svg"
+                        alt=""
+                        class="case-widget-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <div class="case-widget-card__content">
+                      <strong>Clinical insights</strong>
+                      <p>
+                        To avoid overwhelming clinicians with too much text, I
+                        designed the insights panel as an accordion. Most
+                        sections stay collapsed by default. However, high-risk
+                        alerts automatically open so critical information is
+                        never hidden.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="add-big-margin-bottom twocol twocol--wide reveal">
+                <h3 class="twocol__heading">Patient profile</h3>
+                <div class="twocol__main">
+                  <p>
+                    The Patient profile centralizes everything a clinician needs
+                    to review for one patient.
+                  </p>
+                  <p>
+                    Trends charts visualize PROM changes over time, while
+                    clinical insights flag significant shifts and suggest
+                    follow-up actions. An activity log captures survey
+                    completions and reminders, and key demographic and program
+                    details provide context.
+                  </p>
+                  <p>
+                    This page turns raw scores into actionable insights, helping
+                    clinicians make more informed decisions faster.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Fourth Highlight -->
+            <h2 class="highlight-decor">Patient trends</h2>
+            <article class="case-highlights__item reveal">
+              <div class="case-highlights__visual reveal visible">
+                <img
+                  src="../assets/images/Patient_trends.gif"
+                  alt="Animated view of the Everwell patient trends dashboard showing health scores changing over time on a line chart."
+                  class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--900 case-highlights__visual-image--large reveal img-bdr-btm visible"
+                />
+              </div>
+              <div class="add-big-margin-bottom twocol twocol--wide reveal">
+                <h3 class="twocol__heading">Patient trends</h3>
+                <div class="twocol__main">
+                  <p>
+                    The patient trends view helps clinicians track PROM scores
+                    over time and spot meaningful changes.
+                  </p>
+                  <p>
+                    Clinicians can select which PROMs to compare, switch between
+                    chart types (line, area, radar), and toggle alert zones for
+                    context. A summary below the chart highlights the latest
+                    scores, changes since the last period, and whether each
+                    domain is improving or declining.
+                  </p>
+                  <p>
+                    A breakdown of subdomains provides further detail, helping
+                    clinicians quickly identify where interventions are needed.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Fith Highlight -->
+            <h2 class="highlight-decor">Forms and PROMs</h2>
+            <article class="case-highlights__item reveal">
+              <div class="case-highlights__visual reveal visible">
+                <img
+                  src="../assets/images/3_6.png"
+                  alt="Everwell dashboard showing the Forms and PROMs page, where clinicians can review patient questionnaires, track completion status, and manage alerts or follow-up actions."
+                  class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--900 case-highlights__visual-image--large img-bdr-btm reveal visible"
+                />
+              </div>
+              <div class="add-big-margin-bottom twocol twocol--wide reveal">
+                <h3 class="twocol__heading">Forms and PROMs</h3>
+                <div class="twocol__main">
+                  <p>
+                    This page gives clinicians a clear overview of all PROMs
+                    assigned to a patient.
+                  </p>
+                  <p>
+                    Each row displays the form name, latest score, status,
+                    alerts, due date, and available actions. Color-coded chips
+                    make it easy to scan which forms are up to date, pending,
+                    overdue, or high risk. Clinicians can quickly act by sending
+                    reminders, escalating, or reviewing completed forms.
+                  </p>
+                  <p>
+                    This design ensures no critical assessments are missed and
+                    keeps patient monitoring organized and actionable.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 🦊new card -->
+            <h2 class="highlight-decor">Patient experience</h2>
+            <article class="case-highlights__item">
+              <div class="case-highlights__visual reveal">
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--left"
+                >
+                  <img
+                    src="../assets/images/3_7.png"
+                    alt="Everwell mobile app screen showing a patient program titled 'Living Well with Thalassemia' with a list of upcoming health surveys and educational activities."
+                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                  />
+                </div>
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--right case-highlights__visual-col--right-390"
+                >
+                  <img
+                    src="../assets/images/3_8.png"
+                    alt="Everwell mobile app screen showing a health survey form titled 'Health and Daily Life Survey (SF-36)' where the user rates their general health using multiple-choice options."
+                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                  />
+                </div>
+              </div>
+
+              <div class="add-small-pagging-top twocol twocol--wide reveal">
+                <h3 class="twocol__heading">Patient experience</h3>
+                <div class="twocol__main">
+                  <p class="reveal">
+                    While providers see structured dashboards full of alerts,
+                    scores, and clinical insights, patients interact with a
+                    simpler, friendlier experience. The program is presented
+                    with a warm, approachable name (Living Well with
+                    Thalassemia) and tasks are framed as easy check-ins rather
+                    than medical monitoring.
+                  </p>
+                  <p class="reveal">
+                    Patients receive clear, bite-sized actions like completing a
+                    survey, reading a short article, or tracking symptoms. The
+                    language avoids jargon, the design uses supportive visuals,
+                    and estimated time to complete reduces survey fatigue.
+                  </p>
+                  <p class="reveal">
+                    This contrast ensures that while clinicians get the rigorous
+                    data they need, patients feel guided, supported, and in
+                    control of their own care journey.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
       <!-- 🐭 Healthcare providers needed patients to fill out forms. -->
+      <a id="nav-problem"></a>
       <section class="case-context" aria-labelledby="case-context-title">
         <div
           class="container case-context__content case-context__content-no-gap"
@@ -708,335 +1077,9 @@
           </div>
         </div>
       </section>
-
-      <!-- Design Highlights -->
-      <a id="nav-design"></a>
-      <section
-        class="case-highlights case-highlights--case2"
-        aria-labelledby="case-highlights-title"
-      >
-        <div class="container">
-          <h2 id="case-highlights-title" class="case-highlights__title reveal">
-            Design highlights
-          </h2>
-          <div class="case-highlights__list">
-            <!-- First highlight -->
-
-            <article class="case-highlights__item reveal">
-              <div class="case-highlights__visual reveal visible">
-                <img
-                  src="../assets/images/3_2.png"
-                  alt="Everwell provider dashboard home screen showing clinic overview with patient alerts, upcoming appointments, and summary statistics"
-                  class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--900 case-highlights__visual-image--large img-bdr-btm reveal visible"
-                />
-              </div>
-              <div
-                class="add-big-margin-bottom twocol add-small-pagging-top twocol--wide reveal"
-              >
-                <h3 class="twocol__heading">Home page</h3>
-                <div class="twocol__main">
-                  <p>
-                    The Home page serves as the clinic’s command center, giving
-                    clinicians an at-a-glance view of what needs their attention
-                    most. The design prioritizes safety, efficiency, and
-                    clarity:
-                  </p>
-                  <ul class="case-context__list">
-                    <li>
-                      <strong>Patient alerts</strong> surface high-risk patients
-                      first, helping clinicians triage quickly
-                    </li>
-                    <li>
-                      <strong>Upcoming appointments</strong> show today’s and
-                      tomorrow’s visits, with PROM status so providers know
-                      whether the patient is prepared
-                    </li>
-                    <li>
-                      <strong>Pending actions</strong> centralize overdue tasks
-                      and weekly to-dos, keeping clinical and administrative
-                      staff aligned
-                    </li>
-                    <li>
-                      <strong>Clinic-wide trends</strong> provide a lightweight
-                      snapshot of population health, alert distribution, and
-                      PROM engagement, with a link to deeper analytics
-                    </li>
-                  </ul>
-                  <p class="reveal">
-                    This page balances urgent tasks (alerts, overdue actions)
-                    with contextual insights (trends, completion rates),
-                    ensuring clinicians can act on urgent tasks and declining
-                    patients immediately while also staying aware of broader
-                    patterns.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <!-- </div> -->
-            <!-- Second highlight -->
-
-            <article class="case-highlights__item">
-              <div class="case-highlights__visual-rows reveal">
-                <!-- Big image -->
-                <img
-                  src="../assets/images/3_3.png"
-                  alt="Everwell provider Patients dashboard displaying patient list with alerts, PROM status, and quick filters for total patients, overdue forms, and pending invites"
-                  class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--large img-bdr-btm reveal"
-                />
-
-                <!-- Two cards row -->
-                <div
-                  class="case-highlights__cards-row case-highlights__cards-row-second"
-                >
-                  <div
-                    class="case-widget-card case-widget-card--no-padding case-widget-card-row case-widget-card-small reveal"
-                  >
-                    <img
-                      src="../assets/images/3_3-1.png"
-                      alt="Alert card showing 12 patient records that need attention"
-                    />
-                  </div>
-                  <div
-                    class="case-widget-card case-widget-card-hor case-widget-card--notice reveal"
-                  >
-                    <span class="case-widget-card__icon-bg">
-                      <img
-                        src="../assets/icons/lightbulb.svg"
-                        alt=""
-                        class="case-widget-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <div class="case-widget-card__content">
-                      <strong>Quick filters</strong>
-                      <p>
-                        Clinicians can use quick filters to quickly narrow the
-                        patient list. Clicking a tag applies the filter, and
-                        clicking again resets it.
-                      </p>
-                      <p>
-                        <br />This lightweight interaction reduces cognitive
-                        load and makes it faster to focus on the right patients
-                        without digging through advanced filters.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="add-big-margin-bottom twocol twocol--wide reveal">
-                <h3 class="twocol__heading">Patients dashboard</h3>
-                <div class="twocol__main">
-                  <p>
-                    The Patients dashboard is the central hub for managing
-                    individual records.
-                  </p>
-                  <p>
-                    Clinicians can quickly filter, search, and scan patient
-                    details including alerts, PROM status, and upcoming
-                    appointments. Clear status chips highlight who needs
-                    attention, while quick filters and action menus streamline
-                    daily workflows.
-                  </p>
-                  <p>
-                    This page shifts focus from clinic-wide insights to hands-on
-                    patient management.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Third Highlight -->
-            <article class="case-highlights__item">
-              <div class="case-highlights__visual-rows reveal">
-                <!-- Big image -->
-                <img
-                  src="../assets/images/Patient_profile.gif"
-                  alt="Everwell patient profile for Hannah Johnson showing physical and mental health trend lines over six months, clinical insights, and general information"
-                  class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--large img-bdr-btm reveal"
-                />
-
-                <!-- Two cards row -->
-                <div
-                  class="case-highlights__cards-row case-highlights__cards-row-second"
-                >
-                  <div
-                    class="case-widget-card case-widget-card--no-padding case-widget-card-row case-widget-card-small-2 img-bdr-btm reveal"
-                  >
-                    <img
-                      src="../assets/images/3_4-1.png"
-                      alt="Example of a clinical insights panel in the Everwell app showing summarized health metrics and compliance information."
-                    />
-                  </div>
-                  <div
-                    class="case-widget-card case-widget-card-hor case-widget-card--notice reveal"
-                  >
-                    <span class="case-widget-card__icon-bg">
-                      <img
-                        src="../assets/icons/lightbulb.svg"
-                        alt=""
-                        class="case-widget-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <div class="case-widget-card__content">
-                      <strong>Clinical insights</strong>
-                      <p>
-                        To avoid overwhelming clinicians with too much text, I
-                        designed the insights panel as an accordion. Most
-                        sections stay collapsed by default. However, high-risk
-                        alerts automatically open so critical information is
-                        never hidden.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="add-big-margin-bottom twocol twocol--wide reveal">
-                <h3 class="twocol__heading">Patient profile</h3>
-                <div class="twocol__main">
-                  <p>
-                    The Patient profile centralizes everything a clinician needs
-                    to review for one patient.
-                  </p>
-                  <p>
-                    Trends charts visualize PROM changes over time, while
-                    clinical insights flag significant shifts and suggest
-                    follow-up actions. An activity log captures survey
-                    completions and reminders, and key demographic and program
-                    details provide context.
-                  </p>
-                  <p>
-                    This page turns raw scores into actionable insights, helping
-                    clinicians make more informed decisions faster.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Fourth Highlight -->
-
-            <article class="case-highlights__item reveal">
-              <div class="case-highlights__visual reveal visible">
-                <img
-                  src="../assets/images/Patient_trends.gif"
-                  alt="Animated view of the Everwell patient trends dashboard showing health scores changing over time on a line chart."
-                  class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--900 case-highlights__visual-image--large reveal img-bdr-btm visible"
-                />
-              </div>
-              <div class="add-big-margin-bottom twocol twocol--wide reveal">
-                <h3 class="twocol__heading">Patient trends</h3>
-                <div class="twocol__main">
-                  <p>
-                    The patient trends view helps clinicians track PROM scores
-                    over time and spot meaningful changes.
-                  </p>
-                  <p>
-                    Clinicians can select which PROMs to compare, switch between
-                    chart types (line, area, radar), and toggle alert zones for
-                    context. A summary below the chart highlights the latest
-                    scores, changes since the last period, and whether each
-                    domain is improving or declining.
-                  </p>
-                  <p>
-                    A breakdown of subdomains provides further detail, helping
-                    clinicians quickly identify where interventions are needed.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Fith Highlight -->
-            <article class="case-highlights__item reveal">
-              <div class="case-highlights__visual reveal visible">
-                <img
-                  src="../assets/images/3_6.png"
-                  alt="Everwell dashboard showing the Forms and PROMs page, where clinicians can review patient questionnaires, track completion status, and manage alerts or follow-up actions."
-                  class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--900 case-highlights__visual-image--large img-bdr-btm reveal visible"
-                />
-              </div>
-              <div class="add-big-margin-bottom twocol twocol--wide reveal">
-                <h3 class="twocol__heading">Forms and PROMs</h3>
-                <div class="twocol__main">
-                  <p>
-                    This page gives clinicians a clear overview of all PROMs
-                    assigned to a patient.
-                  </p>
-                  <p>
-                    Each row displays the form name, latest score, status,
-                    alerts, due date, and available actions. Color-coded chips
-                    make it easy to scan which forms are up to date, pending,
-                    overdue, or high risk. Clinicians can quickly act by sending
-                    reminders, escalating, or reviewing completed forms.
-                  </p>
-                  <p>
-                    This design ensures no critical assessments are missed and
-                    keeps patient monitoring organized and actionable.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- 🦊new card -->
-            <article class="case-highlights__item">
-              <div class="case-highlights__visual reveal">
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/3_7.png"
-                    alt="Everwell mobile app screen showing a patient program titled 'Living Well with Thalassemia' with a list of upcoming health surveys and educational activities."
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
-                  />
-                </div>
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--right case-highlights__visual-col--right-390"
-                >
-                  <img
-                    src="../assets/images/3_8.png"
-                    alt="Everwell mobile app screen showing a health survey form titled 'Health and Daily Life Survey (SF-36)' where the user rates their general health using multiple-choice options."
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
-                  />
-                </div>
-              </div>
-
-              <div class="add-small-pagging-top twocol twocol--wide reveal">
-                <h3 class="twocol__heading">Patient experience</h3>
-                <div class="twocol__main">
-                  <p class="reveal">
-                    While providers see structured dashboards full of alerts,
-                    scores, and clinical insights, patients interact with a
-                    simpler, friendlier experience. The program is presented
-                    with a warm, approachable name (Living Well with
-                    Thalassemia) and tasks are framed as easy check-ins rather
-                    than medical monitoring.
-                  </p>
-                  <p class="reveal">
-                    Patients receive clear, bite-sized actions like completing a
-                    survey, reading a short article, or tracking symptoms. The
-                    language avoids jargon, the design uses supportive visuals,
-                    and estimated time to complete reduces survey fatigue.
-                  </p>
-                  <p class="reveal">
-                    This contrast ensures that while clinicians get the rigorous
-                    data they need, patients feel guided, supported, and in
-                    control of their own care journey.
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
       <a id="nav-impact"></a>
       <!-- 🦊 -->
-      <section
-        class="case-context case-context-no-top-padding"
-        aria-labelledby="case-context-title"
-      >
+      <section class="case-context" aria-labelledby="case-context-title">
         <div
           class="container case-context__content case-context__content-no-gap"
         >

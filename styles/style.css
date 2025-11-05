@@ -1357,9 +1357,13 @@ h3 {
   height: auto;
   border-radius: 0;
 }
-.case-overview {
+/* .case-overview {
   padding-top: 40px;
-  padding-bottom: 0;
+  padding-bottom: 40px;
+} */
+
+.case-overview {
+  margin-top: 40px;
 }
 .case-overview__content {
   display: flex;
@@ -1445,6 +1449,7 @@ h3 {
   flex-direction: column;
   align-items: stretch;
 }
+
 .case-context__heading {
   font-family: "Inter", sans-serif;
   font-weight: 700;
@@ -1586,6 +1591,9 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
   color: var(--color-text);
   margin: 0;
 }
+.twocol__heading-special {
+  color: var(--color-homepage);
+}
 .twocol__main {
   flex: 0 0 760px;
   display: flex;
@@ -1619,6 +1627,48 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 }
 .twocol__textblock li {
   list-style: disc;
+}
+
+/* --- Special variant for Design Highlights intro --- */
+.twocol--intro .twocol__heading {
+  flex: 0 0 250px; /* wider left column for this section */
+  max-width: 250px;
+  white-space: normal;
+}
+
+.twocol--intro .twocol__main {
+  flex: 1 1 auto; /* allow flexible right column */
+  min-width: 0; /* prevents overflow cropping */
+  max-width: 760px; /* keeps visual consistency with case layout */
+}
+
+/* Responsive stacking  of the design Highlights definition*/
+@media (max-width: 880px) {
+  .twocol--intro {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .twocol--intro .twocol__heading,
+  .twocol--intro .twocol__main {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .twocol--intro .twocol__main p {
+    max-width: 100%;
+  }
+}
+/* --- Inline accent link --- */
+.inline-link {
+  color: var(--Text-Brand-Color, #2563eb);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.inline-link:hover {
+  color: var(--color-homepage);
 }
 
 /* --- Highlights --- */
@@ -2211,6 +2261,13 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
 /* =========================================
    Design highlights: full-bleed BG only behind images
    ========================================= */
+
+/* Make each heading line behave like a soft break without real <br> */
+.twocol__heading .heading-line {
+  display: block; /* stack vertically on desktop */
+  max-width: 300px; /* visually similar width to a line break */
+  white-space: normal; /* allow wrapping naturally */
+}
 
 .case-highlights__item {
   position: relative;

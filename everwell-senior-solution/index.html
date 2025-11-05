@@ -127,8 +127,9 @@
       <nav>
         <ul>
           <li><a href="#nav-overview">Overview</a></li>
-          <li><a href="#nav-solution">Solution</a></li>
           <li><a href="#nav-design">Designs</a></li>
+          <li><a href="#nav-problem">Problem</a></li>
+          <li><a href="#nav-solution">Solution</a></li>
           <li><a href="#nav-impact">Impact</a></li>
           <li><a href="#nav-learnings">Learnings</a></li>
         </ul>
@@ -170,27 +171,6 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#nav-solution" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"
-                      ><img
-                        src="../assets/icons/solution.svg"
-                        alt=""
-                        width="38"
-                        height="38"
-                        aria-hidden="true"
-                    /></span>
-                    <span class="jump-menu__label">Solution</span>
-                    <span class="jump-menu__arrow-bg"
-                      ><img
-                        src="../assets/icons/arrow-right.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                    /></span>
-                  </a>
-                </li>
-                <li>
                   <a href="#nav-design" class="jump-menu__link">
                     <span class="jump-menu__icon-bg"
                       ><img
@@ -211,6 +191,49 @@
                     /></span>
                   </a>
                 </li>
+                <li>
+                  <a href="#nav-problem" class="jump-menu__link">
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/solution.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                        aria-hidden="true"
+                    /></span>
+                    <span class="jump-menu__label">Problem</span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    /></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#nav-solution" class="jump-menu__link">
+                    <span class="jump-menu__icon-bg"
+                      ><img
+                        src="../assets/icons/solution.svg"
+                        alt=""
+                        width="38"
+                        height="38"
+                        aria-hidden="true"
+                    /></span>
+                    <span class="jump-menu__label">Solution</span>
+                    <span class="jump-menu__arrow-bg"
+                      ><img
+                        src="../assets/icons/arrow-right.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    /></span>
+                  </a>
+                </li>
+
                 <li>
                   <a href="#nav-impact" class="jump-menu__link">
                     <span class="jump-menu__icon-bg"
@@ -278,15 +301,15 @@
       <!-- Overview -->
       <a id="nav-overview"></a>
       <section
-        class="case-overview reveal"
+        class="container case-overview reveal"
         aria-labelledby="case-overview-title"
       >
-        <div class="container case-overview__content">
+        <h2 id="case-overview-title" class="case-overview__heading">
+          Project overview
+        </h2>
+        <div class="case-overview__content">
           <!-- Left column -->
           <div class="case-overview__description reveal">
-            <h3 id="case-overview-title" class="case-overview__heading">
-              Project overview
-            </h3>
             <p class="case-overview__paragraph">
               My team helped a seniors’ wellness application evolve from a
               proof-of-concept MVP into a more full-fledged platform.
@@ -326,8 +349,393 @@
         </div>
       </section>
 
+      <!-- Highlights -->
+      <a id="nav-design"></a>
+      <section
+        class="case-highlights case-highlights--case2"
+        aria-labelledby="case-highlights-title"
+      >
+        <div class="container">
+          <h2 id="case-highlights-title" class="case-highlights__title reveal">
+            Design highlights
+          </h2>
+          <!-- 🍭A new part -->
+          <div class="twocol twocol--wide twocol--intro add-big-margin-bottom">
+            <h3 class="twocol__heading twocol__heading-special reveal">
+              Starting with the fun part: the designs
+            </h3>
+            <div class="twocol__main">
+              <p class="reveal">
+                Once you’ve seen the designs, scroll down to learn about all the
+                behind-the-scenes details (or
+                <a href="#nav-problem" class="inline-link">click here</a> to go
+                straight to it)!
+              </p>
+            </div>
+          </div>
+          <!-- 🍭END: A new part -->
+          <div class="case-highlights__list">
+            <!-- First highlight -->
+            <h2 class="highlight-decor">Homepage widgets</h2>
+            <article class="case-highlights__item reveal">
+              <div class="case-highlights__visual">
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--left"
+                >
+                  <img
+                    src="../assets/images/hello_Jenny.gif"
+                    alt="GIF of redesigned homepage widget layout"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm corners-rounded"
+                  />
+                </div>
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--right"
+                >
+                  <!-- Cards -->
+                  <div class="case-highlights__card-list">
+                    <!-- 1. Light notice card -->
+                    <div class="case-widget-card case-widget-card--notice">
+                      <span class="case-widget-card__icon-bg">
+                        <img
+                          src="../assets/icons/lightbulb.svg"
+                          alt=""
+                          class="case-widget-card__icon"
+                          width="24"
+                          height="24"
+                          aria-hidden="true"
+                        />
+                      </span>
+                      <div class="case-widget-card__content">
+                        <strong>Small copy change, big impact</strong>
+                        <div>
+                          Changing the heading from 'Recommended programs' to<br />'Start
+                          something new' significantly increased clicks.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 2. Feature widget card -->
+                  <!-- <div class="case-widget-card "> -->
+                  <img
+                    class="case-widget-card case-widget-card--no-padding"
+                    src="../assets/images/Start_Something_New_1_1.png"
+                    alt="Digital Buddies program preview"
+                    class="case-widget-card__feature-img"
+                  />
+                  <!-- </div> -->
+
+                  <!-- 3. Another light notice card -->
+                  <div class="case-widget-card case-widget-card--notice">
+                    <span class="case-widget-card__icon-bg">
+                      <img
+                        src="../assets/icons/lightbulb.svg"
+                        alt=""
+                        class="case-widget-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <div class="case-widget-card__content">
+                      <strong>Surfaced reports</strong>
+                      <div>
+                        Originally, reports and trends were located within the
+                        library, which users found confusing. Relocating them to
+                        a dedicated widget significantly improved
+                        discoverability.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 4. Accent "reports" card -->
+                  <img
+                    class="case-widget-card case-widget-card--no-padding case-widget-card-no-margin reveal"
+                    src="../assets/images/reports&trends.png"
+                    alt="Reports and trends card"
+                    class="case-widget-card__feature-img"
+                  />
+                </div>
+              </div>
+
+              <div class="twocol twocol--wide reveal">
+                <h3 class="twocol__heading">Homepage widgets</h3>
+                <div class="twocol__main">
+                  <p class="add-big-margin-bottom">
+                    The old homepage felt like a cluttered kanban board with no
+                    clear structure. We replaced it with a widget-based layout:
+                    scrollable blocks on mobile, a bento-style grid on desktop.
+                    Early widgets looked like oversized buttons with no context,
+                    so I redesigned them to include visuals and concise text
+                    that set clear expectations and encouraged engagement.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- Second highlight -->
+            <h2 class="highlight-decor">Resource library</h2>
+            <article
+              class="case-highlights__item case-highlights__item--overlay"
+            >
+              <div
+                class="case-highlights__visual case-highlights__visual-var case-highlights__visual--centered reveal"
+              >
+                <img
+                  src="../assets/images/Library_2.png"
+                  alt="Everwell resource library screen showing articles and activities for seniors on topics like friendship, mindfulness, and fitness, grouped under categories such as social health and staying fit."
+                  class="case-highlights__visual-image case-highlights__visual-image--bg reveal"
+                />
+                <!-- Overlay card -->
+                <div
+                  class="case-widget-card case-widget-card--notice case-widget-card-390 reveal"
+                >
+                  <span class="case-widget-card__icon-bg">
+                    <img
+                      src="../assets/icons/lightbulb.svg"
+                      alt=""
+                      class="case-widget-card__icon"
+                      width="24"
+                      height="24"
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <div class="case-widget-card__content">
+                    <strong>History and bookmarks</strong>
+                    <div>
+                      Users expressed a need to revisit previously viewed and
+                      particularly helpful resources. Introducing history and
+                      bookmark features addressed this feedback.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <div class="twocol twocol-var twocol--wide reveal">
+              <h3 class="twocol__heading">Resource library</h3>
+              <div class="twocol__main">
+                <p>
+                  The old resource library was a flat, overwhelming list with
+                  generic icons and no structure. I co-led a redesign that
+                  introduced visual cards, category and program-based grouping,
+                  and a prominent “Recommended” section.
+                </p>
+                <p class="add-big-margin-bottom">
+                  We added filters, search, and history to help users find what
+                  they need, plus a “Read Later” feature after testing and
+                  ruling out more complex collection systems.
+                </p>
+              </div>
+            </div>
+
+            <!-- Third Highlight -->
+            <h2 class="highlight-decor">Notifications</h2>
+            <article class="case-highlights__item">
+              <div
+                class="case-highlights__visual case-highlights__visual-var reveal"
+              >
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--left"
+                >
+                  <img
+                    src="../assets/images/Notifications_3.png"
+                    alt="Screen of the notification card"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal img-bdr-btm"
+                  />
+                </div>
+              </div>
+            </article>
+            <div
+              class="twocol add-small-pagging-top twocol--wide-pd-no twocol--wide reveal"
+            >
+              <h3 class="twocol__heading">Notifications</h3>
+              <div class="twocol__main">
+                <p class="add-big-margin-bottom">
+                  Recommendations were buried in the completed tasks list,
+                  making them easy to miss. I advocated for a persistent,
+                  lightweight notification system that’s easier to revisit and
+                  scalable for alerts, program updates, and reminders.
+                </p>
+              </div>
+            </div>
+
+            <!-- Fourth Highlight -->
+            <h2 class="highlight-decor">Resource pages</h2>
+            <article class="case-highlights__item">
+              <div
+                class="case-highlights__visual case-highlights__visual-var reveal"
+              >
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--left"
+                >
+                  <img
+                    src="../assets/images/Why_Friendships_Matter_4_1.png"
+                    alt="Screen of an individual resoures page as part of the user's library"
+                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm"
+                  />
+                </div>
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--right reveal"
+                >
+                  <!-- cards -->
+                  <div class="case-highlights__card-list">
+                    <!-- 1. Light notice card -->
+                    <div
+                      class="case-widget-card case-widget-card--notice reveal"
+                    >
+                      <span class="case-widget-card__icon-bg">
+                        <img
+                          src="../assets/icons/lightbulb.svg"
+                          alt=""
+                          class="case-widget-card__icon"
+                          width="24"
+                          height="24"
+                          aria-hidden="true"
+                        />
+                      </span>
+                      <div class="case-widget-card__content">
+                        <strong>AI accessibility features</strong>
+                        <div>
+                          Considering many seniors have age-related vision
+                          changes, I advocated for the addition of an<br />AI-powered
+                          voiceover feature for written content.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 2. Feature widget card -->
+                  <!-- <div class="case-widget-card "> -->
+                  <img
+                    class="case-widget-card case-widget-card--no-padding"
+                    src="../assets/images/Why_Friendships_Matter_Audio_4_2.png"
+                    alt="Screen: mp3 player with library materials"
+                    class="case-widget-card__feature-img"
+                  />
+                  <!-- </div> -->
+
+                  <!-- 3. Another light notice card -->
+                  <div class="case-widget-card case-widget-card--notice">
+                    <span class="case-widget-card__icon-bg">
+                      <img
+                        src="../assets/icons/lightbulb.svg"
+                        alt=""
+                        class="case-widget-card__icon"
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <div class="case-widget-card__content">
+                      <strong>Resource feedback</strong>
+                      <div>
+                        To assess the resources’ usefulness, we introduced an
+                        optional post-resource survey.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 4. Accent "reports" card -->
+                  <img
+                    class="case-widget-card case-widget-card-no-margin case-widget-card--no-padding"
+                    src="../assets/images/Did_you_find_this_useful_4_3.png"
+                    alt="Screen: short survey"
+                    class="case-widget-card__feature-img"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <div class="twocol twocol--wide-pd-no twocol--wide reveal">
+              <h3 class="twocol__heading">Individual resource<br />pages</h3>
+              <div class="twocol__main">
+                <p class="add-big-margin-bottom">
+                  We redesigned content pages with large visuals, time
+                  estimates, and accessibility in mind, adding auto-generated
+                  captions for videos and planning a voice-over support for
+                  articles.
+                </p>
+              </div>
+            </div>
+
+            <!-- Fith Highlight -->
+            <h2 class="highlight-decor">Multi-profile support</h2>
+            <article class="case-highlights__item">
+              <div class="case-highlights__visual reveal">
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--left"
+                >
+                  <img
+                    src="../assets/images/Who_Joins_5_1.png"
+                    alt="Everwell app screen showing profile selection for Connected Living, where a user can choose an existing profile or create a new one to continue."
+                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                  />
+                </div>
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-col--right case-highlights__visual-col--right-390"
+                >
+                  <img
+                    src="../assets/images/Profiles_5_2.png"
+                    alt="Everwell app settings screen showing user profile details and options like managing account, notifications, privacy, and support."
+                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
+                  />
+                </div>
+              </div>
+
+              <div class="twocol twocol--wide reveal add-small-pagging-top">
+                <h3 class="twocol__heading">Multi-profile support</h3>
+                <div class="twocol__main">
+                  <p class="add-big-margin-bottom">
+                    Some users were caregivers supporting loved ones. I designed
+                    the multi-profile system to allow quick profile switching,
+                    program enrollment per profile, and ownership transfer if a
+                    patient takes over their own care.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <!-- 🦊new card -->
+            <h2 class="highlight-decor">iOS application</h2>
+            <article class="case-highlights__item">
+              <div
+                class="case-highlights__visual case-highlights__visual-var reveal"
+              >
+                <div
+                  class="case-highlights__visual-col case-highlights__visual-var case-highlights__visual-col--left"
+                >
+                  <img
+                    src="../assets/images/ios.png"
+                    alt="Everwell iOS app home screen showing personalized health tasks, resources, and navigation tabs for Home, Programs, and Library."
+                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
+                  />
+                </div>
+              </div>
+            </article>
+            <div
+              class="twocol no-padding-bottom add-small-pagging-top twocol--wide reveal"
+            >
+              <h3 class="twocol__heading">iOS application</h3>
+              <div class="twocol__main">
+                <p>
+                  I also closely worked with an iOS developer to translate the
+                  webapp to an iOS application. I audited features, mapped flows
+                  to native patterns (such as bottom tab bar and gestures),
+                  built mobile-optimized components, and provided Figma
+                  annotations.
+                </p>
+              </div>
+            </div>
+            <!-- 🦊End new card -->
+          </div>
+        </div>
+      </section>
+
       <!-- Context -->
-      <section class="case-context reveal" aria-labelledby="case-context-title">
+      <!-- <a id="nav-problem"></a> -->
+      <section
+        id="nav-problem"
+        class="case-context reveal"
+        aria-labelledby="case-context-title"
+      >
         <div class="container case-context__content">
           <h2 id="case-context-title" class="case-context__heading reveal">
             What was broken, what we fixed, and what I did
@@ -805,365 +1213,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Highlights -->
-      <a id="nav-design"></a>
-      <section
-        class="case-highlights case-highlights--case2"
-        aria-labelledby="case-highlights-title"
-      >
-        <div class="container">
-          <h2 id="case-highlights-title" class="case-highlights__title reveal">
-            Design highlights
-          </h2>
-          <div class="case-highlights__list">
-            <!-- First highlight -->
-            <article class="case-highlights__item reveal">
-              <div class="case-highlights__visual">
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/hello_Jenny.gif"
-                    alt="GIF of redesigned homepage widget layout"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm corners-rounded"
-                  />
-                </div>
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--right"
-                >
-                  <!-- Cards -->
-                  <div class="case-highlights__card-list">
-                    <!-- 1. Light notice card -->
-                    <div class="case-widget-card case-widget-card--notice">
-                      <span class="case-widget-card__icon-bg">
-                        <img
-                          src="../assets/icons/lightbulb.svg"
-                          alt=""
-                          class="case-widget-card__icon"
-                          width="24"
-                          height="24"
-                          aria-hidden="true"
-                        />
-                      </span>
-                      <div class="case-widget-card__content">
-                        <strong>Small copy change, big impact</strong>
-                        <div>
-                          Changing the heading from 'Recommended programs' to<br />'Start
-                          something new' significantly increased clicks.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 2. Feature widget card -->
-                  <!-- <div class="case-widget-card "> -->
-                  <img
-                    class="case-widget-card case-widget-card--no-padding"
-                    src="../assets/images/Start_Something_New_1_1.png"
-                    alt="Digital Buddies program preview"
-                    class="case-widget-card__feature-img"
-                  />
-                  <!-- </div> -->
-
-                  <!-- 3. Another light notice card -->
-                  <div class="case-widget-card case-widget-card--notice">
-                    <span class="case-widget-card__icon-bg">
-                      <img
-                        src="../assets/icons/lightbulb.svg"
-                        alt=""
-                        class="case-widget-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <div class="case-widget-card__content">
-                      <strong>Surfaced reports</strong>
-                      <div>
-                        Originally, reports and trends were located within the
-                        library, which users found confusing. Relocating them to
-                        a dedicated widget significantly improved
-                        discoverability.
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 4. Accent "reports" card -->
-                  <img
-                    class="case-widget-card case-widget-card--no-padding case-widget-card-no-margin reveal"
-                    src="../assets/images/reports&trends.png"
-                    alt="Reports and trends card"
-                    class="case-widget-card__feature-img"
-                  />
-                </div>
-              </div>
-
-              <div class="twocol twocol--wide reveal">
-                <h3 class="twocol__heading">Homepage widgets</h3>
-                <div class="twocol__main">
-                  <p class="add-big-margin-bottom">
-                    The old homepage felt like a cluttered kanban board with no
-                    clear structure. We replaced it with a widget-based layout:
-                    scrollable blocks on mobile, a bento-style grid on desktop.
-                    Early widgets looked like oversized buttons with no context,
-                    so I redesigned them to include visuals and concise text
-                    that set clear expectations and encouraged engagement.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <!-- Second highlight -->
-            <article
-              class="case-highlights__item case-highlights__item--overlay"
-            >
-              <div
-                class="case-highlights__visual case-highlights__visual-var case-highlights__visual--centered reveal"
-              >
-                <img
-                  src="../assets/images/Library_2.png"
-                  alt="Everwell resource library screen showing articles and activities for seniors on topics like friendship, mindfulness, and fitness, grouped under categories such as social health and staying fit."
-                  class="case-highlights__visual-image case-highlights__visual-image--bg reveal"
-                />
-                <!-- Overlay card -->
-                <div
-                  class="case-widget-card case-widget-card--notice case-widget-card-390 reveal"
-                >
-                  <span class="case-widget-card__icon-bg">
-                    <img
-                      src="../assets/icons/lightbulb.svg"
-                      alt=""
-                      class="case-widget-card__icon"
-                      width="24"
-                      height="24"
-                      aria-hidden="true"
-                    />
-                  </span>
-                  <div class="case-widget-card__content">
-                    <strong>History and bookmarks</strong>
-                    <div>
-                      Users expressed a need to revisit previously viewed and
-                      particularly helpful resources. Introducing history and
-                      bookmark features addressed this feedback.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <div class="twocol twocol-var twocol--wide reveal">
-              <h3 class="twocol__heading">Resource library</h3>
-              <div class="twocol__main">
-                <p>
-                  The old resource library was a flat, overwhelming list with
-                  generic icons and no structure. I co-led a redesign that
-                  introduced visual cards, category and program-based grouping,
-                  and a prominent “Recommended” section.
-                </p>
-                <p class="add-big-margin-bottom">
-                  We added filters, search, and history to help users find what
-                  they need, plus a “Read Later” feature after testing and
-                  ruling out more complex collection systems.
-                </p>
-              </div>
-            </div>
-
-            <!-- Third Highlight -->
-            <article class="case-highlights__item">
-              <div
-                class="case-highlights__visual case-highlights__visual-var reveal"
-              >
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/Notifications_3.png"
-                    alt="Screen of the notification card"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal img-bdr-btm"
-                  />
-                </div>
-              </div>
-            </article>
-            <div
-              class="twocol add-small-pagging-top twocol--wide-pd-no twocol--wide reveal"
-            >
-              <h3 class="twocol__heading">Notifications</h3>
-              <div class="twocol__main">
-                <p class="add-big-margin-bottom">
-                  Recommendations were buried in the completed tasks list,
-                  making them easy to miss. I advocated for a persistent,
-                  lightweight notification system that’s easier to revisit and
-                  scalable for alerts, program updates, and reminders.
-                </p>
-              </div>
-            </div>
-
-            <!-- Fourth Highlight -->
-            <article class="case-highlights__item">
-              <div
-                class="case-highlights__visual case-highlights__visual-var reveal"
-              >
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/Why_Friendships_Matter_4_1.png"
-                    alt="Screen of an individual resoures page as part of the user's library"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm"
-                  />
-                </div>
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--right reveal"
-                >
-                  <!-- cards -->
-                  <div class="case-highlights__card-list">
-                    <!-- 1. Light notice card -->
-                    <div
-                      class="case-widget-card case-widget-card--notice reveal"
-                    >
-                      <span class="case-widget-card__icon-bg">
-                        <img
-                          src="../assets/icons/lightbulb.svg"
-                          alt=""
-                          class="case-widget-card__icon"
-                          width="24"
-                          height="24"
-                          aria-hidden="true"
-                        />
-                      </span>
-                      <div class="case-widget-card__content">
-                        <strong>AI accessibility features</strong>
-                        <div>
-                          Considering many seniors have age-related vision
-                          changes, I advocated for the addition of an<br />AI-powered
-                          voiceover feature for written content.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 2. Feature widget card -->
-                  <!-- <div class="case-widget-card "> -->
-                  <img
-                    class="case-widget-card case-widget-card--no-padding"
-                    src="../assets/images/Why_Friendships_Matter_Audio_4_2.png"
-                    alt="Screen: mp3 player with library materials"
-                    class="case-widget-card__feature-img"
-                  />
-                  <!-- </div> -->
-
-                  <!-- 3. Another light notice card -->
-                  <div class="case-widget-card case-widget-card--notice">
-                    <span class="case-widget-card__icon-bg">
-                      <img
-                        src="../assets/icons/lightbulb.svg"
-                        alt=""
-                        class="case-widget-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <div class="case-widget-card__content">
-                      <strong>Resource feedback</strong>
-                      <div>
-                        To assess the resources’ usefulness, we introduced an
-                        optional post-resource survey.
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 4. Accent "reports" card -->
-                  <img
-                    class="case-widget-card case-widget-card-no-margin case-widget-card--no-padding"
-                    src="../assets/images/Did_you_find_this_useful_4_3.png"
-                    alt="Screen: short survey"
-                    class="case-widget-card__feature-img"
-                  />
-                </div>
-              </div>
-            </article>
-
-            <div class="twocol twocol--wide-pd-no twocol--wide reveal">
-              <h3 class="twocol__heading">Individual resource<br />pages</h3>
-              <div class="twocol__main">
-                <p class="add-big-margin-bottom">
-                  We redesigned content pages with large visuals, time
-                  estimates, and accessibility in mind, adding auto-generated
-                  captions for videos and planning a voice-over support for
-                  articles.
-                </p>
-              </div>
-            </div>
-
-            <!-- Fith Highlight -->
-            <article class="case-highlights__item">
-              <div class="case-highlights__visual reveal">
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/Who_Joins_5_1.png"
-                    alt="Everwell app screen showing profile selection for Connected Living, where a user can choose an existing profile or create a new one to continue."
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
-                  />
-                </div>
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--right case-highlights__visual-col--right-390"
-                >
-                  <img
-                    src="../assets/images/Profiles_5_2.png"
-                    alt="Everwell app settings screen showing user profile details and options like managing account, notifications, privacy, and support."
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
-                  />
-                </div>
-              </div>
-
-              <div class="twocol twocol--wide reveal add-small-pagging-top">
-                <h3 class="twocol__heading">Multi-profile support</h3>
-                <div class="twocol__main">
-                  <p class="add-big-margin-bottom">
-                    Some users were caregivers supporting loved ones. I designed
-                    the multi-profile system to allow quick profile switching,
-                    program enrollment per profile, and ownership transfer if a
-                    patient takes over their own care.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <!-- 🦊new card -->
-            <article class="case-highlights__item">
-              <div
-                class="case-highlights__visual case-highlights__visual-var reveal"
-              >
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-var case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/ios.png"
-                    alt="Everwell iOS app home screen showing personalized health tasks, resources, and navigation tabs for Home, Programs, and Library."
-                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
-                  />
-                </div>
-              </div>
-            </article>
-            <div
-              class="twocol no-padding-bottom add-small-pagging-top twocol--wide reveal"
-            >
-              <h3 class="twocol__heading">iOS application</h3>
-              <div class="twocol__main">
-                <p>
-                  I also closely worked with an iOS developer to translate the
-                  webapp to an iOS application. I audited features, mapped flows
-                  to native patterns (such as bottom tab bar and gestures),
-                  built mobile-optimized components, and provided Figma
-                  annotations.
-                </p>
-              </div>
-            </div>
-            <!-- 🦊End new card -->
           </div>
         </div>
       </section>
