@@ -2764,7 +2764,7 @@ p.add-small-margin-bottom {
   align-items: center;
   justify-content: flex-start;
   gap: 14px;
-  min-height: 54px;
+  /* min-height: 54px; */
   padding: 8px 10px;
   border-radius: 8px;
   text-decoration: none;
