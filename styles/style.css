@@ -1197,6 +1197,16 @@ h3 {
   height: 100%;
   overflow: hidden;
   border-radius: 8px;
+  background: white;
+}
+.about-col--right-dec {
+  position: relative;
+}
+.carusel-flower {
+  position: absolute;
+  /* z-index: -1000; */
+  bottom: -29px;
+  right: -52px;
 }
 
 .about-photo-slider__img {
