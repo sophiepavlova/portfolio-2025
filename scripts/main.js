@@ -891,6 +891,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const target = document.getElementById("nav-problem");
       if (!target) return;
+
       const offsetTop =
         target.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
       window.scrollTo({ top: offsetTop, behavior: "smooth" });
