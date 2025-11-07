@@ -2319,6 +2319,7 @@ ul:not(.goals-list):not(.quote-list):not(.principles-list) {
   position: relative;
   z-index: 0;
   padding-block: 40px 40px; /* чуть больше воздуха сверху, мягче снизу */
+  padding-top: 20px;
 }
 
 /* голубой фон на всю ширину окна */
@@ -2684,6 +2685,31 @@ p.add-small-margin-bottom {
   transform: scale(1.05);
   color: var(--color-accent);
 }
+
+/* when sidenav is over a dark stripe */
+.case-sidenav.case-sidenav--on-dark nav a {
+  color: rgba(255, 255, 255, 0.9);
+}
+.case-sidenav.case-sidenav--on-dark nav a:hover:not(.active),
+.case-sidenav.case-sidenav--on-dark nav a:focus:not(.active) {
+  color: #fff;
+}
+/* keep active link styling intact (red accent) */
+.case-sidenav.case-sidenav--on-dark nav a.active {
+  color: var(--color-accent, #e11d48);
+  border-left-color: var(--color-accent, #e11d48) !important;
+}
+/* turn text white only for links on top of the dark zone */
+.case-sidenav nav a.on-dark {
+  color: #fff;
+}
+
+/* keep accent red for active item */
+.case-sidenav nav a.active.on-dark {
+  color: var(--color-accent, #e11d48);
+  border-left-color: var(--color-accent, #e11d48) !important;
+}
+
 /*End  Nav animation */
 
 /* Back to top button */
@@ -3133,6 +3159,12 @@ a:focus:not(:focus-visible) {
     font-size: 100px !important;
     margin-bottom: 0px;
   }
+  .case-highlights__item {
+    padding-block: 0px 40px;
+  }
+  /* .twocol--wide-mg40 {
+    margin-bottom: 0px;
+  } */
 }
 
 @media (max-width: 600px) {

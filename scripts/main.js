@@ -371,6 +371,30 @@ document.addEventListener(
   },
   { passive: true }
 );
+// 🍭Recolor the side menu in cases when above the blue strip
+// 🎨 Highlight only sidenav links actually overlapping the blue stripe
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("#case-sidenav nav a");
+  const blue = document.querySelector(".design-intro_bg");
+  if (!links.length || !blue) return;
+
+  const checkOverlap = () => {
+    const b = blue.getBoundingClientRect();
+
+    links.forEach((link) => {
+      const r = link.getBoundingClientRect();
+      const midY = (r.top + r.bottom) / 2;
+      const onBlue = midY >= b.top && midY <= b.bottom;
+      link.classList.toggle("on-dark", onBlue);
+    });
+  };
+
+  window.addEventListener("scroll", checkOverlap, { passive: true });
+  window.addEventListener("resize", checkOverlap);
+  checkOverlap();
+});
+
+// 🍭End: Recolor the side menu in cases when above the blue strip
 
 // --------- Back to Top Button ----------
 const backToTop = document.getElementById("backToTop");
