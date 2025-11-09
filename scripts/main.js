@@ -352,7 +352,8 @@ window.addEventListener("popstate", setActiveMenuLinks);
       const el = document.getElementById(id);
       if (el) {
         e.preventDefault();
-        window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" });
+        // window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" });
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
   });
