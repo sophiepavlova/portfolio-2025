@@ -3175,6 +3175,12 @@ a:focus:not(:focus-visible) {
   .jump-menu__link {
     font-size: 17px;
   }
+  .case-image {
+    margin-bottom: 40px;
+  }
+  .case h2 {
+    margin-bottom: 20px;
+  }
 }
 /* ≤600px: show both minis stacked, make LinkedIn tile visible & full-bleed */
 @media (max-width: 600px) {
@@ -3407,6 +3413,9 @@ a:focus:not(:focus-visible) {
 @media (max-width: 900px) {
   .highlight-decor {
     margin-bottom: -9px !important;
+  }
+  .highlight-decor-add {
+    margin-top: 20px !important;
   }
   .case-nav {
     margin-bottom: 20px;
@@ -3702,6 +3711,9 @@ a:focus:not(:focus-visible) {
 }
 
 @media (max-width: 600px) {
+  .highlight-decor-add {
+    margin-top: 0px !important;
+  }
   .about-hero {
     padding-bottom: 20px;
   }
