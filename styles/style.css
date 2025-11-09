@@ -4005,6 +4005,9 @@ a:focus:not(:focus-visible) {
 }
 
 @media (max-width: 390px) {
+  .case-highlights__item-pad {
+    padding-top: 20px;
+  }
   .hero__title {
     font-size: 30px;
     line-height: 35px;
