@@ -1738,6 +1738,12 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 .case-highlights__item:last-child {
   margin-bottom: 0;
 }
+.case-highlights__item-nopad-btm {
+  padding-bottom: 0 !important;
+}
+.twocol--wide-mg40-nomag-btm {
+  margin-bottom: 0 !important;
+}
 
 .corners-rounded {
   border-radius: 8px;
