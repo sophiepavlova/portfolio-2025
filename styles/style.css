@@ -3571,6 +3571,24 @@ a:focus:not(:focus-visible) {
 }
 
 @media (max-width: 768px) {
+  /* Disable interaction for InterviewR card on mobile */
+  .case-card__link--nonactive {
+    pointer-events: none; /* no clicking or tapping */
+    cursor: default;
+  }
+
+  .case-card__link--nonactive *,
+  .case-card__link--nonactive:hover * {
+    transform: none !important; /* stop motion */
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  /* If the underline animation uses background or stroke */
+  .case-card__link--nonactive .hi,
+  .case-card__link--nonactive:hover .hi {
+    background: none !important;
+  }
   .site-header {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -4005,6 +4023,10 @@ a:focus:not(:focus-visible) {
 }
 
 @media (max-width: 390px) {
+  /* Keep normal hover effects on Home page on desktop */
+  .case-card__link--nonactive {
+    cursor: not-allowed; /* visual hint, still shows tooltip if any */
+  }
   .case-highlights__item-pad {
     padding-top: 20px;
   }
