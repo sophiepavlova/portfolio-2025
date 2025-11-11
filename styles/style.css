@@ -742,13 +742,12 @@ h3 {
   overflow: visible; /* ✅ allow flowers to extend beyond */
 }
 .about-hero__heading {
-  font-family: "Campaign Serif", serif;
+  font-family: "campaign-serif", serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 140%;
   color: var(--color-accent);
   margin-bottom: 10px;
-  font-family: Campaign Serif;
 }
 
 .about-hero__intro {
