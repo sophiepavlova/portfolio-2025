@@ -168,20 +168,44 @@ h3 {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 2000;
+  z-index: 5000;
   padding-block: 20px;
-  /* border-bottom: 1px solid var(--color-border); */
   backdrop-filter: blur(4px);
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-/* Layout inside header */
 .site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+/* 🧊 Hide-on-scroll animation */
+.site-header {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform;
+}
+
+.site-header.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+.site-header,
+.site-header * {
+  pointer-events: auto;
+}
+/* Hover UI must never block clicks */
+[class*="tooltip"],
+[class*="Tooltip"],
+[class*="cursor"],
+[class*="Cursor"],
+[class*="hover-label"],
+[class*="hoverLabel"],
+[class*="bubble"] {
+  pointer-events: none !important;
+}
+
 /* Logo */
 .logo {
   font-family: "campaign-serif", serif;
@@ -423,7 +447,7 @@ h3 {
   gap: 70px;
 }
 .site-footer__name {
-  font-family: "Campaign Serif", serif;
+  font-family: "Campaign-Serif", serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 110%;
@@ -641,7 +665,7 @@ h3 {
   z-index: 2;
 }
 .work-card__title {
-  font-family: "Campaign Serif", serif;
+  font-family: "Campaign-Serif", serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.4;
@@ -1325,7 +1349,7 @@ h3 {
   text-align: center;
 }
 .case-hero__client {
-  font-family: "Campaign Serif", serif;
+  font-family: "Campaign-Serif", serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 140%;
@@ -1444,6 +1468,9 @@ h3 {
   letter-spacing: 0.005em;
   color: var(--color-text);
   margin: 0;
+}
+#case-overview-title {
+  margin-bottom: 20px;
 }
 /* --- Case Context --- */
 .case-context {
@@ -3599,6 +3626,7 @@ a:focus:not(:focus-visible) {
     padding-bottom: 10px;
     /* Optional: If you want, you can also set height: 66px; */
   }
+
   .case-highlights__visual--centered .case-highlights__visual-image--bg {
     max-width: 500px !important;
   }
