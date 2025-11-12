@@ -1446,6 +1446,9 @@ h3 {
   color: var(--color-text);
   margin: 0;
 }
+#case-overview-title {
+  margin-bottom: 20px;
+}
 /* --- Case Context --- */
 .case-context {
   padding-top: 40px;
