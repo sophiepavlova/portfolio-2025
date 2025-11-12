@@ -758,41 +758,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 😎Cursor label
 document.addEventListener("DOMContentLoaded", () => {
-  // 🧊 Disable feature on tablet & mobile
+  // Disable on tablet & mobile
   if (window.innerWidth <= 1024) return;
 
   const label = document.getElementById("cursor-label");
   if (!label) return;
 
   const cards = document.querySelectorAll(".case-card");
+  const OFF_X = 85;
+  const OFF_Y = 35;
+
+  let mouseX = 0;
+  let mouseY = 0;
+
+  const updatePos = () => {
+    label.style.top = `${mouseY + OFF_Y}px`;
+    label.style.left = `${mouseX + OFF_X}px`;
+  };
+
+  // keep position stable while scrolling
+  window.addEventListener("scroll", () => {
+    if (label.classList.contains("cursor-label--visible")) updatePos();
+  });
+
   cards.forEach((card) => {
     const link = card.querySelector(".case-card__link");
     const isInactive = link?.classList.contains("case-card__link--nonactive");
     const text = isInactive
       ? `<span class="cursor-icon">✨</span> Coming soon :)`
       : `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1.33333 2H5.33333C6.04058 2 6.71885 2.28095 7.21895 2.78105C7.71905 3.28115 8 3.95942 8 4.66667V14C8 13.4696 7.78929 12.9609 7.41421 12.5858C7.03914 12.2107 6.53043 12 6 12H1.33333V2Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14.6667 2H10.6667C9.95942 2 9.28115 2.28095 8.78105 2.78105C8.28095 3.28115 8 3.95942 8 4.66667V14C8 13.4696 8.21071 12.9609 8.58579 12.5858C8.96086 12.2107 9.46957 12 10 12H14.6667V2Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg> Read case study`;
+           <path d="M1.33333 2H5.33333C6.04058 2 6.71885 2.28095 7.21895 2.78105C7.71905 3.28115 8 3.95942 8 4.66667V14C8 13.4696 7.78929 12.9609 7.41421 12.5858C7.03914 12.2107 6.53043 12 6 12H1.33333V2Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+           <path d="M14.6667 2H10.6667C9.95942 2 9.28115 2.28095 8.78105 2.78105C8.28095 3.28115 8 3.95942 8 4.66667V14C8 13.4696 8.21071 12.9609 8.58579 12.5858C8.96086 12.2107 9.46957 12 10 12H14.6667V2Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg> Read case study`;
 
-    card.addEventListener("mouseenter", () => {
+    // use pointer events so we get coordinates on enter
+    card.addEventListener("pointerenter", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
       label.innerHTML = text;
       label.classList.add("cursor-label--visible");
       label.classList.toggle("cursor-label--inactive", isInactive);
+      updatePos(); // position immediately on first show
     });
 
-    card.addEventListener("mousemove", (e) => {
-      label.style.top = `${e.clientY + 35}px`;
-      label.style.left = `${e.clientX + 85}px`;
+    card.addEventListener("pointermove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      updatePos();
     });
 
-    card.addEventListener("mouseleave", () => {
+    card.addEventListener("pointerleave", () => {
       label.classList.remove("cursor-label--visible");
     });
   });
 });
-
 // 😎End Cursor label
+
 //🍊 --- Floating flower click effect (About page only) ---
 document.addEventListener("DOMContentLoaded", () => {
   const aboutPage = document.querySelector(".about-page");
