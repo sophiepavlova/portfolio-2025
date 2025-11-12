@@ -902,6 +902,28 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // 🩰END: Smooth scrolling for the Jump Menu (mobile/tablet)
 
+// 🧊 Hide header when scrolling down, show when scrolling up
+(() => {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  let lastY = window.scrollY;
+
+  const update = () => {
+    const y = window.scrollY;
+    if (y > lastY && y > 80) {
+      header.classList.add("hidden");
+    } else {
+      header.classList.remove("hidden");
+    }
+    lastY = y;
+  };
+
+  window.addEventListener("scroll", update, { passive: true });
+})();
+
+// END:🧊 Hide header when scrolling down, show when scrolling up
+
 // 🧩 Smooth scroll ONLY for the inline "click here" link in Design Highlights
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".site-header");
