@@ -423,7 +423,7 @@ h3 {
   gap: 70px;
 }
 .site-footer__name {
-  font-family: "Campaign Serif", serif;
+  font-family: "Campaign-Serif", serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 110%;
@@ -641,7 +641,7 @@ h3 {
   z-index: 2;
 }
 .work-card__title {
-  font-family: "Campaign Serif", serif;
+  font-family: "Campaign-Serif", serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.4;
@@ -742,13 +742,12 @@ h3 {
   overflow: visible; /* ✅ allow flowers to extend beyond */
 }
 .about-hero__heading {
-  font-family: "Campaign Serif", serif;
+  font-family: "Campaign-Serif", serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 140%;
   color: var(--color-accent);
   margin-bottom: 10px;
-  font-family: Campaign Serif;
 }
 
 .about-hero__intro {
@@ -1326,7 +1325,7 @@ h3 {
   text-align: center;
 }
 .case-hero__client {
-  font-family: "Campaign Serif", serif;
+  font-family: "Campaign-Serif", serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 140%;
