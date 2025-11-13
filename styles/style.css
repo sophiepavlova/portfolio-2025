@@ -293,7 +293,6 @@ h3 {
     width: 100vw;
     height: 100vh;
     background: var(--color-background, #fafaf9);
-    z-index: 2000;
     overflow-y: auto;
 
     transform: translateX(100%);
@@ -1742,7 +1741,7 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 
 .inline-link:hover {
   /* color: var(--Colors-Blue-300, #bfdbfe); */
-  color: var(--color-accent-on-hover);
+  color: oklch(37.9% 0.146 265.522);
 }
 
 /* --- Highlights --- */
@@ -3613,103 +3612,123 @@ a:focus:not(:focus-visible) {
   .container {
     padding-inline: 24px;
   }
+  /* ================================
+   MOBILE NAVIGATION (slide from left)
+   ================================ */
+  /* Hide desktop nav */
   .site-nav {
     display: none !important;
   }
-  .menu-toggle,
-  .menu-close {
-    display: block;
-    position: absolute;
-    right: 24px;
-    /* top: 20px; */
-    z-index: 2001;
-    margin: 0 !important;
-  }
 
-  .site-header,
-  .site-header .container {
-    min-height: 46px;
-    position: relative;
-  }
-  .mobile-menu {
-    display: block;
-  }
-  .mobile-menu__nav {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-  }
+  /* Header stays sticky on mobile */
   .site-header {
     position: sticky;
     top: 0;
-    z-index: 2002; /* Must be above .mobile-menu and content */
+    z-index: 2002; /* stays above content */
+    padding: 10px 0;
+    min-height: 66px;
+    display: flex;
+    align-items: center;
   }
+
+  .site-header .container {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Toggle button (hamburger) */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2003;
+  }
+
+  /* =====================
+     MOBILE MENU PANEL
+     ===================== */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100svh;
+    background: var(--color-background, white);
+
+    transform: translateX(-100%);
+    opacity: 1;
+    visibility: hidden;
+
+    transition: transform 0.45s ease-out;
+
+    z-index: -1; /* only hidden AFTER closing finishes */
+    pointer-events: none; /* clickable only when opening */
+  }
+
+  .mobile-menu {
+    backdrop-filter: blur(10px);
+  }
+
+  /* OPENING: slide in */
+  .mobile-menu.is-opening {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 999999 !important; /* stays above header */
+  }
+
+  /* CLOSING: slide back */
+  .mobile-menu.is-closing {
+    transform: translateX(-100%);
+    /* opacity: 0; */
+    visibility: visible; /* IMPORTANT: don't hide yet */
+    pointer-events: none;
+    z-index: 999999 !important; /* stays above header entire animation */
+  }
+
+  /* Close button INSIDE the panel */
   .menu-close {
     display: block !important;
-    position: absolute; /* NOT fixed: it should be relative to the menu panel */
+    position: absolute;
     right: 24px;
     top: 10px;
-    z-index: 3010; /* Higher than .mobile-menu */
     width: 46px;
     height: 46px;
     background: none;
     border: none;
     padding: 0;
-  }
-  .mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 3000;
-    display: block;
+
+    /* Important: do NOT give it its own z-index above the menu */
+    z-index: 1;
+    /* CLOSE = ease-in */
+    transition: transform 0.45s ease-in;
   }
 
-  .site-header {
-    padding: 10px 0;
-    min-height: 66px; /* keep it tall enough */
-    display: flex;
-    align-items: center;
+  /* Menu nav padding */
+  .mobile-menu__nav {
+    padding: 80px 20px 20px; /* space for the close button */
   }
 
-  .site-header .container {
-    display: flex;
-    align-items: center;
+  /* =====================
+     STAGGER LINK ANIMATION
+     ===================== */
+  .mobile-menu__nav li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.35s ease;
   }
 
-  .menu-toggle {
-    width: 46px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .site-header {
-    padding: 10px 0;
-    min-height: 66px; /* keep it tall enough */
-    display: flex;
-    align-items: center;
-  }
-
-  .site-header .container {
-    display: flex;
-    align-items: center;
-  }
-
-  .menu-toggle {
-    width: 46px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .work-card__subtitle {
-    font-size: 18px;
+  .mobile-menu.is-opening .mobile-menu__nav li {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.15s;
   }
 }
 /* Tablet: keep both columns proportional and preserve the gap */
