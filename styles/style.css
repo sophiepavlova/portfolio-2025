@@ -293,7 +293,6 @@ h3 {
     width: 100vw;
     height: 100vh;
     background: var(--color-background, #fafaf9);
-    z-index: 2000;
     overflow-y: auto;
 
     transform: translateX(100%);
@@ -1668,8 +1667,9 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 /* --- Special variant for Design Highlights intro --- */
 /* 🌈 Design intro full width */
 .design-intro_bg {
-  background: var(--color-homepage);
-  color: #fff;
+  /* background: var(--color-blue-bg); */
+  background-color: var(--Colors-Stone-100, #f5f5f4);
+  color: var(--color-text);
   width: 100vw;
   position: relative;
   left: 50%;
@@ -1686,15 +1686,18 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 }
 
 .twocol__heading-special {
-  color: #fff;
+  /* color: #fff; */
+  color: var(--color-text);
 }
 
 .design-intro a.inline-link {
-  color: var(--color-blue-bg) !important;
+  /* color: var(--color-blue-bg) !important; */
+  color: var(--color-homepage) !important;
 }
 
 .design-intro a.inline-link:hover {
   color: #fff;
+  color: var(--color-accent-on-hover);
 }
 
 .twocol--intro .twocol__heading {
@@ -1728,7 +1731,8 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 }
 /* --- Inline accent link --- */
 .inline-link {
-  color: var(--Colors-Blue-300, #93c5fd);
+  /* color: var(--Colors-Blue-300, #93c5fd); */
+  color: var(--color-homepage);
 
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -1736,7 +1740,8 @@ ul:not(.no-bullets):not([class*="no-bullet"]) {
 }
 
 .inline-link:hover {
-  color: var(--Colors-Blue-300, #bfdbfe);
+  /* color: var(--Colors-Blue-300, #bfdbfe); */
+  color: oklch(37.9% 0.146 265.522);
 }
 
 /* --- Highlights --- */
@@ -2718,32 +2723,6 @@ p.add-small-margin-bottom {
   color: var(--color-accent);
 }
 
-/* when sidenav is over a dark stripe */
-.case-sidenav.case-sidenav--on-dark nav a {
-  color: rgba(255, 255, 255, 0.9);
-}
-.case-sidenav.case-sidenav--on-dark nav a:hover:not(.active),
-.case-sidenav.case-sidenav--on-dark nav a:focus:not(.active) {
-  color: #fff;
-}
-/* keep active link styling intact (red accent) */
-.case-sidenav.case-sidenav--on-dark nav a.active {
-  color: var(--color-accent, #e11d48);
-  border-left-color: var(--color-accent, #e11d48) !important;
-}
-/* turn text white only for links on top of the dark zone */
-.case-sidenav nav a.on-dark {
-  color: #fff;
-}
-
-/* keep accent red for active item */
-.case-sidenav nav a.active.on-dark {
-  color: var(--color-accent, #e11d48);
-  border-left-color: var(--color-accent, #e11d48) !important;
-}
-
-/*End  Nav animation */
-
 /* Back to top button */
 .back-to-top {
   position: fixed;
@@ -3633,103 +3612,123 @@ a:focus:not(:focus-visible) {
   .container {
     padding-inline: 24px;
   }
+  /* ================================
+   MOBILE NAVIGATION (slide from left)
+   ================================ */
+  /* Hide desktop nav */
   .site-nav {
     display: none !important;
   }
-  .menu-toggle,
-  .menu-close {
-    display: block;
-    position: absolute;
-    right: 24px;
-    /* top: 20px; */
-    z-index: 2001;
-    margin: 0 !important;
-  }
 
-  .site-header,
-  .site-header .container {
-    min-height: 46px;
-    position: relative;
-  }
-  .mobile-menu {
-    display: block;
-  }
-  .mobile-menu__nav {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-  }
+  /* Header stays sticky on mobile */
   .site-header {
     position: sticky;
     top: 0;
-    z-index: 2002; /* Must be above .mobile-menu and content */
+    z-index: 2002; /* stays above content */
+    padding: 10px 0;
+    min-height: 66px;
+    display: flex;
+    align-items: center;
   }
+
+  .site-header .container {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Toggle button (hamburger) */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2003;
+  }
+
+  /* =====================
+     MOBILE MENU PANEL
+     ===================== */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100svh;
+    background: var(--color-background, white);
+
+    transform: translateX(-100%);
+    opacity: 1;
+    visibility: hidden;
+
+    transition: transform 0.45s ease-out;
+
+    z-index: -1; /* only hidden AFTER closing finishes */
+    pointer-events: none; /* clickable only when opening */
+  }
+
+  .mobile-menu {
+    backdrop-filter: blur(10px);
+  }
+
+  /* OPENING: slide in */
+  .mobile-menu.is-opening {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 999999 !important; /* stays above header */
+  }
+
+  /* CLOSING: slide back */
+  .mobile-menu.is-closing {
+    transform: translateX(-100%);
+    /* opacity: 0; */
+    visibility: visible; /* IMPORTANT: don't hide yet */
+    pointer-events: none;
+    z-index: 999999 !important; /* stays above header entire animation */
+  }
+
+  /* Close button INSIDE the panel */
   .menu-close {
     display: block !important;
-    position: absolute; /* NOT fixed: it should be relative to the menu panel */
+    position: absolute;
     right: 24px;
     top: 10px;
-    z-index: 3010; /* Higher than .mobile-menu */
     width: 46px;
     height: 46px;
     background: none;
     border: none;
     padding: 0;
-  }
-  .mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 3000;
-    display: block;
+
+    /* Important: do NOT give it its own z-index above the menu */
+    z-index: 1;
+    /* CLOSE = ease-in */
+    transition: transform 0.45s ease-in;
   }
 
-  .site-header {
-    padding: 10px 0;
-    min-height: 66px; /* keep it tall enough */
-    display: flex;
-    align-items: center;
+  /* Menu nav padding */
+  .mobile-menu__nav {
+    padding: 80px 20px 20px; /* space for the close button */
   }
 
-  .site-header .container {
-    display: flex;
-    align-items: center;
+  /* =====================
+     STAGGER LINK ANIMATION
+     ===================== */
+  .mobile-menu__nav li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.35s ease;
   }
 
-  .menu-toggle {
-    width: 46px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .site-header {
-    padding: 10px 0;
-    min-height: 66px; /* keep it tall enough */
-    display: flex;
-    align-items: center;
-  }
-
-  .site-header .container {
-    display: flex;
-    align-items: center;
-  }
-
-  .menu-toggle {
-    width: 46px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .work-card__subtitle {
-    font-size: 18px;
+  .mobile-menu.is-opening .mobile-menu__nav li {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.15s;
   }
 }
 /* Tablet: keep both columns proportional and preserve the gap */

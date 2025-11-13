@@ -179,69 +179,77 @@ document.querySelectorAll(".hover-preview").forEach((preview) => {
 // -----------------------------
 // Mobile menu logic
 // -----------------------------
-const menuToggle = document.querySelector(".menu-toggle");
-const menuPanel = document.getElementById("mobile-menu");
-const menuClose = menuPanel?.querySelector(".menu-close");
-const mobileLinks = menuPanel?.querySelectorAll(".mobile-menu__nav a");
+// -----------------------------
+// Improved Mobile menu logic (smooth open/close)
+// -----------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  // Improved Mobile menu logic (smooth open/close)
+  // -----------------------------
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menuPanel = document.getElementById("mobile-menu");
+  const menuClose = menuPanel?.querySelector(".menu-close");
+  const mobileLinks = menuPanel?.querySelectorAll(".mobile-menu__nav a");
 
-function openMenu() {
-  menuPanel.setAttribute("aria-hidden", "false");
-  menuToggle.setAttribute("aria-expanded", "true");
-  document.body.style.overflow = "hidden"; // Prevent scroll behind
-  // Focus first link
-  // setTimeout(() => {
-  //   mobileLinks[0]?.focus();
-  // }, 100);
-}
-
-function closeMenu() {
-  menuPanel.setAttribute("aria-hidden", "true");
-  menuToggle.setAttribute("aria-expanded", "false");
-  document.body.style.overflow = "";
-  menuToggle.focus();
-}
-
-menuToggle?.addEventListener("click", openMenu);
-menuClose?.addEventListener("click", closeMenu);
-
-// Close on esc key
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && menuPanel.getAttribute("aria-hidden") === "false") {
-    closeMenu();
+  function openMenu() {
+    menuPanel.classList.remove("is-closing");
+    void menuPanel.offsetWidth;
+    menuPanel.classList.add("is-opening");
+    menuPanel.removeAttribute("aria-hidden");
+    menuToggle.setAttribute("aria-expanded", "true");
+    setTimeout(() => (document.body.style.overflow = "hidden"), 300);
   }
-});
 
-// Close when clicking a link in mobile menu
-mobileLinks?.forEach((link) => {
-  link.addEventListener("click", function (e) {
-    const href = link.getAttribute("href");
-    const isHome =
-      location.pathname === "/" || location.pathname === "/index.html";
+  function closeMenu() {
+    if (!menuPanel.classList.contains("is-opening")) return;
+    menuPanel.classList.remove("is-opening");
+    menuPanel.classList.add("is-closing");
+    console.log("closing the menu");
+    menuToggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    setTimeout(() => {
+      menuPanel.classList.remove("is-closing");
+      menuPanel.setAttribute("aria-hidden", "true");
+    }, 400);
+  }
 
-    // External link: let browser handle, do NOT close menu.
-    if (href.startsWith("http")) return;
+  menuToggle?.addEventListener("click", openMenu);
+  menuClose?.addEventListener("click", closeMenu);
 
-    // Internal page link (starts with "/")—let browser handle.
-    if (href.startsWith("/") && !href.startsWith("/#")) return;
-
-    // "Work" link in mobile menu: on home page, close menu and scroll
-    if ((href === "#selected-work" || href === "/#selected-work") && isHome) {
-      e.preventDefault();
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "Escape" &&
+      menuPanel.getAttribute("aria-hidden") === "false"
+    ) {
       closeMenu();
-      setTimeout(() => {
-        const section = document.querySelector("#selected-work");
-        if (section) section.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-      return;
     }
+  });
 
-    // Other anchor links: close menu and scroll
-    if (href.startsWith("#")) {
-      closeMenu();
-      const anchor = href.slice(1);
-      document.getElementById(anchor)?.scrollIntoView({ behavior: "smooth" });
-      return;
-    }
+  mobileLinks?.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = link.getAttribute("href");
+      const isHome =
+        location.pathname === "/" || location.pathname === "/index.html";
+
+      if (href.startsWith("http")) return;
+      if (href.startsWith("/") && !href.startsWith("/#")) return;
+
+      if ((href === "#selected-work" || href === "/#selected-work") && isHome) {
+        e.preventDefault();
+        closeMenu();
+        setTimeout(() => {
+          const section = document.querySelector("#selected-work");
+          if (section) section.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+        return;
+      }
+
+      if (href.startsWith("#")) {
+        closeMenu();
+        const anchor = href.slice(1);
+        document.getElementById(anchor)?.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    });
   });
 });
 
