@@ -195,7 +195,6 @@
   align-items: flex-start;
 }
 .home--v2 .case-card__text {
-  padding: 32px;
   max-width: 520px;
 }
 
@@ -215,6 +214,80 @@
     rgba(0, 0, 0, 0.2) 52%,
     rgba(0, 0, 0, 0.05) 100%
   );
+}
+
+/* Контентный слой */
+.home--v2 .case-card__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 48px; */
+  padding: 48px;
+}
+
+/* Левая колонка */
+.home--v2 .case-card__text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Бренд-блок: квадрат, до 520px, уменьшается пропорционально */
+/* .home--v2 .case-card__brand {
+  flex: 0 0 clamp(260px, 38vw, 520px); 
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-content: center;
+  text-align: center;
+} */
+
+/* right block */
+.home--v2 .case-card__brand {
+  flex: 0 1 500px;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+/* Типографика бренда (подгони по фигме) */
+.case-card__brand-name {
+  font-family: "Aoboshi One", serif;
+  font-weight: 400;
+  font-size: 86px;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  color: #fff;
+}
+.case-card__brand-sub {
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  color: #fff;
+  padding-top: 20px;
+}
+
+/* По умолчанию: текст слева, бренд справа */
+.home--v2 .case-card__content {
+  flex-direction: row;
+}
+
+/* Шахматка: бренд слева */
+.home--v2 .case-card--brand-left .case-card__content {
+  flex-direction: row-reverse;
+}
+.home--v2 .button--secondary {
+  border: 1px solid white;
+  color: white;
+}
+.home--v2 .case-card__inner {
+  display: block !important;
 }
 
 /* 🍒Media */
@@ -238,5 +311,20 @@
   }
   .home--v2 .case-card__link:hover .case-card__visual img {
     transform: scale(1.04);
+  }
+}
+
+@media (max-width: 900px) {
+  .home--v2 .case-card__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home--v2 .case-card__brand {
+    width: 100%;
+    max-width: 520px; /* чтобы не раздувалось */
+    aspect-ratio: auto; /* если на мобиле бренд не квадратом */
+    text-align: left;
+    place-content: start;
   }
 }
