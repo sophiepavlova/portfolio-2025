@@ -91,19 +91,26 @@
   display: block;
   object-position: 70% 50%; /* key: move focal point right */
 }
-.home--v2 .case-card--everwell-trends .case-card__visual img {
+.home--v2 .case-card__visual img {
   object-position: 75% 45%;
   scale: 1.6;
 }
+.home--v2 .case-card__visual picture img {
+  /* scale: 1.6; */
+  object-position: 75% 57%;
+}
+/* .home--v2 .case-card--everwell-trends .case-card__visual img {
+  object-position: 75% 45%;
+  scale: 1.6;
+}
+.home--v2 .case-card--everwell-trends .case-card__visual picture img {
+  object-position: 75% 57%;
+} */
 /* v2 cards: do NOT use the old "animate-in" hiding */
 .home--v2 .case-card__visual img,
 .home--v2 .case-card__visual picture img {
   opacity: 1 !important;
   transform: none !important;
-}
-.home--v2 .case-card--everwell-trends .case-card__visual picture img {
-  /* scale: 1.6; */
-  object-position: 75% 57%;
 }
 /* Make picture behave like a full-cover background layer */
 .home--v2 .case-card .case-card__visual picture {
@@ -169,19 +176,10 @@
   color: var(--card-text-color);
 }
 
-/* .home--v2 .case-card--text-dark {
-  --card-text-color: #111827;
-} */
-
 .home--v2 .case-card {
   max-width: 1080px;
   margin: 0 auto 28px;
 }
-
-/* .home--v2 .case-card__inner {
-  min-height: 360px; 
-  background: transparent;
-} */
 
 /* Content layer: THIS is where flex belongs */
 .home--v2 .case-card__content {
@@ -272,6 +270,14 @@
   color: #fff;
   padding-top: 20px;
 }
+.home--v2 .case-card--brand-horizon .case-card__brand-name {
+  font-family: "Felt Tip Woman", "Caveat", "Comic Sans MS", cursive;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 60px;
+  letter-spacing: 0;
+  text-align: center;
+}
 
 /* По умолчанию: текст слева, бренд справа */
 .home--v2 .case-card__content {
@@ -289,9 +295,38 @@
 .home--v2 .case-card__inner {
   display: block !important;
 }
+/* The logo in Interviewr */
+.home--v2 .case-card__brand {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* Brand image fits inside the 500×500 (or shrinking) brand block */
+.home--v2 .case-card__brand-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 
 /* 🍒Media */
+/* Desktop: logo has a fixed visual size */
+/* @media (min-width: 1051px) {
+  .home--v2 .case-card__brand-image {
+    width: 320px; 
+    max-width: none; 
+    height: auto;
+  }
+} */
+
 @media (max-width: 1050px) {
+  .home--v2 .case-card__brand-image {
+    max-width: 7cm;
+    /* max-height: 80%; */
+  }
   .home--v2 .case-card .case-card__visual {
     max-height: none !important;
     height: 100% !important;
@@ -304,7 +339,7 @@
   }
 
   .home--v2 .case-card__content {
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: stretch; /* text becomes full width */
     height: auto;
     padding: 32px;
@@ -334,7 +369,9 @@
     /* padding: 24px 0; */
     max-width: none;
   }
-
+  .home--v2 .case-card__brand-long {
+    height: 230px !important;
+  }
   /* TEXT SECOND */
   .home--v2 .case-card__text {
     order: 0;
@@ -349,9 +386,34 @@
     font-size: clamp(18px, 3vw, 22px);
   }
 }
+/* 🐣For additional cards */
+
+.home--v2 .case-card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home--v2 .case-card--reverse .case-card__content {
+  flex-direction: row-reverse;
+}
+
+/* .home--v2 .case-card--brand-horizon .case-card__brand-name {
+  font-family: "Aoboshi One", serif; 
+  font-size: 64px; 
+} */
+
 @media (max-width: 768px) {
   .case-card__text {
     padding: 0;
+  }
+  .home--v2 .case-card__content {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 400px) {
+  .home--v2 .case-card--brand-horizon .case-card__brand-name {
+    font-size: 54px;
   }
 }
 @media (hover: hover) and (pointer: fine) {
@@ -369,18 +431,3 @@
     transform: scale(1.04);
   }
 }
-
-/* @media (max-width: 900px) {
-  .home--v2 .case-card__content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .home--v2 .case-card__brand {
-    width: 100%;
-    max-width: 520px; 
-    aspect-ratio: auto;
-    text-align: left;
-    place-content: start;
-  }
-} */
