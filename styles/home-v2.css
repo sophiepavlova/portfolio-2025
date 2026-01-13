@@ -1,10 +1,8 @@
 .home--v2 {
   background: #000;
 }
-/* Header should not paint over the hero */
-.home--v2 .site-header {
-  background: transparent !important;
-} /* убираем стеклянный blur на хедере в v2 */
+
+/* убираем стеклянный blur на хедере в v2 */
 .home--v2 .site-header,
 .home--v2 .site-header * {
   backdrop-filter: none !important;
@@ -63,6 +61,12 @@
   position: relative;
   z-index: 1;
 }
+.home--v2 .selected-work {
+  background-color: var(--Colors-Stone-900, #1c1917);
+}
+.home--v2 .selected-work__title {
+  color: #fff;
+}
 
 /* 🍒Cards */
 .home--v2 .case-card .case-card__inner {
@@ -91,11 +95,11 @@
   display: block;
   object-position: 70% 50%; /* key: move focal point right */
 }
-.home--v2 .case-card__visual img {
+/* .home--v2 .case-card__visual img {
   object-position: 75% 45%;
-}
+} */
 .home--v2 .case-card__visual.case-card__visual-scale img {
-  object-position: 75% 45%;
+  /* object-position: 75% 45%; */
   scale: 1.6;
 }
 .home--v2 .case-card__visual picture img {
@@ -106,16 +110,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 335% 45% !important;
+  /* object-position: 335% 45% !important; */
+  /* object-position: 75% 45% !important; */
   display: block;
 }
-/* .home--v2 .case-card--everwell-trends .case-card__visual img {
-  object-position: 75% 45%;
-  scale: 1.6;
-}
-.home--v2 .case-card--everwell-trends .case-card__visual picture img {
-  object-position: 75% 57%;
-} */
+
 /* v2 cards: do NOT use the old "animate-in" hiding */
 .home--v2 .case-card__visual img,
 .home--v2 .case-card__visual picture img {
@@ -265,17 +264,6 @@
       rgba(255, 255, 255, 0) 43.89%,
       rgba(255, 255, 255, 0.5) 84.72%
     );
-  /* background: linear-gradient(
-      0deg,
-      var(--Colors-Stone-50, #fafaf9),
-      var(--Colors-Stone-50, #fafaf9)
-    ),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 43.89%,
-      rgba(255, 255, 255, 0.5) 84.72%
-    ); */
 }
 
 /* Контентный слой */
@@ -376,16 +364,45 @@
   display: block;
   object-fit: contain;
 }
+/* Footer background image */
+.site-footer {
+  position: relative;
+  overflow: hidden; /* keeps corners clean if you add radius later */
+  background-color: transparent !important;
+  background-image: url("../assets/images/footer-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* overlay for readability */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+/* keep footer content above the overlay */
+.site-footer__content {
+  position: relative;
+  z-index: 1;
+}
+
+.home.home--v2 .site-header {
+  background: transparent;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+/* home v2: dark bg when showing on scroll up */
+.home.home--v2 .site-header.site-header--home-bg {
+  background: var(--Colors-Stone-900, #1c1917);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
 
 /* 🍒Media */
-/* Desktop: logo has a fixed visual size */
-/* @media (min-width: 1051px) {
-  .home--v2 .case-card__brand-image {
-    width: 320px; 
-    max-width: none; 
-    height: auto;
-  }
-} */
 
 @media (max-width: 1050px) {
   .home--v2 .case-card__brand-image {

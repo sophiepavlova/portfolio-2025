@@ -931,29 +931,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // 🩰END: Smooth scrolling for the Jump Menu (mobile/tablet)
 
-// 🧊 Hide header when scrolling down, show when scrolling up
-(() => {
-  const header = document.querySelector(".site-header");
-  if (!header) return;
-
-  let lastY = window.scrollY;
-
-  const update = () => {
-    const y = window.scrollY;
-    if (y > lastY && y > 80) {
-      header.classList.add("hidden");
-    } else {
-      header.classList.remove("hidden");
-    }
-    lastY = y;
-  };
-
-  window.addEventListener("scroll", update, { passive: true });
-})();
-
-// END:🧊 Hide header when scrolling down, show when scrolling up
-
-// 🧩 Smooth scroll ONLY for the inline "click here" link in Design Highlights
+// // 🧩 Smooth scroll ONLY for the inline "click here" link in Design Highlights
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".site-header");
   const headerHeight = header ? header.offsetHeight : 0;
@@ -973,3 +951,102 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Header behavior:
+// - Home (home--v2): top = visible + transparent, scroll down = hide, scroll up = show + dark bg
+// - Other pages: keep your usual hide-on-down show-on-up (no forced bg changes here)
+(() => {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  const isHomeV2 = document.body.classList.contains("home--v2");
+  let lastY = window.scrollY;
+
+  const update = () => {
+    const y = window.scrollY;
+    const atTop = y < 10;
+
+    if (isHomeV2) {
+      if (atTop) {
+        header.classList.remove("hidden");
+        header.classList.remove("site-header--home-bg");
+      } else if (y > lastY + 2) {
+        // scrolling down
+        header.classList.add("hidden");
+        header.classList.remove("site-header--home-bg");
+      } else if (y < lastY - 2) {
+        // scrolling up
+        header.classList.remove("hidden");
+        header.classList.add("site-header--home-bg");
+      }
+    } else {
+      // non-home pages: keep existing hide/show behavior only
+      if (y > lastY && y > 80) header.classList.add("hidden");
+      else header.classList.remove("hidden");
+    }
+
+    lastY = y;
+  };
+
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+})();
+
+// ✅ Header scroll behavior (single source of truth)
+(() => {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  const isHomeV2 = document.body.classList.contains("home--v2");
+  let lastY = window.scrollY;
+
+  const DELTA = 4; // "шум" скролла
+  const TOP_Y = 10; // зона "наверху"
+
+  const onScroll = () => {
+    const y = window.scrollY;
+
+    // --- Home v2 rules ---
+    if (isHomeV2) {
+      const goingDown = y > lastY + DELTA;
+      const goingUp = y < lastY - DELTA;
+
+      // top: show, but transparent
+      if (y <= TOP_Y) {
+        header.classList.remove("hidden");
+        header.classList.remove("site-header--scrolled");
+        lastY = y;
+        return;
+      }
+
+      // down: hide header полностью
+      if (goingDown) {
+        header.classList.add("hidden");
+        header.classList.remove("site-header--scrolled"); // пока скрыт, фон не нужен
+        lastY = y;
+        return;
+      }
+
+      // up: show + dark bg
+      if (goingUp) {
+        header.classList.remove("hidden");
+        header.classList.add("site-header--scrolled");
+        lastY = y;
+        return;
+      }
+
+      // если стоим/микро-скролл: ничего не меняем
+      lastY = y;
+      return;
+    }
+
+    // --- Default rules for other pages (как у тебя было) ---
+    if (y > lastY && y > 80) header.classList.add("hidden");
+    else header.classList.remove("hidden");
+
+    lastY = y;
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll(); // выставить состояние при загрузке
+})();
