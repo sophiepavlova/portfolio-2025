@@ -21,9 +21,15 @@
 
     <link rel="icon" type="image/svg+xml" href="../favicon2.svg" />
     <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="case.css" />
+    <link rel="stylesheet" href="../styles/case.css" />
   </head>
   <body class="case">
     <header class="site-header">
@@ -136,182 +142,223 @@
       </nav>
     </aside>
 
-    <main>
+    <main class="casev2">
       <!-- Hero -->
       <section class="casev2-section casev2-hero">
+        <!-- text area (grid-aligned) -->
         <div class="container casev2-stack">
           <p class="casev2-eyebrow">Everwell</p>
+
           <h1 class="casev2-h1">
             Achieving a 98% form compliance and helping clinicians spot trends
           </h1>
+        </div>
 
-          <div class="casev2-hero-media">
-            <!-- replace with your hero image -->
-            <img
-              src="../assets/images/Trends_Top_Of_Page.gif"
-              alt="Animated Everwell dashboard showing a patient’s physical health trend line gradually building over six months"
-              class="case-image__image reveal"
-            />
+        <!-- media area (full-bleed background) -->
+        <div class="casev2-hero-media">
+          <div class="casev2-hero-backdrop">
+            <div class="container">
+              <img
+                src="../assets/images/Trends_Top_Of_Page.gif"
+                alt="Animated Everwell dashboard showing a patient’s physical health trend line gradually building over six months"
+                class="casev2-hero-shot reveal"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Overview (2-col: story + role/what it is) -->
-      <section
-        class="casev2-section casev2-overview"
-        aria-labelledby="overview-title"
-      >
-        <div class="container">
-          <div class="casev2-center">
-            <!-- =========================
-           Project overview (top)
-           ========================= -->
-            <h2 id="overview-title" class="casev2-section-title">
-              Project overview
-            </h2>
+      <!-- 🦊Overview (2-col: story + role/what it is) -->
+      <!-- Overview: split into background “bands” -->
+      <section class="casev2-overview" aria-labelledby="overview-title">
+        <!-- 1) Dark band: Project overview + What’s Everwell -->
+        <div class="casev2-band casev2-band--dark casev2-overview__intro">
+          <div class="container">
+            <div class="casev2-center">
+              <h2 id="overview-title" class="casev2-section-title">
+                Project overview
+              </h2>
 
-            <div class="casev2-overview__content">
-              <h3 class="casev2-overview__h">What’s Everwell?</h3>
-              <p class="casev2-overview__p">
-                Everwell collects patient-reported data, automatically organizes
-                it, and surfaces the insights clinicians need to make fast
-                informed decisions.
-              </p>
+              <div class="casev2-overview__content">
+                <h3 class="casev2-overview__h">What’s Everwell?</h3>
+                <p class="casev2-overview__p">
+                  Everwell collects patient-reported data, automatically
+                  organizes it, and surfaces the insights clinicians need to
+                  make fast informed decisions.
+                </p>
 
-              <p class="casev2-overview__kicker">Why does this matter?</p>
-              <p class="casev2-overview__p">
-                In a pre-Everwell system, high-risk patients were being missed
-                because of slow manual review.
-              </p>
+                <p class="casev2-overview__kicker">Why does this matter?</p>
+                <p class="casev2-overview__p">
+                  In a pre-Everwell system, high-risk patients were being missed
+                  because of slow manual review.
+                </p>
 
-              <p class="casev2-overview__kicker">Everwell’s impact</p>
-              <ul class="casev2-overview__list">
-                <li>98% form completion rate (up from 20%)</li>
-                <li>Clinicians spotted trends 60% faster</li>
-                <li>Patients’ understanding improved by 65%</li>
-              </ul>
+                <p class="casev2-overview__kicker">Everwell’s impact</p>
+                <ul class="casev2-overview__list">
+                  <li>98% form completion rate (up from 20%)</li>
+                  <li>Clinicians spotted trends 60% faster</li>
+                  <li>Patients’ understanding improved by 65%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              <h3 class="casev2-overview__h casev2-overview__h--spaced">
+        <!-- 2) Watercolor band: My role -->
+        <div
+          class="casev2-band casev2-band--ink casev2-overview__role"
+          aria-labelledby="overview-role-title"
+        >
+          <div class="container">
+            <div class="casev2-center">
+              <h3 id="overview-role-title" class="casev2-overview__role-title">
                 My role
               </h3>
-              <ul class="casev2-overview__list">
-                <li>Product Designer</li>
-                <li>Partnered with UX Manager, PM, Dev team</li>
-                <li>~6 months</li>
+
+              <ul class="casev2-overview__role-list">
+                <li>
+                  Designed the Trends feature and data-visualization patterns
+                </li>
+                <li>
+                  Ran interviews and user tests with clinicians, MOAs, and
+                  patients
+                </li>
+                <li>
+                  Created reusable UI patterns to support quick onboarding of
+                  new clinics
+                </li>
+                <li>
+                  Collaborated with product, engineering, and clinical teams to
+                  validate and ship features
+                </li>
               </ul>
+
+              <p class="casev2-overview__role-note">
+                + I was told I also helped keep morale up when things got hectic
+                :)
+              </p>
             </div>
+          </div>
+        </div>
 
-            <!-- =========================
-           The bet & constraints
-           ========================= -->
-            <div
-              class="casev2-overview__block casev2-bet"
-              aria-labelledby="bet-title"
-            >
-              <h3 id="bet-title" class="casev2-block-title">
-                The bet & constraints
-              </h3>
+        <!-- 3) Dark band: The bet + Quick details + CTA -->
+        <div class="casev2-band casev2-band--dark casev2-overview__meta">
+          <div class="container">
+            <div class="casev2-center casev2-center-flex">
+              <!-- The bet & constraints -->
 
-              <div class="casev2-grid casev2-grid--2 casev2-grid--tight">
-                <div class="casev2-stack">
+              <div class="casev2-bet__layout">
+                <h3 id="bet-title" class="casev2-block-title">
+                  The bet & constraints
+                </h3>
+                <div class="casev2-bet__top">
                   <p class="casev2-script">The bet</p>
                   <p class="casev2-p">
                     If clinicians could see high-risk patients faster and spot
                     trends instantly, they would intervene sooner and improve
                     outcomes.
                   </p>
-
-                  <p class="casev2-script casev2-mt">Constraints</p>
-                  <p class="casev2-p">
-                    Limited provider time, inconsistent patient data, tight
-                    timeline to onboard new clinics
-                  </p>
                 </div>
 
-                <div class="casev2-stack">
-                  <p class="casev2-script">What we cut</p>
-                  <p class="casev2-p">
-                    Complex predictive analytics and auto-generated AI
-                    summaries: too risky given varying data quality and clinical
-                    safety.
-                  </p>
+                <div class="casev2-bet__bottom">
+                  <div class="casev2-stack">
+                    <p class="casev2-script casev2-mt">Constraints</p>
+                    <p class="casev2-p">
+                      Limited provider time, inconsistent patient data, tight
+                      timeline…
+                    </p>
+                  </div>
+
+                  <div class="casev2-stack">
+                    <p class="casev2-script">What we cut</p>
+                    <p class="casev2-p">
+                      Complex predictive analytics and auto-generated AI
+                      summaries…
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- =========================
-           Quick details
-           ========================= -->
-            <div
-              class="casev2-overview__block casev2-details"
-              aria-labelledby="details-title"
-            >
-              <h3 id="details-title" class="casev2-block-title">
-                Quick details
-              </h3>
+              <!-- Quick details -->
+              <div
+                class="casev2-overview__block casev2-details"
+                aria-labelledby="details-title"
+              >
+                <h3 id="details-title" class="casev2-block-title">
+                  Quick details
+                </h3>
 
-              <div class="casev2-grid casev2-grid--2 casev2-grid--tight">
-                <dl class="casev2-dl">
-                  <div class="casev2-dl__row">
-                    <dt class="casev2-script">My role</dt>
-                    <dd class="casev2-p">Product Designer</dd>
-                  </div>
-                  <div class="casev2-dl__row">
-                    <dt class="casev2-script">Team</dt>
-                    <dd class="casev2-p">
-                      UX Manager, 2 Product Designers, PM, Dev team
-                    </dd>
-                  </div>
-                </dl>
+                <div
+                  class="casev2-grid casev2-grid--details casev2-grid--tight"
+                >
+                  <dl class="casev2-dl">
+                    <div class="casev2-dl__row casev2-dl__row-pb">
+                      <dt class="casev2-script">My role</dt>
+                      <dd class="casev2-p">Product Designer</dd>
+                    </div>
+                    <div class="casev2-dl__row">
+                      <dt class="casev2-script">Team</dt>
+                      <dd class="casev2-p">
+                        UX Manager, 2 Product Designers, PM, Dev team
+                      </dd>
+                    </div>
+                  </dl>
 
-                <dl class="casev2-dl">
-                  <div class="casev2-dl__row">
-                    <dt class="casev2-script">Timeframe</dt>
-                    <dd class="casev2-p">~6 months</dd>
-                  </div>
-                  <div class="casev2-dl__row">
-                    <dt class="casev2-script">Platform</dt>
-                    <dd class="casev2-p">
-                      Provider: Web<br />Patient: Web & iOS
-                    </dd>
-                  </div>
-                </dl>
+                  <dl class="casev2-dl">
+                    <div class="casev2-dl__row casev2-dl__row-pb">
+                      <dt class="casev2-script">Timeframe</dt>
+                      <dd class="casev2-p">~6 months</dd>
+                    </div>
+                    <div class="casev2-dl__row">
+                      <dt class="casev2-script">Platform</dt>
+                      <dd class="casev2-p">
+                        Provider: Web<br />Patient: Web & iOS
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <p class="casev2-nda">
+                  Some non-essential details of the project have been modified
+                  to comply with the NDA.
+                </p>
               </div>
 
-              <p class="casev2-nda">
-                Some non-essential details of the project have been modified to
-                comply with the NDA.
-              </p>
+              <!-- CTA -->
+              <div
+                class="casev2-overview__block casev2-cta"
+                aria-labelledby="cta-title"
+              >
+                <h3 id="cta-title" class="casev2-cta__title">
+                  Do you prefer long in-depth case studies?
+                </h3>
+                <p class="casev2-cta__sub">
+                  I have a detailed version of this project as well.
+                </p>
+
+                <a
+                  class="button button--secondary button--secondary-overview"
+                  href="./index-v1.html"
+                >
+                  Full Everwell case study →
+                </a>
+
+                <p class="casev2-cta__note">
+                  This one is more visual and fun, though. :)
+                </p>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- =========================
-           CTA (legacy link later)
-           ========================= -->
-            <div
-              class="casev2-overview__block casev2-cta"
-              aria-labelledby="cta-title"
-            >
-              <h3 id="cta-title" class="casev2-cta__title">
-                Do you prefer long in-depth case studies?
-              </h3>
-              <p class="casev2-cta__sub">
-                I have a detailed version of this project as well.
-              </p>
-
-              <a class="button button--secondary" href="./index-v1.html">
-                Full Everwell case study →
-              </a>
-
-              <p class="casev2-cta__note">
-                This one is more visual and fun, though. :)
-              </p>
-            </div>
-            <!-- Image at the end of Overview -->
+        <!-- 4) Dark band: image at the end -->
+        <div class="casev2-band casev2-band--dark casev2-overview__shot">
+          <div class="container">
             <figure class="casev2-overview__image">
               <img
                 src="../assets/images/3_2.png"
                 alt="Everwell provider dashboard home screen showing clinic overview with patient alerts, upcoming appointments, and summary statistics"
-                class="case-highlights__visual-image case-highlights__visual-image-corners case-highlights__visual-image--900 case-highlights__visual-image--large img-bdr-btm reveal visible"
+                class="casev2-overview__img reveal"
               />
             </figure>
           </div>
@@ -342,7 +389,7 @@
               </div>
 
               <div class="casev2-story-item casev2-story-item--reveal">
-                <div class="casev2-story-item__icon" aria-hidden="true">🧾</div>
+                <div class="casev2-story-item__icon" aria-hidden="true">📜</div>
                 <p class="casev2-story-item__text">
                   Providers relied on paper forms to collect patient data.
                   Patients filled them out during visits, making it hard to
@@ -474,51 +521,68 @@
       </section>
       <!-- 🧮 -->
 
-      <section class="case-section case-research">
+      <!-- Research & findings -->
+      <!-- Research & findings -->
+      <section
+        class="casev2-section casev2-research"
+        aria-labelledby="research-title"
+        id="research"
+      >
         <div class="container">
-          <h2 class="case-section__title">Research & findings</h2>
+          <div class="casev2-center">
+            <h2 id="research-title" class="casev2-section-title">
+              Research &amp; findings
+            </h2>
 
-          <div class="twocol twocol--research">
-            <!-- Visual -->
-            <figure class="twocol__visual">
-              <img
-                src="../assets/images/clinician-portrait.png"
-                alt="Clinician interview illustration"
-                class="twocol__image"
-              />
-              <figcaption class="twocol__caption">
-                * to protect their privacy, I used an AI-generated image as an
-                illustration
-              </figcaption>
-            </figure>
+            <div class="casev2-research__stack">
+              <!-- Row 1: image left, text right -->
+              <article class="casev2-media-row">
+                <figure class="casev2-media-row__media">
+                  <img
+                    class="casev2-media-row__img"
+                    src="../assets/images/clinician-portrait.png"
+                    alt="Clinician interview illustration"
+                    loading="lazy"
+                  />
+                  <figcaption class="casev2-media-row__caption">
+                    * to protect their privacy, I used an AI-generated image as
+                    an illustration
+                  </figcaption>
+                </figure>
 
-            <!-- Content -->
-            <div class="twocol__main">
-              <p>
-                I interviewed 15 clinicians, MOAs, and admin staff to map out
-                workflow pain points.
-              </p>
+                <div class="casev2-media-row__content">
+                  <p class="casev2-media-row__text">
+                    I interviewed
+                    <strong>15 clinicians, MOAs, and admin staff</strong> to map
+                    out workflow pain points.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Row 2: text left, image right -->
+              <article class="casev2-media-row casev2-media-row--reverse">
+                <figure class="casev2-media-row__media">
+                  <img
+                    class="casev2-media-row__img"
+                    src="../assets/images/research-graph.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+
+                <div class="casev2-media-row__content">
+                  <p class="casev2-media-row__text">
+                    I also analyzed competitor dashboards and reviewed PROM
+                    score data to better understand the data we’re aiming to
+                    chart.
+                  </p>
+                </div>
+              </article>
             </div>
-          </div>
-          <div class="twocol twocol--research">
-            <!-- Content -->
-            <div class="twocol__main">
-              <p>
-                I also analyzed competitor dashboards and reviewed PROM score
-                data to better understand the data we’re aiming to chart.
-              </p>
-            </div>
-            <!-- Visual -->
-            <figure class="twocol__visual">
-              <img
-                src="../assets/images/research-graph.png"
-                alt="Clinician interview illustration"
-                class="twocol__image"
-              />
-            </figure>
           </div>
         </div>
       </section>
+
       <!-- Block: HMW + research bullets -->
       <section class="casev2-section casev2-hmw" aria-labelledby="hmw-title">
         <div class="container">

@@ -1,0 +1,855 @@
+/* =========================
+   Case v2 base
+   ========================= */
+
+/* Theme tokens (v2 only) */
+:root {
+  --casev2-bg: #0c0a09; /* stone-950 */
+  --casev2-card: #1c1917; /* stone-900 */
+  --casev2-text: #ffffff;
+  --casev2-text-dark: #1f2937; /* used for light parts if any */
+  --casev2-muted: rgba(255, 255, 255, 0.78);
+  --casev2-border: rgba(255, 255, 255, 0.08);
+
+  --casev2-radius: 24px;
+  --casev2-gap: 24px;
+
+  /* 0.5% letter-spacing ≈ 0.005em */
+  --casev2-ls: 0.005em;
+
+  /* Vertical rhythm (adjust later if needed) */
+  --casev2-section-pad: clamp(72px, 8vw, 120px);
+  --casev2-section-pad-tight: clamp(48px, 6vw, 88px);
+
+  /* Text column width inside container */
+  --casev2-center-max: 980px;
+}
+
+/* Apply background for case pages (you already use .theme-dark on body) */
+.theme-dark {
+  background: var(--casev2-bg);
+  color: var(--casev2-text);
+}
+
+/* Page wrapper */
+.casev2 {
+  background: transparent;
+  color: var(--casev2-text);
+}
+
+/* Narrow centered column inside .container */
+.casev2-center {
+  max-width: var(--casev2-center-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Vertical stacks */
+.casev2-stack {
+  display: flex;
+  flex-direction: column;
+  /* gap: var(--casev2-gap); */
+  /* padding-top: 40px; */
+}
+
+/* Section spacing */
+/* .casev2-section {
+  padding-top: var(--casev2-section-pad);
+  padding-bottom: var(--casev2-section-pad);
+} */
+
+.casev2-section--tight {
+  padding-top: var(--casev2-section-pad-tight);
+  padding-bottom: var(--casev2-section-pad-tight);
+}
+
+/* =========================
+   Typography (from your specs)
+   ========================= */
+
+.casev2-h1,
+.casev2 h1 {
+  font-family: "Campaign Serif", serif;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 1;
+  letter-spacing: var(--casev2-ls);
+  text-align: center;
+  color: var(--casev2-text-dark); /* case is dark by default */
+}
+
+.casev2-section-title,
+.casev2 h2.casev2-section-title {
+  font-family: "Campaign Serif", serif !important;
+  font-weight: 400 !important;
+  font-size: 60px !important;
+  line-height: 1 !important;
+  letter-spacing: var(--casev2-ls) !important;
+  color: var(--casev2-text) !important;
+  text-align: center;
+  margin: 0;
+}
+
+.casev2 h3,
+.casev2-h3 {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 110%;
+  letter-spacing: var(--casev2-ls);
+  margin: 0;
+  color: var(--casev2-text);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+#overview-title {
+  padding-bottom: 100px;
+}
+/* Default paragraph in v2 */
+
+.casev2-p {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: var(--casev2-ls);
+  margin: 0;
+  color: var(--casev2-text);
+}
+
+/* “Big paragraphs” */
+.casev2-story-item__text,
+.casev2-hmw-point__text,
+.casev2-outcome-note__body p,
+.casev2-outcome-note__body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: var(--casev2-ls);
+}
+.casev2-story-item__text {
+  color: var(--color-text);
+}
+/* Small Caveat text styles */
+.casev2-chat-label,
+.casev2-media-row__caption,
+.casev2-step3__note,
+.casev2-highlight__eyebrow,
+.casev2-outcome-note__eyebrow,
+.casev2-callout__title {
+  font-family: "Caveat", cursive;
+  letter-spacing: var(--casev2-ls);
+}
+
+/* Chat label */
+.casev2-chat-label {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+/* Caption under research image */
+.casev2-media-row__caption {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4b5563; /* you wrote background token but it’s a text color in the mock */
+}
+
+/* Step note */
+.casev2-step3__note {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--casev2-muted);
+}
+
+/* Highlight eyebrow */
+.casev2-highlight__eyebrow {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1;
+  color: #fff;
+}
+
+/* Outcome eyebrow */
+.casev2-outcome-note__eyebrow {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1;
+  color: #fff;
+}
+
+/* Callout title + text */
+.casev2-callout__title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  color: #ffffffcc;
+}
+.casev2-callout__text {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: var(--casev2-ls);
+  color: #fff;
+}
+
+/* Metric typography */
+.casev2-metric__value {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 128px;
+  line-height: 1;
+  letter-spacing: var(--casev2-ls);
+}
+.casev2-metric__label {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: var(--casev2-ls);
+  text-align: center;
+  color: var(--casev2-muted);
+}
+
+/* =========================
+   Layout primitives
+   ========================= */
+
+.casev2-grid {
+  display: grid;
+  gap: 32px;
+}
+
+.casev2-grid--2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.casev2-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.casev2-grid--tight {
+  gap: 20px;
+}
+
+@media (max-width: 980px) {
+  .casev2-grid--2,
+  .casev2-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.casev2-card {
+  background: var(--casev2-card);
+  border: 1px solid var(--casev2-border);
+  border-radius: var(--casev2-radius);
+  padding: 28px;
+}
+
+/* =========================
+   Research rows
+   ========================= */
+
+.casev2-research__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 56px;
+}
+
+.casev2-media-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.casev2-media-row--reverse {
+  direction: rtl; /* simple flip */
+}
+.casev2-media-row--reverse > * {
+  direction: ltr;
+}
+
+.casev2-media-row__media {
+  margin: 0;
+}
+
+.casev2-media-row__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--casev2-radius);
+}
+
+.casev2-media-row__caption {
+  margin-top: 10px;
+}
+
+@media (max-width: 980px) {
+  .casev2-media-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Story items (facts)
+   ========================= */
+
+.casev2-story__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-top: 56px;
+}
+
+.casev2-story__items {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* .casev2-story-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 18px;
+  align-items: start;
+} */
+.casev2-story-item {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.casev2-story-item__icon {
+  font-family: Inter;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: 0.5%;
+}
+
+.casev2-story-item__muted {
+  color: var(--casev2-muted);
+}
+
+/* =========================
+   Chat bubbles
+   ========================= */
+
+.casev2-chat-scene {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.casev2-chat-line {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.casev2-chat-line--left {
+  justify-content: flex-start;
+}
+
+.casev2-chat-line--right {
+  justify-content: flex-end;
+}
+
+.casev2-chat-avatar {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  flex: 0 0 48px;
+}
+
+.casev2-chat-bubble {
+  background: var(--casev2-card);
+  border: 1px solid var(--casev2-border);
+  border-radius: 18px;
+  padding: 18px 20px;
+  max-width: 720px;
+}
+
+.casev2-chat-bubble--patient .casev2-chat-label {
+  color: #c2410c; /* orange-700 */
+}
+
+.casev2-chat-bubble--provider .casev2-chat-label {
+  color: #075985; /* sky-800 */
+}
+
+.casev2-chat-text {
+  margin-top: 8px;
+  color: var(--casev2-text);
+}
+
+/* =========================
+   3-step blocks (01/02/03)
+   ========================= */
+
+.casev2-steps3 {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+}
+
+.casev2-step3 {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.casev2-step3__num {
+  font-family: "Campaign Serif", serif;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 1;
+  letter-spacing: var(--casev2-ls);
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 14px;
+  background: #7dd3fc; /* default: sky-300 */
+  color: #0c0a09;
+}
+
+.casev2-step3__text {
+  margin-top: 14px;
+}
+
+.casev2-step3__note {
+  margin-top: 12px;
+}
+
+@media (max-width: 980px) {
+  .casev2-steps3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modifier for dark-number sections */
+.casev2-steps--darknums .casev2-step3__num {
+  background: #075985; /* sky-800 */
+  color: #fff;
+}
+
+/* =========================
+   Callout (dark grey box inside highlights)
+   ========================= */
+
+.casev2-callout {
+  background: #1c1917;
+  border: 1px solid var(--casev2-border);
+  border-radius: 18px;
+  padding: 16px 18px;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* =========================
+   Outcomes / Learnings notes (shared)
+   ========================= */
+
+.casev2-metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+
+.casev2-metric {
+  background: var(--casev2-card);
+  border: 1px solid var(--casev2-border);
+  border-radius: var(--casev2-radius);
+  padding: 26px;
+  text-align: center;
+}
+
+.casev2-metric--wide {
+  grid-column: 1 / -1;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.casev2-outcomes__notes {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.casev2-outcome-note {
+  background: var(--casev2-card);
+  border: 1px solid var(--casev2-border);
+  border-radius: var(--casev2-radius);
+  padding: 26px;
+}
+
+.casev2-outcome-note__icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.casev2-outcome-note__eyebrow {
+  margin-top: 14px;
+}
+
+.casev2-outcome-note__body {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.casev2-cta__sub,
+.casev2-cta__note {
+  text-align: center;
+}
+
+.casev2-cta__note {
+  margin-top: 12px;
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.75);
+}
+.button--secondary-overview {
+  color: white;
+  border: 1px solid white;
+  margin: 0 auto;
+}
+.casev2-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.casev2-overview__shot {
+  padding: 0 !important
+;
+}
+
+@media (max-width: 980px) {
+  .casev2-metrics__grid {
+    grid-template-columns: 1fr;
+  }
+  .casev2-outcomes__notes {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+/* Hero section stays clean */
+.casev2-hero {
+  background: #fff; /* or whatever your light background is for this section */
+}
+.casev2-eyebrow {
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--Colors-Sky-800, #075985);
+  text-align: center;
+}
+
+/* The backdrop area that has the landscape behind the screenshot */
+.casev2-hero-backdrop {
+  position: relative;
+  padding: clamp(28px, 3.5vw, 48px);
+  /* border-radius: 24px;  */
+  overflow: hidden;
+
+  /* landscape background */
+  background-image: url("../assets/images/casev2-hero-bg.png"); /* replace path */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+/* Optional: soften top edge so it feels like it “fades in” behind the screenshot */
+.casev2-hero-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  /* subtle white veil toward the top so it doesn’t look too harsh */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.3) 45%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+/* Screenshot itself */
+.casev2-hero-shot {
+  position: relative; /* above ::before */
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Case v2 – Overview section
+   ========================= */
+
+.casev2-overview {
+  /* no padding here: padding lives on .casev2-band so backgrounds can be full-bleed */
+}
+
+/* Full-bleed “bands” (each screen in the PDF) */
+.casev2-band {
+  width: 100%;
+  position: relative;
+  padding: 120px 0;
+}
+
+.casev2-band--dark {
+  background: #2c2a29; /* match your dark overview background */
+  color: #ffffff;
+}
+
+/* Watercolor / ink band for “My role” */
+.casev2-band--ink {
+  color: #ffffff;
+  background-color: #0c0a09; /* fallback behind the image */
+  background-image: url("../assets/images/casev2-overview-role.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Optional: add a soft dark overlay to keep text readable */
+.casev2-band--ink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.casev2-band--ink > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Centered content wrapper (so your layout matches the PDF) */
+.casev2-center {
+  max-width: 580px;
+  margin: 0 auto;
+  /* text-align: center; */
+}
+.casev2-center-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+/* Titles in this section */
+.casev2-section-title,
+.casev2-block-title {
+  margin: 0 0 48px;
+  /* Typography already defined by you elsewhere (Campaign Serif, etc.) */
+}
+
+/* Overview text blocks */
+.casev2-overview__content {
+  max-width: 580px;
+  text-align: left; /* center title, but body aligns left like in your screenshot */
+  margin: 0 auto;
+}
+
+.casev2-overview__h {
+  margin: 0 0 16px;
+}
+
+.casev2-overview__p {
+  margin: 0 0 24px;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5%;
+}
+
+.casev2-overview__kicker {
+  margin: 28px 0 8px;
+  font-family: "Caveat", cursive;
+  font-size: 30px;
+  line-height: 140%;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.casev2-overview__list {
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+}
+
+/* .casev2-overview__list li {
+  margin: 8px 0;
+} */
+
+/* “My role” block */
+.casev2-overview__role-title {
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+.casev2-overview__role-list {
+  margin: 0 auto 16px;
+  padding-left: 20px;
+  max-width: 760px;
+  text-align: left;
+}
+
+.casev2-overview__role-note {
+  margin: 0;
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
+}
+
+/* Grid helpers used in bet/details blocks */
+/* .casev2-grid {
+  display: grid;
+  gap: 40px;
+}
+
+.casev2-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.casev2-grid--tight {
+  gap: 32px;
+} */
+.bet-title {
+  text-align: center;
+}
+
+.casev2-script {
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+}
+.casev2-bet__layout {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 16px;
+}
+
+/* верх на всю ширину родителя */
+.casev2-bet__top {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 72px; /* как в макете */
+  align-items: start;
+}
+
+/* низ тоже 2 колонки */
+.casev2-bet__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  align-items: start;
+}
+
+/* чтобы правый верхний текст не растягивался бесконечно и выглядел как в макете */
+.casev2-bet__top .casev2-p {
+  max-width: 580px; /* подгони под дизайн */
+}
+.casev2-grid--details {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 20px; /* или оставь как у тебя в --tight */
+  align-items: start;
+}
+.casev2-grid--details {
+  display: grid;
+  /* grid-template-columns: 1fr minmax(max-content, 420px); */
+  gap: 20px;
+  align-items: start;
+}
+.casev2-dl__row-pb {
+  padding-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .casev2-band {
+    padding: 90px 0;
+  }
+
+  .casev2-grid--2 {
+    grid-template-columns: 1fr;
+  }
+
+  .casev2-center {
+    max-width: 580px;
+  }
+  h3 {
+    text-align: center;
+  }
+  .casev2-overview__content,
+  .casev2-overview__role-list,
+  .casev2-overview__role-note {
+    text-align: left;
+  }
+}
+
+/* NDA line */
+.casev2-nda {
+  margin: 32px 0 0;
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Bottom image in overview */
+.casev2-overview__image {
+  margin: 0;
+}
+
+.casev2-overview__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px; /* adjust if the PDF has different radius */
+}
