@@ -25,6 +25,51 @@
   --casev2-center-max: 980px;
 }
 
+/* Utility */
+.container-no-max-width {
+  max-width: none;
+}
+.casev2-fullbleed {
+  position: relative;
+  z-index: 0;
+}
+
+.casev2-fullbleed::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  /* КЛЮЧЕВОЕ */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  background: var(--Colors-Stone-100, #f5f5f4);
+  z-index: -1;
+}
+.casev2-fullbleed-grad::before {
+  background: linear-gradient(180deg, #f5f5f4 0%, #ffffff 100%);
+
+  z-index: -2;
+}
+
+.casev2-fullbleed-image::before {
+  /* position: relative; */
+  padding: clamp(28px, 3.5vw, 48px);
+  /* border-radius: 24px; */
+  overflow: hidden;
+  background-image: url("../assets/images/case1v2_des-appr.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  z-index: -3;
+}
+.casev2-fullbleed-image::before {
+  background-image: url("../assets/images/case1v2_des-appr_2.jpg");
+}
 /* Apply background for case pages (you already use .theme-dark on body) */
 .theme-dark {
   background: var(--casev2-bg);
@@ -40,6 +85,7 @@
 /* Narrow centered column inside .container */
 .casev2-center {
   max-width: var(--casev2-center-max);
+  max-width: 880px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -62,14 +108,19 @@
   padding-top: var(--casev2-section-pad-tight);
   padding-bottom: var(--casev2-section-pad-tight);
 }
-
+/* Adding padding to the sections on top and bottom where they did not have one */
+.casev2-section-addpad,
+.block-addpad {
+  padding-top: var(--casev2-section-pad);
+  padding-bottom: var(--casev2-section-pad);
+}
 /* =========================
    Typography (from your specs)
    ========================= */
 
 .casev2-h1,
 .casev2 h1 {
-  font-family: "Campaign Serif", serif;
+  font-family: "campaign-serif", serif;
   font-weight: 400;
   font-size: 70px;
   line-height: 1;
@@ -78,9 +129,10 @@
   color: var(--casev2-text-dark); /* case is dark by default */
 }
 
-.casev2-section-title,
-.casev2 h2.casev2-section-title {
-  font-family: "Campaign Serif", serif !important;
+.casev2-h2,
+.casev2 h2 {
+  font-family: "campaign-serif", serif !important;
+  /* font-family: "campaign-serif", serif; */
   font-weight: 400 !important;
   font-size: 60px !important;
   line-height: 1 !important;
@@ -89,10 +141,30 @@
   text-align: center;
   margin: 0;
 }
+.casev2-section-title,
+.casev2 h2.casev2-section-title {
+  font-family: "campaign-serif", serif;
+  font-weight: 400 !important;
+  font-size: 60px !important;
+  line-height: 1 !important;
+  letter-spacing: var(--casev2-ls) !important;
+  color: var(--casev2-text) !important;
+  text-align: center;
+  margin: 0;
+}
+.casev2 h2.casev2-section-title-on-light {
+  color: var(--casev2-text-dark) !important;
+}
 
 .casev2 h3,
 .casev2-h3 {
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 110%;
@@ -109,7 +181,13 @@
 /* Default paragraph in v2 */
 
 .casev2-p {
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -123,11 +201,18 @@
 .casev2-hmw-point__text,
 .casev2-outcome-note__body p,
 .casev2-outcome-note__body {
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 1;
   letter-spacing: var(--casev2-ls);
+  text-align: left;
 }
 .casev2-story-item__text {
   color: var(--color-text);
@@ -163,7 +248,7 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 1;
-  color: var(--casev2-muted);
+  color: var(--casev2-text-dark);
 }
 
 /* Highlight eyebrow */
@@ -190,7 +275,13 @@
   color: #ffffffcc;
 }
 .casev2-callout__text {
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -200,14 +291,26 @@
 
 /* Metric typography */
 .casev2-metric__value {
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-size: 128px;
   line-height: 1;
   letter-spacing: var(--casev2-ls);
 }
 .casev2-metric__label {
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -264,39 +367,82 @@
 }
 
 .casev2-media-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  display: flex;
+  flex: 1 1 0;
+  gap: 40px;
   align-items: center;
 }
 
 .casev2-media-row--reverse {
-  direction: rtl; /* simple flip */
+  flex-direction: row-reverse;
 }
 .casev2-media-row--reverse > * {
-  direction: ltr;
+  flex-direction: row-reverse;
 }
 
-.casev2-media-row__media {
+/* .casev2-media-row__media {
   margin: 0;
-}
+  flex: 1 1 0;
+} */
 
-.casev2-media-row__img {
-  width: 100%;
+/* .casev2-media-row__img {
+  
+  max-width: 571px;
+  max-height: 360px;
   height: auto;
   display: block;
-  border-radius: var(--casev2-radius);
+  border-radius: 10px;
+  object-fit: cover;
+} */
+.casev2-media-row__media {
+  margin: 0;
+  flex: 1 1 0;
+}
+
+.casev2-media-row__frame {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  /* height: 360px; */
+  width: min(571px, 100%);
+  aspect-ratio: 571 / 360;
+}
+
+/* Верхняя: “внутри рамки”, кроп по бокам как в макете */
+.casev2-media-row__frame--portrait {
+  /* width: 571px; */
+  /* height: 360px; */
+  max-width: 100%;
+}
+
+/* Нижняя: НЕ квадрат, просто прямоугольник как в макете */
+.casev2-media-row__frame--watercolor {
+  /* width: 571px; */
+
+  max-width: 100%;
+}
+
+/* img всегда заполняет рамку */
+.casev2-media-row__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .casev2-media-row__caption {
   margin-top: 10px;
 }
+.casev2-media-row__text {
+  color: var(--casev2-text-dark);
+  max-width: 269px;
+}
 
-@media (max-width: 980px) {
+/* @media (max-width: 980px) {
   .casev2-media-row {
     grid-template-columns: 1fr;
   }
-}
+} */
 
 /* =========================
    Story items (facts)
@@ -307,22 +453,23 @@
   flex-direction: column;
   gap: 48px;
   margin-top: 56px;
+  max-width: 580px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .casev2-story__items {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 100px;
   max-width: 580px;
   margin: 0 auto;
+  padding: 200px 0;
+  /* background: var(--Colors-Stone-100, #f5f5f4); */
 }
 
-/* .casev2-story-item {
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 18px;
-  align-items: start;
-} */
 .casev2-story-item {
   display: flex;
   flex-direction: column;
@@ -355,7 +502,7 @@
 
 .casev2-chat-line {
   display: flex;
-  gap: 16px;
+  gap: 10px;
   align-items: flex-start;
 }
 
@@ -368,21 +515,21 @@
 }
 
 .casev2-chat-avatar {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.06);
-  flex: 0 0 48px;
+  font-size: 72px;
 }
-
 .casev2-chat-bubble {
   background: var(--casev2-card);
   border: 1px solid var(--casev2-border);
-  border-radius: 18px;
-  padding: 18px 20px;
-  max-width: 720px;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 456px;
+  box-sizing: border-box;
+}
+.casev2-chat-bubble--patient {
+  background: var(--Colors-Orange-100, #ffedd5);
+}
+.casev2-chat-bubble--provider {
+  background: var(--Colors-Sky-100, #e0f2fe);
 }
 
 .casev2-chat-bubble--patient .casev2-chat-label {
@@ -395,23 +542,50 @@
 
 .casev2-chat-text {
   margin-top: 8px;
-  color: var(--casev2-text);
+  color: var(--casev2-text-dark);
+}
+
+.casev2-beat__emoji {
+  font-size: 72px;
+}
+.casev2-beat {
+  color: var(--casev2-text-dark);
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 0.5%;
+}
+
+.casev2-story__beat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 200px 0;
+  /* background: var(--Colors-Stone-100, #f5f5f4); */
 }
 
 /* =========================
    3-step blocks (01/02/03)
    ========================= */
 
-.casev2-steps3 {
-  margin-top: 56px;
+.casev2-steps3-all {
+  margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 40px;
   list-style: none;
   padding: 0;
 }
 
 .casev2-step3 {
+  display: flex;
+  flex-direction: column;
   background: transparent;
   border: 0;
   padding: 0;
@@ -424,18 +598,31 @@
   line-height: 1;
   letter-spacing: var(--casev2-ls);
   display: inline-block;
-  padding: 6px 14px;
+  /* padding: 6px 14px; */
   border-radius: 14px;
-  background: #7dd3fc; /* default: sky-300 */
-  color: #0c0a09;
+  color: #7dd3fc; /* default: sky-300 */
 }
 
 .casev2-step3__text {
   margin-top: 14px;
+  color: var(--casev2-text-dark);
+  font-size: 24px;
+  line-height: 140%;
 }
 
 .casev2-step3__note {
   margin-top: 12px;
+}
+
+.casev2-hero-backdrop {
+  position: relative;
+  padding: clamp(28px, 3.5vw, 48px);
+  /* border-radius: 24px; */
+  overflow: hidden;
+  background-image: url("../assets/images/casev2-hero-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
 }
 
 @media (max-width: 980px) {
@@ -445,24 +632,47 @@
 }
 
 /* Modifier for dark-number sections */
-.casev2-steps--darknums .casev2-step3__num {
-  background: #075985; /* sky-800 */
-  color: #fff;
+.casev2-step3__num-dark {
+  color: #075985;
 }
-
 /* =========================
-   Callout (dark grey box inside highlights)
+   Design Highlights
+Callout (dark grey box inside highlights)
    ========================= */
 
+.casev2-highlights {
+  background: var(--Colors-Stone-800, #292524);
+}
+#highlights-title {
+  padding-bottom: 100px;
+}
 .casev2-callout {
-  background: #1c1917;
-  border: 1px solid var(--casev2-border);
-  border-radius: 18px;
-  padding: 16px 18px;
-  margin-top: 18px;
+  background: var(--Colors-Stone-700, #44403c);
+
+  /* border: 1px solid var(--casev2-border); */
+  border-radius: 20px;
+  padding: 30px;
+  /* margin-top: 18px; */
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.casev2-highlights__list {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.casev2-highlight,
+.casev2-highlight__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* align-items: center; */
+}
+.casev2-highlight {
+  gap: 50px;
 }
 
 /* =========================
@@ -672,6 +882,11 @@
   margin: 0 auto;
   /* text-align: center; */
 }
+.casev2-center-wide {
+  max-width: 880px;
+  margin: 0 auto;
+  /* text-align: center; */
+}
 .casev2-center-flex {
   display: flex;
   flex-direction: column;
@@ -851,5 +1066,33 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 18px; /* adjust if the PDF has different radius */
+  /* border-radius: 18px; */
+}
+
+/* HMW section */
+.casev2-hmw,
+#hmw-title,
+#approach-title {
+  color: var(--casev2-text-dark) !important;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+.casev2-hmw__points {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  max-width: 580px;
+  margin: 0 auto;
+}
+.casev2-hmw-point {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.casev2-hmw-point__icon {
+  font-size: 72px;
+  font-weight: 700;
 }

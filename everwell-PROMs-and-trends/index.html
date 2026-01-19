@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -356,7 +356,7 @@
           <div class="container">
             <figure class="casev2-overview__image">
               <img
-                src="../assets/images/3_2.png"
+                src="../assets/images/3_2v2.png"
                 alt="Everwell provider dashboard home screen showing clinic overview with patient alerts, upcoming appointments, and summary statistics"
                 class="casev2-overview__img reveal"
               />
@@ -377,7 +377,9 @@
 
           <div class="casev2-story__stack">
             <!-- 1) facts (same component you’ll reuse elsewhere) -->
-            <div class="casev2-story__block casev2-story__items">
+            <div
+              class="casev2-story__block casev2-story__items casev2-fullbleed"
+            >
               <div class="casev2-story-item casev2-story-item--reveal">
                 <div class="casev2-story-item__icon" aria-hidden="true">📋</div>
                 <p class="casev2-story-item__text">
@@ -431,9 +433,11 @@
             </div>
 
             <!-- 3) sad transition line -->
-            <div class="casev2-story__block casev2-story__beat">
+            <div
+              class="casev2-story__block casev2-story__beat casev2-fullbleed"
+            >
+              <span class="casev2-beat__emoji" aria-hidden="true">☹️</span>
               <p class="casev2-beat" aria-label="Transition">
-                <span class="casev2-beat__emoji" aria-hidden="true">☹️</span>
                 Then the clinic introduced an old-school digital system that
                 didn’t solve the users’ problems either…
               </p>
@@ -470,9 +474,11 @@
             </div>
 
             <!-- 5) sparkly conclusion -->
-            <div class="casev2-story__block casev2-story__beat">
+            <div
+              class="casev2-story__block casev2-story__beat casev2-fullbleed casev2-fullbleed-grad"
+            >
+              <span class="casev2-beat__emoji" aria-hidden="true">✨</span>
               <p class="casev2-beat casev2-beat--positive">
-                <span class="casev2-beat__emoji" aria-hidden="true">✨</span>
                 So they came to us for a whole new digital system revamp.
               </p>
             </div>
@@ -482,16 +488,19 @@
 
       <!-- Block: What we needed to do -->
       <section
-        class="casev2-section casev2-steps"
+        class="casev2-section casev2-section-addpad casev2-steps"
         aria-labelledby="needed-title"
       >
         <div class="container">
-          <div class="casev2-center">
-            <h2 id="needed-title" class="casev2-section-title">
+          <div class="casev2-center casev2-center-wide">
+            <h2
+              id="needed-title"
+              class="casev2-section-title casev2-section-title-on-light"
+            >
               What we needed to do
             </h2>
 
-            <ol class="casev2-steps3">
+            <ol class="casev2-steps3-all">
               <li class="casev2-step3">
                 <div class="casev2-step3__num" aria-hidden="true">01</div>
                 <p class="casev2-step3__text">
@@ -524,13 +533,16 @@
       <!-- Research & findings -->
       <!-- Research & findings -->
       <section
-        class="casev2-section casev2-research"
+        class="casev2-section casev2-section-addpad casev2-research casev2-fullbleed"
         aria-labelledby="research-title"
         id="research"
       >
         <div class="container">
-          <div class="casev2-center">
-            <h2 id="research-title" class="casev2-section-title">
+          <div class="casev2-center casev2-center-wide">
+            <h2
+              id="research-title"
+              class="casev2-section-title casev2-section-title-on-light"
+            >
               Research &amp; findings
             </h2>
 
@@ -538,12 +550,16 @@
               <!-- Row 1: image left, text right -->
               <article class="casev2-media-row">
                 <figure class="casev2-media-row__media">
-                  <img
-                    class="casev2-media-row__img"
-                    src="../assets/images/clinician-portrait.png"
-                    alt="Clinician interview illustration"
-                    loading="lazy"
-                  />
+                  <div
+                    class="casev2-media-row__frame casev2-media-row__frame--portrait"
+                  >
+                    <img
+                      class="casev2-media-row__img"
+                      src="../assets/images/clinician-portrait.png"
+                      alt="Clinician interview illustration"
+                      loading="lazy"
+                    />
+                  </div>
                   <figcaption class="casev2-media-row__caption">
                     * to protect their privacy, I used an AI-generated image as
                     an illustration
@@ -552,8 +568,7 @@
 
                 <div class="casev2-media-row__content">
                   <p class="casev2-media-row__text">
-                    I interviewed
-                    <strong>15 clinicians, MOAs, and admin staff</strong> to map
+                    I interviewed 15 clinicians, MOAs, and admin staff to map
                     out workflow pain points.
                   </p>
                 </div>
@@ -562,12 +577,16 @@
               <!-- Row 2: text left, image right -->
               <article class="casev2-media-row casev2-media-row--reverse">
                 <figure class="casev2-media-row__media">
-                  <img
-                    class="casev2-media-row__img"
-                    src="../assets/images/research-graph.png"
-                    alt=""
-                    loading="lazy"
-                  />
+                  <div
+                    class="casev2-media-row__frame casev2-media-row__frame--watercolor"
+                  >
+                    <img
+                      class="casev2-media-row__img"
+                      src="../assets/images/research-graph.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </div>
                 </figure>
 
                 <div class="casev2-media-row__content">
@@ -584,59 +603,69 @@
       </section>
 
       <!-- Block: HMW + research bullets -->
-      <section class="casev2-section casev2-hmw" aria-labelledby="hmw-title">
+      <section
+        class="casev2-section casev2-hmw casev2-section-addpad"
+        aria-labelledby="hmw-title"
+      >
         <div class="container">
-          <div class="casev2-center">
-            <h2 id="hmw-title" class="casev2-hmw__title">
-              HMW help providers easily<br />
-              monitor patient progress<br />
-              and identify those at risk?
-            </h2>
+          <h2 id="hmw-title" class="casev2-hmw__title casev2-center-wide">
+            HMW help providers easily<br />
+            monitor patient progress<br />
+            and identify those at risk?
+          </h2>
+          <!-- <div class="casev2-center"> -->
+          <div class="casev2-hmw__points">
+            <article class="casev2-hmw-point">
+              <div class="casev2-hmw-point__icon" aria-hidden="true">⏩</div>
+              <p class="casev2-hmw-point__text">
+                There was a lot of manual review of PROMs and patients, so the
+                clinicians wanted a digital solution that would help them move
+                faster
+              </p>
+            </article>
 
-            <div class="casev2-hmw__points">
-              <article class="casev2-hmw-point">
-                <div class="casev2-hmw-point__icon" aria-hidden="true">⏩</div>
-                <p class="casev2-hmw-point__text">
-                  There was a lot of manual review of PROMs and patients, so the
-                  clinicians wanted a digital solution that would help them move
-                  faster
-                </p>
-              </article>
+            <article class="casev2-hmw-point">
+              <div class="casev2-hmw-point__icon" aria-hidden="true">📉</div>
+              <p class="casev2-hmw-point__text">
+                It was especially important for them to quickly spot the
+                declining patients
+              </p>
+            </article>
 
-              <article class="casev2-hmw-point">
-                <div class="casev2-hmw-point__icon" aria-hidden="true">📉</div>
-                <p class="casev2-hmw-point__text">
-                  It was especially important for them to quickly spot the
-                  declining patients
-                </p>
-              </article>
-
-              <article class="casev2-hmw-point">
-                <div class="casev2-hmw-point__icon" aria-hidden="true">🖼️</div>
-                <p class="casev2-hmw-point__text">
-                  5 out of 6 clinicians preferred to see the data represented
-                  visually (and not as tables, numbers, text, etc.)
-                </p>
-              </article>
-            </div>
+            <article class="casev2-hmw-point">
+              <div class="casev2-hmw-point__icon" aria-hidden="true">🖼️</div>
+              <p class="casev2-hmw-point__text">
+                5 out of 6 clinicians preferred to see the data represented
+                visually (and not as tables, numbers, text, etc.)
+              </p>
+            </article>
           </div>
+          <!-- </div> -->
         </div>
       </section>
 
       <!-- Block: Design approach -->
       <section
-        class="casev2-section casev2-steps casev2-steps--bg"
+        class="casev2-section casev2-section-addpad casev2-steps casev2-steps--bg casev2-center casev2-center-wide casev2-fullbleed casev2-fullbleed-image"
         aria-labelledby="approach-title"
       >
-        <div class="container">
-          <div class="casev2-center">
-            <h2 id="approach-title" class="casev2-section-title">
+        <div class="container container-no-max-width">
+          <div class="casev2-center casev2-center-wide">
+            <h2
+              id="approach-title"
+              class="casev2-section-title casev2-section-title-on-light"
+            >
               Design approach
             </h2>
 
-            <ol class="casev2-steps3">
+            <ol class="casev2-steps3-all">
               <li class="casev2-step3">
-                <div class="casev2-step3__num" aria-hidden="true">01</div>
+                <div
+                  class="casev2-step3__num casev2-step3__num-dark"
+                  aria-hidden="true"
+                >
+                  01
+                </div>
                 <p class="casev2-step3__text">
                   The clinicians needed to make decisions quickly, so above all,
                   the designs needed to help them move fast
@@ -644,7 +673,12 @@
               </li>
 
               <li class="casev2-step3">
-                <div class="casev2-step3__num" aria-hidden="true">02</div>
+                <div
+                  class="casev2-step3__num casev2-step3__num-dark"
+                  aria-hidden="true"
+                >
+                  02
+                </div>
                 <p class="casev2-step3__text">
                   Raw data is out (it’s overwhelming!), clean visual dashboards
                   are in!
@@ -652,7 +686,12 @@
               </li>
 
               <li class="casev2-step3">
-                <div class="casev2-step3__num" aria-hidden="true">03</div>
+                <div
+                  class="casev2-step3__num casev2-step3__num-dark"
+                  aria-hidden="true"
+                >
+                  03
+                </div>
                 <p class="casev2-step3__text">
                   Iterative thoughtful approach and regular cross-functional
                   check-ins
@@ -669,7 +708,7 @@
       </section>
 
       <section
-        class="casev2-section casev2-highlights"
+        class="casev2-section casev2-highlights casev2-section-addpad"
         aria-labelledby="highlights-title"
       >
         <div class="container">
@@ -978,19 +1017,28 @@
         </div>
       </section>
       <!-- Block:If continued, I would... -->
+      <!-- Block: Design approach -->
       <section
-        class="casev2-section casev2-steps casev2-steps--bg"
+        class="casev2-section casev2-section-addpad casev2-steps casev2-steps--bg casev2-center casev2-center-wide casev2-fullbleed casev2-fullbleed-image"
         aria-labelledby="approach-title"
       >
-        <div class="container">
-          <div class="casev2-center">
-            <h2 id="approach-title" class="casev2-section-title">
+        <div class="container container-no-max-width">
+          <div class="casev2-center casev2-center-wide">
+            <h2
+              id="approach-title"
+              class="casev2-section-title casev2-section-title-on-light"
+            >
               If continued, I would...
             </h2>
 
-            <ol class="casev2-steps3">
+            <ol class="casev2-steps3-all">
               <li class="casev2-step3">
-                <div class="casev2-step3__num" aria-hidden="true">01</div>
+                <div
+                  class="casev2-step3__num casev2-step3__num-dark"
+                  aria-hidden="true"
+                >
+                  01
+                </div>
                 <p class="casev2-step3__text">
                   Add an opt-in AI assistant that gives recommendations, answers
                   questions, and motivates users.
@@ -998,7 +1046,12 @@
               </li>
 
               <li class="casev2-step3">
-                <div class="casev2-step3__num" aria-hidden="true">02</div>
+                <div
+                  class="casev2-step3__num casev2-step3__num-dark"
+                  aria-hidden="true"
+                >
+                  02
+                </div>
                 <p class="casev2-step3__text">
                   Create AI summaries and mood check-ins to help caregivers and
                   users stay informed.
@@ -1006,7 +1059,12 @@
               </li>
 
               <li class="casev2-step3">
-                <div class="casev2-step3__num" aria-hidden="true">03</div>
+                <div
+                  class="casev2-step3__num casev2-step3__num-dark"
+                  aria-hidden="true"
+                >
+                  03
+                </div>
                 <p class="casev2-step3__text">
                   Build smart AI-powered routines that adjust based on what the
                   user reads, watches, and completes.
@@ -1020,6 +1078,7 @@
           </div>
         </div>
       </section>
+
       <!-- Learnings (same note structure as Outcomes, without the metrics block) -->
       <section
         class="casev2-section casev2-learnings"
