@@ -129,7 +129,7 @@
       </nav>
     </aside>
 
-    <aside class="case-sidenav" id="case-sidenav">
+    <!-- <aside class="case-sidenav" id="case-sidenav">
       <nav>
         <ul>
           <li><a href="#nav-overview">Overview</a></li>
@@ -140,13 +140,13 @@
           <li><a href="#nav-learnings">Learnings</a></li>
         </ul>
       </nav>
-    </aside>
+    </aside> -->
 
     <main class="casev2">
       <!-- Hero -->
       <section class="casev2-section casev2-hero">
         <!-- text area (grid-aligned) -->
-        <div class="container casev2-stack">
+        <div class="container casev2-stack casev2-stack-addpad">
           <p class="casev2-eyebrow">Everwell</p>
 
           <h1 class="casev2-h1">
@@ -265,7 +265,7 @@
                     <p class="casev2-script casev2-mt">Constraints</p>
                     <p class="casev2-p">
                       Limited provider time, inconsistent patient data, tight
-                      timeline…
+                      timeline to onboard new clinics.
                     </p>
                   </div>
 
@@ -273,7 +273,8 @@
                     <p class="casev2-script">What we cut</p>
                     <p class="casev2-p">
                       Complex predictive analytics and auto-generated AI
-                      summaries…
+                      summaries: too risky given varying data quality and
+                      clinical safety.
                     </p>
                   </div>
                 </div>
@@ -384,9 +385,7 @@
                 <div class="casev2-story-item__icon" aria-hidden="true">📋</div>
                 <p class="casev2-story-item__text">
                   Patients with chronic conditions needed to regularly complete
-                  <span class="casev2-story-item__muted">
-                    forms, including PROMs (patient-reported outcome measures).
-                  </span>
+                  forms, including PROMs (patient-reported outcome measures).
                 </p>
               </div>
 
@@ -649,7 +648,7 @@
         class="casev2-section casev2-section-addpad casev2-steps casev2-steps--bg casev2-center casev2-center-wide casev2-fullbleed casev2-fullbleed-image"
         aria-labelledby="approach-title"
       >
-        <div class="container container-no-max-width">
+        <div class="container-no-max-width">
           <div class="casev2-center casev2-center-wide">
             <h2
               id="approach-title"
@@ -712,7 +711,7 @@
         aria-labelledby="highlights-title"
       >
         <div class="container">
-          <div class="casev2-center">
+          <div class="casev2-center casev2-center-wide">
             <h2 id="highlights-title" class="casev2-section-title">
               Design highlights
             </h2>
@@ -914,8 +913,18 @@
                 <figure
                   class="casev2-highlight__media casev2-highlight__media--phones"
                 >
-                  <img src="../assets/images/3_7.png" alt="" loading="lazy" />
-                  <img src="../assets/images/3_8.png" alt="" loading="lazy" />
+                  <img
+                    class="casev2-highlight__media--phone"
+                    src="../assets/images/3_7_1.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <img
+                    class="casev2-highlight__media--phone"
+                    src="../assets/images/3_8_1.png"
+                    alt=""
+                    loading="lazy"
+                  />
                 </figure>
               </article>
             </div>
@@ -925,38 +934,36 @@
 
       <!-- Outcomes -->
       <section
-        class="casev2-section casev2-outcomes"
+        class="casev2-section casev2-outcomes casev2-section-addpad"
         aria-labelledby="outcomes-title"
       >
         <div class="container">
-          <div class="casev2-center">
+          <div class="casev2-center casev2-center-wide">
             <h2 id="outcomes-title" class="casev2-section-title">Outcomes</h2>
 
             <!-- Top metrics -->
             <div class="casev2-metrics">
-              <div class="casev2-metrics__grid">
-                <figure class="casev2-metric">
-                  <div class="casev2-metric__value">98%</div>
-                  <figcaption class="casev2-metric__label">
-                    patient completion rate (up from 20% with paper forms)
-                  </figcaption>
-                </figure>
+              <figure class="casev2-metric">
+                <div class="casev2-metric__value">98%</div>
+                <figcaption class="casev2-metric__label">
+                  patient completion rate (up from 20% with paper forms)
+                </figcaption>
+              </figure>
 
-                <figure class="casev2-metric">
-                  <div class="casev2-metric__value">60%</div>
-                  <figcaption class="casev2-metric__label">
-                    faster trend identification by clinicians
-                  </figcaption>
-                </figure>
+              <figure class="casev2-metric">
+                <div class="casev2-metric__value">60%</div>
+                <figcaption class="casev2-metric__label">
+                  faster trend identification by clinicians
+                </figcaption>
+              </figure>
 
-                <figure class="casev2-metric casev2-metric--wide">
-                  <div class="casev2-metric__value">65%</div>
-                  <figcaption class="casev2-metric__label">
-                    increase in patient disease knowledge<br />
-                    and self-management
-                  </figcaption>
-                </figure>
-              </div>
+              <figure class="casev2-metric casev2-metric--wide">
+                <div class="casev2-metric__value">65%</div>
+                <figcaption class="casev2-metric__label">
+                  increase in patient disease knowledge<br />
+                  and self-management
+                </figcaption>
+              </figure>
             </div>
 
             <!-- 3 narrative outcome notes -->
@@ -972,6 +979,8 @@
                     The redesign turned “scary” clinical PROMs into friendly
                     check-ins with simple language and clear time estimates.
                   </p>
+                </div>
+                <div class="casev2-outcome-note__body">
                   <p>
                     This boosted engagement, raising completion from
                     <strong>30%</strong> to <strong>98%</strong>, with
@@ -1017,12 +1026,11 @@
         </div>
       </section>
       <!-- Block:If continued, I would... -->
-      <!-- Block: Design approach -->
       <section
-        class="casev2-section casev2-section-addpad casev2-steps casev2-steps--bg casev2-center casev2-center-wide casev2-fullbleed casev2-fullbleed-image"
+        class="casev2-section casev2-section-addpad casev2-steps casev2-steps--bg casev2-center casev2-center-wide casev2-fullbleed casev2-fullbleed-image1"
         aria-labelledby="approach-title"
       >
-        <div class="container container-no-max-width">
+        <div class="container-no-max-width">
           <div class="casev2-center casev2-center-wide">
             <h2
               id="approach-title"
@@ -1085,7 +1093,7 @@
         aria-labelledby="learnings-title"
       >
         <div class="container">
-          <div class="casev2-center">
+          <div class="casev2-center casev2-center-wide">
             <h2 id="learnings-title" class="casev2-section-title">Learnings</h2>
 
             <!-- Reuse the same notes structure/classes as Outcomes -->
