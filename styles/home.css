@@ -48,7 +48,9 @@ body {
   opacity: 0.6;
   filter: grayscale(20%);
   cursor: default;
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    filter 0.3s ease;
 }
 
 /* 😎END: Cursor label */
@@ -326,7 +328,9 @@ body.scrolled .home .selected-work {
 
 .case-card__link {
   display: block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   border-radius: 10px; /* ensure same radius as inner */
   position: relative;
   overflow: hidden; /* clip pseudo-element */
@@ -445,7 +449,7 @@ body.scrolled .home .selected-work {
 
 /* 🐧  Wobble the case buttons*/
 /* ✨ Gentle idle wobble animation for case card buttons */
-@keyframes buttonFloat {
+/* @keyframes buttonFloat {
   0%,
   100% {
     transform: translateY(0);
@@ -453,7 +457,7 @@ body.scrolled .home .selected-work {
   50% {
     transform: translateY(-3px);
   }
-}
+} */
 
 .case-card__button {
   animation: buttonFloat 2s ease-in-out infinite;
@@ -539,7 +543,9 @@ body.scrolled .home .selected-work {
   opacity: 0;
   transform: scale(0.01); /* tiny dot */
   transform-origin: center center;
-  transition: transform 1000ms ease-out, opacity 1000ms ease-out;
+  transition:
+    transform 1000ms ease-out,
+    opacity 1000ms ease-out;
 }
 
 /* Final state when revealed */
@@ -570,7 +576,9 @@ body.scrolled .home .selected-work {
   max-width: 100%; /* never overflow */
 
   opacity: 0;
-  transition: transform 1000ms ease-out, opacity 1000ms ease-out;
+  transition:
+    transform 1000ms ease-out,
+    opacity 1000ms ease-out;
 }
 
 .case-card__image {
@@ -648,7 +656,8 @@ body.scrolled .home .selected-work {
 }
 .home .site-footer {
   /* keep a fallback color, but add the image */
-  background: url("../assets/images/footer-bg.png") center / cover no-repeat,
+  background:
+    url("../assets/images/footer-bg.png") center / cover no-repeat,
     var(--color-homepage);
 }
 .home .site-footer__name,
@@ -910,7 +919,9 @@ body.scrolled .home .selected-work {
     width: 224px;
     object-fit: contain;
     opacity: 0;
-    transition: transform 1000ms ease-out, opacity 1000ms ease-out;
+    transition:
+      transform 1000ms ease-out,
+      opacity 1000ms ease-out;
   }
 
   /* ✅ Initial animation state — start hidden vertically */
