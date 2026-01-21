@@ -29,8 +29,19 @@
 
 /* Utility */
 .container-no-max-width {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding-inline: 20px;
+  box-sizing: content-box; /* важно */
+}
+.container--no-max {
   max-width: none;
 }
+.container--narrow {
+  max-width: 880px;
+}
+
 .casev2-fullbleed {
   position: relative;
   z-index: 0;
@@ -43,14 +54,27 @@
   bottom: 0;
 
   /* КЛЮЧЕВОЕ */
-  left: 50%;
+  /* left: 50%;
   right: 50%;
   margin-left: -50vw;
-  margin-right: -50vw;
+  margin-right: -50vw; */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
 
   background: var(--Colors-Stone-100, #f5f5f4);
   z-index: -1;
 }
+/* .casev2-fullbleed::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: -1;
+} */
 .casev2-fullbleed-grad::before {
   background: linear-gradient(180deg, #f5f5f4 0%, #ffffff 100%);
 
@@ -62,7 +86,8 @@
   padding: clamp(28px, 3.5vw, 48px);
   /* border-radius: 24px; */
   overflow: hidden;
-  background-image: url("../assets/images/case1v2_des-appr.jpg");
+  /* background-image: url("../assets/images/case1v2_des-appr.jpg"); */
+  background-image: url("../assets/images/Design_Approach.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
@@ -70,8 +95,28 @@
   z-index: -3;
 }
 .casev2-fullbleed-image1::before {
-  background-image: url("../assets/images/case1v2_des-appr_2.jpg");
+  background-image: url("../assets/images/If_Continued.jpg");
+  /* background-image: url("../assets/images/case1v2_des-appr_2.jpg"); */
 }
+.casev2-fullbleed-image3 {
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 1) 4%,
+      rgba(255, 255, 255, 0.55) 30%,
+      rgba(255, 255, 255, 0.25) 90%,
+      rgba(255, 255, 255, 0.12) 25%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url("../assets/images/casev2-hero-bg.jpg");
+
+  background-size: cover;
+  background-position: center 20%;
+}
+
+/* .casev2-fullbleed-image3::before {
+  background-image: url("../assets/images/casev2-hero-bg.jpg");
+} */
 /* Apply background for case pages (you already use .theme-dark on body) */
 .theme-dark {
   background: var(--casev2-bg);
@@ -128,7 +173,8 @@
 .casev2 h1 {
   font-family: "campaign-serif", serif;
   font-weight: 400;
-  font-size: 70px;
+  /* font-size: 70px; */
+  font-size: clamp(52px, 70px - (880px - 100vw) * 0.04, 70px);
   line-height: 1;
   letter-spacing: var(--casev2-ls);
   text-align: center;
@@ -140,7 +186,8 @@
   font-family: "campaign-serif", serif !important;
   /* font-family: "campaign-serif", serif; */
   font-weight: 400 !important;
-  font-size: 60px !important;
+  /* font-size: 60px !important; */
+  font-size: clamp(48px, calc(60px + (100vw - 880px) * 0.4), 60px);
   line-height: 1 !important;
   letter-spacing: var(--casev2-ls) !important;
   color: var(--casev2-text) !important;
@@ -151,7 +198,8 @@
 .casev2 h2.casev2-section-title {
   font-family: "campaign-serif", serif;
   font-weight: 400 !important;
-  font-size: 60px !important;
+  /* font-size: 60px !important; */
+  font-size: clamp(48px, calc(60px + (100vw - 880px) * 0.04), 60px);
   line-height: 1 !important;
   letter-spacing: var(--casev2-ls) !important;
   color: var(--casev2-text) !important;
@@ -172,7 +220,8 @@
     Arial,
     sans-serif;
   font-weight: 400;
-  font-size: 36px;
+  /* font-size: 36px; */
+  font-size: clamp(30px, calc(36px + (100vw - 880px) * 0.04), 36px);
   line-height: 110%;
   letter-spacing: var(--casev2-ls);
   margin: 0;
@@ -447,6 +496,7 @@
   color: var(--casev2-text-dark);
   max-width: 269px;
   font-size: 24px;
+  line-height: 120%;
 }
 
 /* @media (max-width: 980px) {
@@ -454,7 +504,30 @@
     grid-template-columns: 1fr;
   }
 } */
-
+@media (max-width: 560px) {
+  .casev2-media-row {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    gap: 40px;
+    align-items: center;
+  }
+  .casev2-media-row__text {
+    color: var(--casev2-text-dark);
+    max-width: none;
+    font-size: 24px;
+  }
+  .casev2-research__stack {
+    /* display: flex;
+    flex-direction: column;
+    */
+    margin-top: 50px;
+    gap: 40px;
+  }
+  .casev2-media-row {
+    gap: 20px;
+  }
+}
 /* =========================
    Story items (facts)
    ========================= */
@@ -629,20 +702,26 @@
   margin-top: 20px;
 }
 
-.casev2-hero-backdrop {
-  position: relative;
-  padding: clamp(28px, 3.5vw, 48px);
-  /* border-radius: 24px; */
-  overflow: hidden;
-  background-image: url("../assets/images/casev2-hero-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom;
-}
-
 @media (max-width: 980px) {
   .casev2-steps3 {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .casev2-step3__text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 620px) {
+  .casev2-steps3-all {
+    grid-template-columns: 1fr;
+  }
+  .casev2-step3__num {
+    text-align: center;
+  }
+  .casev2-step3__text {
+    font-size: 24px;
   }
 }
 
@@ -820,6 +899,11 @@ Callout (dark grey box inside highlights)
   padding-left: 16px;
   padding-right: 16px;
 }
+
+.button--secondary-overview:hover {
+  background: white;
+  color: black;
+}
 .casev2-cta {
   display: flex;
   flex-direction: column;
@@ -838,6 +922,20 @@ Callout (dark grey box inside highlights)
   }
   .casev2-outcomes__notes {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 620px) {
+  .casev2-metric__value {
+    font-size: 76px;
+  }
+  .casev2-metric {
+    text-align: center;
+    width: 240px;
+  }
+  .casev2-metrics {
+    row-gap: 20px;
+    column-gap: 20px;
+    margin-top: 50px;
   }
 }
 /* Learnings */
@@ -868,34 +966,33 @@ Callout (dark grey box inside highlights)
   text-align: center;
 }
 
-/* The backdrop area that has the landscape behind the screenshot */
 .casev2-hero-backdrop {
   position: relative;
   padding: clamp(28px, 3.5vw, 48px);
-  /* border-radius: 24px;  */
   overflow: hidden;
 
-  /* landscape background */
-  background-image: url("../assets/images/casev2-hero-bg.jpg"); /* replace path */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom;
-}
+  /* важно: подложка белая */
+  background-color: #fff;
 
-/* Optional: soften top edge so it feels like it “fades in” behind the screenshot */
-.casev2-hero-backdrop::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+  /* 1 слой: белый градиент сверху, 2 слой: картинка */
 
-  /* subtle white veil toward the top so it doesn’t look too harsh */
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.92) 0%,
-    rgba(255, 255, 255, 0.3) 45%,
-    rgba(255, 255, 255, 0) 70%
-  );
+  background-image:
+    linear-gradient(
+      rgb(255, 255, 255) 0px,
+      rgb(255, 255, 255) 0px,
+      rgba(255, 255, 255, 0.35) 380px,
+      rgba(255, 255, 255, 0) 650px
+    ),
+    url(../assets/images/casev2-hero-bg.jpg);
+
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position:
+    top center,
+    center bottom;
+
+  /* микро-фикс от “волоска” из-за сабпикселей */
+  margin-top: -1px;
 }
 
 /* Screenshot itself */
@@ -933,7 +1030,8 @@ Callout (dark grey box inside highlights)
 .casev2-band--ink {
   color: #ffffff;
   background-color: #0c0a09; /* fallback behind the image */
-  background-image: url("../assets/images/casev2-overview-role.png");
+  background-image: url("../assets/images/My_Role.jpg");
+  /* background-image: url("../assets/images/casev2-overview-role.png"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1107,7 +1205,7 @@ Callout (dark grey box inside highlights)
 
 @media (max-width: 900px) {
   .casev2-band {
-    padding: 90px 0;
+    padding: 80px 0;
   }
 
   .casev2-grid--2 {
@@ -1200,4 +1298,28 @@ p.casev2-outro__subtitle {
 
 .casev2-outro {
   padding: 164px 0;
+}
+
+.casev2-center-nums {
+  max-width: none;
+}
+
+/* big text */
+@media (max-width: 760px) {
+  .casev2-story-item__text,
+  .casev2-hmw-point__text,
+  .casev2-outcome-note__body p,
+  .casev2-outcome-note__body,
+  .casev2-beat {
+    font-size: 28px;
+  }
+}
+@media (max-width: 380px) {
+  .casev2-story-item__text,
+  .casev2-hmw-point__text,
+  .casev2-outcome-note__body p,
+  .casev2-outcome-note__body,
+  .casev2-beat {
+    font-size: 22px;
+  }
 }
