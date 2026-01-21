@@ -650,16 +650,14 @@ body.scrolled .home .selected-work {
 }
 
 /* --- Footer --- */
-.home .site-footer {
-  padding-block: 20px 40px;
-  /* background: var(--color-homepage); */
+/* .home .site-footer {
+  padding-block: 20px 70px;
 }
 .home .site-footer {
-  /* keep a fallback color, but add the image */
   background:
     url("../assets/images/footer-bg.png") center / cover no-repeat,
     var(--color-homepage);
-}
+} */
 .home .site-footer__name,
 .home .site-footer__email,
 .home .site-footer__tagline,
