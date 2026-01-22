@@ -865,6 +865,14 @@ Callout (dark grey box inside highlights)
 .casev2-highlight__media--phone-hch-smaller-short {
   max-height: fit-content;
 }
+.casev2-highlight__media--phone-hero {
+  max-height: 660px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top; /* or center, if you want middle */
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
 
 @media (max-width: 820px) {
   .casev2-highlight__media--phones {

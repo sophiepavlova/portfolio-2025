@@ -380,12 +380,28 @@
         <!-- 4) Dark band: image at the end -->
         <div class="casev2-band casev2-band--dark casev2-overview__shot">
           <div class="container">
-            <figure class="casev2-overview__image">
+            <figure
+              class="casev2-highlight__media casev2-highlight__media--phones"
+            >
               <img
+                class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hero"
+                src="../assets/images/des_highlights-hch-home-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+              <img
+                class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hch-smaller-short"
+                src="../assets/images/des_highlights-hch-home-2.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+            <figure class="casev2-overview__image">
+              <!-- <img
                 src="../assets/images/3_2v2.png"
                 alt="Everwell provider dashboard home screen showing clinic overview with patient alerts, upcoming appointments, and summary statistics"
                 class="casev2-overview__img reveal"
-              />
+              /> -->
             </figure>
           </div>
         </div>
@@ -630,7 +646,7 @@
             <article class="casev2-hmw-point">
               <div class="casev2-hmw-point__icon" aria-hidden="true">🧭</div>
               <p class="casev2-hmw-point__text">
-                Allow users to revise answers at any time
+                Keep the flow short and easy to follow.
               </p>
               <p class="casev2-hmw-point__text casev2-outcome-note__eyebrow">
                 <strong>Tradeoff:</strong> Reducing steps meant combining some
@@ -641,6 +657,9 @@
 
             <article class="casev2-hmw-point">
               <div class="casev2-hmw-point__icon" aria-hidden="true">🔄</div>
+              <p class="casev2-hmw-point__text">
+                Allow users to revise answers at any time
+              </p>
               <p class="casev2-hmw-point__text casev2-outcome-note__eyebrow">
                 <strong>Tradeoff:</strong> This added extra logic and edge cases
                 for development, but it was essential because children’s
@@ -1034,7 +1053,7 @@
             <div class="casev2-metrics">
               <figure class="casev2-metric">
                 <div class="casev2-metric__value casev2-metric__value-hch">
-                  97%
+                  92%
                 </div>
                 <figcaption class="casev2-metric__label">
                   accuracy compared to triage nurse’ assessment
