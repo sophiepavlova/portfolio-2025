@@ -351,7 +351,10 @@
   font-family: "Caveat", cursive;
   letter-spacing: var(--casev2-ls);
 }
-
+.casev2-highlight__text {
+  font-size: 24px;
+  line-height: 120%;
+}
 /* Chat label */
 .casev2-chat-label {
   font-weight: 400;
@@ -956,11 +959,15 @@ Callout (dark grey box inside highlights)
   margin-top: 100px;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .casev2-metric {
   text-align: center;
   width: 340px;
+}
+.casev2-metric--large {
+  width: 880px;
 }
 .casev2-metric-vivia {
   text-align: center;
@@ -976,6 +983,9 @@ Callout (dark grey box inside highlights)
 
 .casev2-metric__value-hch {
   background: var(--Colors-Fuchsia-100, #fae8ff);
+}
+.casev2-metric__value-vivia {
+  background: var(--Colors-Green-100, #dcfce7);
 }
 
 .casev2-metric--wide {
@@ -1074,6 +1084,18 @@ Callout (dark grey box inside highlights)
     column-gap: 20px;
     margin-top: 50px;
   }
+  .casev2-metrics--large {
+    flex-direction: column;
+  }
+  .casev2-metric--large {
+    width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .casev2-metric--large {
+    width: 300px;
+  }
 }
 /* Learnings */
 
@@ -1104,6 +1126,9 @@ Callout (dark grey box inside highlights)
 }
 .casev2-eyebrow-hch {
   color: var(--Colors-Fuchsia-800, #86198f);
+}
+.casev2-eyebrow-vivia {
+  color: var(--Colors-Green-800, #166534);
 }
 .casev2-eyebrow-hch-dark {
   color: var(--casev2-text-dark);
@@ -1199,6 +1224,9 @@ Callout (dark grey box inside highlights)
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.casev2-band--ink-vivia {
+  background-image: url("../assets/images/My_Role-vivia.jpg");
 }
 
 /* Optional: add a soft dark overlay to keep text readable */
