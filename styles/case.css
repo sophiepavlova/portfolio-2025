@@ -101,6 +101,9 @@
 .casev2-fullbleed-image-hch-findings::before {
   background-image: url("../assets/images/Users_In_The_Hospital.jpg");
 }
+.casev2-fullbleed-image-hch-findings-vivia::before {
+  background-image: url("../assets/images/Older_Adults.jpg");
+}
 .casev2-fullbleed-image1::before {
   background-image: url("../assets/images/If_Continued.jpg");
   /* background-image: url("../assets/images/case1v2_des-appr_2.jpg"); */
@@ -346,6 +349,9 @@
   color: #4b5563; /* you wrote background token but it’s a text color in the mock */
 }
 
+.casev2-media-row__caption-vivia {
+  color: var(--colors-white-80, #ffffffcc);
+}
 /* Step note */
 .casev2-step3__note {
   font-weight: 400;
@@ -603,7 +609,11 @@
 .casev2-story__chat {
   padding: 200px 0;
 }
-
+.what-wrong-narrow {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
 .casev2-story-item {
   display: flex;
   flex-direction: column;
@@ -665,6 +675,9 @@
 .casev2-chat-bubble--provider {
   background: var(--Colors-Sky-100, #e0f2fe);
 }
+.casev2-chat-bubble--provider-vivia {
+  background: var(--Colors-Green-100, #dcfce7);
+}
 
 .casev2-chat-bubble--patient .casev2-chat-label {
   color: #c2410c; /* orange-700 */
@@ -672,6 +685,9 @@
 
 .casev2-chat-bubble--provider .casev2-chat-label {
   color: #075985; /* sky-800 */
+}
+.casev2-chat-label-vivia {
+  color: var(--Colors-Green-800, #166534);
 }
 
 .casev2-chat-text {
@@ -791,6 +807,9 @@
 .casev2-step3__num-hch {
   color: var(--Colors-Fuchsia-800, #86198f);
 }
+.casev2-step3__num-vivia {
+  color: var(--Colors-Green-800, #166534);
+}
 /* =========================
    Design Highlights
 Callout (dark grey box inside highlights)
@@ -816,6 +835,15 @@ Callout (dark grey box inside highlights)
 
 .casev2-highlight__media img {
   border-radius: 10px;
+}
+.casev2-highlight__vivia-img {
+  max-width: 350px;
+  margin: 0 auto;
+}
+@media (max-width: 400px) {
+  .casev2-highlight__vivia-img {
+    max-width: 300px;
+  }
 }
 
 .casev2-highlights__list {
@@ -1098,6 +1126,16 @@ Callout (dark grey box inside highlights)
     ),
     url(../assets/images/hero_case_2.jpg);
 }
+.casev2-hero-backdrop-vivia {
+  background-image:
+    linear-gradient(
+      rgb(255, 255, 255) 0px,
+      rgb(255, 255, 255) 0px,
+      rgba(255, 255, 255, 0.35) 380px,
+      rgba(255, 255, 255, 0) 650px
+    ),
+    url(../assets/images/case_3_hero.jpg);
+}
 
 /* Screenshot itself */
 .casev2-hero-shot {
@@ -1107,7 +1145,7 @@ Callout (dark grey box inside highlights)
   height: auto;
   display: block;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* border: 1px solid rgba(0, 0, 0, 0.08); */
 }
 
 /* =========================
@@ -1354,6 +1392,23 @@ Callout (dark grey box inside highlights)
   /* border-radius: 18px; */
 }
 
+.casev2-overview__image-inside {
+  background-color: var(--Colors-Blue-100, #dbeafe);
+
+  padding: 40px;
+  min-height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+.casev2-overview_image-inside__img {
+  max-width: 189px;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
 /* HMW section */
 .casev2-hmw,
 #hmw-title,

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case Study - Senior's App</title>
+    <title>Case Study – Vivia Senior Solution</title>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -21,11 +21,17 @@
 
     <link rel="icon" type="image/svg+xml" href="../favicon2.svg" />
     <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/case.css" />
   </head>
   <body class="case">
-    <!-- Header -->
     <header class="site-header">
       <div class="container">
         <a href="/" class="logo">Michelle Pavlova</a>
@@ -95,20 +101,21 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
+          focusable="false"
         >
           <path
             d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z"
-            stroke="#1F2937"
+            stroke="#fff"
           />
           <path
             d="M28 18L18 28"
-            stroke="#1F2937"
+            stroke="#fff"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
           <path
             d="M18 18L28 28"
-            stroke="#1F2937"
+            stroke="#fff"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
@@ -116,1441 +123,1107 @@
       </button>
       <nav class="mobile-menu__nav">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="../">Home</a></li>
           <li><a href="../#selected-work">Work</a></li>
           <li><a href="/about/">About</a></li>
         </ul>
       </nav>
     </aside>
 
-    <aside class="case-sidenav reveal" id="case-sidenav">
-      <nav>
-        <ul>
-          <li><a href="#nav-overview">Overview</a></li>
-          <li><a href="#nav-design">Designs</a></li>
-          <li><a href="#nav-problem">Problem</a></li>
-          <li><a href="#nav-solution">Solution</a></li>
-          <li><a href="#nav-impact">Impact</a></li>
-          <li><a href="#nav-learnings">Learnings</a></li>
-        </ul>
-      </nav>
-    </aside>
-
-    <!-- Main Case Content -->
-    <main>
+    <main class="casev2">
       <!-- Hero -->
-      <section class="case-hero reveal" aria-labelledby="case-hero-title">
-        <div class="container case-hero__content">
-          <p class="case-hero__client reveal">Everwell</p>
-          <h1 class="case-hero__title reveal" id="case-hero-title">
-            Redesigning a seniors' health app for clarity and engagement
-          </h1>
-          <nav class="jump-menu reveal" aria-label="Section navigation">
-            <div class="jump-menu__card">
-              <span class="jump-menu__title">Jump to:</span>
-              <ul class="jump-menu__list">
-                <li>
-                  <a href="#nav-overview" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"
-                      ><img
-                        src="../assets/icons/Static Icon.svg"
-                        alt=""
-                        width="38"
-                        height="38"
-                        aria-hidden="true"
-                    /></span>
-                    <span class="jump-menu__label">Overview</span>
-                    <span class="jump-menu__arrow-bg"
-                      ><img
-                        src="../assets/icons/arrow-right.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                    /></span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#nav-design" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"
-                      ><img
-                        src="../assets/icons/designs.svg"
-                        alt=""
-                        width="38"
-                        height="38"
-                        aria-hidden="true"
-                    /></span>
-                    <span class="jump-menu__label">Designs</span>
-                    <span class="jump-menu__arrow-bg"
-                      ><img
-                        src="../assets/icons/arrow-right.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                    /></span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#nav-problem" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"
-                      ><img
-                        src="../assets/icons/problem.svg"
-                        alt=""
-                        width="38"
-                        height="38"
-                        aria-hidden="true"
-                    /></span>
-                    <span class="jump-menu__label">Problem</span>
-                    <span class="jump-menu__arrow-bg"
-                      ><img
-                        src="../assets/icons/arrow-right.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                    /></span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#nav-solution" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"
-                      ><img
-                        src="../assets/icons/solution.svg"
-                        alt=""
-                        width="38"
-                        height="38"
-                        aria-hidden="true"
-                    /></span>
-                    <span class="jump-menu__label">Solution</span>
-                    <span class="jump-menu__arrow-bg"
-                      ><img
-                        src="../assets/icons/arrow-right.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                    /></span>
-                  </a>
-                </li>
+      <section class="casev2-section casev2-hero">
+        <!-- text area (grid-aligned) -->
+        <div class="container casev2-stack casev2-stack-addpad">
+          <p class="casev2-eyebrow casev2-eyebrow-hch">Vivia</p>
 
+          <h1 class="casev2-h1">
+            Redesigning a seniors' health app for engagement and simplicity
+          </h1>
+        </div>
+
+        <!-- media area (full-bleed background) -->
+        <div class="casev2-hero-media">
+          <div class="casev2-hero-backdrop casev2-hero-backdrop-vivia">
+            <div class="container">
+              <img
+                src="../assets/images/vivia_hero.png"
+                alt="Animated Everwell dashboard showing a patient’s physical health trend line gradually building over six months"
+                class="casev2-hero-shot reveal"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🦊Overview (2-col: story + role/what it is) -->
+      <!-- Overview: split into background “bands” -->
+      <section class="casev2-overview" aria-labelledby="overview-title">
+        <!-- 1) Dark band: Project overview + What’s Vivia? -->
+        <div class="casev2-band casev2-band--dark casev2-overview__intro">
+          <div class="container">
+            <div class="casev2-center">
+              <h2 id="overview-title" class="casev2-section-title">
+                Project overview
+              </h2>
+
+              <div class="casev2-overview__content">
+                <h3 class="casev2-overview__h">What’s Vivia?</h3>
+                <p class="casev2-overview__p">
+                  Vivia is a wellbeing app that helps older adults stay
+                  informed, safe, and connected in their daily health.
+                </p>
+                <p class="casev2-overview__p">
+                  I redesigned the experience to make it easier to navigate,
+                  easier to read, and more supportive for both seniors and their
+                  caregivers.
+                </p>
+
+                <p class="casev2-overview__kicker">Why does this matter?</p>
+                <p class="casev2-overview__p">
+                  Before the redesign, many users felt lost in the app. They
+                  were having a hard time finding relevant information, tasks
+                  didn’t feel useful, and caregivers struggled to manage
+                  multiple profiles. This led to low engagement and overall
+                  confusion.
+                </p>
+
+                <p class="casev2-overview__kicker">Redesign improvements</p>
+                <ul class="casev2-overview__list">
+                  <li>
+                    Clear navigation that helps users get where they need to go
+                  </li>
+                  <li>A simpler and calmer homepage</li>
+                  <li>More meaningful notifications and tasks</li>
+                  <li>A Resource Library that’s easy to browse and search</li>
+                  <li>
+                    Better support for caregivers managing multiple profiles
+                  </li>
+                  <li>
+                    Updated clean and accessible visuals on both web and iOS
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2) Watercolor band: My role -->
+        <div
+          class="casev2-band casev2-band--ink casev2-overview__role"
+          aria-labelledby="overview-role-title"
+        >
+          <div class="container">
+            <div class="casev2-center">
+              <h3 id="overview-role-title" class="casev2-overview__role-title">
+                My role
+              </h3>
+
+              <ul class="casev2-overview__role-list">
                 <li>
-                  <a href="#nav-impact" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"
-                      ><img
-                        src="../assets/icons/outcomes.svg"
-                        alt=""
-                        width="38"
-                        height="38"
-                        aria-hidden="true"
-                    /></span>
-                    <span class="jump-menu__label">Impact</span>
-                    <span class="jump-menu__arrow-bg"
-                      ><img
-                        src="../assets/icons/arrow-right.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                    /></span>
-                  </a>
+                  Led major UX/UI work in close collaboration with a UX Manager
                 </li>
+                <li>Simplified the information architecture</li>
+                <li>Rebuilt the Resource Library</li>
+                <li>Updated visuals for readability and accessibility</li>
+                <li>Clarified caregiver flows</li>
                 <li>
-                  <a href="#nav-learnings" class="jump-menu__link">
-                    <span class="jump-menu__icon-bg"
-                      ><img
-                        src="../assets/icons/apple.svg"
-                        alt=""
-                        width="38"
-                        height="38"
-                        aria-hidden="true"
-                    /></span>
-                    <span class="jump-menu__label">Learnings</span>
-                    <span class="jump-menu__arrow-bg"
-                      ><img
-                        src="../assets/icons/arrow-right.svg"
-                        alt=""
-                        width="16"
-                        height="16"
-                        aria-hidden="true"
-                    /></span>
-                  </a>
+                  Worked with PM, devs, and another designer to ship the changes
                 </li>
               </ul>
-            </div>
-          </nav>
-        </div>
-      </section>
 
-      <!-- Image -->
-      <section class="case-image reveal" aria-labelledby="case-image1-title">
-        <div class="container">
-          <h2 id="case-image1-title" class="visually-hidden">
-            Hero mockup for project
-          </h2>
-          <figure class="case-image__wrapper">
-            <img
-              src="../assets/images/case2_image1.jpg"
-              alt="Everwell app screen showing the Connected Living program for seniors, with wellness activities and self-assessments designed to support independent living."
-              class="case-image__image reveal"
-            />
-          </figure>
-        </div>
-      </section>
-
-      <!-- Overview -->
-      <a id="nav-overview"></a>
-      <section
-        class="container case-overview reveal"
-        aria-labelledby="case-overview-title"
-      >
-        <h2 id="case-overview-title" class="case-overview__heading">
-          Project overview
-        </h2>
-        <div class="case-overview__content">
-          <!-- Left column -->
-          <div class="case-overview__description reveal">
-            <p class="case-overview__paragraph">
-              Everwell is an app that helps older adults track their health
-              areas and improve their well-being. But many users lost engagement
-              because it was difficult to find and return to the resources that
-              mattered to them.
-            </p>
-            <p class="case-overview__paragraph">
-              We redesigned the experience to feel supportive and easy to
-              navigate, even for people who aren’t fully comfortable with
-              technology.
-            </p>
-            <p class="case-overview__paragraph">
-              I led key parts of the redesign, including the Resource Library
-              redesign and incorporating caregiver support. These updates made
-              it easier for users and their families to access and follow
-              personalized health guidance.
-            </p>
-            <aside class="case-overview__note" role="note">
-              <strong>Note:</strong> some details of the project have been
-              modified to comply with the NDA.
-            </aside>
-          </div>
-          <!-- Right column -->
-          <dl class="case-overview__meta reveal">
-            <div class="case-overview__meta-item">
-              <dt>Role</dt>
-              <dd>Product Designer</dd>
-            </div>
-            <div class="case-overview__meta-item">
-              <dt>Team</dt>
-              <dd>
-                Senior Product Designer, Product Designer, Product Manager,
-                Developer team
-              </dd>
-            </div>
-            <div class="case-overview__meta-item">
-              <dt>Timeframe</dt>
-              <dd>~3 months</dd>
-            </div>
-            <div class="case-overview__meta-item">
-              <dt>Platform</dt>
-              <dd>Web app (desktop & mobile), iOS app</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
-      <!-- Highlights -->
-      <a id="nav-design"></a>
-      <section
-        class="case-highlights case-highlights--case2"
-        aria-labelledby="case-highlights-title"
-      >
-        <div class="container">
-          <h2 id="case-highlights-title" class="case-highlights__title reveal">
-            Design highlights
-          </h2>
-        </div>
-        <!-- 🍭A new part -->
-
-        <div class="design-intro_bg add-big-margin-bottom">
-          <!-- <img
-            src="../assets/icons/flower_red.svg"
-            alt=""
-            class="about-hero__flower about-hero__flower--left flower--left"
-            aria-hidden="true"
-          />
-          <img
-            src="../assets/icons/flower_red_round.svg"
-            alt=""
-            class="about-hero__flower about-hero__flower--right"
-            aria-hidden="true"
-          /> -->
-          <div class="container design-intro__content">
-            <div class="twocol twocol--wide twocol--intro">
-              <h3 class="twocol__heading twocol__heading-special reveal">
-                Starting with the fun part: the designs
-              </h3>
-              <div class="twocol__main">
-                <p class="reveal">
-                  Once you’ve seen the designs, scroll down to learn about all
-                  the behind-the-scenes details (or
-                  <a href="#nav-problem" class="inline-link">click here</a> to
-                  go straight to it)!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 🍭END: A new part -->
-        <div class="container">
-          <div class="case-highlights__list">
-            <!-- First highlight -->
-            <h2 class="highlight-decor">Homepage widgets</h2>
-            <article class="case-highlights__item reveal">
-              <div class="case-highlights__visual">
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/hello_Jenny.gif"
-                    alt="GIF of redesigned homepage widget layout"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm corners-rounded"
-                  />
-                </div>
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--right"
-                >
-                  <!-- Cards -->
-                  <div class="case-highlights__card-list">
-                    <!-- 1. Light notice card -->
-                    <div class="case-widget-card case-widget-card--notice">
-                      <span class="case-widget-card__icon-bg">
-                        <img
-                          src="../assets/icons/lightbulb.svg"
-                          alt=""
-                          class="case-widget-card__icon"
-                          width="24"
-                          height="24"
-                          aria-hidden="true"
-                        />
-                      </span>
-                      <div class="case-widget-card__content">
-                        <strong>Small copy change, big impact</strong>
-                        <div>
-                          Changing the heading from 'Recommended programs' to<br />'Start
-                          something new' significantly increased clicks.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 2. Feature widget card -->
-                  <!-- <div class="case-widget-card "> -->
-                  <img
-                    class="case-widget-card case-widget-card--no-padding"
-                    src="../assets/images/Start_Something_New_1_1.png"
-                    alt="Digital Buddies program preview"
-                    class="case-widget-card__feature-img"
-                  />
-                  <!-- </div> -->
-
-                  <!-- 3. Another light notice card -->
-                  <div class="case-widget-card case-widget-card--notice">
-                    <span class="case-widget-card__icon-bg">
-                      <img
-                        src="../assets/icons/lightbulb.svg"
-                        alt=""
-                        class="case-widget-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <div class="case-widget-card__content">
-                      <strong>Surfaced reports</strong>
-                      <div>
-                        Originally, reports and trends were located within the
-                        library, which users found confusing. Relocating them to
-                        a dedicated widget significantly improved
-                        discoverability.
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 4. Accent "reports" card -->
-                  <img
-                    class="case-widget-card case-widget-card--no-padding case-widget-card-no-margin reveal"
-                    src="../assets/images/reports&trends.png"
-                    alt="Reports and trends card"
-                    class="case-widget-card__feature-img"
-                  />
-                </div>
-              </div>
-
-              <div class="twocol twocol--wide reveal">
-                <h3 class="twocol__heading">Homepage widgets</h3>
-                <div class="twocol__main">
-                  <p class="add-big-margin-bottom">
-                    The old homepage felt like a cluttered kanban board with no
-                    clear structure. We replaced it with a widget-based layout:
-                    scrollable blocks on mobile, a bento-style grid on desktop.
-                    Early widgets looked like oversized buttons with no context,
-                    so I redesigned them to include visuals and concise text
-                    that set clear expectations and encouraged engagement.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <!-- Second highlight -->
-            <h2 class="highlight-decor">Resource library</h2>
-            <article
-              class="case-highlights__item case-highlights__item-pad case-highlights__item--overlay"
-            >
-              <div
-                class="case-highlights__visual case-highlights__visual-var case-highlights__visual--centered reveal"
-              >
-                <img
-                  src="../assets/images/Library_2.png"
-                  alt="Everwell resource library screen showing articles and activities for seniors on topics like friendship, mindfulness, and fitness, grouped under categories such as social health and staying fit."
-                  class="case-highlights__visual-image case-highlights__visual-image--bg reveal"
-                />
-                <!-- Overlay card -->
-                <div
-                  class="case-widget-card case-widget-card--notice case-widget-card-390 reveal"
-                >
-                  <span class="case-widget-card__icon-bg">
-                    <img
-                      src="../assets/icons/lightbulb.svg"
-                      alt=""
-                      class="case-widget-card__icon"
-                      width="24"
-                      height="24"
-                      aria-hidden="true"
-                    />
-                  </span>
-                  <div class="case-widget-card__content">
-                    <strong>History and bookmarks</strong>
-                    <div>
-                      Users expressed a need to revisit previously viewed and
-                      particularly helpful resources. Introducing history and
-                      bookmark features addressed this feedback.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <div class="twocol twocol-var twocol--wide reveal">
-              <h3 class="twocol__heading">Resource library</h3>
-              <div class="twocol__main">
-                <p>
-                  The old resource library was a flat, overwhelming list with
-                  generic icons and no structure. I co-led a redesign that
-                  introduced visual cards, category and program-based grouping,
-                  and a prominent “Recommended” section.
-                </p>
-                <p class="add-big-margin-bottom">
-                  We added filters, search, and history to help users find what
-                  they need, plus a “Read Later” feature after testing and
-                  ruling out more complex collection systems.
-                </p>
-              </div>
-            </div>
-
-            <!-- Third Highlight -->
-            <h2 class="highlight-decor">Notifications</h2>
-            <article class="case-highlights__item">
-              <div
-                class="case-highlights__visual case-highlights__visual-var reveal"
-              >
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/Notifications_3.png"
-                    alt="Screen of the notification card"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal img-bdr-btm"
-                  />
-                </div>
-              </div>
-            </article>
-            <div
-              class="twocol add-small-pagging-top twocol--wide-pd-no twocol--wide reveal"
-            >
-              <h3 class="twocol__heading">Notifications</h3>
-              <div class="twocol__main">
-                <p class="add-big-margin-bottom">
-                  Recommendations were buried in the completed tasks list,
-                  making them easy to miss. I advocated for a persistent,
-                  lightweight notification system that’s easier to revisit and
-                  scalable for alerts, program updates, and reminders.
-                </p>
-              </div>
-            </div>
-
-            <!-- Fourth Highlight -->
-            <h2 class="highlight-decor">Resource pages</h2>
-            <article class="case-highlights__item">
-              <div
-                class="case-highlights__visual case-highlights__visual-var reveal"
-              >
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/Why_Friendships_Matter_4_1.png"
-                    alt="Screen of an individual resoures page as part of the user's library"
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm"
-                  />
-                </div>
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--right reveal"
-                >
-                  <!-- cards -->
-                  <div class="case-highlights__card-list">
-                    <!-- 1. Light notice card -->
-                    <div
-                      class="case-widget-card case-widget-card--notice reveal"
-                    >
-                      <span class="case-widget-card__icon-bg">
-                        <img
-                          src="../assets/icons/lightbulb.svg"
-                          alt=""
-                          class="case-widget-card__icon"
-                          width="24"
-                          height="24"
-                          aria-hidden="true"
-                        />
-                      </span>
-                      <div class="case-widget-card__content">
-                        <strong>AI accessibility features</strong>
-                        <div>
-                          Considering many seniors have age-related vision
-                          changes, I advocated for the addition of an<br />AI-powered
-                          voiceover feature for written content.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 2. Feature widget card -->
-                  <!-- <div class="case-widget-card "> -->
-                  <img
-                    class="case-widget-card case-widget-card--no-padding"
-                    src="../assets/images/Why_Friendships_Matter_Audio_4_2.png"
-                    alt="Screen: mp3 player with library materials"
-                    class="case-widget-card__feature-img"
-                  />
-                  <!-- </div> -->
-
-                  <!-- 3. Another light notice card -->
-                  <div class="case-widget-card case-widget-card--notice">
-                    <span class="case-widget-card__icon-bg">
-                      <img
-                        src="../assets/icons/lightbulb.svg"
-                        alt=""
-                        class="case-widget-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <div class="case-widget-card__content">
-                      <strong>Resource feedback</strong>
-                      <div>
-                        To assess the resources’ usefulness, we introduced an
-                        optional post-resource survey.
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 4. Accent "reports" card -->
-                  <img
-                    class="case-widget-card case-widget-card-no-margin case-widget-card--no-padding"
-                    src="../assets/images/Did_you_find_this_useful_4_3.png"
-                    alt="Screen: short survey"
-                    class="case-widget-card__feature-img"
-                  />
-                </div>
-              </div>
-            </article>
-
-            <div class="twocol twocol--wide-pd-no twocol--wide reveal">
-              <h3 class="twocol__heading">Individual resource<br />pages</h3>
-              <div class="twocol__main">
-                <p class="add-big-margin-bottom">
-                  We redesigned content pages with large visuals, time
-                  estimates, and accessibility in mind, adding auto-generated
-                  captions for videos and planning a voice-over support for
-                  articles.
-                </p>
-              </div>
-            </div>
-
-            <!-- Fith Highlight -->
-            <h2 class="highlight-decor">Multi-profile support</h2>
-            <article class="case-highlights__item">
-              <div class="case-highlights__visual reveal">
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/Who_Joins_5_1.png"
-                    alt="Everwell app screen showing profile selection for Connected Living, where a user can choose an existing profile or create a new one to continue."
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
-                  />
-                </div>
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-col--right case-highlights__visual-col--right-390"
-                >
-                  <img
-                    src="../assets/images/Profiles_5_2.png"
-                    alt="Everwell app settings screen showing user profile details and options like managing account, notifications, privacy, and support."
-                    class="case-highlights__visual-image case-highlights__visual-image--wide img-bdr-btm reveal"
-                  />
-                </div>
-              </div>
-
-              <div class="twocol twocol--wide reveal add-small-pagging-top">
-                <h3 class="twocol__heading">Multi-profile support</h3>
-                <div class="twocol__main">
-                  <p class="add-big-margin-bottom">
-                    Some users were caregivers supporting loved ones. I designed
-                    the multi-profile system to allow quick profile switching,
-                    program enrollment per profile, and ownership transfer if a
-                    patient takes over their own care.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <!-- 🦊new card -->
-            <h2 class="highlight-decor">iOS application</h2>
-            <article class="case-highlights__item">
-              <div
-                class="case-highlights__visual case-highlights__visual-var reveal"
-              >
-                <div
-                  class="case-highlights__visual-col case-highlights__visual-var case-highlights__visual-col--left"
-                >
-                  <img
-                    src="../assets/images/ios.png"
-                    alt="Everwell iOS app home screen showing personalized health tasks, resources, and navigation tabs for Home, Programs, and Library."
-                    class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
-                  />
-                </div>
-              </div>
-            </article>
-            <div
-              class="twocol no-padding-bottom add-small-pagging-top twocol--wide reveal"
-            >
-              <h3 class="twocol__heading">iOS application</h3>
-              <div class="twocol__main">
-                <p>
-                  I also closely worked with an iOS developer to translate the
-                  webapp to an iOS application. I audited features, mapped flows
-                  to native patterns (such as bottom tab bar and gestures),
-                  built mobile-optimized components, and provided Figma
-                  annotations.
-                </p>
-              </div>
-            </div>
-            <!-- 🦊End new card -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Context -->
-      <!-- <a id="nav-problem"></a> -->
-      <section
-        id="nav-problem"
-        class="case-context reveal"
-        aria-labelledby="case-context-title"
-      >
-        <div class="container">
-          <h2 id="case-context-title" class="case-context__heading reveal">
-            What was broken, what we fixed, and what I did
-          </h2>
-        </div>
-        <!-- 🍭A new part -->
-
-        <div class="design-intro_bg add-big-margin-bottom">
-          <!-- <img
-            src="../assets/icons/flower_red.svg"
-            alt=""
-            class="about-hero__flower about-hero__flower--left flower--left"
-            aria-hidden="true"
-          />
-          <img
-            src="../assets/icons/flower_red_round.svg"
-            alt=""
-            class="about-hero__flower about-hero__flower--right"
-            aria-hidden="true"
-          /> -->
-          <div class="container design-intro__content">
-            <div class="twocol twocol--wide twocol--intro">
-              <h3 class="twocol__heading twocol__heading-special reveal">
-                The narrative
-              </h3>
-              <div class="twocol__main">
-                <p class="reveal">
-                  Dive in to learn more about the process behind the scenes and
-                  the thinking behind the solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 🍭END: A new part -->
-        <div class="container case-context__content">
-          <dl class="case-context__items reveal">
-            <div class="case-context__item reveal">
-              <dt class="case-context__term">Problem</dt>
-              <dd class="case-context__desc">
-                The app supported seniors’ health through assessments and
-                recommendations but had accumulated UX debt. Key screens like
-                the homepage and resource library were cluttered, text-heavy,
-                and confusing. Recommendations were hard to find, and users
-                struggled to re-engage with helpful content.
-              </dd>
-            </div>
-            <div class="case-context__item reveal">
-              <dt class="case-context__term">Solution</dt>
-              <dd class="case-context__desc">
-                We redesigned the core experience to improve clarity,
-                engagement, and accessibility. Updates included a widget-based
-                homepage, a visual-heavy resource library with filters,
-                persistent notifications for recommendations, and better
-                caregiver support through multi-profile functionality.
-              </dd>
-            </div>
-            <div class="case-context__item reveal">
-              <dt class="case-context__term">Key contributions</dt>
-              <dd class="case-context__desc">
-                <p>During this project, I:</p>
-                <ul class="case-context__list">
-                  <li>
-                    Led the redesign of the Resource Library and multi-profile
-                    navigation across web and mobile
-                  </li>
-                  <li>
-                    Collaborated closely with fellow designers to align on
-                    patterns, share feedback, and ensure consistency across the
-                    platform; facilitated regular design critiques and working
-                    sessions to align with peers and strengthen design decisions
-                    across teams
-                  </li>
-                  <li>
-                    Conducted analog research and competitor audits to inform IA
-                    and content strategy
-                  </li>
-                  <li>
-                    Delivered high-fidelity, accessible designs leveraging
-                    reusable, documented components
-                  </li>
-                  <li>
-                    Collaborated closely with devs to ensure feasible, scalable
-                    implementation
-                  </li>
-                </ul>
-              </dd>
-            </div>
-            <div class="case-context__item reveal">
-              <dt class="case-context__term">Key impact</dt>
-              <dd class="case-context__desc">
-                This redesign simplified navigation, clarified content access,
-                and streamlined onboarding, which helped seniors engage more
-                confidently with their recommended health programs and
-                resources. <br /><br />The new experience supports caregivers
-                and multiple user types, making the app feel more intuitive even
-                for users that were less familiar with technology.
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
-      <!-- How Might We -->
-      <a id="nav-solution"></a>
-      <section class="case-howmightwe" aria-labelledby="case-howmightwe-title">
-        <div class="container">
-          <h2
-            id="case-howmightwe-title"
-            class="case-howmightwe__heading reveal"
-          >
-            How might we… help older users confidently navigate to and engage
-            with recommended content?
-          </h2>
-
-          <!-- First two-colunm block -->
-          <div class="case-howmightwe__block reveal">
-            <div class="twocol twocol--wide reveal">
-              <h3 class="twocol__heading">
-                Digging deeper into the<br />problem space
-              </h3>
-              <div class="twocol__main">
-                <p>
-                  This app helps older adults manage their health by collecting
-                  assessment data, building a health profile, and recommending
-                  wellness programs and educational resources. It also generates
-                  reports and health trends based on the assessments they take.
-                  Over time, however, the product accumulated significant UX
-                  debt:
-                </p>
-
-                <!-- Main image: Connected Living -->
-                <img
-                  src="../assets/images/case2_2.png"
-                  alt="App screenshot: Connected Living library for older adults"
-                  class="case-howmightwe__visual-image case-howmightwe__visual-image--wide reveal"
-                />
-
-                <!-- Inline notice 1 -->
-                <div class="inline-notice reveal">
-                  <span class="inline-notice__icon-bg">
-                    <span class="inline-notice__icon">
-                      <img
-                        src="../assets/icons/book-marked.svg"
-                        alt=""
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </span>
-                  <span>
-                    <strong>Resource library</strong> page was never iterated on
-                    from its initial state: a plain, text-heavy list that looked
-                    and felt overwhelming
-                  </span>
-                </div>
-
-                <!-- Second picture: "Hello Jenny!" -->
-                <div class="case-howmightwe__visual reveal">
-                  <img
-                    src="../assets/images/case2_Jenny.png"
-                    alt="App screenshot: homepage with task list"
-                    class="case-howmightwe__visual-image case-howmightwe__visual-image--card img-bdr-btm reveal"
-                  />
-                </div>
-
-                <!-- Inline notice 2 -->
-                <div class="inline-notice inline-notice--danger reveal">
-                  <span class="inline-notice__icon-bg">
-                    <span class="inline-notice__icon">
-                      <img
-                        src="../assets/icons/home.svg"
-                        alt=""
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </span>
-                  <span>
-                    <strong>The homepage</strong> lacked visual interest, and
-                    new items were added without cohesive planning or design
-                    thinking.
-                  </span>
-                </div>
-
-                <!-- Third picture: Social health -->
-                <img
-                  src="../assets/images/case2_socialHealth.png"
-                  alt="App screenshot:Social Health as a part of the user's library "
-                  class="case-howmightwe__visual-image reveal"
-                />
-
-                <!-- Inline notice 3 -->
-                <div class="inline-notice reveal">
-                  <span class="inline-notice__icon-bg">
-                    <span class="inline-notice__icon">
-                      <img
-                        src="../assets/icons/star.svg"
-                        alt=""
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </span>
-                  <span>
-                    <strong>Recommendations</strong> were non-engaging and hard
-                    to find, and they were one of the key value prepositions of
-                    the app!
-                  </span>
-                </div>
-
-                <!-- Quotes grid -->
-                <p class="reveal">
-                  User, client, and stakeholder feedback confirmed what we had
-                  suspected:
-                </p>
-                <div class="feedback-quotes reveal">
-                  <div class="feedback-quote reveal">
-                    <span class="feedback-quote__icon-bg">
-                      <img
-                        src="../assets/icons/quote.svg"
-                        alt=""
-                        class="feedback-quote__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <span class="feedback-quote__text">
-                      “There’s too much going on here. I don’t know where to
-                      start.”
-                    </span>
-                  </div>
-                  <div class="feedback-quote reveal">
-                    <span class="feedback-quote__icon-bg">
-                      <img
-                        src="../assets/icons/quote.svg"
-                        alt=""
-                        class="feedback-quote__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <span class="feedback-quote__text"
-                      >“The homepage feels <em>blah</em> and not fun. Can we
-                      take it up a notch?”</span
-                    >
-                  </div>
-                  <div class="feedback-quote reveal">
-                    <span class="feedback-quote__icon-bg">
-                      <img
-                        src="../assets/icons/quote.svg"
-                        alt=""
-                        class="feedback-quote__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <span class="feedback-quote__text"
-                      >“I wish I could go back to that one video, but I forgot
-                      what it was and there are so many folders here!”</span
-                    >
-                  </div>
-                  <div class="feedback-quote reveal">
-                    <span class="feedback-quote__icon-bg">
-                      <img
-                        src="../assets/icons/quote.svg"
-                        alt=""
-                        class="feedback-quote__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <span class="feedback-quote__text"
-                      >“It’s hard to find any reports once I’ve completed my
-                      questionnaire.”</span
-                    >
-                  </div>
-                </div>
-
-                <p class="reveal">
-                  Users were unimpressed with the product and overlooked key
-                  features, like the very recommendations meant to support their
-                  health goals.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Second two-column block -->
-          <div class="case-howmightwe__block">
-            <div class="twocol twocol--wide">
-              <h3 class="twocol__heading reveal">Design North Stars</h3>
-              <div class="twocol__main">
-                <p class="reveal">
-                  I collaborated with two other designers on a major redesign
-                  for both web and iOS platforms. Our redesign was guided by
-                  principles of:
-                </p>
-                <div class="design-northstars">
-                  <div class="design-northstar-card reveal">
-                    <span class="design-northstar-card__icon-bg">
-                      <img
-                        src="../assets/icons/sun.svg"
-                        alt=""
-                        class="design-northstar-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <span class="design-northstar-card__text">
-                      <strong>Clarity:</strong> simplifying navigation and
-                      making key actions easy to recognize
-                    </span>
-                  </div>
-                  <div class="design-northstar-card reveal">
-                    <span class="design-northstar-card__icon-bg">
-                      <img
-                        src="../assets/icons/list-ordered.svg"
-                        alt=""
-                        class="design-northstar-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <span class="design-northstar-card__text">
-                      <strong>Relevance:</strong> surfacing content that’s
-                      timely, relevant, personalized, and clearly contextualized
-                    </span>
-                  </div>
-                  <div class="design-northstar-card reveal">
-                    <span class="design-northstar-card__icon-bg">
-                      <img
-                        src="../assets/icons/accessibility.svg"
-                        alt=""
-                        class="design-northstar-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <span class="design-northstar-card__text">
-                      <strong>Accessibility:</strong> optimizing for eyesight
-                      and motor limitations that come with older age, and
-                      cognitive load
-                    </span>
-                  </div>
-                  <div class="design-northstar-card reveal">
-                    <span class="design-northstar-card__icon-bg">
-                      <img
-                        src="../assets/icons/refresh-cw.svg"
-                        alt=""
-                        class="design-northstar-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <span class="design-northstar-card__text">
-                      <strong>“Replayability”:</strong> helping users easily
-                      return to past recommendations and resources
-                    </span>
-                  </div>
-                  <div class="design-northstar-card reveal">
-                    <span class="design-northstar-card__icon-bg">
-                      <img
-                        src="../assets/icons/users.svg"
-                        alt=""
-                        class="design-northstar-card__icon"
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <span class="design-northstar-card__text">
-                      <strong>Caregiver support:</strong> accommodating users
-                      managing someone else’s health
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Third two-column block -->
-          <div class="case-howmightwe__block reveal">
-            <div class="twocol twocol--wide">
-              <h3 class="twocol__heading">Prototyping and testing</h3>
-              <div class="twocol__main">
-                <p>
-                  Due to timeline and budgetary constraints, we had to be
-                  scrappy while conducting research.
-                </p>
-                <div class="icon-card reveal">
-                  <div class="icon-card__header">
-                    <div class="icon-box icon-box-green">
-                      <svg
-                        class="icon-box__icon"
-                        width="24"
-                        height="25"
-                        viewBox="0 0 24 25"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M12 20.7031H21
-                            M16.5 4.20335C16.8978 3.80553 17.4374 3.58203 18 3.58203C18.2786 3.58203 18.5544 3.6369 18.8118 3.74351C19.0692 3.85011 19.303 4.00637 19.5 4.20335C19.697 4.40033 19.8532 4.63419 19.9598 4.89156C20.0665 5.14893 20.1213 5.42478 20.1213 5.70335C20.1213 5.98193 20.0665 6.25778 19.9598 6.51515C19.8532 6.77252 19.697 7.00637 19.5 7.20335L7 19.7034L3 20.7034L4 16.7034L16.5 4.20335Z
-                            M15 5.70312L18 8.70312"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <h4 class="icon-card__title">Research approach</h4>
-                  </div>
-                  <ul class="icon-card__list">
-                    <li>
-                      <strong>Usability feedback:</strong> reviewed Hotjar
-                      heatmaps, support tickets, and past usability tests.
-                    </li>
-                    <li>
-                      <strong>Analog research:</strong> visited community spaces
-                      to observe how seniors interact with physical health and
-                      wellness materials, spoke informally with older adults.
-                    </li>
-                    <li>
-                      <strong>Peer insight:</strong> gathered feedback from
-                      colleagues with older parents and a PM who volunteers at a
-                      seniors’ home.
-                    </li>
-                    <li>
-                      <strong>Competitive analysis:</strong> studied apps like
-                      Netflix, Libby, and Spotify for content discovery and
-                      categorization strategies and UI patterns.
-                    </li>
-                    <li>
-                      <strong>Design inspiration:</strong> referenced
-                      award-winning interfaces and accessibility best practices
-                      as well as existing successful accessible government
-                      websites like gov.uk.
-                    </li>
-                  </ul>
-                </div>
-                <p class="reveal">
-                  We also held collaborative brainstorming sessions, where each
-                  designer brought ideas and references for UI improvement. We
-                  referenced our research for reminders about practical UX
-                  patterns and emotional engagement strategies tailored to older
-                  adults.
-                </p>
-                <div class="icon-card reveal">
-                  <div class="icon-card__header">
-                    <div class="icon-box icon-box-green">
-                      <svg
-                        class="icon-box__icon"
-                        width="24"
-                        height="25"
-                        viewBox="0 0 24 25"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M12 3.70312L10.088 9.51612C9.99015 9.81363 9.82379 10.084 9.60234 10.3055C9.38088 10.5269 9.11051 10.6933 8.813 10.7911L3 12.7031L8.813 14.6151C9.11051 14.713 9.38088 14.8793 9.60234 15.1008C9.82379 15.3222 9.99015 15.5926 10.088 15.8901L12 21.7031L13.912 15.8901C14.0099 15.5926 14.1762 15.3222 14.3977 15.1008C14.6191 14.8793 14.8895 14.713 15.187 14.6151L21 12.7031L15.187 10.7911C14.8895 10.6933 14.6191 10.5269 14.3977 10.3055C14.1762 10.084 14.0099 9.81363 13.912 9.51612L12 3.70312Z
-                            M5 3.70312V7.70312
-                            M19 17.7031V21.7031
-                            M3 5.70312H7
-                            M17 19.7031H21"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <h4 class="icon-card__title">AI in our workflow</h4>
-                  </div>
-                  <ul class="icon-card__list">
-                    <li>
-                      While I started my design career pre-AI, I now see it as a
-                      helpful co-pilot as long as it’s used sparingly and at the
-                      right moments. We used tools like Gemini to analyze
-                      feedback and user interviews, <strong>ChatGPT</strong> to
-                      simulate seniors for brainstorming sessions and to refine
-                      microcopy, and Figma Make for advanced prototyping.
-                    </li>
-                    <li>
-                      <strong
-                        >Every AI-generated output was reviewed by a human, and
-                        real user input always came first.</strong
-                      >
-                      AI supported our process, but it never replaced a human
-                      touch.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- What does it all come down to?-->
-      <a id="nav-impact"></a>
-      <!-- 🦊 -->
-      <section class="case-context" aria-labelledby="case-context-title">
-        <div
-          class="container case-context__content case-context__content-no-gap"
-        >
-          <h2 id="case-context-title" class="case-context__heading reveal">
-            Project impact
-          </h2>
-          <dl class="case-context__items">
-            <div class="case-context__item reveal">
-              <dt class="case-context__term add-small-margin-bottom">
-                Increased user<br />
-                confidence
-              </dt>
-              <dd class="case-context__desc">
-                <p>
-                  Through simpler hierarchy, consistent labeling, and friendlier
-                  language, the redesign helped seniors understand where they
-                  were in the app and why certain content was relevant to them.
-                </p>
-                <ul class="case-context__list">
-                  <li>
-                    In internal tests, task completion rates rose from
-                    <strong>60% to 90%</strong>
-                  </li>
-                  <li>
-                    Users reported a reduction in cognitive load, saying the
-                    layout <strong>“made more sense”</strong> and was more
-                    visually appealing and <strong>“fun”</strong> and “it used
-                    to be
-                    <strong>sterile, like a hospital, but not anymore”</strong>
-                  </li>
-                  <li>
-                    <strong>Design patterns</strong> and
-                    <strong>design system updates</strong> from this project
-                    were to be reused in the future iterations of the platform
-                    as we scaled up
-                  </li>
-                  <li>
-                    <strong>6/7 users</strong> expressed a preference for the
-                    new designs
-                  </li>
-                </ul>
-              </dd>
-            </div>
-            <div class="case-context__item reveal">
-              <dt class="case-context__term add-small-margin-bottom">
-                Designed for caregivers
-              </dt>
-              <dd class="case-context__desc">
-                <p>
-                  Some users were caregivers supporting loved ones. I designed
-                  the multi-profile system to allow quick profile switching,
-                  program enrollment per profile, and ownership transfer if a
-                  patient takes over their own care. This brought the app closer
-                  to how care is actually delivered in many households.
-                </p>
-              </dd>
-            </div>
-
-            <div class="case-context__item case-context__item-no-mg reveal">
-              <dt class="case-context__term add-small-margin-bottom">
-                Modular scalable design
-              </dt>
-              <dd class="case-context__desc case-context__desc-last">
-                <p>
-                  The system now supports multiple programs and content types
-                  without needing bespoke components. This sets the foundation
-                  for future updates and personalization which makes it easier
-                  to scale the app across programs or demographics.
-                </p>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-      <!-- 🦊end -->
-      <a id="nav-learnings"></a>
-      <section class="case-context" aria-labelledby="case-context-title">
-        <div
-          class="container case-context__content case-context__content-no-gap"
-        >
-          <h2 id="case-context-title" class="case-context__heading reveal">
-            What does it all come down to?
-          </h2>
-          <dl class="case-context__items reveal">
-            <div class="case-context__item">
-              <dt class="case-context__term add-small-margin-bottom">
-                If continued…
-              </dt>
-              <dd class="case-context__desc">
-                <p>
-                  While the redesign had not launched at the time I exited the
-                  company, early indicators were promising:
-                </p>
-                <ul class="case-context__list">
-                  <li>In-app onboarding walkthroughs for new users</li>
-                  <li>
-                    More refined personalization based on user activity,
-                    including a personalized activity plan and goal-setting
-                  </li>
-                  <li>
-                    Enhanced voice interaction features for accessibility for
-                    users who may struggle to type
-                  </li>
-                </ul>
-                <!-- Leveraging AI -->
-                <div class="insight-card add-small-margin-top reveal">
-                  <div class="insight-card__header">
-                    <div class="icon-box icon-box-green">
-                      <svg
-                        class="icon-box__icon"
-                        width="24"
-                        height="25"
-                        viewBox="0 0 24 25"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M12 3.70312L10.088 9.51612C9.99015 9.81363 9.82379 10.084 9.60234 10.3055C9.38088 10.5269 9.11051 10.6933 8.813 10.7911L3 12.7031L8.813 14.6151C9.11051 14.713 9.38088 14.8793 9.60234 15.1008C9.82379 15.3222 9.99015 15.5926 10.088 15.8901L12 21.7031L13.912 15.8901C14.0099 15.5926 14.1762 15.3222 14.3977 15.1008C14.6191 14.8793 14.8895 14.713 15.187 14.6151L21 12.7031L15.187 10.7911C14.8895 10.6933 14.6191 10.5269 14.3977 10.3055C14.1762 10.084 14.0099 9.81363 13.912 9.51612L12 3.70312Z
-                            M5 3.70312V7.70312
-                            M19 17.7031V21.7031
-                            M3 5.70312H7
-                            M17 19.7031H21"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <h4 class="insight-card__title">Leveraging AI</h4>
-                  </div>
-                  <ul class="insight-card__list">
-                    <li>
-                      The original app included light AI features, like
-                      AI-generated summaries for resources, but there's room to
-                      push it further.
-                    </li>
-                    <li>
-                      If continued, I’d explore:
-                      <ul>
-                        <li>
-                          A opt-in assistant to share recommendations, track
-                          progress, and encourage the user. The assistant could
-                          also answer the users’ health questions, phrasing the
-                          answers in an understanding, non-judgemental, and
-                          reassuring tone
-                        </li>
-                        <li>
-                          Summaries to help caregivers easily stay informed as
-                          to their loved ones’ progress
-                        </li>
-                        <li>
-                          AI-powered mood check-ins that would suggest users
-                          exercises to complete based on what they share
-                        </li>
-                        <li>
-                          Smart routine builders based on the content the user
-                          consumes and the activities they complete
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      These features would act as add-ons, designed with opt-ins
-                      and transparency while keeping the older audience in mind.
-                    </li>
-                  </ul>
-                </div>
-              </dd>
-            </div>
-
-            <div class="case-context__item reveal">
-              <dt class="case-context__term add-small-margin-bottom">
-                Learnings
-              </dt>
-              <dd class="case-context__desc case-context__desc-last">
-                <p class="add-small-margin-bottom reveal">
-                  <strong
-                    >Designing for older adults requires more than just larger
-                    text and higher contrast</strong
-                  ><br />Through this project, I gained a deeper appreciation
-                  for how essential simplicity is in shaping the user
-                  experience. Especially for seniors who may feel uncertain
-                  using digital tools and hesitant to press a button. Watching
-                  users navigate the original product emphasized how important
-                  it is for the design to meet the users where they are at.
-                </p>
-                <p class="add-small-margin-bottom reveal">
-                  <strong
-                    >"Good enough" infrastructure can block great UX</strong
-                  ><br />Some of our biggest design challenges weren’t visual:
-                  they stemmed from inherited systems that made it hard to
-                  prioritize or notify users effectively. UX is so much more
-                  than just drawing some screens. In this case, it was also
-                  about advocating for front- and back-end improvements.
-                </p>
-                <p class="add-big-margin-bottom reveal">
-                  <strong
-                    >Working scrappily doesn’t mean working sloppily</strong
-                  ><br />With limited time and budget, we got creative with how
-                  we did research and testing, from community center visits to
-                  AI-assisted brainstorming. I learned how to extract learnings
-                  even when conditions weren’t ideal. Some of our most
-                  meaningful user insights came from the least “formal” research
-                  moments.<br />
-                </p>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-      <!-- 🍒Closing image -->
-      <div class="container">
-        <h2 class="highlight-decor highlight-decor-add">Thank you!</h2>
-      </div>
-      <article class="case-highlights__item">
-        <div class="case-highlights__visual case-highlights__visual-var reveal">
-          <div
-            class="case-highlights__visual-col case-highlights__visual-var case-highlights__visual-col--left"
-          >
-            <img
-              src="../assets/images/ios.png"
-              alt="Everwell iOS app home screen showing personalized health tasks, resources, and navigation tabs for Home, Programs, and Library."
-              class="case-highlights__visual-image case-highlights__visual-image--wide reveal"
-            />
-          </div>
-        </div>
-      </article>
-      <!-- 🍒END:Closing image -->
-      <!-- 🍭A new part -->
-      <div class="design-intro_bg add-big-margin-bottom">
-        <div class="container design-intro__content">
-          <div class="twocol twocol--wide twocol--intro">
-            <h3 class="twocol__heading twocol__heading-special reveal">
-              Thank you for reading!
-            </h3>
-            <div class="twocol__main">
-              <p class="reveal">
-                <a href="#nav-design" class="inline-link"
-                  >Click here to revisit the designs</a
-                ><br />or explore another case study using the buttons below.
+              <p class="casev2-overview__role-note">
+                + introduced a silly hat day where we all were wearing silly
+                hats to the meeting
               </p>
             </div>
           </div>
         </div>
-      </div>
-      <!-- 🍭END: A new part -->
-      <!-- 🦊prev/next buttons -->
+
+        <!-- 3) Dark band: The bet + Quick details + CTA -->
+        <div class="casev2-band casev2-band--dark casev2-overview__meta">
+          <div class="container">
+            <div class="casev2-center casev2-center-flex">
+              <!-- The bet & constraints -->
+
+              <div class="casev2-bet__layout">
+                <h3 id="bet-title" class="casev2-block-title">
+                  The bet & constraints
+                </h3>
+                <div class="casev2-bet__top">
+                  <p class="casev2-script">The bet</p>
+                  <p class="casev2-p">
+                    If the app felt simpler, clearer, and more supportive, older
+                    adults would feel more confident using it and would come
+                    back more often.
+                  </p>
+                </div>
+
+                <div class="casev2-bet__bottom">
+                  <div class="casev2-stack">
+                    <p class="casev2-script casev2-mt">Constraints</p>
+                    <ul class="casev2-overview__role-list">
+                      <li>
+                        Accessibility needs (large text, clear contrast, simple
+                        layouts)
+                      </li>
+                      <li>Caregivers managing multiple people</li>
+                      <li>Outdated structure on both web and iOS</li>
+                      <li>Lots of content that needed organizing</li>
+                    </ul>
+                  </div>
+
+                  <div class="casev2-stack">
+                    <p class="casev2-script">Out of scope for now</p>
+                    <ul class="casev2-overview__role-list">
+                      <li>In-app messaging: required extra privacy work.</li>
+                      <li>
+                        Program progress tracking: postponed due to technical
+                        limitations
+                      </li>
+                      <li>
+                        Full visual refresh: not in scope, updated only the
+                        highest-impact screens
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick details -->
+              <div
+                class="casev2-overview__block casev2-details"
+                aria-labelledby="details-title"
+              >
+                <h3 id="details-title" class="casev2-block-title">
+                  Quick details
+                </h3>
+
+                <div
+                  class="casev2-grid casev2-grid--details casev2-grid--tight"
+                >
+                  <dl class="casev2-dl">
+                    <div class="casev2-dl__row casev2-dl__row-pb">
+                      <dt class="casev2-script">My role</dt>
+                      <dd class="casev2-p">Product Designer</dd>
+                    </div>
+                    <div class="casev2-dl__row">
+                      <dt class="casev2-script">Team</dt>
+                      <dd class="casev2-p">UX Manager, PM, Developer</dd>
+                    </div>
+                  </dl>
+
+                  <dl class="casev2-dl">
+                    <div class="casev2-dl__row casev2-dl__row-pb">
+                      <dt class="casev2-script">Timeframe</dt>
+                      <dd class="casev2-p">~3 months</dd>
+                    </div>
+                    <div class="casev2-dl__row">
+                      <dt class="casev2-script">Platform</dt>
+                      <dd class="casev2-p">Web app and iOS app</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <p class="casev2-nda">
+                  Some non-essential details of the project have been modified
+                  to comply with the NDA.
+                </p>
+              </div>
+
+              <!-- CTA -->
+              <div
+                class="casev2-overview__block casev2-cta"
+                aria-labelledby="cta-title"
+              >
+                <h3 id="cta-title" class="casev2-cta__title">
+                  Do you prefer long in-depth case studies?
+                </h3>
+                <p class="casev2-cta__sub">
+                  I have a detailed version of this project as well.
+                </p>
+
+                <a
+                  class="button button--secondary button--secondary-overview button--float"
+                  href="./index-v1.html"
+                >
+                  Full Vivia case study →
+                </a>
+
+                <p class="casev2-cta__note">
+                  This one is more visual and fun, though. :)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4) Dark band: image at the end -->
+        <div class="casev2-band casev2-band--dark casev2-overview__shot">
+          <div class="container">
+            <figure
+              class="casev2-highlight__media casev2-highlight__media--phones"
+            >
+              <img
+                class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller"
+                src="../assets/images/vivia-overview-1.png"
+                alt=""
+                loading="lazy"
+              />
+              <img
+                class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller"
+                src="../assets/images/vivia-overview-2.png"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+            <figure class="casev2-overview__image">
+              <!-- <img
+                src="../assets/images/3_2v2.png"
+                alt="Everwell provider dashboard home screen showing clinic overview with patient alerts, upcoming appointments, and summary statistics"
+                class="casev2-overview__img reveal"
+              /> -->
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem narrative (5 sub-blocks) -->
+      <section
+        class="casev2-section casev2-story"
+        aria-labelledby="story-title"
+      >
+        <div class="container">
+          <h2 id="story-title" class="visually-hidden">
+            Background and pain points
+          </h2>
+
+          <div class="casev2-story__stack">
+            <!-- 1) facts (same component you’ll reuse elsewhere) -->
+            <div
+              class="casev2-story__block casev2-story__items casev2-fullbleed"
+            >
+              <div class="casev2-story-item casev2-story-item--reveal">
+                <div class="casev2-story-item__icon" aria-hidden="true">🌿</div>
+                <p class="casev2-story-item__text">
+                  This app helps older adults manage their health. They take
+                  assessment, build a health profile, and get recommended
+                  helpful programs and resources.
+                </p>
+              </div>
+
+              <div class="casev2-story-item casev2-story-item--reveal">
+                <div class="casev2-story-item__icon" aria-hidden="true">⏳</div>
+                <p class="casev2-story-item__text">
+                  But over time it accumulated a lot of UX debt.
+                </p>
+              </div>
+            </div>
+
+            <!-- 🧮new part: What was wrong? -->
+            <div
+              class="casev2-section-addpad casev2-dotted-bg"
+              aria-labelledby="hmw-title"
+            >
+              <div class="container">
+                <h2 id="hmw-title" class="casev2-hmw__title casev2-center-wide">
+                  What was wrong?
+                </h2>
+                <div class="casev2-outcomes__notes">
+                  <article class="casev2-outcome-note">
+                    <div class="casev2-outcome-note__body">
+                      <p>
+                        We built the resource library fast and always meant to
+                        revisit it, but didn’t. It remained a too simple,
+                        text-heavy, and hard to navigate list.
+                      </p>
+                    </div>
+                    <figure class="casev2-overview__image">
+                      <img
+                        src="../assets/images/vivia_what-is-wrong-1.png"
+                        alt="Vivia problem 1: old resource library screen showing a long list of text links with minimal structure or filtering options"
+                        class="casev2-overview__img reveal"
+                      />
+                    </figure>
+                  </article>
+
+                  <article class="casev2-outcome-note">
+                    <div class="casev2-outcome-note__body">
+                      <p>
+                        The homepage was boring and it wasn’t clear how to scale
+                        it. Plus, it didn’t surface enough of the user’s
+                        recommendations for them to know what the value of the
+                        app was.
+                      </p>
+                    </div>
+                    <figure class="casev2-overview__image-inside">
+                      <img
+                        src="../assets/images/vivia-problem2-phone.png"
+                        alt="Vivia problem 1: old resource library screen showing a long list of text links with minimal structure or filtering options"
+                        class="casev2-overview_image-inside__img reveal"
+                      />
+                    </figure>
+                  </article>
+
+                  <article class="casev2-outcome-note">
+                    <div class="casev2-outcome-note__body">
+                      <p>
+                        Speaking of recommendations, they were hard to find and
+                        also not very engaging. They’re the main value add of
+                        the app, so that’s an issue!
+                      </p>
+                    </div>
+                    <figure class="casev2-overview__image">
+                      <img
+                        src="../assets/images/vivia_what-is-wrong-3.png"
+                        alt="Vivia problem 1: old resource library screen showing a long list of text links with minimal structure or filtering options"
+                        class="casev2-overview__img reveal"
+                      />
+                    </figure>
+                  </article>
+                  <article class="casev2-outcome-note">
+                    <div class="casev2-outcome-note__icon" aria-hidden="true">
+                      🗂️
+                    </div>
+
+                    <div class="casev2-outcome-note__body">
+                      <p>
+                        User and stakeholder feedback confirmed what we had
+                        suspected:
+                      </p>
+                    </div>
+                    <div
+                      class="casev2-story__block casev2-story__chat what-wrong-narrow"
+                    >
+                      <div class="casev2-chat-scene">
+                        <!-- Line 1: Patient (avatar left, bubble right) -->
+                        <div class="casev2-chat-line casev2-chat-line--left">
+                          <div class="casev2-chat-avatar" aria-hidden="true">
+                            🧓
+                          </div>
+
+                          <div
+                            class="casev2-chat-bubble casev2-chat-bubble--patient"
+                          >
+                            <p class="casev2-chat-label">Senior user</p>
+                            <p class="casev2-chat-text">
+                              There’s too much going on here. I don’t know where
+                              to start.
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- Line 2: Provider (bubble left, avatar right) -->
+                        <div class="casev2-chat-line casev2-chat-line--right">
+                          <div
+                            class="casev2-chat-bubble casev2-chat-bubble--provider-vivia"
+                          >
+                            <p
+                              class="casev2-chat-label casev2-chat-label-vivia"
+                            >
+                              Stakeholder
+                            </p>
+                            <p class="casev2-chat-text">
+                              The homepage feels blah and not fun. Can we take
+                              it up a notch?
+                            </p>
+                          </div>
+
+                          <div class="casev2-chat-avatar" aria-hidden="true">
+                            👩‍⚕️
+                          </div>
+                        </div>
+
+                        <!-- Line 1: Patient (avatar left, bubble right) -->
+                        <div class="casev2-chat-line casev2-chat-line--left">
+                          <div class="casev2-chat-avatar" aria-hidden="true">
+                            🧓
+                          </div>
+
+                          <div
+                            class="casev2-chat-bubble casev2-chat-bubble--patient"
+                          >
+                            <p class="casev2-chat-label">Senior user</p>
+                            <p class="casev2-chat-text">
+                              There’s too much going on here. I don’t know where
+                              to start.
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- Line 2: Provider (bubble left, avatar right) -->
+                        <div class="casev2-chat-line casev2-chat-line--right">
+                          <div
+                            class="casev2-chat-bubble casev2-chat-bubble--provider-vivia"
+                          >
+                            <p
+                              class="casev2-chat-label casev2-chat-label-vivia"
+                            >
+                              Stakeholder
+                            </p>
+                            <p class="casev2-chat-text">
+                              The homepage feels blah and not fun. Can we take
+                              it up a notch?
+                            </p>
+                          </div>
+
+                          <div class="casev2-chat-avatar" aria-hidden="true">
+                            👩‍⚕️
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chat sub-block (variant 1: paper world pain) -->
+
+            <div
+              class="casev2-story__block casev2-story__beat casev2-fullbleed"
+            >
+              <span class="casev2-beat__emoji" aria-hidden="true">✨</span>
+              <p class="casev2-beat" aria-label="Transition">
+                It was time to update the design.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Block: Design Goals -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-steps"
+        aria-labelledby="needed-title"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2
+              id="needed-title"
+              class="casev2-section-title casev2-section-title-on-light"
+            >
+              Design goals
+            </h2>
+
+            <ol class="casev2-steps3-all">
+              <li class="casev2-step3">
+                <div
+                  class="casev2-step3__num casev2-step3__num-vivia"
+                  aria-hidden="true"
+                >
+                  01
+                </div>
+                <p class="casev2-step3__text">
+                  Make the app simpler to navigate and make the key actions
+                  easier to recognize
+                </p>
+              </li>
+
+              <li class="casev2-step3">
+                <div
+                  class="casev2-step3__num casev2-step3__num-vivia"
+                  aria-hidden="true"
+                >
+                  02
+                </div>
+                <p class="casev2-step3__text">
+                  More relevant, visual, and accessible content that’s easier to
+                  revisit
+                </p>
+              </li>
+
+              <li class="casev2-step3">
+                <div
+                  class="casev2-step3__num casev2-step3__num-vivia"
+                  aria-hidden="true"
+                >
+                  03
+                </div>
+                <p class="casev2-step3__text">
+                  Improved experience for caregivers managing someone else’s
+                  health
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research & findings -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-research casev2-fullbleed casev2-fullbleed-hch-research"
+        aria-labelledby="research-title"
+        id="research"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2 id="research-title" class="casev2-section-title">Research</h2>
+            <p class="casev2-outro__subtitle casev2-research__subtitle">
+              Snappy and scrappy!
+            </p>
+
+            <div class="casev2-research__stack">
+              <!-- Row 1: image left, text right -->
+              <article class="casev2-media-row">
+                <figure class="casev2-media-row__media">
+                  <div
+                    class="casev2-media-row__frame casev2-media-row__frame--portrait"
+                  >
+                    <img
+                      class="casev2-media-row__img"
+                      src="../assets/images/vivia-reasearch-1.png"
+                      alt="Clinician interview illustration"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption
+                    class="casev2-media-row__caption casev2-media-row__caption-vivia"
+                  >
+                    current research status: seeing the forest for the trees :)
+                  </figcaption>
+                </figure>
+
+                <div class="casev2-media-row__content">
+                  <p
+                    class="casev2-media-row__text casev2-media-row__text-on-dark"
+                  >
+                    Due to budget and time constraints, I used simple research
+                    methods like past tests, heatmaps, talking to older adults
+                    my colleagues knew, and reviewing other apps.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Row 2: text left, image right -->
+              <article class="casev2-media-row casev2-media-row--reverse">
+                <figure class="casev2-media-row__media">
+                  <div
+                    class="casev2-media-row__frame casev2-media-row__frame--watercolor"
+                  >
+                    <img
+                      class="casev2-media-row__img"
+                      src="../assets/images/vivia-research-2.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </div>
+                </figure>
+
+                <div class="casev2-media-row__content">
+                  <p
+                    class="casev2-media-row__text casev2-media-row__text-on-dark"
+                  >
+                    AI tools helped me analyze feedback and explore ideas. But
+                    every output was reviewed by a human and based on human
+                    input and feedback.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Block: The main findings -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-steps casev2-steps--bg casev2-fullbleed casev2-fullbleed-image casev2-fullbleed-image-hch-findings-vivia"
+        aria-labelledby="if-continued-title"
+      >
+        <div class="container container--narrow">
+          <!-- <div class="container casev2-stack casev2-stack-addpad"> -->
+          <p class="casev2-eyebrow casev2-eyebrow-hch casev2-eyebrow-hch-dark">
+            The main finding
+          </p>
+
+          <h2
+            class="casev2-section-title casev2-section-title-left casev2-section-title-on-light"
+          >
+            Older adults felt lost in the app because the navigation, content
+            structure, and visuals were too text-heavy, cluttered, and hard to
+            follow. That led to low confidence and low engagement.
+          </h2>
+        </div>
+        <!-- </div> -->
+      </section>
+      <!-- Design highlights -->
+
+      <section
+        class="casev2-section casev2-highlights casev2-section-addpad"
+        aria-labelledby="highlights-title"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2 id="highlights-title" class="casev2-section-title">
+              Design highlights
+            </h2>
+
+            <div class="casev2-highlights__list">
+              <!-- 1) Welcome to the ER -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow">Home, sweet home</p>
+
+                  <p class="casev2-highlight__text">
+                    The new homepage is made of simple widgets that highlight
+                    programs, resources, and health reports. Newly added visuals
+                    and short labels make each section easy to recognize and
+                    understand at a quick glance.
+                  </p>
+
+                  <div class="casev2-callout">
+                    <p class="casev2-callout__title">
+                      Small copy change, big impact
+                    </p>
+                    <p class="casev2-callout__text">
+                      Changing the heading from “Recommended programs” to “Start
+                      something new” increased clicks by 30%.
+                    </p>
+                  </div>
+                </header>
+
+                <figure class="casev2-highlight__media">
+                  <img
+                    src="../assets/images/design-highlights-vivia-1.png"
+                    class="casev2-highlight__vivia-img"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <!-- 2) Home page -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow">
+                    Take down this book and slowly read
+                  </p>
+
+                  <p class="casev2-highlight__text">
+                    A redesigned resource library with visual cards, clear
+                    categories, and a recommended section that makes it easier
+                    to browse and find helpful articles. New features like
+                    history and bookmarks help users get back to past resources.
+                  </p>
+
+                  <div class="casev2-callout">
+                    <p class="casev2-callout__title">
+                      And I could scroll 500 miles, and I could scroll 500 more
+                    </p>
+                    <p class="casev2-callout__text">
+                      I added more visuals and grouping to make the library
+                      easier to scan, but this meant spending more space per
+                      item. I accepted the extra scrolling to keep the
+                      experience feel calmer and easier to use.
+                    </p>
+                  </div>
+                </header>
+
+                <figure
+                  class="casev2-highlight__media casev2-highlight__media--phones"
+                >
+                  <img
+                    src="../assets/images/design-highlights-vivia-2.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <!-- 3) Intro screen -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow">
+                    Good morning, sir, would you care for an educational
+                    resource?
+                  </p>
+
+                  <p class="casev2-highlight__text">
+                    Recommendations were buried in the completed tasks list
+                    which meant they were hard to find. I advocated for a
+                    persistent lightweight notification system that’s easier to
+                    revisit and scale.
+                  </p>
+
+                  <div class="casev2-callout">
+                    <p class="casev2-callout__title">
+                      I check it once, I check it twice
+                    </p>
+                    <p class="casev2-callout__text">
+                      Moving recommendations into notifications made them more
+                      visible, but it also added another place for users to
+                      check. However, now users could always see if there was
+                      something new or not rather than having to guess.
+                    </p>
+                  </div>
+                </header>
+
+                <figure
+                  class="casev2-highlight__media casev2-highlight__media--phones"
+                >
+                  <img
+                    src="../assets/images/design-highlights-vivia-3.png"
+                    class="casev2-highlight__vivia-img"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <!-- 4) How old are you? -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow">
+                    Reading is fundamental (unless you prefer to listen)
+                  </p>
+
+                  <p class="casev2-highlight__text">
+                    I redesigned content pages with large visuals and time
+                    estimates. Keeping accessibility in mind, we added
+                    auto-generated captions for videos and planned voice-over
+                    support for articles.
+                  </p>
+
+                  <div class="casev2-callout">
+                    <p class="casev2-callout__title">
+                      So many options, so little time
+                    </p>
+                    <p class="casev2-callout__text">
+                      We explored adding audio as well, but audio required
+                      significantly more engineering effort and ongoing
+                      maintenance. Considering the scope and timeline, I
+                      prioritized the AI summary as a higher-impact, lower-cost
+                      way to improve accessibility. The audio support was still
+                      planned as a future enhancement.
+                    </p>
+                  </div>
+                </header>
+
+                <figure
+                  class="casev2-highlight__media casev2-highlight__media--phones"
+                >
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller"
+                    src="../assets/images/design-highlights-vivia-4.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hch-smaller-short"
+                    src="../assets/images/design-highlights-vivia-5.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <!-- 5) Caring deeply -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow">Caring deeply</p>
+
+                  <p class="casev2-highlight__text">
+                    A sizeable percentage of users were caregivers, with some
+                    caring for more than one person that could benefit from this
+                    program.
+                  </p>
+                  <p class="casev2-highlight__text">
+                    Multi-profile support allows them to switch between
+                    accounts, create new profiles, and manage settings for
+                    different family members in one place.
+                  </p>
+
+                  <div class="casev2-callout">
+                    <p class="casev2-callout__title">Profile handoff</p>
+                    <p class="casev2-callout__text">
+                      We allowed caregivers to manage profiles, but also built
+                      in settings for patients to take ownership if they wanted
+                      to. This was especially relevant since the system needed
+                      to be able to scale for other situations, such as parents
+                      taking care of children.
+                    </p>
+                  </div>
+                </header>
+
+                <figure
+                  class="casev2-highlight__media casev2-highlight__media--phones"
+                >
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller"
+                    src="../assets/images/design-highlights-vivia-6.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hch-smaller-short"
+                    src="../assets/images/design-highlights-vivia-7.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Outcomes -->
+      <section
+        class="casev2-section casev2-outcomes casev2-section-addpad"
+        aria-labelledby="outcomes-title"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2 id="outcomes-title" class="casev2-section-title">Outcomes</h2>
+
+            <!-- Top metrics -->
+            <div class="casev2-metrics">
+              <figure class="casev2-metric">
+                <div class="casev2-metric__value casev2-metric__value-hch">
+                  92%
+                </div>
+                <figcaption class="casev2-metric__label">
+                  accuracy compared to triage nurse’ assessment
+                </figcaption>
+              </figure>
+
+              <figure class="casev2-metric">
+                <div class="casev2-metric__value casev2-metric__value-hch">
+                  85%
+                </div>
+                <figcaption class="casev2-metric__label">
+                  faster intake process projected
+                </figcaption>
+              </figure>
+
+              <figure class="casev2-metric casev2-metric--wide">
+                <div class="casev2-metric__value casev2-metric__value-hch">
+                  87%
+                </div>
+                <figcaption class="casev2-metric__label">
+                  of surveyed families found the tool easy to use
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- 3 narrative outcome notes -->
+            <div class="casev2-outcomes__notes">
+              <article class="casev2-outcome-note">
+                <div class="casev2-outcome-note__icon" aria-hidden="true">
+                  🎯
+                </div>
+                <p class="casev2-outcome-note__eyebrow">
+                  The main metric - accuracy!
+                </p>
+
+                <div class="casev2-outcome-note__body">
+                  <p>
+                    In the pilot run of the screener, it aligned with nurse
+                    triage 92% of the time. Caregivers shared clearer info, and
+                    nurses said the tool felt “natural” to use, even on very
+                    busy shifts.
+                  </p>
+                </div>
+              </article>
+
+              <article class="casev2-outcome-note">
+                <div class="casev2-outcome-note__icon" aria-hidden="true">
+                  ⚡
+                </div>
+                <p class="casev2-outcome-note__eyebrow">Efficiency gains</p>
+
+                <div class="casev2-outcome-note__body">
+                  <p>
+                    Moving the first part of intake online saved nurses a lot of
+                    time on lower-acuity cases.
+                  </p>
+                </div>
+                <div class="casev2-outcome-note__body">
+                  <p>
+                    That freed them up to focus on patients who needed attention
+                    right away without adding extra steps for caregivers.
+                  </p>
+                </div>
+              </article>
+
+              <article class="casev2-outcome-note">
+                <div class="casev2-outcome-note__icon" aria-hidden="true">
+                  🌱
+                </div>
+                <p class="casev2-outcome-note__eyebrow">
+                  Designed for scaling and inclusivity
+                </p>
+
+                <div class="casev2-outcome-note__body">
+                  <p>
+                    From the start, the design worked on any device, supported
+                    different accessibility needs, and rolled out in both
+                    English and French.
+                  </p>
+                </div>
+                <div class="casev2-outcome-note__body">
+                  <p>
+                    This made the tool easily scaleable for other hospitals and
+                    clinics!
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Block:If continued, I would... -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-steps casev2-steps--bg casev2-fullbleed casev2-fullbleed-hch-if-continued"
+        aria-labelledby="if-continued-title"
+      >
+        <div class="container container--narrow">
+          <div class="casev2-center casev2-center-wide casev2-center-nums">
+            <h2
+              id="if-continued-title"
+              class="casev2-section-title casev2-section-title-on-light"
+            >
+              If continued, I would...
+            </h2>
+
+            <ol class="casev2-steps3-all">
+              <li class="casev2-step3">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch"
+                  aria-hidden="true"
+                >
+                  01
+                </div>
+                <p class="casev2-step3__text">
+                  Add an opt-in AI assistant that gives recommendations, answers
+                  questions, and motivates users.
+                </p>
+              </li>
+
+              <li class="casev2-step3">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch"
+                  aria-hidden="true"
+                >
+                  02
+                </div>
+                <p class="casev2-step3__text">
+                  Give users the option to share sensory or neurodiverse needs
+                  ahead of time so that the nurses would be aware
+                </p>
+              </li>
+
+              <li class="casev2-step3">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch"
+                  aria-hidden="true"
+                >
+                  03
+                </div>
+                <p class="casev2-step3__text">
+                  Separate flows for adult caregivers and children completing
+                  the questionnaire
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Learnings (same note structure as Outcomes, without the metrics block) -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-learnings"
+        aria-labelledby="learnings-title"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2 id="learnings-title" class="casev2-section-title">Learnings</h2>
+
+            <!-- Reuse the same notes structure/classes as Outcomes -->
+            <div class="casev2-outcomes__notes">
+              <article class="casev2-outcome-note">
+                <div class="casev2-outcome-note__icon" aria-hidden="true">
+                  🤩
+                </div>
+                <p class="casev2-outcome-note__eyebrow">What worked well</p>
+
+                <div class="casev2-outcome-note__body">
+                  <p>
+                    Running the hospital trial was huge! The screener matched
+                    nurse triage 92% of the time, which showed the tool was
+                    genuinely accurate and useful. The collaboration with
+                    nurses, PMs, and engineers also clicked really well, and we
+                    stayed aligned and enthusiastic even with tight deadlines.
+                  </p>
+                </div>
+              </article>
+
+              <article class="casev2-outcome-note">
+                <div class="casev2-outcome-note__icon" aria-hidden="true">
+                  🧡
+                </div>
+                <p class="casev2-outcome-note__eyebrow">Most proud of</p>
+
+                <div class="casev2-outcome-note__body">
+                  <p>
+                    I’m proud that I led a complex project on my own and made an
+                    awful experience a little calmer and accessible for stressed
+                    out users. Designing something that helps families in a
+                    scary moment and hearing staff call it “easy to use” felt
+                    amazing! This is why I do what I do. :)
+                  </p>
+                </div>
+              </article>
+
+              <article class="casev2-outcome-note">
+                <div class="casev2-outcome-note__icon" aria-hidden="true">
+                  📖
+                </div>
+                <p class="casev2-outcome-note__eyebrow">Best lesson learned</p>
+
+                <div class="casev2-outcome-note__body">
+                  <p>
+                    A metaphor from our VP of Product stuck with me: when
+                    building an MVP, don’t start with a car door or bumper:
+                    start with a skateboard. That mindset helped me guide our
+                    scope and prioritize value and quick wins!
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="casev2-section casev2-outro casev2-fullbleed-image-hch-outro"
+      >
+        <!-- upper content -->
+        <div class="casev2-outro__hero">
+          <div class="container">
+            <h2 class="casev2-outro__title">Thank you for reading!</h2>
+            <p class="casev2-outro__subtitle">
+              Explore other case studies using the buttons below.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- lower nav stays EXACTLY as you already have it -->
+      <!-- 🦊 next-prev buttons-->
       <nav class="case-nav reveal">
         <div class="container">
           <a
             href="/horizon-children-hospital/"
-            class="case-nav__btn case-nav__btn--prev"
-          >
-            ← Previous case
-          </a>
-          <!-- keep Next hidden until case3 exists -->
-          <a
-            href="#"
-            class="case-nav__btn case-nav__btn--next case-nav__btn--hidden"
-            aria-hidden="true"
+            class="case-nav__btn case-nav__btn--next"
           >
             Next case →
           </a>
         </div>
       </nav>
-      <!-- 🦊end of prev/next buttons -->
+      <!-- 🦊end  -->
     </main>
-
     <!-- Footer -->
-    <footer class="site-footer reveal">
+    <footer class="site-footer">
       <div class="container site-footer__content">
         <div class="site-footer__left">
           <p class="site-footer__name">Michelle Pavlova</p>
@@ -1564,7 +1237,7 @@
           <div class="site-footer__column">
             <h4 class="site-footer__heading">Navigation</h4>
             <ul class="site-footer__list">
-              <li><a href="/">Home</a></li>
+              <li><a href="../">Home</a></li>
               <li><a href="../#selected-work">Work</a></li>
               <li><a href="/about/">About</a></li>
             </ul>
@@ -1612,6 +1285,7 @@
         </div>
       </div>
     </footer>
+
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
       <svg
         viewBox="0 0 24 24"
@@ -1630,7 +1304,6 @@
         />
       </svg>
     </button>
-
     <script src="../scripts/main.js" defer></script>
   </body>
 </html>
