@@ -25,6 +25,7 @@ body {
   pointer-events: none;
   background: var(--color-homepage);
   color: #fff;
+  color: var(--color-text);
   font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -42,7 +43,8 @@ body {
 }
 
 .cursor-label--inactive {
-  background: var(--color-homepage); /* lighter blue or a different tone */
+  /* lighter blue or a different tone */
+  background: var(--color-homepage);
 }
 .case-card:has(.case-card__link--nonactive):hover .case-card__inner {
   opacity: 0.6;

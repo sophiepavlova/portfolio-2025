@@ -3236,21 +3236,20 @@ a:focus:not(:focus-visible) {
   pointer-events: none;
 }
 
-/* .cursor-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  line-height: 1;
-} */
 #cursor-label {
   position: fixed;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 16px; /* ← these will now take effect */
-  background-color: var(--color-homepage);
+  padding: 14px 16px;
+  /* background-color: var(--color-homepage); */
+  /* background-color: #210b28; */
+  background-color: var(--Colors-Stone-900, #1c1917);
+  border: 1px solid white;
+  /* background-color: var(--color-accent, #e11d48); */
   color: white;
+
   border-radius: 9999px;
   font-size: 16px;
   line-height: 1;
