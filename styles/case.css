@@ -69,6 +69,14 @@
   background: var(--Colors-Stone-100, #f5f5f4);
   z-index: -1;
 }
+.casev2-fullbleed-hvh-solid::before {
+  background: linear-gradient(
+    to bottom,
+    var(--Colors-Stone-100, #f5f5f4) 0%,
+    #fafafa 55%,
+    #ffffff 85%
+  );
+}
 /* .casev2-fullbleed::before {
   content: "";
   position: absolute;
@@ -732,6 +740,9 @@
 .casev2-chat-bubble--provider {
   background: var(--Colors-Sky-100, #e0f2fe);
 }
+.casev2-chat-bubble--provider-hch {
+  background: var(--Colors-Fuchsia-100, #fae8ff);
+}
 .casev2-chat-bubble--provider-vivia {
   background: var(--Colors-Green-100, #dcfce7);
 }
@@ -742,6 +753,9 @@
 
 .casev2-chat-bubble--provider .casev2-chat-label {
   color: #075985; /* sky-800 */
+}
+.casev2-chat-bubble--provider .casev2-chat-label-hch {
+  color: var(--Colors-Fuchsia-800, #86198f);
 }
 .casev2-chat-label-vivia {
   color: var(--Colors-Green-800, #166534);
@@ -1048,7 +1062,7 @@ Callout (dark grey box inside highlights)
   /* padding: 26px; */
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
 }
 
 .casev2-outcome-note__icon {
@@ -1269,6 +1283,9 @@ Callout (dark grey box inside highlights)
 }
 .casev2-band--ink-vivia {
   background-image: url("../assets/images/My_Role-vivia.jpg");
+}
+.casev2-band--ink-hch {
+  background-image: url("../assets/images/My_Role-hch.jpg");
 }
 
 /* Optional: add a soft dark overlay to keep text readable */
@@ -1548,6 +1565,9 @@ p.casev2-outro__subtitle {
 }
 p.casev2-outro__subtitle-vivia {
   color: var(--Colors-Green-800, #166534);
+}
+p.casev2-outro__subtitle-hch {
+  color: var(--Colors-Fuchsia-800, #86198f);
 }
 
 .casev2-research__subtitle {
