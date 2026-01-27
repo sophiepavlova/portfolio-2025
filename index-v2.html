@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,16 +36,6 @@
       href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Caveat:wght@400&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css" />
 
     <!-- Handwriting accent font (for About page, global use) -->
     <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css" />
@@ -190,12 +180,28 @@
                 intuitive, and <em>simple</em>, even when the problems aren’t.
               </p>
             </div>
+            <div class="hero__button-wrapper">
+              <a
+                href="#selected-work"
+                class="button button--primary hero__button"
+              >
+                See my work
+                <span class="button__icon" aria-hidden="true">
+                  <img
+                    src="./assets/icons/arrow-down.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="selected-work" class="selected-work">
         <div class="container reveal">
+          <h2 class="selected-work__title reveal">Selected work</h2>
           <div class="selected-work__cards reveal">
             <!-- 🦊 A First new card -->
             <!-- Case1: everwell-PROMs-and-trends -->
@@ -207,26 +213,17 @@
                   <div class="case-card__content">
                     <!-- Left side -->
                     <div class="case-card__text">
-                      <div class="case-card__tags" aria-label="Project tags">
-                        <span class="case-card__tag">B2B SaaS</span>
-                        <span class="case-card__tag">B2B2C</span>
-                        <span class="case-card__tag">Data Visualization</span>
-                        <span class="case-card__tag">Analytics Dashboards</span>
-                      </div>
-
                       <div class="case-card__top">
-                        <h3
-                          class="case-card__company case-card__company-everwell"
-                        >
-                          EVERWELL
-                        </h3>
+                        <!-- <h3 class="case-card__company">EVERWELL</h3> -->
                         <h2 class="case-card__title">
                           Achieving a 98% form compliance and helping clinicians
                           spot trends
                         </h2>
                         <p class="case-card__description">
-                          Paper forms → digital system. Enabled better and
-                          faster trend detection and scalable care programs.
+                          Transformed paper-based forms into a digital tool that
+                          improved patient completion, helped clinicians
+                          identify health trends faster, and enabled scaling
+                          across new clinics and specialties.
                         </p>
                       </div>
                       <!-- Styled like a button but not a second link -->
@@ -264,14 +261,9 @@
                       </div>
                     </div>
                     <!-- Right side -->
-                    <div class="case-card__brand">
-                      <img
-                        src="../assets/images/Trends_Top_Of_Page.gif"
-                        alt="Animated Everwell dashboard showing a patient’s physical health trend line gradually building over six months"
-                        class="case-card__brand-pic reveal visible"
-                      />
-                      <!-- <div class="case-card__brand-name">Everwell</div>
-                      <div class="case-card__brand-sub">for providers</div> -->
+                    <div class="case-card__brand" aria-hidden="true">
+                      <div class="case-card__brand-name">Everwell</div>
+                      <div class="case-card__brand-sub">for providers</div>
                     </div>
                   </div>
 
@@ -306,23 +298,14 @@
                   <div class="case-card__content">
                     <!-- Left side -->
                     <div class="case-card__text">
-                      <div class="case-card__tags" aria-label="Project tags">
-                        <span class="case-card__tag">B2B2C</span>
-                        <span class="case-card__tag">0 → 1</span>
-                        <span class="case-card__tag">AI-assisted UX</span>
-                        <span class="case-card__tag">Mobile-first</span>
-                      </div>
                       <div class="case-card__top">
-                        <h3 class="case-card__company case-card__company-hch">
-                          Horizon Children’s Hospital
-                        </h3>
                         <h2 class="case-card__title">
                           Streamlining pediatric ER triage with 92% accuracy
                         </h2>
                         <p class="case-card__description">
-                          Designed a digital triage tool for a Canadian
-                          children’s hospital to reduce nurse burden and improve
-                          ER visits for patients.
+                          End-to-end design of a digital triage tool for a
+                          Canadian children’s hospital, aimed at reducing nurse
+                          burden and improving the ER experience for families.
                         </p>
                       </div>
                       <!-- Styled like a button but not a second link -->
@@ -362,13 +345,20 @@
                       </div>
                     </div>
                     <!-- Right side -->
-                    <div class="case-card__brand">
-                      <!-- case-card__brand-long -->
-                      <img
-                        src="../assets/images/home-card-hch.png"
-                        alt="Animated Everwell dashboard showing a patient’s physical health trend line gradually building over six months"
-                        class="case-card__brand-pic case-card__brand-pic-hch reveal visible"
-                      />
+                    <div
+                      class="case-card__brand case-card__brand-long"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="case-card__brand-name case-card__brand-name-long"
+                      >
+                        Horizon Children’s Hospital
+                      </div>
+                      <div
+                        class="case-card__brand-sub case-card__brand-sub-dark"
+                      >
+                        a ER screener
+                      </div>
                     </div>
                   </div>
 
@@ -393,9 +383,10 @@
               </a>
             </article>
             <!-- 😎 The end of Case2: Horizon Children's Hospital -->
+            <!-- 🦊 The end of the 2 new card -->
 
             <!-- 🦊 A 3 card -->
-            <!-- 😑Case3: Vivia -->
+            <!-- 😑Case3: everwell-senior-solution -->
             <article
               class="case-card case-card--everwell-trends case-card--overlay-strong reveal"
             >
@@ -404,24 +395,15 @@
                   <div class="case-card__content">
                     <!-- Left side -->
                     <div class="case-card__text">
-                      <div class="case-card__tags" aria-label="Project tags">
-                        <span class="case-card__tag">B2B2C</span>
-                        <span class="case-card__tag">0 → 1</span>
-                        <span class="case-card__tag">AI-assisted UX</span>
-                        <span class="case-card__tag">Mobile-first</span>
-                      </div>
                       <div class="case-card__top">
-                        <h3 class="case-card__company case-card__company-vivia">
-                          Vivia
-                        </h3>
                         <h2 class="case-card__title">
                           Redesigning a seniors' health app for engagement and
                           simplicity
                         </h2>
                         <p class="case-card__description">
-                          Turned an MVP into a full-featured wellness platform
-                          with an intuitive and accessible experience for older
-                          adults.
+                          Transformed a basic MVP into a full-featured wellness
+                          platform, creating a more intuitive, accessible
+                          experience tailored to older users.
                         </p>
                       </div>
                       <!-- Styled like a button but not a second link -->
@@ -460,16 +442,16 @@
                     </div>
                     <!-- Right side -->
                     <div class="case-card__brand" aria-hidden="true">
-                      <img
-                        src="../assets/images/home-card-vivia.png"
-                        alt="Animated Everwell dashboard showing a patient’s physical health trend line gradually building over six months"
-                        class="case-card__brand-pic case-card__brand-pic-hch case-card__brand-pic-vivia reveal visible"
-                      />
+                      <div class="case-card__brand-name">Vivia</div>
+                      <div class="case-card__brand-sub">
+                        an app for seniors to stay healthy and fit
+                      </div>
                     </div>
                   </div>
 
                   <!-- 🍒new card background -->
                   <div class="case-card__visual" aria-hidden="true">
+                    <picture class="case-card__media">
                       <img
                         src="./assets/images/home3.png"
                         alt=""
@@ -497,15 +479,10 @@
                 class="case-card__link case-card__link--nonactive"
                 aria-disabled="true"
               >
-                <div class="case-card__inner case-card__inner-interviewr">
+                <div class="case-card__inner">
                   <div class="case-card__content">
                     <!-- Left side -->
                     <div class="case-card__text">
-                      <div class="case-card__tags" aria-label="Project tags">
-                        <span class="case-card__tag">B2B SaaS</span>
-                        <span class="case-card__tag">AI-powered</span>
-                        <span class="case-card__tag">Recruiting Tech</span>
-                      </div>
                       <div class="case-card__top">
                         <!-- <h3 class="case-card__company">EVERWELL</h3> -->
                         <h2 class="case-card__title">
@@ -526,7 +503,7 @@
                       <!-- Stats -->
                     </div>
                     <!-- Right side -->
-                    <div class="case-card__brand case-card__brand-interviewr">
+                    <div class="case-card__brand" aria-hidden="true">
                       <img
                         src="./assets/images/Logo.png"
                         alt=""
@@ -534,7 +511,6 @@
                         loading="lazy"
                         decoding="async"
                       />
-                      <div class="case-card__brand-sub case-card__brand-sub-interviewr">an AI-powered tool for hiring managers</div> 
                     </div>
                   </div>
 

@@ -20,10 +20,10 @@ const homeHrefs = [
   "/",
 ];
 const homeLink = navLinks.find((link) =>
-  homeHrefs.includes(link.getAttribute("href"))
+  homeHrefs.includes(link.getAttribute("href")),
 );
 const workLink = navLinks.find(
-  (link) => link.getAttribute("href") === "#selected-work"
+  (link) => link.getAttribute("href") === "#selected-work",
 );
 
 // Helper: is this a case study page?
@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // -----------------------------
 function setActiveMenuLinks() {
   const allLinks = document.querySelectorAll(
-    ".site-nav a, .mobile-menu__nav a"
+    ".site-nav a, .mobile-menu__nav a",
   );
   const pathParts = location.pathname.split("/").filter(Boolean);
   const currentPage = pathParts[0] || "home";
@@ -316,7 +316,7 @@ window.addEventListener("popstate", setActiveMenuLinks);
   if (!sideNav) return;
   const navLinks = sideNav.querySelectorAll("a");
   const anchorIds = Array.from(navLinks).map((link) =>
-    link.getAttribute("href").replace("#", "")
+    link.getAttribute("href").replace("#", ""),
   );
   const sections = anchorIds.map((id) => document.getElementById(id));
 
@@ -378,7 +378,7 @@ document.addEventListener(
       }, 1);
     } catch (e) {}
   },
-  { passive: true }
+  { passive: true },
 );
 // 🍭Recolor the side menu when links overlap any blue strip
 document.addEventListener("DOMContentLoaded", () => {
@@ -434,7 +434,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   reveals.forEach((el) => observer.observe(el));
@@ -463,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.3 }
+    { threshold: 0.3 },
   );
 
   phoneContainers.forEach((el) => observer.observe(el));
@@ -476,41 +476,43 @@ const observer = new IntersectionObserver(
       if (entry.isIntersecting) entry.target.classList.add("visible");
     });
   },
-  { threshold: 0.5 }
+  { threshold: 0.5 },
 );
 
 document.querySelectorAll(".case-card").forEach((el) => observer.observe(el));
 
-document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
-  const seeWorkBtn = document.querySelector(".hero__button");
-  const selectedWork = document.querySelector(".selected-work");
-  const header = document.querySelector(".site-header");
+// 🧮 Removing the glide on the home page
 
-  // Only run this script if .selected-work exists (i.e. on the home page)
-  if (!selectedWork) return;
+// document.addEventListener("DOMContentLoaded", () => {
+//   const body = document.body;
+//   const seeWorkBtn = document.querySelector(".hero__button");
+//   const selectedWork = document.querySelector(".selected-work");
+//   const header = document.querySelector(".site-header");
 
-  const startGlide = () => {
-    body.classList.add("scrolled");
-    const offset = header?.offsetHeight || 0;
-    const y =
-      selectedWork.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: y, behavior: "smooth" });
-  };
+//   // Only run this script if .selected-work exists (i.e. on the home page)
+//   if (!selectedWork) return;
 
-  let armed = true;
-  window.addEventListener("scroll", () => {
-    if (armed && window.scrollY > 2) {
-      startGlide();
-      armed = false;
-    }
-  });
+//   const startGlide = () => {
+//     body.classList.add("scrolled");
+//     const offset = header?.offsetHeight || 0;
+//     const y =
+//       selectedWork.getBoundingClientRect().top + window.scrollY - offset;
+//     window.scrollTo({ top: y, behavior: "smooth" });
+//   };
 
-  seeWorkBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    startGlide();
-  });
-});
+//   let armed = true;
+//   window.addEventListener("scroll", () => {
+//     if (armed && window.scrollY > 2) {
+//       startGlide();
+//       armed = false;
+//     }
+//   });
+
+//   seeWorkBtn?.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     startGlide();
+//   });
+// });
 
 // if (location.pathname === '/' || location.pathname === '/index.html') {
 //   window.addEventListener('scroll', () => {
@@ -523,68 +525,68 @@ document.addEventListener("DOMContentLoaded", () => {
 // }
 
 // 🐹 Glide on the home screeen
-(function homeGlide() {
-  const onHome =
-    location.pathname === "/" || location.pathname.endsWith("/index.html");
+// (function homeGlide() {
+//   const onHome =
+//     location.pathname === "/" || location.pathname.endsWith("/index.html");
 
-  if (!onHome) return;
+//   if (!onHome) return;
 
-  const header = document.querySelector(".site-header");
-  const selectedWork = document.querySelector("#selected-work");
-  const hero = document.querySelector(".hero");
-  if (!selectedWork || !hero) return;
+//   const header = document.querySelector(".site-header");
+//   const selectedWork = document.querySelector("#selected-work");
+//   const hero = document.querySelector(".hero");
+//   if (!selectedWork || !hero) return;
 
-  const getHeaderH = () => (header ? header.offsetHeight : 0);
+//   const getHeaderH = () => (header ? header.offsetHeight : 0);
 
-  function glideToSelectedWork() {
-    document.body.classList.add("scrolled");
-    const y =
-      selectedWork.getBoundingClientRect().top + window.scrollY - getHeaderH();
-    window.scrollTo({ top: y, behavior: "smooth" });
-  }
+//   function glideToSelectedWork() {
+//     document.body.classList.add("scrolled");
+//     const y =
+//       selectedWork.getBoundingClientRect().top + window.scrollY - getHeaderH();
+//     window.scrollTo({ top: y, behavior: "smooth" });
+//   }
 
-  window.__glideToSelectedWork = glideToSelectedWork;
+//   window.__glideToSelectedWork = glideToSelectedWork;
 
-  const anchors = document.querySelectorAll(
-    'a[href="#selected-work"], a[href="/#selected-work"]'
-  );
-  anchors.forEach((a) => {
-    a.addEventListener("click", (e) => {
-      e.preventDefault();
-      glideToSelectedWork();
-    });
-  });
+//   const anchors = document.querySelectorAll(
+//     'a[href="#selected-work"], a[href="/#selected-work"]',
+//   );
+//   anchors.forEach((a) => {
+//     a.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       glideToSelectedWork();
+//     });
+//   });
 
-  let armed = true;
-  window.addEventListener(
-    "scroll",
-    () => {
-      // Don't auto-glide if user is already at #selected-work
-      const alreadyAtWork =
-        location.hash === "#selected-work" ||
-        selectedWork.getBoundingClientRect().top <= getHeaderH();
+//   let armed = true;
+//   window.addEventListener(
+//     "scroll",
+//     () => {
+//       // Don't auto-glide if user is already at #selected-work
+//       const alreadyAtWork =
+//         location.hash === "#selected-work" ||
+//         selectedWork.getBoundingClientRect().top <= getHeaderH();
 
-      if (
-        armed &&
-        window.scrollY > 2 &&
-        window.scrollY < window.innerHeight * 0.5 &&
-        !alreadyAtWork
-      ) {
-        armed = false;
-        glideToSelectedWork();
-      }
-    },
-    { passive: true }
-  );
+//       if (
+//         armed &&
+//         window.scrollY > 2 &&
+//         window.scrollY < window.innerHeight * 0.5 &&
+//         !alreadyAtWork
+//       ) {
+//         armed = false;
+//         glideToSelectedWork();
+//       }
+//     },
+//     { passive: true },
+//   );
 
-  // window.addEventListener('scroll', () => {
-  //   hero.style.position = (window.scrollY > window.innerHeight) ? 'relative' : 'fixed';
-  // }, { passive: true });
-})();
+//   // window.addEventListener('scroll', () => {
+//   //   hero.style.position = (window.scrollY > window.innerHeight) ? 'relative' : 'fixed';
+//   // }, { passive: true });
+// })();
 
 // 🐹 End of Glide on the home screeen
+// 🧮 END: Removing the glide on the home page
 
-// Optional: tune breakpoint if needed
 // 📚 Hide .hero only after scrolling down
 const hero = document.querySelector(".home .hero");
 
@@ -606,7 +608,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!slider) return; // 🧊 Exit early if not on the About page
 
   const slides = Array.from(
-    slider.querySelectorAll(".about-photo-slider__img")
+    slider.querySelectorAll(".about-photo-slider__img"),
   );
   if (slides.length === 0) return; // 🧊 Extra guard
 
@@ -723,7 +725,7 @@ document.addEventListener("DOMContentLoaded", () => {
     (e) => {
       touchStartY = e.touches[0].clientY;
     },
-    { passive: true }
+    { passive: true },
   );
 
   slider.addEventListener(
@@ -739,7 +741,7 @@ document.addEventListener("DOMContentLoaded", () => {
         else showPrev();
       }
     },
-    { passive: true }
+    { passive: true },
   );
 
   // --- manual wheel (desktop)
@@ -758,7 +760,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showPrev();
       }
     },
-    { passive: false }
+    { passive: false },
   );
 });
 
@@ -890,7 +892,7 @@ document.addEventListener("DOMContentLoaded", () => {
           duration: 4500,
           easing: "cubic-bezier(0.3, 0.6, 0.4, 1)",
           fill: "forwards",
-        }
+        },
       );
 
       animation.onfinish = () => flower.remove();
@@ -936,7 +938,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".site-header");
   const headerHeight = header ? header.offsetHeight : 0;
   const specialLink = document.querySelector(
-    '.inline-link[href="#nav-problem"]'
+    '.inline-link[href="#nav-problem"]',
   );
 
   if (specialLink) {

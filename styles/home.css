@@ -209,7 +209,7 @@ body.scrolled .home .selected-work {
 }
 
 .hero__flower {
-  width: 2em; /* proportional to text */
+  width: 1.4em; /* proportional to text */
   height: auto;
   flex-shrink: 0;
   transition: width 0.3s ease;
@@ -233,17 +233,17 @@ body.scrolled .home .selected-work {
   font-size: 70px; /* Figma value */
   font-weight: 500;
   line-height: 100%;
-  letter-spacing: 0.5%;
+  /* letter-spacing: 0.5px; */
   color: white;
   margin-bottom: 20px;
 }
 
 .home .hero__description {
-  font-size: 24px; /* Figma value */
+  font-size: 20px;
   line-height: 1.4;
   margin-bottom: 30px;
   color: white;
-  max-width: 312px; /*instead of 340 */
+  max-width: 340px; /*previously 312 */
 }
 
 .home .hero__info {
@@ -256,7 +256,10 @@ body.scrolled .home .selected-work {
 
 .home .hero__info-text {
   color: white;
-  font-family: "Inter", sans-serif;
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
 }
 
 .home .hero__info-item {
@@ -382,7 +385,7 @@ body.scrolled .home .selected-work {
   flex-direction: column;
   justify-content: center;
   gap: 20px; /* space between blocks */
-  padding: 30px; /* ← adjust later */
+  /* padding: 30px;  */
 }
 
 /* Top block (company + title + desc) */
@@ -397,11 +400,41 @@ body.scrolled .home .selected-work {
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
-  letter-spacing: 2%;
+  /* letter-spacing: 2%; */
   color: var(--Colors-Blue-700, #1d4ed8);
   margin: 0;
   text-transform: uppercase;
 }
+.case-card__company-everwell {
+  font-family: "Instrument Serif", serif;
+  font-size: 64px;
+  color: white;
+}
+.case-card__company-hch {
+  font-family: "Felt Tip Woman", "Caveat", "Comic Sans MS", cursive;
+  font-family: "felt-tip-woman", cursive; /* whatever the kit CSS shows */
+  text-transform: none;
+  font-size: 56px;
+  color: var(--Colors-Fuchsia-900, #701a75) !important;
+  line-height: 100%;
+}
+.case-card__company-vivia {
+  font-family: "Aoboshi One", serif !important;
+  font-weight: 400;
+  font-size: 86px;
+  letter-spacing: 0.005em;
+  color: #fff;
+  text-transform: none;
+}
+
+/* .case-card__brand-name {
+    font-family: "Aoboshi One", serif;
+    font-weight: 400;
+    font-size: 86px;
+    line-height: 1;
+    letter-spacing: 0.005em;
+    color: #fff;
+} */
 .case-card__company-2 {
   color: var(--Colors-Fuchsia-700, #a21caf);
 }

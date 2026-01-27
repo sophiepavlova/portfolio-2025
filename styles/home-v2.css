@@ -9,12 +9,12 @@
   -webkit-backdrop-filter: none !important;
 }
 
-.home--v2 .hero {
-  position: sticky; /* keep your existing mechanic */
+/* .home--v2 .hero {
+  position: sticky;
   top: 0;
   height: 100svh;
   overflow: hidden;
-}
+} */
 
 /* Typography colors for v2 hero */
 .home--v2 .hero__greeting,
@@ -26,14 +26,19 @@
 
 /* Full-bleed hero (escapes .container constraints) */
 .home--v2 .hero {
+  /* position: sticky; */
+  /* height: 100svh; */
+  /* top: 0; */
+  /* overflow: hidden; */
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-
-  position: sticky;
+  padding-top: 88px;
+  position: relative;
+  top: auto;
+  height: auto;
   top: 0;
-  height: 100svh;
-  overflow: hidden;
+  overflow: visible;
   background: #000; /* fallback */
 }
 
@@ -47,12 +52,29 @@
 }
 
 /* Figma overlay: #00000099 (60% black) */
-.home--v2 .hero::after {
+/* .home--v2 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: #00000099;
   z-index: 0;
+} */
+
+.home--v2 .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    /* bottom fade into next section */
+    linear-gradient(
+      to bottom,
+      rgba(28, 25, 23, 0) 65%,
+      var(--Colors-Stone-900, #1c1917) 100%
+    ),
+    /* global darkening overlay */ rgba(0, 0, 0, 0.7);
 }
 
 /* Ensure hero content is above overlays */
@@ -74,7 +96,16 @@
   overflow: hidden;
   border-radius: 16px; /* adjust to match screenshot */
   height: 520px;
-  background: transparent !important;
+  height: 650px;
+  /* background: transparent !important; */
+  background: var(--Colors-Stone-900, #1c1917) !important;
+}
+.home--v2 .case-card .case-card__inner-interviewr {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px; /* adjust to match screenshot */
+  height: 520px;
+  /* background: var(--Colors-Stone-900, #1c1917) !important; */
 }
 
 /* 2) Force the background wrapper to be a true full-card layer (not a flex item) */
@@ -116,11 +147,55 @@
 }
 
 /* v2 cards: do NOT use the old "animate-in" hiding */
-.home--v2 .case-card__visual img,
+/* .home--v2 .case-card__visual img,
 .home--v2 .case-card__visual picture img {
   opacity: 1 !important;
   transform: none !important;
+} */
+
+/* 🦊 New hover with the bg images scaling up*/
+.home--v2 .case-card__image {
+  opacity: 1;
+  transform: none;
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .home--v2 .case-card__visual img,
+  .home--v2 .case-card__visual picture img {
+    transition: scale 300ms ease;
+  }
+
+  .home--v2 .case-card__link:hover .case-card__visual img,
+  .home--v2 .case-card__link:hover .case-card__visual picture img {
+    scale: 1.04;
+  }
+
+  /* if you have cards that start at scale: 1.6 */
+  .home--v2
+    .case-card__link:hover
+    .case-card__visual.case-card__visual-scale
+    img {
+    scale: 1.66;
+  }
+}
+
+/* 🐞Prevent old hover “blue border” from triggering on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .home--v2 .case-card__link,
+  .home--v2 .case-card__link:hover,
+  .home--v2 .case-card__link:active {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .home--v2 .case-card__link::after,
+  .home--v2 .case-card__link:hover::after,
+  .home--v2 .case-card__link:active::after {
+    opacity: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
 /* Make picture behave like a full-cover background layer */
 .home--v2 .case-card .case-card__visual picture {
   position: absolute !important;
@@ -145,6 +220,41 @@
   display: block;
 }
 
+.home--v2 .case-card__visual,
+.home--v2 .case-card__image {
+  position: absolute;
+  inset: 0;
+}
+.home--v2 .case-card__visual img,
+.home--v2 .case-card__visual picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* .home--v2 .case-card__link {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transform: translateY(0);
+}
+@media (hover: hover) and (pointer: fine) {
+  .home--v2 .case-card__link:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  }
+}
+.home--v2 .case-card__link::after {
+  opacity: 0 !important;
+  box-shadow: none !important;
+}
+.home--v2 .case-card__inner {
+  background-clip: padding-box;
+} */
+.home--v2 .case-card__link::after {
+  content: none !important;
+}
+
+.home--v2 .case-card__visual img {
+  backface-visibility: hidden;
+}
 /* Put text above */
 .home--v2 .case-card__text {
   position: relative;
@@ -183,17 +293,49 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  gap: 54px;
   padding: 40px;
   align-items: flex-start;
 }
 .home--v2 .case-card__text {
   /* max-width: 520px; */
-  max-width: 560px;
+  /* max-width: 560px; */
+  max-width: 500px;
 }
 .home--v2 .case-card {
   --card-text-color: var(--color-text);
 }
+/* 🧮The little tags in top */
+.case-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 12px; /* space between pills */
+  column-gap: 8px;
+  align-items: center;
+}
+
+.case-card__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 16px; /* inside the pill */
+  border-radius: 999px;
+  background: #ffffffb2;
+
+  color: var(--Components-Badge-Soft-Gray-Placeholder-Color, #1f2937);
+
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+/* 🧮END: The little tags in top */
+/* .case-card__inner {
+  padding-top: 122px;
+  padding-bottom: 122px;
+} */
 
 .home--v2 .case-card--overlay-strong {
   --card-text-color: #ffffff;
@@ -238,11 +380,8 @@
 } */
 
 .home--v2 .case-card--overlay-light-1 .case-card__inner::after {
-  background-image: linear-gradient(
-      0deg,
-      rgba(253, 239, 234, 0.2),
-      rgba(253, 239, 234, 0.2)
-    ),
+  background-image:
+    linear-gradient(0deg, rgba(253, 239, 234, 0.2), rgba(253, 239, 234, 0.2)),
     linear-gradient(268.98deg, #fdefea 14.35%, rgba(253, 239, 234, 0) 47.45%);
   /* background: linear-gradient(
       0deg,
@@ -254,11 +393,8 @@
 }
 
 .home--v2 .case-card--overlay-light-2 .case-card__inner::after {
-  background-image: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
+  background-image:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
     linear-gradient(
       90deg,
       rgba(255, 255, 255, 0) 43.89%,
@@ -271,11 +407,13 @@
   position: relative;
   z-index: 2;
   height: 100%;
+  min-height: 520px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   /* gap: 48px; */
-  padding: 48px;
+  /* padding: 48px; */
+  padding: 30px;
 }
 
 /* Левая колонка */
@@ -288,11 +426,14 @@
 .home--v2 .case-card__brand {
   flex: 0 1 500px;
   max-width: 500px;
-  aspect-ratio: 1 / 1;
-
-  display: grid;
-  place-content: center;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home--v2 .case-card__brand-interviewr {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
 }
 
 /* Типографика бренда (подгони по фигме) */
@@ -312,6 +453,12 @@
   letter-spacing: 0.005em;
   padding-top: 20px;
   color: #fff;
+}
+.case-card__brand-sub {
+  max-width: 260px;
+  color: #47364e;
+  font-size: 24px;
+  text-align: center;
 }
 .case-card__brand-sub-dark {
   color: var(--color-text);
@@ -349,22 +496,53 @@
   display: block !important;
 }
 /* The logo in Interviewr */
-.home--v2 .case-card__brand {
+/* .home--v2 .case-card__brand {
   display: grid;
   place-items: center;
   text-align: center;
-}
+} */
 
 /* Brand image fits inside the 500×500 (or shrinking) brand block */
 .home--v2 .case-card__brand-image {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 300px;
+  /* max-height: 100%; */
   width: auto;
   height: auto;
   display: block;
   object-fit: contain;
 }
+.case-card__brand-pic-hch {
+  max-width: 398px;
+}
+@media (max-width: 510px) {
+  .case-card__brand-pic-hch {
+    max-width: 350px;
+  }
+}
+@media (max-width: 460px) {
+  .case-card__brand-pic-hch {
+    max-width: 300px;
+  }
+}
+@media (max-width: 400px) {
+  .case-card__brand-pic-hch {
+    max-width: 250px;
+  }
+}
+@media (max-width: 350px) {
+  .case-card__brand-pic-hch {
+    max-width: 200px;
+  }
+}
+.case-card__brand-pic-vivia {
+  padding-top: 30px;
+}
 /* Footer background image */
+@media (max-width: 1050px) {
+  .case-card__brand-pic-vivia {
+    padding-top: 0px;
+  }
+}
 .site-footer {
   position: relative;
   overflow: hidden; /* keeps corners clean if you add radius later */
@@ -393,7 +571,9 @@
 
 .home.home--v2 .site-header {
   background: transparent;
-  transition: transform 0.25s ease, background-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
 }
 
 /* home v2: dark bg when showing on scroll up */
@@ -425,7 +605,8 @@
     align-items: stretch; /* text becomes full width */
     height: auto;
     padding: 32px;
-    gap: 24px;
+    /* gap: 24px; */
+    gap: 56px;
   }
 
   .home--v2 .case-card__text {
@@ -468,6 +649,38 @@
     font-size: clamp(18px, 3vw, 22px);
   }
 }
+
+/* ✅ Mobile: brand image goes AFTER text, and touches bottom edge */
+@media (max-width: 1050px) {
+  /* Put brand after the text (undo order:-1) */
+  .home--v2 .case-card__brand {
+    order: 2; /* after .case-card__text */
+    height: auto !important;
+    display: block; /* not a fixed “brand tile” anymore */
+    place-content: initial;
+    text-align: left;
+  }
+
+  /* Remove the “extra bottom padding” that creates a gap under the image */
+  .home--v2 .case-card__content {
+    padding-bottom: 0; /* your current block uses padding: 32px; */
+  }
+
+  /* Make the GIF full-bleed to the card edges and flush to the bottom */
+  .home--v2 .case-card__brand .case-card__brand-pic {
+    display: block;
+    width: calc(100% + 64px); /* 32px left + 32px right (matches the padding) */
+    /* margin-left: -32px;
+    margin-right: -32px; */
+    margin-bottom: 0;
+    height: auto;
+    object-fit: cover;
+  }
+  .home--v2 .case-card__brand-interviewr {
+    padding-bottom: 50px;
+  }
+}
+
 /* 🐣For additional cards */
 
 .home--v2 .case-card__content {
@@ -490,7 +703,8 @@
     padding: 0;
   }
   .home--v2 .case-card__content {
-    padding-bottom: 50px;
+    padding-bottom: 0px;
+    /* padding-bottom: 50px; */
   }
 }
 @media (max-width: 400px) {
@@ -500,7 +714,9 @@
 }
 @media (hover: hover) and (pointer: fine) {
   .home--v2 .case-card__link {
-    transition: transform 200ms ease, box-shadow 200ms ease;
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease;
   }
   .home--v2 .case-card__link:hover {
     transform: translateY(-6px);
