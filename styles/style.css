@@ -1492,6 +1492,19 @@ h3 {
     background-size: 100% 100%;
   }
 }
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+.reveal {
+  will-change: transform, opacity;
+}
+.reveal.visible {
+  will-change: auto;
+}
 
 /* End:🍒 Case study scroll highlights */
 
