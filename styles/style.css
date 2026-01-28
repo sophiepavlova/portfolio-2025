@@ -3121,7 +3121,8 @@ p.add-small-margin-bottom {
 
 .site-footer__list a:hover,
 .site-footer__list a:focus {
-  color: var(--color-accent);
+  /* color: var(--color-accent); */
+  color: var(--Colors-Rose-300, #fda4af);
   text-decoration: none;
   outline: none;
 }
