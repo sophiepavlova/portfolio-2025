@@ -84,6 +84,9 @@
   position: relative;
   z-index: 1;
 }
+.home--v2 .hero__content {
+  padding-top: 20px;
+}
 .home--v2 .selected-work {
   background-color: var(--Colors-Stone-900, #1c1917);
 }
