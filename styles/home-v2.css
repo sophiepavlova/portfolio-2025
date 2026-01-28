@@ -1,5 +1,6 @@
 .home--v2 {
-  background: #000;
+  /* background: #000; */
+  background: var(--Colors-Stone-900, #1c1917);
 }
 
 /* убираем стеклянный blur на хедере в v2 */
