@@ -139,7 +139,8 @@ body {
   height: 100svh; /* correct viewport height including browser UI */
   width: 100%;
   background-color: var(--color-homepage);
-  padding-block: 40px 60px;
+  padding-block: 40px 0px;
+  /* padding-block: 40px 60px; */
   text-align: left;
 
   display: flex;
@@ -1039,7 +1040,8 @@ body.scrolled .home .selected-work {
   }
   .home .hero {
     text-align: left;
-    padding-block: 20px 40px;
+    padding-block: 20px 0px;
+    /* padding-block: 20px 40px; */
   }
 
   .home .hero__greeting {
@@ -1061,7 +1063,8 @@ body.scrolled .home .selected-work {
   }
 
   .home .selected-work {
-    margin-top: 40px;
+    margin-top: 0px;
+    /* margin-top: 40px; */
     /* padding-bottom: 60px; */
   }
 
