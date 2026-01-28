@@ -1024,7 +1024,7 @@ Callout (dark grey box inside highlights)
   margin-top: 100px;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .casev2-metric {
