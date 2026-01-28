@@ -326,7 +326,8 @@
   color: var(--Components-Badge-Soft-Gray-Placeholder-Color, #1f2937);
 
   font-family: Inter, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 500;
   line-height: 16px;
   white-space: nowrap;
 }
@@ -582,6 +583,9 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
+.home--v2 .case-card__brand-sub-interviewr {
+  padding-top: 10px;
+}
 /* 🍒Media */
 
 @media (max-width: 1050px) {
@@ -647,6 +651,12 @@
 
   .home--v2 .case-card__brand-sub {
     font-size: clamp(18px, 3vw, 22px);
+  }
+}
+@media (max-width: 635px) {
+  .home--v2 .case-card__brand-sub {
+    color: white;
+    padding-top: 10px;
   }
 }
 

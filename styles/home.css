@@ -394,6 +394,9 @@ body.scrolled .home .selected-work {
   flex-direction: column;
   gap: 8px;
 }
+.case-card__top-interviewr {
+  gap: 20px;
+}
 
 .case-card__company {
   font-family: "campaign-serif", serif;
@@ -425,6 +428,7 @@ body.scrolled .home .selected-work {
   letter-spacing: 0.005em;
   color: #fff;
   text-transform: none;
+  line-height: 100%;
 }
 
 /* .case-card__brand-name {
@@ -527,6 +531,7 @@ body.scrolled .home .selected-work {
   align-items: center;
   gap: 12px;
   font-size: 16px;
+  min-width: 206px;
 }
 
 .case-stat__icon {
@@ -548,6 +553,9 @@ body.scrolled .home .selected-work {
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 0.5%;
+}
+.case-stat__text-norm {
+  min-width: 217px;
 }
 .case-stat__text {
   letter-spacing: 0.5%;
