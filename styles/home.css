@@ -171,13 +171,18 @@ body {
   position: relative;
   z-index: 1;
   background-color: var(--color-background);
-  padding-top: 50px; /* spacing below hero/header */
+  padding-top: 50px;
   padding-bottom: 80px;
   box-sizing: border-box;
   overflow-x: clip;
 
   /* ensure no legacy motion or transforms remain */
   transform: none !important;
+}
+@media (max-width: 1200px) {
+  .home .selected-work {
+    padding-top: 0px;
+  }
 }
 
 body.scrolled .home .selected-work {
