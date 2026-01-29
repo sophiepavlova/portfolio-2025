@@ -55,6 +55,12 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="../styles/home.css" />
     <link rel="stylesheet" href="../styles/home-v2.css" />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/home-hero-bg.jpg"
+      fetchpriority="high"
+    />
   </head>
   <body class="home home--v2">
     <header class="site-header site-header-home">
@@ -289,7 +295,8 @@
                       <img
                         src="./assets/images/home1.jpg"
                         alt=""
-                        loading="lazy"
+                        loading="eager"
+                        fetchpriority="high"
                         decoding="async"
                         class="case-card__image"
                       />
