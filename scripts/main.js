@@ -768,6 +768,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 😎Cursor label
 document.addEventListener("DOMContentLoaded", () => {
+  const isTouchDevice =
+    window.matchMedia("(hover: none)").matches ||
+    window.matchMedia("(pointer: coarse)").matches;
+
+  if (isTouchDevice) {
+    const tooltip = document.querySelector(".cursor-label");
+    if (tooltip) tooltip.remove();
+    return; // ⬅️ IMPORTANT: stops tooltip logic from ever running
+  }
   // Disable on tablet & mobile
   if (window.innerWidth <= 1024) return;
 

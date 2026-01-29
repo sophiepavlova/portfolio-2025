@@ -55,6 +55,12 @@ body {
     filter 0.3s ease;
 }
 
+@media (hover: none), (pointer: coarse) {
+  .cursor-label {
+    display: none !important;
+  }
+}
+
 /* 😎END: Cursor label */
 /* --- Header & navigation colors for home --- */
 .home .site-header {
