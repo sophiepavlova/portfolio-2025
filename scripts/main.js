@@ -778,7 +778,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return; // ⬅️ IMPORTANT: stops tooltip logic from ever running
   }
   // Disable on tablet & mobile
-  if (window.innerWidth <= 1024) return;
+  // if (window.innerWidth <= 1024) return;
 
   const label = document.getElementById("cursor-label");
   if (!label) return;
