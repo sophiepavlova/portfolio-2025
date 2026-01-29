@@ -405,18 +405,52 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // --------- Back to Top Button ----------
+// const backToTop = document.getElementById("backToTop");
+// if (backToTop) {
+//   window.addEventListener("scroll", () => {
+//     if (window.scrollY > 350) {
+//       backToTop.classList.add("show");
+//     } else {
+//       backToTop.classList.remove("show");
+//     }
+//   });
+//   backToTop.addEventListener("click", () => {
+//     window.scrollTo({ top: 0, behavior: "auto" });
+//   });
+// }
+// --------- Back to Top Button ----------
 const backToTop = document.getElementById("backToTop");
+
 if (backToTop) {
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 350) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
-  });
-  backToTop.addEventListener("click", () => {
+  // 1) cheaper scroll handler (avoids work every single scroll event)
+  let ticking = false;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        if (window.scrollY > 350) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
+        }
+        ticking = false;
+      });
+    },
+    { passive: true },
+  );
+
+  // 2) make the tap feel instant on iOS
+  const goTop = (e) => {
+    e.preventDefault();
     window.scrollTo({ top: 0, behavior: "auto" });
-  });
+  };
+
+  backToTop.addEventListener("click", goTop);
+  backToTop.addEventListener("pointerup", goTop);
 }
 
 // -----------------------------
@@ -480,112 +514,6 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".case-card").forEach((el) => observer.observe(el));
-
-// 🧮 Removing the glide on the home page
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const body = document.body;
-//   const seeWorkBtn = document.querySelector(".hero__button");
-//   const selectedWork = document.querySelector(".selected-work");
-//   const header = document.querySelector(".site-header");
-
-//   // Only run this script if .selected-work exists (i.e. on the home page)
-//   if (!selectedWork) return;
-
-//   const startGlide = () => {
-//     body.classList.add("scrolled");
-//     const offset = header?.offsetHeight || 0;
-//     const y =
-//       selectedWork.getBoundingClientRect().top + window.scrollY - offset;
-//     window.scrollTo({ top: y, behavior: "smooth" });
-//   };
-
-//   let armed = true;
-//   window.addEventListener("scroll", () => {
-//     if (armed && window.scrollY > 2) {
-//       startGlide();
-//       armed = false;
-//     }
-//   });
-
-//   seeWorkBtn?.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     startGlide();
-//   });
-// });
-
-// if (location.pathname === '/' || location.pathname === '/index.html') {
-//   window.addEventListener('scroll', () => {
-//     // As soon as the user moves even a little, start the glide
-//     document.body.classList.toggle('scrolled', window.scrollY > 1);
-//   }, { passive: true });
-
-//   // safety: if the mobile menu ever left body locked, unlock it
-//   document.body.style.overflow = '';
-// }
-
-// 🐹 Glide on the home screeen
-// (function homeGlide() {
-//   const onHome =
-//     location.pathname === "/" || location.pathname.endsWith("/index.html");
-
-//   if (!onHome) return;
-
-//   const header = document.querySelector(".site-header");
-//   const selectedWork = document.querySelector("#selected-work");
-//   const hero = document.querySelector(".hero");
-//   if (!selectedWork || !hero) return;
-
-//   const getHeaderH = () => (header ? header.offsetHeight : 0);
-
-//   function glideToSelectedWork() {
-//     document.body.classList.add("scrolled");
-//     const y =
-//       selectedWork.getBoundingClientRect().top + window.scrollY - getHeaderH();
-//     window.scrollTo({ top: y, behavior: "smooth" });
-//   }
-
-//   window.__glideToSelectedWork = glideToSelectedWork;
-
-//   const anchors = document.querySelectorAll(
-//     'a[href="#selected-work"], a[href="/#selected-work"]',
-//   );
-//   anchors.forEach((a) => {
-//     a.addEventListener("click", (e) => {
-//       e.preventDefault();
-//       glideToSelectedWork();
-//     });
-//   });
-
-//   let armed = true;
-//   window.addEventListener(
-//     "scroll",
-//     () => {
-//       // Don't auto-glide if user is already at #selected-work
-//       const alreadyAtWork =
-//         location.hash === "#selected-work" ||
-//         selectedWork.getBoundingClientRect().top <= getHeaderH();
-
-//       if (
-//         armed &&
-//         window.scrollY > 2 &&
-//         window.scrollY < window.innerHeight * 0.5 &&
-//         !alreadyAtWork
-//       ) {
-//         armed = false;
-//         glideToSelectedWork();
-//       }
-//     },
-//     { passive: true },
-//   );
-
-//   // window.addEventListener('scroll', () => {
-//   //   hero.style.position = (window.scrollY > window.innerHeight) ? 'relative' : 'fixed';
-//   // }, { passive: true });
-// })();
-
-// 🐹 End of Glide on the home screeen
-// 🧮 END: Removing the glide on the home page
 
 // 📚 Hide .hero only after scrolling down
 const hero = document.querySelector(".home .hero");
