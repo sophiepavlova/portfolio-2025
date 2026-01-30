@@ -1041,6 +1041,10 @@ h3 {
   margin: 0 auto;
   margin-bottom: 20px;
 }
+.about-cards-row-end {
+  margin-bottom: 0px;
+  padding-bottom: 40px;
+}
 
 /* base card */
 .about-card {
@@ -1461,6 +1465,16 @@ h3 {
 .about-cards-row:nth-of-type(odd) {
   --hi-color: #ffebe9;
 } /* red */
+
+.about-testiminials__heading {
+  font-family: "campaign-serif", serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 140%;
+  color: var(--color-text-dark-theme);
+  text-align: center;
+  padding-bottom: 40px;
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
