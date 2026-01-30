@@ -1,0 +1,1474 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case study Thriftie</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RRPWYEE236"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-RRPWYEE236");
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="../favicon3.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/case.css" />
+  </head>
+  <body class="case">
+    <header class="site-header">
+      <div class="container">
+        <a href="/" class="logo">Michelle Pavlova</a>
+        <nav class="site-nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="../#selected-work" class="active">Work</a></li>
+            <li><a href="/about/">About</a></li>
+          </ul>
+        </nav>
+        <!-- Hamburger button (shown at max-width: 768px) -->
+        <button
+          class="menu-toggle"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <!-- Hamburger SVG -->
+          <svg
+            width="46"
+            height="46"
+            viewBox="0 0 46 46"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z"
+              stroke="#1F2937"
+            />
+            <path
+              d="M16.3335 23H29.6668"
+              stroke="#1F2937"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16.3335 18H29.6668"
+              stroke="#1F2937"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16.3335 28H29.6668"
+              stroke="#1F2937"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile menu panel -->
+    <aside
+      id="mobile-menu"
+      class="mobile-menu"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <button class="menu-close" aria-label="Close menu">
+        <!-- Close SVG -->
+        <svg
+          width="46"
+          height="46"
+          viewBox="0 0 46 46"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M8 0.5H38C42.1421 0.5 45.5 3.85786 45.5 8V38C45.5 42.1421 42.1421 45.5 38 45.5H8C3.85786 45.5 0.5 42.1421 0.5 38V8C0.500001 3.85786 3.85787 0.5 8 0.5Z"
+            stroke="#fff"
+          />
+          <path
+            d="M28 18L18 28"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M18 18L28 28"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <nav class="mobile-menu__nav">
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="../#selected-work">Work</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="casev2">
+      <!-- Hero -->
+      <section class="casev2-section casev2-hero">
+        <!-- text area (grid-aligned) -->
+        <div class="container casev2-stack casev2-stack-addpad">
+          <p
+            class="casev2-eyebrow casev2-eyebrow-hero casev2-eyebrow-hch reveal"
+          >
+            Thriftie
+          </p>
+
+          <h1 class="casev2-h1 reveal">
+            Streamlining pediatric ER triage with 92% accuracy
+          </h1>
+        </div>
+
+        <!-- media area (full-bleed background) -->
+        <div class="casev2-hero-media">
+          <div class="casev2-hero-backdrop casev2-hero-backdrop-hch">
+            <div class="container">
+              <img
+                src="../assets/images/hch_hero.png"
+                alt=""
+                class="casev2-hero-shot reveal"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🦊Overview (2-col: story + role/what it is) -->
+      <!-- Overview: split into background “bands” -->
+      <section class="casev2-overview" aria-labelledby="overview-title">
+        <!-- 1) Dark band: Project overview + What’s Everwell -->
+        <div class="casev2-band casev2-band--dark casev2-overview__intro">
+          <div class="container">
+            <div class="casev2-center">
+              <h2 id="overview-title" class="casev2-section-title reveal">
+                Project overview
+              </h2>
+
+              <div class="casev2-overview__content">
+                <h3 class="casev2-overview__h reveal visible">
+                  What’s the Access Screener?
+                </h3>
+                <p
+                  class="casev2-overview__kicker casev2-overview__kicker-top reveal"
+                >
+                  Product at a healthcare SaaS company (name withheld due to
+                  NDA)
+                </p>
+                <p class="casev2-overview__p reveal">
+                  The Access Screener is a digital triage tool that helps
+                  patients and caregivers communicate their symptoms, prepares
+                  them for what to expect at the ER, and reduces the workload on
+                  overworked triage nurses.
+                </p>
+                <p class="casev2-overview__p reveal">
+                  It guides users through a short and simple questionnaire and
+                  gives them clear next steps without diagnosing or replacing
+                  clinical judgment.
+                </p>
+
+                <p class="casev2-overview__kicker reveal">
+                  Why does this matter?
+                </p>
+                <p class="casev2-overview__p reveal">
+                  Before this tool, caregivers often arrived confused and
+                  stressed. Nurses had to rely on rushed verbal descriptions,
+                  which slowed triage and occasionally led to missed urgency
+                  cues. Nurses are also really busy, so it’d be great if we
+                  could help them to triage less and to care for patients more.
+                </p>
+
+                <p class="casev2-overview__kicker reveal">
+                  Access Screener’s impact
+                </p>
+                <ul class="casev2-overview__list reveal">
+                  <li>Nurses reported great routing accuracy during intake</li>
+                  <li>
+                    Caregivers said they felt “more prepared” arriving at the ER
+                  </li>
+                  <li>Fewer repeated clarifying questions at check-in</li>
+                  <li>
+                    The ER triage had an overall efficiency increase, allowing
+                    nurses to spend time on their patients
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2) Watercolor band: My role -->
+        <div
+          class="casev2-band casev2-band--ink casev2-band--ink-hch casev2-overview__role"
+          aria-labelledby="overview-role-title"
+        >
+          <div class="container">
+            <div class="casev2-center">
+              <h3
+                id="overview-role-title"
+                class="casev2-overview__role-title reveal"
+              >
+                My role
+              </h3>
+
+              <ul class="casev2-overview__role-list reveal">
+                <li>Led 0 → 1 design</li>
+                <li>
+                  Shaped the information architecture and question logic with
+                  clinicians
+                </li>
+                <li>
+                  Designed fallback states, guiding language, and multi-child
+                  flows
+                </li>
+                <li>
+                  Ran interviews + usability tests with caregivers and staff
+                </li>
+                <li>
+                  Collaborated closely with engineering to validate logic and
+                  edge cases
+                </li>
+                <li>
+                  Created a scalable, bilingual UI pattern library for future
+                  hospital use
+                </li>
+              </ul>
+
+              <p class="casev2-overview__role-note reveal">
+                + showed my little British Shorthair to anyone who asked when
+                she meowed off-camera in meetings to improve team morale :)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) Dark band: The bet + Quick details + CTA -->
+        <div class="casev2-band casev2-band--dark casev2-overview__meta">
+          <div class="container">
+            <div class="casev2-center casev2-center-flex">
+              <!-- The bet & constraints -->
+
+              <div class="casev2-bet__layout">
+                <h3 id="bet-title" class="casev2-block-title reveal">
+                  The bet & constraints
+                </h3>
+                <div class="casev2-bet__top">
+                  <p class="casev2-script reveal">The bet</p>
+                  <p class="casev2-p reveal">
+                    If caregivers could understand urgency earlier and arrive
+                    with clearer symptom descriptions, nurses could triage
+                    faster, reduce confusion, and focus on truly high-risk
+                    cases.
+                  </p>
+                </div>
+
+                <div class="casev2-bet__bottom">
+                  <div class="casev2-stack">
+                    <p class="casev2-script casev2-mt reveal">Constraints</p>
+                    <ul class="casev2-overview__role-list reveal">
+                      <li>Medical liability: no diagnostic language allowed</li>
+                      <li>Stressed users with very low attention capacity</li>
+                      <li>Multiple children per family</li>
+                      <li>Bilingual (EN/FR)</li>
+                      <li>
+                        Device variability (older phones + spotty connections)
+                      </li>
+                    </ul>
+                    <!-- <p class="casev2-p">
+                      Limited provider time, inconsistent patient data, tight
+                      timeline to onboard new clinics.
+                    </p> -->
+                  </div>
+
+                  <div class="casev2-stack">
+                    <p class="casev2-script reveal">What we cut</p>
+                    <ul class="casev2-overview__role-list reveal">
+                      <li>
+                        Symptom auto-suggestion (too risky with ambiguous input)
+                      </li>
+                      <li>
+                        Heavy animations (improved engagement but slow on older
+                        devices)
+                      </li>
+                    </ul>
+                    <!-- <p class="casev2-p">
+                      Complex predictive analytics and auto-generated AI
+                      summaries: too risky given varying data quality and
+                      clinical safety.
+                    </p> -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick details -->
+              <div
+                class="casev2-overview__block casev2-details"
+                aria-labelledby="details-title"
+              >
+                <h3 id="details-title" class="casev2-block-title reveal">
+                  Quick details
+                </h3>
+
+                <div
+                  class="casev2-grid casev2-grid--details casev2-grid--tight"
+                >
+                  <dl class="casev2-dl">
+                    <div class="casev2-dl__row casev2-dl__row-pb">
+                      <dt class="casev2-script reveal">My role</dt>
+                      <dd class="casev2-p reveal">Product Designer</dd>
+                    </div>
+                    <div class="casev2-dl__row">
+                      <dt class="casev2-script reveal">Team</dt>
+                      <dd class="casev2-p reveal">
+                        PM, Clinical team, Dev team
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <dl class="casev2-dl">
+                    <div class="casev2-dl__row casev2-dl__row-pb">
+                      <dt class="casev2-script reveal">Timeframe</dt>
+                      <dd class="casev2-p reveal">~4 months</dd>
+                    </div>
+                    <div class="casev2-dl__row">
+                      <dt class="casev2-script reveal">Platform</dt>
+                      <dd class="casev2-p reveal">Mobile and tablet</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <p class="casev2-nda reveal">
+                  Company name and some client details are anonymized to comply
+                  with NDA.
+                </p>
+              </div>
+
+              <!-- CTA -->
+              <div
+                class="casev2-overview__block casev2-cta"
+                aria-labelledby="cta-title"
+              >
+                <h3 id="cta-title" class="casev2-cta__title reveal">
+                  Do you prefer long in-depth case studies?
+                </h3>
+                <p class="casev2-cta__sub reveal">
+                  I have a detailed version of this project as well.
+                </p>
+
+                <a
+                  class="button button--secondary button--secondary-overview button--float reveal"
+                  href="./index-v1.html"
+                >
+                  Full case study →
+                </a>
+
+                <p class="casev2-cta__note reveal">
+                  This one is more visual and fun, though. :)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4) Dark band: image at the end -->
+        <div class="casev2-band casev2-band--dark casev2-overview__shot">
+          <div class="container">
+            <figure
+              class="casev2-highlight__media casev2-highlight__media--phones reveal"
+            >
+              <img
+                class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hero"
+                src="../assets/images/des_highlights-hch-home-1.jpg"
+                alt=""
+                loading="lazy"
+              />
+              <img
+                class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hch-smaller-short"
+                src="../assets/images/des_highlights-hch-home-2.png"
+                alt=""
+                loading="lazy"
+              />
+            </figure>
+            <figure class="casev2-overview__image">
+              <!-- <img
+                src="../assets/images/3_2v2.png"
+                alt="Everwell provider dashboard home screen showing clinic overview with patient alerts, upcoming appointments, and summary statistics"
+                class="casev2-overview__img reveal"
+              /> -->
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem narrative (5 sub-blocks) -->
+      <section
+        class="casev2-section casev2-story"
+        aria-labelledby="story-title"
+      >
+        <div class="container">
+          <h2 id="story-title" class="visually-hidden">
+            Background and pain points
+          </h2>
+
+          <div class="casev2-story__stack">
+            <!-- 1) facts (same component you’ll reuse elsewhere) -->
+            <div
+              class="casev2-story__block casev2-story__items casev2-fullbleed"
+            >
+              <div class="casev2-story-item casev2-story-item--reveal">
+                <div class="casev2-story-item__icon reveal" aria-hidden="true">
+                  🕰️
+                </div>
+                <p class="casev2-story-item__text reveal">
+                  Canada’s healthcare system struggles with long ER wait times,
+                  often due to overworked staff.
+                </p>
+              </div>
+
+              <div class="casev2-story-item casev2-story-item--reveal">
+                <div class="casev2-story-item__icon reveal" aria-hidden="true">
+                  🏥
+                </div>
+                <p class="casev2-story-item__text reveal">
+                  Triage nurses are stretched thin. Introducing a digital intake
+                  tool could help prioritize patients more efficiently and allow
+                  nurses to focus on care.
+                </p>
+              </div>
+            </div>
+
+            <!-- Chat sub-block (variant 1: paper world pain) -->
+            <div class="casev2-story__block casev2-story__chat">
+              <div class="casev2-chat-scene">
+                <!-- Line 1: Patient (avatar left, bubble right) -->
+                <div class="casev2-chat-line casev2-chat-line--left reveal">
+                  <div class="casev2-chat-avatar" aria-hidden="true">👨</div>
+
+                  <div class="casev2-chat-bubble casev2-chat-bubble--patient">
+                    <p class="casev2-chat-label">Parent</p>
+                    <p class="casev2-chat-text">
+                      My child is sick and I’m very worried. It’s hard to think
+                      straight when talking to the nurse.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Line 2: Provider (bubble left, avatar right) -->
+                <div class="casev2-chat-line casev2-chat-line--right reveal">
+                  <div
+                    class="casev2-chat-bubble casev2-chat-bubble--provider casev2-chat-bubble--provider-hch"
+                  >
+                    <p class="casev2-chat-label casev2-chat-label-hch">
+                      Triage nurse
+                    </p>
+                    <p class="casev2-chat-text">
+                      I have to juggle a lot of different responsibilities. I’d
+                      love anything to make things a little easier and give me
+                      more time to care for patients.
+                    </p>
+                  </div>
+
+                  <div class="casev2-chat-avatar" aria-hidden="true">👩‍⚕️</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3) sad transition line -->
+            <div
+              class="casev2-story__block casev2-story__beat casev2-fullbleed"
+            >
+              <span class="casev2-beat__emoji reveal" aria-hidden="true"
+                >✨</span
+              >
+              <p class="casev2-beat reveal" aria-label="Transition">
+                So the client, a Canadian children’s hospital, came to us for a
+                triage tool.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Block: Design Goals -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-steps"
+        aria-labelledby="needed-title"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2
+              id="needed-title reveal"
+              class="casev2-section-title casev2-section-title-on-light"
+            >
+              Design goals
+            </h2>
+
+            <ol class="casev2-steps3-all">
+              <li class="casev2-step3 reveal">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch"
+                  aria-hidden="true"
+                >
+                  01
+                </div>
+                <p class="casev2-step3__text">
+                  Mobile-first, accessible, and fully bilingual (English and
+                  French).
+                </p>
+              </li>
+
+              <li class="casev2-step3 reveal">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch"
+                  aria-hidden="true"
+                >
+                  02
+                </div>
+                <p class="casev2-step3__text">
+                  Simple and reassuring (yet never childish) so patients &
+                  caregivers could follow along even when anxious, tired, or in
+                  pain.
+                </p>
+              </li>
+
+              <li class="casev2-step3 reveal">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch"
+                  aria-hidden="true"
+                >
+                  03
+                </div>
+                <p class="casev2-step3__text">
+                  Support zero-friction, no-login safe and secure interaction,
+                  and easy to revise answers.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research & findings -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-research casev2-fullbleed casev2-fullbleed-hch-research"
+        aria-labelledby="research-title"
+        id="research"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2 id="research-title" class="casev2-section-title reveal">
+              Research
+            </h2>
+            <p class="casev2-outro__subtitle casev2-research__subtitle reveal">
+              Snappy and scrappy!
+            </p>
+
+            <div class="casev2-research__stack">
+              <!-- Row 1: image left, text right -->
+              <article class="casev2-media-row reveal">
+                <figure class="casev2-media-row__media">
+                  <div
+                    class="casev2-media-row__frame casev2-media-row__frame--portrait"
+                  >
+                    <img
+                      class="casev2-media-row__img"
+                      src="../assets/images/hch-research-1.jpg"
+                      alt="Clinician interview illustration"
+                      loading="lazy"
+                    />
+                  </div>
+                </figure>
+
+                <div class="casev2-media-row__content">
+                  <p
+                    class="casev2-media-row__text casev2-media-row__text-on-dark"
+                  >
+                    Because there was no budget or time for formal research, I
+                    gathered quick insights by speaking with parents and nurses
+                    I knew through friends and work.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Row 2: text left, image right -->
+              <article
+                class="casev2-media-row casev2-media-row--reverse reveal"
+              >
+                <figure class="casev2-media-row__media">
+                  <div
+                    class="casev2-media-row__frame casev2-media-row__frame--watercolor"
+                  >
+                    <img
+                      class="casev2-media-row__img"
+                      src="../assets/images/hch-research-2.jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </div>
+                </figure>
+
+                <div class="casev2-media-row__content">
+                  <p
+                    class="casev2-media-row__text casev2-media-row__text-on-dark"
+                  >
+                    I also reviewed academic papers, existing digital triage
+                    tools, and best-practice guidelines for designing safe
+                    systems in high-stress medical settings.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Block: HMW + research bullets -->
+      <section
+        class="casev2-section casev2-hmw casev2-section-addpad casev2-dotted-bg"
+        aria-labelledby="hmw-title"
+      >
+        <div class="container">
+          <h2
+            id="hmw-title"
+            class="casev2-hmw__title casev2-center-wide reveal"
+          >
+            How might we... help young patients and their caregivers navigate
+            the ER experience?
+          </h2>
+
+          <div class="casev2-hmw__points">
+            <article class="casev2-hmw-point">
+              <div class="casev2-hmw-point__icon reveal" aria-hidden="true">
+                ✏️
+              </div>
+              <p class="casev2-hmw-point__text reveal">
+                Use clear, non-medical language.
+              </p>
+              <p
+                class="casev2-hmw-point__text casev2-outcome-note__eyebrow reveal"
+              >
+                <strong>Tradeoff:</strong> We had to remove helpful clinical
+                detail to avoid confusion, which meant the tool sometimes felt
+                less precise to medical staff.
+              </p>
+            </article>
+
+            <article class="casev2-hmw-point">
+              <div class="casev2-hmw-point__icon reveal" aria-hidden="true">
+                🧭
+              </div>
+              <p class="casev2-hmw-point__text reveal">
+                Keep the flow short and easy to follow.
+              </p>
+              <p
+                class="casev2-hmw-point__text casev2-outcome-note__eyebrow reveal"
+              >
+                <strong>Tradeoff:</strong> Reducing steps meant combining some
+                questions, which risked losing nuance when symptoms were complex
+                or unclear.
+              </p>
+            </article>
+
+            <article class="casev2-hmw-point">
+              <div class="casev2-hmw-point__icon reveal" aria-hidden="true">
+                🔄
+              </div>
+              <p class="casev2-hmw-point__text reveal">
+                Allow users to revise answers at any time
+              </p>
+              <p
+                class="casev2-hmw-point__text casev2-outcome-note__eyebrow reveal"
+              >
+                <strong>Tradeoff:</strong> This added extra logic and edge cases
+                for development, but it was essential because children’s
+                symptoms can change quickly or stressed users may make mistakes.
+              </p>
+            </article>
+          </div>
+          <!-- </div> -->
+        </div>
+      </section>
+
+      <!-- Block: The main findings -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-steps casev2-steps--bg casev2-fullbleed casev2-fullbleed-image casev2-fullbleed-image-hch-findings"
+        aria-labelledby="if-continued-title"
+      >
+        <div class="container container--narrow">
+          <!-- <div class="container casev2-stack casev2-stack-addpad"> -->
+          <p
+            class="casev2-eyebrow casev2-eyebrow-hch casev2-eyebrow-hch-dark reveal"
+          >
+            The main finding
+          </p>
+
+          <h2
+            class="casev2-section-title casev2-section-title-left casev2-section-title-on-light reveal"
+          >
+            Users in the hospital, whether it’s patients or caregivers, are
+            stressed and scared, which makes even simple medical questions feel
+            overwhelming. The tool needs to be accessible and very supportive.
+          </h2>
+        </div>
+        <!-- </div> -->
+      </section>
+      <!-- 🍒Block: THE DELIVERABLES -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-steps casev2-dotted-bg"
+        aria-labelledby="needed-title"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2
+              id="needed-title"
+              class="casev2-section-title casev2-section-title-on-light reveal"
+            >
+              The deliverables
+            </h2>
+
+            <ol class="casev2-steps3-all casev2-steps3-all-hch-deliverables">
+              <li class="casev2-step3 reveal">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch-icons"
+                  aria-hidden="true"
+                >
+                  📱
+                </div>
+                <p class="casev2-step3__text casev2-step3__text-hch-center">
+                  Phone webapp
+                </p>
+              </li>
+
+              <li class="casev2-step3 reveal">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch-icons"
+                  aria-hidden="true"
+                >
+                  💻
+                </div>
+                <p class="casev2-step3__text casev2-step3__text-hch-center">
+                  Tablet & desktop webapp
+                </p>
+              </li>
+
+              <li class="casev2-step3 reveal">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch-icons"
+                  aria-hidden="true"
+                >
+                  📺
+                </div>
+                <p class="casev2-step3__text casev2-step3__text-hch-center">
+                  In-ER TVs, posters, etc.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="casev2-section casev2-highlights casev2-section-addpad"
+        aria-labelledby="highlights-title"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2 id="highlights-title" class="casev2-section-title reveal">
+              Design highlights
+            </h2>
+
+            <div class="casev2-highlights__list">
+              <!-- 1) Welcome to the ER -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow reveal">
+                    Welcome to the ER
+                  </p>
+
+                  <p class="casev2-highlight__text reveal">
+                    Upon entering the emergency room, the users saw the TVs that
+                    encouraged them to scan a QR code to start the check-in.
+                  </p>
+
+                  <div class="casev2-callout reveal">
+                    <p class="casev2-callout__title">
+                      Fallbacks, fallbacks, fallbacks
+                    </p>
+                    <p class="casev2-callout__text reveal">
+                      I needed to account for as many situations as possible. If
+                      the user doesn’t have a phone, they can borrow a tablet.
+                      If they can’t scan the QR code, they can type in the URL.
+                      If they have any other questions, they can ask the nurses
+                      - they are still available for questions and emergencies
+                      where completing a screener wouldn’t make sense.
+                    </p>
+                  </div>
+                </header>
+
+                <figure class="casev2-highlight__media reveal">
+                  <img
+                    src="../assets/images/start_er_check-in.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <!-- 2) Home page -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow reveal">Home page</p>
+
+                  <p class="casev2-highlight__text reveal">
+                    This is the first screen users see after selecting a
+                    language. The goal: make it feel calm and easy to understand
+                    even for someone stressed, tired, or rushing. The friendly
+                    visuals and the clear language help avoid overwhelm!
+                  </p>
+
+                  <div class="casev2-callout reveal">
+                    <p class="casev2-callout__title">
+                      KISS - Keep It Simple, Stupid
+                    </p>
+                    <p class="casev2-callout__text">
+                      Initially, we had a lot more feature ideas for the
+                      homepage (optional AI! games to keep children entertained!
+                      stories to explain what to expect from a hospital visit!),
+                      but dialling it back helped users feel at ease. I also
+                      helped prioritize the assessment by keeping the wait time
+                      lower on the page.
+                    </p>
+                  </div>
+                </header>
+
+                <figure
+                  class="casev2-highlight__media casev2-highlight__media--phones reveal"
+                >
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller"
+                    src="../assets/images/des_highlights-hch-home-1.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hch-smaller-short"
+                    src="../assets/images/des_highlights-hch-home-2.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <!-- 3) Intro screen -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow reveal">Intro screen</p>
+
+                  <p class="casev2-highlight__text reveal">
+                    The intro screen gives people a quick heads-up about what
+                    the assessment will look like. I kept it very light and
+                    visual, so it’s easy to skim quickly.
+                  </p>
+
+                  <div class="casev2-callout reveal">
+                    <p class="casev2-callout__title">Save and exit?</p>
+                    <p class="casev2-callout__text">
+                      Chose to add a modal to prevent user exiting by accident
+                      even though it added a click when the user intended to
+                      exit.
+                    </p>
+                  </div>
+                </header>
+
+                <figure
+                  class="casev2-highlight__media casev2-highlight__media--phones reveal"
+                >
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller"
+                    src="../assets/images/des_highlights-hch-intro-1.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hch-smaller-short"
+                    src="../assets/images/des_highlights-hch-intro-2.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <!-- 4) How old are you? -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow reveal reveal reveal">
+                    How old are you?
+                  </p>
+
+                  <p class="casev2-highlight__tex reveal reveal reveal">
+                    When I tested this screen, many caregivers assumed the
+                    question was directed at them, not their child, so it
+                    quickly became clear that the wording needed more clarity.
+                  </p>
+
+                  <div class="casev2-callout reveal reveal reveal">
+                    <p class="casev2-callout__title">
+                      Two roads didn’t diverge in the woods, unfortunately
+                    </p>
+                    <p class="casev2-callout__text">
+                      Due to technical constraints, we couldn’t split the flow
+                      into separate paths for caregivers and children. To
+                      resolve this, I added helper text to clarify whose age is
+                      being asked, reducing ambiguity without adding friction to
+                      the flow.
+                    </p>
+                  </div>
+                </header>
+
+                <figure
+                  class="casev2-highlight__media casev2-highlight__media--phones reveal reveal reveal"
+                >
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller"
+                    src="../assets/images/des_highlights-hch-age-1.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hch-smaller-short"
+                    src="../assets/images/des_highlights-hch-age-2.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <!-- 5) Getting results -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow reveal reveal">
+                    Getting results
+                  </p>
+
+                  <p class="casev2-highlight__text reveal reveal">
+                    The results page tells caregivers exactly what’s going on: a
+                    clear result, a quick next step, and a brief,
+                    patient-friendly summary of what they shared.
+                  </p>
+
+                  <div class="casev2-callou reveal revealt">
+                    <p class="casev2-callout__title">
+                      Let’s do it all over again
+                    </p>
+                    <p class="casev2-callout__text">
+                      What if the child’s symptoms change? What if the whole
+                      family is sick with the flu in the ER? The user can easily
+                      retake the screener or add a patient through the “Update
+                      symptoms” button.
+                    </p>
+                  </div>
+                </header>
+
+                <figure
+                  class="casev2-highlight__media casev2-highlight__media--phones reveal reveal"
+                >
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller"
+                    src="../assets/images/des_highlights-hch-results-1.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hch-smaller-short"
+                    src="../assets/images/des_highlights-hch-results-2.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <!-- 6) Multiple patients -->
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow reveal">
+                    Multiple patients
+                  </p>
+
+                  <p class="casev2-highlight__text reveal">
+                    This screen organizes results for multiple children into
+                    cards, each labeled with age and the order they were
+                    completed, to make it easy to keep track of everyone. To
+                    show that there’s more to see, I combined pagination with a
+                    little visual tease of the next card at the edge of the
+                    screen.
+                  </p>
+
+                  <div class="casev2-callout reveal">
+                    <p class="casev2-callout__title">Breathe in and out</p>
+                    <p class="casev2-callout__text">
+                      I chose a roomy layout with lots of breathing room even
+                      though it takes up more real estate: the last thing anyone
+                      in the harsh ER lights wants is to feel like they need a
+                      magnifying glass to read what’s on the card.
+                    </p>
+                  </div>
+                </header>
+                <img
+                  src="../assets/images/des_highlights-hch-patients.png"
+                  alt=""
+                  class="reveal"
+                  loading="lazy"
+                />
+              </article>
+              <article class="casev2-highlight">
+                <header class="casev2-highlight__header">
+                  <p class="casev2-highlight__eyebrow reveal">Leveraging AI</p>
+
+                  <p class="casev2-highlight__text reveal">
+                    After launch, we learned that caregivers struggled to
+                    describe symptoms in their own words and the structured
+                    screener felt a bit too rigid.
+                  </p>
+                  <p class="casev2-highlight__text reveal">
+                    To help, I designed an optional AI follow-up that lets users
+                    share more detail.
+                  </p>
+
+                  <div class="casev2-callout reveal">
+                    <p class="casev2-callout__title">
+                      Stop AI from running wild
+                    </p>
+                    <p class="casev2-callout__text">
+                      The AI step helps caregivers talk about symptoms more
+                      easily, but it’s fully optional and also guided by
+                      guardrails. The text before the screener makes it clear AI
+                      is never replacing clinical judgement.
+                    </p>
+                  </div>
+                </header>
+
+                <figure
+                  class="casev2-highlight__media casev2-highlight__media--phones reveal"
+                >
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller"
+                    src="../assets/images/des_highlights-hch-ai-1.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <img
+                    class="casev2-highlight__media--phone casev2-highlight__media--phone-hch-smaller casev2-highlight__media--phone-hch-smaller-short"
+                    src="../assets/images/des_highlights-hch-ai-2.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Outcomes -->
+      <section
+        class="casev2-section casev2-outcomes casev2-section-addpad"
+        aria-labelledby="outcomes-title"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2 id="outcomes-title" class="casev2-section-title reveal">
+              Outcomes
+            </h2>
+
+            <!-- Top metrics -->
+            <div class="casev2-metrics">
+              <figure class="casev2-metric reveal">
+                <div class="casev2-metric__value casev2-metric__value-hch">
+                  92%
+                </div>
+                <figcaption class="casev2-metric__label">
+                  accuracy compared to triage nurse’ assessment
+                </figcaption>
+              </figure>
+
+              <figure class="casev2-metric reveal">
+                <div class="casev2-metric__value casev2-metric__value-hch">
+                  85%
+                </div>
+                <figcaption class="casev2-metric__label">
+                  faster intake process projected
+                </figcaption>
+              </figure>
+
+              <figure class="casev2-metric casev2-metric--wide reveal">
+                <div class="casev2-metric__value casev2-metric__value-hch">
+                  87%
+                </div>
+                <figcaption class="casev2-metric__label">
+                  of surveyed families found the tool easy to use
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- 3 narrative outcome notes -->
+            <div class="casev2-outcomes__notes">
+              <article class="casev2-outcome-note">
+                <div
+                  class="casev2-outcome-note__icon reveal"
+                  aria-hidden="true"
+                >
+                  🎯
+                </div>
+                <p class="casev2-outcome-note__eyebrow reveal">
+                  The main metric - accuracy!
+                </p>
+
+                <div class="casev2-outcome-note__body reveal">
+                  <p>
+                    In the pilot run of the screener, it aligned with nurse
+                    triage 92% of the time. Caregivers shared clearer info, and
+                    nurses said the tool felt “natural” to use, even on very
+                    busy shifts.
+                  </p>
+                </div>
+              </article>
+
+              <article class="casev2-outcome-note">
+                <div
+                  class="casev2-outcome-note__icon reveal"
+                  aria-hidden="true"
+                >
+                  ⚡
+                </div>
+                <p class="casev2-outcome-note__eyebrow reveal">
+                  Efficiency gains
+                </p>
+
+                <div class="casev2-outcome-note__body reveal">
+                  <p>
+                    Moving the first part of intake online saved nurses a lot of
+                    time on lower-acuity cases.
+                  </p>
+                </div>
+                <div class="casev2-outcome-note__body reveal">
+                  <p>
+                    That freed them up to focus on patients who needed attention
+                    right away without adding extra steps for caregivers.
+                  </p>
+                </div>
+              </article>
+
+              <article class="casev2-outcome-note">
+                <div
+                  class="casev2-outcome-note__icon reveal"
+                  aria-hidden="true"
+                >
+                  🌱
+                </div>
+                <p class="casev2-outcome-note__eyebrow reveal">
+                  Designed for scaling and inclusivity
+                </p>
+
+                <div class="casev2-outcome-note__body reveal">
+                  <p>
+                    From the start, the design worked on any device, supported
+                    different accessibility needs, and rolled out in both
+                    English and French.
+                  </p>
+                </div>
+                <div class="casev2-outcome-note__body reveal">
+                  <p>
+                    This made the tool easily scaleable for other hospitals and
+                    clinics!
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Block:If continued, I would... -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-steps casev2-steps--bg casev2-fullbleed casev2-fullbleed-hch-if-continued"
+        aria-labelledby="if-continued-title"
+      >
+        <div class="container container--narrow">
+          <div class="casev2-center casev2-center-wide casev2-center-nums">
+            <h2
+              id="if-continued-title"
+              class="casev2-section-title casev2-section-title-on-light reveal"
+            >
+              If continued, I would...
+            </h2>
+
+            <ol class="casev2-steps3-all">
+              <li class="casev2-step3 reveal">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch"
+                  aria-hidden="true"
+                >
+                  01
+                </div>
+                <p class="casev2-step3__text">
+                  Add tooltips for tricky medical terms and create separate
+                  flows for caregivers and older children.
+                </p>
+              </li>
+
+              <li class="casev2-step3 reveal">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch"
+                  aria-hidden="true"
+                >
+                  02
+                </div>
+                <p class="casev2-step3__text">
+                  Give users the option to share sensory or neurodiverse needs
+                  ahead of time so that the nurses would be aware
+                </p>
+              </li>
+
+              <li class="casev2-step3 reveal">
+                <div
+                  class="casev2-step3__num casev2-step3__num-hch"
+                  aria-hidden="true"
+                >
+                  03
+                </div>
+                <p class="casev2-step3__text">
+                  Separate flows for adult caregivers and children completing
+                  the questionnaire
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Learnings (same note structure as Outcomes, without the metrics block) -->
+      <section
+        class="casev2-section casev2-section-addpad casev2-learnings"
+        aria-labelledby="learnings-title"
+      >
+        <div class="container">
+          <div class="casev2-center casev2-center-wide">
+            <h2 id="learnings-title" class="casev2-section-title reveal">
+              Learnings
+            </h2>
+
+            <!-- Reuse the same notes structure/classes as Outcomes -->
+            <div class="casev2-outcomes__notes">
+              <article class="casev2-outcome-note">
+                <div
+                  class="casev2-outcome-note__icon reveal"
+                  aria-hidden="true"
+                >
+                  🤩
+                </div>
+                <p class="casev2-outcome-note__eyebrow reveal">
+                  What worked well
+                </p>
+
+                <div class="casev2-outcome-note__body reveal">
+                  <p>
+                    Running the hospital trial was huge! The screener matched
+                    nurse triage 92% of the time, which showed the tool was
+                    genuinely accurate and useful. The collaboration with
+                    nurses, PMs, and engineers also clicked really well, and we
+                    stayed aligned and enthusiastic even with tight deadlines.
+                  </p>
+                </div>
+              </article>
+
+              <article class="casev2-outcome-note">
+                <div
+                  class="casev2-outcome-note__icon reveal"
+                  aria-hidden="true"
+                >
+                  🧡
+                </div>
+                <p class="casev2-outcome-note__eyebrow reveal">Most proud of</p>
+
+                <div class="casev2-outcome-note__body reveal">
+                  <p>
+                    I’m proud that I led a complex project on my own and made an
+                    awful experience a little calmer and accessible for stressed
+                    out users. Designing something that helps families in a
+                    scary moment and hearing staff call it “easy to use” felt
+                    amazing! This is why I do what I do. :)
+                  </p>
+                </div>
+              </article>
+
+              <article class="casev2-outcome-note">
+                <div
+                  class="casev2-outcome-note__icon reveal"
+                  aria-hidden="true"
+                >
+                  📖
+                </div>
+                <p class="casev2-outcome-note__eyebrow reveal">
+                  Best lesson learned
+                </p>
+
+                <div class="casev2-outcome-note__body reveal">
+                  <p>
+                    A metaphor from our VP of Product stuck with me: when
+                    building an MVP, don’t start with a car door or bumper:
+                    start with a skateboard. That mindset helped me guide our
+                    scope and prioritize value and quick wins!
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="casev2-section casev2-outro casev2-fullbleed-image-hch-outro"
+      >
+        <!-- upper content -->
+        <div class="casev2-outro__hero">
+          <div class="container">
+            <h2 class="casev2-outro__title reveal">Thank you for reading!</h2>
+            <p class="casev2-outro__subtitle casev2-outro__subtitle-hch reveal">
+              Explore other case studies using the buttons below.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- lower nav stays EXACTLY as you already have it -->
+      <!-- 🦊 next-prev buttons-->
+      <nav class="case-nav reveal">
+        <div class="container">
+          <a
+            href="/everwell-PROMs-and-trends/"
+            class="case-nav__btn case-nav__btn--prev"
+          >
+            ← Previous case
+          </a>
+          <!-- keep Next hidden until case3 exists -->
+          <a
+            href="/everwell-senior-solution/"
+            class="case-nav__btn case-nav__btn--next"
+            aria-hidden="true"
+          >
+            Next case →
+          </a>
+        </div>
+      </nav>
+
+      <!-- 🦊end  -->
+    </main>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container site-footer__content">
+        <div class="site-footer__left">
+          <p class="site-footer__name">Michelle Pavlova</p>
+          <a href="mailto:hi@michelledesign.ca" class="site-footer__email"
+            >hi@michelledesign.ca</a
+          >
+          <p class="site-footer__tagline">Let’s connect!</p>
+          <p class="site-footer__credit">Made with ❤️ and hojicha.</p>
+        </div>
+        <div class="site-footer__right">
+          <div class="site-footer__column">
+            <h4 class="site-footer__heading">Navigation</h4>
+            <ul class="site-footer__list">
+              <li><a href="../">Home</a></li>
+              <li><a href="../#selected-work">Work</a></li>
+              <li><a href="/about/">About</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__column">
+            <h4 class="site-footer__heading">Contact</h4>
+            <ul class="site-footer__list">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/michellepavlova/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="menu__link menu__link--resume"
+                >
+                  LinkedIn
+                  <svg
+                    class="icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                    focusable="false"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.6667 1.3335H14.6667V5.3335"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M7.33333 8.66683L14.6667 1.3335M14.6667 8.66683V14.6668H1.33333V1.3335H7.33333"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <svg
+        viewBox="0 0 24 24"
+        width="28"
+        height="28"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          d="M12 19V5M5 12l7-7 7 7"
+          stroke="white"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <script src="../scripts/main.js" defer></script>
+  </body>
+</html>
