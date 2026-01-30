@@ -436,7 +436,7 @@ body.scrolled .home .selected-work {
   text-transform: none;
   font-size: 56px;
   color: var(--Colors-Fuchsia-900, #701a75) !important;
-  line-height: 100%;
+  line-height: 91%;
 }
 .case-card__company-vivia {
   font-family: "Aoboshi One", serif !important;
