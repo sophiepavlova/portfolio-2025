@@ -425,6 +425,10 @@ body.scrolled .home .selected-work {
   font-family: "Instrument Serif", serif;
   font-size: 64px;
   color: white;
+  line-height: 0.85;
+  display: block;
+  padding-top: 15px;
+  /* padding-bottom: 5px; */
 }
 .case-card__company-hch {
   font-family: "Felt Tip Woman", "Caveat", "Comic Sans MS", cursive;
