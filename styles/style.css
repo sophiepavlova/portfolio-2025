@@ -107,6 +107,14 @@ body {
 h3 {
   line-height: 1.2;
 }
+
+/* #backToTop {
+  pointer-events: none;
+}
+#backToTop.show {
+  pointer-events: auto;
+} */
+
 /* =========================
    Case pages typography
    ========================= */
