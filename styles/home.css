@@ -5,6 +5,7 @@
 :root {
   /* keeps layout width consistent across pages */
   scrollbar-gutter: stable;
+  --color-text: #1f2937;
 }
 
 html,
@@ -460,6 +461,16 @@ body.scrolled .home .selected-work {
   font-weight: 700;
   letter-spacing: 0.5%;
   margin: 0;
+}
+.case-card__info-text {
+  color: white;
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+.case-card__info-text-dark {
+  color: var(--color-text);
 }
 
 .case-card__description {

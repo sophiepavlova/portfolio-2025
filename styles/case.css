@@ -1189,6 +1189,9 @@ Callout (dark grey box inside highlights)
   color: var(--Colors-Sky-800, #075985);
   text-align: center;
 }
+.casev2-eyebrow-hero {
+  padding-bottom: 10px;
+}
 .casev2-eyebrow-hch {
   color: var(--Colors-Fuchsia-800, #86198f);
 }
@@ -1364,12 +1367,14 @@ Callout (dark grey box inside highlights)
 }
 
 .casev2-overview__kicker {
-  margin: 28px 0 8px;
+  margin: 28px 0 5px;
   font-family: "Caveat", cursive;
-  font-size: 30px;
-  line-height: 140%;
+  font-size: 24px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
+}
+.casev2-overview__kicker-top {
+  margin: 0px 0 8px;
 }
 
 .casev2-overview__list {
@@ -1497,7 +1502,7 @@ Callout (dark grey box inside highlights)
   margin: 16px 0 0;
   font-family: "Caveat", cursive;
   font-size: 24px;
-  line-height: 140%;
+  line-height: 120%;
   color: rgba(255, 255, 255, 0.8);
 }
 
