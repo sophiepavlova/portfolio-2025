@@ -421,14 +421,40 @@ body.scrolled .home .selected-work {
   margin: 0;
   text-transform: uppercase;
 }
-.case-card__company-everwell {
+/* .case-card__company-everwell {
   font-family: "Instrument Serif", serif;
   font-size: 64px;
   color: white;
   line-height: 0.85;
   display: block;
   padding-top: 15px;
+  padding-bottom: 5px;
+} */
+.case-card__company-everwell {
+  color: white;
+  font-family: "Italiana", serif;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 120%;
+  letter-spacing: 0.005em; /* 0.5% */
+  /* line-height: 0.85;
+  display: block;
+  padding-top: 15px; */
   /* padding-bottom: 5px; */
+}
+.case-card__company-thriftie {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 56px;
+  line-height: 60px;
+  letter-spacing: 0;
+  text-transform: none;
+  padding-top: 12px;
+  color: var(--Colors-Pink-900, #831843) !important;
+}
+.case-card__company-thriftie-italic {
+  font-style: italic;
 }
 .case-card__company-hch {
   font-family: "Felt Tip Woman", "Caveat", "Comic Sans MS", cursive;
@@ -472,6 +498,10 @@ body.scrolled .home .selected-work {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
+}
+.case-card__info-tex-thriftie {
+  padding-bottom: 12px;
+  color: var(--color-text);
 }
 .case-card__info-text-dark {
   color: var(--color-text);
@@ -569,6 +599,9 @@ body.scrolled .home .selected-work {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.case-stat__icon-thriftie {
+  background: var(--Colors-Pink-800, #9d174d);
 }
 
 .case-stat__icon img {

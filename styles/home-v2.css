@@ -134,7 +134,7 @@
   object-position: 75% 45%;
 } */
 .home--v2 .case-card__visual.case-card__visual-scale img {
-  /* object-position: 75% 45%; */
+  object-position: 75% 45%;
   scale: 1.6;
 }
 .home--v2 .case-card__visual picture img {
@@ -145,7 +145,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* object-position: 335% 45% !important; */
+  object-position: 100% 45% !important;
   /* object-position: 75% 45% !important; */
   display: block;
 }
@@ -346,14 +346,33 @@
   --card-text-color: #ffffff;
 }
 
-.home--v2 .case-card--overlay-strong .case-card__inner::after {
+/* .home--v2 .case-card--overlay-strong .case-card__inner::after {
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.7) 0%,
     rgba(0, 0, 0, 0.4) 52%,
     rgba(0, 0, 0, 0.15) 100%
   );
+} */
+.home--v2 .case-card--overlay-strong .case-card__inner::after {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.45) 52%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
 }
+
+.home--v2 .case-card--overlay-thrifthie .case-card__inner::after {
+  background:
+    linear-gradient(0deg, rgba(254, 240, 234, 0.35), rgba(254, 240, 234, 0.35)),
+    linear-gradient(
+      268.98deg,
+      rgba(251, 223, 212, 0.6) 14.35%,
+      rgba(251, 223, 212, 0) 47.45%
+    );
+}
+
 /* Readability overlay (per-card) */
 /* overlay stays above image, below content */
 .home--v2 .case-card__inner::after {
@@ -384,17 +403,21 @@
   );
 } */
 
-.home--v2 .case-card--overlay-light-1 .case-card__inner::after {
+/* .home--v2 .case-card--overlay-light-1 .case-card__inner::after {
   background-image:
     linear-gradient(0deg, rgba(253, 239, 234, 0.2), rgba(253, 239, 234, 0.2)),
     linear-gradient(268.98deg, #fdefea 14.35%, rgba(253, 239, 234, 0) 47.45%);
-  /* background: linear-gradient(
-      0deg,
-      var(--Colors-Stone-50, #fafaf9),
-      var(--Colors-Stone-50, #fafaf9)
-    ),
-    linear-gradient(0deg, rgba(253, 239, 234, 0.2), rgba(253, 239, 234, 0.2)),
-    linear-gradient(268.98deg, #fdefea 14.35%, rgba(253, 239, 234, 0) 47.45%); */
+ 
+} */
+
+.home--v2 .case-card--overlay-light-1 .case-card__inner::after {
+  background: linear-gradient(
+    268.98deg,
+    rgba(244, 234, 253, 0.45) 0%,
+    rgba(244, 234, 253, 0.25) 30%,
+    rgba(244, 234, 253, 0.1) 50%,
+    rgba(244, 234, 253, 0) 70%
+  );
 }
 
 .home--v2 .case-card--overlay-light-2 .case-card__inner::after {
