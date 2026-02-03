@@ -1110,6 +1110,39 @@ Callout (dark grey box inside highlights)
   flex-grow: 0;
   flex-shrink: 0;
 } */
+/* Safari: stop flex-stretching the IMG itself */
+figure.casev2-highlight__media--phones {
+  align-items: flex-start;
+}
+
+figure.casev2-highlight__media--phones > img.casev2-highlight__media--phone {
+  flex: 0 0 auto; /* overrides flex: 1 1 0 */
+  height: auto; /* prevents the huge computed height */
+  /* align-self: flex-start; */
+  align-self: center;
+  /* keep your existing width/max-width rules as-is */
+}
+/* Keep flex shrinking behavior, but prevent Safari from distorting */
+figure.casev2-highlight__media--phones > img.casev2-highlight__media--phone {
+  height: auto;
+  object-fit: contain;
+  flex: 1 1 0; /* explicitly keep your intended behavior */
+  align-self: flex-start;
+}
+.casev2-highlight__media--phones {
+  align-items: flex-start;
+}
+/* row layout: keep them top-aligned (Safari-safe) */
+figure.casev2-highlight__media--phones > img.casev2-highlight__media--phone {
+  align-self: flex-start;
+}
+
+/* column layout: center them */
+@media (max-width: 820px) {
+  figure.casev2-highlight__media--phones > img.casev2-highlight__media--phone {
+    align-self: center;
+  }
+}
 
 /* 🐞End: Fix the stretching small cards bug */
 .casev2-highlight__media--phone-hch-smaller {
