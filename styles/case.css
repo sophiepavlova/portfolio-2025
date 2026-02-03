@@ -451,7 +451,7 @@
   line-height: 1;
   color: var(--casev2-text-dark);
   text-align: left;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
 }
 .casev2-hmw-point__text-thriftie {
   text-align: left;
@@ -1035,8 +1035,9 @@ Callout (dark grey box inside highlights)
 .casev2-highlight__media img {
   border-radius: 10px;
 }
-.casev2-highlight__media-thriftie img {
-  border-radius: 0px;
+.casev2-highlight__media-thriftie img,
+.no-corners {
+  border-radius: 0px !important;
 }
 
 .casev2-highlight__vivia-img {
