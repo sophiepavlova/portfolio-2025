@@ -100,6 +100,10 @@ body {
   color: var(--Colors-Rose-300, #fda4af);
 }
 
+.is-hidden {
+  display: none;
+}
+
 /* =========================
    Mobile menu — homepage only
    ========================= */
