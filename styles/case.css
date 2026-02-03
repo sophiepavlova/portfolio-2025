@@ -1092,7 +1092,7 @@ Callout (dark grey box inside highlights)
 }
 /* 🐞Fix the stretching small cards bug */
 /* SAFARI FIX: never let images grow in flex layouts */
-.casev2-highlight__media--phone {
+/* .casev2-highlight__media--phone {
   flex: 0 0 auto;
 }
 
@@ -1100,7 +1100,7 @@ Callout (dark grey box inside highlights)
   flex: 0 0 auto;
   height: auto;
   align-self: flex-start;
-}
+} */
 
 /* .casev2-highlight__media img {
   display: block;
