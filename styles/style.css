@@ -2956,9 +2956,12 @@ p.add-small-margin-bottom {
 }
 .site-nav a:hover {
   transform: scale(1.05);
-  /* color: var(--color-accent); */
   color: var(--Colors-Rose-300, #fda4af);
 }
+.case .site-nav a:hover {
+  color: var(--color-accent);
+}
+
 /* Back to top button */
 .back-to-top {
   position: fixed;
