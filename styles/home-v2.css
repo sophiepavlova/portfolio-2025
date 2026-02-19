@@ -104,6 +104,12 @@
   /* background: transparent !important; */
   background: var(--Colors-Stone-900, #1c1917) !important;
 }
+/* home v2: dark bg when showing on scroll up (new class name) */
+.home.home--v2 .site-header.site-header--bg-dark {
+  background: var(--Colors-Stone-900, #1c1917);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
 .home--v2 .case-card .case-card__inner-interviewr {
   position: relative;
   overflow: hidden;

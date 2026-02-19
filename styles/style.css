@@ -4320,3 +4320,15 @@ a:focus:not(:focus-visible) {
     max-width: 200px;
   }
 }
+.site-header.site-header--bg-light {
+  /* stone-50-ish */
+  /* background: rgba(250, 250, 249, 0.92);  */
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.site-header.site-header--bg-dark {
+  background: var(--Colors-Stone-900, #1c1917);
+  backdrop-filter: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}

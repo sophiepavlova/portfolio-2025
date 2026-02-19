@@ -900,101 +900,73 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Header behavior:
-// - Home (home--v2): top = visible + transparent, scroll down = hide, scroll up = show + dark bg
-// - Other pages: keep your usual hide-on-down show-on-up (no forced bg changes here)
+// -----------------------------
+// Header scroll behavior (single source of truth)
+// - Starts transparent on all pages
+// - Background appears only when scrolling up
+// - Background color depends on page theme (light vs dark)
+// -----------------------------
 (() => {
   const header = document.querySelector(".site-header");
   if (!header) return;
 
-  const isHomeV2 = document.body.classList.contains("home--v2");
-  let lastY = window.scrollY;
+  // Clean up any legacy classes from older experiments
+  header.classList.remove("site-header--home-bg", "site-header--scrolled");
 
-  const update = () => {
-    const y = window.scrollY;
-    const atTop = y < 10;
+  const body = document.body;
 
-    if (isHomeV2) {
-      if (atTop) {
-        header.classList.remove("hidden");
-        header.classList.remove("site-header--home-bg");
-      } else if (y > lastY + 2) {
-        // scrolling down
-        header.classList.add("hidden");
-        header.classList.remove("site-header--home-bg");
-      } else if (y < lastY - 2) {
-        // scrolling up
-        header.classList.remove("hidden");
-        header.classList.add("site-header--home-bg");
-      }
-    } else {
-      // non-home pages: keep existing hide/show behavior only
-      if (y > lastY && y > 80) header.classList.add("hidden");
-      else header.classList.remove("hidden");
-    }
+  // Decide which pages are dark-theme (add classes you actually use on <body>)
+  const DARK_PAGE_CLASSES = ["theme-dark", "home--v2", "home", "playground"];
+  const isDarkThemePage = DARK_PAGE_CLASSES.some((cls) =>
+    body.classList.contains(cls),
+  );
 
-    lastY = y;
+  const BG_LIGHT = "site-header--bg-light";
+  const BG_DARK = "site-header--bg-dark";
+
+  const setBg = (on) => {
+    header.classList.remove(BG_LIGHT, BG_DARK);
+    if (!on) return;
+    header.classList.add(isDarkThemePage ? BG_DARK : BG_LIGHT);
   };
 
-  window.addEventListener("scroll", update, { passive: true });
-  update();
-})();
-
-// ✅ Header scroll behavior (single source of truth)
-(() => {
-  const header = document.querySelector(".site-header");
-  if (!header) return;
-
-  const isHomeV2 = document.body.classList.contains("home--v2");
   let lastY = window.scrollY;
 
-  const DELTA = 4; // "шум" скролла
-  const TOP_Y = 10; // зона "наверху"
+  const DELTA = 4; // prevents jitter
+  const TOP_Y = 10; // top zone: keep transparent
 
   const onScroll = () => {
     const y = window.scrollY;
+    const goingDown = y > lastY + DELTA;
+    const goingUp = y < lastY - DELTA;
 
-    // --- Home v2 rules ---
-    if (isHomeV2) {
-      const goingDown = y > lastY + DELTA;
-      const goingUp = y < lastY - DELTA;
-
-      // top: show, but transparent
-      if (y <= TOP_Y) {
-        header.classList.remove("hidden");
-        header.classList.remove("site-header--scrolled");
-        lastY = y;
-        return;
-      }
-
-      // down: hide header полностью
-      if (goingDown) {
-        header.classList.add("hidden");
-        header.classList.remove("site-header--scrolled"); // пока скрыт, фон не нужен
-        lastY = y;
-        return;
-      }
-
-      // up: show + dark bg
-      if (goingUp) {
-        header.classList.remove("hidden");
-        header.classList.add("site-header--scrolled");
-        lastY = y;
-        return;
-      }
-
-      // если стоим/микро-скролл: ничего не меняем
+    // At the very top: visible, no background
+    if (y <= TOP_Y) {
+      header.classList.remove("hidden");
+      setBg(false);
       lastY = y;
       return;
     }
 
-    // --- Default rules for other pages (как у тебя было) ---
-    if (y > lastY && y > 80) header.classList.add("hidden");
-    else header.classList.remove("hidden");
+    // Scrolling down: hide, no background
+    if (goingDown) {
+      header.classList.add("hidden");
+      setBg(false);
+      lastY = y;
+      return;
+    }
+
+    // Scrolling up: show, background ON
+    if (goingUp) {
+      header.classList.remove("hidden");
+      setBg(true);
+      lastY = y;
+      return;
+    }
 
     lastY = y;
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll(); // выставить состояние при загрузке
+  onScroll(); // initialize state on load
 })();

@@ -111,15 +111,47 @@
 .hero--playground .hero__description {
   max-width: 70ch;
 }
-.playground .site-header {
+/* .playground .site-header {
   background: transparent;
   backdrop-filter: unset;
 }
 
-.playground .site-header.site-header--home-bg:not(.hidden) {
+.playground .site-header {
+  background: transparent;
+  backdrop-filter: unset;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+} */
+
+/* .playground .site-header.site-header--scrolled {
   background: var(--Colors-Stone-900, #1c1917);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+} */
+
+/* Playground: header is transparent by default */
+.playground
+  .site-header:not(.site-header--bg-dark):not(.site-header--bg-light) {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
+
+/* Playground: when JS toggles background on scroll-up */
+.playground .site-header.site-header--bg-dark {
+  background: var(--Colors-Stone-900, #1c1917);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.playground .site-header.site-header--bg-light {
+  background: var(--Colors-Stone-50, #fafaf9);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
 .playground .logo {
   color: white;
 }
@@ -241,10 +273,16 @@
 /* Dark section wrapper */
 .play-section--dark {
   background: #1c1917;
-  padding: 70px 0 110px;
+  padding: 50px 0 110px;
   color: #fff;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .play-section--dark {
+    padding: 0px 0 110px;
+  }
+}
 /* Grid */
 .play-grid {
   display: grid;
