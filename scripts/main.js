@@ -293,6 +293,15 @@ function setActiveMenuLinks() {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
     }
+    // Playground page
+    else if (
+      link.getAttribute("href") === "/playground/" &&
+      currentPage === "playground"
+    ) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    }
+
     // Resume (if you want to highlight when on resume page)
     else if (
       link.getAttribute("href") &&
