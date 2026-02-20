@@ -389,7 +389,11 @@ h3 {
     position: fixed;
     inset: 0;
     width: 100%;
-    height: 100svh;
+    /* height: 100svh; */
+    /* iOS Safari fix: prevents bottom strip showing page behind */
+    height: 100dvh;
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom);
 
     /* fallback */
     background-color: var(--color-background, #fafaf9);

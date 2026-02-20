@@ -1,0 +1,448 @@
+/*
+  Home v3
+  Scoped so it won't affect other pages/versions.
+  Apply by adding: <body class="home home--v3">
+*/
+
+.home.home--v3 {
+  /* Base page background for v3 */
+  background: var(--color-background, white);
+  color: var(--color-text, #1f2937);
+}
+
+/* ===== Container helpers (use your existing .container if present) ===== */
+.home.home--v3 .container {
+  /* If your global .container already exists, this will simply reinforce it */
+  width: min(1120px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* ===== Buttons (lightweight; your global .btn may override) ===== */
+/* .home.home--v3 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    color 140ms ease,
+    border-color 140ms ease;
+} */
+
+.home.home--v3 .btn--primary {
+  background: var(--color-accent, #e11d48);
+  color: #fff;
+}
+
+.home.home--v3 .btn--primary:hover {
+  transform: translateY(-1px);
+}
+
+.home.home--v3 .btn--secondary {
+  background: #fff;
+  border: 1px solid rgba(28, 25, 23, 0.14);
+  color: var(--Colors-Stone-900, #1c1917);
+}
+
+.home.home--v3 .btn--secondary:hover {
+  transform: translateY(-1px);
+  border-color: rgba(28, 25, 23, 0.24);
+}
+
+/* ===== Hero ===== */
+.home.home--v3 .home-hero {
+  padding: 34px 0 28px;
+}
+
+.home.home--v3 .home-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.home-hero-block {
+  max-width: 730px;
+}
+
+.home.home--v3 .home-hero__kicker {
+  font-family: "campaign-serif", serif;
+  font-size: 20px;
+  line-height: 140%;
+  /* margin-bottom: 10px; */
+  font-weight: 400;
+  color: var(--color-text, #1f2937);
+  margin: 0;
+}
+.home-hero__content_greeting-full {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.home-hero__kicker-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition:
+    text-decoration-thickness 150ms ease,
+    text-underline-offset 150ms ease,
+    opacity 150ms ease;
+}
+
+.home-hero__kicker-link:hover {
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+.home-hero__flower {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.home--v3 h1 {
+  font-family: "campaign-serif", serif;
+  font-weight: 500;
+  font-size: clamp(52px, 70px - (880px - 100vw) * 0.04, 70px);
+  line-height: 1;
+  letter-spacing: var(--casev2-ls);
+
+  color: var(--casev2-text-dark);
+}
+.home.home--v3 .home-hero__title {
+  padding-bottom: 10px;
+  max-width: 610px;
+}
+
+.home.home--v3 .home-hero__subtitle {
+  line-height: 1.4;
+  padding-bottom: 20px;
+}
+
+.home.home--v3 .home-hero__meta {
+  display: flex;
+  gap: 10px;
+}
+/* ===== Responsive tweaks ===== */
+@media (max-width: 520px) {
+  .home.home--v3 .home-hero__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.home.home--v3 .home-hero__meta-row {
+  font-size: 16px;
+  color: var(--Colors-Stone-700, #44403c);
+  display: flex;
+  gap: 10px;
+}
+
+.home.home--v3 .home-hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+/* .home.home--v3 .home-hero-backdrop {
+  position: relative;
+  padding: clamp(28px, 3.5vw, 48px);
+  overflow: hidden;
+  background-color: #fff;
+  background-image:
+    linear-gradient(
+      rgb(255, 255, 255) 0px,
+      rgb(255, 255, 255) 0px,
+      rgba(255, 255, 255, 0.35) 380px,
+      rgba(255, 255, 255, 0) 650px
+    ),
+    url(../assets/images/home-hero-bg.png);
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position:
+    top center,
+    center bottom;
+  margin-top: -1px;
+} */
+/* 1) Hero: keep spacing, but DON'T own the backdrop image anymore */
+.home.home--v3 .home-hero-backdrop {
+  background: none; /* overrides the current background-image */
+}
+
+/* 2) Main: shared backdrop that spans hero + first card row */
+.home.home--v3 main {
+  position: relative;
+  isolation: isolate; /* keeps the pseudo-element behind */
+}
+
+.home.home--v3 main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: -1;
+
+  /* tweak this until it reaches “partway into the cards” like the design */
+  height: clamp(720px, 92vh, 980px);
+
+  background-image:
+    linear-gradient(
+      rgb(255, 255, 255) 0px,
+      rgba(255, 255, 255, 0.35) 380px,
+      rgba(255, 255, 255, 0) 780px
+    ),
+    url("../assets/images/home-hero-bg.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position:
+    top center,
+    center bottom;
+}
+
+/* optional: helps the cards “sit into” the backdrop without extra gap */
+.home.home--v3 #work {
+  padding-top: 0;
+}
+
+/* ===== Sections ===== */
+.home.home--v3 .home-section {
+  padding: 44px 0;
+}
+
+.home.home--v3 .home-section--alt {
+  padding-top: 34px;
+}
+
+.home.home--v3 .home-section__header {
+  margin-bottom: 22px;
+}
+
+.home.home--v3 .home-section__title {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.home.home--v3 .home-section__desc {
+  margin: 8px 0 0;
+  color: var(--Colors-Stone-600, #57534e);
+  font-size: 16px;
+  max-width: 62ch;
+}
+
+/* ===== Grids ===== */
+.home.home--v3 .home-work-grid,
+.home.home--v3 .home-personal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+@media (max-width: 900px) {
+  .home.home--v3 .home-work-grid,
+  .home.home--v3 .home-personal-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* ===== Card base ===== */
+.home.home--v3 .home-card {
+  height: 100%;
+}
+
+.home.home--v3 .home-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 28px;
+}
+
+/* no visible border, but add subtle hover lift */
+.home.home--v3 .home-card__link:hover {
+  transform: translateY(-2px);
+}
+
+.home.home--v3 .home-card__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  background: rgba(28, 25, 23, 0.06);
+}
+
+/* Media sizes */
+.home.home--v3 .home-card__media--lg {
+  height: clamp(260px, 22vw, 360px);
+}
+
+.home.home--v3 .home-card__media--sm {
+  height: clamp(200px, 18vw, 280px);
+}
+
+/* If you forget to add a size class, keep it reasonable */
+.home.home--v3
+  .home-card__media:not(.home-card__media--lg):not(.home-card__media--sm) {
+  height: clamp(240px, 20vw, 330px);
+}
+
+.home.home--v3 .home-card__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home.home--v3 .home-card__shots {
+  position: absolute;
+  inset: 0;
+}
+
+.home.home--v3 .home-card__shot {
+  position: absolute;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Default placements (temporary). We'll override per card for real art direction. */
+.home.home--v3 .home-card__shots[data-shots="1"] .home-card__shot--1 {
+  width: min(78%, 440px);
+  left: 12%;
+  top: 14%;
+}
+
+.home.home--v3 .home-card__shots[data-shots="3"] .home-card__shot--1 {
+  width: min(48%, 280px);
+  left: 10%;
+  top: 18%;
+  transform: rotate(-6deg);
+}
+
+.home.home--v3 .home-card__shots[data-shots="3"] .home-card__shot--2 {
+  width: min(48%, 280px);
+  left: 30%;
+  top: 10%;
+  transform: rotate(3deg);
+}
+
+.home.home--v3 .home-card__shots[data-shots="3"] .home-card__shot--3 {
+  width: min(48%, 280px);
+  left: 50%;
+  top: 22%;
+  transform: rotate(8deg);
+}
+
+/* Card text */
+.home.home--v3 .home-card__content {
+  padding: 16px 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home.home--v3 .home-card__eyebrow {
+  margin: 0;
+  font-size: 14px;
+  color: var(--Colors-Stone-600, #57534e);
+}
+
+.home.home--v3 .home-card__title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.home.home--v3 .home-card__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--Colors-Stone-700, #44403c);
+  max-width: 60ch;
+}
+
+/* ===== Contact block ===== */
+.home.home--v3 .home-contact {
+  padding: 56px 0 64px;
+}
+
+.home.home--v3 .home-contact__inner {
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid rgba(28, 25, 23, 0.1);
+  padding: 26px;
+}
+
+.home.home--v3 .home-contact__title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.home.home--v3 .home-contact__text {
+  margin: 8px 0 16px;
+  color: var(--Colors-Stone-600, #57534e);
+}
+
+/* ===== Footer ===== */
+.home.home--v3 .site-footer {
+  padding: 28px 0 44px;
+}
+
+.home.home--v3 .site-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(28, 25, 23, 0.1);
+  padding-top: 18px;
+}
+
+.home.home--v3 .site-footer__links {
+  display: flex;
+  gap: 14px;
+}
+
+.home.home--v3 .site-footer a {
+  color: var(--Colors-Stone-700, #44403c);
+  text-decoration: none;
+}
+
+.home.home--v3 .site-footer a:hover {
+  color: var(--color-accent, #e11d48);
+}
+.home.home--v3 .site-nav a:hover,
+.home.home--v3 .site-nav a.active,
+.home.home--v3 .site-nav a[aria-current="page"] {
+  color: var(--color-accent, #e11d48);
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 520px) {
+  .home.home--v3 .container {
+    width: min(1120px, calc(100% - 32px));
+  }
+
+  /* .home.home--v3 .home-hero__title {
+    font-size: 34px;
+  } */
+
+  .home.home--v3 .home-hero__subtitle {
+    font-size: 20px;
+  }
+}
+/* Homepage v3 container width override */
+/* .home.home--v3 .container {
+  width: min(1750px, calc(100% - 80px));
+  margin-inline: auto;
+} */
