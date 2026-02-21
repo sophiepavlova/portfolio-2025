@@ -113,6 +113,15 @@
 
   color: var(--casev2-text-dark);
 }
+.home--v3 h2 {
+  font-family: "campaign-serif", serif;
+  font-weight: 400;
+  font-size: clamp(52px, 60px + (100vw - 880px) * 0.04, 60px);
+  line-height: 1;
+  letter-spacing: var(--casev2-ls);
+
+  color: var(--casev2-text-dark);
+}
 .home.home--v3 .home-hero__title {
   padding-bottom: 10px;
   max-width: 610px;
@@ -183,7 +192,7 @@
 .home.home--v3 main::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -190px;
   left: 50%;
   width: 100vw;
   transform: translateX(-50%);
@@ -225,11 +234,11 @@
   margin-bottom: 22px;
 }
 
-.home.home--v3 .home-section__title {
+/* .home.home--v3 .home-section__title {
   margin: 0;
   font-size: 26px;
   line-height: 1.2;
-}
+} */
 
 .home.home--v3 .home-section__desc {
   margin: 8px 0 0;
@@ -243,20 +252,25 @@
 .home.home--v3 .home-personal-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  row-gap: 50px;
+  column-gap: 20px;
 }
 
 @media (max-width: 900px) {
   .home.home--v3 .home-work-grid,
   .home.home--v3 .home-personal-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    row-gap: 50px;
+    column-gap: 20px;
   }
 }
 
 /* ===== Card base ===== */
 .home.home--v3 .home-card {
   height: 100%;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .home.home--v3 .home-card__link {
@@ -265,7 +279,7 @@
   height: 100%;
   text-decoration: none;
   color: inherit;
-  border-radius: 28px;
+  border-radius: 10px;
 }
 
 /* no visible border, but add subtle hover lift */
@@ -276,24 +290,26 @@
 .home.home--v3 .home-card__media {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 10px;
   background: rgba(28, 25, 23, 0.06);
 }
 
 /* Media sizes */
 .home.home--v3 .home-card__media--lg {
-  height: clamp(260px, 22vw, 360px);
+  height: auto;
+  aspect-ratio: 756 / 537;
 }
 
 .home.home--v3 .home-card__media--sm {
-  height: clamp(200px, 18vw, 280px);
+  height: auto;
+  aspect-ratio: 865 / 554;
 }
 
 /* If you forget to add a size class, keep it reasonable */
-.home.home--v3
+/* .home.home--v3
   .home-card__media:not(.home-card__media--lg):not(.home-card__media--sm) {
   height: clamp(240px, 20vw, 330px);
-}
+} */
 
 .home.home--v3 .home-card__bg {
   position: absolute;
@@ -308,21 +324,50 @@
   inset: 0;
 }
 
-.home.home--v3 .home-card__shot {
+/* .home.home--v3 .home-card__shot {
   position: absolute;
   height: auto;
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   transform: translate3d(0, 0, 0);
+} */
+
+/* .home.home--v3 .home-card__shots[data-shots="1"] .home-card__shot--1 {
+  max-width: 490px;
+  left: 50%;
+
+  top: 10%;
+  transform: translateX(-50%);
+  display: block;
+} */
+/* 1-shot cards: use normal layout so the screenshot scales with the media */
+.home.home--v3 .home-card__shots[data-shots="1"] {
+  display: flex;
+  align-items: flex-end; /* stick to bottom */
+  justify-content: center; /* centered horizontally */
+  height: 100%;
+  padding-bottom: 0; /* we’ll crop via transform */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-/* Default placements (temporary). We'll override per card for real art direction. */
+/* override absolute rules for the 1-shot case */
+/* 1-shot cards: screenshot scales immediately with the media box */
 .home.home--v3 .home-card__shots[data-shots="1"] .home-card__shot--1 {
-  width: min(78%, 440px);
-  left: 12%;
-  top: 14%;
-}
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  bottom: auto !important;
 
+  width: 92%; /* THIS is the key */
+  max-width: none; /* remove the cap that delays scaling */
+  height: auto;
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  transform: translateY(5px); /* your bottom crop */
+}
 .home.home--v3 .home-card__shots[data-shots="3"] .home-card__shot--1 {
   width: min(48%, 280px);
   left: 10%;
@@ -351,7 +396,31 @@
   flex-direction: column;
   gap: 8px;
 }
-
+.home-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 12px;
+  column-gap: 8px;
+  align-items: center;
+}
+.home-card__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 10px;
+  border-radius: 999px;
+  background-color: var(--Colors-Stone-100, #f5f5f4);
+  color: var(--Components-Badge-Soft-Gray-Placeholder-Color, #1f2937);
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  white-space: nowrap;
+}
+.home-card__tag-color {
+  color: #4f4fa1;
+  background-color: #f0f0ff;
+}
 .home.home--v3 .home-card__eyebrow {
   margin: 0;
   font-size: 14px;
@@ -360,8 +429,14 @@
 
 .home.home--v3 .home-card__title {
   margin: 0;
-  font-size: 22px;
-  line-height: 1.15;
+  font-family: "campaign-serif", serif;
+  font-size: 32px;
+  line-height: 100%;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.home.home--v3 .strong-home-card__title {
+  font-weight: 700;
 }
 
 .home.home--v3 .home-card__text {

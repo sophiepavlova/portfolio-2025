@@ -916,7 +916,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
   // Decide which pages are dark-theme (add classes you actually use on <body>)
-  const DARK_PAGE_CLASSES = ["theme-dark", "home--v2", "home", "playground"];
+  const DARK_PAGE_CLASSES = ["theme-dark", "playground"];
   const isDarkThemePage = DARK_PAGE_CLASSES.some((cls) =>
     body.classList.contains(cls),
   );
