@@ -4,29 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Michelle Pavlova's Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon3.svg" />
-    <link
-      rel="preload"
-      href="https://use.typekit.net/af/2547e5/00000000000000007736c70e/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon3.svg" />
+
+    <!-- Google Analytics (GA4) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RRPWYEE236"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-RRPWYEE236");
+    </script>
+
+    <!-- Adobe Fonts (Campaign Serif etc.) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Caveat:wght@400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://use.typekit.net/qgp2tae.css" />
 
-    <!-- Base styles (keep your existing pipeline) -->
+    <!-- Base styles -->
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/style.css" />
 
-    <!-- New homepage v3 styles (scoped via body class) -->
+    <!-- Home v3 styles -->
     <link rel="stylesheet" href="./styles/home-v3.css" />
   </head>
-
   <body class="home home--v3">
     <!-- Header (matches existing site header markup for consistency) -->
     <header class="site-header site-header-home">
@@ -225,6 +234,7 @@
             </article>
 
             <!-- Card 2: Swipe Your Spend -->
+            <!-- TEMP: hide Swipe Your Spend card
             <article class="home-card home-card--swipe">
               <a class="home-card__link" href="/swipe-your-spend/">
                 <div
@@ -266,8 +276,7 @@
                     <span class="strong-home-card__title"
                       >Swipe Your Spend.</span
                     >
-                    Swipe Your Spend. Helping users assess their purchases for
-                    smarter spending.
+                    Helping users assess their purchases for smarter spending.
                   </h3>
                   <p class="home-card__text">
                     Swipe Your Spend is a feature that nudges users to think
@@ -286,9 +295,11 @@
                 </div>
               </a>
             </article>
+
+            END TEMP -->
             <!-- Card 3: Thriftie -->
-            <article class="home-card home-card--swipe">
-              <a class="home-card__link" href="/swipe-your-spend/">
+            <article class="home-card home-card--thriftie">
+              <a class="home-card__link" href="/thriftie/">
                 <div
                   class="home-card__media home-card__media--lg"
                   aria-hidden="true"
@@ -301,17 +312,17 @@
                   <div class="home-card__shots" data-shots="3">
                     <img
                       class="home-card__shot home-card__shot--1"
-                      src="./assets/images/placeholder-shot.webp"
+                      src="./assets/images/home-thr1.png"
                       alt=""
                     />
                     <img
                       class="home-card__shot home-card__shot--2"
-                      src="./assets/images/placeholder-shot.webp"
+                      src="./assets/images/home-thr2.png"
                       alt=""
                     />
                     <img
                       class="home-card__shot home-card__shot--3"
-                      src="./assets/images/placeholder-shot.webp"
+                      src="./assets/images/home-thr3.png"
                       alt=""
                     />
                   </div>
@@ -358,20 +369,10 @@
                     src="./assets/images/home_children-card.png"
                     alt=""
                   />
-                  <div class="home-card__shots" data-shots="3">
+                  <div class="home-card__shots" data-shots="1">
                     <img
-                      class="home-card__shot home-card__shot--1"
-                      src="./assets/images/placeholder-shot.webp"
-                      alt=""
-                    />
-                    <img
-                      class="home-card__shot home-card__shot--2"
-                      src="./assets/images/placeholder-shot.webp"
-                      alt=""
-                    />
-                    <img
-                      class="home-card__shot home-card__shot--3"
-                      src="./assets/images/placeholder-shot.webp"
+                      class="home-card__shot home-card__shot--1-many"
+                      src="./assets/images/homepageV3_children-card.png"
                       alt=""
                     />
                   </div>
@@ -522,10 +523,10 @@
                     src="./assets/images/home_swipe-card.png"
                     alt=""
                   />
-                  <div class="home-card__shots">
+                  <div class="home-card__shots" data-shots="1">
                     <img
-                      class="home-card__shot home-card__shot--1"
-                      src="./assets/images/placeholder-shot.webp"
+                      class="home-card__shot home-card__shot--1 home-card__shot--1-narrow"
+                      src="./assets/images/home_sweetDr-card.png"
                       alt=""
                     />
                   </div>

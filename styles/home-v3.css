@@ -105,7 +105,7 @@
 }
 
 .home--v3 h1 {
-  font-family: "campaign-serif", serif;
+  font-family: "campaign-serif", serif !important;
   font-weight: 500;
   font-size: clamp(52px, 70px - (880px - 100vw) * 0.04, 70px);
   line-height: 1;
@@ -123,8 +123,13 @@
   color: var(--casev2-text-dark);
 }
 .home.home--v3 .home-hero__title {
-  padding-bottom: 10px;
-  max-width: 610px;
+  padding-bottom: 20px;
+  font-family: "campaign-serif", sans-serif !important;
+}
+.home.home--v3 .home-hero__title,
+.home.home--v3 .hero__title {
+  font-family: "campaign-serif", serif !important;
+  font-weight: 500;
 }
 
 .home.home--v3 .home-hero__subtitle {
@@ -150,6 +155,12 @@
   color: var(--Colors-Stone-700, #44403c);
   display: flex;
   gap: 10px;
+}
+.home.home--v3 .home-hero__meta-row {
+  font-family: "Caveat", cursive;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
 }
 
 .home.home--v3 .home-hero__actions {
@@ -368,6 +379,40 @@
 
   transform: translateY(5px); /* your bottom crop */
 }
+.home.home--v3 .home-card__media {
+  container-type: inline-size;
+}
+.home.home--v3 .home-card__shots[data-shots="1"] .home-card__shot--1-many {
+  /* position: relative !important; */
+  /* left: auto !important; */
+  /* top: auto !important; */
+  bottom: auto !important;
+  width: 111%;
+  max-width: none;
+  height: auto;
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  /* transform: translateY(5px); */
+}
+/* Home v3: narrow single screenshot (Sweet Dreams) only */
+.home.home--v3 .home-card__shots[data-shots="1"] .home-card__shot--1-narrow {
+  /* don’t let old absolute positioning mess with it */
+  position: relative !important;
+
+  /* key part: scale off container width */
+  width: clamp(140px, 32cqi, 280px);
+  height: auto;
+
+  /* prevents sticking out when the cut height shrinks */
+  max-height: 88%;
+  object-fit: contain;
+
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 /* Base shot styling (works for 1-shot and 3-shot) */
 .home.home--v3 .home-card__shot {
   display: block;
@@ -383,7 +428,7 @@
   justify-content: center;
 
   /* tune with CSS variables per card */
-  gap: var(--shots-gap, 14px);
+  gap: var(--shots-gap, 4px);
   /* padding: 0 var(--shots-pad-x, 28px) var(--shots-pad-b, 18px); */
 
   /* keep it in the media overlay */
@@ -409,6 +454,7 @@
     gap: 10px;
   }
 }
+
 .home.home--v3 .home-card__shot {
   /* position: absolute; */
   height: auto;
@@ -425,7 +471,17 @@
 .home.home--v3 .home-card__shots {
   z-index: 1;
 }
+/* Thriftie: art-direct the middle screenshot */
+.home.home--v3 .home-card--thriftie .home-card__shot--2 {
+  transform: translate3d(0, -48px, 0);
+}
 
+/* optional: if you want a bit more lift on small screens */
+@media (max-width: 900px) {
+  .home.home--v3 .home-card--thriftie .home-card__shot--2 {
+    transform: translate3d(0, -40px, 0);
+  }
+}
 /* Card text */
 .home.home--v3 .home-card__content {
   padding: 16px 6px 0;
@@ -633,6 +689,7 @@
 
   width: 100vw;
   height: 520px;
+  /* height: clamp(240px, 55vw, 520px); */
 
   pointer-events: none;
   z-index: 0;
@@ -665,6 +722,28 @@
     rgba(0, 0, 0, 0.85) 45%,
     black 62%
   );
+}
+@media (max-width: 600px) {
+  .home.home--v3 .home-footer-backdrop::before {
+    /* make the image occupy more of the block vertically */
+    background-size: cover;
+
+    /* make the fade shorter so you don’t get a huge white band */
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.25) 6%,
+      rgba(0, 0, 0, 0.7) 18%,
+      black 35%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.25) 6%,
+      rgba(0, 0, 0, 0.7) 18%,
+      black 35%
+    );
+  }
 }
 /* Make sure cards/content are always above the footer backdrop */
 .home.home--v3 main {
@@ -700,5 +779,8 @@
 /* 2) When JS adds the “scroll up” class, bring the white bg back */
 .home.home--v3 .site-header.site-header--bg-light {
   background: var(--color-background, #fafaf9);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); */
+}
+.home.home--v3 .home-section--alt {
+  display: none;
 }
