@@ -4328,7 +4328,7 @@ a:focus:not(:focus-visible) {
   /* stone-50-ish */
   /* background: rgba(250, 250, 249, 0.92);  */
   background: white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); */
 }
 
 .site-header.site-header--bg-dark {
