@@ -227,6 +227,19 @@
     center bottom;
 }
 
+/* Lift the hero backdrop on big desktop so it doesn't cut into card text */
+@media (min-width: 1200px) {
+  .home.home--v3 main::before {
+    top: -260px; /* was -190px (lift by 70px) */
+  }
+}
+
+/* even bigger screens */
+@media (min-width: 1440px) {
+  .home.home--v3 main::before {
+    top: -290px; /* lift a bit more */
+  }
+}
 /* optional: helps the cards “sit into” the backdrop without extra gap */
 .home.home--v3 #work {
   padding-top: 0;
@@ -745,6 +758,11 @@
     );
   }
 }
+@media (max-width: 600px) {
+  .home.home--v3 .home-section {
+    padding: 0;
+  }
+}
 /* Make sure cards/content are always above the footer backdrop */
 .home.home--v3 main {
   position: relative;
@@ -783,4 +801,29 @@
 }
 .home.home--v3 .home-section--alt {
   display: none;
+}
+
+/* Home v3: smoother card hover */
+.home.home--v3 .home-card__link {
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform 660ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.home.home--v3 .home-card__link:hover {
+  transform: translate3d(0, -12px, 0);
+}
+
+/* keyboard users get the same “lift” */
+.home.home--v3 .home-card__link:focus-visible {
+  transform: translate3d(0, -12px, 0);
+  outline: 3px solid rgba(225, 29, 72, 0.35);
+  outline-offset: 4px;
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .home.home--v3 .home-card__link {
+    transition: none;
+  }
 }
