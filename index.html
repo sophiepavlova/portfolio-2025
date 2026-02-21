@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Michelle Pavlova's Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon3.svg" />
+    <link
+      rel="preload"
+      href="https://use.typekit.net/af/2547e5/00000000000000007736c70e/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Caveat:wght@400&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Base styles (keep your existing pipeline) -->
     <link rel="stylesheet" href="./styles/reset.css" />
@@ -156,6 +170,7 @@
       </section>
 
       <!-- SELECTED WORK -->
+
       <section class="home-section" id="work" aria-label="Selected work">
         <div class="container">
           <div class="home-work-grid">
@@ -449,6 +464,7 @@
       </section>
 
       <!-- PERSONAL SOFTWARE -->
+
       <section
         class="home-section home-section--alt"
         aria-label="Vibecoding & personal software"
@@ -534,19 +550,73 @@
       <!-- CONTACT ANCHOR (optional) -->
     </main>
 
-    <footer class="site-footer">
-      <div class="container site-footer__inner">
-        <p class="site-footer__copyright">© <span id="year"></span> Michelle</p>
-        <div class="site-footer__links">
-          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"
-            >LinkedIn</a
-          >
-          <a href="https://github.com" target="_blank" rel="noreferrer"
-            >GitHub</a
-          >
+    <div class="home-footer-backdrop" aria-hidden="true">
+      <footer class="site-footer reveal visible">
+        <div class="container site-footer__content">
+          <div class="site-footer__left">
+            <p class="site-footer__name">Michelle Pavlova</p>
+            <a href="mailto:hi@michelledesign.ca" class="site-footer__email"
+              >hi@michelledesign.ca</a
+            >
+            <p class="site-footer__tagline">Let’s connect!</p>
+            <p class="site-footer__credit">Made with ❤️ and hojicha.</p>
+          </div>
+
+          <div class="site-footer__right">
+            <div class="site-footer__column">
+              <h4 class="site-footer__heading">Navigation</h4>
+              <ul class="site-footer__list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#selected-work">Work</a></li>
+                <li><a href="/playground/">Playground</a></li>
+                <li><a href="/about/">About</a></li>
+              </ul>
+            </div>
+
+            <div class="site-footer__column">
+              <h4 class="site-footer__heading">Contact</h4>
+              <ul class="site-footer__list">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/michellepavlova/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="menu__link menu__link--resume"
+                  >
+                    LinkedIn
+                    <svg
+                      class="icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.6667 1.3335H14.6667V5.3335"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M7.33333 8.66683L14.6667 1.3335M14.6667 8.66683V14.6668H1.33333V1.3335H7.33333"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
 
     <script>
       // small footer convenience
