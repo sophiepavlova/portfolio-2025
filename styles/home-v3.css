@@ -500,7 +500,7 @@
   padding: 16px 6px 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 .home-card__tags {
   display: flex;
@@ -508,6 +508,7 @@
   row-gap: 12px;
   column-gap: 8px;
   align-items: center;
+  padding-top: 5px;
 }
 .home-card__tag {
   display: inline-flex;
