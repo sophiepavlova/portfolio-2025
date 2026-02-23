@@ -67,7 +67,8 @@
   gap: 14px;
 }
 .home-hero-block {
-  max-width: 730px;
+  /* max-width: 730px; */
+  max-width: 670px;
 }
 
 .home.home--v3 .home-hero__kicker {
@@ -145,7 +146,7 @@
   color: var(--casev2-text-dark);
 }
 .home.home--v3 .home-hero__title {
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   font-family: "campaign-serif", sans-serif !important;
 }
 .home.home--v3 .home-hero__title,
