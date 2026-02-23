@@ -103,7 +103,29 @@
   max-width: 24px;
   max-height: 24px;
 }
+/* Home v3: spinning flower */
+.home.home--v3 .home-hero__flower,
+.home.home--v3 .hero__flower {
+  transform-origin: center center;
+  animation: heroFlowerSpin 20s linear infinite;
+}
 
+@keyframes heroFlowerSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .home.home--v3 .home-hero__flower,
+  .home.home--v3 .hero__flower {
+    animation: none;
+  }
+}
 .home--v3 h1 {
   font-family: "campaign-serif", serif !important;
   font-weight: 500;
