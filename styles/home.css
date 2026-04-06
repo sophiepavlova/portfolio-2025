@@ -27,7 +27,7 @@ body {
   background: var(--color-homepage);
   color: #fff;
   color: var(--color-text);
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 400;
   padding: 10px 16px;
@@ -122,7 +122,7 @@ body {
 }
 
 .home .mobile-menu__nav a.active,
-.home .mobile-menu__nav a[aria-current="page"] {
+.home .mobile-menu__nav a[aria-current='page'] {
   color: var(--Colors-Rose-300, #fda4af); /* pink active */
 }
 /* =========================
@@ -209,7 +209,7 @@ body.scrolled .home .selected-work {
 }
 
 .home .hero__greeting {
-  font-family: "campaign-serif", serif;
+  font-family: 'campaign-serif', serif;
   font-size: 36px; /* Figma value */
   line-height: 140%;
   margin-bottom: 10px;
@@ -246,7 +246,7 @@ body.scrolled .home .selected-work {
 /* 🐧End of Flower size */
 
 .home .hero__title {
-  font-family: "campaign-serif", sans-serif;
+  font-family: 'campaign-serif', sans-serif;
   font-size: 70px; /* Figma value */
   font-weight: 500;
   line-height: 100%;
@@ -273,7 +273,7 @@ body.scrolled .home .selected-work {
 
 .home .hero__info-text {
   color: white;
-  font-family: "Caveat", cursive;
+  font-family: 'Caveat', cursive;
   font-weight: 400;
   font-size: 18px;
   line-height: 140%;
@@ -328,7 +328,7 @@ body.scrolled .home .selected-work {
 }
 
 .home .selected-work__title {
-  font-family: "campaign-serif", sans-serif;
+  font-family: 'campaign-serif', sans-serif;
   font-size: 42px;
   font-weight: 400;
   margin-bottom: 40px;
@@ -359,7 +359,7 @@ body.scrolled .home .selected-work {
 }
 
 .case-card__link::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 10px; /* same as card corners */
@@ -416,7 +416,7 @@ body.scrolled .home .selected-work {
 }
 
 .case-card__company {
-  font-family: "campaign-serif", serif;
+  font-family: 'campaign-serif', serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
@@ -436,7 +436,7 @@ body.scrolled .home .selected-work {
 } */
 .case-card__company-everwell {
   color: white;
-  font-family: "Italiana", serif;
+  font-family: 'Italiana', serif;
   font-weight: 400;
   font-size: 64px;
   line-height: 120%;
@@ -447,7 +447,7 @@ body.scrolled .home .selected-work {
   /* padding-bottom: 5px; */
 }
 .case-card__company-thriftie {
-  font-family: "Instrument Serif", serif;
+  font-family: 'Instrument Serif', serif;
   font-weight: 400;
   font-style: normal;
   font-size: 56px;
@@ -461,15 +461,15 @@ body.scrolled .home .selected-work {
   font-style: italic;
 }
 .case-card__company-hch {
-  font-family: "Felt Tip Woman", "Caveat", "Comic Sans MS", cursive;
-  font-family: "felt-tip-woman", cursive; /* whatever the kit CSS shows */
+  font-family: 'Felt Tip Woman', 'Caveat', 'Comic Sans MS', cursive;
+  font-family: 'felt-tip-woman', cursive; /* whatever the kit CSS shows */
   text-transform: none;
   font-size: 56px;
   color: var(--Colors-Fuchsia-900, #701a75) !important;
   line-height: 91%;
 }
 .case-card__company-vivia {
-  font-family: "Aoboshi One", serif !important;
+  font-family: 'Aoboshi One', serif !important;
   font-weight: 400;
   font-size: 86px;
   letter-spacing: 0.005em;
@@ -498,7 +498,7 @@ body.scrolled .home .selected-work {
 }
 .case-card__info-text {
   color: white;
-  font-family: "Caveat", cursive;
+  font-family: 'Caveat', cursive;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -1157,14 +1157,14 @@ body.scrolled .home .selected-work {
   /* 🐞End Fixing the centered images */
 
   /* fixing hero button leftover seen in the footer */
-  .home .hero[data-hidden="true"] {
+  .home .hero[data-hidden='true'] {
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
     transition: opacity 0.3s ease;
   }
 
-  .home .hero[data-hidden="false"] {
+  .home .hero[data-hidden='false'] {
     opacity: 1;
     pointer-events: auto;
     visibility: visible;

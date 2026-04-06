@@ -13,7 +13,7 @@
 }
 
 .page-hero__title {
-  font-family: "campaign-serif", serif;
+  font-family: 'campaign-serif', serif;
   font-weight: 500;
   font-size: 70px;
   /* font-size: clamp(42px, 4vw, 64px); */
@@ -26,7 +26,7 @@
   z-index: 1;
 }
 .hero__title {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 60px;
   line-height: 66px;
@@ -80,7 +80,7 @@
 }
 
 .work-card__title {
-  font-family: "campaign-serif", serif;
+  font-family: 'campaign-serif', serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 1.15;
@@ -231,7 +231,7 @@
 
 /* делаем псевдоэлемент чуть ниже, чем hero */
 .playground .hero::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -241,7 +241,7 @@
     linear-gradient(180deg, rgba(28, 25, 23, 0) 55%, #1c1917 80%, #1c1917 100%),
     /* ПОД НИМ: лёгкое затемнение картинки */
     linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
-    url("../assets/images/playground_bg.png");
+    url('../assets/images/playground_bg.png');
 
   background-size: cover;
   background-position: center;
@@ -342,7 +342,7 @@
 
 /* Title spec */
 .play-card__title {
-  font-family: "campaign-serif", serif;
+  font-family: 'campaign-serif', serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 1; /* 100% */
@@ -353,7 +353,7 @@
 /* Paragraph spec */
 .play-card__desc {
   font-family:
-    "Inter",
+    'Inter',
     system-ui,
     -apple-system,
     Segoe UI,
@@ -379,4 +379,8 @@
   .play-card__body {
     max-width: 560px; 
   } */
+}
+
+.mobile-menu .menu-close {
+  color: white !important;
 }
