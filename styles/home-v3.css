@@ -72,7 +72,7 @@
 }
 
 .home.home--v3 .home-hero__kicker {
-  font-family: "campaign-serif", serif;
+  font-family: 'campaign-serif', serif;
   font-size: 20px;
   line-height: 140%;
   /* margin-bottom: 10px; */
@@ -128,7 +128,7 @@
   }
 }
 .home--v3 h1 {
-  font-family: "campaign-serif", serif !important;
+  font-family: 'campaign-serif', serif !important;
   font-weight: 500;
   font-size: clamp(52px, 70px - (880px - 100vw) * 0.04, 70px);
   line-height: 1;
@@ -137,7 +137,7 @@
   color: var(--casev2-text-dark);
 }
 .home--v3 h2 {
-  font-family: "campaign-serif", serif;
+  font-family: 'campaign-serif', serif;
   font-weight: 400;
   font-size: clamp(52px, 60px + (100vw - 880px) * 0.04, 60px);
   line-height: 1;
@@ -147,11 +147,11 @@
 }
 .home.home--v3 .home-hero__title {
   padding-bottom: 25px;
-  font-family: "campaign-serif", sans-serif !important;
+  font-family: 'campaign-serif', sans-serif !important;
 }
 .home.home--v3 .home-hero__title,
 .home.home--v3 .hero__title {
-  font-family: "campaign-serif", serif !important;
+  font-family: 'campaign-serif', serif !important;
   font-weight: 500;
 }
 
@@ -180,7 +180,7 @@
   gap: 10px;
 }
 .home.home--v3 .home-hero__meta-row {
-  font-family: "Caveat", cursive;
+  font-family: 'Caveat', cursive;
   font-weight: 400;
   font-size: 18px;
   line-height: 140%;
@@ -224,7 +224,7 @@
 }
 
 .home.home--v3 main::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -190px;
   left: 50%;
@@ -242,7 +242,7 @@
       rgba(255, 255, 255, 0.35) 380px,
       rgba(255, 255, 255, 0) 780px
     ),
-    url("../assets/images/home-hero-bg.png");
+    url('../assets/images/home-hero-bg.png');
   background-repeat: no-repeat, no-repeat;
   background-size: cover, cover;
   background-position:
@@ -388,7 +388,7 @@
   display: block;
 } */
 /* 1-shot cards: use normal layout so the screenshot scales with the media */
-.home.home--v3 .home-card__shots[data-shots="1"] {
+.home.home--v3 .home-card__shots[data-shots='1'] {
   display: flex;
   align-items: flex-end; /* stick to bottom */
   justify-content: center; /* centered horizontally */
@@ -400,7 +400,7 @@
 
 /* override absolute rules for the 1-shot case */
 /* 1-shot cards: screenshot scales immediately with the media box */
-.home.home--v3 .home-card__shots[data-shots="1"] .home-card__shot--1 {
+.home.home--v3 .home-card__shots[data-shots='1'] .home-card__shot--1 {
   position: relative !important;
   left: auto !important;
   top: auto !important;
@@ -418,7 +418,7 @@
 .home.home--v3 .home-card__media {
   container-type: inline-size;
 }
-.home.home--v3 .home-card__shots[data-shots="1"] .home-card__shot--1-many {
+.home.home--v3 .home-card__shots[data-shots='1'] .home-card__shot--1-many {
   /* position: relative !important; */
   /* left: auto !important; */
   /* top: auto !important; */
@@ -432,7 +432,7 @@
   /* transform: translateY(5px); */
 }
 /* Home v3: narrow single screenshot (Sweet Dreams) only */
-.home.home--v3 .home-card__shots[data-shots="1"] .home-card__shot--1-narrow {
+.home.home--v3 .home-card__shots[data-shots='1'] .home-card__shot--1-narrow {
   /* don’t let old absolute positioning mess with it */
   position: relative !important;
 
@@ -458,7 +458,7 @@
 }
 
 /* 3-shot layout: flex row inside the overlay */
-.home.home--v3 .home-card__shots[data-shots="3"] {
+.home.home--v3 .home-card__shots[data-shots='3'] {
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -473,20 +473,20 @@
 }
 
 /* each screenshot width is now proportional + controllable */
-.home.home--v3 .home-card__shots[data-shots="3"] .home-card__shot {
+.home.home--v3 .home-card__shots[data-shots='3'] .home-card__shot {
   width: var(--shot-w, 157px);
   max-width: 30%;
   flex: 0 0 auto;
   border-radius: 0 !important;
 }
 @media (max-width: 900px) {
-  .home.home--v3 .home-card__shots[data-shots="3"] .home-card__shot {
+  .home.home--v3 .home-card__shots[data-shots='3'] .home-card__shot {
     width: var(--shot-w, 247px);
     max-width: 30%;
     flex: 0 0 auto;
     border-radius: 0 !important;
   }
-  .home.home--v3 .home-card__shots[data-shots="3"] {
+  .home.home--v3 .home-card__shots[data-shots='3'] {
     gap: 10px;
   }
 }
@@ -559,7 +559,7 @@
 
 .home.home--v3 .home-card__title {
   margin: 0;
-  font-family: "campaign-serif", serif;
+  font-family: 'campaign-serif', serif;
   font-size: 32px;
   line-height: 100%;
   margin-bottom: 10px;
@@ -629,7 +629,7 @@
 }
 .home.home--v3 .site-nav a:hover,
 .home.home--v3 .site-nav a.active,
-.home.home--v3 .site-nav a[aria-current="page"] {
+.home.home--v3 .site-nav a[aria-current='page'] {
   color: var(--color-accent, #e11d48);
 }
 
@@ -648,7 +648,7 @@
   text-decoration: underline !important;
 }
 .home.home--v3 .site-footer__credit {
-  font-family: "caveat", sans-serif;
+  font-family: 'caveat', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
@@ -718,7 +718,7 @@
 
 /* Decorative layer (sits behind footer and bleeds upward) */
 .home.home--v3 .home-footer-backdrop::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -735,7 +735,7 @@
   background-color: #fafaf9;
 
   /* 2) The actual image */
-  background-image: url("../assets/images/footer_plus-bg.png");
+  background-image: url('../assets/images/footer_plus-bg.png');
   background-repeat: no-repeat;
   background-position: center bottom;
 
